@@ -1,4 +1,4 @@
-# 🏦 Banco de Contenido
+# Banco de Contenido
 
 ---
 
@@ -39,11 +39,11 @@ La norma dice X, pero en la práctica significa Y.
 ### Template: Evento
 
 ```
-🎙️ [Tipo de evento]: [Título]
+[Tipo de evento]: [Título]
 
-📅 [Fecha]
-⏰ [Hora]
-🎤 Con [Invitado/Speaker]
+[Fecha]
+[Hora]
+Con [Invitado/Speaker]
 
 Lo que vamos a cubrir:
 - [Punto 1]
@@ -79,14 +79,14 @@ Lo que vamos a cubrir:
 
 ## Testimonios para Usar
 
-> *"Un muy buen curso, abarca toda la cadena de gas..."*
-> — **Gases del Caribe**
+> "Un muy buen curso, abarca toda la cadena de gas..."
+> — Gases del Caribe
 
-> *"Nos estandariza internacionalmente, nos da herramientas..."*
-> — **Cerro Matoso**
+> "Nos estandariza internacionalmente, nos da herramientas..."
+> — Cerro Matoso
 
-> *"Me enseñó a involucrarme de manera directa en aspectos técnicos..."*
-> — **Repsol**
+> "Me enseñó a involucrarme de manera directa en aspectos técnicos..."
+> — Repsol
 
 ---
 
@@ -111,4 +111,3 @@ Lo que vamos a cubrir:
 | Gas | #GasNatural #GLP #LNG #Energia |
 | Gestión de Activos | #GestionDeActivos #Mantenimiento #Confiabilidad |
 | General | #EliteTraining #FormaciónTécnica #IndustriaLATAM |
-

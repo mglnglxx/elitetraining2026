@@ -1,4 +1,4 @@
-# 🎙️ Playbook de Webinars
+# Playbook de Webinars
 
 ---
 
@@ -95,16 +95,16 @@
 ## Template de Invitación
 
 ```
-🎙️ Webinar: [Título]
+Webinar: [Título]
 
-📅 [Fecha]
-⏰ [Hora] (Colombia)
-🎤 Con [Nombre del Speaker], [Rol/Empresa]
+[Fecha]
+[Hora] (Colombia)
+Con [Nombre del Speaker], [Rol/Empresa]
 
 Lo que vamos a cubrir:
-• [Punto 1]
-• [Punto 2]
-• [Punto 3]
+- [Punto 1]
+- [Punto 2]
+- [Punto 3]
 
 ¿Para quién es?
 [Perfil del asistente ideal]
@@ -113,4 +113,3 @@ Registro gratuito: [Link]
 
 Cupos limitados.
 ```
-

@@ -6,107 +6,297 @@
   <title>Elite Training Command Center</title>
   <meta name="description" content="Centro de operaciones interno de Elite Training">
   
-  <!-- Docsify Theme -->
+  <!-- Geist Font -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/style.min.css">
+  
+  <!-- Docsify Theme Base -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
   
-  <!-- Custom Styles -->
   <style>
     :root {
-      /* Colors */
-      --base-background-color: #fafafa;
-      --sidebar-background: #f5f5f5;
-      --sidebar-nav-link-color: #2c3e50;
-      --sidebar-nav-link-color--active: #0066cc;
-      --sidebar-nav-link-border-color--active: #0066cc;
-      
       /* Typography */
-      --base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
-      --base-font-size: 16px;
-      --base-line-height: 1.7;
+      --base-font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
+      --base-font-size: 14px;
+      --base-line-height: 1.5;
+      
+      /* Colors */
+      --base-background-color: #ffffff;
+      --sidebar-background: #fafafa;
+      --sidebar-border-color: #eee;
+      --sidebar-nav-link-color: #333;
+      --sidebar-nav-link-color--active: #000;
+      --sidebar-nav-link-border-color--active: #000;
       
       /* Content */
-      --content-max-width: 900px;
+      --content-max-width: 800px;
       
-      /* Headings */
-      --heading-color: #1a1a1a;
-      --heading-h2-border-color: #eaecef;
-      --heading-h2-border-style: solid;
-      --heading-h2-border-width: 0 0 1px 0;
-      --heading-h2-padding: 0 0 0.5rem 0;
+      /* Headings - all 16px */
+      --heading-h1-font-size: 16px;
+      --heading-h2-font-size: 16px;
+      --heading-h3-font-size: 16px;
+      --heading-h4-font-size: 14px;
+      --heading-color: #000;
+      --heading-h1-font-weight: 600;
+      --heading-h2-font-weight: 600;
+      --heading-h3-font-weight: 600;
+      --heading-h2-border-style: none;
+      --heading-h2-padding: 0;
+      --heading-h1-margin: 0 0 8px 0;
+      --heading-h2-margin: 16px 0 8px 0;
+      --heading-h3-margin: 12px 0 8px 0;
       
       /* Links */
-      --link-color: #0066cc;
+      --link-color: #000;
+      --link-text-decoration: underline;
+      
+      /* Sidebar */
+      --sidebar-width: 220px;
+      --sidebar-padding: 8px;
+      --sidebar-nav-link-font-weight: 400;
+      --sidebar-nav-link-padding: 4px 8px;
+      --sidebar-nav-link-font-size: 13px;
       
       /* Code */
-      --code-inline-background: #f0f0f0;
-      --code-inline-color: #c7254e;
+      --code-inline-background: #f5f5f5;
+      --code-inline-color: #333;
+      --code-inline-padding: 2px 4px;
+      --code-font-size: 13px;
       
-      /* Tables */
-      --table-head-background: #f5f5f5;
-      --table-cell-border-color: #e0e0e0;
+      /* Blockquote */
+      --blockquote-border-color: #ddd;
+      --blockquote-background: #fafafa;
     }
 
-    /* Sidebar branding */
-    .sidebar .app-name {
-      font-weight: 700;
-      font-size: 1.2rem;
-      color: #1a1a1a;
-      padding: 1rem 1.5rem;
-      border-bottom: 1px solid #e0e0e0;
-      margin-bottom: 1rem;
+    * {
+      box-sizing: border-box;
     }
 
-    /* Active link highlight */
+    body {
+      font-family: var(--base-font-family);
+      font-size: var(--base-font-size);
+      line-height: var(--base-line-height);
+    }
+
+    /* Sidebar */
+    .sidebar {
+      padding: 8px !important;
+      border-right: 1px solid #eee;
+    }
+
+    .sidebar .app-name-link {
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      color: #000 !important;
+      padding: 8px !important;
+      margin-bottom: 8px !important;
+      display: block;
+    }
+
+    .sidebar-nav {
+      padding: 0 !important;
+    }
+
+    .sidebar-nav li {
+      margin: 0 !important;
+    }
+
+    .sidebar-nav a {
+      font-size: 13px !important;
+      padding: 4px 8px !important;
+      color: #444 !important;
+      display: block;
+    }
+
+    .sidebar-nav a:hover {
+      color: #000 !important;
+    }
+
     .sidebar-nav li.active > a {
-      font-weight: 600;
-      color: #0066cc;
+      color: #000 !important;
+      font-weight: 500 !important;
     }
 
-    /* Better table styling */
-    table {
+    .sidebar-nav ul {
+      padding-left: 12px !important;
+      margin: 0 !important;
+    }
+
+    .sidebar-nav > ul > li > a {
+      font-weight: 500 !important;
+      color: #000 !important;
+    }
+
+    /* Sidebar section headers (bold items) */
+    .sidebar-nav > ul > li > p {
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      color: #666 !important;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 12px 8px 4px 8px !important;
+      margin: 0 !important;
+    }
+
+    /* Search */
+    .search {
+      margin: 0 0 8px 0 !important;
+      padding: 0 !important;
+    }
+
+    .search input {
+      font-size: 13px !important;
+      padding: 6px 8px !important;
+      border: 1px solid #ddd !important;
+      border-radius: 4px !important;
+      width: 100% !important;
+      background: #fff !important;
+    }
+
+    .search .results-panel {
+      font-size: 13px !important;
+    }
+
+    /* Content area */
+    .content {
+      padding: 16px 24px !important;
+    }
+
+    .markdown-section {
+      max-width: 800px !important;
+      padding: 0 !important;
+    }
+
+    .markdown-section h1 {
+      font-size: 16px !important;
+      font-weight: 600 !important;
+      margin: 0 0 8px 0 !important;
+      padding: 0 !important;
+      border: none !important;
+    }
+
+    .markdown-section h2 {
+      font-size: 16px !important;
+      font-weight: 600 !important;
+      margin: 16px 0 8px 0 !important;
+      padding: 0 !important;
+      border: none !important;
+    }
+
+    .markdown-section h3 {
+      font-size: 14px !important;
+      font-weight: 600 !important;
+      margin: 12px 0 8px 0 !important;
+      padding: 0 !important;
+    }
+
+    .markdown-section p {
+      margin: 0 0 8px 0 !important;
+    }
+
+    .markdown-section ul,
+    .markdown-section ol {
+      margin: 0 0 8px 0 !important;
+      padding-left: 20px !important;
+    }
+
+    .markdown-section li {
+      margin: 2px 0 !important;
+    }
+
+    .markdown-section hr {
+      margin: 16px 0 !important;
+      border: none;
+      border-top: 1px solid #eee;
+    }
+
+    /* Tables */
+    .markdown-section table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1.5rem 0;
+      margin: 8px 0 !important;
+      font-size: 13px;
     }
 
-    th, td {
-      padding: 0.75rem 1rem;
+    .markdown-section th,
+    .markdown-section td {
+      padding: 6px 8px !important;
       text-align: left;
       border: 1px solid #e0e0e0;
     }
 
-    th {
+    .markdown-section th {
       background: #f5f5f5;
       font-weight: 600;
     }
 
-    tr:nth-child(even) {
+    .markdown-section tr:nth-child(even) {
       background: #fafafa;
     }
 
-    /* Checkbox styling */
-    input[type="checkbox"] {
-      margin-right: 0.5rem;
+    /* Blockquote */
+    .markdown-section blockquote {
+      margin: 8px 0 !important;
+      padding: 8px 12px !important;
+      border-left: 3px solid #ddd;
+      background: #fafafa;
+      color: #444;
     }
 
-    /* Blockquote styling */
-    blockquote {
-      border-left: 4px solid #0066cc;
-      margin: 1.5rem 0;
-      padding: 1rem 1.5rem;
-      background: #f8f9fa;
-      color: #555;
+    .markdown-section blockquote p {
+      margin: 0 !important;
     }
 
-    /* Status badges */
-    .status-activo { color: #28a745; font-weight: 600; }
-    .status-pendiente { color: #ffc107; font-weight: 600; }
-    .status-target { color: #17a2b8; font-weight: 600; }
+    /* Code blocks */
+    .markdown-section pre {
+      margin: 8px 0 !important;
+      padding: 12px !important;
+      background: #f5f5f5 !important;
+      border-radius: 4px;
+      font-size: 13px !important;
+    }
 
-    /* Mobile improvements */
+    .markdown-section code {
+      font-family: 'Geist Mono', ui-monospace, monospace;
+      font-size: 13px;
+    }
+
+    /* Checkboxes */
+    .markdown-section input[type="checkbox"] {
+      margin-right: 6px;
+    }
+
+    /* Breadcrumb styles */
+    .breadcrumb {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .breadcrumb a {
+      color: #666;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+
+    .breadcrumb span {
+      margin: 0 6px;
+      color: #999;
+    }
+
+    /* Mobile */
     @media (max-width: 768px) {
       .sidebar {
-        padding-top: 0;
+        padding: 8px !important;
+      }
+      
+      .content {
+        padding: 12px 16px !important;
       }
     }
   </style>
@@ -115,8 +305,39 @@
   <div id="app">Cargando...</div>
   
   <script>
+    // Breadcrumb plugin
+    function breadcrumbPlugin(hook, vm) {
+      hook.afterEach(function(html, next) {
+        var path = vm.route.path;
+        if (path === '/' || path === '') {
+          next(html);
+          return;
+        }
+        
+        var parts = path.split('/').filter(Boolean);
+        var breadcrumb = '<div class="breadcrumb"><a href="#/">Home</a>';
+        
+        if (parts.length > 0) {
+          var currentPath = '';
+          parts.forEach(function(part, index) {
+            currentPath += '/' + part;
+            var name = part.replace(/-/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
+            
+            if (index === parts.length - 1) {
+              breadcrumb += '<span>/</span>' + name;
+            } else {
+              breadcrumb += '<span>/</span><a href="#' + currentPath + '/">' + name + '</a>';
+            }
+          });
+        }
+        
+        breadcrumb += '</div>';
+        next(breadcrumb + html);
+      });
+    }
+
     window.$docsify = {
-      name: '🏢 Elite Training',
+      name: 'Elite Training',
       repo: false,
       loadSidebar: true,
       subMaxLevel: 2,
@@ -126,8 +347,7 @@
         noData: 'No hay resultados',
         depth: 3
       },
-      formatUpdated: '{DD}/{MM}/{YYYY}',
-      notFoundPage: true,
+      plugins: [breadcrumbPlugin]
     }
   </script>
   
@@ -136,9 +356,5 @@
   
   <!-- Search plugin -->
   <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-  
-  <!-- Emoji plugin -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/emoji.min.js"></script>
 </body>
 </html>
-

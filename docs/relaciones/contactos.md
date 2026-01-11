@@ -1,4 +1,4 @@
-# 📇 Contactos Clave
+# Contactos Clave
 
 ---
 
@@ -8,7 +8,7 @@
 
 | Nombre | Rol | Email | Teléfono | Fuerza de Relación |
 |--------|-----|-------|----------|-------------------|
-| — | — | — | — | 🔵 Frío / 🟡 Tibio / 🟢 Fuerte / ⭐ Champion |
+| — | — | — | — | Frío / Tibio / Fuerte / Champion |
 
 ---
 
@@ -44,10 +44,10 @@
 
 | Nivel | Descripción | Acción |
 |-------|-------------|--------|
-| 🔵 **Frío** | No nos conoce o contacto mínimo | Calentar con contenido |
-| 🟡 **Tibio** | Nos conoce, ha interactuado | Profundizar relación |
-| 🟢 **Fuerte** | Relación establecida, confianza | Mantener, pedir referidos |
-| ⭐ **Champion** | Nos recomienda activamente | Cuidar, agradecer, involucrar |
+| Frío | No nos conoce o contacto mínimo | Calentar con contenido |
+| Tibio | Nos conoce, ha interactuado | Profundizar relación |
+| Fuerte | Relación establecida, confianza | Mantener, pedir referidos |
+| Champion | Nos recomienda activamente | Cuidar, agradecer, involucrar |
 
 ---
 
@@ -84,4 +84,3 @@
 | Colpatria | — | — |
 | AXA | — | — |
 | Sura | — | — |
-

@@ -1,15 +1,15 @@
-# 🗺️ Estrategia por Sector
+# Estrategia por Sector
 
 ---
 
 ## Matriz de Sectores y Cursos Estrella
 
-| Sector | Cursos Estrella ⭐ | Alianzas Clave | Normas/Certificaciones |
+| Sector | Cursos Estrella | Alianzas Clave | Normas/Certificaciones |
 |--------|-------------------|----------------|----------------------|
 | Oil & Gas | Rip Drilling | Frontera, Yacimientos | — |
 | Gas GLP | LNG, Regulación | Colgas | — |
-| Seguridad de Procesos | HAZOP ⭐, Seg. Eléctrica ⭐, Seg. Procesos | Dupont, ARLs | NFPA 652, NFPA 70E |
-| Integridad | Comisionamiento ⭐ | OCENSA | ASME |
+| Seguridad de Procesos | HAZOP, Seg. Eléctrica, Seg. Procesos | Dupont, ARLs | NFPA 652, NFPA 70E |
+| Integridad | Comisionamiento | OCENSA | ASME |
 | Mantenimiento | RCA, Planificación | — | — |
 | Habilidades Directivas | Generación de Costos | — | — |
 
@@ -17,25 +17,25 @@
 
 ## Enfoque 2026
 
-### 🔴 Prioridad Alta (máximo esfuerzo)
+### Prioridad Alta (máximo esfuerzo)
 
-**Seguridad de Procesos**
+Seguridad de Procesos
 - Instructor local
 - Alta rentabilidad
 - Genera consultoría
 - Alianzas: Dupont, ARLs
 
-**Integridad / Comisionamiento**
+Integridad / Comisionamiento
 - OCENSA nos conoce
 - Ventas a Ecuador
 - Alianza ASME
 
-### 🟡 Prioridad Media
+### Prioridad Media
 
 - Oil & Gas
 - Gas GLP
 
-### ⚪ Prioridad Baja (mantener, no empujar)
+### Prioridad Baja (mantener, no empujar)
 
 - Mantenimiento
 - Habilidades Directivas
@@ -57,10 +57,9 @@ Estos no son cursos sueltos — son programas completos que deben destacarse:
 
 ## Los 6 Sectores (como están en la web)
 
-1. **Gestión de Activos, Mantenimiento y Confiabilidad**
-2. **Oil and Gas**
-3. **Integridad y Equipos**
-4. **Seguridad-Riesgos**
-5. **Gas Natural, GLP y Energía**
-6. **Habilidades Directivas**
-
+1. Gestión de Activos, Mantenimiento y Confiabilidad
+2. Oil and Gas
+3. Integridad y Equipos
+4. Seguridad-Riesgos
+5. Gas Natural, GLP y Energía
+6. Habilidades Directivas

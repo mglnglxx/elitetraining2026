@@ -1,4 +1,4 @@
-# 👨‍🏫 Instructores
+# Instructores
 
 ---
 
@@ -6,10 +6,10 @@
 
 | Nivel | Descripción | Ventaja Competitiva |
 |-------|-------------|---------------------|
-| **Exclusivo** | Solo trabaja con nosotros | Máxima diferenciación |
-| **Preferido** | Trabaja principalmente con nosotros | Alta diferenciación |
-| **Compartido** | También trabaja con competencia | Menor diferenciación |
-| **Desconocido** | No sabemos | Por investigar |
+| Exclusivo | Solo trabaja con nosotros | Máxima diferenciación |
+| Preferido | Trabaja principalmente con nosotros | Alta diferenciación |
+| Compartido | También trabaja con competencia | Menor diferenciación |
+| Desconocido | No sabemos | Por investigar |
 
 ---
 
@@ -90,4 +90,3 @@ Para cada instructor, documentar:
 - [ ] Verificar nivel de exclusividad
 - [ ] Documentar estructura de costos
 - [ ] Identificar gaps (cursos sin instructor)
-

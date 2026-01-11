@@ -1,10 +1,10 @@
-# 🏔️ Framework Summit Series
+# Framework Summit Series
 
 ---
 
 ## Concepto
 
-**"Semana de [Sector]"** — 4 días, 4 sesiones temáticas
+"Semana de [Sector]" — 4 días, 4 sesiones temáticas
 
 Un evento virtual de inmersión profunda en un sector específico, con contenido estructurado y progresivo.
 
@@ -64,10 +64,10 @@ Un evento virtual de inmersión profunda en un sector específico, con contenido
 
 | Trimestre | Nombre | Sector | Estado |
 |-----------|--------|--------|--------|
-| Q1 | Semana de Seguridad de Procesos | Seguridad | 🔵 Planeando |
-| Q2 | Semana de Integridad | Integridad | 💡 Idea |
-| Q3 | Semana de Oil & Gas | Oil & Gas | 💡 Idea |
-| Q4 | Semana de Cierre | Multi-sector | 💡 Idea |
+| Q1 | Semana de Seguridad de Procesos | Seguridad | Planeando |
+| Q2 | Semana de Integridad | Integridad | Idea |
+| Q3 | Semana de Oil & Gas | Oil & Gas | Idea |
+| Q4 | Semana de Cierre | Multi-sector | Idea |
 
 ---
 
@@ -90,4 +90,3 @@ Un evento virtual de inmersión profunda en un sector específico, con contenido
 | Satisfacción | >4.5/5 |
 | Conversión a curso cerrado | — |
 | Nuevos miembros comunidad | — |
-

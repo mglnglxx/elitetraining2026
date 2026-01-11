@@ -1,4 +1,4 @@
-# ⚖️ Panorama Regulatorio
+# Panorama Regulatorio
 
 ---
 
@@ -35,7 +35,7 @@ Seguridad Eléctrica en el Lugar de Trabajo.
 
 ### Puntos Clave
 
-- *Agregar investigación aquí...*
+*Agregar investigación aquí...*
 
 ---
 
@@ -61,4 +61,3 @@ Seguridad Eléctrica en el Lugar de Trabajo.
 | NFPA 652 | 2023 | 2026? | Alto |
 | NFPA 70E | — | — | Alto |
 | — | — | — | — |
-

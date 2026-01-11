@@ -1,4 +1,4 @@
-# 📚 Portafolio de Cursos
+# Portafolio de Cursos
 
 ---
 
@@ -13,14 +13,14 @@
 
 ---
 
-## Cursos Estrella ⭐
+## Cursos Estrella
 
 | Curso | Sector | Por qué es estrella | Punto de Equilibrio |
 |-------|--------|---------------------|---------------------|
-| HAZOP ⭐ | Seguridad | Alta demanda, genera consultoría | — |
-| Seguridad de Procesos ⭐ | Seguridad | Instructor local, alta rentabilidad | — |
-| Seguridad Eléctrica ⭐ | Seguridad | NFPA 70E, obligatorio para muchos | — |
-| Comisionamiento ⭐ | Integridad | OCENSA nos conoce, ventas a Ecuador | — |
+| HAZOP | Seguridad | Alta demanda, genera consultoría | — |
+| Seguridad de Procesos | Seguridad | Instructor local, alta rentabilidad | — |
+| Seguridad Eléctrica | Seguridad | NFPA 70E, obligatorio para muchos | — |
+| Comisionamiento | Integridad | OCENSA nos conoce, ventas a Ecuador | — |
 
 ---
 
@@ -50,7 +50,7 @@
 
 | Curso | Estrella | Formato | Instructor | Certificación |
 |-------|----------|---------|------------|---------------|
-| Comisionamiento | ⭐ | Ambos | — | ASME |
+| Comisionamiento | Sí | Ambos | — | ASME |
 | — | — | — | — | — |
 
 ---
@@ -59,9 +59,9 @@
 
 | Curso | Estrella | Formato | Instructor | Certificación |
 |-------|----------|---------|------------|---------------|
-| HAZOP | ⭐ | Ambos | — | — |
-| Seguridad de Procesos | ⭐ | Ambos | — | — |
-| Seguridad Eléctrica (NFPA 70E) | ⭐ | Ambos | — | — |
+| HAZOP | Sí | Ambos | — | — |
+| Seguridad de Procesos | Sí | Ambos | — | — |
+| Seguridad Eléctrica (NFPA 70E) | Sí | Ambos | — | — |
 | DHA (Dust Hazard Analysis) | — | — | — | NFPA 652 |
 
 ---
@@ -87,9 +87,9 @@
 
 | Formato | Descripción | Cuándo usar |
 |---------|-------------|-------------|
-| **Solo Cerrado** | Solo para empresas, a medida | Cuando hay mínimo de participantes |
-| **Solo Abierto** | Calendario público | Solo con base sólida (10+) |
-| **Ambos** | Flexible según demanda | Mayoría de cursos |
+| Solo Cerrado | Solo para empresas, a medida | Cuando hay mínimo de participantes |
+| Solo Abierto | Calendario público | Solo con base sólida (10+) |
+| Ambos | Flexible según demanda | Mayoría de cursos |
 
 ---
 
@@ -106,17 +106,16 @@
 
 ## El Nuevo Modelo
 
-### ❌ Antes
+### Antes
 
 - Programar fechas fijas
 - Promocionar a ver quién se inscribe
 - Aceptar grupos pequeños (2-5)
 - Descuentos sin criterio
 
-### ✅ Ahora
+### Ahora
 
 - Portafolio completo sin fechas fijas
 - Ir directo empresa por empresa
 - Mínimos de rentabilidad definidos
 - Abrir al público solo con base sólida (10+)
-

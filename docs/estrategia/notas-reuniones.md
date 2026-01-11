@@ -1,4 +1,4 @@
-# 📝 Notas de Reuniones
+# Notas de Reuniones
 
 ---
 
@@ -8,12 +8,12 @@ Cada nota de reunión debe incluir:
 
 | Campo | Descripción |
 |-------|-------------|
-| **Fecha** | Fecha de la reunión |
-| **Asistentes** | Quiénes participaron |
-| **Tipo** | Estrategia, Operaciones, Cliente, Aliado |
-| **Sector** | Oil & Gas, Seg Procesos, Integridad, etc. |
-| **Decisiones Clave** | Qué se decidió |
-| **Acciones Pendientes** | Siguientes pasos |
+| Fecha | Fecha de la reunión |
+| Asistentes | Quiénes participaron |
+| Tipo | Estrategia, Operaciones, Cliente, Aliado |
+| Sector | Oil & Gas, Seg Procesos, Integridad, etc. |
+| Decisiones Clave | Qué se decidió |
+| Acciones Pendientes | Siguientes pasos |
 
 ---
 
@@ -42,11 +42,11 @@ Cada nota de reunión debe incluir:
 ```markdown
 ## [Fecha] — [Título de la Reunión]
 
-**Asistentes:** Nombre1, Nombre2, Nombre3
+Asistentes: Nombre1, Nombre2, Nombre3
 
-**Tipo:** Estrategia | Operaciones | Cliente | Aliado
+Tipo: Estrategia | Operaciones | Cliente | Aliado
 
-**Sector:** Oil & Gas | Seguridad | Integridad | Gas | Mantenimiento | Hab Dir
+Sector: Oil & Gas | Seguridad | Integridad | Gas | Mantenimiento | Hab Dir
 
 ### Contexto
 
@@ -68,4 +68,3 @@ Cada nota de reunión debe incluir:
 - [ ] [Acción] — Responsable — Fecha límite
 - [ ] [Acción] — Responsable — Fecha límite
 ```
-

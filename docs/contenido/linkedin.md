@@ -1,4 +1,4 @@
-# 💼 Estrategia LinkedIn
+# Estrategia LinkedIn
 
 ---
 
@@ -15,9 +15,9 @@
 
 | Día | Tipo de Contenido | Ejemplo |
 |-----|-------------------|---------|
-| **Lunes** | Criterio (técnico) | "Lo que NFPA 652 realmente significa..." |
-| **Miércoles** | Señal (prueba social) | "29 años formando equipos de Ecopetrol, Repsol..." |
-| **Viernes** | Evento o Comunidad | "Este jueves: webinar con actualización de..." |
+| Lunes | Criterio (técnico) | "Lo que NFPA 652 realmente significa..." |
+| Miércoles | Señal (prueba social) | "29 años formando equipos de Ecopetrol, Repsol..." |
+| Viernes | Evento o Comunidad | "Este jueves: webinar con actualización de..." |
 
 ---
 
@@ -76,11 +76,11 @@ Aliados oficiales de ASME y The Woodhouse Partnership.
 ### Evento
 
 ```
-🎙️ Webinar: Actualización NFPA 652 — Lo que tu planta necesita saber
+Webinar: Actualización NFPA 652 — Lo que tu planta necesita saber
 
-📅 [Fecha]
-⏰ [Hora]
-🎤 Con [Invitado]
+[Fecha]
+[Hora]
+Con [Invitado]
 
 Lo que vamos a cubrir:
 - [Punto 1]
@@ -103,4 +103,3 @@ Registro: [link]
 | Engagement rate | — |
 | Nuevos seguidores | — |
 | Clicks a perfil | — |
-

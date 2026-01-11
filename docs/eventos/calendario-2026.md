@@ -1,4 +1,4 @@
-# 📆 Calendario de Eventos 2026
+# Calendario de Eventos 2026
 
 ---
 
@@ -16,18 +16,18 @@
 
 | Mes | Tema | Sector | Estado | Speaker |
 |-----|------|--------|--------|---------|
-| Enero | NFPA 652 actualización | Seguridad | 🔵 Planeado | — |
-| Febrero | — | — | 💡 Idea | — |
-| Marzo | — | — | 💡 Idea | — |
-| Abril | — | — | 💡 Idea | — |
-| Mayo | — | — | 💡 Idea | — |
-| Junio | — | — | 💡 Idea | — |
-| Julio | — | — | 💡 Idea | — |
-| Agosto | — | — | 💡 Idea | — |
-| Septiembre | — | — | 💡 Idea | — |
-| Octubre | — | — | 💡 Idea | — |
-| Noviembre | — | — | 💡 Idea | — |
-| Diciembre | — | — | 💡 Idea | — |
+| Enero | NFPA 652 actualización | Seguridad | Planeado | — |
+| Febrero | — | — | Idea | — |
+| Marzo | — | — | Idea | — |
+| Abril | — | — | Idea | — |
+| Mayo | — | — | Idea | — |
+| Junio | — | — | Idea | — |
+| Julio | — | — | Idea | — |
+| Agosto | — | — | Idea | — |
+| Septiembre | — | — | Idea | — |
+| Octubre | — | — | Idea | — |
+| Noviembre | — | — | Idea | — |
+| Diciembre | — | — | Idea | — |
 
 ---
 
@@ -35,10 +35,10 @@
 
 | Trimestre | Nombre | Sector | Fechas | Estado |
 |-----------|--------|--------|--------|--------|
-| Q1 | Semana de Seguridad de Procesos | Seguridad | — | 🔵 Planeado |
-| Q2 | Semana de Integridad | Integridad | — | 💡 Idea |
-| Q3 | Semana de Oil & Gas | Oil & Gas | — | 💡 Idea |
-| Q4 | Semana de Cierre / Multi-sector | Multi | — | 💡 Idea |
+| Q1 | Semana de Seguridad de Procesos | Seguridad | — | Planeado |
+| Q2 | Semana de Integridad | Integridad | — | Idea |
+| Q3 | Semana de Oil & Gas | Oil & Gas | — | Idea |
+| Q4 | Semana de Cierre / Multi-sector | Multi | — | Idea |
 
 ---
 
@@ -46,19 +46,19 @@
 
 | Semestre | Nombre | Fecha | Venue | Estado |
 |----------|--------|-------|-------|--------|
-| H1 | — | Por definir | — | 💡 Idea |
-| H2 | — | Por definir | — | 💡 Idea |
+| H1 | — | Por definir | — | Idea |
+| H2 | — | Por definir | — | Idea |
 
 ---
 
 ## Estados
 
-- 💡 **Idea** — Solo concepto
-- 🔵 **Planeando** — En definición
-- 🟢 **Confirmado** — Fecha y speaker listos
-- 📣 **Promocionando** — Activamente invitando
-- ✅ **Completado** — Ya sucedió
-- ❌ **Cancelado** — No se realizó
+- Idea — Solo concepto
+- Planeando — En definición
+- Confirmado — Fecha y speaker listos
+- Promocionando — Activamente invitando
+- Completado — Ya sucedió
+- Cancelado — No se realizó
 
 ---
 
@@ -66,7 +66,6 @@
 
 | Evento | Tipo | Sector | Fecha | Estado |
 |--------|------|--------|-------|--------|
-| Webinar NFPA 652 | Webinar | Seguridad | Enero 2026 | 🔵 Planeando |
-| Semana Seguridad de Procesos | Summit | Seguridad | Q1 2026 | 🔵 Planeando |
+| Webinar NFPA 652 | Webinar | Seguridad | Enero 2026 | Planeando |
+| Semana Seguridad de Procesos | Summit | Seguridad | Q1 2026 | Planeando |
 | — | — | — | — | — |
-

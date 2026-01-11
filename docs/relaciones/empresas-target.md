@@ -1,12 +1,12 @@
-# 🎯 Empresas Target
+# Empresas Target
 
-> El juego no es conseguir clientes nuevos desde cero — es **reactivar, profundizar y expandir** relaciones existentes.
+El juego no es conseguir clientes nuevos desde cero — es reactivar, profundizar y expandir relaciones existentes.
 
 ---
 
 ## Pipeline de Empresas
 
-### ✅ Clientes Activos (ya nos compran)
+### Clientes Activos (ya nos compran)
 
 | Empresa | Sector | Contacto | Último Curso | Próxima Acción |
 |---------|--------|----------|--------------|----------------|
@@ -28,7 +28,7 @@
 
 ---
 
-### 🟡 En Conversación
+### En Conversación
 
 | Empresa | Sector | Contacto | Estado | Próxima Acción |
 |---------|--------|----------|--------|----------------|
@@ -36,7 +36,7 @@
 
 ---
 
-### 🔵 Targets (por contactar)
+### Targets (por contactar)
 
 | Empresa | Sector | Por qué | Responsable |
 |---------|--------|---------|-------------|
@@ -44,7 +44,7 @@
 
 ---
 
-### ⚪ Dormidos (fueron clientes, hay que reactivar)
+### Dormidos (fueron clientes, hay que reactivar)
 
 | Empresa | Sector | Último Contacto | Estrategia |
 |---------|--------|-----------------|------------|
@@ -54,7 +54,7 @@
 
 ## Meta 2026
 
-**40 empresas en pipeline activo de cursos cerrados**
+40 empresas en pipeline activo de cursos cerrados
 
 | Métrica | Actual | Meta |
 |---------|--------|------|
@@ -93,4 +93,3 @@
 | Revisar pipeline | Semanal |
 | Actualizar estados | Después de cada contacto |
 | Reportar métricas | Mensual |
-

@@ -1,10 +1,10 @@
-# 🏟️ Planeación Eventos Flagship
+# Planeación Eventos Flagship
 
 ---
 
 ## Concepto
 
-**2 eventos presenciales por año.**
+2 eventos presenciales por año.
 
 Elite Training como anfitrión de la industria — el punto de encuentro de los profesionales del sector.
 
@@ -89,8 +89,8 @@ Elite Training como anfitrión de la industria — el punto de encuentro de los 
 
 | Evento | Semestre | Fecha | Tema | Estado |
 |--------|----------|-------|------|--------|
-| Flagship H1 | H1 | Por definir | — | 💡 Idea |
-| Flagship H2 | H2 | Por definir | — | 💡 Idea |
+| Flagship H1 | H1 | Por definir | — | Idea |
+| Flagship H2 | H2 | Por definir | — | Idea |
 
 ---
 
@@ -114,4 +114,3 @@ Elite Training como anfitrión de la industria — el punto de encuentro de los 
 | Leads generados | — |
 | Satisfacción | >4.5/5 |
 | Cobertura de prensa | — |
-

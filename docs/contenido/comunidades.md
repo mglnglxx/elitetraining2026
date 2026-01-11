@@ -1,4 +1,4 @@
-# 💬 Comunidades WhatsApp
+# Comunidades WhatsApp
 
 ---
 
@@ -15,19 +15,19 @@ Crear 5 comunidades activas (una por sector principal) donde:
 
 | Comunidad | Sector | Estado | Miembros | Meta |
 |-----------|--------|--------|----------|------|
-| Seguridad de Procesos LATAM | Seguridad-Riesgos | 🟡 En Construcción | — | — |
-| Integridad y Comisionamiento | Integridad y Equipos | 🔵 Planeada | — | — |
-| Oil & Gas Upstream | Oil and Gas | 🔵 Planeada | — | — |
-| Gas GLP y LNG | Gas Natural, GLP y Energía | 🔵 Planeada | — | — |
-| Mantenimiento Industrial | Gestión de Activos | 🔵 Planeada | — | — |
+| Seguridad de Procesos LATAM | Seguridad-Riesgos | En Construcción | — | — |
+| Integridad y Comisionamiento | Integridad y Equipos | Planeada | — | — |
+| Oil & Gas Upstream | Oil and Gas | Planeada | — | — |
+| Gas GLP y LNG | Gas Natural, GLP y Energía | Planeada | — | — |
+| Mantenimiento Industrial | Gestión de Activos | Planeada | — | — |
 
 ---
 
 ## Cadencia de Mensajes
 
-**Frecuencia:** 1-2 mensajes por semana
+Frecuencia: 1-2 mensajes por semana
 
-**Tipos de mensajes:**
+Tipos de mensajes:
 
 | Tipo | Ejemplo |
 |------|---------|
@@ -41,19 +41,19 @@ Crear 5 comunidades activas (una por sector principal) donde:
 
 ## Lo que NO hacemos
 
-- ❌ Spam de fechas de cursos
-- ❌ Mensajes diarios
-- ❌ Promociones directas
-- ❌ Contenido genérico
+- Spam de fechas de cursos
+- Mensajes diarios
+- Promociones directas
+- Contenido genérico
 
 ---
 
 ## Cómo crece la comunidad
 
-1. **Contenido en LinkedIn** → Invita a unirse
-2. **Webinars** → Pide unirse para acceso a grabación
-3. **Cursos** → Participantes se unen automáticamente
-4. **Referidos** → Miembros invitan colegas
+1. Contenido en LinkedIn — Invita a unirse
+2. Webinars — Pide unirse para acceso a grabación
+3. Cursos — Participantes se unen automáticamente
+4. Referidos — Miembros invitan colegas
 
 ---
 
@@ -65,4 +65,3 @@ Crear 5 comunidades activas (una por sector principal) donde:
 | Mensajes enviados | Por comunidad | 4-8/mes |
 | Respuestas/engagement | Conteo manual | — |
 | Leads generados | Tracking manual | — |
-
