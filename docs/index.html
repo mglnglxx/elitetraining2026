@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elite Training Command Center</title>
+  <meta name="description" content="Centro de operaciones interno de Elite Training">
+  
+  <!-- Docsify Theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  
+  <!-- Custom Styles -->
+  <style>
+    :root {
+      /* Colors */
+      --base-background-color: #fafafa;
+      --sidebar-background: #f5f5f5;
+      --sidebar-nav-link-color: #2c3e50;
+      --sidebar-nav-link-color--active: #0066cc;
+      --sidebar-nav-link-border-color--active: #0066cc;
+      
+      /* Typography */
+      --base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
+      --base-font-size: 16px;
+      --base-line-height: 1.7;
+      
+      /* Content */
+      --content-max-width: 900px;
+      
+      /* Headings */
+      --heading-color: #1a1a1a;
+      --heading-h2-border-color: #eaecef;
+      --heading-h2-border-style: solid;
+      --heading-h2-border-width: 0 0 1px 0;
+      --heading-h2-padding: 0 0 0.5rem 0;
+      
+      /* Links */
+      --link-color: #0066cc;
+      
+      /* Code */
+      --code-inline-background: #f0f0f0;
+      --code-inline-color: #c7254e;
+      
+      /* Tables */
+      --table-head-background: #f5f5f5;
+      --table-cell-border-color: #e0e0e0;
+    }
+
+    /* Sidebar branding */
+    .sidebar .app-name {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #1a1a1a;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 1rem;
+    }
+
+    /* Active link highlight */
+    .sidebar-nav li.active > a {
+      font-weight: 600;
+      color: #0066cc;
+    }
+
+    /* Better table styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border: 1px solid #e0e0e0;
+    }
+
+    th {
+      background: #f5f5f5;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    /* Checkbox styling */
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+
+    /* Blockquote styling */
+    blockquote {
+      border-left: 4px solid #0066cc;
+      margin: 1.5rem 0;
+      padding: 1rem 1.5rem;
+      background: #f8f9fa;
+      color: #555;
+    }
+
+    /* Status badges */
+    .status-activo { color: #28a745; font-weight: 600; }
+    .status-pendiente { color: #ffc107; font-weight: 600; }
+    .status-target { color: #17a2b8; font-weight: 600; }
+
+    /* Mobile improvements */
+    @media (max-width: 768px) {
+      .sidebar {
+        padding-top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">Cargando...</div>
+  
+  <script>
+    window.$docsify = {
+      name: '🏢 Elite Training',
+      repo: false,
+      loadSidebar: true,
+      subMaxLevel: 2,
+      auto2top: true,
+      search: {
+        placeholder: 'Buscar...',
+        noData: 'No hay resultados',
+        depth: 3
+      },
+      formatUpdated: '{DD}/{MM}/{YYYY}',
+      notFoundPage: true,
+    }
+  </script>
+  
+  <!-- Docsify -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  
+  <!-- Search plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
+  
+  <!-- Emoji plugin -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/emoji.min.js"></script>
+</body>
+</html>
+
