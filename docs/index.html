@@ -3,337 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elite Training Command Center</title>
-  <meta name="description" content="Centro de operaciones interno de Elite Training">
+  <title>Elite Training</title>
   
   <!-- Geist Font -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/geist@1.2.0/dist/fonts/geist-sans/style.min.css">
   
-  <!-- Docsify Theme Base -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
-  
   <style>
-    :root {
-      /* Typography - 14px base */
-      --base-font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
-      --base-font-size: 14px;
-      --base-line-height: 1.6;
-      
-      /* Colors */
-      --base-background-color: #ffffff;
-      --sidebar-background: #f9f9f9;
-      --sidebar-border-color: #ebebeb;
-      --sidebar-nav-link-color: #333;
-      --sidebar-nav-link-color--active: #000;
-      
-      /* Content */
-      --content-max-width: 800px;
-      
-      /* Headings */
-      --heading-h1-font-size: 16px;
-      --heading-h2-font-size: 16px;
-      --heading-h3-font-size: 14px;
-      --heading-h4-font-size: 14px;
-      --heading-color: #000;
-      --heading-h1-font-weight: 600;
-      --heading-h2-font-weight: 600;
-      --heading-h3-font-weight: 600;
-      --heading-h2-border-style: none;
-      
-      /* Links */
-      --link-color: #000;
-      --link-text-decoration: underline;
-      
-      /* Sidebar */
-      --sidebar-width: 280px;
-      --sidebar-nav-link-font-size: 14px;
-      
-      /* Code */
-      --code-inline-background: #f0f0f0;
-      --code-inline-color: #333;
-      --code-font-size: 13px;
-    }
-
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      font-family: var(--base-font-family);
+      font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: 14px;
       line-height: 1.6;
       color: #333;
+      display: flex;
+      min-height: 100vh;
     }
 
-    /* Hide the collapse/hamburger button */
-    .sidebar-toggle {
-      display: none !important;
-    }
-
-    /* Sidebar ALWAYS visible - override all states */
+    /* Sidebar */
     .sidebar {
-      transform: translateX(0) !important;
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
-      position: fixed !important;
-      left: 0 !important;
-      top: 0 !important;
-      bottom: 0 !important;
-      padding: 20px 16px !important;
-      border-right: 1px solid #ebebeb;
-      background: #f9f9f9 !important;
-      width: 280px !important;
-      overflow-y: auto !important;
-      z-index: 100 !important;
-    }
-
-    body.close .sidebar,
-    body.sticky .sidebar {
-      transform: translateX(0) !important;
-      display: block !important;
-    }
-
-    /* Adjust main content to not overlap sidebar */
-    .content {
-      margin-left: 280px !important;
-    }
-
-    /* Hide sidebar title */
-    .sidebar > h1,
-    .sidebar .app-name {
-      display: none !important;
-    }
-
-    /* Search bar */
-    .search {
-      margin: 0 0 20px 0 !important;
-      padding: 0 !important;
-    }
-
-    .search input {
-      font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif !important;
-      font-size: 14px !important;
-      padding: 10px 14px !important;
-      border: none !important;
-      border-radius: 8px !important;
-      width: 100% !important;
-      background: #ebebeb !important;
-      color: #333 !important;
-      outline: none !important;
-      transition: background 0.15s ease !important;
-    }
-
-    .search input:focus {
-      background: #e0e0e0 !important;
-    }
-
-    .search input::placeholder {
-      color: #888 !important;
-    }
-
-    .search .results-panel {
-      font-size: 14px !important;
-      border-radius: 8px !important;
-      border: 1px solid #e0e0e0 !important;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
-    }
-
-    .search .matching-post {
-      padding: 12px 14px !important;
-      border-bottom: 1px solid #eee !important;
-    }
-
-    /* Sidebar nav */
-    .sidebar-nav {
-      padding: 0 !important;
-      font-size: 14px !important;
-    }
-
-    .sidebar-nav li {
-      margin: 0 !important;
-    }
-
-    .sidebar-nav a {
-      font-size: 14px !important;
-      padding: 8px 12px !important;
-      color: #444 !important;
-      display: block;
-      border-radius: 6px;
-      transition: background 0.1s ease;
-    }
-
-    .sidebar-nav a:hover {
-      color: #000 !important;
-      background: #ebebeb !important;
-    }
-
-    .sidebar-nav li.active > a {
-      color: #000 !important;
-      font-weight: 500 !important;
-      background: #e8e8e8 !important;
-    }
-
-    .sidebar-nav ul {
-      padding-left: 12px !important;
-      margin: 0 !important;
-    }
-
-    .sidebar-nav > ul {
-      padding-left: 0 !important;
-    }
-
-    .sidebar-nav > ul > li > a {
-      font-weight: 500 !important;
-      color: #000 !important;
-    }
-
-    /* Chevron spacing */
-    .sidebar-nav li.folder > a::before {
-      margin-right: 8px !important;
-    }
-
-    /* Sidebar section headers */
-    .sidebar-nav > ul > li > p {
-      font-size: 12px !important;
-      font-weight: 600 !important;
-      color: #888 !important;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 20px 12px 8px 12px !important;
-      margin: 0 !important;
-    }
-
-    /* Content area */
-    .content {
-      padding: 32px 40px !important;
-    }
-
-    .markdown-section {
-      max-width: 800px !important;
-      font-size: 14px !important;
-    }
-
-    .markdown-section h1 {
-      font-size: 16px !important;
-      font-weight: 600 !important;
-      margin: 0 0 16px 0 !important;
-      padding: 0 !important;
-      border: none !important;
-    }
-
-    .markdown-section h2 {
-      font-size: 16px !important;
-      font-weight: 600 !important;
-      margin: 24px 0 12px 0 !important;
-      padding: 0 !important;
-      border: none !important;
-    }
-
-    .markdown-section h3 {
-      font-size: 14px !important;
-      font-weight: 600 !important;
-      margin: 20px 0 10px 0 !important;
-    }
-
-    .markdown-section p {
-      margin: 0 0 12px 0 !important;
-      font-size: 14px !important;
-    }
-
-    .markdown-section ul,
-    .markdown-section ol {
-      margin: 0 0 12px 0 !important;
-      padding-left: 24px !important;
-      font-size: 14px !important;
-    }
-
-    .markdown-section li {
-      margin: 4px 0 !important;
-    }
-
-    .markdown-section hr {
-      margin: 24px 0 !important;
-      border: none;
-      border-top: 1px solid #eee;
-    }
-
-    /* Tables */
-    .markdown-section table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0 !important;
-      font-size: 14px !important;
-    }
-
-    .markdown-section th,
-    .markdown-section td {
-      padding: 10px 12px !important;
-      text-align: left;
-      border: 1px solid #e0e0e0;
-    }
-
-    .markdown-section th {
-      background: #f5f5f5;
-      font-weight: 600;
-    }
-
-    .markdown-section tr:nth-child(even) {
-      background: #fafafa;
-    }
-
-    /* Blockquote */
-    .markdown-section blockquote {
-      margin: 16px 0 !important;
-      padding: 12px 16px !important;
-      border-left: 3px solid #ddd;
+      width: 260px;
+      min-width: 260px;
       background: #f9f9f9;
-      color: #444;
-      font-size: 14px !important;
-      border-radius: 0 6px 6px 0;
+      border-right: 1px solid #e5e5e5;
+      padding: 20px;
+      overflow-y: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
     }
 
-    .markdown-section blockquote p {
-      margin: 0 !important;
+    .sidebar a {
+      color: #333;
+      text-decoration: none;
+      display: block;
+      padding: 4px 0;
     }
 
-    /* Code blocks */
-    .markdown-section pre {
-      margin: 16px 0 !important;
-      padding: 16px !important;
-      background: #f5f5f5 !important;
-      border-radius: 8px;
-      font-size: 13px !important;
+    .sidebar a:hover {
+      color: #000;
     }
 
-    .markdown-section code {
-      font-family: 'Geist Mono', ui-monospace, monospace;
+    .sidebar .section-title {
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 8px;
+      color: #000;
+    }
+
+    .sidebar .section-title:first-child {
+      margin-top: 0;
+    }
+
+    .sidebar .sub-item {
+      padding-left: 12px;
       font-size: 13px;
+      color: #555;
     }
 
-    .markdown-section p code,
-    .markdown-section li code {
-      background: #f0f0f0;
-      padding: 2px 6px;
-      border-radius: 4px;
+    .sidebar .sub-item a {
+      color: #555;
     }
 
-    /* Checkboxes */
-    .markdown-section input[type="checkbox"] {
-      margin-right: 8px;
+    .sidebar .sub-item a:hover {
+      color: #000;
+    }
+
+    /* Main content */
+    .main {
+      margin-left: 260px;
+      flex: 1;
+      padding: 32px 40px;
+      max-width: 900px;
     }
 
     /* Breadcrumb */
     .breadcrumb {
       font-size: 13px;
-      color: #888;
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #eee;
+      color: #666;
+      margin-bottom: 20px;
     }
 
     .breadcrumb a {
-      color: #888;
+      color: #666;
       text-decoration: none;
     }
 
@@ -343,69 +100,330 @@
     }
 
     .breadcrumb span {
-      margin: 0 8px;
-      color: #ccc;
+      margin: 0 6px;
+      color: #999;
     }
 
-    /* Mobile - keep sidebar visible */
-    @media (max-width: 768px) {
-      .sidebar {
-        padding: 16px !important;
-      }
-      
-      .content {
-        padding: 20px !important;
-      }
+    /* Content */
+    h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 16px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      margin-bottom: 12px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 4px;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5e5e5;
+      margin: 24px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border: 1px solid #e0e0e0;
+    }
+
+    th {
+      background: #f5f5f5;
+      font-weight: 600;
+    }
+
+    blockquote {
+      margin: 16px 0;
+      padding: 12px 16px;
+      border-left: 3px solid #ddd;
+      background: #f9f9f9;
+      color: #555;
+    }
+
+    code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 13px;
+    }
+
+    pre {
+      background: #f5f5f5;
+      padding: 16px;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .link-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .link-list li {
+      margin-bottom: 8px;
+    }
+
+    .link-list a {
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <div id="app">Cargando...</div>
-  
+  <nav class="sidebar" id="sidebar"></nav>
+  <main class="main" id="content"></main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
-    // Breadcrumb plugin
-    function breadcrumbPlugin(hook, vm) {
-      hook.afterEach(function(html, next) {
-        var path = vm.route.path;
-        if (path === '/' || path === '') {
-          next(html);
-          return;
-        }
-        
-        var parts = path.split('/').filter(Boolean);
-        var breadcrumb = '<div class="breadcrumb"><a href="#/">Home</a>';
-        
-        if (parts.length > 0) {
-          parts.forEach(function(part, index) {
-            var name = part.replace(/-/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
-            breadcrumb += '<span>/</span>' + name;
-          });
-        }
-        
-        breadcrumb += '</div>';
-        next(breadcrumb + html);
-      });
+    // Simple router
+    const routes = {
+      '/': 'README.md',
+      '/estrategia/posicionamiento': 'estrategia/posicionamiento/README.md',
+      '/estrategia/posicionamiento/declaracion': 'estrategia/posicionamiento/declaracion.md',
+      '/estrategia/posicionamiento/motor-autoridad': 'estrategia/posicionamiento/motor-autoridad.md',
+      '/estrategia/posicionamiento/arquitectura-mensaje': 'estrategia/posicionamiento/arquitectura-mensaje.md',
+      '/estrategia/posicionamiento/voz-y-tono': 'estrategia/posicionamiento/voz-y-tono.md',
+      '/estrategia/posicionamiento/que-decimos': 'estrategia/posicionamiento/que-decimos.md',
+      '/estrategia/posicionamiento/testimonios': 'estrategia/posicionamiento/testimonios.md',
+      '/estrategia/plan-2026': 'estrategia/plan-2026/README.md',
+      '/estrategia/plan-2026/objetivo': 'estrategia/plan-2026/objetivo.md',
+      '/estrategia/plan-2026/metas': 'estrategia/plan-2026/metas.md',
+      '/estrategia/plan-2026/cambio-modelo': 'estrategia/plan-2026/cambio-modelo.md',
+      '/estrategia/plan-2026/metricas': 'estrategia/plan-2026/metricas.md',
+      '/estrategia/por-sector': 'estrategia/por-sector/README.md',
+      '/estrategia/por-sector/matriz': 'estrategia/por-sector/matriz.md',
+      '/estrategia/por-sector/enfoque': 'estrategia/por-sector/enfoque.md',
+      '/estrategia/por-sector/programas-premium': 'estrategia/por-sector/programas-premium.md',
+      '/estrategia/por-sector/los-6-sectores': 'estrategia/por-sector/los-6-sectores.md',
+      '/estrategia/notas-reuniones': 'estrategia/notas-reuniones.md',
+      '/inteligencia/panorama': 'inteligencia/panorama/README.md',
+      '/inteligencia/panorama/nfpa-652': 'inteligencia/panorama/nfpa-652.md',
+      '/inteligencia/panorama/nfpa-70e': 'inteligencia/panorama/nfpa-70e.md',
+      '/inteligencia/panorama/colombia': 'inteligencia/panorama/colombia.md',
+      '/inteligencia/panorama/proximos-cambios': 'inteligencia/panorama/proximos-cambios.md',
+      '/inteligencia/aliados': 'inteligencia/aliados/README.md',
+      '/inteligencia/aliados/activos': 'inteligencia/aliados/activos.md',
+      '/inteligencia/aliados/en-conversacion': 'inteligencia/aliados/en-conversacion.md',
+      '/inteligencia/aliados/targets': 'inteligencia/aliados/targets.md',
+      '/inteligencia/aliados/resumen': 'inteligencia/aliados/resumen.md',
+      '/inteligencia/competencia': 'inteligencia/competencia.md',
+      '/contenido/estrategia': 'contenido/estrategia.md',
+      '/contenido/calendario': 'contenido/calendario.md',
+      '/contenido/comunidades': 'contenido/comunidades.md',
+      '/contenido/linkedin': 'contenido/linkedin.md',
+      '/contenido/banco': 'contenido/banco.md',
+      '/eventos/calendario-2026': 'eventos/calendario-2026.md',
+      '/eventos/playbook-webinars': 'eventos/playbook-webinars.md',
+      '/eventos/summit-series': 'eventos/summit-series.md',
+      '/eventos/flagship': 'eventos/flagship.md',
+      '/relaciones/empresas-target': 'relaciones/empresas-target.md',
+      '/relaciones/instructores': 'relaciones/instructores.md',
+      '/relaciones/contactos': 'relaciones/contactos.md',
+      '/operaciones/portafolio': 'operaciones/portafolio.md'
+    };
+
+    // Sidebar structure
+    const sidebar = `
+      <div class="section-title"><a href="#/">Home</a></div>
+      
+      <div class="section-title">Estrategia</div>
+      <div class="sub-item"><a href="#/estrategia/posicionamiento">Posicionamiento</a></div>
+      <div class="sub-item"><a href="#/estrategia/posicionamiento/declaracion">— Declaración</a></div>
+      <div class="sub-item"><a href="#/estrategia/posicionamiento/motor-autoridad">— Motor de Autoridad</a></div>
+      <div class="sub-item"><a href="#/estrategia/posicionamiento/arquitectura-mensaje">— Arquitectura del Mensaje</a></div>
+      <div class="sub-item"><a href="#/estrategia/posicionamiento/voz-y-tono">— Voz y Tono</a></div>
+      <div class="sub-item"><a href="#/estrategia/posicionamiento/que-decimos">— Qué Decimos</a></div>
+      <div class="sub-item"><a href="#/estrategia/posicionamiento/testimonios">— Testimonios</a></div>
+      <div class="sub-item"><a href="#/estrategia/plan-2026">Plan 2026</a></div>
+      <div class="sub-item"><a href="#/estrategia/plan-2026/objetivo">— Objetivo</a></div>
+      <div class="sub-item"><a href="#/estrategia/plan-2026/metas">— Metas</a></div>
+      <div class="sub-item"><a href="#/estrategia/plan-2026/cambio-modelo">— Cambio de Modelo</a></div>
+      <div class="sub-item"><a href="#/estrategia/plan-2026/metricas">— Métricas</a></div>
+      <div class="sub-item"><a href="#/estrategia/por-sector">Por Sector</a></div>
+      <div class="sub-item"><a href="#/estrategia/por-sector/matriz">— Matriz</a></div>
+      <div class="sub-item"><a href="#/estrategia/por-sector/enfoque">— Enfoque 2026</a></div>
+      <div class="sub-item"><a href="#/estrategia/por-sector/programas-premium">— Programas Premium</a></div>
+      <div class="sub-item"><a href="#/estrategia/por-sector/los-6-sectores">— Los 6 Sectores</a></div>
+      <div class="sub-item"><a href="#/estrategia/notas-reuniones">Notas de Reuniones</a></div>
+      
+      <div class="section-title">Inteligencia</div>
+      <div class="sub-item"><a href="#/inteligencia/panorama">Panorama Regulatorio</a></div>
+      <div class="sub-item"><a href="#/inteligencia/panorama/nfpa-652">— NFPA 652</a></div>
+      <div class="sub-item"><a href="#/inteligencia/panorama/nfpa-70e">— NFPA 70E</a></div>
+      <div class="sub-item"><a href="#/inteligencia/panorama/colombia">— Colombia</a></div>
+      <div class="sub-item"><a href="#/inteligencia/panorama/proximos-cambios">— Próximos Cambios</a></div>
+      <div class="sub-item"><a href="#/inteligencia/aliados">Aliados</a></div>
+      <div class="sub-item"><a href="#/inteligencia/aliados/activos">— Activos</a></div>
+      <div class="sub-item"><a href="#/inteligencia/aliados/en-conversacion">— En Conversación</a></div>
+      <div class="sub-item"><a href="#/inteligencia/aliados/targets">— Targets</a></div>
+      <div class="sub-item"><a href="#/inteligencia/aliados/resumen">— Resumen</a></div>
+      <div class="sub-item"><a href="#/inteligencia/competencia">Competencia</a></div>
+      
+      <div class="section-title">Contenido</div>
+      <div class="sub-item"><a href="#/contenido/estrategia">Estrategia de Contenido</a></div>
+      <div class="sub-item"><a href="#/contenido/calendario">Calendario Editorial</a></div>
+      <div class="sub-item"><a href="#/contenido/comunidades">Comunidades WhatsApp</a></div>
+      <div class="sub-item"><a href="#/contenido/linkedin">Estrategia LinkedIn</a></div>
+      <div class="sub-item"><a href="#/contenido/banco">Banco de Contenido</a></div>
+      
+      <div class="section-title">Eventos</div>
+      <div class="sub-item"><a href="#/eventos/calendario-2026">Calendario 2026</a></div>
+      <div class="sub-item"><a href="#/eventos/playbook-webinars">Playbook Webinars</a></div>
+      <div class="sub-item"><a href="#/eventos/summit-series">Summit Series</a></div>
+      <div class="sub-item"><a href="#/eventos/flagship">Flagship</a></div>
+      
+      <div class="section-title">Relaciones</div>
+      <div class="sub-item"><a href="#/relaciones/empresas-target">Empresas Target</a></div>
+      <div class="sub-item"><a href="#/relaciones/instructores">Instructores</a></div>
+      <div class="sub-item"><a href="#/relaciones/contactos">Contactos Clave</a></div>
+      
+      <div class="section-title">Operaciones</div>
+      <div class="sub-item"><a href="#/operaciones/portafolio">Portafolio de Cursos</a></div>
+    `;
+
+    // Breadcrumb labels
+    const labels = {
+      'estrategia': 'Estrategia',
+      'posicionamiento': 'Posicionamiento',
+      'declaracion': 'Declaración',
+      'motor-autoridad': 'Motor de Autoridad',
+      'arquitectura-mensaje': 'Arquitectura del Mensaje',
+      'voz-y-tono': 'Voz y Tono',
+      'que-decimos': 'Qué Decimos',
+      'testimonios': 'Testimonios',
+      'plan-2026': 'Plan 2026',
+      'objetivo': 'Objetivo',
+      'metas': 'Metas',
+      'cambio-modelo': 'Cambio de Modelo',
+      'metricas': 'Métricas',
+      'por-sector': 'Por Sector',
+      'matriz': 'Matriz',
+      'enfoque': 'Enfoque 2026',
+      'programas-premium': 'Programas Premium',
+      'los-6-sectores': 'Los 6 Sectores',
+      'notas-reuniones': 'Notas de Reuniones',
+      'inteligencia': 'Inteligencia',
+      'panorama': 'Panorama Regulatorio',
+      'nfpa-652': 'NFPA 652',
+      'nfpa-70e': 'NFPA 70E',
+      'colombia': 'Colombia',
+      'proximos-cambios': 'Próximos Cambios',
+      'aliados': 'Aliados',
+      'activos': 'Activos',
+      'en-conversacion': 'En Conversación',
+      'targets': 'Targets',
+      'resumen': 'Resumen',
+      'competencia': 'Competencia',
+      'contenido': 'Contenido',
+      'estrategia': 'Estrategia de Contenido',
+      'calendario': 'Calendario Editorial',
+      'comunidades': 'Comunidades WhatsApp',
+      'linkedin': 'LinkedIn',
+      'banco': 'Banco de Contenido',
+      'eventos': 'Eventos',
+      'calendario-2026': 'Calendario 2026',
+      'playbook-webinars': 'Playbook Webinars',
+      'summit-series': 'Summit Series',
+      'flagship': 'Flagship',
+      'relaciones': 'Relaciones',
+      'empresas-target': 'Empresas Target',
+      'instructores': 'Instructores',
+      'contactos': 'Contactos Clave',
+      'operaciones': 'Operaciones',
+      'portafolio': 'Portafolio de Cursos'
+    };
+
+    function getLabel(slug) {
+      return labels[slug] || slug.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
     }
 
-    window.$docsify = {
-      name: '',
-      repo: false,
-      loadSidebar: true,
-      subMaxLevel: 2,
-      auto2top: true,
-      search: {
-        placeholder: 'Buscar...',
-        noData: 'No hay resultados',
-        depth: 3
-      },
-      plugins: [breadcrumbPlugin]
+    function buildBreadcrumb(path) {
+      if (path === '/' || path === '') return '';
+      
+      const parts = path.split('/').filter(Boolean);
+      let html = '<div class="breadcrumb"><a href="#/">Home</a>';
+      let currentPath = '';
+      
+      parts.forEach((part, i) => {
+        currentPath += '/' + part;
+        const label = getLabel(part);
+        html += '<span>/</span>';
+        if (i === parts.length - 1) {
+          html += label;
+        } else {
+          html += `<a href="#${currentPath}">${label}</a>`;
+        }
+      });
+      
+      return html + '</div>';
     }
+
+    async function loadContent(path) {
+      const file = routes[path] || routes['/'];
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error('Not found');
+        const text = await response.text();
+        const breadcrumb = buildBreadcrumb(path);
+        document.getElementById('content').innerHTML = breadcrumb + marked.parse(text);
+      } catch (e) {
+        document.getElementById('content').innerHTML = '<h1>Page not found</h1>';
+      }
+    }
+
+    function navigate() {
+      const hash = window.location.hash.slice(1) || '/';
+      loadContent(hash);
+    }
+
+    // Init
+    document.getElementById('sidebar').innerHTML = sidebar;
+    window.addEventListener('hashchange', navigate);
+    navigate();
   </script>
-  
-  <!-- Docsify -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-  
-  <!-- Search plugin -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
 </body>
 </html>
