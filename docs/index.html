@@ -50,10 +50,10 @@
       --link-text-decoration: underline;
       
       /* Sidebar */
-      --sidebar-width: 220px;
-      --sidebar-padding: 8px;
+      --sidebar-width: 280px;
+      --sidebar-padding: 12px;
       --sidebar-nav-link-font-weight: 400;
-      --sidebar-nav-link-padding: 4px 8px;
+      --sidebar-nav-link-padding: 6px 12px;
       --sidebar-nav-link-font-size: 13px;
       
       /* Code */
@@ -79,21 +79,28 @@
 
     /* Sidebar */
     .sidebar {
-      padding: 8px !important;
+      padding: 12px !important;
       border-right: 1px solid #eee;
+      overflow-x: hidden !important;
+    }
+
+    .sidebar-inner {
+      width: 100% !important;
+      overflow: hidden !important;
     }
 
     .sidebar .app-name-link {
       font-size: 14px !important;
       font-weight: 600 !important;
       color: #000 !important;
-      padding: 8px !important;
-      margin-bottom: 8px !important;
+      padding: 8px 12px !important;
+      margin-bottom: 12px !important;
       display: block;
     }
 
     .sidebar-nav {
       padding: 0 !important;
+      width: 100% !important;
     }
 
     .sidebar-nav li {
@@ -102,9 +109,12 @@
 
     .sidebar-nav a {
       font-size: 13px !important;
-      padding: 4px 8px !important;
+      padding: 6px 12px !important;
       color: #444 !important;
       display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .sidebar-nav a:hover {
@@ -117,7 +127,7 @@
     }
 
     .sidebar-nav ul {
-      padding-left: 12px !important;
+      padding-left: 16px !important;
       margin: 0 !important;
     }
 
@@ -126,34 +136,42 @@
       color: #000 !important;
     }
 
-    /* Sidebar section headers (bold items) */
+    /* Chevron spacing - add space after the arrow */
+    .sidebar-nav li.folder > a::before {
+      margin-right: 6px !important;
+    }
+
+    /* Sidebar section headers */
     .sidebar-nav > ul > li > p {
-      font-size: 12px !important;
+      font-size: 13px !important;
       font-weight: 600 !important;
-      color: #666 !important;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 12px 8px 4px 8px !important;
+      color: #333 !important;
+      padding: 16px 12px 8px 12px !important;
       margin: 0 !important;
     }
 
     /* Search */
     .search {
-      margin: 0 0 8px 0 !important;
+      margin: 0 0 16px 0 !important;
       padding: 0 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
 
     .search input {
       font-size: 13px !important;
-      padding: 6px 8px !important;
+      padding: 8px 12px !important;
       border: 1px solid #ddd !important;
       border-radius: 4px !important;
       width: 100% !important;
+      max-width: 100% !important;
       background: #fff !important;
+      box-sizing: border-box !important;
     }
 
     .search .results-panel {
       font-size: 13px !important;
+      max-width: 256px !important;
     }
 
     /* Content area */
