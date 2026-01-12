@@ -14,36 +14,31 @@
   
   <style>
     :root {
-      /* Typography */
+      /* Typography - 14px base */
       --base-font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif;
       --base-font-size: 14px;
-      --base-line-height: 1.5;
+      --base-line-height: 1.6;
       
       /* Colors */
       --base-background-color: #ffffff;
-      --sidebar-background: #fafafa;
-      --sidebar-border-color: #eee;
+      --sidebar-background: #f9f9f9;
+      --sidebar-border-color: #ebebeb;
       --sidebar-nav-link-color: #333;
       --sidebar-nav-link-color--active: #000;
-      --sidebar-nav-link-border-color--active: #000;
       
       /* Content */
       --content-max-width: 800px;
       
-      /* Headings - all 16px */
+      /* Headings */
       --heading-h1-font-size: 16px;
       --heading-h2-font-size: 16px;
-      --heading-h3-font-size: 16px;
+      --heading-h3-font-size: 14px;
       --heading-h4-font-size: 14px;
       --heading-color: #000;
       --heading-h1-font-weight: 600;
       --heading-h2-font-weight: 600;
       --heading-h3-font-weight: 600;
       --heading-h2-border-style: none;
-      --heading-h2-padding: 0;
-      --heading-h1-margin: 0 0 8px 0;
-      --heading-h2-margin: 16px 0 8px 0;
-      --heading-h3-margin: 12px 0 8px 0;
       
       /* Links */
       --link-color: #000;
@@ -51,20 +46,12 @@
       
       /* Sidebar */
       --sidebar-width: 280px;
-      --sidebar-padding: 12px;
-      --sidebar-nav-link-font-weight: 400;
-      --sidebar-nav-link-padding: 6px 12px;
-      --sidebar-nav-link-font-size: 13px;
+      --sidebar-nav-link-font-size: 14px;
       
       /* Code */
-      --code-inline-background: #f5f5f5;
+      --code-inline-background: #f0f0f0;
       --code-inline-color: #333;
-      --code-inline-padding: 2px 4px;
       --code-font-size: 13px;
-      
-      /* Blockquote */
-      --blockquote-border-color: #ddd;
-      --blockquote-background: #fafafa;
     }
 
     * {
@@ -73,89 +60,40 @@
 
     body {
       font-family: var(--base-font-family);
-      font-size: var(--base-font-size);
-      line-height: var(--base-line-height);
+      font-size: 14px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Hide the collapse/hamburger button */
+    .sidebar-toggle {
+      display: none !important;
+    }
+
+    /* Sidebar always visible */
+    body.sticky .sidebar,
+    body.close .sidebar {
+      transform: translateX(0) !important;
     }
 
     /* Sidebar */
     .sidebar {
-      padding: 12px !important;
-      border-right: 1px solid #eee;
-      overflow-x: hidden !important;
+      padding: 20px 16px !important;
+      border-right: 1px solid #ebebeb;
+      background: #f9f9f9 !important;
+      width: 280px !important;
     }
 
-    .sidebar-inner {
-      width: 100% !important;
-      overflow: hidden !important;
+    /* Hide sidebar title */
+    .sidebar > h1,
+    .sidebar .app-name {
+      display: none !important;
     }
 
-    .sidebar .app-name-link {
-      font-size: 14px !important;
-      font-weight: 600 !important;
-      color: #000 !important;
-      padding: 8px 12px !important;
-      margin-bottom: 12px !important;
-      display: block;
-    }
-
-    .sidebar-nav {
-      padding: 0 !important;
-      width: 100% !important;
-    }
-
-    .sidebar-nav li {
-      margin: 0 !important;
-    }
-
-    .sidebar-nav a {
-      font-size: 13px !important;
-      padding: 6px 12px !important;
-      color: #444 !important;
-      display: block;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .sidebar-nav a:hover {
-      color: #000 !important;
-    }
-
-    .sidebar-nav li.active > a {
-      color: #000 !important;
-      font-weight: 500 !important;
-    }
-
-    .sidebar-nav ul {
-      padding-left: 16px !important;
-      margin: 0 !important;
-    }
-
-    .sidebar-nav > ul > li > a {
-      font-weight: 500 !important;
-      color: #000 !important;
-    }
-
-    /* Chevron spacing - add space after the arrow */
-    .sidebar-nav li.folder > a::before {
-      margin-right: 6px !important;
-    }
-
-    /* Sidebar section headers */
-    .sidebar-nav > ul > li > p {
-      font-size: 13px !important;
-      font-weight: 600 !important;
-      color: #333 !important;
-      padding: 16px 12px 8px 12px !important;
-      margin: 0 !important;
-    }
-
-    /* Search - ChatGPT style */
+    /* Search bar */
     .search {
-      margin: 0 12px 20px 12px !important;
+      margin: 0 0 20px 0 !important;
       padding: 0 !important;
-      width: calc(100% - 24px) !important;
-      box-sizing: border-box !important;
     }
 
     .search input {
@@ -165,8 +103,7 @@
       border: none !important;
       border-radius: 8px !important;
       width: 100% !important;
-      background: #ececec !important;
-      box-sizing: border-box !important;
+      background: #ebebeb !important;
       color: #333 !important;
       outline: none !important;
       transition: background 0.15s ease !important;
@@ -184,34 +121,88 @@
       font-size: 14px !important;
       border-radius: 8px !important;
       border: 1px solid #e0e0e0 !important;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
     }
 
     .search .matching-post {
-      padding: 10px 14px !important;
+      padding: 12px 14px !important;
       border-bottom: 1px solid #eee !important;
     }
 
-    /* Hide sidebar title */
-    .sidebar > h1,
-    .sidebar .app-name {
-      display: none !important;
+    /* Sidebar nav */
+    .sidebar-nav {
+      padding: 0 !important;
+      font-size: 14px !important;
+    }
+
+    .sidebar-nav li {
+      margin: 0 !important;
+    }
+
+    .sidebar-nav a {
+      font-size: 14px !important;
+      padding: 8px 12px !important;
+      color: #444 !important;
+      display: block;
+      border-radius: 6px;
+      transition: background 0.1s ease;
+    }
+
+    .sidebar-nav a:hover {
+      color: #000 !important;
+      background: #ebebeb !important;
+    }
+
+    .sidebar-nav li.active > a {
+      color: #000 !important;
+      font-weight: 500 !important;
+      background: #e8e8e8 !important;
+    }
+
+    .sidebar-nav ul {
+      padding-left: 12px !important;
+      margin: 0 !important;
+    }
+
+    .sidebar-nav > ul {
+      padding-left: 0 !important;
+    }
+
+    .sidebar-nav > ul > li > a {
+      font-weight: 500 !important;
+      color: #000 !important;
+    }
+
+    /* Chevron spacing */
+    .sidebar-nav li.folder > a::before {
+      margin-right: 8px !important;
+    }
+
+    /* Sidebar section headers */
+    .sidebar-nav > ul > li > p {
+      font-size: 12px !important;
+      font-weight: 600 !important;
+      color: #888 !important;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 20px 12px 8px 12px !important;
+      margin: 0 !important;
     }
 
     /* Content area */
     .content {
-      padding: 16px 24px !important;
+      padding: 32px 40px !important;
     }
 
     .markdown-section {
       max-width: 800px !important;
-      padding: 0 !important;
+      font-size: 14px !important;
     }
 
     .markdown-section h1 {
       font-size: 16px !important;
       font-weight: 600 !important;
-      margin: 0 0 8px 0 !important;
+      margin: 0 0 16px 0 !important;
       padding: 0 !important;
       border: none !important;
     }
@@ -219,7 +210,7 @@
     .markdown-section h2 {
       font-size: 16px !important;
       font-weight: 600 !important;
-      margin: 16px 0 8px 0 !important;
+      margin: 24px 0 12px 0 !important;
       padding: 0 !important;
       border: none !important;
     }
@@ -227,26 +218,27 @@
     .markdown-section h3 {
       font-size: 14px !important;
       font-weight: 600 !important;
-      margin: 12px 0 8px 0 !important;
-      padding: 0 !important;
+      margin: 20px 0 10px 0 !important;
     }
 
     .markdown-section p {
-      margin: 0 0 8px 0 !important;
+      margin: 0 0 12px 0 !important;
+      font-size: 14px !important;
     }
 
     .markdown-section ul,
     .markdown-section ol {
-      margin: 0 0 8px 0 !important;
-      padding-left: 20px !important;
+      margin: 0 0 12px 0 !important;
+      padding-left: 24px !important;
+      font-size: 14px !important;
     }
 
     .markdown-section li {
-      margin: 2px 0 !important;
+      margin: 4px 0 !important;
     }
 
     .markdown-section hr {
-      margin: 16px 0 !important;
+      margin: 24px 0 !important;
       border: none;
       border-top: 1px solid #eee;
     }
@@ -255,13 +247,13 @@
     .markdown-section table {
       width: 100%;
       border-collapse: collapse;
-      margin: 8px 0 !important;
-      font-size: 13px;
+      margin: 16px 0 !important;
+      font-size: 14px !important;
     }
 
     .markdown-section th,
     .markdown-section td {
-      padding: 6px 8px !important;
+      padding: 10px 12px !important;
       text-align: left;
       border: 1px solid #e0e0e0;
     }
@@ -277,11 +269,13 @@
 
     /* Blockquote */
     .markdown-section blockquote {
-      margin: 8px 0 !important;
-      padding: 8px 12px !important;
+      margin: 16px 0 !important;
+      padding: 12px 16px !important;
       border-left: 3px solid #ddd;
-      background: #fafafa;
+      background: #f9f9f9;
       color: #444;
+      font-size: 14px !important;
+      border-radius: 0 6px 6px 0;
     }
 
     .markdown-section blockquote p {
@@ -290,10 +284,10 @@
 
     /* Code blocks */
     .markdown-section pre {
-      margin: 8px 0 !important;
-      padding: 12px !important;
+      margin: 16px 0 !important;
+      padding: 16px !important;
       background: #f5f5f5 !important;
-      border-radius: 4px;
+      border-radius: 8px;
       font-size: 13px !important;
     }
 
@@ -302,22 +296,29 @@
       font-size: 13px;
     }
 
-    /* Checkboxes */
-    .markdown-section input[type="checkbox"] {
-      margin-right: 6px;
+    .markdown-section p code,
+    .markdown-section li code {
+      background: #f0f0f0;
+      padding: 2px 6px;
+      border-radius: 4px;
     }
 
-    /* Breadcrumb styles */
+    /* Checkboxes */
+    .markdown-section input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    /* Breadcrumb */
     .breadcrumb {
-      font-size: 12px;
-      color: #666;
-      margin-bottom: 12px;
-      padding-bottom: 8px;
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
       border-bottom: 1px solid #eee;
     }
 
     .breadcrumb a {
-      color: #666;
+      color: #888;
       text-decoration: none;
     }
 
@@ -327,18 +328,18 @@
     }
 
     .breadcrumb span {
-      margin: 0 6px;
-      color: #999;
+      margin: 0 8px;
+      color: #ccc;
     }
 
-    /* Mobile */
+    /* Mobile - keep sidebar visible */
     @media (max-width: 768px) {
       .sidebar {
-        padding: 8px !important;
+        padding: 16px !important;
       }
       
       .content {
-        padding: 12px 16px !important;
+        padding: 20px !important;
       }
     }
   </style>
@@ -362,7 +363,6 @@
         if (parts.length > 0) {
           parts.forEach(function(part, index) {
             var name = part.replace(/-/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
-            // All parts are just text, no links (folders don't have index pages)
             breadcrumb += '<span>/</span>' + name;
           });
         }
