@@ -153,8 +153,8 @@
     /* Search */
     .search {
       margin: 0 0 16px 0 !important;
-      padding: 0 !important;
-      width: 100% !important;
+      padding: 0 12px !important;
+      width: calc(100% - 24px) !important;
       box-sizing: border-box !important;
     }
 
@@ -164,14 +164,18 @@
       border: 1px solid #ddd !important;
       border-radius: 4px !important;
       width: 100% !important;
-      max-width: 100% !important;
       background: #fff !important;
       box-sizing: border-box !important;
     }
 
     .search .results-panel {
       font-size: 13px !important;
-      max-width: 256px !important;
+    }
+
+    /* Hide sidebar title */
+    .sidebar > h1,
+    .sidebar .app-name {
+      display: none !important;
     }
 
     /* Content area */
@@ -336,16 +340,10 @@
         var breadcrumb = '<div class="breadcrumb"><a href="#/">Home</a>';
         
         if (parts.length > 0) {
-          var currentPath = '';
           parts.forEach(function(part, index) {
-            currentPath += '/' + part;
             var name = part.replace(/-/g, ' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
-            
-            if (index === parts.length - 1) {
-              breadcrumb += '<span>/</span>' + name;
-            } else {
-              breadcrumb += '<span>/</span><a href="#' + currentPath + '/">' + name + '</a>';
-            }
+            // All parts are just text, no links (folders don't have index pages)
+            breadcrumb += '<span>/</span>' + name;
           });
         }
         
@@ -355,7 +353,7 @@
     }
 
     window.$docsify = {
-      name: 'Elite Training',
+      name: '',
       repo: false,
       loadSidebar: true,
       subMaxLevel: 2,
