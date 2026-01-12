@@ -150,26 +150,46 @@
       margin: 0 !important;
     }
 
-    /* Search */
+    /* Search - ChatGPT style */
     .search {
-      margin: 0 0 16px 0 !important;
-      padding: 0 12px !important;
+      margin: 0 12px 20px 12px !important;
+      padding: 0 !important;
       width: calc(100% - 24px) !important;
       box-sizing: border-box !important;
     }
 
     .search input {
-      font-size: 13px !important;
-      padding: 8px 12px !important;
-      border: 1px solid #ddd !important;
-      border-radius: 4px !important;
+      font-family: 'Geist', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 14px !important;
+      padding: 10px 14px !important;
+      border: none !important;
+      border-radius: 8px !important;
       width: 100% !important;
-      background: #fff !important;
+      background: #ececec !important;
       box-sizing: border-box !important;
+      color: #333 !important;
+      outline: none !important;
+      transition: background 0.15s ease !important;
+    }
+
+    .search input:focus {
+      background: #e0e0e0 !important;
+    }
+
+    .search input::placeholder {
+      color: #888 !important;
     }
 
     .search .results-panel {
-      font-size: 13px !important;
+      font-size: 14px !important;
+      border-radius: 8px !important;
+      border: 1px solid #e0e0e0 !important;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+    }
+
+    .search .matching-post {
+      padding: 10px 14px !important;
+      border-bottom: 1px solid #eee !important;
     }
 
     /* Hide sidebar title */
