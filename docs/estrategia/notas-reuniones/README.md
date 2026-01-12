@@ -4,7 +4,7 @@ Archivo historico de todas las reuniones del proyecto Elite Training 2026.
 
 ---
 
-## Indice de Reuniones
+## Indice
 
 - [Reunion 1 - Kick-off (Diciembre 6, 2025)](notas-reuniones/reunion-01.md)
 - [Reunion 2 - Revision de Propuesta (Diciembre 11, 2025)](notas-reuniones/reunion-02.md)
@@ -13,16 +13,3 @@ Archivo historico de todas las reuniones del proyecto Elite Training 2026.
 - [Reunion 5 - Primera Reunion 2026 (Enero 6, 2026)](notas-reuniones/reunion-05.md)
 - [Reunion 6 - Avances de Enero (Enero 8, 2026)](notas-reuniones/reunion-06.md)
 
----
-
-## Formato de Notas
-
-Cada nota de reunion debe incluir:
-
-| Campo | Descripcion |
-|-------|-------------|
-| Fecha | Fecha de la reunion |
-| Contexto | Por que se convoco la reunion |
-| Notas | Puntos discutidos |
-| Acuerdos | Decisiones tomadas |
-| Proximos Pasos | Acciones pendientes |
