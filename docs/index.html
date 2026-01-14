@@ -24,6 +24,101 @@
       min-height: 100vh;
     }
 
+    /* Login Screen */
+    .login-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fafafa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .login-screen.hidden {
+      display: none;
+    }
+
+    .login-box {
+      background: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      width: 100%;
+      max-width: 360px;
+      text-align: center;
+    }
+
+    .login-box h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #111;
+    }
+
+    .login-box p {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 24px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 14px;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .login-box input:focus {
+      border-color: #333;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px 14px;
+      font-size: 14px;
+      background: #111;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: inherit;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .login-box button:hover {
+      background: #333;
+    }
+
+    .login-error {
+      color: #dc2626;
+      font-size: 13px;
+      margin-top: 12px;
+      display: none;
+    }
+
+    .login-error.visible {
+      display: block;
+    }
+
+    .app-container {
+      display: none;
+      width: 100%;
+    }
+
+    .app-container.visible {
+      display: flex;
+    }
+
     /* Sidebar */
     .sidebar {
       width: 260px;
@@ -215,11 +310,62 @@
   </style>
 </head>
 <body>
-  <nav class="sidebar" id="sidebar"></nav>
-  <main class="main" id="content"></main>
+  <!-- Login Screen -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-box">
+      <h1>Elite Training</h1>
+      <p>Command Center 2026</p>
+      <input type="password" id="passwordInput" placeholder="Password" autocomplete="off">
+      <button onclick="checkPassword()">Entrar</button>
+      <div class="login-error" id="loginError">Password incorrecto</div>
+    </div>
+  </div>
+
+  <!-- Main App -->
+  <div class="app-container" id="appContainer">
+    <nav class="sidebar" id="sidebar"></nav>
+    <main class="main" id="content"></main>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script>
+    // Password protection
+    const CORRECT_PASSWORD = 'elite2026';
+    
+    function checkPassword() {
+      const input = document.getElementById('passwordInput');
+      const error = document.getElementById('loginError');
+      
+      if (input.value === CORRECT_PASSWORD) {
+        sessionStorage.setItem('elite_auth', 'true');
+        showApp();
+      } else {
+        error.classList.add('visible');
+        input.value = '';
+        input.focus();
+      }
+    }
+    
+    function showApp() {
+      document.getElementById('loginScreen').classList.add('hidden');
+      document.getElementById('appContainer').classList.add('visible');
+    }
+    
+    function checkAuth() {
+      if (sessionStorage.getItem('elite_auth') === 'true') {
+        showApp();
+      }
+    }
+    
+    // Allow Enter key to submit
+    document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        checkPassword();
+      }
+    });
+    
+    // Check if already authenticated
+    checkAuth();
     // Simple router
     const routes = {
       '/': 'README.md',
