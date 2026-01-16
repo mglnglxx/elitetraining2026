@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Training | Formación Técnica para Oil & Gas</title>
-    <meta name="description" content="Programas de formación técnica especializada para equipos de producción, perforación, facilidades y mantenimiento en la industria petrolera. 29 años formando profesionales.">
+    <meta name="description" content="La autoridad en formación técnica para la industria de hidrocarburos. 29 años desarrollando competencias críticas para operaciones de producción, perforación y mantenimiento.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,6 @@
     
     <style>
         :root {
-            /* Elite Training Brand Colors */
             --primary: #293370;
             --primary-dark: #1a2250;
             --primary-light: #3a4590;
@@ -21,7 +20,6 @@
             --accent-light: #f0b44a;
             --accent-dark: #c4841c;
             
-            /* Neutrals */
             --white: #ffffff;
             --gray-50: #f8f9fa;
             --gray-100: #f1f3f5;
@@ -34,11 +32,9 @@
             --gray-800: #343a40;
             --gray-900: #212529;
             
-            /* Typography */
             --font-primary: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
             
-            /* Spacing */
-            --section-padding: clamp(4rem, 8vw, 7rem);
+            --section-padding: clamp(4rem, 8vw, 6rem);
             --container-max: 1200px;
             --container-padding: clamp(1.5rem, 4vw, 3rem);
         }
@@ -60,7 +56,6 @@
             color: var(--gray-800);
             background: var(--white);
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
         
         .container {
@@ -77,37 +72,36 @@
             right: 0;
             z-index: 1000;
             background: var(--white);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            border-bottom: 1px solid var(--gray-200);
             transition: all 0.3s ease;
         }
         
         .header.scrolled {
-            box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
         }
         
         .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.75rem 0;
+            height: 72px;
         }
         
         .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
             text-decoration: none;
         }
         
         .logo svg {
-            height: 48px;
+            height: 44px;
             width: auto;
         }
         
         .header-nav {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 2.5rem;
         }
         
         .header-nav a {
@@ -126,7 +120,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.65rem 1.25rem;
+            padding: 0.6rem 1.25rem;
             background: var(--accent);
             color: var(--white);
             font-weight: 500;
@@ -138,7 +132,6 @@
         
         .header-cta:hover {
             background: var(--accent-dark);
-            transform: translateY(-1px);
         }
         
         .header-cta svg {
@@ -146,32 +139,21 @@
             height: 16px;
         }
         
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
             .header-nav {
                 display: none;
             }
         }
         
-        /* ==================== HERO ==================== */
+        /* ==================== HERO - LR Inspired ==================== */
         .hero {
-            position: relative;
-            min-height: 100vh;
+            padding-top: 72px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+            min-height: 85vh;
             display: flex;
             align-items: center;
-            background: var(--primary);
+            position: relative;
             overflow: hidden;
-            padding-top: 80px;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
         }
         
         .hero::after {
@@ -180,66 +162,59 @@
             bottom: 0;
             left: 0;
             right: 0;
-            height: 6px;
+            height: 5px;
             background: var(--accent);
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+        }
+        
+        @media (max-width: 1000px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
         }
         
         .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 650px;
+            max-width: 640px;
         }
         
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(225, 154, 36, 0.15);
-            border: 1px solid rgba(225, 154, 36, 0.3);
-            border-radius: 4px;
-            color: var(--accent-light);
-            font-size: 0.8rem;
+        .hero-eyebrow {
+            color: var(--accent);
+            font-size: 0.95rem;
             font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
-            animation: fadeInUp 0.6s ease-out;
+            margin-bottom: 1.25rem;
+            letter-spacing: 0.01em;
         }
         
         .hero h1 {
-            font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-            font-weight: 700;
-            line-height: 1.15;
+            font-size: clamp(2.5rem, 4.5vw, 3.25rem);
+            font-weight: 400;
+            line-height: 1.2;
             color: var(--white);
-            margin-bottom: 1.25rem;
-            animation: fadeInUp 0.6s ease-out 0.1s both;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
         }
         
-        .hero h1 span {
-            color: var(--accent);
-        }
-        
-        .hero-subtitle {
-            font-size: clamp(1rem, 1.5vw, 1.15rem);
+        .hero-description {
+            font-size: 1.1rem;
             color: rgba(255,255,255,0.8);
-            line-height: 1.7;
+            line-height: 1.75;
             margin-bottom: 2rem;
             font-weight: 300;
-            animation: fadeInUp 0.6s ease-out 0.2s both;
+            max-width: 560px;
         }
         
-        .hero-ctas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            animation: fadeInUp 0.6s ease-out 0.3s both;
-        }
-        
-        .btn-primary {
+        .hero-cta {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.75rem;
             padding: 0.9rem 1.75rem;
             background: var(--accent);
             color: var(--white);
@@ -248,51 +223,122 @@
             text-decoration: none;
             border-radius: 4px;
             transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
         }
         
-        .btn-primary:hover {
+        .hero-cta:hover {
             background: var(--accent-light);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(225, 154, 36, 0.35);
+            transform: translateY(-1px);
         }
         
-        .btn-secondary {
+        .hero-cta svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.2s ease;
+        }
+        
+        .hero-cta:hover svg {
+            transform: translateX(3px);
+        }
+        
+        /* Hero Sidebar - Key Points */
+        .hero-sidebar {
+            background: rgba(255,255,255,0.03);
+            border-left: 1px solid rgba(255,255,255,0.1);
+            padding: 2rem 0 2rem 2rem;
+        }
+        
+        @media (max-width: 1000px) {
+            .hero-sidebar {
+                border-left: none;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                padding: 2rem 0 0 0;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+            }
+        }
+        
+        .hero-point {
+            padding-left: 1rem;
+            border-left: 3px solid var(--accent);
+            margin-bottom: 1.75rem;
+        }
+        
+        .hero-point:last-child {
+            margin-bottom: 0;
+        }
+        
+        @media (max-width: 1000px) {
+            .hero-point {
+                margin-bottom: 0;
+            }
+        }
+        
+        .hero-point h4 {
+            color: var(--white);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 0.35rem;
+        }
+        
+        .hero-point p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+        
+        /* ==================== PORTAL CTA SECTION ==================== */
+        .portal-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: 3rem 0;
+        }
+        
+        .portal-cta-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .portal-cta h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+        
+        .portal-cta p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+        
+        .portal-cta-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.6rem;
-            padding: 0.9rem 1.75rem;
-            background: transparent;
+            gap: 0.5rem;
             color: var(--white);
-            font-weight: 500;
             font-size: 0.95rem;
+            font-weight: 500;
             text-decoration: none;
-            border-radius: 4px;
-            border: 2px solid rgba(255,255,255,0.3);
-            transition: all 0.2s ease;
+            transition: gap 0.2s ease;
         }
         
-        .btn-secondary:hover {
-            border-color: var(--white);
-            background: rgba(255,255,255,0.1);
+        .portal-cta-link:hover {
+            gap: 0.75rem;
         }
         
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .portal-cta-link svg {
+            width: 18px;
+            height: 18px;
         }
         
         /* ==================== CREDENTIALS BAR ==================== */
         .credentials {
             background: var(--gray-50);
-            padding: 2rem 0;
+            padding: 1.75rem 0;
             border-bottom: 1px solid var(--gray-200);
         }
         
@@ -301,20 +347,20 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 2rem 3rem;
+            gap: 1.5rem 2.5rem;
         }
         
         .credential-item {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.5rem;
             color: var(--gray-600);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         .credential-item svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             color: var(--accent);
             flex-shrink: 0;
         }
@@ -324,41 +370,46 @@
             font-weight: 600;
         }
         
-        /* ==================== CLIENTS ==================== */
-        .clients {
+        /* ==================== CATEGORY FILTER ==================== */
+        .categories {
+            padding: 2.5rem 0;
             background: var(--white);
-            padding: 3rem 0;
             border-bottom: 1px solid var(--gray-200);
         }
         
-        .clients-label {
-            text-align: center;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--gray-500);
-            margin-bottom: 1.5rem;
+        .categories-inner {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .categories-label {
+            font-size: 0.85rem;
+            color: var(--gray-600);
             font-weight: 500;
         }
         
-        .clients-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 2rem 3rem;
+        .category-pill {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-weight: 500;
         }
         
-        .client-logo {
-            height: 28px;
-            opacity: 0.5;
-            filter: grayscale(100%);
-            transition: all 0.3s ease;
+        .category-pill:hover {
+            border-color: var(--primary);
+            background: var(--gray-50);
         }
         
-        .client-logo:hover {
-            opacity: 0.8;
-            filter: grayscale(0%);
+        .category-pill.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
         }
         
         /* ==================== SECTIONS ==================== */
@@ -375,32 +426,22 @@
         }
         
         .section-header {
-            max-width: 680px;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
         
         .section-header.centered {
             text-align: center;
+            max-width: 680px;
             margin-left: auto;
             margin-right: auto;
         }
         
-        .section-label {
-            display: inline-block;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-        
         .section-title {
-            font-size: clamp(1.5rem, 3vw, 2.25rem);
-            font-weight: 700;
-            color: var(--primary);
-            line-height: 1.25;
-            margin-bottom: 1rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 400;
+            color: var(--gray-900);
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
         }
         
         .section--dark .section-title {
@@ -418,192 +459,87 @@
             color: rgba(255,255,255,0.7);
         }
         
-        /* ==================== PROBLEM CARDS ==================== */
-        .problem-grid {
+        /* ==================== PROGRAM CARDS - Grid ==================== */
+        .programs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 1.5rem;
         }
         
-        .problem-card {
-            padding: 1.75rem;
+        .program-card {
             background: var(--white);
             border-radius: 6px;
-            border-left: 4px solid var(--accent);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-            transition: all 0.3s ease;
-        }
-        
-        .problem-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-        }
-        
-        .problem-card h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.6rem;
-        }
-        
-        .problem-card p {
-            font-size: 0.9rem;
-            color: var(--gray-600);
-            line-height: 1.6;
-        }
-        
-        /* ==================== PROGRAMS ==================== */
-        .programs-grid {
-            display: grid;
-            gap: 1.25rem;
-        }
-        
-        .program-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px;
             overflow: hidden;
+            border: 1px solid var(--gray-200);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
         .program-card:hover {
-            border-color: rgba(225, 154, 36, 0.4);
-            background: rgba(255,255,255,0.06);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
         }
         
-        .program-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.25rem;
-            padding: 1.5rem;
-            cursor: pointer;
+        .program-card-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            padding: 1.25rem 1.5rem;
+            position: relative;
         }
         
-        .program-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--accent);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .program-icon svg {
-            width: 24px;
-            height: 24px;
+        .program-card-tag {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 500;
             color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         
-        .program-info {
+        .program-card-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .program-card h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+            line-height: 1.35;
+        }
+        
+        .program-card p {
+            font-size: 0.9rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
             flex: 1;
         }
         
-        .program-info h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--white);
-            margin-bottom: 0.4rem;
-        }
-        
-        .program-info p {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-            line-height: 1.5;
-            margin-bottom: 0.75rem;
-        }
-        
-        .program-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-        }
-        
-        .program-tag {
-            padding: 0.25rem 0.6rem;
-            background: rgba(225, 154, 36, 0.15);
-            color: var(--accent-light);
-            font-size: 0.7rem;
-            font-weight: 500;
-            border-radius: 3px;
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
-        }
-        
-        .program-toggle {
-            display: flex;
+        .program-card-link {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
-            flex-shrink: 0;
-            transition: all 0.3s ease;
-        }
-        
-        .program-toggle svg {
-            width: 18px;
-            height: 18px;
-            color: rgba(255,255,255,0.5);
-            transition: transform 0.3s ease;
-        }
-        
-        .program-card.active .program-toggle {
-            background: var(--accent);
-        }
-        
-        .program-card.active .program-toggle svg {
-            color: var(--white);
-            transform: rotate(180deg);
-        }
-        
-        .program-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease;
-        }
-        
-        .program-card.active .program-content {
-            max-height: 600px;
-        }
-        
-        .program-list {
-            padding: 0 1.5rem 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.08);
-        }
-        
-        .program-list ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 0.5rem;
-            padding-top: 1rem;
+            color: var(--primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: gap 0.2s ease;
         }
         
-        .program-list li {
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            padding: 0.6rem 0.8rem;
-            background: rgba(255,255,255,0.03);
-            border-radius: 4px;
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.8);
-            transition: all 0.2s ease;
+        .program-card-link:hover {
+            gap: 0.75rem;
         }
         
-        .program-list li:hover {
-            background: rgba(225, 154, 36, 0.1);
-            color: var(--white);
-        }
-        
-        .program-list li svg {
-            width: 14px;
-            height: 14px;
-            color: var(--accent);
-            flex-shrink: 0;
+        .program-card-link svg {
+            width: 16px;
+            height: 16px;
         }
         
         /* ==================== METHODOLOGY ==================== */
@@ -626,7 +562,6 @@
         }
         
         .method-step {
-            position: relative;
             padding: 2rem 1.5rem;
             text-align: center;
             background: var(--white);
@@ -638,18 +573,17 @@
         .method-step:hover {
             z-index: 1;
             border-color: var(--accent);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
         
         .method-number {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             background: var(--primary);
             color: var(--accent);
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 700;
             border-radius: 50%;
             margin-bottom: 1rem;
@@ -657,8 +591,8 @@
         
         .method-step h4 {
             font-size: 1rem;
-            font-weight: 600;
-            color: var(--primary);
+            font-weight: 500;
+            color: var(--gray-900);
             margin-bottom: 0.5rem;
         }
         
@@ -668,140 +602,78 @@
             line-height: 1.5;
         }
         
-        /* ==================== DIFFERENTIATORS ==================== */
-        .diff-grid {
+        /* ==================== WHY US ==================== */
+        .why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
         }
         
-        .diff-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid var(--gray-200);
-            transition: all 0.3s ease;
+        .why-card {
+            padding: 1.75rem;
+            border-left: 3px solid var(--accent);
+            background: rgba(255,255,255,0.03);
         }
         
-        .diff-card:hover {
-            border-color: var(--accent);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        .why-card h3 {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: 0.6rem;
         }
         
-        .diff-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-        }
-        
-        .diff-icon svg {
-            width: 28px;
-            height: 28px;
-            color: var(--accent);
-        }
-        
-        .diff-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-        
-        .diff-card p {
+        .why-card p {
             font-size: 0.9rem;
-            color: var(--gray-600);
-            line-height: 1.65;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+            font-weight: 300;
         }
         
         /* ==================== CTA SECTION ==================== */
         .cta-section {
             padding: var(--section-padding) 0;
+            background: var(--gray-50);
+        }
+        
+        .cta-box {
             background: var(--primary);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 50%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(225, 154, 36, 0.1) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        
-        .cta-content {
-            position: relative;
-            z-index: 1;
-            max-width: 640px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .cta-content h2 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-        
-        .cta-content p {
-            font-size: 1rem;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-        
-        .cta-contact {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .cta-contact-item {
-            display: flex;
+            border-radius: 8px;
+            padding: 3rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
             align-items: center;
-            gap: 0.5rem;
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-            text-decoration: none;
-            transition: color 0.2s ease;
         }
         
-        .cta-contact-item:hover {
+        @media (max-width: 768px) {
+            .cta-box {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+        
+        .cta-box h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
             color: var(--white);
+            margin-bottom: 0.75rem;
         }
         
-        .cta-contact-item svg {
-            width: 18px;
-            height: 18px;
-            color: var(--accent);
+        .cta-box p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.75);
+            font-weight: 300;
+            max-width: 500px;
+        }
+        
+        .cta-box .hero-cta {
+            white-space: nowrap;
         }
         
         /* ==================== FOOTER ==================== */
         .footer {
             background: var(--primary-dark);
-            padding: 2rem 0;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 2.5rem 0;
         }
         
         .footer-inner {
@@ -809,28 +681,28 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         
         .footer-brand {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 1rem;
         }
         
         .footer-brand svg {
-            height: 32px;
+            height: 36px;
             width: auto;
         }
         
         .footer-text {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             color: rgba(255,255,255,0.5);
         }
         
         .footer-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
         
         .footer-links a {
@@ -844,38 +716,33 @@
             color: var(--accent);
         }
         
-        /* ==================== RESPONSIVE ==================== */
+        .footer-contact {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-contact a {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-contact a:hover {
+            color: var(--white);
+        }
+        
+        .footer-contact svg {
+            width: 16px;
+            height: 16px;
+            color: var(--accent);
+        }
+        
         @media (max-width: 768px) {
-            .hero-content {
-                text-align: center;
-            }
-            
-            .hero-ctas {
-                justify-content: center;
-            }
-            
-            .credentials-inner {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .program-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .program-icon {
-                margin: 0 auto;
-            }
-            
-            .program-toggle {
-                display: none;
-            }
-            
-            .program-content {
-                max-height: none;
-            }
-            
             .footer-inner {
                 flex-direction: column;
                 text-align: center;
@@ -885,7 +752,7 @@
         /* ==================== UTILITIES ==================== */
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(15px);
             transition: opacity 0.5s ease, transform 0.5s ease;
         }
         
@@ -911,48 +778,74 @@
                     <a href="#programas">Programas</a>
                     <a href="#metodologia">Metodologia</a>
                     <a href="#nosotros">Nosotros</a>
-                    <a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a>
+                    <a href="https://hidrocarburos.com.co" target="_blank">Ver todos los cursos</a>
                 </nav>
                 
-                <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20programas%20de%20formaci%C3%B3n%20para%20Oil%20%26%20Gas" class="header-cta" target="_blank">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20agendar%20una%20llamada%20para%20conocer%20m%C3%A1s%20sobre%20los%20programas%20de%20formaci%C3%B3n" class="header-cta" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.8.33 1.6.59 2.36a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.76.26 1.56.46 2.36.59A2 2 0 0 1 22 16.92z"/>
                     </svg>
-                    Conversemos
+                    Contactar
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section - LR Inspired -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    Proveedor autorizado ASME desde 2004
-                </div>
-                <h1>Formacion tecnica especializada para <span>Oil & Gas</span></h1>
-                <p class="hero-subtitle">Desarrollamos las competencias criticas que su operacion necesita. Programas cerrados y semicerrados para equipos de produccion, perforacion, facilidades y mantenimiento.</p>
-                <div class="hero-ctas">
-                    <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20agendar%20una%20sesi%C3%B3n%20de%20diagn%C3%B3stico%20para%20programas%20de%20formaci%C3%B3n%20Oil%20%26%20Gas" class="btn-primary" target="_blank">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                        </svg>
-                        Agendar diagnostico
-                    </a>
-                    <a href="#programas" class="btn-secondary">
-                        Ver programas
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <p class="hero-eyebrow">Formacion tecnica para la industria de hidrocarburos</p>
+                    <h1>Desarrolle las competencias criticas que su operacion necesita</h1>
+                    <p class="hero-description">Disenamos cada programa de formacion en torno a lo que realmente importa para su equipo—ya sea cerrar brechas de competencias, prepararse para auditorias o cumplir nuevos requisitos regulatorios. Con instructores que conocen la realidad operativa, obtendra conocimiento aplicable de inmediato.</p>
+                    <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20agendar%20una%20llamada%20para%20explorar%20opciones%20de%20formaci%C3%B3n%20para%20mi%20equipo" class="hero-cta" target="_blank">
+                        Agendar llamada
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="5" y1="12" x2="19" y2="12"/>
                             <polyline points="12 5 19 12 12 19"/>
                         </svg>
                     </a>
                 </div>
+                
+                <div class="hero-sidebar">
+                    <div class="hero-point">
+                        <h4>Programas cerrados y a medida</h4>
+                        <p>Contenido adaptado a su operacion, sus equipos, sus desafios especificos.</p>
+                    </div>
+                    <div class="hero-point">
+                        <h4>Proveedor autorizado ASME desde 2004</h4>
+                        <p>Certificaciones con respaldo internacional para codigos y estandares.</p>
+                    </div>
+                    <div class="hero-point">
+                        <h4>Instructores con experiencia operativa</h4>
+                        <p>Han trabajado en plantas, campos y facilidades como las suyas.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Credentials Bar -->
+    <!-- Portal CTA -->
+    <section class="portal-cta">
+        <div class="container">
+            <div class="portal-cta-inner">
+                <div>
+                    <h3>Explore todo nuestro catalogo de cursos</h3>
+                    <p>Acceda al campus virtual para ver fechas, inscribirse y gestionar su formacion.</p>
+                </div>
+                <a href="https://hidrocarburos.com.co" class="portal-cta-link" target="_blank">
+                    Ir al campus
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Credentials -->
     <section class="credentials">
         <div class="container">
             <div class="credentials-inner">
@@ -983,7 +876,7 @@
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                         <circle cx="12" cy="10" r="3"/>
                     </svg>
-                    <span><strong>11+ paises</strong> en LATAM</span>
+                    <span><strong>11+ paises</strong></span>
                 </div>
                 <div class="credential-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -996,264 +889,94 @@
         </div>
     </section>
 
-    <!-- Clients Section -->
-    <section class="clients">
+    <!-- Category Filter -->
+    <section class="categories" id="programas">
         <div class="container">
-            <p class="clients-label">Confian en nosotros</p>
-            <div class="clients-grid">
-                <svg class="client-logo" viewBox="0 0 120 40" fill="#333">
-                    <text x="0" y="26" font-family="Roboto, sans-serif" font-size="13" font-weight="bold">ECOPETROL</text>
-                </svg>
-                <svg class="client-logo" viewBox="0 0 60 40" fill="#333">
-                    <text x="0" y="26" font-family="Roboto, sans-serif" font-size="13" font-weight="bold">OXY</text>
-                </svg>
-                <svg class="client-logo" viewBox="0 0 90 40" fill="#333">
-                    <text x="0" y="26" font-family="Roboto, sans-serif" font-size="13" font-weight="bold">GEOPARK</text>
-                </svg>
-                <svg class="client-logo" viewBox="0 0 100 40" fill="#333">
-                    <text x="0" y="26" font-family="Roboto, sans-serif" font-size="13" font-weight="bold">FRONTERA</text>
-                </svg>
-                <svg class="client-logo" viewBox="0 0 50 40" fill="#333">
-                    <text x="0" y="26" font-family="Roboto, sans-serif" font-size="13" font-weight="bold">TGI</text>
-                </svg>
-                <svg class="client-logo" viewBox="0 0 80 40" fill="#333">
-                    <text x="0" y="26" font-family="Roboto, sans-serif" font-size="13" font-weight="bold">OCENSA</text>
-                </svg>
-                <svg class="client-logo" viewBox="0 0 80 40" fill="#333">
-                    <text x="0" y="26" font-family="Roboto, sans-serif" font-size="13" font-weight="bold">REPSOL</text>
-                </svg>
-                <svg class="client-logo" viewBox="0 0 40 40" fill="#333">
-                    <text x="0" y="26" font-family="Roboto, sans-serif" font-size="13" font-weight="bold">ISA</text>
-                </svg>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="section section--gray">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">El desafio</span>
-                <h2 class="section-title">La formacion tecnica en Oil & Gas no puede ser generica</h2>
-                <p class="section-subtitle">Su operacion enfrenta desafios especificos que requieren competencias especificas. Entendemos la realidad de campos, plantas y facilidades.</p>
-            </div>
-            
-            <div class="problem-grid">
-                <div class="problem-card fade-in">
-                    <h3>Transferencia generacional de conocimiento</h3>
-                    <p>El personal experimentado se retira y el conocimiento operativo critico no esta documentado ni transferido a las nuevas generaciones.</p>
-                </div>
-                <div class="problem-card fade-in">
-                    <h3>Presion regulatoria creciente</h3>
-                    <p>Nuevas resoluciones, actualizaciones de normas ASME/API, requerimientos de certificacion. Su equipo necesita mantenerse actualizado.</p>
-                </div>
-                <div class="problem-card fade-in">
-                    <h3>Gaps de competencias criticas</h3>
-                    <p>Incidentes, paradas no programadas, hallazgos de auditoria. Frecuentemente la raiz esta en brechas de competencias que no se han cerrado.</p>
-                </div>
+            <div class="categories-inner">
+                <span class="categories-label">Ir a:</span>
+                <a href="#produccion" class="category-pill active">Produccion y Facilidades</a>
+                <a href="#perforacion" class="category-pill">Perforacion y Workover</a>
+                <a href="#gas" class="category-pill">Gas Natural</a>
+                <a href="#integridad" class="category-pill">Integridad Mecanica</a>
+                <a href="#activos" class="category-pill">Gestion de Activos</a>
             </div>
         </div>
     </section>
 
     <!-- Programs Section -->
-    <section class="section section--dark" id="programas">
+    <section class="section" id="produccion">
         <div class="container">
-            <div class="section-header centered">
-                <span class="section-label">Areas de formacion</span>
-                <h2 class="section-title">Programas especializados para cada area de su operacion</h2>
-                <p class="section-subtitle">Disenamos programas cerrados que responden a las necesidades especificas de su organizacion.</p>
+            <div class="section-header">
+                <h2 class="section-title">Produccion y Facilidades</h2>
+                <p class="section-subtitle">Programas para optimizar operaciones, sistemas de levantamiento artificial, tratamiento de fluidos y medicion.</p>
             </div>
             
             <div class="programs-grid">
-                <!-- Produccion y Facilidades -->
-                <div class="program-card active">
-                    <div class="program-header" onclick="toggleProgram(this)">
-                        <div class="program-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                                <path d="M2 17l10 5 10-5"/>
-                                <path d="M2 12l10 5 10-5"/>
-                            </svg>
-                        </div>
-                        <div class="program-info">
-                            <h3>Produccion y Facilidades</h3>
-                            <p>Optimizacion de operaciones, sistemas de levantamiento artificial, tratamiento de fluidos, medicion y fiscalizacion.</p>
-                            <div class="program-tags">
-                                <span class="program-tag">Levantamiento Artificial</span>
-                                <span class="program-tag">Facilidades</span>
-                                <span class="program-tag">Medicion</span>
-                            </div>
-                        </div>
-                        <div class="program-toggle">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"/>
-                            </svg>
-                        </div>
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
                     </div>
-                    <div class="program-content">
-                        <div class="program-list">
-                            <ul>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Facilidades de Produccion en Empresas Petroleras</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Sistemas de Levantamiento Artificial (ESP, BM, PCP)</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Manejo, Tratamiento y Fiscalizacion de Crudo</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Medicion de Hidrocarburos Liquidos para Custodia</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Optimizacion de la Produccion con Analisis Nodal</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Manejo, Tratamiento e Inyeccion de Aguas</li>
-                            </ul>
-                        </div>
+                    <div class="program-card-body">
+                        <h3>Facilidades de Produccion en Empresas Petroleras</h3>
+                        <p>Comprenda el diseno, operacion y optimizacion de facilidades de superficie para el manejo de hidrocarburos.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Perforacion y Workover -->
-                <div class="program-card">
-                    <div class="program-header" onclick="toggleProgram(this)">
-                        <div class="program-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-                            </svg>
-                        </div>
-                        <div class="program-info">
-                            <h3>Perforacion y Workover</h3>
-                            <p>Ingenieria de perforacion, completamiento de pozos, cementacion, inspeccion de equipos, integridad de pozo.</p>
-                            <div class="program-tags">
-                                <span class="program-tag">Well Integrity</span>
-                                <span class="program-tag">IADC</span>
-                                <span class="program-tag">Rig Inspection</span>
-                            </div>
-                        </div>
-                        <div class="program-toggle">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"/>
-                            </svg>
-                        </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
                     </div>
-                    <div class="program-content">
-                        <div class="program-list">
-                            <ul>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Rig Inspection - Inspeccion de Taladros (IADC)</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Ingenieria de Perforacion Aplicada</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Completamiento y Rehabilitacion de Pozos</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Cementacion de Pozos: Supervision y Planificacion</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Well Integrity - Integridad de Pozo</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Diseno de Sartas de Perforacion</li>
-                            </ul>
-                        </div>
+                    <div class="program-card-body">
+                        <h3>Sistemas de Levantamiento Artificial</h3>
+                        <p>ESP, BM, PCP: seleccion, diseno, operacion y troubleshooting de sistemas de levantamiento.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Gas Natural -->
-                <div class="program-card">
-                    <div class="program-header" onclick="toggleProgram(this)">
-                        <div class="program-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/>
-                                <path d="M8.5 8.5v.01"/>
-                                <path d="M16 15.5v.01"/>
-                                <path d="M12 12v.01"/>
-                            </svg>
-                        </div>
-                        <div class="program-info">
-                            <h3>Gas Natural y Tratamiento</h3>
-                            <p>Tecnologias del gas natural, compresion, medicion, LNG, regulacion y comercializacion.</p>
-                            <div class="program-tags">
-                                <span class="program-tag">Medicion</span>
-                                <span class="program-tag">Compresion</span>
-                                <span class="program-tag">LNG</span>
-                            </div>
-                        </div>
-                        <div class="program-toggle">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"/>
-                            </svg>
-                        </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
                     </div>
-                    <div class="program-content">
-                        <div class="program-list">
-                            <ul>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Medicion de Gas Natural</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Tratamiento y Manejo de Gas Natural</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Compresion de Gas Natural</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Introduccion a las Tecnologias del LNG</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Regulacion y Comercializacion de Gas en Colombia</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Programa Profesional en Tecnologias del Gas (112h)</li>
-                            </ul>
-                        </div>
+                    <div class="program-card-body">
+                        <h3>Medicion de Hidrocarburos para Custodia</h3>
+                        <p>Sistemas de medicion, calibracion, incertidumbre y fiscalizacion de hidrocarburos liquidos.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Integridad Mecanica -->
-                <div class="program-card">
-                    <div class="program-header" onclick="toggleProgram(this)">
-                        <div class="program-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            </svg>
-                        </div>
-                        <div class="program-info">
-                            <h3>Integridad Mecanica y Equipos</h3>
-                            <p>Codigos ASME/API, inspeccion de equipos, RBI, gestion de integridad de ductos, proteccion catodica.</p>
-                            <div class="program-tags">
-                                <span class="program-tag">ASME</span>
-                                <span class="program-tag">API</span>
-                                <span class="program-tag">RBI</span>
-                            </div>
-                        </div>
-                        <div class="program-toggle">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"/>
-                            </svg>
-                        </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
                     </div>
-                    <div class="program-content">
-                        <div class="program-list">
-                            <ul>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Codigo ASME Secc VIII Div 1 - Recipientes a Presion</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Inspeccion de Tanques API 653</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Inspeccion Basada en Riesgo (RBI) - API 580/581</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Gestion de Integridad de Ductos - ASME B31.8s / API 1160</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Codigos ASME B31.3, B31.4, B31.8 - Tuberias</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Proteccion Catodica de Activos</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gestion de Activos -->
-                <div class="program-card">
-                    <div class="program-header" onclick="toggleProgram(this)">
-                        <div class="program-icon">
+                    <div class="program-card-body">
+                        <h3>Tratamiento e Inyeccion de Aguas</h3>
+                        <p>Manejo, tratamiento y disposicion de aguas de produccion e inyeccion.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link">
+                            Ver programa
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                                <line x1="3" y1="9" x2="21" y2="9"/>
-                                <line x1="9" y1="21" x2="9" y2="9"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                                <polyline points="12 5 19 12 12 19"/>
                             </svg>
-                        </div>
-                        <div class="program-info">
-                            <h3>Gestion de Activos y Confiabilidad</h3>
-                            <p>ISO 55001, preparacion IAM Certificate/Diploma, RCM, analisis causa raiz, indicadores de mantenimiento.</p>
-                            <div class="program-tags">
-                                <span class="program-tag">ISO 55001</span>
-                                <span class="program-tag">IAM</span>
-                                <span class="program-tag">TWPL</span>
-                            </div>
-                        </div>
-                        <div class="program-toggle">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"/>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="program-content">
-                        <div class="program-list">
-                            <ul>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Diplomado Internacional en Gestion de Activos (TWPL)</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Programa Avanzado - IAM Diploma</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Mantenimiento Centrado en Confiabilidad (RCM)</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Tecnicas de Analisis de Causa Raiz</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Gestion de Costos y Presupuestos de Mantenimiento</li>
-                                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Preparacion Certificacion CMRP</li>
-                            </ul>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1261,11 +984,10 @@
     </section>
 
     <!-- Methodology Section -->
-    <section class="section" id="metodologia">
+    <section class="section section--gray" id="metodologia">
         <div class="container">
             <div class="section-header centered">
-                <span class="section-label">Como trabajamos</span>
-                <h2 class="section-title">Programas cerrados disenados para su operacion</h2>
+                <h2 class="section-title">Como trabajamos</h2>
                 <p class="section-subtitle">No vendemos cursos de catalogo. Disenamos programas que responden a sus desafios especificos de formacion.</p>
             </div>
             
@@ -1273,67 +995,47 @@
                 <div class="method-step fade-in">
                     <div class="method-number">1</div>
                     <h4>Diagnostico</h4>
-                    <p>Entendemos su operacion, sus desafios de competencias, sus prioridades.</p>
+                    <p>Entendemos su operacion, sus gaps de competencias y prioridades.</p>
                 </div>
                 <div class="method-step fade-in">
                     <div class="method-number">2</div>
                     <h4>Diseno</h4>
-                    <p>Estructuramos un programa a medida: contenido, modalidad, calendario.</p>
+                    <p>Estructuramos contenido, modalidad y calendario a medida.</p>
                 </div>
                 <div class="method-step fade-in">
                     <div class="method-number">3</div>
                     <h4>Implementacion</h4>
-                    <p>Ejecutamos con instructores que conocen la realidad operativa.</p>
+                    <p>Instructores con experiencia en su sector ejecutan el programa.</p>
                 </div>
                 <div class="method-step fade-in">
                     <div class="method-number">4</div>
                     <h4>Evaluacion</h4>
-                    <p>Medimos resultados, validamos transferencia, ajustamos.</p>
+                    <p>Medimos resultados y validamos transferencia al puesto.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Differentiators Section -->
-    <section class="section section--gray" id="nosotros">
+    <!-- Why Us Section -->
+    <section class="section section--dark" id="nosotros">
         <div class="container">
-            <div class="section-header centered">
-                <span class="section-label">Por que Elite Training</span>
-                <h2 class="section-title">El socio de formacion de la industria que no puede fallar</h2>
+            <div class="section-header">
+                <h2 class="section-title">Por que Elite Training</h2>
+                <p class="section-subtitle">El socio de formacion de la industria que no puede fallar.</p>
             </div>
             
-            <div class="diff-grid">
-                <div class="diff-card fade-in">
-                    <div class="diff-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                            <polyline points="9 12 11 14 15 10"/>
-                        </svg>
-                    </div>
+            <div class="why-grid">
+                <div class="why-card fade-in">
                     <h3>Autoridad tecnica verificable</h3>
-                    <p>Proveedor autorizado ASME desde 2004. Partner de The Woodhouse Partnership para gestion de activos. Credenciales IADC para perforacion. No somos generalistas, somos especialistas certificados.</p>
+                    <p>Proveedor autorizado ASME desde 2004. Partner de The Woodhouse Partnership para gestion de activos. Credenciales IADC para perforacion.</p>
                 </div>
-                <div class="diff-card fade-in">
-                    <div class="diff-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                            <circle cx="9" cy="7" r="4"/>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                        </svg>
-                    </div>
+                <div class="why-card fade-in">
                     <h3>Instructores con experiencia operativa</h3>
-                    <p>Nuestros instructores han trabajado en las plantas, campos y facilidades donde usted opera. Conocen la diferencia entre la teoria del codigo y la realidad del terreno.</p>
+                    <p>Han trabajado en plantas, campos y facilidades como las suyas. Conocen la diferencia entre la teoria del codigo y la realidad del terreno.</p>
                 </div>
-                <div class="diff-card fade-in">
-                    <div class="diff-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                    </div>
+                <div class="why-card fade-in">
                     <h3>29 anos formando la industria</h3>
-                    <p>Hemos visto ciclos de precio, cambios regulatorios, transformaciones tecnologicas. Seguimos aqui porque entregamos resultados. Mas de 200 empresas en 11 paises confian en nosotros.</p>
+                    <p>Ecopetrol, Repsol, ISA, Oxy y mas de 200 empresas en 11 paises confian en nosotros. Seguimos aqui porque entregamos resultados.</p>
                 </div>
             </div>
         </div>
@@ -1342,50 +1044,18 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>Tiene un desafio de formacion tecnica en su operacion?</h2>
-                <p>Le invitamos a una conversacion de 30 minutos donde podemos entender sus necesidades y explorar como un programa a medida podria responderlas. Sin compromiso.</p>
-                
-                <div class="cta-buttons">
-                    <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20agendar%20una%20sesi%C3%B3n%20de%20diagn%C3%B3stico%20para%20programas%20de%20formaci%C3%B3n%20t%C3%A9cnica%20en%20Oil%20%26%20Gas" class="btn-primary" target="_blank">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                        </svg>
-                        Agendar por WhatsApp
-                    </a>
-                    <a href="mailto:info@elitetraining.co?subject=Solicitud%20de%20informaci%C3%B3n%20-%20Programas%20Oil%20%26%20Gas" class="btn-secondary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                        Enviar email
-                    </a>
+            <div class="cta-box">
+                <div>
+                    <h2>Tiene un desafio de formacion tecnica?</h2>
+                    <p>Conversemos 30 minutos sobre sus necesidades. Sin compromiso, sin pitch de ventas—solo una conversacion entre profesionales.</p>
                 </div>
-                
-                <div class="cta-contact">
-                    <a href="tel:+573164661007" class="cta-contact-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                        +57 316 466 1007
-                    </a>
-                    <a href="https://hidrocarburos.com.co" class="cta-contact-item" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="2" y1="12" x2="22" y2="12"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                        hidrocarburos.com.co
-                    </a>
-                    <a href="https://linkedin.com/company/elite-training-colombia" class="cta-contact-item" target="_blank">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                            <rect x="2" y="9" width="4" height="12"/>
-                            <circle cx="4" cy="4" r="2"/>
-                        </svg>
-                        LinkedIn
-                    </a>
-                </div>
+                <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20agendar%20una%20llamada%20para%20explorar%20opciones%20de%20formaci%C3%B3n" class="hero-cta" target="_blank">
+                    Agendar llamada
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                        <polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -1401,43 +1071,44 @@
                     </svg>
                     <span class="footer-text">2026 Elite Training. 29 anos formando la industria.</span>
                 </div>
-                <div class="footer-links">
-                    <a href="https://hidrocarburos.com.co" target="_blank">Todos los cursos</a>
-                    <a href="https://linkedin.com/company/elite-training-colombia" target="_blank">LinkedIn</a>
-                    <a href="https://wa.me/573164661007" target="_blank">WhatsApp</a>
+                
+                <div class="footer-contact">
+                    <a href="tel:+573164661007">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.8.33 1.6.59 2.36"/>
+                        </svg>
+                        +57 316 466 1007
+                    </a>
+                    <a href="https://hidrocarburos.com.co" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        hidrocarburos.com.co
+                    </a>
+                    <a href="https://linkedin.com/company/elite-training-colombia" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                        LinkedIn
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Header scroll effect
+        // Header scroll
         const header = document.getElementById('header');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+            header.classList.toggle('scrolled', window.scrollY > 50);
         });
-
-        // Program accordion
-        function toggleProgram(element) {
-            const card = element.parentElement;
-            const isActive = card.classList.contains('active');
-            
-            document.querySelectorAll('.program-card').forEach(c => {
-                c.classList.remove('active');
-            });
-            
-            if (!isActive) {
-                card.classList.add('active');
-            }
-        }
 
         // Fade in on scroll
         const fadeElements = document.querySelectorAll('.fade-in');
-        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1446,7 +1117,6 @@
                 }
             });
         }, { threshold: 0.1 });
-
         fadeElements.forEach(el => observer.observe(el));
 
         // Smooth scroll
@@ -1457,6 +1127,14 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
+            });
+        });
+
+        // Category pills active state
+        document.querySelectorAll('.category-pill').forEach(pill => {
+            pill.addEventListener('click', function(e) {
+                document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+                this.classList.add('active');
             });
         });
     </script>
