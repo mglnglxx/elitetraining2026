@@ -13,9 +13,9 @@
     
     <style>
         :root {
-            --primary: #293370;
-            --primary-dark: #1a2250;
-            --primary-light: #3a4590;
+            --primary: #1a2744;
+            --primary-dark: #0d1520;
+            --primary-light: #263654;
             --accent: #E19A24;
             --accent-light: #f0b44a;
             --accent-dark: #c4841c;
@@ -145,10 +145,10 @@
             }
         }
         
-        /* ==================== HERO - LR Inspired ==================== */
+        /* ==================== HERO ==================== */
         .hero {
             padding-top: 72px;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
+            background: linear-gradient(145deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
             min-height: 85vh;
             display: flex;
             align-items: center;
@@ -168,7 +168,7 @@
         
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 400px;
+            grid-template-columns: 1fr 380px;
             gap: 4rem;
             align-items: center;
             padding: 4rem 0;
@@ -182,7 +182,7 @@
         }
         
         .hero-content {
-            max-width: 640px;
+            max-width: 620px;
         }
         
         .hero-eyebrow {
@@ -194,7 +194,7 @@
         }
         
         .hero h1 {
-            font-size: clamp(2.5rem, 4.5vw, 3.25rem);
+            font-size: clamp(2.25rem, 4vw, 3rem);
             font-weight: 400;
             line-height: 1.2;
             color: var(--white);
@@ -203,12 +203,12 @@
         }
         
         .hero-description {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.8);
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.75);
             line-height: 1.75;
             margin-bottom: 2rem;
             font-weight: 300;
-            max-width: 560px;
+            max-width: 540px;
         }
         
         .hero-cta {
@@ -240,17 +240,17 @@
             transform: translateX(3px);
         }
         
-        /* Hero Sidebar - Key Points */
+        /* Hero Sidebar */
         .hero-sidebar {
-            background: rgba(255,255,255,0.03);
-            border-left: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.02);
+            border-left: 1px solid rgba(255,255,255,0.08);
             padding: 2rem 0 2rem 2rem;
         }
         
         @media (max-width: 1000px) {
             .hero-sidebar {
                 border-left: none;
-                border-top: 1px solid rgba(255,255,255,0.1);
+                border-top: 1px solid rgba(255,255,255,0.08);
                 padding: 2rem 0 0 0;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -276,22 +276,22 @@
         
         .hero-point h4 {
             color: var(--white);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.3rem;
         }
         
         .hero-point p {
-            color: rgba(255,255,255,0.65);
-            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
             line-height: 1.5;
             font-weight: 300;
         }
         
-        /* ==================== PORTAL CTA SECTION ==================== */
+        /* ==================== PORTAL CTA ==================== */
         .portal-cta {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            padding: 3rem 0;
+            padding: 2.5rem 0;
         }
         
         .portal-cta-inner {
@@ -303,15 +303,15 @@
         }
         
         .portal-cta h3 {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             font-weight: 400;
             color: var(--white);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
         
         .portal-cta p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
+            color: rgba(255,255,255,0.65);
+            font-size: 0.9rem;
             font-weight: 300;
         }
         
@@ -335,10 +335,10 @@
             height: 18px;
         }
         
-        /* ==================== CREDENTIALS BAR ==================== */
+        /* ==================== CREDENTIALS ==================== */
         .credentials {
             background: var(--gray-50);
-            padding: 1.75rem 0;
+            padding: 1.5rem 0;
             border-bottom: 1px solid var(--gray-200);
         }
         
@@ -347,7 +347,7 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 1.5rem 2.5rem;
+            gap: 1.25rem 2rem;
         }
         
         .credential-item {
@@ -355,12 +355,12 @@
             align-items: center;
             gap: 0.5rem;
             color: var(--gray-600);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
         
         .credential-item svg {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             color: var(--accent);
             flex-shrink: 0;
         }
@@ -370,32 +370,35 @@
             font-weight: 600;
         }
         
-        /* ==================== CATEGORY FILTER ==================== */
+        /* ==================== CATEGORY NAV ==================== */
         .categories {
-            padding: 2.5rem 0;
+            padding: 2rem 0;
             background: var(--white);
             border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 72px;
+            z-index: 100;
         }
         
         .categories-inner {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
         }
         
         .categories-label {
-            font-size: 0.85rem;
-            color: var(--gray-600);
+            font-size: 0.8rem;
+            color: var(--gray-500);
             font-weight: 500;
         }
         
         .category-pill {
-            padding: 0.5rem 1rem;
+            padding: 0.45rem 0.9rem;
             border: 1px solid var(--gray-300);
             border-radius: 4px;
-            font-size: 0.85rem;
-            color: var(--primary);
+            font-size: 0.8rem;
+            color: var(--gray-700);
             text-decoration: none;
             transition: all 0.2s ease;
             font-weight: 500;
@@ -403,6 +406,7 @@
         
         .category-pill:hover {
             border-color: var(--primary);
+            color: var(--primary);
             background: var(--gray-50);
         }
         
@@ -415,6 +419,7 @@
         /* ==================== SECTIONS ==================== */
         .section {
             padding: var(--section-padding) 0;
+            scroll-margin-top: 140px;
         }
         
         .section--gray {
@@ -422,26 +427,26 @@
         }
         
         .section--dark {
-            background: var(--primary);
+            background: var(--primary-dark);
         }
         
         .section-header {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
         
         .section-header.centered {
             text-align: center;
-            max-width: 680px;
+            max-width: 640px;
             margin-left: auto;
             margin-right: auto;
         }
         
         .section-title {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 400;
+            font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+            font-weight: 500;
             color: var(--gray-900);
             line-height: 1.3;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
         
         .section--dark .section-title {
@@ -449,21 +454,21 @@
         }
         
         .section-subtitle {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--gray-600);
-            line-height: 1.7;
+            line-height: 1.6;
             font-weight: 300;
         }
         
         .section--dark .section-subtitle {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.65);
         }
         
-        /* ==================== PROGRAM CARDS - Grid ==================== */
+        /* ==================== PROGRAM CARDS ==================== */
         .programs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.25rem;
         }
         
         .program-card {
@@ -477,69 +482,115 @@
         }
         
         .program-card:hover {
-            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.08);
             transform: translateY(-2px);
         }
         
         .program-card-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            padding: 1.25rem 1.5rem;
-            position: relative;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            padding: 1rem 1.25rem;
         }
         
         .program-card-tag {
             display: inline-block;
-            padding: 0.25rem 0.6rem;
-            background: rgba(255,255,255,0.15);
+            padding: 0.2rem 0.5rem;
+            background: rgba(255,255,255,0.12);
             border-radius: 3px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 500;
-            color: var(--white);
+            color: rgba(255,255,255,0.9);
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.04em;
         }
         
         .program-card-body {
-            padding: 1.5rem;
+            padding: 1.25rem;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
         
         .program-card h3 {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 500;
             color: var(--gray-900);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.6rem;
             line-height: 1.35;
         }
         
         .program-card p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--gray-600);
-            line-height: 1.6;
-            margin-bottom: 1.25rem;
+            line-height: 1.55;
+            margin-bottom: 1rem;
             flex: 1;
         }
         
         .program-card-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.4rem;
             color: var(--primary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             text-decoration: none;
             transition: gap 0.2s ease;
         }
         
         .program-card-link:hover {
-            gap: 0.75rem;
+            gap: 0.6rem;
         }
         
         .program-card-link svg {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
+        }
+        
+        /* ==================== TESTIMONIALS ==================== */
+        .testimonials {
+            background: var(--white);
+            padding: var(--section-padding) 0;
+            border-top: 1px solid var(--gray-200);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .testimonial-card {
+            padding: 1.5rem;
+            background: var(--gray-50);
+            border-radius: 6px;
+            border-left: 3px solid var(--accent);
+        }
+        
+        .testimonial-quote {
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            line-height: 1.65;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-author {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 0.15rem;
+        }
+        
+        .testimonial-role {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            margin-bottom: 0.1rem;
+        }
+        
+        .testimonial-company {
+            font-size: 0.75rem;
+            color: var(--accent-dark);
+            font-weight: 500;
         }
         
         /* ==================== METHODOLOGY ==================== */
@@ -562,7 +613,7 @@
         }
         
         .method-step {
-            padding: 2rem 1.5rem;
+            padding: 1.75rem 1.25rem;
             text-align: center;
             background: var(--white);
             border: 1px solid var(--gray-200);
@@ -579,25 +630,25 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
+            width: 36px;
+            height: 36px;
+            background: var(--primary-dark);
             color: var(--accent);
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: 700;
             border-radius: 50%;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
         
         .method-step h4 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 500;
             color: var(--gray-900);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
         }
         
         .method-step p {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: var(--gray-600);
             line-height: 1.5;
         }
@@ -605,27 +656,27 @@
         /* ==================== WHY US ==================== */
         .why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
         }
         
         .why-card {
-            padding: 1.75rem;
+            padding: 1.5rem;
             border-left: 3px solid var(--accent);
             background: rgba(255,255,255,0.03);
         }
         
         .why-card h3 {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 500;
             color: var(--white);
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
         }
         
         .why-card p {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.6;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.55;
             font-weight: 300;
         }
         
@@ -636,9 +687,9 @@
         }
         
         .cta-box {
-            background: var(--primary);
+            background: var(--primary-dark);
             border-radius: 8px;
-            padding: 3rem;
+            padding: 2.5rem;
             display: grid;
             grid-template-columns: 1fr auto;
             gap: 2rem;
@@ -653,17 +704,17 @@
         }
         
         .cta-box h2 {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             font-weight: 400;
             color: var(--white);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
         
         .cta-box p {
-            font-size: 1rem;
-            color: rgba(255,255,255,0.75);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.65);
             font-weight: 300;
-            max-width: 500px;
+            max-width: 480px;
         }
         
         .cta-box .hero-cta {
@@ -673,7 +724,8 @@
         /* ==================== FOOTER ==================== */
         .footer {
             background: var(--primary-dark);
-            padding: 2.5rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
         }
         
         .footer-inner {
@@ -687,33 +739,17 @@
         .footer-brand {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 0.75rem;
         }
         
         .footer-brand svg {
-            height: 36px;
+            height: 32px;
             width: auto;
         }
         
         .footer-text {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
-        }
-        
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .footer-links a {
-            color: rgba(255,255,255,0.5);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: color 0.2s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
         }
         
         .footer-contact {
@@ -725,10 +761,10 @@
         .footer-contact a {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            color: rgba(255,255,255,0.6);
+            gap: 0.35rem;
+            color: rgba(255,255,255,0.5);
             text-decoration: none;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: color 0.2s ease;
         }
         
@@ -737,8 +773,8 @@
         }
         
         .footer-contact svg {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
             color: var(--accent);
         }
         
@@ -770,18 +806,18 @@
                 <a href="#" class="logo">
                     <svg viewBox="0 0 448 321" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M447.909 0.00622804C443.646 116.854 351.192 212.564 240.68 217.568C265.251 269.286 316.17 303.894 375.053 302.206C401.401 301.466 426.18 293.502 447.702 280.21L447.968 0.00622804C447.968 0.0654365 448.028 -0.0233762 447.909 0.00622804Z" fill="#E19A24"/>
-                        <path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#293370"/>
+                        <path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#1a2744"/>
                     </svg>
                 </a>
                 
                 <nav class="header-nav">
                     <a href="#programas">Programas</a>
-                    <a href="#metodologia">Metodologia</a>
+                    <a href="#metodologia">Metodología</a>
                     <a href="#nosotros">Nosotros</a>
                     <a href="https://hidrocarburos.com.co" target="_blank">Ver todos los cursos</a>
                 </nav>
                 
-                <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20agendar%20una%20llamada%20para%20conocer%20m%C3%A1s%20sobre%20los%20programas%20de%20formaci%C3%B3n" class="header-cta" target="_blank">
+                <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20agendar%20una%20llamada%20para%20conocer%20más%20sobre%20los%20programas%20de%20formación" class="header-cta" target="_blank">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.8.33 1.6.59 2.36a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.76.26 1.56.46 2.36.59A2 2 0 0 1 22 16.92z"/>
                     </svg>
@@ -791,15 +827,15 @@
         </div>
     </header>
 
-    <!-- Hero Section - LR Inspired -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <p class="hero-eyebrow">Formacion tecnica para la industria de hidrocarburos</p>
-                    <h1>Desarrolle las competencias criticas que su operacion necesita</h1>
-                    <p class="hero-description">Disenamos cada programa de formacion en torno a lo que realmente importa para su equipo—ya sea cerrar brechas de competencias, prepararse para auditorias o cumplir nuevos requisitos regulatorios. Con instructores que conocen la realidad operativa, obtendra conocimiento aplicable de inmediato.</p>
-                    <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20agendar%20una%20llamada%20para%20explorar%20opciones%20de%20formaci%C3%B3n%20para%20mi%20equipo" class="hero-cta" target="_blank">
+                    <p class="hero-eyebrow">Formación técnica para la industria de hidrocarburos</p>
+                    <h1>Desarrolle las competencias críticas que su operación necesita</h1>
+                    <p class="hero-description">Diseñamos cada programa de formación en torno a lo que realmente importa para su equipo—ya sea cerrar brechas de competencias, prepararse para auditorías o cumplir nuevos requisitos regulatorios. Con instructores que conocen la realidad operativa, obtendrá conocimiento aplicable de inmediato.</p>
+                    <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20agendar%20una%20llamada%20para%20explorar%20opciones%20de%20formación%20para%20mi%20equipo" class="hero-cta" target="_blank">
                         Agendar llamada
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="5" y1="12" x2="19" y2="12"/>
@@ -811,11 +847,11 @@
                 <div class="hero-sidebar">
                     <div class="hero-point">
                         <h4>Programas cerrados y a medida</h4>
-                        <p>Contenido adaptado a su operacion, sus equipos, sus desafios especificos.</p>
+                        <p>Contenido adaptado a su operación, sus equipos, sus desafíos específicos.</p>
                     </div>
                     <div class="hero-point">
                         <h4>Proveedor autorizado ASME desde 2004</h4>
-                        <p>Certificaciones con respaldo internacional para codigos y estandares.</p>
+                        <p>Certificaciones con respaldo internacional para códigos y estándares.</p>
                     </div>
                     <div class="hero-point">
                         <h4>Instructores con experiencia operativa</h4>
@@ -831,8 +867,8 @@
         <div class="container">
             <div class="portal-cta-inner">
                 <div>
-                    <h3>Explore todo nuestro catalogo de cursos</h3>
-                    <p>Acceda al campus virtual para ver fechas, inscribirse y gestionar su formacion.</p>
+                    <h3>Explore todo nuestro catálogo de cursos</h3>
+                    <p>Acceda al campus virtual para ver fechas, inscribirse y gestionar su formación.</p>
                 </div>
                 <a href="https://hidrocarburos.com.co" class="portal-cta-link" target="_blank">
                     Ir al campus
@@ -854,7 +890,7 @@
                         <circle cx="12" cy="12" r="10"/>
                         <polyline points="12 6 12 12 16 14"/>
                     </svg>
-                    <span><strong>29 anos</strong> de experiencia</span>
+                    <span><strong>29 años</strong> de experiencia</span>
                 </div>
                 <div class="credential-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -876,7 +912,7 @@
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                         <circle cx="12" cy="10" r="3"/>
                     </svg>
-                    <span><strong>11+ paises</strong></span>
+                    <span><strong>11+ países</strong></span>
                 </div>
                 <div class="credential-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -889,26 +925,26 @@
         </div>
     </section>
 
-    <!-- Category Filter -->
+    <!-- Category Nav -->
     <section class="categories" id="programas">
         <div class="container">
             <div class="categories-inner">
                 <span class="categories-label">Ir a:</span>
-                <a href="#produccion" class="category-pill active">Produccion y Facilidades</a>
-                <a href="#perforacion" class="category-pill">Perforacion y Workover</a>
+                <a href="#produccion" class="category-pill active">Producción y Facilidades</a>
+                <a href="#perforacion" class="category-pill">Perforación y Workover</a>
                 <a href="#gas" class="category-pill">Gas Natural</a>
-                <a href="#integridad" class="category-pill">Integridad Mecanica</a>
-                <a href="#activos" class="category-pill">Gestion de Activos</a>
+                <a href="#integridad" class="category-pill">Integridad Mecánica</a>
+                <a href="#activos" class="category-pill">Gestión de Activos</a>
             </div>
         </div>
     </section>
 
-    <!-- Programs Section -->
+    <!-- Producción y Facilidades -->
     <section class="section" id="produccion">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Produccion y Facilidades</h2>
-                <p class="section-subtitle">Programas para optimizar operaciones, sistemas de levantamiento artificial, tratamiento de fluidos y medicion.</p>
+                <h2 class="section-title">Producción y Facilidades</h2>
+                <p class="section-subtitle">Programas para optimizar operaciones, sistemas de levantamiento artificial, tratamiento de fluidos y medición.</p>
             </div>
             
             <div class="programs-grid">
@@ -917,14 +953,11 @@
                         <span class="program-card-tag">Presencial / Online</span>
                     </div>
                     <div class="program-card-body">
-                        <h3>Facilidades de Produccion en Empresas Petroleras</h3>
-                        <p>Comprenda el diseno, operacion y optimizacion de facilidades de superficie para el manejo de hidrocarburos.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">
+                        <h3>Facilidades de Producción en Empresas Petroleras</h3>
+                        <p>Comprenda el diseño, operación y optimización de facilidades de superficie para el manejo de hidrocarburos.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
                             Ver programa
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12 5 19 12 12 19"/>
-                            </svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
                 </div>
@@ -935,13 +968,10 @@
                     </div>
                     <div class="program-card-body">
                         <h3>Sistemas de Levantamiento Artificial</h3>
-                        <p>ESP, BM, PCP: seleccion, diseno, operacion y troubleshooting de sistemas de levantamiento.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">
+                        <p>ESP, BM, PCP: selección, diseño, operación y troubleshooting de sistemas de levantamiento.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
                             Ver programa
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12 5 19 12 12 19"/>
-                            </svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
                 </div>
@@ -951,31 +981,11 @@
                         <span class="program-card-tag">Presencial / Online</span>
                     </div>
                     <div class="program-card-body">
-                        <h3>Medicion de Hidrocarburos para Custodia</h3>
-                        <p>Sistemas de medicion, calibracion, incertidumbre y fiscalizacion de hidrocarburos liquidos.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">
+                        <h3>Medición de Hidrocarburos para Custodia</h3>
+                        <p>Sistemas de medición, calibración, incertidumbre y fiscalización de hidrocarburos líquidos.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
                             Ver programa
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12 5 19 12 12 19"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="program-card fade-in">
-                    <div class="program-card-header">
-                        <span class="program-card-tag">Presencial / Online</span>
-                    </div>
-                    <div class="program-card-body">
-                        <h3>Tratamiento e Inyeccion de Aguas</h3>
-                        <p>Manejo, tratamiento y disposicion de aguas de produccion e inyeccion.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">
-                            Ver programa
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                                <polyline points="12 5 19 12 12 19"/>
-                            </svg>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
                 </div>
@@ -983,73 +993,342 @@
         </div>
     </section>
 
-    <!-- Methodology Section -->
+    <!-- Perforación y Workover -->
+    <section class="section section--gray" id="perforacion">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Perforación y Workover</h2>
+                <p class="section-subtitle">Ingeniería de perforación, completamiento de pozos, cementación, inspección de equipos e integridad de pozo.</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Rig Inspection – Inspección de Taladros (IADC)</h3>
+                        <p>Inspección sistemática de taladros de perforación y workover según estándares internacionales.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Well Integrity – Integridad de Pozo</h3>
+                        <p>Gestión de integridad durante todo el ciclo de vida del pozo, desde diseño hasta abandono.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Cementación de Pozos</h3>
+                        <p>Supervisión y planificación de operaciones de cementación primaria y remedial.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gas Natural -->
+    <section class="section" id="gas">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Gas Natural y Tratamiento</h2>
+                <p class="section-subtitle">Tecnologías del gas natural, compresión, medición, LNG, regulación y comercialización.</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Programa 112h</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Programa Profesional en Tecnologías del Gas</h3>
+                        <p>Formación integral en toda la cadena de valor del gas natural: producción, transporte, distribución y comercialización.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Medición de Gas Natural</h3>
+                        <p>Sistemas de medición, cromatografía, cálculo de incertidumbre y fiscalización.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Compresión de Gas Natural</h3>
+                        <p>Diseño, operación y mantenimiento de sistemas de compresión para gas natural.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integridad Mecánica -->
+    <section class="section section--gray" id="integridad">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Integridad Mecánica y Equipos</h2>
+                <p class="section-subtitle">Códigos ASME/API, inspección de equipos, RBI, gestión de integridad de ductos y protección catódica.</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">ASME Autorizado</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Código ASME Secc VIII Div 1</h3>
+                        <p>Diseño, fabricación e inspección de recipientes a presión según el código ASME.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Inspección Basada en Riesgo (RBI)</h3>
+                        <p>Implementación de programas RBI según API 580/581 para optimizar inspección de equipos.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Inspección de Tanques API 653</h3>
+                        <p>Inspección, reparación, alteración y reconstrucción de tanques de almacenamiento.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gestión de Activos -->
+    <section class="section" id="activos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Gestión de Activos y Confiabilidad</h2>
+                <p class="section-subtitle">ISO 55001, preparación IAM Certificate/Diploma, RCM, análisis causa raíz e indicadores de mantenimiento.</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Partner TWPL</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Diplomado Internacional en Gestión de Activos</h3>
+                        <p>Programa avalado por The Woodhouse Partnership para preparación del IAM Certificate.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Mantenimiento Centrado en Confiabilidad (RCM)</h3>
+                        <p>Metodología para desarrollar planes de mantenimiento basados en el análisis de funciones y fallas.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="program-card fade-in">
+                    <div class="program-card-header">
+                        <span class="program-card-tag">Presencial / Online</span>
+                    </div>
+                    <div class="program-card-body">
+                        <h3>Análisis de Causa Raíz</h3>
+                        <p>Técnicas sistemáticas para identificar causas de fallas y prevenir recurrencias.</p>
+                        <a href="https://hidrocarburos.com.co" class="program-card-link" target="_blank">
+                            Ver programa
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header centered">
+                <h2 class="section-title">Lo que dicen nuestros participantes</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-quote">"Un muy buen curso, abarca toda la cadena de gas, temas regulatorios, historia, ejemplos y lo que viene para el mercado."</p>
+                    <p class="testimonial-author">Camilo Ovalle</p>
+                    <p class="testimonial-role">Subgerente Financiero y Administrativo Gas Guajira</p>
+                    <p class="testimonial-company">Gases del Caribe</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-quote">"Muchas gracias por aportar sus conocimientos con nosotros ya que eso nos ayuda a crecer más laboral y personalmente para ser técnicos más competitivos."</p>
+                    <p class="testimonial-author">José Francisco Barón</p>
+                    <p class="testimonial-role">Auxiliar Electromecánico</p>
+                    <p class="testimonial-company">Canacol Energy</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-quote">"La experiencia desde el punto de vista personal fue exitosa, debido a la aclaración de dudas, información y suministro de herramientas para mejorar."</p>
+                    <p class="testimonial-author">Andrés Fernando Lorza</p>
+                    <p class="testimonial-role">Jefe de Mantenimiento de Autogeneración</p>
+                    <p class="testimonial-company">Cementos Argos SA</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-quote">"Adquirimos destrezas para la investigación de accidentes, conocimos los perfiles de investigador y lo que se requiere de varias disciplinas."</p>
+                    <p class="testimonial-author">Nancy Astrid Tibamoza</p>
+                    <p class="testimonial-role">Coordinadora HSE</p>
+                    <p class="testimonial-company">Norgas SA</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-quote">"Muy enriquecedor, actualizado en temas de planeación y programación y nos estandariza internacionalmente, nos da herramientas para mejorar en nuestro día a día."</p>
+                    <p class="testimonial-author">Mauricio Daza Martínez</p>
+                    <p class="testimonial-role">Supervisor de Mantenimiento Mecánico</p>
+                    <p class="testimonial-company">Cerro Matoso</p>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-quote">"Este curso me enseñó a involucrarme de manera directa en aspectos técnicos de la Gerencia de Campos Petroleros."</p>
+                    <p class="testimonial-author">Andrés Gustavo Guerra</p>
+                    <p class="testimonial-role">Jefe Relación con Gobierno</p>
+                    <p class="testimonial-company">Repsol</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology -->
     <section class="section section--gray" id="metodologia">
         <div class="container">
             <div class="section-header centered">
-                <h2 class="section-title">Como trabajamos</h2>
-                <p class="section-subtitle">No vendemos cursos de catalogo. Disenamos programas que responden a sus desafios especificos de formacion.</p>
+                <h2 class="section-title">Cómo trabajamos</h2>
+                <p class="section-subtitle">No vendemos cursos de catálogo. Diseñamos programas que responden a sus desafíos específicos de formación.</p>
             </div>
             
             <div class="method-grid">
                 <div class="method-step fade-in">
                     <div class="method-number">1</div>
-                    <h4>Diagnostico</h4>
-                    <p>Entendemos su operacion, sus gaps de competencias y prioridades.</p>
+                    <h4>Diagnóstico</h4>
+                    <p>Entendemos su operación, sus gaps de competencias y prioridades.</p>
                 </div>
                 <div class="method-step fade-in">
                     <div class="method-number">2</div>
-                    <h4>Diseno</h4>
+                    <h4>Diseño</h4>
                     <p>Estructuramos contenido, modalidad y calendario a medida.</p>
                 </div>
                 <div class="method-step fade-in">
                     <div class="method-number">3</div>
-                    <h4>Implementacion</h4>
+                    <h4>Implementación</h4>
                     <p>Instructores con experiencia en su sector ejecutan el programa.</p>
                 </div>
                 <div class="method-step fade-in">
                     <div class="method-number">4</div>
-                    <h4>Evaluacion</h4>
+                    <h4>Evaluación</h4>
                     <p>Medimos resultados y validamos transferencia al puesto.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Us Section -->
+    <!-- Why Us -->
     <section class="section section--dark" id="nosotros">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Por que Elite Training</h2>
-                <p class="section-subtitle">El socio de formacion de la industria que no puede fallar.</p>
+                <h2 class="section-title">Por qué Elite Training</h2>
+                <p class="section-subtitle">El socio de formación de la industria que no puede fallar.</p>
             </div>
             
             <div class="why-grid">
                 <div class="why-card fade-in">
-                    <h3>Autoridad tecnica verificable</h3>
-                    <p>Proveedor autorizado ASME desde 2004. Partner de The Woodhouse Partnership para gestion de activos. Credenciales IADC para perforacion.</p>
+                    <h3>Autoridad técnica verificable</h3>
+                    <p>Proveedor autorizado ASME desde 2004. Partner de The Woodhouse Partnership para gestión de activos. Credenciales IADC para perforación.</p>
                 </div>
                 <div class="why-card fade-in">
                     <h3>Instructores con experiencia operativa</h3>
-                    <p>Han trabajado en plantas, campos y facilidades como las suyas. Conocen la diferencia entre la teoria del codigo y la realidad del terreno.</p>
+                    <p>Han trabajado en plantas, campos y facilidades como las suyas. Conocen la diferencia entre la teoría del código y la realidad del terreno.</p>
                 </div>
                 <div class="why-card fade-in">
-                    <h3>29 anos formando la industria</h3>
-                    <p>Ecopetrol, Repsol, ISA, Oxy y mas de 200 empresas en 11 paises confian en nosotros. Seguimos aqui porque entregamos resultados.</p>
+                    <h3>29 años formando la industria</h3>
+                    <p>Ecopetrol, Repsol, ISA, Oxy y más de 200 empresas en 11 países confían en nosotros. Seguimos aquí porque entregamos resultados.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta-section">
         <div class="container">
             <div class="cta-box">
                 <div>
-                    <h2>Tiene un desafio de formacion tecnica?</h2>
-                    <p>Conversemos 30 minutos sobre sus necesidades. Sin compromiso, sin pitch de ventas—solo una conversacion entre profesionales.</p>
+                    <h2>¿Tiene un desafío de formación técnica?</h2>
+                    <p>Conversemos 30 minutos sobre sus necesidades. Sin compromiso, sin pitch de ventas—solo una conversación entre profesionales.</p>
                 </div>
-                <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20agendar%20una%20llamada%20para%20explorar%20opciones%20de%20formaci%C3%B3n" class="hero-cta" target="_blank">
+                <a href="https://wa.me/573164661007?text=Hola,%20me%20interesa%20agendar%20una%20llamada%20para%20explorar%20opciones%20de%20formación" class="hero-cta" target="_blank">
                     Agendar llamada
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="5" y1="12" x2="19" y2="12"/>
@@ -1067,9 +1346,9 @@
                 <div class="footer-brand">
                     <svg viewBox="0 0 448 321" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M447.909 0.00622804C443.646 116.854 351.192 212.564 240.68 217.568C265.251 269.286 316.17 303.894 375.053 302.206C401.401 301.466 426.18 293.502 447.702 280.21L447.968 0.00622804C447.968 0.0654365 448.028 -0.0233762 447.909 0.00622804Z" fill="#E19A24"/>
-                        <path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#293370"/>
+                        <path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#1a2744"/>
                     </svg>
-                    <span class="footer-text">2026 Elite Training. 29 anos formando la industria.</span>
+                    <span class="footer-text">© 2026 Elite Training. 29 años formando la industria.</span>
                 </div>
                 
                 <div class="footer-contact">
@@ -1119,22 +1398,52 @@
         }, { threshold: 0.1 });
         fadeElements.forEach(el => observer.observe(el));
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        // Category pills - smooth scroll and active state
+        const categoryPills = document.querySelectorAll('.category-pill');
+        const sections = document.querySelectorAll('.section[id]');
+        
+        categoryPills.forEach(pill => {
+            pill.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    // Update active state
+                    categoryPills.forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+        
+        // Update active pill on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            categoryPills.forEach(pill => {
+                pill.classList.remove('active');
+                if (pill.getAttribute('href') === '#' + current) {
+                    pill.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for other anchor links
+        document.querySelectorAll('a[href^="#"]:not(.category-pill)').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-            });
-        });
-
-        // Category pills active state
-        document.querySelectorAll('.category-pill').forEach(pill => {
-            pill.addEventListener('click', function(e) {
-                document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
-                this.classList.add('active');
             });
         });
     </script>
