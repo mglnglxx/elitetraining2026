@@ -461,19 +461,24 @@
         
         .client-logo {
             height: 24px;
+            max-width: 100px;
             width: auto;
             flex-shrink: 0;
-            opacity: 0.5;
+            opacity: 0.6;
             filter: grayscale(100%);
             transition: all 0.2s;
+            object-fit: contain;
         }
         
         @media (min-width: 768px) {
-            .client-logo { height: 28px; }
+            .client-logo { 
+                height: 32px; 
+                max-width: 120px;
+            }
         }
         
         .client-logo:hover {
-            opacity: 0.8;
+            opacity: 1;
             filter: grayscale(0%);
         }
         
@@ -1222,10 +1227,14 @@
             <p class="clients-label">Confían en nosotros</p>
             <div class="clients-grid">
                 <img src="assets/logos/ecopetrol.png" alt="Ecopetrol" class="client-logo">
-                <img src="assets/logos/frontera.png" alt="Frontera Energy" class="client-logo">
-                <img src="assets/logos/geopark.png" alt="GeoPark" class="client-logo">
+                <img src="assets/logos/frontera.jpg" alt="Frontera Energy" class="client-logo">
                 <img src="assets/logos/parex.png" alt="Parex Resources" class="client-logo">
-                <img src="assets/logos/promigas.png" alt="Promigas" class="client-logo">
+                <img src="assets/logos/promigas.jpg" alt="Promigas" class="client-logo">
+                <img src="assets/logos/geopark.png" alt="GeoPark" class="client-logo">
+                <img src="assets/logos/repsol.svg" alt="Repsol" class="client-logo">
+                <img src="assets/logos/oxy.svg" alt="Occidental" class="client-logo">
+                <img src="assets/logos/eni.svg" alt="ENI" class="client-logo">
+                <img src="assets/logos/perenco.svg" alt="Perenco" class="client-logo">
             </div>
         </div>
     </section>
