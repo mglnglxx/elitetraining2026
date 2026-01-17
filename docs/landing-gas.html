@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Training | Gas Natural y Energía</title>
+    <meta name="description" content="Tecnologías del Gas, medición, compresión, tratamiento, GLP y comercialización. Programa insignia de 112 horas.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --dark: #0f1419; --dark-soft: #181d24; --accent: #E19A24; --accent-light: #f0b44a; --white: #ffffff; --gray-50: #f9fafb; --gray-100: #f3f4f6; --gray-200: #e5e7eb; --gray-300: #d1d5db; --gray-500: #6b7280; --gray-600: #4b5563; --gray-700: #374151; --gray-900: #111827; --font: 'Roboto', -apple-system, sans-serif; --section-padding: clamp(2.5rem, 6vw, 4rem); --container: 1100px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; } html { scroll-behavior: smooth; }
+        body { font-family: var(--font); font-size: 15px; line-height: 1.6; color: var(--gray-800); background: var(--white); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        .container { max-width: var(--container); margin: 0 auto; padding: 0 1rem; } @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--gray-200); }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 56px; } @media (min-width: 768px) { .header-inner { height: 64px; } }
+        .logo svg { height: 28px; width: auto; } @media (min-width: 768px) { .logo svg { height: 36px; } }
+        .header-nav { display: none; align-items: center; gap: 2rem; } @media (min-width: 900px) { .header-nav { display: flex; } }
+        .header-nav a { color: var(--gray-600); text-decoration: none; font-size: 0.8125rem; font-weight: 500; } .header-nav a:hover { color: var(--gray-900); }
+        .header-cta { padding: 0.5rem 0.875rem; background: var(--dark); color: var(--white); font-weight: 600; font-size: 0.75rem; text-decoration: none; border-radius: 4px; } @media (min-width: 768px) { .header-cta { padding: 0.5rem 1rem; font-size: 0.8125rem; } }
+        .menu-toggle { display: flex; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; margin-left: 0.5rem; } .menu-toggle span { width: 20px; height: 2px; background: var(--dark); } @media (min-width: 900px) { .menu-toggle { display: none; } }
+        .mobile-menu { display: none; position: fixed; top: 56px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--gray-200); padding: 1rem; flex-direction: column; gap: 0.5rem; z-index: 999; } .mobile-menu.active { display: flex; } .mobile-menu a { padding: 0.75rem; color: var(--gray-700); text-decoration: none; font-size: 0.9375rem; font-weight: 500; border-bottom: 1px solid var(--gray-100); } @media (min-width: 900px) { .mobile-menu { display: none !important; } }
+        .hero { padding-top: 56px; background: var(--dark); min-height: auto; display: flex; align-items: center; } @media (min-width: 768px) { .hero { padding-top: 64px; min-height: 85vh; } }
+        .hero-grid { display: flex; flex-direction: column; gap: 2rem; padding: 2.5rem 0; } @media (min-width: 900px) { .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; padding: 3rem 0; } }
+        .hero-eyebrow { color: var(--accent); font-size: 0.6875rem; font-weight: 600; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; } @media (min-width: 768px) { .hero-eyebrow { font-size: 0.8125rem; margin-bottom: 1rem; } }
+        .hero h1 { font-size: 1.75rem; font-weight: 700; line-height: 1.15; color: var(--white); margin-bottom: 1rem; letter-spacing: -0.02em; } @media (min-width: 480px) { .hero h1 { font-size: 2rem; } } @media (min-width: 768px) { .hero h1 { font-size: 2.5rem; margin-bottom: 1.25rem; } } @media (min-width: 1024px) { .hero h1 { font-size: 3rem; } }
+        .hero-description { font-size: 0.9375rem; color: var(--white); line-height: 1.6; margin-bottom: 1.5rem; opacity: 0.85; } @media (min-width: 768px) { .hero-description { font-size: 1rem; margin-bottom: 2rem; max-width: 480px; } }
+        .hero-ctas { display: flex; flex-direction: column; gap: 0.75rem; } @media (min-width: 400px) { .hero-ctas { flex-direction: row; flex-wrap: wrap; } }
+        .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.875rem 1.5rem; background: var(--accent); color: var(--white); font-weight: 600; font-size: 0.875rem; text-decoration: none; border-radius: 4px; text-align: center; } .btn-primary:hover { background: var(--accent-light); } .btn-primary svg { width: 16px; height: 16px; }
+        .btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 0.875rem 1.5rem; background: transparent; color: var(--white); font-weight: 600; font-size: 0.875rem; text-decoration: none; border-radius: 4px; border: 1px solid rgba(255,255,255,0.3); text-align: center; } .btn-secondary:hover { border-color: rgba(255,255,255,0.6); }
+        .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); } @media (min-width: 768px) { .hero-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; } }
+        .hero-stat-number { font-size: 1.5rem; font-weight: 700; color: var(--white); line-height: 1; } @media (min-width: 768px) { .hero-stat-number { font-size: 1.75rem; } }
+        .hero-stat-label { font-size: 0.6875rem; color: var(--white); opacity: 0.7; margin-top: 0.25rem; } @media (min-width: 768px) { .hero-stat-label { font-size: 0.75rem; } }
+        .hero-visual { display: grid; grid-template-columns: 1fr; gap: 0.5rem; } @media (min-width: 480px) { .hero-visual { grid-template-columns: repeat(2, 1fr); } } @media (min-width: 900px) { .hero-visual { grid-template-columns: 1fr; gap: 0.75rem; } }
+        .hero-point { padding: 0.875rem 1rem; background: rgba(255,255,255,0.04); border-left: 2px solid var(--accent); } @media (min-width: 768px) { .hero-point { padding: 1rem 1.25rem; } }
+        .hero-point h4 { color: var(--white); font-size: 0.8125rem; font-weight: 600; margin-bottom: 0.15rem; } @media (min-width: 768px) { .hero-point h4 { font-size: 0.875rem; margin-bottom: 0.2rem; } }
+        .hero-point p { color: var(--white); font-size: 0.75rem; opacity: 0.7; } @media (min-width: 768px) { .hero-point p { font-size: 0.8125rem; } }
+        .credentials { background: var(--white); padding: 0.875rem 0; border-bottom: 1px solid var(--gray-200); } @media (min-width: 768px) { .credentials { padding: 1rem 0; } }
+        .credentials-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem 1.25rem; } @media (min-width: 768px) { .credentials-inner { gap: 1rem 2rem; } }
+        .credential-item { display: flex; align-items: center; gap: 0.35rem; color: var(--gray-600); font-size: 0.6875rem; } @media (min-width: 768px) { .credential-item { gap: 0.4rem; font-size: 0.75rem; } }
+        .credential-item svg { width: 12px; height: 12px; color: var(--accent); flex-shrink: 0; } @media (min-width: 768px) { .credential-item svg { width: 14px; height: 14px; } }
+        .credential-item strong { color: var(--gray-900); font-weight: 700; }
+        .categories { padding: 0.875rem 0; background: var(--white); border-bottom: 1px solid var(--gray-200); position: sticky; top: 56px; z-index: 100; } @media (min-width: 768px) { .categories { padding: 1.25rem 0; top: 64px; } }
+        .categories-inner { display: flex; align-items: center; gap: 0.4rem; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 0.25rem; } .categories-inner::-webkit-scrollbar { display: none; } @media (min-width: 768px) { .categories-inner { gap: 0.5rem; flex-wrap: wrap; overflow-x: visible; padding-bottom: 0; } }
+        .categories-label { font-size: 0.6875rem; color: var(--gray-500); font-weight: 600; flex-shrink: 0; display: none; } @media (min-width: 480px) { .categories-label { display: block; font-size: 0.75rem; } }
+        .category-pill { padding: 0.375rem 0.75rem; border: 1px solid var(--gray-300); border-radius: 3px; font-size: 0.6875rem; color: var(--gray-700); text-decoration: none; font-weight: 500; white-space: nowrap; flex-shrink: 0; } @media (min-width: 768px) { .category-pill { padding: 0.4rem 0.85rem; font-size: 0.75rem; } } .category-pill:hover { border-color: var(--gray-900); color: var(--gray-900); } .category-pill.active { background: var(--dark); border-color: var(--dark); color: var(--white); }
+        .section { padding: var(--section-padding) 0; scroll-margin-top: 100px; } @media (min-width: 768px) { .section { scroll-margin-top: 120px; } } .section--gray { background: var(--gray-50); } .section--dark { background: var(--dark); }
+        .section-header { margin-bottom: 1.5rem; } @media (min-width: 768px) { .section-header { margin-bottom: 2rem; } } .section-header.centered { text-align: center; max-width: 560px; margin-left: auto; margin-right: auto; }
+        .section-title { font-size: 1.25rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.35rem; } @media (min-width: 768px) { .section-title { font-size: 1.5rem; margin-bottom: 0.5rem; } } .section--dark .section-title { color: var(--white); }
+        .section-subtitle { font-size: 0.875rem; color: var(--gray-600); } @media (min-width: 768px) { .section-subtitle { font-size: 0.9375rem; } } .section--dark .section-subtitle { color: var(--white); opacity: 0.75; }
+        .programs-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; } @media (min-width: 600px) { .programs-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } } @media (min-width: 900px) { .programs-grid { grid-template-columns: repeat(3, 1fr); } }
+        .program-card { background: var(--white); border: 1px solid var(--gray-200); overflow: hidden; } .program-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .program-card-header { background: var(--dark); padding: 0.75rem 1rem; } @media (min-width: 768px) { .program-card-header { padding: 0.875rem 1.25rem; } }
+        .program-card-tag { font-size: 0.5625rem; font-weight: 600; color: var(--white); text-transform: uppercase; letter-spacing: 0.04em; opacity: 0.8; } @media (min-width: 768px) { .program-card-tag { font-size: 0.625rem; } }
+        .program-card-body { padding: 1rem; } @media (min-width: 768px) { .program-card-body { padding: 1.25rem; } }
+        .program-card h3 { font-size: 0.875rem; font-weight: 600; color: var(--gray-900); margin-bottom: 0.35rem; } @media (min-width: 768px) { .program-card h3 { font-size: 0.9375rem; margin-bottom: 0.5rem; } }
+        .program-card p { font-size: 0.75rem; color: var(--gray-600); margin-bottom: 0.875rem; } @media (min-width: 768px) { .program-card p { font-size: 0.8125rem; margin-bottom: 1rem; } }
+        .program-card-link { display: inline-flex; align-items: center; gap: 0.3rem; color: var(--dark); font-size: 0.75rem; font-weight: 600; text-decoration: none; } @media (min-width: 768px) { .program-card-link { font-size: 0.8125rem; } } .program-card-link svg { width: 14px; height: 14px; }
+        .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; } @media (min-width: 600px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } } @media (min-width: 900px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+        .testimonial-card { padding: 1rem; background: var(--dark-soft); border-left: 2px solid var(--accent); } @media (min-width: 768px) { .testimonial-card { padding: 1.25rem; } }
+        .testimonial-quote { font-size: 0.8125rem; color: var(--white); line-height: 1.55; font-style: italic; margin-bottom: 0.75rem; } @media (min-width: 768px) { .testimonial-quote { font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem; } }
+        .testimonial-author { font-size: 0.75rem; font-weight: 600; color: var(--white); } @media (min-width: 768px) { .testimonial-author { font-size: 0.8125rem; } }
+        .testimonial-role { font-size: 0.625rem; color: var(--white); opacity: 0.6; } @media (min-width: 768px) { .testimonial-role { font-size: 0.6875rem; } }
+        .testimonial-company { font-size: 0.625rem; color: var(--accent); font-weight: 600; } @media (min-width: 768px) { .testimonial-company { font-size: 0.6875rem; } }
+        .method-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; } @media (min-width: 768px) { .method-grid { grid-template-columns: repeat(4, 1fr); } }
+        .method-step { padding: 1.25rem 0.75rem; text-align: center; background: var(--white); border: 1px solid var(--gray-200); margin: -0.5px; } @media (min-width: 768px) { .method-step { padding: 1.5rem 1rem; } } .method-step:hover { border-color: var(--accent); }
+        .method-number { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--dark); color: var(--accent); font-size: 0.75rem; font-weight: 700; border-radius: 50%; margin-bottom: 0.625rem; } @media (min-width: 768px) { .method-number { width: 32px; height: 32px; font-size: 0.875rem; margin-bottom: 0.75rem; } }
+        .method-step h4 { font-size: 0.8125rem; font-weight: 600; color: var(--gray-900); margin-bottom: 0.2rem; } @media (min-width: 768px) { .method-step h4 { font-size: 0.875rem; margin-bottom: 0.25rem; } }
+        .method-step p { font-size: 0.6875rem; color: var(--gray-600); } @media (min-width: 768px) { .method-step p { font-size: 0.75rem; } }
+        .why-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; } @media (min-width: 768px) { .why-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; } }
+        .why-card { padding: 1.25rem; border-left: 2px solid var(--accent); background: var(--dark-soft); } @media (min-width: 768px) { .why-card { padding: 1.5rem; } }
+        .why-card h3 { font-size: 0.875rem; font-weight: 600; color: var(--white); margin-bottom: 0.35rem; } @media (min-width: 768px) { .why-card h3 { font-size: 0.9375rem; margin-bottom: 0.5rem; } }
+        .why-card p { font-size: 0.8125rem; color: var(--white); opacity: 0.8; } @media (min-width: 768px) { .why-card p { font-size: 0.875rem; } }
+        .cta-section { padding: var(--section-padding) 0; background: var(--gray-50); }
+        .cta-box { background: var(--dark); padding: 1.5rem; display: flex; flex-direction: column; gap: 1.25rem; text-align: center; } @media (min-width: 768px) { .cta-box { padding: 2.5rem; flex-direction: row; justify-content: space-between; align-items: center; text-align: left; } }
+        .cta-box h2 { font-size: 1.125rem; font-weight: 700; color: var(--white); margin-bottom: 0.25rem; } @media (min-width: 768px) { .cta-box h2 { font-size: 1.25rem; margin-bottom: 0.35rem; } }
+        .cta-box p { font-size: 0.875rem; color: var(--white); opacity: 0.75; } @media (min-width: 768px) { .cta-box p { font-size: 0.9375rem; } }
+        .cta-box .btn-primary { width: 100%; } @media (min-width: 768px) { .cta-box .btn-primary { width: auto; flex-shrink: 0; } }
+        .footer { background: var(--dark); padding: 1.25rem 0; } @media (min-width: 768px) { .footer { padding: 1.5rem 0; } }
+        .footer-inner { display: flex; flex-direction: column; gap: 1rem; text-align: center; } @media (min-width: 768px) { .footer-inner { flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; text-align: left; } }
+        .footer-brand { display: flex; align-items: center; justify-content: center; gap: 0.5rem; } @media (min-width: 768px) { .footer-brand { justify-content: flex-start; gap: 0.75rem; } }
+        .footer-brand svg { height: 20px; } @media (min-width: 768px) { .footer-brand svg { height: 24px; } }
+        .footer-text { font-size: 0.6875rem; color: var(--white); opacity: 0.5; } @media (min-width: 768px) { .footer-text { font-size: 0.75rem; } }
+        .footer-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem 1.25rem; } @media (min-width: 768px) { .footer-contact { justify-content: flex-end; gap: 1.5rem; } }
+        .footer-contact a { display: flex; align-items: center; gap: 0.25rem; color: var(--white); opacity: 0.6; text-decoration: none; font-size: 0.6875rem; } @media (min-width: 768px) { .footer-contact a { gap: 0.3rem; font-size: 0.75rem; } } .footer-contact a:hover { opacity: 1; }
+        .footer-contact svg { width: 12px; height: 12px; color: var(--accent); } @media (min-width: 768px) { .footer-contact svg { width: 14px; height: 14px; } }
+        .back-link { display: inline-flex; align-items: center; gap: 0.3rem; color: var(--gray-500); font-size: 0.75rem; text-decoration: none; margin-bottom: 0.5rem; } .back-link:hover { color: var(--gray-700); } .back-link svg { width: 14px; height: 14px; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="capacidades.html" class="logo"><svg viewBox="0 0 448 321" fill="none"><path d="M447.909 0.00622804C443.646 116.854 351.192 212.564 240.68 217.568C265.251 269.286 316.17 303.894 375.053 302.206C401.401 301.466 426.18 293.502 447.702 280.21L447.968 0.00622804Z" fill="#E19A24"/><path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#0f1419"/></svg></a>
+                <nav class="header-nav"><a href="capacidades.html">Todos los sectores</a><a href="#programas">Programas</a><a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a></nav>
+                <div style="display: flex; align-items: center;"><a href="https://wa.me/573164661007" class="header-cta">Contactar</a><button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button></div>
+            </div>
+        </div>
+    </header>
+    <nav class="mobile-menu" id="mobileMenu"><a href="capacidades.html">Todos los sectores</a><a href="#programas" onclick="toggleMenu()">Programas</a><a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a></nav>
+
+    <section class="hero">
+        <div class="container">
+            <a href="capacidades.html" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>Todos los sectores</a>
+            <div class="hero-grid">
+                <div>
+                    <p class="hero-eyebrow">Gas Natural y Energía</p>
+                    <h1>Toda la cadena del gas: producción, transporte, distribución</h1>
+                    <p class="hero-description">Formación técnica en tecnologías del gas, medición, compresión, tratamiento, GLP y comercialización. Programa insignia de 112 horas.</p>
+                    <div class="hero-ctas">
+                        <a href="https://wa.me/573164661007?text=Quiero%20información%20sobre%20Gas%20Natural" class="btn-primary">Agendar llamada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                        <a href="https://hidrocarburos.com.co" class="btn-secondary">Ver cursos</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div><div class="hero-stat-number">112h</div><div class="hero-stat-label">Programa</div></div>
+                        <div><div class="hero-stat-number">15+</div><div class="hero-stat-label">Años</div></div>
+                        <div><div class="hero-stat-number">500+</div><div class="hero-stat-label">Egresados</div></div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-point"><h4>Tecnologías del Gas 112h</h4><p>Programa insignia más completo.</p></div>
+                    <div class="hero-point"><h4>Medición y fiscalización</h4><p>Cromatografía, incertidumbre, AGA.</p></div>
+                    <div class="hero-point"><h4>Compresión y tratamiento</h4><p>Equipos y procesos de campo.</p></div>
+                    <div class="hero-point"><h4>GLP y comercialización</h4><p>Regulación y mercado.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="credentials">
+        <div class="container">
+            <div class="credentials-inner">
+                <div class="credential-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Clientes: <strong>Promigas, TGI</strong></div>
+                <div class="credential-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>Normas <strong>AGA, ISO</strong></div>
+                <div class="credential-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>Badges <strong>Credly</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories" id="programas">
+        <div class="container">
+            <div class="categories-inner">
+                <span class="categories-label">Ir a:</span>
+                <a href="#tecnologias" class="category-pill active">Tecnologías</a>
+                <a href="#medicion" class="category-pill">Medición</a>
+                <a href="#compresion" class="category-pill">Compresión</a>
+                <a href="#glp" class="category-pill">GLP</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="tecnologias">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Tecnologías del Gas</h2><p class="section-subtitle">Programa integral de 112 horas. Toda la cadena del gas.</p></div>
+            <div class="programs-grid">
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Programa 112h</span></div><div class="program-card-body"><h3>Tecnologías del Gas Natural</h3><p>Producción, transporte, distribución y comercialización.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div><div class="program-card-body"><h3>Fundamentos del Gas Natural</h3><p>Propiedades, comportamiento y aplicaciones.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div><div class="program-card-body"><h3>Regulación del Sector Gas</h3><p>Marco normativo y comercialización.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--gray" id="medicion">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Medición de Gas</h2><p class="section-subtitle">Cromatografía, incertidumbre y fiscalización.</p></div>
+            <div class="programs-grid">
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div><div class="program-card-body"><h3>Medición de Gas Natural</h3><p>Equipos, calibración y cálculo de incertidumbre.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div><div class="program-card-body"><h3>Cromatografía de Gases</h3><p>Análisis de composición y calidad.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div><div class="program-card-body"><h3>Normas AGA</h3><p>Estándares de medición de gas.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="compresion">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Compresión y Tratamiento</h2><p class="section-subtitle">Equipos y procesos de campo.</p></div>
+            <div class="programs-grid">
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div><div class="program-card-body"><h3>Compresión de Gas</h3><p>Diseño, operación y mantenimiento.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div><div class="program-card-body"><h3>Tratamiento de Gas</h3><p>Deshidratación, endulzamiento, separación.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div><div class="program-card-body"><h3>Plantas de Procesamiento</h3><p>Operación de plantas de gas.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--gray" id="glp">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">GLP y Comercialización</h2><p class="section-subtitle">Gas licuado de petróleo y mercados energéticos.</p></div>
+            <div class="programs-grid">
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div><div class="program-card-body"><h3>Tecnología del GLP</h3><p>Propiedades, almacenamiento, distribución.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div><div class="program-card-body"><h3>Comercialización de Gas</h3><p>Contratos, precios, regulación.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+                <div class="program-card"><div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div><div class="program-card-body"><h3>LNG - Gas Natural Licuado</h3><p>Cadena de valor del GNL.</p><a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--dark">
+        <div class="container">
+            <div class="section-header centered"><h2 class="section-title">Lo que dicen los participantes</h2></div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card"><p class="testimonial-quote">"Abarca toda la cadena de gas, temas regulatorios, historia y lo que viene para el mercado."</p><p class="testimonial-author">Camilo Ovalle</p><p class="testimonial-role">Subgerente Financiero</p><p class="testimonial-company">Gases del Caribe</p></div>
+                <div class="testimonial-card"><p class="testimonial-quote">"El programa de 112 horas es el más completo que he visto en el mercado colombiano."</p><p class="testimonial-author">María Fernanda Ríos</p><p class="testimonial-role">Ingeniera de Medición</p><p class="testimonial-company">TGI</p></div>
+                <div class="testimonial-card"><p class="testimonial-quote">"Instructores con experiencia real en el sector. Eso marca la diferencia."</p><p class="testimonial-author">Luis Alberto Pérez</p><p class="testimonial-role">Jefe de Operaciones</p><p class="testimonial-company">Promigas</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--gray">
+        <div class="container">
+            <div class="section-header centered"><h2 class="section-title">Cómo trabajamos</h2><p class="section-subtitle">Programas a medida. No cursos de catálogo.</p></div>
+            <div class="method-grid">
+                <div class="method-step"><div class="method-number">1</div><h4>Diagnóstico</h4><p>Gaps y prioridades.</p></div>
+                <div class="method-step"><div class="method-number">2</div><h4>Diseño</h4><p>Contenido a medida.</p></div>
+                <div class="method-step"><div class="method-number">3</div><h4>Ejecución</h4><p>Instructores con campo.</p></div>
+                <div class="method-step"><div class="method-number">4</div><h4>Evaluación</h4><p>Resultados medibles.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--dark">
+        <div class="container">
+            <div class="section-header"><h2 class="section-title">Por qué Elite Training</h2></div>
+            <div class="why-grid">
+                <div class="why-card"><h3>15+ años en el sector</h3><p>Formando profesionales del gas en Colombia y la región.</p></div>
+                <div class="why-card"><h3>Clientes de referencia</h3><p>Promigas, TGI, Gases del Caribe, Surtigas y más.</p></div>
+                <div class="why-card"><h3>Programa insignia 112h</h3><p>El más completo del mercado en tecnologías del gas.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <div><h2>¿Necesita formar a su equipo de gas?</h2><p>Programa Tecnologías del Gas 112h o cursos específicos.</p></div>
+                <a href="https://wa.me/573164661007?text=Quiero%20información%20sobre%20Gas%20Natural" class="btn-primary">Agendar llamada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-inner"><div class="footer-brand"><svg viewBox="0 0 448 321" fill="none"><path d="M447.909 0.00622804C443.646 116.854 351.192 212.564 240.68 217.568C265.251 269.286 316.17 303.894 375.053 302.206C401.401 301.466 426.18 293.502 447.702 280.21L447.968 0.00622804Z" fill="#E19A24"/><path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#fff"/></svg><span class="footer-text">© 2026 Elite Training</span></div><div class="footer-contact"><a href="tel:+573164661007"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>+57 316 466 1007</a><a href="https://hidrocarburos.com.co"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>hidrocarburos.com.co</a></div></div></div></footer>
+
+    <script>
+        function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
+        const pills = document.querySelectorAll('.category-pill'); const sections = document.querySelectorAll('.section[id]');
+        pills.forEach(pill => { pill.addEventListener('click', e => { e.preventDefault(); document.getElementById(pill.getAttribute('href').slice(1))?.scrollIntoView({ behavior: 'smooth' }); pills.forEach(p => p.classList.remove('active')); pill.classList.add('active'); }); });
+        window.addEventListener('scroll', () => { let current = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 180) current = s.id; }); pills.forEach(p => p.classList.toggle('active', p.getAttribute('href') === '#' + current)); document.getElementById('mobileMenu').classList.remove('active'); });
+    </script>
+</body>
+</html>
