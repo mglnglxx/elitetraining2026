@@ -409,14 +409,14 @@
         
         /* ==================== CLIENTS ==================== */
         .clients {
-            background: var(--gray-50);
-            padding: 1.5rem 0;
+            background: var(--white);
+            padding: 2rem 0;
             border-bottom: 1px solid var(--gray-200);
             overflow: hidden;
         }
         
         @media (min-width: 768px) {
-            .clients { padding: 2rem 0; }
+            .clients { padding: 2.5rem 0; }
         }
         
         .clients-label {
@@ -451,35 +451,30 @@
         
         @media (min-width: 768px) {
             .clients-grid {
-                justify-content: center;
-                flex-wrap: wrap;
-                gap: 2rem 3rem;
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 2rem 2.5rem;
                 overflow-x: visible;
                 padding-bottom: 0;
+                max-width: 900px;
+                margin: 0 auto;
             }
         }
         
         .client-logo {
-            height: 24px;
+            height: 28px;
             max-width: 100px;
             width: auto;
             flex-shrink: 0;
-            opacity: 0.6;
-            filter: grayscale(100%);
-            transition: all 0.2s;
             object-fit: contain;
         }
         
         @media (min-width: 768px) {
             .client-logo { 
-                height: 32px; 
-                max-width: 120px;
+                height: 44px; 
+                max-width: 140px;
+                justify-self: center;
             }
-        }
-        
-        .client-logo:hover {
-            opacity: 1;
-            filter: grayscale(0%);
         }
         
         /* ==================== CREDENTIALS ==================== */
