@@ -161,6 +161,24 @@
         @media (min-width: 768px) { .program-card-link { font-size: 0.8125rem; } }
         .program-card-link svg { width: 14px; height: 14px; }
 
+        /* CAPABILITY CATALOG */
+        .capability-section { padding: var(--section-padding) 0; } .capability-section.alt { background: var(--gray-50); }
+        .capability-theme { margin-bottom: 4rem; } .capability-theme:last-child { margin-bottom: 0; }
+        .capability-theme-header { margin-bottom: 2rem; }
+        .capability-theme-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--dark); line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+        .capability-theme-subtitle { font-size: 1.0625rem; color: var(--gray-500); font-weight: 400; max-width: 600px; }
+        .capability-columns { display: grid; grid-template-columns: 1fr; gap: 0 4rem; } @media (min-width: 768px) { .capability-columns { grid-template-columns: 1fr 1fr; } }
+        .capability-group { margin-bottom: 2rem; }
+        .capability-group-tag { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--white); background: var(--dark); display: inline-block; padding: 0.375rem 0.625rem; margin-bottom: 0.875rem; }
+        .capability-list { list-style: none; }
+        .capability-list li { padding: 0.625rem 0; border-bottom: 1px solid var(--gray-200); }
+        .capability-list li:last-child { border-bottom: none; }
+        .cap-name { font-weight: 600; color: var(--gray-900); font-size: 1rem; display: block; }
+        .cap-topics { font-size: 0.8125rem; color: var(--gray-500); margin-top: 0.125rem; display: block; }
+        .catalog-footer { margin-top: 4rem; padding: 2rem; background: var(--dark); border-radius: 4px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+        .catalog-footer-text { color: var(--white); } .catalog-footer-text strong { font-size: 1.25rem; font-weight: 700; display: block; margin-bottom: 0.25rem; } .catalog-footer-text span { font-size: 0.9375rem; opacity: 0.8; }
+        .catalog-footer-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.5rem; background: var(--white); color: var(--dark); text-decoration: none; font-weight: 600; font-size: 0.9375rem; border-radius: 4px; } .catalog-footer-btn:hover { opacity: 0.9; } .catalog-footer-btn svg { width: 16px; height: 16px; }
+
         /* TESTIMONIALS */
         .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
         @media (min-width: 600px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } }
@@ -359,177 +377,124 @@
         </div>
     </section>
 
-    <section class="section" id="recipientes">
+    <!-- CAPABILITY CATALOG -->
+    <section class="capability-section" id="recipientes">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Recipientes a Presión</h2>
-                <p class="section-subtitle">Diseño, fabricación e inspección según códigos ASME.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">ASME Autorizado</span></div>
-                    <div class="program-card-body">
-                        <h3>ASME Sección VIII Div 1</h3>
-                        <p>Diseño e inspección de recipientes a presión.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            <div class="capability-theme">
+                <div class="capability-theme-header">
+                    <h2 class="capability-theme-title">Códigos ASME</h2>
+                    <p class="capability-theme-subtitle">Formación autorizada en códigos ASME para diseño, fabricación e inspección de equipos presurizados.</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">ASME Autorizado</span></div>
-                    <div class="program-card-body">
-                        <h3>ASME Sección VIII Div 2</h3>
-                        <p>Reglas alternativas para recipientes.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <div class="capability-columns">
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Recipientes a Presión</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">ASME Sección VIII División 1</span><span class="cap-topics">Diseño por reglas, materiales, fabricación</span></div></li>
+                            <li><div><span class="cap-name">ASME Sección VIII División 2</span><span class="cap-topics">Diseño por análisis, FEA</span></div></li>
+                            <li><div><span class="cap-name">ASME PCC-2</span><span class="cap-topics">Reparación de equipos presurizados</span></div></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>API 510</h3>
-                        <p>Inspección de recipientes a presión en servicio.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Tuberías de Proceso</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">ASME B31.3</span><span class="cap-topics">Piping de proceso, diseño y materiales</span></div></li>
+                            <li><div><span class="cap-name">ASME B31.4</span><span class="cap-topics">Oleoductos</span></div></li>
+                            <li><div><span class="cap-name">ASME B31.8</span><span class="cap-topics">Gasoductos</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Soldadura</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">ASME Sección IX</span><span class="cap-topics">Calificación de procedimientos y soldadores</span></div></li>
+                            <li><div><span class="cap-name">AWS D1.1</span><span class="cap-topics">Código de soldadura estructural</span></div></li>
+                            <li><div><span class="cap-name">Inspección de Soldaduras</span><span class="cap-topics">Visual, criterios de aceptación</span></div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="section section--gray" id="tanques">
+    
+    <section class="capability-section alt" id="tanques">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Tanques de Almacenamiento</h2>
-                <p class="section-subtitle">Diseño, construcción, inspección y reparación.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>API 650</h3>
-                        <p>Diseño y construcción de tanques soldados.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            <div class="capability-theme">
+                <div class="capability-theme-header">
+                    <h2 class="capability-theme-title">Códigos API</h2>
+                    <p class="capability-theme-subtitle">Inspección, mantenimiento y reparación de equipos estáticos según estándares API.</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>API 653</h3>
-                        <p>Inspección, reparación y alteración de tanques.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <div class="capability-columns">
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Inspección de Equipos</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">API 510</span><span class="cap-topics">Inspección de recipientes a presión en servicio</span></div></li>
+                            <li><div><span class="cap-name">API 570</span><span class="cap-topics">Inspección de tuberías en servicio</span></div></li>
+                            <li><div><span class="cap-name">API 653</span><span class="cap-topics">Inspección de tanques de almacenamiento</span></div></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>API 2610</h3>
-                        <p>Diseño de terminales y tanques.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Tanques</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">API 650</span><span class="cap-topics">Diseño y construcción de tanques soldados</span></div></li>
+                            <li><div><span class="cap-name">API 620</span><span class="cap-topics">Tanques de baja presión</span></div></li>
+                            <li><div><span class="cap-name">API 2610</span><span class="cap-topics">Terminales y almacenamiento</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Mecanismos de Daño</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">API 571</span><span class="cap-topics">Mecanismos de daño en refinería</span></div></li>
+                            <li><div><span class="cap-name">Corrosión</span><span class="cap-topics">Tipos, predicción, monitoreo</span></div></li>
+                            <li><div><span class="cap-name">Protección Catódica</span><span class="cap-topics">Diseño, instalación, monitoreo</span></div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="section" id="tuberias">
+    
+    <section class="capability-section" id="tuberias">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Tuberías y Piping</h2>
-                <p class="section-subtitle">Diseño, inspección y mantenimiento de sistemas de tuberías.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">ASME Autorizado</span></div>
-                    <div class="program-card-body">
-                        <h3>ASME B31.3</h3>
-                        <p>Tuberías de proceso.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            <div class="capability-theme">
+                <div class="capability-theme-header">
+                    <h2 class="capability-theme-title">RBI y Fitness-for-Service</h2>
+                    <p class="capability-theme-subtitle">Metodologías de inspección basada en riesgo y evaluación de aptitud para servicio.</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>API 570</h3>
-                        <p>Inspección de tuberías en servicio.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <div class="capability-columns">
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Inspección Basada en Riesgo</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">API 580</span><span class="cap-topics">Fundamentos de RBI</span></div></li>
+                            <li><div><span class="cap-name">API 581</span><span class="cap-topics">Metodología cuantitativa RBI</span></div></li>
+                            <li><div><span class="cap-name">Planes de Inspección</span><span class="cap-topics">Priorización, frecuencia, alcance</span></div></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>ASME B31.4 / B31.8</h3>
-                        <p>Oleoductos y gasoductos.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Fitness-for-Service</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">API 579-1 / ASME FFS-1</span><span class="cap-topics">Evaluación de defectos y daños</span></div></li>
+                            <li><div><span class="cap-name">Análisis de Vida Remanente</span><span class="cap-topics">Cálculos, extensión de vida</span></div></li>
+                            <li><div><span class="cap-name">Evaluación de Defectos</span><span class="cap-topics">Corrosión, grietas, deformación</span></div></li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--gray" id="rbi">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">RBI y Fitness-for-Service</h2>
-                <p class="section-subtitle">Inspección basada en riesgo y evaluación de aptitud para servicio.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>API 580/581</h3>
-                        <p>Fundamentos y aplicación de RBI.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>API 579-1 / ASME FFS-1</h3>
-                        <p>Fitness-for-Service.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Protección Catódica</h3>
-                        <p>Principios y aplicación en campo.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Técnicas de Inspección</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">END - Ensayos No Destructivos</span><span class="cap-topics">UT, RT, MT, PT, VT</span></div></li>
+                            <li><div><span class="cap-name">Inspección en Servicio</span><span class="cap-topics">Técnicas, procedimientos, seguridad</span></div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="section" id="soldadura">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Soldadura y Calificación</h2>
-                <p class="section-subtitle">Procedimientos, calificación e inspección de soldaduras.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">ASME Autorizado</span></div>
-                    <div class="program-card-body">
-                        <h3>ASME Sección IX</h3>
-                        <p>Calificación de procedimientos y soldadores.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            
+            <div class="catalog-footer">
+                <div class="catalog-footer-text">
+                    <strong>¿Busca un programa específico?</strong>
+                    <span>Explore nuestro catálogo completo de cursos en el Campus Virtual</span>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>AWS D1.1</h3>
-                        <p>Código de soldadura estructural.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Inspección Visual de Soldaduras</h3>
-                        <p>Técnicas y criterios de aceptación.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
-                </div>
+                <a href="https://hidrocarburos.com.co" class="catalog-footer-btn" target="_blank">
+                    Ir al Campus Virtual
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
             </div>
         </div>
     </section>

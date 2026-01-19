@@ -120,6 +120,22 @@
         .program-card-link { display: inline-flex; align-items: center; gap: 0.3rem; color: var(--dark); font-size: 0.75rem; font-weight: 600; text-decoration: none; }
         @media (min-width: 768px) { .program-card-link { font-size: 0.8125rem; } }
         .program-card-link svg { width: 14px; height: 14px; }
+        .capability-section { padding: var(--section-padding) 0; } .capability-section.alt { background: var(--gray-50); }
+        .capability-theme { margin-bottom: 4rem; } .capability-theme:last-child { margin-bottom: 0; }
+        .capability-theme-header { margin-bottom: 2rem; }
+        .capability-theme-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; color: var(--dark); line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
+        .capability-theme-subtitle { font-size: 1.0625rem; color: var(--gray-500); font-weight: 400; max-width: 600px; }
+        .capability-columns { display: grid; grid-template-columns: 1fr; gap: 0 4rem; } @media (min-width: 768px) { .capability-columns { grid-template-columns: 1fr 1fr; } }
+        .capability-group { margin-bottom: 2rem; }
+        .capability-group-tag { font-size: 0.6875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--white); background: var(--dark); display: inline-block; padding: 0.375rem 0.625rem; margin-bottom: 0.875rem; }
+        .capability-list { list-style: none; }
+        .capability-list li { padding: 0.625rem 0; border-bottom: 1px solid var(--gray-200); }
+        .capability-list li:last-child { border-bottom: none; }
+        .cap-name { font-weight: 600; color: var(--gray-900); font-size: 1rem; display: block; }
+        .cap-topics { font-size: 0.8125rem; color: var(--gray-500); margin-top: 0.125rem; display: block; }
+        .catalog-footer { margin-top: 4rem; padding: 2rem; background: var(--dark); border-radius: 4px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; }
+        .catalog-footer-text { color: var(--white); } .catalog-footer-text strong { font-size: 1.25rem; font-weight: 700; display: block; margin-bottom: 0.25rem; } .catalog-footer-text span { font-size: 0.9375rem; opacity: 0.8; }
+        .catalog-footer-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.875rem 1.5rem; background: var(--white); color: var(--dark); text-decoration: none; font-weight: 600; font-size: 0.9375rem; border-radius: 4px; } .catalog-footer-btn:hover { opacity: 0.9; } .catalog-footer-btn svg { width: 16px; height: 16px; }
         .testimonials-grid { display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
         @media (min-width: 600px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } }
         @media (min-width: 900px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -268,142 +284,96 @@
         </div>
     </section>
 
-    <section class="section" id="diplomado">
+    <!-- CAPABILITY CATALOG -->
+    <section class="capability-section" id="diplomado">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Diplomado en Gestión de Activos</h2>
-                <p class="section-subtitle">Programa insignia con certificación IAM. Partner TWPL.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Partner TWPL</span></div>
-                    <div class="program-card-body">
-                        <h3>Diplomado Gestión de Activos</h3>
-                        <p>Preparación para certificación IAM. 120 horas.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            <div class="capability-theme">
+                <div class="capability-theme-header">
+                    <h2 class="capability-theme-title">Frameworks Internacionales</h2>
+                    <p class="capability-theme-subtitle">Metodologías reconocidas mundialmente para la gestión del ciclo de vida de activos industriales.</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>ISO 55001 Fundamentos</h3>
-                        <p>Sistema de gestión de activos.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <div class="capability-columns">
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Certificación IAM</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Diplomado Gestión de Activos (120h)</span><span class="cap-topics">Partner The Woodhouse Partnership</span></div></li>
+                            <li><div><span class="cap-name">Preparación Examen IAM</span><span class="cap-topics">Certificate, Diploma, Endorsed Assessor</span></div></li>
+                            <li><div><span class="cap-name">Gestión de Activos Físicos</span><span class="cap-topics">Modelo de 39 temas, brechas, mejora</span></div></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Auditor Interno ISO 55001</h3>
-                        <p>Auditorías de sistemas de gestión.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">ISO 55001</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Fundamentos ISO 55001</span><span class="cap-topics">Sistema de gestión de activos</span></div></li>
+                            <li><div><span class="cap-name">Implementación ISO 55001</span><span class="cap-topics">Roadmap, documentación, procesos</span></div></li>
+                            <li><div><span class="cap-name">Auditor Interno ISO 55001</span><span class="cap-topics">Técnicas de auditoría, hallazgos</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Ciclo de Vida</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Costos de Ciclo de Vida (LCC)</span><span class="cap-topics">Análisis económico, decisiones</span></div></li>
+                            <li><div><span class="cap-name">Gestión de Riesgo</span><span class="cap-topics">ISO 31000, riesgo operacional</span></div></li>
+                            <li><div><span class="cap-name">Estrategia de Activos</span><span class="cap-topics">Alineación, SAMP, planes</span></div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section--gray" id="rcm">
+    <section class="capability-section alt" id="rcm">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">RCM y Mantenimiento</h2>
-                <p class="section-subtitle">Mantenimiento centrado en confiabilidad.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>RCM - Mantenimiento Centrado en Confiabilidad</h3>
-                        <p>Metodología y aplicación práctica.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            <div class="capability-theme">
+                <div class="capability-theme-header">
+                    <h2 class="capability-theme-title">Confiabilidad y Mantenimiento</h2>
+                    <p class="capability-theme-subtitle">Metodologías para optimizar la disponibilidad y rendimiento de equipos industriales.</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>TPM - Mantenimiento Productivo Total</h3>
-                        <p>Pilares y herramientas de implementación.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <div class="capability-columns">
+                    <div class="capability-group">
+                        <span class="capability-group-tag">RCM</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">RCM - Mantenimiento Centrado en Confiabilidad</span><span class="cap-topics">SAE JA1011, metodología, aplicación</span></div></li>
+                            <li><div><span class="cap-name">RCM Acelerado</span><span class="cap-topics">Implementación rápida en equipos críticos</span></div></li>
+                            <li><div><span class="cap-name">Planes de Mantenimiento</span><span class="cap-topics">Desarrollo basado en análisis</span></div></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Estrategias de Mantenimiento</h3>
-                        <p>Preventivo, predictivo, proactivo.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Estrategias</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Mantenimiento Preventivo</span><span class="cap-topics">Basado en tiempo y uso</span></div></li>
+                            <li><div><span class="cap-name">Mantenimiento Predictivo</span><span class="cap-topics">Vibración, termografía, ultrasonido</span></div></li>
+                            <li><div><span class="cap-name">TPM</span><span class="cap-topics">Mantenimiento productivo total, pilares</span></div></li>
+                        </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="confiabilidad">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Confiabilidad y Análisis de Fallas</h2>
-                <p class="section-subtitle">Herramientas para identificar y prevenir fallas.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Análisis de Causa Raíz (RCA)</h3>
-                        <p>Técnicas y metodologías de investigación.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Análisis de Fallas</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Análisis de Causa Raíz (RCA)</span><span class="cap-topics">5 Por qués, Ishikawa, Apollo</span></div></li>
+                            <li><div><span class="cap-name">FMEA / FMECA</span><span class="cap-topics">Modos de falla, criticidad, mitigación</span></div></li>
+                            <li><div><span class="cap-name">Análisis RAM</span><span class="cap-topics">Confiabilidad, disponibilidad, simulación</span></div></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>FMEA / AMEF</h3>
-                        <p>Análisis de modos y efectos de falla.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Análisis RAM</h3>
-                        <p>Confiabilidad, disponibilidad, mantenibilidad.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Gestión del Mantenimiento</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Planeación y Programación</span><span class="cap-topics">Backlog, priorización, recursos</span></div></li>
+                            <li><div><span class="cap-name">KPIs de Mantenimiento</span><span class="cap-topics">OEE, MTBF, MTTR, disponibilidad</span></div></li>
+                            <li><div><span class="cap-name">Gestión de Repuestos</span><span class="cap-topics">Criticidad, niveles óptimos, obsoletos</span></div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section class="section section--gray" id="planeacion">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Planeación y Programación</h2>
-                <p class="section-subtitle">Optimización de recursos de mantenimiento.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Planeación y Programación de Mantenimiento</h3>
-                        <p>Metodologías y mejores prácticas.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            
+            <div class="catalog-footer">
+                <div class="catalog-footer-text">
+                    <strong>¿Busca un programa específico?</strong>
+                    <span>Explore nuestro catálogo completo de cursos en el Campus Virtual</span>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Gestión de Repuestos</h3>
-                        <p>Inventarios óptimos y criticidad.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>KPIs de Mantenimiento</h3>
-                        <p>Indicadores y toma de decisiones.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
-                </div>
+                <a href="https://hidrocarburos.com.co" class="catalog-footer-btn" target="_blank">
+                    Ir al Campus Virtual
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
             </div>
         </div>
     </section>
