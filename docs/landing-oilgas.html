@@ -772,6 +772,150 @@
         
         .program-card-link svg { width: 14px; height: 14px; }
         
+        /* ==================== CAPABILITY CATALOG ==================== */
+        .capability-section {
+            padding: var(--section-padding) 0;
+        }
+        
+        .capability-section.alt {
+            background: var(--gray-50);
+        }
+        
+        .capability-theme {
+            margin-bottom: 4rem;
+        }
+        
+        .capability-theme:last-child {
+            margin-bottom: 0;
+        }
+        
+        .capability-theme-header {
+            margin-bottom: 2rem;
+        }
+        
+        .capability-theme-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .capability-theme-subtitle {
+            font-size: 1.0625rem;
+            color: var(--gray-500);
+            font-weight: 400;
+            max-width: 600px;
+        }
+        
+        .capability-columns {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0 4rem;
+        }
+        
+        @media (min-width: 768px) {
+            .capability-columns {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .capability-group {
+            margin-bottom: 2rem;
+        }
+        
+        .capability-group-tag {
+            font-size: 0.6875rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--white);
+            background: var(--dark);
+            display: inline-block;
+            padding: 0.375rem 0.625rem;
+            margin-bottom: 0.875rem;
+        }
+        
+        .capability-list {
+            list-style: none;
+        }
+        
+        .capability-list li {
+            padding: 0.625rem 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        .capability-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .cap-name {
+            font-weight: 600;
+            color: var(--gray-900);
+            font-size: 1rem;
+            display: block;
+        }
+        
+        .cap-topics {
+            font-size: 0.8125rem;
+            color: var(--gray-500);
+            margin-top: 0.125rem;
+            display: block;
+        }
+        
+        /* Catalog CTA */
+        .catalog-footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            background: var(--dark);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .catalog-footer-text {
+            color: var(--white);
+        }
+        
+        .catalog-footer-text strong {
+            font-size: 1.25rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        .catalog-footer-text span {
+            font-size: 0.9375rem;
+            opacity: 0.8;
+        }
+        
+        .catalog-footer-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            background: var(--white);
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9375rem;
+            border-radius: 4px;
+            transition: opacity 0.2s;
+        }
+        
+        .catalog-footer-btn:hover {
+            opacity: 0.9;
+        }
+        
+        .catalog-footer-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+        
         /* ==================== TESTIMONIALS ==================== */
         .testimonials-grid {
             display: grid;
@@ -1298,177 +1442,246 @@
         </div>
     </section>
 
-    <section class="section" id="produccion">
+    <!-- CAPABILITY CATALOG -->
+    <section class="capability-section" id="produccion">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Producción y Facilidades</h2>
-                <p class="section-subtitle">Levantamiento artificial, tratamiento de fluidos, medición.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Facilidades de Producción</h3>
-                        <p>Diseño, operación y optimización de facilidades de superficie.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            <div class="capability-theme">
+                <div class="capability-theme-header">
+                    <h2 class="capability-theme-title">Producción y Facilidades</h2>
+                    <p class="capability-theme-subtitle">Formación integral para operaciones de producción de hidrocarburos, desde el levantamiento hasta el tratamiento y medición.</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Levantamiento Artificial</h3>
-                        <p>ESP, BM, PCP: selección, diseño y troubleshooting.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <div class="capability-columns">
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Levantamiento Artificial</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Bombeo Electrosumergible (ESP)</span><span class="cap-topics">Selección, diseño, operación, troubleshooting</span></div></li>
+                            <li><div><span class="cap-name">Bombeo Mecánico</span><span class="cap-topics">Análisis dinagráfico, optimización de producción</span></div></li>
+                            <li><div><span class="cap-name">Bombeo de Cavidad Progresiva (PCP)</span><span class="cap-topics">Aplicaciones en crudos pesados</span></div></li>
+                            <li><div><span class="cap-name">Gas Lift</span><span class="cap-topics">Diseño y optimización de sistemas</span></div></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Medición para Custodia</h3>
-                        <p>Calibración, incertidumbre y fiscalización.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Facilidades de Superficie</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Tratamiento de Crudo</span><span class="cap-topics">Deshidratación, desalado, estabilización</span></div></li>
+                            <li><div><span class="cap-name">Separación y Manejo de Fluidos</span><span class="cap-topics">Separadores, tanques, bombeo</span></div></li>
+                            <li><div><span class="cap-name">Tratamiento de Agua</span><span class="cap-topics">Inyección, disposición, reuso</span></div></li>
+                            <li><div><span class="cap-name">Sistemas de Compresión</span><span class="cap-topics">Gas de proceso, gas lift, exportación</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Medición y Fiscalización</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Medición de Hidrocarburos Líquidos</span><span class="cap-topics">Turbinas, Coriolis, ultrasonido</span></div></li>
+                            <li><div><span class="cap-name">Medición de Gas</span><span class="cap-topics">Orificios, ultrasónico, cromatografía</span></div></li>
+                            <li><div><span class="cap-name">Incertidumbre de Medición</span><span class="cap-topics">Cálculo, reducción, trazabilidad</span></div></li>
+                            <li><div><span class="cap-name">Fiscalización y Transferencia de Custodia</span><span class="cap-topics">Normativa, auditoría, balance</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Operaciones de Campo</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Optimización de Producción</span><span class="cap-topics">Análisis nodal, curvas IPR, diagnóstico</span></div></li>
+                            <li><div><span class="cap-name">Pruebas de Pozo</span><span class="cap-topics">Buildup, drawdown, análisis PVT</span></div></li>
+                            <li><div><span class="cap-name">Control de Arena</span><span class="cap-topics">Gravel pack, screens, consolidación</span></div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="section section--gray" id="perforacion">
+    
+    <section class="capability-section alt" id="perforacion">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Perforación y Workover</h2>
-                <p class="section-subtitle">Completamiento, cementación e integridad de pozo.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Certificación IADC</span></div>
-                    <div class="program-card-body">
-                        <h3>Rig Inspection</h3>
-                        <p>Inspección de taladros según estándares internacionales.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            <div class="capability-theme">
+                <div class="capability-theme-header">
+                    <h2 class="capability-theme-title">Perforación y Workover</h2>
+                    <p class="capability-theme-subtitle">Competencias técnicas para operaciones de perforación, completamiento e intervención de pozos.</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Well Integrity</h3>
-                        <p>Gestión de integridad en todo el ciclo del pozo.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <div class="capability-columns">
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Perforación</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Ingeniería de Perforación</span><span class="cap-topics">Diseño de pozos, hidráulica, direccional</span></div></li>
+                            <li><div><span class="cap-name">Fluidos de Perforación</span><span class="cap-topics">Formulación, control de sólidos, pérdidas</span></div></li>
+                            <li><div><span class="cap-name">Control de Pozos</span><span class="cap-topics">IWCF, well control procedures</span></div></li>
+                            <li><div><span class="cap-name">Rig Inspection (IADC)</span><span class="cap-topics">Inspección de taladros según estándares</span></div></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Cementación de Pozos</h3>
-                        <p>Cementación primaria y remedial.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Completamiento</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Diseño de Completamiento</span><span class="cap-topics">Sartas, empaque, zonas múltiples</span></div></li>
+                            <li><div><span class="cap-name">Cementación</span><span class="cap-topics">Primaria, remedial, squeeze</span></div></li>
+                            <li><div><span class="cap-name">Cañoneo</span><span class="cap-topics">Técnicas TCP, diseño de cargas</span></div></li>
+                            <li><div><span class="cap-name">Fracturamiento Hidráulico</span><span class="cap-topics">Diseño, ejecución, análisis</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Integridad de Pozo</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Well Integrity Management</span><span class="cap-topics">Ciclo de vida, barreras, riesgo</span></div></li>
+                            <li><div><span class="cap-name">Diagnóstico de Problemas</span><span class="cap-topics">Registros, análisis de fallas</span></div></li>
+                            <li><div><span class="cap-name">Workover y Reacondicionamiento</span><span class="cap-topics">Intervenciones, cambio de zona</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Estimulación</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Acidificación</span><span class="cap-topics">Matricial, fractura ácida</span></div></li>
+                            <li><div><span class="cap-name">Tratamientos Químicos</span><span class="cap-topics">Escala, corrosión, bacterias</span></div></li>
+                            <li><div><span class="cap-name">Evaluación de Resultados</span><span class="cap-topics">Análisis pre/post tratamiento</span></div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="section" id="gas">
+    
+    <section class="capability-section" id="gas">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Gas Natural</h2>
-                <p class="section-subtitle">Medición, compresión, tratamiento, LNG.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Programa 112h</span></div>
-                    <div class="program-card-body">
-                        <h3>Tecnologías del Gas</h3>
-                        <p>Producción, transporte y comercialización.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            <div class="capability-theme">
+                <div class="capability-theme-header">
+                    <h2 class="capability-theme-title">Gas Natural y Energía</h2>
+                    <p class="capability-theme-subtitle">Cadena completa del gas: desde la producción hasta la distribución y comercialización.</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Medición de Gas</h3>
-                        <p>Cromatografía, incertidumbre, fiscalización.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <div class="capability-columns">
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Producción y Tratamiento</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Procesamiento de Gas</span><span class="cap-topics">Endulzamiento, deshidratación, fraccionamiento</span></div></li>
+                            <li><div><span class="cap-name">Plantas de Gas</span><span class="cap-topics">Diseño, operación, troubleshooting</span></div></li>
+                            <li><div><span class="cap-name">GLP y Líquidos del Gas</span><span class="cap-topics">Recuperación, almacenamiento, comercialización</span></div></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Compresión de Gas</h3>
-                        <p>Diseño, operación y mantenimiento.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Transporte</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Gasoductos</span><span class="cap-topics">Diseño, operación, integridad</span></div></li>
+                            <li><div><span class="cap-name">Estaciones de Compresión</span><span class="cap-topics">Reciprocantes, centrífugos, control</span></div></li>
+                            <li><div><span class="cap-name">City Gates y Regulación</span><span class="cap-topics">Estaciones de entrega, odorización</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Distribución</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Redes de Distribución</span><span class="cap-topics">Diseño, materiales, construcción</span></div></li>
+                            <li><div><span class="cap-name">Instalaciones Internas</span><span class="cap-topics">Residencial, comercial, industrial</span></div></li>
+                            <li><div><span class="cap-name">GNV</span><span class="cap-topics">Estaciones de servicio, conversión</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Medición y Comercialización</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Medición de Gas</span><span class="cap-topics">Ultrasónico, turbina, orificio</span></div></li>
+                            <li><div><span class="cap-name">Cromatografía</span><span class="cap-topics">Análisis, poder calorífico</span></div></li>
+                            <li><div><span class="cap-name">Mercado del Gas</span><span class="cap-topics">Regulación, contratos, tarifas</span></div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="section section--gray" id="integridad">
+    
+    <section class="capability-section alt" id="integridad">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Integridad Mecánica</h2>
-                <p class="section-subtitle">Códigos ASME/API, inspección, RBI.</p>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">ASME Autorizado</span></div>
-                    <div class="program-card-body">
-                        <h3>ASME Sección VIII Div 1</h3>
-                        <p>Diseño e inspección de recipientes a presión.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            <div class="capability-theme">
+                <div class="capability-theme-header">
+                    <h2 class="capability-theme-title">Integridad Mecánica</h2>
+                    <p class="capability-theme-subtitle">Gestión de integridad de equipos estáticos, códigos internacionales y técnicas de inspección.</p>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>RBI – API 580/581</h3>
-                        <p>Inspección basada en riesgo para equipos.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <div class="capability-columns">
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Códigos ASME</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">ASME Sección VIII Div 1 y 2</span><span class="cap-topics">Diseño de recipientes a presión</span></div></li>
+                            <li><div><span class="cap-name">ASME B31.3 / B31.8</span><span class="cap-topics">Tuberías de proceso y gas</span></div></li>
+                            <li><div><span class="cap-name">ASME PCC-2</span><span class="cap-topics">Reparación de equipos presurizados</span></div></li>
+                        </ul>
                     </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Tanques API 653</h3>
-                        <p>Inspección y reparación de tanques.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Códigos API</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">API 510</span><span class="cap-topics">Inspección de recipientes a presión</span></div></li>
+                            <li><div><span class="cap-name">API 570</span><span class="cap-topics">Inspección de tuberías</span></div></li>
+                            <li><div><span class="cap-name">API 653</span><span class="cap-topics">Inspección de tanques de almacenamiento</span></div></li>
+                            <li><div><span class="cap-name">API 579 (FFS)</span><span class="cap-topics">Fitness-for-Service</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Inspección Basada en Riesgo</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">API 580/581</span><span class="cap-topics">Fundamentos y metodología RBI</span></div></li>
+                            <li><div><span class="cap-name">Análisis de Consecuencias</span><span class="cap-topics">Escenarios, impacto, mitigación</span></div></li>
+                            <li><div><span class="cap-name">Planes de Inspección</span><span class="cap-topics">Priorización, frecuencia, alcance</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Mecanismos de Daño</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Corrosión</span><span class="cap-topics">Tipos, predicción, monitoreo</span></div></li>
+                            <li><div><span class="cap-name">Fatiga y Creep</span><span class="cap-topics">Análisis, vida remanente</span></div></li>
+                            <li><div><span class="cap-name">API 571</span><span class="cap-topics">Mecanismos de daño en refinería</span></div></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="section" id="activos">
+    
+    <section class="capability-section" id="activos">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Gestión de Activos</h2>
-                <p class="section-subtitle">ISO 55001, certificación IAM, RCM.</p>
+            <div class="capability-theme">
+                <div class="capability-theme-header">
+                    <h2 class="capability-theme-title">Gestión de Activos</h2>
+                    <p class="capability-theme-subtitle">Metodologías internacionales para optimizar el ciclo de vida de activos industriales.</p>
+                </div>
+                <div class="capability-columns">
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Frameworks Internacionales</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">ISO 55001</span><span class="cap-topics">Sistema de gestión de activos</span></div></li>
+                            <li><div><span class="cap-name">PAS 55</span><span class="cap-topics">Especificación británica, 28 requerimientos</span></div></li>
+                            <li><div><span class="cap-name">Certificación IAM</span><span class="cap-topics">Con The Woodhouse Partnership</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Confiabilidad</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">RCM</span><span class="cap-topics">Mantenimiento centrado en confiabilidad</span></div></li>
+                            <li><div><span class="cap-name">FMEA / FMECA</span><span class="cap-topics">Análisis de modos de falla</span></div></li>
+                            <li><div><span class="cap-name">Análisis de Causa Raíz</span><span class="cap-topics">Metodologías, herramientas, prevención</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Mantenimiento</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Estrategias de Mantenimiento</span><span class="cap-topics">Preventivo, predictivo, correctivo</span></div></li>
+                            <li><div><span class="cap-name">Planificación y Programación</span><span class="cap-topics">Paradas de planta, backlog</span></div></li>
+                            <li><div><span class="cap-name">KPIs de Mantenimiento</span><span class="cap-topics">OEE, MTBF, MTTR, disponibilidad</span></div></li>
+                        </ul>
+                    </div>
+                    <div class="capability-group">
+                        <span class="capability-group-tag">Ciclo de Vida</span>
+                        <ul class="capability-list">
+                            <li><div><span class="cap-name">Costos de Ciclo de Vida (LCC)</span><span class="cap-topics">Análisis, optimización, decisiones</span></div></li>
+                            <li><div><span class="cap-name">Gestión de Riesgo</span><span class="cap-topics">Identificación, evaluación, tratamiento</span></div></li>
+                            <li><div><span class="cap-name">Extensión de Vida</span><span class="cap-topics">Evaluación, refurbishment, reemplazo</span></div></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Partner TWPL</span></div>
-                    <div class="program-card-body">
-                        <h3>Diplomado Gestión de Activos</h3>
-                        <p>Certificación IAM con The Woodhouse Partnership.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
+            
+            <!-- Catalog CTA -->
+            <div class="catalog-footer">
+                <div class="catalog-footer-text">
+                    <strong>¿Busca un programa específico?</strong>
+                    <span>Explore nuestro catálogo completo de cursos en el Campus Virtual</span>
                 </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>RCM – Mantenimiento</h3>
-                        <p>Planes basados en análisis de fallas.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-card-header"><span class="program-card-tag">Presencial / Online</span></div>
-                    <div class="program-card-body">
-                        <h3>Análisis de Causa Raíz</h3>
-                        <p>Identificar causas y prevenir recurrencias.</p>
-                        <a href="https://hidrocarburos.com.co" class="program-card-link">Ver programa <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                    </div>
-                </div>
+                <a href="https://hidrocarburos.com.co" class="catalog-footer-btn" target="_blank">
+                    Ir al Campus Virtual
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
             </div>
         </div>
     </section>
