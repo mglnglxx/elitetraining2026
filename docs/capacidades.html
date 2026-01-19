@@ -116,15 +116,14 @@
             transform: rotate(180deg);
         }
         
-        /* MEGA MENU - Full Width */
+        /* MEGA MENU - Full Width ROSEN Style */
         .mega-menu {
             position: fixed;
             top: 56px;
             left: 0;
             right: 0;
             background: var(--white);
-            border-bottom: 1px solid var(--gray-200);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
             display: none;
             z-index: 999;
         }
@@ -138,45 +137,142 @@
         }
         
         .mega-menu-inner {
-            max-width: 1100px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: 280px 1fr;
-            min-height: 360px;
+            grid-template-columns: 45% 55%;
+            min-height: 420px;
+        }
+        
+        /* Left Visual Panel */
+        .mega-menu-visual {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mega-menu-visual-bg {
+            position: absolute;
+            inset: 0;
+            display: none;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .mega-menu-visual-bg.active {
+            display: block;
+        }
+        
+        .mega-menu-visual-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+        }
+        
+        .mega-menu-visual-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            color: var(--white);
+            z-index: 1;
+        }
+        
+        .mega-menu-visual-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        
+        .mega-menu-visual-desc {
+            font-size: 0.9375rem;
+            opacity: 0.9;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+        
+        .mega-menu-visual-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--white);
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+        
+        .mega-menu-visual-cta:hover {
+            transform: translateX(4px);
+        }
+        
+        .mega-menu-visual-cta svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* Icon overlay for visual panels */
+        .mega-menu-visual-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .mega-menu-visual-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+        
+        /* Right Panel */
+        .mega-menu-right {
+            display: flex;
+            background: var(--white);
         }
         
         .mega-menu-sectors {
+            width: 240px;
             background: var(--gray-50);
             border-right: 1px solid var(--gray-200);
-            padding: 1rem 0;
+            padding: 1.5rem 0;
+            flex-shrink: 0;
         }
         
         .mega-menu-sector-item {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            padding: 0.875rem 1.5rem;
+            padding: 0.875rem 1.25rem;
             cursor: pointer;
             text-decoration: none;
-            color: var(--gray-700);
-            transition: background 0.15s, color 0.15s;
+            color: var(--gray-600);
+            transition: all 0.15s;
             border-left: 3px solid transparent;
+            font-size: 0.875rem;
         }
         
-        .mega-menu-sector-item:hover,
+        .mega-menu-sector-item:hover {
+            color: var(--gray-900);
+            background: rgba(255,255,255,0.5);
+        }
+        
         .mega-menu-sector-item.active {
             background: var(--white);
             border-left-color: var(--accent);
-        }
-        
-        .mega-menu-sector-item.active {
             color: var(--gray-900);
             font-weight: 600;
         }
         
         .mega-menu-icon {
-            width: 36px;
-            height: 36px;
+            width: 32px;
+            height: 32px;
             border-radius: 4px;
             display: flex;
             align-items: center;
@@ -185,16 +281,18 @@
         }
         
         .mega-menu-icon svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
         }
         
         .mega-menu-sector-name {
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
         }
         
+        /* Content Panel */
         .mega-menu-content {
-            padding: 2rem;
+            flex: 1;
+            padding: 1.5rem 2rem;
             display: none;
         }
         
@@ -203,62 +301,86 @@
         }
         
         .mega-menu-content-header {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-100);
+        }
+        
+        .mega-menu-content-eyebrow {
+            font-size: 0.6875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
         }
         
         .mega-menu-content-title {
-            font-size: 1.25rem;
+            font-size: 1.125rem;
             font-weight: 700;
             color: var(--gray-900);
             margin-bottom: 0.25rem;
         }
         
         .mega-menu-content-desc {
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             color: var(--gray-500);
         }
         
         .mega-menu-links-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0.5rem 2rem;
-            margin-bottom: 1.5rem;
+            grid-template-columns: 1fr;
+            gap: 0;
+            margin-bottom: 1.25rem;
         }
         
         .mega-menu-link {
-            display: block;
-            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.625rem 0;
             color: var(--gray-700);
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             border-bottom: 1px solid var(--gray-100);
-            transition: color 0.15s;
+            transition: color 0.15s, padding-left 0.15s;
         }
         
         .mega-menu-link:hover {
-            color: var(--accent);
+            color: var(--dark);
+            padding-left: 0.5rem;
         }
         
-        .mega-menu-cta {
+        .mega-menu-link::after {
+            content: '→';
+            opacity: 0;
+            transition: opacity 0.15s;
+        }
+        
+        .mega-menu-link:hover::after {
+            opacity: 1;
+        }
+        
+        .mega-menu-footer-cta {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
+            padding: 0.625rem 1rem;
             background: var(--dark);
             color: var(--white);
             text-decoration: none;
-            font-size: 0.875rem;
+            font-size: 0.8125rem;
             font-weight: 600;
             border-radius: 4px;
         }
         
-        .mega-menu-cta:hover {
+        .mega-menu-footer-cta:hover {
             opacity: 0.9;
         }
         
-        .mega-menu-cta svg {
-            width: 16px;
-            height: 16px;
+        .mega-menu-footer-cta svg {
+            width: 14px;
+            height: 14px;
         }
         
         /* Sector-specific colors */
@@ -909,15 +1031,82 @@
         </div>
     </header>
     
-    <!-- MEGA MENU -->
+    <!-- MEGA MENU - ROSEN Style -->
     <div class="mega-menu" id="megaMenu">
         <div class="mega-menu-inner">
-            <div class="mega-menu-sectors">
-                <div class="mega-menu-sector-item active mega-oilgas" data-sector="oilgas">
-                    <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M394.546 394.616L333.484 160.177L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583L237.779 297.607L235.761 305.704L213.613 394.616H140.645V412.257H291.366V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/></svg></div>
-                    <span class="mega-menu-sector-name">Oil & Gas</span>
+            <!-- LEFT VISUAL PANEL -->
+            <div class="mega-menu-visual">
+                <!-- Visual backgrounds for each sector -->
+                <div class="mega-menu-visual-bg active" id="visual-oilgas" style="background: linear-gradient(135deg, #4A4A49 0%, #2d2d2d 100%);">
+                    <div class="mega-menu-visual-icon">
+                        <svg viewBox="0 0 600 600" fill="#BFBFBF"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M394.546 394.616L333.484 160.177L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583L237.779 297.607L235.761 305.704L213.613 394.616H140.645V412.257H291.366V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/></svg>
+                    </div>
+                    <div class="mega-menu-visual-content">
+                        <h3 class="mega-menu-visual-title">Oil & Gas</h3>
+                        <p class="mega-menu-visual-desc">29 años formando profesionales en operaciones upstream, downstream y mantenimiento industrial.</p>
+                        <a href="landing-oilgas.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
                 </div>
-                <div class="mega-menu-sector-item mega-gas" data-sector="gas">
+                <div class="mega-menu-visual-bg" id="visual-gas" style="background: linear-gradient(135deg, #233468 0%, #4DB1BC 100%);">
+                    <div class="mega-menu-visual-icon">
+                        <svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M261.374 317.452C263.625 317.565 265.677 317.669 268.127 317.79V337.495L261.158 337.85V362.221C259.625 380.939 244.725 394.834 225.878 394.886L149.353 394.903V400.34H135.934V350.585H158.954C154.496 341.399 157.361 329.227 170.581 321.573C180.339 315.929 190.866 316.249 199.879 323.565C210.043 331.815 212.623 342.707 208.086 355.875H221.506L221.661 338.092V317.868L221.644 317.158V219.889L215.627 200.055L227.168 167.77C234.354 156.948 244.544 151.399 257.478 151.2L294.663 144.672H314.09L320.341 151.156L352.106 151.165C372.737 151.364 387.81 166.411 388.174 187.06V227.647L396.009 229.854C455.288 247.533 482.274 316.638 450.786 369.874V415.578C448.639 425.456 442.076 432.235 432.7 432.227V405.301L384.832 418.695V438.425C384.659 448.512 377.992 455.36 368.382 455.325V416.314L320.488 415.309C320.324 425.43 313.692 432.287 304.151 432.244V376.861C288.178 374.437 287.451 371.762 286.239 369.666C254.855 315.47 282.222 245.3 344.583 228.876V219.941L342.574 200.245L341.587 190.35L314.212 196.973H294.048L268.759 190.35C261.452 190.35 260.742 191.181 261.53 199.475V219.136L261.357 219.751V317.452Z"/></svg>
+                    </div>
+                    <div class="mega-menu-visual-content">
+                        <h3 class="mega-menu-visual-title">Gas Natural</h3>
+                        <p class="mega-menu-visual-desc">Especialización en medición, compresión, tratamiento y distribución de gas natural y GLP.</p>
+                        <a href="landing-gas.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="mega-menu-visual-bg" id="visual-integridad" style="background: linear-gradient(135deg, #233468 0%, #EB9716 100%);">
+                    <div class="mega-menu-visual-icon">
+                        <svg viewBox="0 0 600 600" fill="#EB9716"><path d="M481.792 436.47H118.195V401.869H126.848V235.731H127.529C133.736 212.459 181.671 195.105 240.715 195.105L241.127 195.105C299.979 195.182 347.713 212.507 353.901 235.731H354.62L353.325 401.859H481.802V436.47Z"/></svg>
+                    </div>
+                    <div class="mega-menu-visual-content">
+                        <h3 class="mega-menu-visual-title">Integridad Mecánica</h3>
+                        <p class="mega-menu-visual-desc">Normas ASME, API, RBI y Fitness-for-Service para equipos y sistemas críticos.</p>
+                        <a href="landing-integridad.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="mega-menu-visual-bg" id="visual-activos" style="background: linear-gradient(135deg, #233468 0%, #4DB1BC 100%);">
+                    <div class="mega-menu-visual-icon">
+                        <svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M456.177 421.501C456.177 419.816 455.556 418.131 455.201 416.446C453.804 410.008 450.46 404.156 445.623 399.684L399.862 359.776L358.801 325.721L356.85 317.474C359.319 309.913 360.176 301.919 359.366 294.006C358.557 286.094 356.098 278.439 352.15 271.535C346.727 261.326 338.373 252.973 328.163 247.552C317.953 242.131 306.354 239.889 294.86 241.116L273.93 246.969L270.591 254.75L298.584 276.59C301.185 278.432 303.164 281.023 304.257 284.017L304.704 293.351C304.146 296.229 302.757 298.881 300.707 300.977L283.816 305.048L256.37 272.954L246.881 274.018C244.379 279.694 242.563 285.649 241.471 291.755C240.099 301.308 241.088 311.052 244.353 320.134L285.313 357.38L318.006 356.406L325.988 358.978L399.862 445.534L420.526 455.91L442.224 450.576L456.177 426.378V421.501Z"/></svg>
+                    </div>
+                    <div class="mega-menu-visual-content">
+                        <h3 class="mega-menu-visual-title">Gestión de Activos</h3>
+                        <p class="mega-menu-visual-desc">Metodologías ISO 55001, IAM y estrategias de confiabilidad operacional.</p>
+                        <a href="landing-activos.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="mega-menu-visual-bg" id="visual-seguridad" style="background: linear-gradient(135deg, #EB9716 0%, #c47f12 100%);">
+                    <div class="mega-menu-visual-icon">
+                        <svg viewBox="0 0 600 600" fill="#fff"><path d="M363.624 272.716C360.011 267.584 350.02 269.604 349.389 275.789L337.161 321.384L336.367 321.289L338.012 257.884L329.636 250.876L313.804 319.987L306.299 251.488L288.88 251.661L288.048 320.006L273.363 258.488L255.542 259.665L266.413 347.093L242.798 335.067L221.726 337.863L260.915 395.101L343.26 395.101L355.689 368.004V337.623L364.208 279.83L363.624 272.716Z"/><path d="M443.71 455.197H156.3C142.361 455.197 130.066 448.131 123.402 436.306L123.947 400.821L267.652 162.744C274.431 151.503 286.525 144.801 299.996 144.801L332.339 162.744L476.044 400.821C482.698 411.842 482.899 425.113 476.599 436.306C469.954 448.131 457.65 455.197 443.71 455.197Z"/></svg>
+                    </div>
+                    <div class="mega-menu-visual-content">
+                        <h3 class="mega-menu-visual-title">Seguridad de Procesos</h3>
+                        <p class="mega-menu-visual-desc">NFPA, PSM, Arc Flash y análisis de riesgos para operaciones seguras.</p>
+                        <a href="landing-seguridad.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+                <div class="mega-menu-visual-bg" id="visual-directivas" style="background: linear-gradient(135deg, #EB9716 0%, #d48a14 100%);">
+                    <div class="mega-menu-visual-icon">
+                        <svg viewBox="0 0 600 600" fill="#fff"><path d="M254.118 241.109L251.549 245.473L255.999 263.013L274.515 291.391C289.213 307.969 311.519 307.668 326.066 290.938L344.984 261.743L348.522 245.265L343.362 233.803L344.152 223.849C345.486 204.845 336.745 190.685 319.521 184.362L281.72 183.931C268.077 188.768 258.432 197.761 256.494 212.66L256.616 234.83L254.118 241.109Z"/><path d="M415.445 383.379L375.657 331.936L335.187 332.769L303.422 402.441L264.882 343.706L219.145 333.178C190.466 353.23 181.682 371.559 180.892 393.786L264.682 418.739L410.794 406.352L416.22 399.319L415.445 383.379Z"/></svg>
+                    </div>
+                    <div class="mega-menu-visual-content">
+                        <h3 class="mega-menu-visual-title">Habilidades Directivas</h3>
+                        <p class="mega-menu-visual-desc">Liderazgo, comunicación y gestión para equipos técnicos de alto rendimiento.</p>
+                        <a href="landing-directivas.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RIGHT PANEL -->
+            <div class="mega-menu-right">
+                <div class="mega-menu-sectors">
+                    <div class="mega-menu-sector-item active mega-oilgas" data-sector="oilgas">
+                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M394.546 394.616L333.484 160.177L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583L237.779 297.607L235.761 305.704L213.613 394.616H140.645V412.257H291.366V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/></svg></div>
+                        <span class="mega-menu-sector-name">Oil & Gas</span>
+                    </div>
+                    <div class="mega-menu-sector-item mega-gas" data-sector="gas">
                     <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M261.374 317.452C263.625 317.565 265.677 317.669 268.127 317.79V337.495L261.158 337.85V362.221C259.625 380.939 244.725 394.834 225.878 394.886L149.353 394.903V400.34H135.934V350.585H158.954C154.496 341.399 157.361 329.227 170.581 321.573C180.339 315.929 190.866 316.249 199.879 323.565C210.043 331.815 212.623 342.707 208.086 355.875H221.506L221.661 338.092V317.868L221.644 317.158V219.889L215.627 200.055L227.168 167.77C234.354 156.948 244.544 151.399 257.478 151.2L294.663 144.672H314.09L320.341 151.156L352.106 151.165C372.737 151.364 387.81 166.411 388.174 187.06V227.647L396.009 229.854C455.288 247.533 482.274 316.638 450.786 369.874V415.578C448.639 425.456 442.076 432.235 432.7 432.227V405.301L384.832 418.695V438.425C384.659 448.512 377.992 455.36 368.382 455.325V416.314L320.488 415.309C320.324 425.43 313.692 432.287 304.151 432.244V376.861C288.178 374.437 287.451 371.762 286.239 369.666C254.855 315.47 282.222 245.3 344.583 228.876V219.941L342.574 200.245L341.587 190.35L314.212 196.973H294.048L268.759 190.35C261.452 190.35 260.742 191.181 261.53 199.475V219.136L261.357 219.751V317.452Z"/></svg></div>
                     <span class="mega-menu-sector-name">Gas Natural</span>
                 </div>
@@ -940,6 +1129,7 @@
             </div>
             <div class="mega-menu-content active" id="content-oilgas">
                 <div class="mega-menu-content-header">
+                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
                     <h3 class="mega-menu-content-title">Oil & Gas</h3>
                     <p class="mega-menu-content-desc">Producción, perforación, facilidades y mantenimiento</p>
                 </div>
@@ -951,10 +1141,11 @@
                     <a href="landing-oilgas.html#produccion" class="mega-menu-link">Optimización de Producción</a>
                     <a href="landing-oilgas.html#tratamiento" class="mega-menu-link">Tratamiento de Crudo</a>
                 </div>
-                <a href="landing-oilgas.html" class="mega-menu-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <a href="landing-oilgas.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
             <div class="mega-menu-content" id="content-gas">
                 <div class="mega-menu-content-header">
+                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
                     <h3 class="mega-menu-content-title">Gas Natural y Energía</h3>
                     <p class="mega-menu-content-desc">Medición, compresión, tratamiento y distribución</p>
                 </div>
@@ -966,10 +1157,11 @@
                     <a href="landing-gas.html#transporte" class="mega-menu-link">Transporte por Ductos</a>
                     <a href="landing-gas.html#distribucion" class="mega-menu-link">Distribución y Comercialización</a>
                 </div>
-                <a href="landing-gas.html" class="mega-menu-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <a href="landing-gas.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
             <div class="mega-menu-content" id="content-integridad">
                 <div class="mega-menu-content-header">
+                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
                     <h3 class="mega-menu-content-title">Integridad Mecánica</h3>
                     <p class="mega-menu-content-desc">ASME, API, RBI, Fitness-for-Service</p>
                 </div>
@@ -981,10 +1173,11 @@
                     <a href="landing-integridad.html#recipientes" class="mega-menu-link">Recipientes a Presión</a>
                     <a href="landing-integridad.html#tuberias" class="mega-menu-link">Sistemas de Tuberías</a>
                 </div>
-                <a href="landing-integridad.html" class="mega-menu-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <a href="landing-integridad.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
             <div class="mega-menu-content" id="content-activos">
                 <div class="mega-menu-content-header">
+                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
                     <h3 class="mega-menu-content-title">Gestión de Activos</h3>
                     <p class="mega-menu-content-desc">ISO 55001, IAM, RCM, Confiabilidad</p>
                 </div>
@@ -996,10 +1189,11 @@
                     <a href="landing-activos.html#costos" class="mega-menu-link">Costos de Ciclo de Vida</a>
                     <a href="landing-activos.html#estrategia" class="mega-menu-link">Estrategia de Mantenimiento</a>
                 </div>
-                <a href="landing-activos.html" class="mega-menu-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <a href="landing-activos.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
             <div class="mega-menu-content" id="content-seguridad">
                 <div class="mega-menu-content-header">
+                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
                     <h3 class="mega-menu-content-title">Seguridad de Procesos</h3>
                     <p class="mega-menu-content-desc">NFPA, PSM, Arc Flash, Investigación de Accidentes</p>
                 </div>
@@ -1011,10 +1205,11 @@
                     <a href="landing-seguridad.html#investigacion" class="mega-menu-link">Investigación de Accidentes</a>
                     <a href="landing-seguridad.html#hazop" class="mega-menu-link">HAZOP y Análisis de Riesgos</a>
                 </div>
-                <a href="landing-seguridad.html" class="mega-menu-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <a href="landing-seguridad.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
             <div class="mega-menu-content" id="content-directivas">
                 <div class="mega-menu-content-header">
+                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
                     <h3 class="mega-menu-content-title">Habilidades Directivas</h3>
                     <p class="mega-menu-content-desc">Liderazgo, comunicación y gestión para equipos técnicos</p>
                 </div>
@@ -1026,8 +1221,9 @@
                     <a href="landing-directivas.html#presentaciones" class="mega-menu-link">Presentaciones de Alto Impacto</a>
                     <a href="landing-directivas.html#tiempo" class="mega-menu-link">Gestión del Tiempo y Prioridades</a>
                 </div>
-                <a href="landing-directivas.html" class="mega-menu-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+                <a href="landing-directivas.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
+            </div><!-- end mega-menu-right -->
         </div>
     </div>
     
@@ -1300,6 +1496,9 @@
         }, 100);
     });
     
+    // Visual panels
+    const visualPanels = document.querySelectorAll('.mega-menu-visual-bg');
+    
     // Switch content on sector hover
     sectorItems.forEach(item => {
         item.addEventListener('mouseenter', () => {
@@ -1311,6 +1510,10 @@
             
             contentPanels.forEach(p => p.classList.remove('active'));
             document.getElementById('content-' + sector).classList.add('active');
+            
+            // Switch visual panel
+            visualPanels.forEach(v => v.classList.remove('active'));
+            document.getElementById('visual-' + sector).classList.add('active');
         });
     });
     
