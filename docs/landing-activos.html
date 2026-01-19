@@ -170,11 +170,11 @@
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             background: var(--dark);
-            transform: translateX(-100%);
+            transform: translateY(100%);
             transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 0;
         }
-        .capability-list li:hover::before { transform: translateX(0); }
+        .capability-list li:hover::before { transform: translateY(0); }
         .capability-list li > div { position: relative; z-index: 1; }
         .capability-list li:last-child { border-bottom: none; }
         .cap-name { font-weight: 700; color: var(--gray-900); font-size: 1rem; display: block; letter-spacing: -0.01em; transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
