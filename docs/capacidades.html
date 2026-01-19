@@ -51,7 +51,7 @@
             .container { padding: 0 1.5rem; }
         }
         
-        /* HEADER */
+        /* HEADER - BRUTALIST */
         .header {
             position: fixed;
             top: 0;
@@ -59,30 +59,30 @@
             right: 0;
             z-index: 1000;
             background: var(--white);
-            border-bottom: 1px solid var(--gray-200);
+            border-bottom: 2px solid var(--gray-900);
         }
         
         .header-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 56px;
+            height: 48px;
         }
         
         @media (min-width: 768px) {
-            .header-inner { height: 64px; }
+            .header-inner { height: 56px; }
         }
         
-        .logo svg { height: 28px; width: auto; }
+        .logo svg { height: 24px; width: auto; }
         
         @media (min-width: 768px) {
-            .logo svg { height: 36px; }
+            .logo svg { height: 32px; }
         }
         
         .header-nav {
             display: none;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
         }
         
         @media (min-width: 900px) {
@@ -91,10 +91,12 @@
         
         .header-nav > a,
         .header-nav .nav-trigger {
-            color: var(--gray-600);
+            color: var(--gray-700);
             text-decoration: none;
-            font-size: 0.8125rem;
-            font-weight: 500;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -119,17 +121,18 @@
         /* MEGA MENU - Full Width ROSEN Style */
         .mega-menu {
             position: fixed;
-            top: 56px;
+            top: 48px;
             left: 0;
             right: 0;
             background: var(--white);
             box-shadow: 0 10px 40px rgba(0,0,0,0.15);
             display: none;
             z-index: 999;
+            border-bottom: 2px solid var(--gray-900);
         }
         
         @media (min-width: 768px) {
-            .mega-menu { top: 64px; }
+            .mega-menu { top: 56px; }
         }
         
         .mega-menu.active {
@@ -398,18 +401,20 @@
         .mega-directivas .mega-menu-icon svg { fill: #ffffff; }
         
         .header-cta {
-            padding: 0.5rem 0.875rem;
-            background: var(--dark);
+            padding: 0.5rem 1rem;
+            background: var(--gray-900);
             color: var(--white);
-            font-weight: 600;
+            font-weight: 700;
             font-size: 0.75rem;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
         }
         
         @media (min-width: 768px) {
             .header-cta {
-                padding: 0.5rem 1rem;
+                padding: 0.5rem 1.25rem;
                 font-size: 0.8125rem;
             }
         }
@@ -428,7 +433,7 @@
         .menu-toggle span {
             width: 20px;
             height: 2px;
-            background: var(--dark);
+            background: var(--gray-900);
         }
         
         @media (min-width: 900px) {
@@ -438,16 +443,17 @@
         .mobile-menu {
             display: none;
             position: fixed;
-            top: 56px;
+            top: 48px;
             left: 0;
             right: 0;
             bottom: 0;
             background: var(--white);
-            padding: 1rem;
+            padding: 0.75rem;
             flex-direction: column;
             gap: 0;
             z-index: 999;
             overflow-y: auto;
+            border-bottom: 2px solid var(--gray-900);
         }
         
         .mobile-menu.active { display: flex; }
@@ -522,104 +528,195 @@
             .mobile-menu { display: none !important; }
         }
         
-        /* HERO */
+        /* HERO - BRUTALIST */
         .hero {
-            padding-top: 56px;
+            padding-top: 48px;
             background: var(--dark);
-            text-align: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
         }
         
         @media (min-width: 768px) {
-            .hero { padding-top: 64px; }
+            .hero { padding-top: 56px; }
         }
         
         .hero-inner {
-            padding: 3rem 0;
-            max-width: 720px;
-            margin: 0 auto;
+            padding: 2.5rem 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
         }
         
-        @media (min-width: 768px) {
-            .hero-inner { padding: 4rem 0; }
+        @media (min-width: 900px) {
+            .hero-inner { 
+                padding: 3rem 0; 
+                grid-template-columns: 1.1fr 0.9fr;
+                gap: 3rem;
+            }
         }
+        
+        .hero-content { text-align: left; }
         
         .hero-eyebrow {
             color: var(--accent);
-            font-size: 0.6875rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            margin-bottom: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
         
         @media (min-width: 768px) {
-            .hero-eyebrow { font-size: 0.75rem; }
+            .hero-eyebrow { font-size: 0.875rem; }
         }
         
         .hero h1 {
-            font-size: 1.75rem;
-            font-weight: 700;
-            line-height: 1.15;
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: 1.05;
             color: var(--white);
             margin-bottom: 1rem;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
         }
         
         @media (min-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.75rem; }
         }
         
         @media (min-width: 1024px) {
-            .hero h1 { font-size: 3rem; }
+            .hero h1 { font-size: 3.25rem; }
         }
         
         .hero-description {
             font-size: 1rem;
             color: var(--white);
-            opacity: 0.8;
-            margin-bottom: 2rem;
-            max-width: 540px;
-            margin-left: auto;
-            margin-right: auto;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            max-width: 480px;
+            line-height: 1.5;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-description { font-size: 1.0625rem; margin-bottom: 2rem; }
+        }
+        
+        .hero-ctas {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        @media (min-width: 400px) {
+            .hero-ctas { flex-direction: row; flex-wrap: wrap; }
         }
         
         .hero-cta {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.875rem 1.75rem;
+            padding: 0.75rem 1.25rem;
             background: var(--accent);
-            color: var(--white);
-            font-weight: 600;
-            font-size: 0.9375rem;
+            color: var(--gray-900);
+            font-weight: 700;
+            font-size: 0.875rem;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
         }
         
         .hero-cta:hover { background: var(--accent-light); }
+        .hero-cta svg { width: 16px; height: 16px; }
+        
+        .hero-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: transparent;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.875rem;
+            text-decoration: none;
+            border-radius: 0;
+            border: 2px solid rgba(255,255,255,0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        
+        .hero-cta-secondary:hover { border-color: var(--white); }
+        
+        .hero-visual {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+        
+        @media (min-width: 480px) {
+            .hero-visual { grid-template-columns: repeat(2, 1fr); }
+        }
+        
+        @media (min-width: 900px) {
+            .hero-visual { grid-template-columns: 1fr; gap: 0.75rem; }
+        }
+        
+        .hero-stat-box {
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border-left: 3px solid var(--accent);
+        }
+        
+        .hero-stat-box h4 {
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 900;
+            margin-bottom: 0.25rem;
+        }
+        
+        .hero-stat-box p {
+            color: var(--white);
+            font-size: 0.8125rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
         
         .hero-cta svg { width: 18px; height: 18px; }
         
-        /* CREDENTIALS */
+        /* CREDENTIALS - BRUTALIST */
         .credentials {
             background: var(--gray-50);
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--gray-200);
+            padding: 0.625rem 0;
+            border-bottom: 2px solid var(--gray-200);
         }
         
         .credentials-inner {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1rem 2rem;
+            gap: 0.5rem 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .credentials-inner { gap: 0.75rem 2.5rem; }
         }
         
         .credential-item {
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            color: var(--gray-600);
+            gap: 0.35rem;
+            color: var(--gray-700);
             font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+        
+        @media (min-width: 768px) {
+            .credential-item { font-size: 0.8125rem; }
         }
         
         .credential-item svg {
@@ -1268,13 +1365,36 @@
     <section class="hero">
         <div class="container">
             <div class="hero-inner">
-                <p class="hero-eyebrow">Elite Training</p>
-                <h1>Formación técnica para industrias de alto riesgo</h1>
-                <p class="hero-description">29 años desarrollando competencias críticas en Oil & Gas, Integridad Mecánica, Gestión de Activos y Seguridad de Procesos. Programas cerrados para equipos que no pueden fallar.</p>
-                <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20llamada" class="hero-cta">
-                    Agendar llamada
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
+                <div class="hero-content">
+                    <p class="hero-eyebrow">29 años formando industria</p>
+                    <h1>Formación técnica para operaciones críticas</h1>
+                    <p class="hero-description">Desarrollamos competencias en Oil & Gas, Integridad Mecánica, Gestión de Activos y Seguridad de Procesos. Programas cerrados para equipos que no pueden fallar.</p>
+                    <div class="hero-ctas">
+                        <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20llamada" class="hero-cta">
+                            Agendar llamada
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                        <a href="https://hidrocarburos.com.co" target="_blank" class="hero-cta-secondary">Campus Virtual</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-stat-box">
+                        <h4>+200</h4>
+                        <p>Empresas formadas</p>
+                    </div>
+                    <div class="hero-stat-box">
+                        <h4>+50,000</h4>
+                        <p>Profesionales capacitados</p>
+                    </div>
+                    <div class="hero-stat-box">
+                        <h4>11</h4>
+                        <p>Países en Latinoamérica</p>
+                    </div>
+                    <div class="hero-stat-box">
+                        <h4>6</h4>
+                        <p>Sectores especializados</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

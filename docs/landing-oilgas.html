@@ -456,10 +456,11 @@
         .capability-columns { display: block; } 
         .capability-group { margin-bottom: 2rem; } .capability-group:last-child { margin-bottom: 0; }
         .capability-group-tag { font-size: 1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; color: var(--gray-900); background: none; display: block; padding: 0; margin-bottom: 0.75rem; border-bottom: 2px solid var(--gray-300); padding-bottom: 0.5rem; }
-        .capability-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.25rem 2rem; }
-        .capability-list li { padding: 0.5rem 0; border-bottom: none; flex: 0 0 auto; }
-        .cap-name { font-weight: 600; color: var(--gray-900); font-size: 1.125rem; display: inline; letter-spacing: -0.01em; }
-        .cap-topics { font-size: 1rem; color: var(--gray-500); margin-top: 0; display: inline; } .cap-topics::before { content: " — "; }
+        .capability-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+        .capability-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); }
+        .capability-list li:last-child { border-bottom: none; }
+        .cap-name { font-weight: 700; color: var(--gray-900); font-size: 1.125rem; display: block; letter-spacing: -0.01em; }
+        .cap-topics { font-size: 0.9375rem; color: var(--gray-900); font-weight: 500; margin-top: 0.25rem; display: block; }
         .categories { display: none; }
         
         /* Catalog CTA - BRUTALIST */
