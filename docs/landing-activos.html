@@ -82,6 +82,32 @@
         @media (min-width: 768px) { .credential-item svg { width: 16px; height: 16px; } }
         .credential-item strong { color: var(--gray-900); font-weight: 800; }
         .categories { display: none; }
+        /* MEGA MENU */
+        .nav-trigger { display: flex; align-items: center; gap: 0.25rem; cursor: pointer; color: var(--gray-700); font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; }
+        .nav-trigger:hover, .nav-trigger.active { color: var(--gray-900); }
+        .nav-trigger svg { width: 14px; height: 14px; transition: transform 0.2s; }
+        .nav-trigger.active svg { transform: rotate(180deg); }
+        .mega-menu { position: fixed; top: 56px; left: 0; right: 0; background: var(--white); border-bottom: 2px solid var(--gray-900); box-shadow: 0 10px 40px rgba(0,0,0,0.1); display: none; z-index: 998; }
+        .mega-menu.active { display: block; }
+        .mega-menu-grid { display: grid; grid-template-columns: 280px 1fr; min-height: 400px; }
+        .mega-menu-visual { position: relative; background: var(--dark); overflow: hidden; }
+        .mega-menu-visual-bg { position: absolute; inset: 0; opacity: 0; transition: opacity 0.3s; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.5rem; background: linear-gradient(135deg, var(--dark) 0%, var(--dark-soft) 100%); }
+        .mega-menu-visual-bg.active { opacity: 1; }
+        .mega-menu-visual-title { color: var(--white); font-size: 1.25rem; font-weight: 800; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .mega-menu-visual-desc { color: rgba(255,255,255,0.7); font-size: 0.875rem; line-height: 1.5; margin-bottom: 1rem; }
+        .mega-menu-visual-cta { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--accent); font-size: 0.8125rem; font-weight: 700; text-decoration: none; text-transform: uppercase; }
+        .mega-menu-visual-cta:hover { text-decoration: underline; }
+        .mega-menu-content-wrapper { display: flex; }
+        .mega-menu-sectors { width: 220px; background: var(--gray-50); border-right: 1px solid var(--gray-200); padding: 1rem 0; }
+        .mega-menu-sector-item { display: block; padding: 0.75rem 1.25rem; color: var(--gray-700); font-size: 0.875rem; font-weight: 600; text-decoration: none; border-left: 3px solid transparent; transition: all 0.15s; }
+        .mega-menu-sector-item:hover, .mega-menu-sector-item.active { background: var(--white); color: var(--gray-900); border-left-color: var(--accent); }
+        .mega-menu-content { display: none; flex: 1; padding: 1.5rem 2rem; }
+        .mega-menu-content.active { display: block; }
+        .mega-menu-content h4 { font-size: 0.75rem; font-weight: 800; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem; }
+        .mega-menu-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 2rem; }
+        .mega-menu-links a { color: var(--gray-700); font-size: 0.875rem; text-decoration: none; padding: 0.35rem 0; display: block; }
+        .mega-menu-links a:hover { color: var(--gray-900); }
+        @media (max-width: 899px) { .mega-menu { display: none !important; } }
         .categories-inner { display: flex; align-items: center; gap: 0.4rem; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding-bottom: 0.25rem; }
         .categories-inner::-webkit-scrollbar { display: none; }
         @media (min-width: 768px) { .categories-inner { gap: 0.5rem; flex-wrap: wrap; overflow-x: visible; padding-bottom: 0; } }
@@ -208,21 +234,127 @@
                     </svg>
                 </a>
                 <nav class="header-nav">
-                    <a href="capacidades.html">Todos los sectores</a>
-                    <a href="#programas">Programas</a>
+                    <span class="nav-trigger" id="sectorsTrigger">Sectores <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
+                    <a href="#nosotros">Nosotros</a>
                     <a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a>
                 </nav>
                 <div style="display: flex; align-items: center;">
                     <a href="https://wa.me/573164661007" class="header-cta">Contactar</a>
-                    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+                    <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')" aria-label="Menu"><span></span><span></span><span></span></button>
                 </div>
             </div>
         </div>
     </header>
+
+    <div class="mega-menu" id="megaMenu">
+        <div class="mega-menu-grid">
+            <div class="mega-menu-visual">
+                <div class="mega-menu-visual-bg active" id="visual-oilgas" style="background: linear-gradient(135deg, #4A4A49 0%, #3a3a39 100%);">
+                    <h3 class="mega-menu-visual-title">Oil & Gas</h3>
+                    <p class="mega-menu-visual-desc">Refinación, petroquímica, upstream y downstream.</p>
+                    <a href="landing-oilgas.html" class="mega-menu-visual-cta">Explorar sector →</a>
+                </div>
+                <div class="mega-menu-visual-bg" id="visual-integridad" style="background: linear-gradient(135deg, #233468 0%, #1a2850 100%);">
+                    <h3 class="mega-menu-visual-title">Integridad Mecánica</h3>
+                    <p class="mega-menu-visual-desc">API, ASME, inspección y análisis de fallas.</p>
+                    <a href="landing-integridad.html" class="mega-menu-visual-cta">Explorar sector →</a>
+                </div>
+                <div class="mega-menu-visual-bg" id="visual-gas" style="background: linear-gradient(135deg, #233468 0%, #1a2850 100%);">
+                    <h3 class="mega-menu-visual-title">GLP / Gas Natural</h3>
+                    <p class="mega-menu-visual-desc">Distribución, almacenamiento y normativa del sector gas.</p>
+                    <a href="landing-gas.html" class="mega-menu-visual-cta">Explorar sector →</a>
+                </div>
+                <div class="mega-menu-visual-bg" id="visual-activos" style="background: linear-gradient(135deg, #233468 0%, #1a2850 100%);">
+                    <h3 class="mega-menu-visual-title">Gestión de Activos</h3>
+                    <p class="mega-menu-visual-desc">ISO 55001, RCM, confiabilidad y mantenimiento.</p>
+                    <a href="landing-activos.html" class="mega-menu-visual-cta">Explorar sector →</a>
+                </div>
+                <div class="mega-menu-visual-bg" id="visual-seguridad" style="background: linear-gradient(135deg, #EB9716 0%, #c47f12 100%);">
+                    <h3 class="mega-menu-visual-title">Seguridad de Procesos</h3>
+                    <p class="mega-menu-visual-desc">PSM, HAZOP, análisis de riesgos y normativa.</p>
+                    <a href="landing-seguridad.html" class="mega-menu-visual-cta">Explorar sector →</a>
+                </div>
+                <div class="mega-menu-visual-bg" id="visual-directivas" style="background: linear-gradient(135deg, #EB9716 0%, #d48a14 100%);">
+                    <h3 class="mega-menu-visual-title">Habilidades Directivas</h3>
+                    <p class="mega-menu-visual-desc">Liderazgo, gestión de equipos y comunicación.</p>
+                    <a href="landing-directivas.html" class="mega-menu-visual-cta">Explorar sector →</a>
+                </div>
+            </div>
+            <div class="mega-menu-content-wrapper">
+                <div class="mega-menu-sectors">
+                    <a href="landing-oilgas.html" class="mega-menu-sector-item active" data-sector="oilgas">Oil & Gas</a>
+                    <a href="landing-integridad.html" class="mega-menu-sector-item" data-sector="integridad">Integridad Mecánica</a>
+                    <a href="landing-gas.html" class="mega-menu-sector-item" data-sector="gas">GLP / Gas Natural</a>
+                    <a href="landing-activos.html" class="mega-menu-sector-item" data-sector="activos">Gestión de Activos</a>
+                    <a href="landing-seguridad.html" class="mega-menu-sector-item" data-sector="seguridad">Seguridad de Procesos</a>
+                    <a href="landing-directivas.html" class="mega-menu-sector-item" data-sector="directivas">Habilidades Directivas</a>
+                </div>
+                <div class="mega-menu-content active" id="content-oilgas">
+                    <h4>Programas Oil & Gas</h4>
+                    <div class="mega-menu-links">
+                        <a href="landing-oilgas.html">Refinación y Petroquímica</a>
+                        <a href="landing-oilgas.html">Operaciones Upstream</a>
+                        <a href="landing-oilgas.html">Producción y Procesos</a>
+                        <a href="landing-oilgas.html">Instrumentación Industrial</a>
+                    </div>
+                </div>
+                <div class="mega-menu-content" id="content-integridad">
+                    <h4>Programas Integridad</h4>
+                    <div class="mega-menu-links">
+                        <a href="landing-integridad.html">Inspección API</a>
+                        <a href="landing-integridad.html">Análisis de Fallas</a>
+                        <a href="landing-integridad.html">Códigos ASME</a>
+                        <a href="landing-integridad.html">Corrosión y Materiales</a>
+                    </div>
+                </div>
+                <div class="mega-menu-content" id="content-gas">
+                    <h4>Programas GLP / Gas</h4>
+                    <div class="mega-menu-links">
+                        <a href="landing-gas.html">Distribución de Gas</a>
+                        <a href="landing-gas.html">Almacenamiento GLP</a>
+                        <a href="landing-gas.html">Normativa del Sector</a>
+                        <a href="landing-gas.html">Seguridad en Gas</a>
+                    </div>
+                </div>
+                <div class="mega-menu-content" id="content-activos">
+                    <h4>Programas Gestión de Activos</h4>
+                    <div class="mega-menu-links">
+                        <a href="landing-activos.html">ISO 55001</a>
+                        <a href="landing-activos.html">RCM y Confiabilidad</a>
+                        <a href="landing-activos.html">Certificación IAM</a>
+                        <a href="landing-activos.html">Análisis de Fallas</a>
+                    </div>
+                </div>
+                <div class="mega-menu-content" id="content-seguridad">
+                    <h4>Programas Seguridad</h4>
+                    <div class="mega-menu-links">
+                        <a href="landing-seguridad.html">PSM - Process Safety</a>
+                        <a href="landing-seguridad.html">HAZOP</a>
+                        <a href="landing-seguridad.html">Análisis de Riesgos</a>
+                        <a href="landing-seguridad.html">Normativa OSHA</a>
+                    </div>
+                </div>
+                <div class="mega-menu-content" id="content-directivas">
+                    <h4>Programas Habilidades Directivas</h4>
+                    <div class="mega-menu-links">
+                        <a href="landing-directivas.html">Liderazgo Industrial</a>
+                        <a href="landing-directivas.html">Gestión de Equipos</a>
+                        <a href="landing-directivas.html">Comunicación Efectiva</a>
+                        <a href="landing-directivas.html">Toma de Decisiones</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <nav class="mobile-menu" id="mobileMenu">
         <a href="capacidades.html">Todos los sectores</a>
-        <a href="#programas" onclick="toggleMenu()">Programas</a>
+        <a href="landing-oilgas.html">Oil & Gas</a>
+        <a href="landing-integridad.html">Integridad Mecánica</a>
+        <a href="landing-gas.html">GLP / Gas Natural</a>
+        <a href="landing-activos.html">Gestión de Activos</a>
+        <a href="landing-seguridad.html">Seguridad de Procesos</a>
+        <a href="landing-directivas.html">Habilidades Directivas</a>
         <a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a>
     </nav>
 
@@ -448,11 +580,22 @@
     </footer>
 
     <script>
-        function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('active'); }
-        const pills = document.querySelectorAll('.category-pill');
-        const sections = document.querySelectorAll('.section[id]');
-        pills.forEach(pill => { pill.addEventListener('click', e => { e.preventDefault(); document.getElementById(pill.getAttribute('href').slice(1))?.scrollIntoView({ behavior: 'smooth' }); pills.forEach(p => p.classList.remove('active')); pill.classList.add('active'); }); });
-        window.addEventListener('scroll', () => { let current = ''; sections.forEach(s => { if (window.scrollY >= s.offsetTop - 180) current = s.id; }); pills.forEach(p => p.classList.toggle('active', p.getAttribute('href') === '#' + current)); document.getElementById('mobileMenu').classList.remove('active'); });
+        const trigger = document.getElementById('sectorsTrigger');
+        const megaMenu = document.getElementById('megaMenu');
+        const sectorItems = document.querySelectorAll('.mega-menu-sector-item');
+        const contentPanels = document.querySelectorAll('.mega-menu-content');
+        const visualPanels = document.querySelectorAll('.mega-menu-visual-bg');
+        let menuTimeout;
+        if (trigger && megaMenu) {
+            trigger.addEventListener('mouseenter', () => { clearTimeout(menuTimeout); megaMenu.classList.add('active'); trigger.classList.add('active'); });
+            trigger.addEventListener('click', () => { megaMenu.classList.toggle('active'); trigger.classList.toggle('active'); });
+            megaMenu.addEventListener('mouseenter', () => { clearTimeout(menuTimeout); });
+            trigger.addEventListener('mouseleave', () => { menuTimeout = setTimeout(() => { if (!megaMenu.matches(':hover')) { megaMenu.classList.remove('active'); trigger.classList.remove('active'); } }, 100); });
+            megaMenu.addEventListener('mouseleave', () => { menuTimeout = setTimeout(() => { megaMenu.classList.remove('active'); trigger.classList.remove('active'); }, 100); });
+            sectorItems.forEach(item => { item.addEventListener('mouseenter', () => { const sector = item.dataset.sector; sectorItems.forEach(s => s.classList.remove('active')); item.classList.add('active'); contentPanels.forEach(p => p.classList.remove('active')); document.getElementById('content-' + sector)?.classList.add('active'); visualPanels.forEach(v => v.classList.remove('active')); document.getElementById('visual-' + sector)?.classList.add('active'); }); });
+            document.addEventListener('click', (e) => { if (!trigger.contains(e.target) && !megaMenu.contains(e.target)) { megaMenu.classList.remove('active'); trigger.classList.remove('active'); } });
+        }
+        window.addEventListener('scroll', () => { document.getElementById('mobileMenu')?.classList.remove('active'); });
     </script>
 </body>
 </html>
