@@ -476,22 +476,85 @@
         
         .program-card-link svg { width: 14px; height: 14px; }
         
-        /* ==================== CAPABILITY CATALOG - BRUTALIST LIST ==================== */
-        .capability-section { padding: clamp(2rem, 4vw, 3rem) 0; }
+        /* ==================== CAPABILITY CATALOG - ASME CARD STYLE ==================== */
+        .capability-section { padding: clamp(2.5rem, 5vw, 4rem) 0; }
         .capability-section.alt { background: var(--gray-50); }
         .capability-theme { margin-bottom: 3rem; } 
         .capability-theme:last-child { margin-bottom: 0; }
         .capability-theme-header { margin-bottom: 2rem; }
-        .capability-theme-title { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; color: var(--gray-900); line-height: 1; letter-spacing: -0.04em; margin-bottom: 0.5rem; text-transform: uppercase; }
-        .capability-theme-subtitle { font-size: 1rem; color: var(--gray-500); font-weight: 400; max-width: 700px; }
-        .capability-columns { display: block; } 
-        .capability-group { margin-bottom: 2rem; } .capability-group:last-child { margin-bottom: 0; }
-        .capability-group-tag { font-size: 1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.03em; color: var(--gray-900); background: none; display: block; padding: 0; margin-bottom: 0.75rem; border-bottom: 2px solid var(--gray-300); padding-bottom: 0.5rem; }
-        .capability-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
-        .capability-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--gray-200); }
-        .capability-list li:last-child { border-bottom: none; }
-        .cap-name { font-weight: 700; color: var(--gray-900); font-size: 1.125rem; display: block; letter-spacing: -0.01em; }
-        .cap-topics { font-size: 0.9375rem; color: var(--gray-900); font-weight: 500; margin-top: 0.25rem; display: block; }
+        .capability-theme-title { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; color: var(--accent); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+        .capability-theme-subtitle { font-size: 1rem; color: var(--gray-600); font-weight: 400; max-width: 600px; }
+        
+        /* Card Grid */
+        .program-cards { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        @media (min-width: 600px) { .program-cards { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 900px) { .program-cards { grid-template-columns: repeat(3, 1fr); } }
+        
+        /* Individual Card */
+        .program-card { 
+            background: var(--white); 
+            border: 1px solid var(--gray-200); 
+            border-left: 4px solid var(--accent);
+            overflow: hidden;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .program-card:hover { 
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1); 
+            transform: translateY(-2px);
+        }
+        
+        /* Card Header with gradient */
+        .program-card-header {
+            height: 100px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--dark-soft) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .program-card-header::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            opacity: 0.2;
+            transform: rotate(45deg);
+        }
+        .program-card-header svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--accent);
+            opacity: 0.6;
+        }
+        
+        /* Card Body */
+        .program-card-body { padding: 1.25rem; }
+        .program-card-tag { 
+            font-size: 0.625rem; 
+            font-weight: 700; 
+            color: var(--accent); 
+            text-transform: uppercase; 
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .program-card-title { 
+            font-size: 1rem; 
+            font-weight: 700; 
+            color: var(--gray-900); 
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
+        }
+        .program-card-desc { 
+            font-size: 0.8125rem; 
+            color: var(--gray-600); 
+            line-height: 1.5;
+        }
+        
         .categories { display: none; }
         
         /* Catalog CTA - BRUTALIST */
@@ -1159,43 +1222,98 @@
             <div class="capability-theme">
                 <div class="capability-theme-header">
                     <h2 class="capability-theme-title">Producción y Facilidades</h2>
-                    <p class="capability-theme-subtitle">Formación integral para operaciones de producción de hidrocarburos, desde el levantamiento hasta el tratamiento y medición.</p>
+                    <p class="capability-theme-subtitle">Formación integral para operaciones de producción de hidrocarburos.</p>
                 </div>
-                <div class="capability-columns">
-                    <div class="capability-group">
-                        <span class="capability-group-tag">Levantamiento Artificial</span>
-                        <ul class="capability-list">
-                            <li><div><span class="cap-name">Bombeo Electrosumergible (ESP)</span><span class="cap-topics">Selección, diseño, operación, troubleshooting</span></div></li>
-                            <li><div><span class="cap-name">Bombeo Mecánico</span><span class="cap-topics">Análisis dinagráfico, optimización de producción</span></div></li>
-                            <li><div><span class="cap-name">Bombeo de Cavidad Progresiva (PCP)</span><span class="cap-topics">Aplicaciones en crudos pesados</span></div></li>
-                            <li><div><span class="cap-name">Gas Lift</span><span class="cap-topics">Diseño y optimización de sistemas</span></div></li>
-                        </ul>
+                <div class="program-cards">
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Levantamiento Artificial</span>
+                            <h3 class="program-card-title">Bombeo Electrosumergible (ESP)</h3>
+                            <p class="program-card-desc">Selección, diseño, operación y troubleshooting de sistemas ESP.</p>
+                        </div>
                     </div>
-                    <div class="capability-group">
-                        <span class="capability-group-tag">Facilidades de Superficie</span>
-                        <ul class="capability-list">
-                            <li><div><span class="cap-name">Tratamiento de Crudo</span><span class="cap-topics">Deshidratación, desalado, estabilización</span></div></li>
-                            <li><div><span class="cap-name">Separación y Manejo de Fluidos</span><span class="cap-topics">Separadores, tanques, bombeo</span></div></li>
-                            <li><div><span class="cap-name">Tratamiento de Agua</span><span class="cap-topics">Inyección, disposición, reuso</span></div></li>
-                            <li><div><span class="cap-name">Sistemas de Compresión</span><span class="cap-topics">Gas de proceso, gas lift, exportación</span></div></li>
-                        </ul>
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Levantamiento Artificial</span>
+                            <h3 class="program-card-title">Bombeo Mecánico</h3>
+                            <p class="program-card-desc">Análisis dinagráfico y optimización de producción.</p>
+                        </div>
                     </div>
-                    <div class="capability-group">
-                        <span class="capability-group-tag">Medición y Fiscalización</span>
-                        <ul class="capability-list">
-                            <li><div><span class="cap-name">Medición de Hidrocarburos Líquidos</span><span class="cap-topics">Turbinas, Coriolis, ultrasonido</span></div></li>
-                            <li><div><span class="cap-name">Medición de Gas</span><span class="cap-topics">Orificios, ultrasónico, cromatografía</span></div></li>
-                            <li><div><span class="cap-name">Incertidumbre de Medición</span><span class="cap-topics">Cálculo, reducción, trazabilidad</span></div></li>
-                            <li><div><span class="cap-name">Fiscalización y Transferencia de Custodia</span><span class="cap-topics">Normativa, auditoría, balance</span></div></li>
-                        </ul>
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Levantamiento Artificial</span>
+                            <h3 class="program-card-title">Gas Lift</h3>
+                            <p class="program-card-desc">Diseño y optimización de sistemas de gas lift.</p>
+                        </div>
                     </div>
-                    <div class="capability-group">
-                        <span class="capability-group-tag">Operaciones de Campo</span>
-                        <ul class="capability-list">
-                            <li><div><span class="cap-name">Optimización de Producción</span><span class="cap-topics">Análisis nodal, curvas IPR, diagnóstico</span></div></li>
-                            <li><div><span class="cap-name">Pruebas de Pozo</span><span class="cap-topics">Buildup, drawdown, análisis PVT</span></div></li>
-                            <li><div><span class="cap-name">Control de Arena</span><span class="cap-topics">Gravel pack, screens, consolidación</span></div></li>
-                        </ul>
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+                        </div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Facilidades</span>
+                            <h3 class="program-card-title">Tratamiento de Crudo</h3>
+                            <p class="program-card-desc">Deshidratación, desalado y estabilización de crudo.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+                        </div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Facilidades</span>
+                            <h3 class="program-card-title">Separación y Manejo de Fluidos</h3>
+                            <p class="program-card-desc">Separadores, tanques y sistemas de bombeo.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
+                        </div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Facilidades</span>
+                            <h3 class="program-card-title">Sistemas de Compresión</h3>
+                            <p class="program-card-desc">Gas de proceso, gas lift y exportación.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        </div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Medición</span>
+                            <h3 class="program-card-title">Medición de Hidrocarburos</h3>
+                            <p class="program-card-desc">Turbinas, Coriolis, ultrasonido y cromatografía.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                        </div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Medición</span>
+                            <h3 class="program-card-title">Fiscalización y Custodia</h3>
+                            <p class="program-card-desc">Normativa, auditoría y balance de transferencia.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-card-header">
+                            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Operaciones</span>
+                            <h3 class="program-card-title">Optimización de Producción</h3>
+                            <p class="program-card-desc">Análisis nodal, curvas IPR y diagnóstico de pozos.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1207,42 +1325,56 @@
             <div class="capability-theme">
                 <div class="capability-theme-header">
                     <h2 class="capability-theme-title">Perforación y Workover</h2>
-                    <p class="capability-theme-subtitle">Competencias técnicas para operaciones de perforación, completamiento e intervención de pozos.</p>
+                    <p class="capability-theme-subtitle">Competencias técnicas para operaciones de perforación e intervención.</p>
                 </div>
-                <div class="capability-columns">
-                    <div class="capability-group">
-                        <span class="capability-group-tag">Perforación</span>
-                        <ul class="capability-list">
-                            <li><div><span class="cap-name">Ingeniería de Perforación</span><span class="cap-topics">Diseño de pozos, hidráulica, direccional</span></div></li>
-                            <li><div><span class="cap-name">Fluidos de Perforación</span><span class="cap-topics">Formulación, control de sólidos, pérdidas</span></div></li>
-                            <li><div><span class="cap-name">Control de Pozos</span><span class="cap-topics">IWCF, well control procedures</span></div></li>
-                            <li><div><span class="cap-name">Rig Inspection (IADC)</span><span class="cap-topics">Inspección de taladros según estándares</span></div></li>
-                        </ul>
+                <div class="program-cards">
+                    <div class="program-card">
+                        <div class="program-card-header"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Perforación</span>
+                            <h3 class="program-card-title">Ingeniería de Perforación</h3>
+                            <p class="program-card-desc">Diseño de pozos, hidráulica y perforación direccional.</p>
+                        </div>
                     </div>
-                    <div class="capability-group">
-                        <span class="capability-group-tag">Completamiento</span>
-                        <ul class="capability-list">
-                            <li><div><span class="cap-name">Diseño de Completamiento</span><span class="cap-topics">Sartas, empaque, zonas múltiples</span></div></li>
-                            <li><div><span class="cap-name">Cementación</span><span class="cap-topics">Primaria, remedial, squeeze</span></div></li>
-                            <li><div><span class="cap-name">Cañoneo</span><span class="cap-topics">Técnicas TCP, diseño de cargas</span></div></li>
-                            <li><div><span class="cap-name">Fracturamiento Hidráulico</span><span class="cap-topics">Diseño, ejecución, análisis</span></div></li>
-                        </ul>
+                    <div class="program-card">
+                        <div class="program-card-header"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Perforación</span>
+                            <h3 class="program-card-title">Control de Pozos (IWCF)</h3>
+                            <p class="program-card-desc">Certificación IWCF y procedimientos de control.</p>
+                        </div>
                     </div>
-                    <div class="capability-group">
-                        <span class="capability-group-tag">Integridad de Pozo</span>
-                        <ul class="capability-list">
-                            <li><div><span class="cap-name">Well Integrity Management</span><span class="cap-topics">Ciclo de vida, barreras, riesgo</span></div></li>
-                            <li><div><span class="cap-name">Diagnóstico de Problemas</span><span class="cap-topics">Registros, análisis de fallas</span></div></li>
-                            <li><div><span class="cap-name">Workover y Reacondicionamiento</span><span class="cap-topics">Intervenciones, cambio de zona</span></div></li>
-                        </ul>
+                    <div class="program-card">
+                        <div class="program-card-header"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Perforación</span>
+                            <h3 class="program-card-title">Rig Inspection (IADC)</h3>
+                            <p class="program-card-desc">Inspección de taladros según estándares IADC.</p>
+                        </div>
                     </div>
-                    <div class="capability-group">
-                        <span class="capability-group-tag">Estimulación</span>
-                        <ul class="capability-list">
-                            <li><div><span class="cap-name">Acidificación</span><span class="cap-topics">Matricial, fractura ácida</span></div></li>
-                            <li><div><span class="cap-name">Tratamientos Químicos</span><span class="cap-topics">Escala, corrosión, bacterias</span></div></li>
-                            <li><div><span class="cap-name">Evaluación de Resultados</span><span class="cap-topics">Análisis pre/post tratamiento</span></div></li>
-                        </ul>
+                    <div class="program-card">
+                        <div class="program-card-header"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v10"/></svg></div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Completamiento</span>
+                            <h3 class="program-card-title">Diseño de Completamiento</h3>
+                            <p class="program-card-desc">Sartas, empaque y completamiento de zonas múltiples.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-card-header"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v10"/></svg></div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Completamiento</span>
+                            <h3 class="program-card-title">Fracturamiento Hidráulico</h3>
+                            <p class="program-card-desc">Diseño, ejecución y análisis de fracturamiento.</p>
+                        </div>
+                    </div>
+                    <div class="program-card">
+                        <div class="program-card-header"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+                        <div class="program-card-body">
+                            <span class="program-card-tag">Integridad</span>
+                            <h3 class="program-card-title">Well Integrity Management</h3>
+                            <p class="program-card-desc">Ciclo de vida, barreras y gestión de riesgo.</p>
+                        </div>
                     </div>
                 </div>
             </div>
