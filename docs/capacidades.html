@@ -89,14 +89,135 @@
             .header-nav { display: flex; }
         }
         
-        .header-nav a {
+        .header-nav > a,
+        .header-nav .nav-dropdown > span {
             color: var(--gray-600);
             text-decoration: none;
             font-size: 0.8125rem;
             font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
         }
         
-        .header-nav a:hover { color: var(--gray-900); }
+        .header-nav > a:hover,
+        .header-nav .nav-dropdown:hover > span { color: var(--gray-900); }
+        
+        .nav-dropdown {
+            position: relative;
+        }
+        
+        .nav-dropdown svg {
+            width: 12px;
+            height: 12px;
+            transition: transform 0.2s;
+        }
+        
+        .nav-dropdown:hover svg {
+            transform: rotate(180deg);
+        }
+        
+        /* MEGA MENU */
+        .mega-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            padding: 1.5rem;
+            display: none;
+            z-index: 1001;
+            min-width: 800px;
+            margin-top: 0.5rem;
+        }
+        
+        .nav-dropdown:hover .mega-menu {
+            display: block;
+        }
+        
+        .mega-menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+        
+        .mega-menu-sector {
+            padding: 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+        
+        .mega-menu-sector:hover {
+            background: var(--gray-50);
+        }
+        
+        .mega-menu-sector-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .mega-menu-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mega-menu-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .mega-menu-sector-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-900);
+        }
+        
+        .mega-menu-sector-desc {
+            font-size: 0.75rem;
+            color: var(--gray-500);
+            margin-bottom: 0.5rem;
+        }
+        
+        .mega-menu-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.25rem 0.75rem;
+        }
+        
+        .mega-menu-links a {
+            font-size: 0.6875rem;
+            color: var(--gray-600);
+            text-decoration: none;
+        }
+        
+        .mega-menu-links a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        
+        /* Sector-specific mega menu colors */
+        .mega-oilgas .mega-menu-icon { background: #4A4A49; }
+        .mega-oilgas .mega-menu-icon svg { fill: #BFBFBF; }
+        .mega-gas .mega-menu-icon { background: #233468; }
+        .mega-gas .mega-menu-icon svg { fill: #4DB1BC; }
+        .mega-integridad .mega-menu-icon { background: #233468; }
+        .mega-integridad .mega-menu-icon svg { fill: #EB9716; }
+        .mega-activos .mega-menu-icon { background: #233468; }
+        .mega-activos .mega-menu-icon svg { fill: #4DB1BC; }
+        .mega-seguridad .mega-menu-icon { background: #EB9716; }
+        .mega-seguridad .mega-menu-icon svg { fill: #BFBFBF; }
+        .mega-directivas .mega-menu-icon { background: #EB9716; }
+        .mega-directivas .mega-menu-icon svg { fill: #ffffff; }
         
         .header-cta {
             padding: 0.5rem 0.875rem;
@@ -142,23 +263,81 @@
             top: 56px;
             left: 0;
             right: 0;
+            bottom: 0;
             background: var(--white);
-            border-bottom: 1px solid var(--gray-200);
             padding: 1rem;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0;
             z-index: 999;
+            overflow-y: auto;
         }
         
         .mobile-menu.active { display: flex; }
         
-        .mobile-menu a {
-            padding: 0.75rem;
+        .mobile-menu > a,
+        .mobile-accordion-header {
+            padding: 0.875rem 0;
             color: var(--gray-700);
             text-decoration: none;
             font-size: 0.9375rem;
             font-weight: 500;
             border-bottom: 1px solid var(--gray-100);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .mobile-accordion-header svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.2s;
+        }
+        
+        .mobile-accordion.active .mobile-accordion-header svg {
+            transform: rotate(180deg);
+        }
+        
+        .mobile-accordion-content {
+            display: none;
+            padding: 0.5rem 0;
+            background: var(--gray-50);
+            margin: 0 -1rem;
+            padding: 0.5rem 1rem;
+        }
+        
+        .mobile-accordion.active .mobile-accordion-content {
+            display: block;
+        }
+        
+        .mobile-sector-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            text-decoration: none;
+            color: var(--gray-700);
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 4px;
+        }
+        
+        .mobile-sector-link:hover {
+            background: var(--gray-100);
+        }
+        
+        .mobile-sector-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mobile-sector-icon svg {
+            width: 18px;
+            height: 18px;
         }
         
         @media (min-width: 900px) {
@@ -658,7 +837,85 @@
                     </svg>
                 </a>
                 <nav class="header-nav">
-                    <a href="#sectores">Sectores</a>
+                    <div class="nav-dropdown">
+                        <span>Sectores <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
+                        <div class="mega-menu">
+                            <div class="mega-menu-grid">
+                                <a href="landing-oilgas.html" class="mega-menu-sector mega-oilgas">
+                                    <div class="mega-menu-sector-header">
+                                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M142.863 417.773V468.502H218.962C218.962 468.502 214.547 446.446 238.259 440.93C261.972 435.414 282.926 434.313 282.926 434.313V417.773H142.863Z"/><path d="M455.979 417.773V468.502H379.882C379.882 468.502 384.296 446.446 360.584 440.93C336.872 435.414 315.918 434.313 315.918 434.313V417.773H455.979Z"/><path d="M394.546 394.616L333.484 160.177C333.08 158.638 331.878 157.436 330.348 157.024L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583L237.779 297.607C235.441 297.716 233.575 299.608 233.575 301.979L235.761 305.704L213.613 394.616H140.645V412.257H291.366V410.878H292.837V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/></svg></div>
+                                        <span class="mega-menu-sector-title">Oil & Gas</span>
+                                    </div>
+                                    <p class="mega-menu-sector-desc">Producción, perforación, facilidades</p>
+                                    <div class="mega-menu-links">
+                                        <a href="landing-oilgas.html#upstream">Upstream</a>
+                                        <a href="landing-oilgas.html#downstream">Downstream</a>
+                                        <a href="landing-oilgas.html#facilidades">Facilidades</a>
+                                    </div>
+                                </a>
+                                <a href="landing-gas.html" class="mega-menu-sector mega-gas">
+                                    <div class="mega-menu-sector-header">
+                                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M261.374 317.452C263.625 317.565 265.677 317.669 268.127 317.79C268.127 324.214 268.127 330.664 268.127 337.495C266.049 337.599 264.023 337.702 261.158 337.85C261.158 341.226 261.184 344.507 261.149 347.789C261.106 352.602 261.235 357.425 260.906 362.221C259.625 380.939 244.725 394.834 225.878 394.886C200.372 394.955 174.858 394.903 149.353 394.903V417.773H142.863V468.502C218.962 468.502 214.547 446.446 238.259 440.93L261.374 317.452Z"/></svg></div>
+                                        <span class="mega-menu-sector-title">Gas Natural</span>
+                                    </div>
+                                    <p class="mega-menu-sector-desc">Medición, compresión, GLP</p>
+                                    <div class="mega-menu-links">
+                                        <a href="landing-gas.html#medicion">Medición</a>
+                                        <a href="landing-gas.html#compresion">Compresión</a>
+                                        <a href="landing-gas.html#glp">GLP</a>
+                                    </div>
+                                </a>
+                                <a href="landing-integridad.html" class="mega-menu-sector mega-integridad">
+                                    <div class="mega-menu-sector-header">
+                                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M481.792 436.47H118.195V401.869H126.848V235.731H127.529C133.736 212.459 181.671 195.105 240.715 195.105L241.127 195.105C299.979 195.182 347.713 212.507 353.901 235.731H354.62L353.325 401.859H481.802V436.47H481.792ZM122.272 432.384H477.706V405.946H349.2L350.457 244.614L348.251 244.796C347.704 244.834 347.109 244.882 346.438 244.93Z"/></svg></div>
+                                        <span class="mega-menu-sector-title">Integridad Mecánica</span>
+                                    </div>
+                                    <p class="mega-menu-sector-desc">ASME, API, RBI, Fitness-for-Service</p>
+                                    <div class="mega-menu-links">
+                                        <a href="landing-integridad.html#asme">Códigos ASME</a>
+                                        <a href="landing-integridad.html#api">Inspección API</a>
+                                        <a href="landing-integridad.html#rbi">RBI</a>
+                                    </div>
+                                </a>
+                                <a href="landing-activos.html" class="mega-menu-sector mega-activos">
+                                    <div class="mega-menu-sector-header">
+                                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M456.177 421.501C456.177 419.816 455.556 418.131 455.201 416.446C453.804 410.008 450.46 404.156 445.623 399.684C430.37 386.381 415.204 373.079 399.862 359.776C386.293 348.247 372.547 336.984 358.801 325.721C357.594 324.767 356.745 323.434 356.391 321.937L356.85 317.474C359.319 309.913 360.176 301.919 359.366 294.006C358.557 286.094 356.098 278.439 352.15 271.535C346.727 261.326 338.373 252.973 328.163 247.552C317.953 242.131 306.354 239.889 294.86 241.116Z"/></svg></div>
+                                        <span class="mega-menu-sector-title">Gestión de Activos</span>
+                                    </div>
+                                    <p class="mega-menu-sector-desc">ISO 55001, IAM, RCM</p>
+                                    <div class="mega-menu-links">
+                                        <a href="landing-activos.html#iso">ISO 55001</a>
+                                        <a href="landing-activos.html#iam">Certificación IAM</a>
+                                        <a href="landing-activos.html#rcm">RCM</a>
+                                    </div>
+                                </a>
+                                <a href="landing-seguridad.html" class="mega-menu-sector mega-seguridad">
+                                    <div class="mega-menu-sector-header">
+                                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M363.624 272.716C360.011 267.584 350.02 269.604 349.389 275.789L337.161 321.384C337.036 321.815 336.348 321.739 336.367 321.289L338.012 257.884C337.773 253.336 333.738 250.962 329.636 250.876L320.592 258.057L313.804 319.987L312.992 319.987L306.299 251.488C306.06 246.94 302.026 244.566 297.924 244.48L288.88 251.661L288.048 320.006L287.255 320.101L273.363 258.488C272.063 253.193 268.516 251.642 264.3 251.795L255.542 259.665L266.413 347.093L264.672 348.902C261.489 348.807 250.198 344.891 242.798 335.067L240.159 331.582C233.247 322.466 219.843 327.493 221.726 337.863L260.915 395.101L343.26 395.101L351.31 382.663C354.169 378.22 355.689 373.175 355.689 368.004V337.623L355.708 337.116L364.208 279.83C364.542 277.733 365.03 274.688 363.624 272.716Z"/><path d="M443.71 455.197L156.3 455.197C142.361 455.197 130.066 448.131 123.402 436.306L123.947 400.821L267.652 162.744C274.431 151.503 286.525 144.801 299.996 144.801L332.339 162.744L476.044 400.821C482.698 411.842 482.899 425.113 476.599 436.306C469.954 448.131 457.65 455.197 443.71 455.197Z"/></svg></div>
+                                        <span class="mega-menu-sector-title">Seguridad de Procesos</span>
+                                    </div>
+                                    <p class="mega-menu-sector-desc">NFPA, PSM, Arc Flash</p>
+                                    <div class="mega-menu-links">
+                                        <a href="landing-seguridad.html#nfpa">NFPA 70E</a>
+                                        <a href="landing-seguridad.html#psm">PSM</a>
+                                        <a href="landing-seguridad.html#arcflash">Arc Flash</a>
+                                    </div>
+                                </a>
+                                <a href="landing-directivas.html" class="mega-menu-sector mega-directivas">
+                                    <div class="mega-menu-sector-header">
+                                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M254.118 241.109C252.848 241.626 251.786 243.872 251.549 245.473C250.595 251.867 252.044 257.745 255.999 263.013L260.75 270.692C265.257 277.654 269.068 285.254 274.515 291.391C289.213 307.969 311.519 307.668 326.066 290.938L337.728 273.707L344.984 261.743C348.336 256.669 349.29 251.128 348.522 245.265L346.477 241.526L343.362 233.803L344.152 223.849C345.486 204.845 336.745 190.685 319.521 184.362C307.011 179.769 294.287 179.481 281.72 183.931C268.077 188.768 258.432 197.761 256.494 212.66L256.616 234.83C256.709 237.406 257.506 239.724 254.118 241.109Z"/><path d="M415.445 383.379C410.608 359.825 398.457 341.697 375.657 331.936L344.696 318.767L338.861 316.09L335.187 332.769C329.567 358.261 319.706 381.808 303.422 402.441L293.87 402.427C280.112 384.872 270.552 365.236 264.882 343.706L258.287 316.248L219.145 333.178C215.305 334.893 211.501 336.974 208.186 339.536C190.466 353.23 181.682 371.559 180.892 393.786L191.521 408.484L194.464 409.216C217.724 413.472 241.106 416.751 264.682 418.739L342.715 417.806L397.618 410.142L410.794 406.352C413.816 405.218 416.213 402.814 416.22 399.319L415.445 383.379Z"/></svg></div>
+                                        <span class="mega-menu-sector-title">Habilidades Directivas</span>
+                                    </div>
+                                    <p class="mega-menu-sector-desc">Liderazgo, comunicación, gestión</p>
+                                    <div class="mega-menu-links">
+                                        <a href="landing-directivas.html#liderazgo">Liderazgo</a>
+                                        <a href="landing-directivas.html#comunicacion">Comunicación</a>
+                                        <a href="landing-directivas.html#gestion">Gestión</a>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     <a href="#nosotros">Nosotros</a>
                     <a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a>
                 </nav>
@@ -675,9 +932,41 @@
     </header>
     
     <nav class="mobile-menu" id="mobileMenu">
-        <a href="#sectores">Sectores</a>
+        <div class="mobile-accordion" onclick="this.classList.toggle('active')">
+            <div class="mobile-accordion-header">
+                Sectores
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="mobile-accordion-content">
+                <a href="landing-oilgas.html" class="mobile-sector-link">
+                    <div class="mobile-sector-icon mega-oilgas" style="background:#4A4A49;"><svg viewBox="0 0 600 600" fill="#BFBFBF"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M394.546 394.616L333.484 160.177L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583L237.779 297.607L235.761 305.704L213.613 394.616H140.645V412.257H291.366V410.878H292.837V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/></svg></div>
+                    Oil & Gas
+                </a>
+                <a href="landing-gas.html" class="mobile-sector-link">
+                    <div class="mobile-sector-icon" style="background:#233468;"><svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M261.374 317.452C263.625 317.565 265.677 317.669 268.127 317.79V337.495L261.158 337.85V347.789C261.106 352.602 261.235 357.425 260.906 362.221C259.625 380.939 244.725 394.834 225.878 394.886L149.353 394.903V400.34H135.934V350.585H142.747L143.526 355.771H158.954C154.496 341.399 157.361 329.227 170.581 321.573C180.339 315.929 190.866 316.249 199.879 323.565C210.043 331.815 212.623 342.707 208.086 355.875H218.198L221.506 351.347V338.092L215.662 337.322V317.868L221.644 317.158V219.889L215.627 219.128V200.055L221.748 192.237C221.393 183.631 222.224 175.207 227.168 167.77C234.354 156.948 244.544 151.399 257.478 151.2L293.883 151.156L294.663 144.672H314.09L314.844 151.156H320.341L352.106 151.165C372.737 151.364 387.81 166.411 388.174 187.06V199.241L394.511 200.15V219.205L388.65 219.69V227.647L396.009 229.854C455.288 247.533 482.274 316.638 450.786 369.874L448.829 377.554V415.578C448.639 425.456 442.076 432.235 432.7 432.227C423.332 432.218 416.761 425.482 416.562 415.613V405.301L386.676 415.041L384.832 418.695V438.425C384.659 448.512 377.992 455.36 368.382 455.325C359.11 455.29 352.435 448.39 352.331 438.59V416.314L320.497 404.877V415.309C320.324 425.43 313.692 432.287 304.151 432.244C294.983 432.209 288.377 425.274 288.308 415.361V376.861C288.178 374.437 287.451 371.762 286.239 369.666C254.855 315.47 282.222 245.3 344.583 228.876L348.885 227.551V219.941L342.574 219.076V200.245L348.669 199.302C349.742 191.484 348.799 190.341 341.587 190.35L316.082 190.419L314.766 190.834L314.212 196.973H294.541L294.048 190.35H268.759C261.452 190.35 260.742 191.181 261.53 199.475L268.508 199.994V219.136L261.357 219.751V317.452H261.374Z"/></svg></div>
+                    Gas Natural
+                </a>
+                <a href="landing-integridad.html" class="mobile-sector-link">
+                    <div class="mobile-sector-icon" style="background:#233468;"><svg viewBox="0 0 600 600" fill="#EB9716"><path d="M481.792 436.47H118.195V401.869H126.848V235.731H127.529C133.736 212.459 181.671 195.105 240.715 195.105L241.127 195.105C299.979 195.182 347.713 212.507 353.901 235.731H354.62L353.325 401.859H481.802V436.47Z"/></svg></div>
+                    Integridad Mecánica
+                </a>
+                <a href="landing-activos.html" class="mobile-sector-link">
+                    <div class="mobile-sector-icon" style="background:#233468;"><svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M456.177 421.501C456.177 419.816 455.556 418.131 455.201 416.446C453.804 410.008 450.46 404.156 445.623 399.684L399.862 359.776L358.801 325.721L356.391 321.937L356.85 317.474C359.319 309.913 360.176 301.919 359.366 294.006C358.557 286.094 356.098 278.439 352.15 271.535C346.727 261.326 338.373 252.973 328.163 247.552C317.953 242.131 306.354 239.889 294.86 241.116L273.93 246.969L269.976 251.617L270.591 254.75L272.866 256.991L298.584 276.59C301.185 278.432 303.164 281.023 304.257 284.017L304.704 293.351C304.146 296.229 302.757 298.881 300.707 300.977L293.175 305.146L283.816 305.048L276.236 299.559L256.37 272.954L254.201 270.932L251.281 270.414L248.549 271.566L246.881 274.018C244.379 279.694 242.563 285.649 241.471 291.755C240.099 301.308 241.088 311.052 244.353 320.134L260.199 343.854L285.313 357.38L313.838 357.559L318.006 356.406L322.446 356.3L325.988 358.978L370.33 412.189L399.862 445.534L409.14 452.822L420.526 455.91L427 455.91L442.224 450.576L452.541 438.173L456.177 426.378V421.501Z"/></svg></div>
+                    Gestión de Activos
+                </a>
+                <a href="landing-seguridad.html" class="mobile-sector-link">
+                    <div class="mobile-sector-icon" style="background:#EB9716;"><svg viewBox="0 0 600 600" fill="#BFBFBF"><path d="M363.624 272.716C360.011 267.584 350.02 269.604 349.389 275.789L337.161 321.384L336.367 321.289L338.012 257.884L329.636 250.876L320.592 258.057L313.804 319.987L312.992 319.987L306.299 251.488L297.924 244.48L288.88 251.661L288.048 320.006L287.255 320.101L273.363 258.488L264.3 251.795L255.542 259.665L266.413 347.093L264.672 348.902L242.798 335.067L240.159 331.582L221.726 337.863L260.915 395.101L343.26 395.101L351.31 382.663L355.689 368.004V337.623L355.708 337.116L364.208 279.83L363.624 272.716Z"/><path d="M443.71 455.197H156.3C142.361 455.197 130.066 448.131 123.402 436.306L123.947 400.821L267.652 162.744C274.431 151.503 286.525 144.801 299.996 144.801L332.339 162.744L476.044 400.821C482.698 411.842 482.899 425.113 476.599 436.306C469.954 448.131 457.65 455.197 443.71 455.197Z"/></svg></div>
+                    Seguridad de Procesos
+                </a>
+                <a href="landing-directivas.html" class="mobile-sector-link">
+                    <div class="mobile-sector-icon" style="background:#EB9716;"><svg viewBox="0 0 600 600" fill="#ffffff"><path d="M254.118 241.109L251.549 245.473L255.999 263.013L260.75 270.692L274.515 291.391C289.213 307.969 311.519 307.668 326.066 290.938L337.728 273.707L344.984 261.743L348.522 245.265L346.477 241.526L343.362 233.803L344.152 223.849C345.486 204.845 336.745 190.685 319.521 184.362L281.72 183.931C268.077 188.768 258.432 197.761 256.494 212.66L256.616 234.83L254.118 241.109Z"/><path d="M415.445 383.379L375.657 331.936L344.696 318.767L335.187 332.769L303.422 402.441L293.87 402.427L264.882 343.706L258.287 316.248L219.145 333.178L208.186 339.536C190.466 353.23 181.682 371.559 180.892 393.786L191.521 408.484L264.682 418.739L342.715 417.806L410.794 406.352L416.22 399.319L415.445 383.379Z"/></svg></div>
+                    Habilidades Directivas
+                </a>
+            </div>
+        </div>
         <a href="#nosotros">Nosotros</a>
         <a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a>
+        <a href="https://wa.me/573164661007">Contactar</a>
     </nav>
 
     <section class="hero">
