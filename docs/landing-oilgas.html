@@ -438,13 +438,17 @@
             font-weight: 700;
             color: var(--gray-900);
             margin-bottom: 0.25rem;
+            transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        .program-card:hover h3 { color: var(--white); }
         
         .program-card p {
             font-size: 1rem;
             color: var(--gray-900);
             margin-bottom: 0;
+            transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        .program-card:hover p { color: rgba(255,255,255,0.8); }
         
         .program-card-link {
             display: inline-flex;
@@ -476,15 +480,30 @@
         @media (min-width: 600px) { .program-cards { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 900px) { .program-cards { grid-template-columns: repeat(3, 1fr); } }
         
-        /* Individual Card - Content-First, No Decoration */
+        /* Individual Card - Content-First, Slide Hover */
         .program-card { 
             background: var(--white); 
             border-bottom: 1px solid var(--gray-200);
             border-right: 1px solid var(--gray-200);
             padding: 1rem 1.25rem;
-            transition: background 0.15s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
         }
-        .program-card:hover { background: var(--gray-50); }
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gray-900);
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 0;
+        }
+        .program-card:hover::before { transform: translateY(0); }
+        .program-card-body { position: relative; z-index: 1; }
         @media (min-width: 600px) { .program-card:nth-child(2n) { border-right: none; } }
         @media (min-width: 900px) { .program-card:nth-child(2n) { border-right: 1px solid var(--gray-200); } .program-card:nth-child(3n) { border-right: none; } }
         
@@ -492,7 +511,7 @@
         .program-card-header { display: none; }
         
         /* Card Body - ALL 16px */
-        .program-card-body { padding: 0; }
+        .program-card-body { padding: 0; position: relative; z-index: 1; }
         .program-card-tag { 
             font-size: 1rem; 
             font-weight: 700; 
@@ -501,19 +520,25 @@
             letter-spacing: 0.05em;
             margin-bottom: 0.5rem;
             display: block;
+            transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        .program-card:hover .program-card-tag { color: var(--accent); }
         .program-card-title { 
             font-size: 1rem; 
             font-weight: 700; 
             color: var(--gray-900); 
             line-height: 1.3;
             margin-bottom: 0.25rem;
+            transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        .program-card:hover .program-card-title { color: var(--white); }
         .program-card-desc { 
             font-size: 1rem; 
             color: var(--gray-900); 
             line-height: 1.4;
+            transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
         }
+        .program-card:hover .program-card-desc { color: rgba(255,255,255,0.8); }
         
         .categories { display: none; }
         
