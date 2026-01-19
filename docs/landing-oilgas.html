@@ -477,13 +477,13 @@
         .program-card-link svg { width: 14px; height: 14px; }
         
         /* ==================== CAPABILITY CATALOG - BRUTALIST DESIGNBOOM ==================== */
-        .capability-section { padding: clamp(3rem, 6vw, 5rem) 0; }
+        .capability-section { padding: clamp(2.5rem, 5vw, 4rem) 0; }
         .capability-section.alt { background: var(--gray-50); }
-        .capability-theme { margin-bottom: 4rem; } 
+        .capability-theme { margin-bottom: 3rem; } 
         .capability-theme:last-child { margin-bottom: 0; }
-        .capability-theme-header { margin-bottom: 2rem; border-bottom: 3px solid var(--gray-900); padding-bottom: 1rem; }
-        .capability-theme-title { font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 900; color: var(--gray-900); line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase; }
-        .capability-theme-subtitle { font-size: 1.125rem; color: var(--gray-500); font-weight: 400; margin-top: 1rem; }
+        .capability-theme-header { margin-bottom: 1.5rem; padding-bottom: 0; }
+        .capability-theme-title { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; color: var(--gray-900); line-height: 1.1; letter-spacing: -0.02em; text-transform: uppercase; }
+        .capability-theme-subtitle { font-size: 1rem; color: var(--gray-700); font-weight: 400; margin-top: 0.5rem; }
         
         /* Card Grid - Brutalist */
         .program-cards { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--gray-200); }
@@ -495,7 +495,7 @@
             background: var(--white); 
             border-bottom: 1px solid var(--gray-200);
             border-right: 1px solid var(--gray-200);
-            padding: 2rem 1.5rem;
+            padding: 1.5rem 1.25rem;
             transition: background 0.15s;
         }
         .program-card:hover { background: var(--gray-50); }
@@ -505,29 +505,27 @@
         /* Hide image header */
         .program-card-header { display: none; }
         
-        /* Card Body - BIG TEXT */
+        /* Card Body - ALL 16px */
         .program-card-body { padding: 0; }
         .program-card-tag { 
-            font-size: 0.75rem; 
-            font-weight: 800; 
-            color: var(--accent); 
+            font-size: 1rem; 
+            font-weight: 700; 
+            color: var(--dark); 
             text-transform: uppercase; 
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
             display: block;
         }
         .program-card-title { 
-            font-size: 1.5rem; 
-            font-weight: 900; 
+            font-size: 1rem; 
+            font-weight: 700; 
             color: var(--gray-900); 
-            line-height: 1.15;
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.03em;
+            line-height: 1.3;
+            margin-bottom: 0.5rem;
         }
-        @media (min-width: 768px) { .program-card-title { font-size: 1.75rem; } }
         .program-card-desc { 
             font-size: 1rem; 
-            color: var(--gray-500); 
+            color: var(--gray-900); 
             line-height: 1.5;
         }
         
