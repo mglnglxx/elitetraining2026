@@ -528,31 +528,56 @@
             .mobile-menu { display: none !important; }
         }
         
-        /* HERO - BRUTALIST */
+        /* HERO - BRUTALIST WITH IMAGE */
         .hero {
             padding-top: 48px;
             background: var(--dark);
-            min-height: 70vh;
+            min-height: 80vh;
             display: flex;
             align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Hero background image with overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('assets/img/hero-bg.jpg'); /* PLACEHOLDER - replace with actual image */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--dark) 0%, transparent 50%, var(--dark) 100%);
+            z-index: 1;
+        }
+        
+        .hero > .container {
+            position: relative;
+            z-index: 2;
         }
         
         @media (min-width: 768px) {
-            .hero { padding-top: 56px; }
+            .hero { padding-top: 56px; min-height: 85vh; }
         }
         
         .hero-inner {
-            padding: 2.5rem 0;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            align-items: center;
+            padding: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
         }
         
         @media (min-width: 900px) {
             .hero-inner { 
-                padding: 3rem 0; 
-                grid-template-columns: 1.1fr 0.9fr;
+                padding: 4rem 0; 
                 gap: 3rem;
             }
         }
@@ -649,39 +674,57 @@
         
         .hero-cta-secondary:hover { border-color: var(--white); }
         
-        .hero-visual {
+        /* HERO STATS - BIG HORIZONTAL */
+        .hero-stats {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
         
-        @media (min-width: 480px) {
-            .hero-visual { grid-template-columns: repeat(2, 1fr); }
+        @media (min-width: 600px) {
+            .hero-stats { grid-template-columns: repeat(4, 1fr); }
         }
         
         @media (min-width: 900px) {
-            .hero-visual { grid-template-columns: 1fr; gap: 0.75rem; }
+            .hero-stats { gap: 3rem; }
         }
         
-        .hero-stat-box {
-            padding: 1rem;
-            background: rgba(255,255,255,0.05);
-            border-left: 3px solid var(--accent);
+        .hero-stat {
+            text-align: left;
         }
         
-        .hero-stat-box h4 {
-            color: var(--white);
-            font-size: 1.5rem;
+        .hero-stat-number {
+            display: block;
+            font-size: 3rem;
             font-weight: 900;
-            margin-bottom: 0.25rem;
+            color: var(--accent);
+            line-height: 1;
+            letter-spacing: -0.03em;
         }
         
-        .hero-stat-box p {
+        @media (min-width: 768px) {
+            .hero-stat-number { font-size: 4rem; }
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-stat-number { font-size: 5rem; }
+        }
+        
+        .hero-stat-label {
+            display: block;
             color: var(--white);
             font-size: 0.8125rem;
-            opacity: 0.7;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.04em;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-stat-label { font-size: 0.875rem; }
         }
         
         .hero-cta svg { width: 18px; height: 18px; }
@@ -752,24 +795,39 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            gap: 1.5rem 2rem;
+            gap: 2rem 3rem;
         }
         
         @media (min-width: 768px) {
-            .clients-grid { gap: 2rem 3rem; }
+            .clients-grid { gap: 2.5rem 4rem; }
         }
         
         .client-logo {
-            height: 28px;
-            max-width: 100px;
+            height: 40px;
+            max-width: 140px;
             width: auto;
             object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .client-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
         }
         
         @media (min-width: 768px) {
             .client-logo { 
-                height: 36px; 
-                max-width: 120px;
+                height: 50px; 
+                max-width: 160px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .client-logo { 
+                height: 56px; 
+                max-width: 180px;
             }
         }
         
@@ -1000,102 +1058,251 @@
         }
         .sector-directivas .sector-card-icon { fill: #fff; }
         
-        /* ALIANZAS */
+        /* ALIANZAS - WITH LOGOS */
         .alianzas {
-            padding: 3rem 0;
-            background: var(--gray-50);
+            padding: 4rem 0;
+            background: var(--dark);
         }
         
         @media (min-width: 768px) {
-            .alianzas { padding: 4rem 0; }
+            .alianzas { padding: 5rem 0; }
+        }
+        
+        .alianzas-header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
         
         .alianzas-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
         }
         
         @media (min-width: 768px) {
-            .alianzas-title { font-size: 1.5rem; }
+            .alianzas-title { font-size: 2rem; }
+        }
+        
+        .alianzas-subtitle {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.7);
         }
         
         .alianzas-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: 1.5rem;
         }
         
         @media (min-width: 768px) {
-            .alianzas-grid { grid-template-columns: repeat(3, 1fr); }
+            .alianzas-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
         }
         
         .alianza-card {
-            padding: 1.5rem;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .alianza-card:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--accent);
+        }
+        
+        .alianza-logo {
+            height: 60px;
+            width: auto;
+            max-width: 140px;
+            margin: 0 auto 1.5rem;
+            display: block;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+        
+        @media (min-width: 768px) {
+            .alianza-logo { height: 70px; max-width: 160px; }
+        }
+        
+        /* Placeholder for logos - replace with actual logos */
+        .alianza-logo-placeholder {
+            height: 60px;
+            width: 140px;
+            margin: 0 auto 1.5rem;
+            background: rgba(255,255,255,0.1);
+            border: 2px dashed rgba(255,255,255,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        @media (min-width: 768px) {
+            .alianza-logo-placeholder { height: 70px; width: 160px; }
         }
         
         .alianza-card h3 {
-            font-size: 1rem;
+            font-size: 1.125rem;
             font-weight: 700;
-            color: var(--gray-900);
+            color: var(--white);
             margin-bottom: 0.75rem;
         }
         
         .alianza-card p {
-            font-size: 0.875rem;
+            font-size: 0.9375rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.6;
+        }
+        
+        /* MODELO DE TRABAJO - VISUAL 3-STEP PROCESS */
+        .modelo {
+            padding: 4rem 0;
+            background: var(--white);
+        }
+        
+        @media (min-width: 768px) {
+            .modelo { padding: 5rem 0; }
+        }
+        
+        .modelo-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .modelo-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        @media (min-width: 768px) {
+            .modelo-title { font-size: 2rem; }
+        }
+        
+        .modelo-subtitle {
+            font-size: 1rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Steps Grid */
+        .modelo-steps {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .modelo-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        }
+        
+        .modelo-step {
+            position: relative;
+            padding: 2rem;
+            background: var(--gray-50);
+            border: 2px solid var(--gray-200);
+        }
+        
+        .modelo-step:hover {
+            border-color: var(--accent);
+        }
+        
+        .modelo-step-number {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 48px;
+            height: 48px;
+            background: var(--dark);
+            color: var(--accent);
+            font-size: 1.25rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modelo-step-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 1.25rem;
+            margin-top: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .modelo-step h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+        }
+        
+        .modelo-step p {
+            font-size: 0.9375rem;
             color: var(--gray-600);
             line-height: 1.6;
         }
         
-        /* MODELO DE TRABAJO */
-        .modelo {
-            padding: 3rem 0;
-            background: var(--white);
+        /* Connector line between steps (desktop) */
+        @media (min-width: 768px) {
+            .modelo-step:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: -1rem;
+                width: 2rem;
+                height: 2px;
+                background: var(--gray-300);
+                transform: translateY(-50%);
+            }
+        }
+        
+        /* Bottom CTA section */
+        .modelo-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            padding-top: 2rem;
             border-top: 1px solid var(--gray-200);
-            border-bottom: 1px solid var(--gray-200);
         }
         
-        @media (min-width: 768px) {
-            .modelo { padding: 4rem 0; }
+        @media (min-width: 600px) {
+            .modelo-footer { 
+                flex-direction: row; 
+                justify-content: space-between;
+            }
         }
         
-        .modelo-content {
-            max-width: 700px;
-        }
-        
-        .modelo-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            .modelo-title { font-size: 1.5rem; }
-        }
-        
-        .modelo-lead {
+        .modelo-footer-text {
             font-size: 1rem;
-            font-weight: 500;
-            color: var(--gray-900);
-            margin-bottom: 1rem;
+            color: var(--gray-700);
+            text-align: center;
         }
         
-        .modelo-text {
-            font-size: 0.9375rem;
-            color: var(--gray-600);
-            line-height: 1.7;
-            margin-bottom: 1rem;
+        @media (min-width: 600px) {
+            .modelo-footer-text { text-align: left; }
         }
         
         .modelo-ctas {
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
-            margin-top: 1.5rem;
         }
         
         @media (min-width: 400px) {
@@ -1106,33 +1313,46 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.75rem 1.25rem;
-            background: var(--dark);
-            color: var(--white);
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            background: var(--accent);
+            color: var(--gray-900);
             font-size: 0.875rem;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            transition: background 0.2s;
         }
         
         .modelo-cta-primary:hover {
-            background: var(--dark-soft);
+            background: var(--accent-light);
+        }
+        
+        .modelo-cta-primary svg {
+            width: 16px;
+            height: 16px;
         }
         
         .modelo-cta-secondary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.75rem 1.25rem;
+            padding: 0.875rem 1.5rem;
             background: transparent;
             color: var(--gray-700);
             font-size: 0.875rem;
             font-weight: 600;
             text-decoration: none;
-            border: 1px solid var(--gray-300);
+            border: 2px solid var(--gray-300);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            transition: all 0.2s;
         }
         
         .modelo-cta-secondary:hover {
-            background: var(--gray-50);
+            border-color: var(--gray-900);
+            color: var(--gray-900);
         }
         
         /* WHY / INSTRUCTORES */
@@ -1606,31 +1826,31 @@
             <div class="hero-inner">
                 <div class="hero-content">
                     <h1>Desarrollo de competencias técnicas para industrias de alto riesgo</h1>
-                    <p class="hero-description">Durante 29 años hemos formado a los equipos de operaciones, mantenimiento e integridad de las principales empresas de Oil & Gas, energía e industria en Latinoamérica. Proveedor autorizado ASME. Partner exclusivo de The Woodhouse Partnership.</p>
+                    <p class="hero-description">Formamos equipos de operaciones, mantenimiento e integridad de las principales empresas de Oil & Gas, energía e industria en Latinoamérica. Proveedor autorizado ASME. Partner exclusivo de The Woodhouse Partnership.</p>
                     <div class="hero-ctas">
                         <a href="#especializacion" class="hero-cta">
-                            Áreas de especialización
+                            Ver áreas de especialización
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                         <a href="https://wa.me/573164661007?text=Solicito%20el%20portafolio%20completo" class="hero-cta-secondary">Solicitar portafolio</a>
                     </div>
                 </div>
-                <div class="hero-visual">
-                    <div class="hero-stat-box">
-                        <h4>29</h4>
-                        <p>Años de operación</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">29</span>
+                        <span class="hero-stat-label">Años de operación</span>
                     </div>
-                    <div class="hero-stat-box">
-                        <h4>11</h4>
-                        <p>Países</p>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">11</span>
+                        <span class="hero-stat-label">Países</span>
                     </div>
-                    <div class="hero-stat-box">
-                        <h4>6</h4>
-                        <p>Áreas de especialización</p>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">6</span>
+                        <span class="hero-stat-label">Áreas de especialización</span>
                     </div>
-                    <div class="hero-stat-box">
-                        <h4>ASME</h4>
-                        <p>Proveedor autorizado</p>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">+50</span>
+                        <span class="hero-stat-label">Instructores especializados</span>
                     </div>
                 </div>
             </div>
@@ -1759,19 +1979,28 @@
     <!-- ALIANZAS -->
     <section class="alianzas" id="alianzas">
         <div class="container">
-            <h2 class="alianzas-title">Alianzas Internacionales</h2>
+            <div class="alianzas-header">
+                <h2 class="alianzas-title">Alianzas Internacionales</h2>
+                <p class="alianzas-subtitle">Respaldo de las organizaciones técnicas más reconocidas del mundo</p>
+            </div>
             <div class="alianzas-grid">
                 <div class="alianza-card">
+                    <div class="alianza-logo-placeholder">Logo ASME</div>
+                    <!-- Replace with: <img src="assets/logos/asme.png" alt="ASME" class="alianza-logo"> -->
                     <h3>ASME</h3>
-                    <p>Proveedor autorizado para programas de certificación en códigos ASME (Sección VIII, B31.3, PCC-2). Centro autorizado para formación in-company en Colombia.</p>
+                    <p>Proveedor autorizado para certificación en códigos ASME (Sección VIII, B31.3, PCC-2). Centro autorizado en Colombia.</p>
                 </div>
                 <div class="alianza-card">
+                    <div class="alianza-logo-placeholder">Logo TWPL</div>
+                    <!-- Replace with: <img src="assets/logos/twpl.png" alt="The Woodhouse Partnership" class="alianza-logo"> -->
                     <h3>The Woodhouse Partnership</h3>
-                    <p>Partner exclusivo en Latinoamérica para desarrollo de competencias en gestión de activos. Programas con certificación IAM (Institute of Asset Management).</p>
+                    <p>Partner exclusivo en Latinoamérica para gestión de activos. Certificación IAM (Institute of Asset Management).</p>
                 </div>
                 <div class="alianza-card">
+                    <div class="alianza-logo-placeholder">Logo IADC</div>
+                    <!-- Replace with: <img src="assets/logos/iadc.png" alt="IADC" class="alianza-logo"> -->
                     <h3>IADC</h3>
-                    <p>Centro de evaluación para certificación Well Control. Formación y credenciales para personal de perforación.</p>
+                    <p>Centro de evaluación Well Control. Formación y credenciales para personal de perforación.</p>
                 </div>
             </div>
         </div>
@@ -1780,13 +2009,47 @@
     <!-- MODELO DE TRABAJO -->
     <section class="modelo" id="modelo">
         <div class="container">
-            <div class="modelo-content">
+            <div class="modelo-header">
                 <h2 class="modelo-title">Modelo de Trabajo</h2>
-                <p class="modelo-lead">Elite Training desarrolla programas cerrados para equipos técnicos de empresas.</p>
-                <p class="modelo-text">Cada programa se diseña según las necesidades específicas del cliente: contenido, duración, sede y fechas. Los programas pueden incluir certificaciones internacionales (API, ASME, IAM) con credenciales verificables.</p>
-                <p class="modelo-text">Además de programas cerrados, se mantiene un calendario de cursos abiertos para profesionales independientes y empresas que desean inscribir participantes individuales.</p>
+                <p class="modelo-subtitle">Programas cerrados diseñados para las necesidades específicas de cada organización</p>
+            </div>
+            <div class="modelo-steps">
+                <div class="modelo-step">
+                    <span class="modelo-step-number">1</span>
+                    <svg class="modelo-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                    </svg>
+                    <h3>Diagnóstico</h3>
+                    <p>Identificamos las competencias críticas de su equipo, brechas de conocimiento y requisitos normativos específicos de su operación.</p>
+                </div>
+                <div class="modelo-step">
+                    <span class="modelo-step-number">2</span>
+                    <svg class="modelo-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                    </svg>
+                    <h3>Diseño del Programa</h3>
+                    <p>Estructuramos contenido, duración, sede y cronograma. Incluimos rutas de certificación internacional si aplica (API, ASME, IAM).</p>
+                </div>
+                <div class="modelo-step">
+                    <span class="modelo-step-number">3</span>
+                    <svg class="modelo-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
+                    </svg>
+                    <h3>Ejecución y Seguimiento</h3>
+                    <p>Implementamos el programa con instructores especializados. Entregamos credenciales verificables y reportes de competencias.</p>
+                </div>
+            </div>
+            <div class="modelo-footer">
+                <p class="modelo-footer-text">También ofrecemos cursos abiertos para profesionales independientes</p>
                 <div class="modelo-ctas">
-                    <a href="https://wa.me/573164661007?text=Solicito%20el%20portafolio%20completo" class="modelo-cta-primary">Solicitar portafolio completo</a>
+                    <a href="https://wa.me/573164661007?text=Solicito%20información%20sobre%20programas%20cerrados" class="modelo-cta-primary">
+                        Agendar diagnóstico
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
                     <a href="https://hidrocarburos.com.co" target="_blank" class="modelo-cta-secondary">Ver cursos abiertos</a>
                 </div>
             </div>
