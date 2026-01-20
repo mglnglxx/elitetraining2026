@@ -1000,7 +1000,142 @@
         }
         .sector-directivas .sector-card-icon { fill: #fff; }
         
-        /* WHY */
+        /* ALIANZAS */
+        .alianzas {
+            padding: 3rem 0;
+            background: var(--gray-50);
+        }
+        
+        @media (min-width: 768px) {
+            .alianzas { padding: 4rem 0; }
+        }
+        
+        .alianzas-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .alianzas-title { font-size: 1.5rem; }
+        }
+        
+        .alianzas-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .alianzas-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        
+        .alianza-card {
+            padding: 1.5rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+        }
+        
+        .alianza-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .alianza-card p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        
+        /* MODELO DE TRABAJO */
+        .modelo {
+            padding: 3rem 0;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+        
+        @media (min-width: 768px) {
+            .modelo { padding: 4rem 0; }
+        }
+        
+        .modelo-content {
+            max-width: 700px;
+        }
+        
+        .modelo-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        @media (min-width: 768px) {
+            .modelo-title { font-size: 1.5rem; }
+        }
+        
+        .modelo-lead {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+        }
+        
+        .modelo-text {
+            font-size: 0.9375rem;
+            color: var(--gray-600);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .modelo-ctas {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        @media (min-width: 400px) {
+            .modelo-ctas { flex-direction: row; gap: 1rem; }
+        }
+        
+        .modelo-cta-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.25rem;
+            background: var(--dark);
+            color: var(--white);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .modelo-cta-primary:hover {
+            background: var(--dark-soft);
+        }
+        
+        .modelo-cta-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.25rem;
+            background: transparent;
+            color: var(--gray-700);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid var(--gray-300);
+        }
+        
+        .modelo-cta-secondary:hover {
+            background: var(--gray-50);
+        }
+        
+        /* WHY / INSTRUCTORES */
         .why {
             padding: 3rem 0;
             background: var(--dark);
@@ -1112,6 +1247,27 @@
         .cta-box .btn:hover { background: var(--accent-light); }
         
         .cta-box .btn svg { width: 16px; height: 16px; }
+        
+        .cta-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        @media (min-width: 768px) {
+            .cta-actions { 
+                flex-direction: row;
+                align-items: center;
+                gap: 1.5rem;
+            }
+        }
+        
+        .cta-email {
+            font-size: 0.875rem;
+            color: var(--white);
+            opacity: 0.7;
+        }
         
         /* FOOTER */
         .footer {
@@ -1449,33 +1605,32 @@
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-content">
-                    <p class="hero-eyebrow">29 años formando industria</p>
-                    <h1>Formación técnica para operaciones críticas</h1>
-                    <p class="hero-description">Desarrollamos competencias en Oil & Gas, Integridad Mecánica, Gestión de Activos y Seguridad de Procesos. Programas cerrados para equipos que no pueden fallar.</p>
+                    <h1>Desarrollo de competencias técnicas para industrias de alto riesgo</h1>
+                    <p class="hero-description">Durante 29 años hemos formado a los equipos de operaciones, mantenimiento e integridad de las principales empresas de Oil & Gas, energía e industria en Latinoamérica. Proveedor autorizado ASME. Partner exclusivo de The Woodhouse Partnership.</p>
                     <div class="hero-ctas">
-                        <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20llamada" class="hero-cta">
-                            Agendar llamada
+                        <a href="#especializacion" class="hero-cta">
+                            Áreas de especialización
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
-                        <a href="https://hidrocarburos.com.co" target="_blank" class="hero-cta-secondary">Campus Virtual</a>
+                        <a href="https://wa.me/573164661007?text=Solicito%20el%20portafolio%20completo" class="hero-cta-secondary">Solicitar portafolio</a>
                     </div>
                 </div>
                 <div class="hero-visual">
                     <div class="hero-stat-box">
-                        <h4>+200</h4>
-                        <p>Empresas formadas</p>
-                    </div>
-                    <div class="hero-stat-box">
-                        <h4>+50,000</h4>
-                        <p>Profesionales capacitados</p>
+                        <h4>29</h4>
+                        <p>Años de operación</p>
                     </div>
                     <div class="hero-stat-box">
                         <h4>11</h4>
-                        <p>Países en Latinoamérica</p>
+                        <p>Países</p>
                     </div>
                     <div class="hero-stat-box">
                         <h4>6</h4>
-                        <p>Sectores especializados</p>
+                        <p>Áreas de especialización</p>
+                    </div>
+                    <div class="hero-stat-box">
+                        <h4>ASME</h4>
+                        <p>Proveedor autorizado</p>
                     </div>
                 </div>
             </div>
@@ -1507,7 +1662,7 @@
 
     <section class="clients">
         <div class="container">
-            <p class="clients-label">Confían en nosotros</p>
+            <p class="clients-label">Clientes</p>
             <div class="clients-grid">
                 <img src="assets/logos/ecopetrol.png" alt="Ecopetrol" class="client-logo">
                 <img src="assets/logos/frontera.jpg" alt="Frontera" class="client-logo">
@@ -1519,11 +1674,11 @@
         </div>
     </section>
 
-    <section class="sectors" id="sectores">
+    <section class="sectors" id="especializacion">
         <div class="container">
             <div class="sectors-header">
-                <p class="sectors-subtitle">Áreas de formación</p>
-                <h2 class="sectors-title">Seleccione su industria</h2>
+                <h2 class="sectors-title">Áreas de Especialización</h2>
+                <p class="sectors-subtitle">Seis líneas de desarrollo técnico con programas cerrados, rutas de certificación y formación a la medida.</p>
             </div>
             <div class="sectors-grid">
                 <a href="landing-oilgas.html" class="sector-card sector-oilgas">
@@ -1532,8 +1687,8 @@
                         <span class="sector-card-tag">Producción · Perforación · Facilidades</span>
                         <h3>Oil & Gas</h3>
                         <div class="sector-card-hover">
-                            <p>Competencias técnicas para operaciones de producción, perforación, facilidades y mantenimiento.</p>
-                            <span class="sector-card-link">Seguir leyendo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+                            <p>Producción, perforación, facilidades y optimización de operaciones upstream y downstream.</p>
+                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
                         </div>
                     </div>
                 </a>
@@ -1541,11 +1696,11 @@
                 <a href="landing-gas.html" class="sector-card sector-gas">
                     <svg class="sector-card-icon" viewBox="0 0 600 600"><path d="M261.374 317.452C263.625 317.565 265.677 317.669 268.127 317.79C268.127 324.214 268.127 330.664 268.127 337.495C266.049 337.599 264.023 337.702 261.158 337.85C261.158 341.226 261.184 344.507 261.149 347.789C261.106 352.602 261.235 357.425 260.906 362.221C259.625 380.939 244.725 394.834 225.878 394.886C200.372 394.955 174.858 394.903 149.353 394.903C147.457 394.903 145.561 394.903 143.544 394.903C143.267 396.938 143.059 398.47 142.808 400.34C140.583 400.34 138.418 400.34 135.934 400.34C135.934 383.83 135.934 367.381 135.934 350.585C138.133 350.585 140.288 350.585 142.747 350.585C142.99 352.169 143.241 353.84 143.526 355.771C148.565 355.771 153.474 355.771 158.954 355.771C154.496 341.399 157.361 329.227 170.581 321.573C180.339 315.929 190.866 316.249 199.879 323.565C210.043 331.815 212.623 342.707 208.086 355.875C211.748 355.875 215.09 356.325 218.198 355.667C219.592 355.373 221.332 352.957 221.506 351.347C221.964 347.079 221.661 342.733 221.661 338.092C219.584 337.824 217.765 337.59 215.662 337.322C215.662 330.889 215.662 324.552 215.662 317.868C217.523 317.651 219.359 317.426 221.644 317.158C221.644 284.848 221.644 252.546 221.644 219.889C219.549 219.621 217.722 219.387 215.627 219.128C215.627 212.894 215.627 206.687 215.627 200.055C222.354 201.232 221.938 196.799 221.748 192.237C221.393 183.631 222.224 175.207 227.168 167.77C234.354 156.948 244.544 151.399 257.478 151.2C269.486 151.009 281.503 151.156 293.883 151.156C294.152 148.879 294.394 146.897 294.663 144.672C301.138 144.672 307.467 144.672 314.09 144.672C314.324 146.698 314.54 148.559 314.844 151.156C316.618 151.156 318.48 151.156 320.341 151.156C330.929 151.156 341.518 151.061 352.106 151.165C372.737 151.364 387.81 166.411 388.174 187.06C388.243 191.051 388.182 195.042 388.182 199.241C390.52 199.579 392.381 199.847 394.511 200.15C394.511 206.444 394.511 212.756 394.511 219.205C392.494 219.37 390.771 219.517 388.65 219.69C388.65 222.227 388.65 224.694 388.65 227.647C390.892 228.322 393.446 229.084 396.009 229.854C455.288 247.533 482.274 316.638 450.786 369.874C449.487 372.073 448.872 374.974 448.829 377.554C448.621 390.228 448.751 402.903 448.691 415.578C448.639 425.456 442.076 432.235 432.7 432.227C423.332 432.218 416.761 425.482 416.562 415.613C416.493 411.994 416.553 408.375 416.553 405.301C406.285 408.6 396.433 411.682 386.676 415.041C385.724 415.37 384.866 417.422 384.832 418.695C384.65 425.266 384.797 431.846 384.745 438.425C384.659 448.512 377.992 455.36 368.382 455.325C359.11 455.29 352.435 448.39 352.331 438.59C352.253 430.919 352.314 423.249 352.314 416.314C341.466 412.418 331.293 408.756 320.497 404.877C320.497 408.158 320.549 411.734 320.488 415.309C320.324 425.43 313.692 432.287 304.151 432.244C294.983 432.209 288.377 425.274 288.308 415.361C288.221 402.531 288.403 389.692 288.213 376.861C288.178 374.437 287.451 371.762 286.239 369.666C254.855 315.47 282.222 245.3 344.583 228.876C345.959 228.512 347.301 228.045 348.885 227.551C348.885 225.11 348.885 222.746 348.885 219.941C346.929 219.673 344.937 219.405 342.574 219.076C342.574 212.946 342.574 206.764 342.574 200.245C344.505 199.951 346.626 199.622 348.669 199.302C349.742 191.484 348.799 190.341 341.587 190.35C333.085 190.367 324.583 190.384 316.082 190.419C315.787 190.419 315.484 190.601 314.766 190.834C314.601 192.652 314.419 194.635 314.212 196.973C307.684 196.973 301.225 196.973 294.541 196.973C294.386 194.912 294.247 193.033 294.048 190.35C288.49 190.35 282.957 190.35 277.425 190.35C274.534 190.35 271.651 190.35 268.759 190.35C261.452 190.35 260.742 191.181 261.53 199.475C263.599 199.631 265.781 199.786 268.508 199.994C268.508 203.111 268.508 206.271 268.508 209.44C268.508 212.608 268.508 215.777 268.508 219.136C265.971 219.353 263.937 219.526 261.357 219.751C261.374 252.295 261.374 284.735 261.374 317.452Z"/></svg>
                     <div class="sector-card-content">
-                        <span class="sector-card-tag">Medición · Compresión · Tratamiento</span>
+                        <span class="sector-card-tag">Medición · Compresión · Distribución</span>
                         <h3>Gas Natural y Energía</h3>
                         <div class="sector-card-hover">
-                            <p>Toda la cadena del gas: producción, transporte, distribución y comercialización.</p>
-                            <span class="sector-card-link">Seguir leyendo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+                            <p>Medición, compresión, tratamiento, transporte y distribución de gas natural y GLP.</p>
+                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
                         </div>
                     </div>
                 </a>
@@ -1556,8 +1711,8 @@
                         <span class="sector-card-tag">ASME · API · RBI</span>
                         <h3>Integridad Mecánica</h3>
                         <div class="sector-card-hover">
-                            <p>Equipos confiables, operaciones seguras. Códigos ASME/API, inspección y evaluación de riesgos.</p>
-                            <span class="sector-card-link">Seguir leyendo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+                            <p>Códigos ASME y API, inspección basada en riesgo, fitness-for-service y gestión de equipos estáticos.</p>
+                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
                         </div>
                     </div>
                 </a>
@@ -1568,8 +1723,8 @@
                         <span class="sector-card-tag">ISO 55001 · IAM · RCM</span>
                         <h3>Gestión de Activos</h3>
                         <div class="sector-card-hover">
-                            <p>Del mantenimiento reactivo a la gestión estratégica. Certificación IAM con TWPL.</p>
-                            <span class="sector-card-link">Seguir leyendo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+                            <p>Metodologías ISO 55001, IAM y estrategias de confiabilidad. En alianza con The Woodhouse Partnership.</p>
+                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
                         </div>
                     </div>
                 </a>
@@ -1580,8 +1735,8 @@
                         <span class="sector-card-tag">NFPA · PSM · Arc Flash</span>
                         <h3>Seguridad de Procesos</h3>
                         <div class="sector-card-hover">
-                            <p>Prevenir incidentes, proteger vidas. Riesgo eléctrico, seguridad de procesos, investigación de accidentes.</p>
-                            <span class="sector-card-link">Seguir leyendo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+                            <p>Seguridad eléctrica NFPA 70E, polvos combustibles NFPA 652, PSM y análisis de riesgos.</p>
+                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
                         </div>
                     </div>
                 </a>
@@ -1592,8 +1747,8 @@
                         <span class="sector-card-tag">Liderazgo · Comunicación · Gestión</span>
                         <h3>Habilidades Directivas</h3>
                         <div class="sector-card-hover">
-                            <p>Líderes técnicos que inspiran equipos. Liderazgo, comunicación y gestión para ingenieros.</p>
-                            <span class="sector-card-link">Seguir leyendo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
+                            <p>Liderazgo, comunicación y gestión para profesionales técnicos.</p>
+                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
                         </div>
                     </div>
                 </a>
@@ -1601,39 +1756,80 @@
         </div>
     </section>
 
-    <section class="why" id="nosotros">
+    <!-- ALIANZAS -->
+    <section class="alianzas" id="alianzas">
         <div class="container">
-            <div class="why-header">
-                <h2 class="why-title">Por qué Elite Training</h2>
-            </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <h3>Autoridad técnica</h3>
-                    <p>Proveedor ASME desde 2004. Partner TWPL. Credenciales IADC. No somos generalistas.</p>
+            <h2 class="alianzas-title">Alianzas Internacionales</h2>
+            <div class="alianzas-grid">
+                <div class="alianza-card">
+                    <h3>ASME</h3>
+                    <p>Proveedor autorizado para programas de certificación en códigos ASME (Sección VIII, B31.3, PCC-2). Centro autorizado para formación in-company en Colombia.</p>
                 </div>
-                <div class="why-card">
-                    <h3>Instructores con campo</h3>
-                    <p>Han trabajado en plantas, campos y facilidades reales. Conocen la diferencia entre teoría y realidad.</p>
+                <div class="alianza-card">
+                    <h3>The Woodhouse Partnership</h3>
+                    <p>Partner exclusivo en Latinoamérica para desarrollo de competencias en gestión de activos. Programas con certificación IAM (Institute of Asset Management).</p>
                 </div>
-                <div class="why-card">
-                    <h3>29 años en la industria</h3>
-                    <p>Ecopetrol, Repsol, ISA, Frontera y +200 empresas en 11 países. Seguimos porque entregamos.</p>
+                <div class="alianza-card">
+                    <h3>IADC</h3>
+                    <p>Centro de evaluación para certificación Well Control. Formación y credenciales para personal de perforación.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
+    <!-- MODELO DE TRABAJO -->
+    <section class="modelo" id="modelo">
+        <div class="container">
+            <div class="modelo-content">
+                <h2 class="modelo-title">Modelo de Trabajo</h2>
+                <p class="modelo-lead">Elite Training desarrolla programas cerrados para equipos técnicos de empresas.</p>
+                <p class="modelo-text">Cada programa se diseña según las necesidades específicas del cliente: contenido, duración, sede y fechas. Los programas pueden incluir certificaciones internacionales (API, ASME, IAM) con credenciales verificables.</p>
+                <p class="modelo-text">Además de programas cerrados, se mantiene un calendario de cursos abiertos para profesionales independientes y empresas que desean inscribir participantes individuales.</p>
+                <div class="modelo-ctas">
+                    <a href="https://wa.me/573164661007?text=Solicito%20el%20portafolio%20completo" class="modelo-cta-primary">Solicitar portafolio completo</a>
+                    <a href="https://hidrocarburos.com.co" target="_blank" class="modelo-cta-secondary">Ver cursos abiertos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INSTRUCTORES -->
+    <section class="why" id="nosotros">
+        <div class="container">
+            <div class="why-header">
+                <h2 class="why-title">Equipo de Instructores</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card">
+                    <h3>Experiencia en campo</h3>
+                    <p>Profesionales con experiencia directa en operaciones industriales. Ingenieros que han trabajado en plantas, campos y proyectos de alta complejidad.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Presencia regional</h3>
+                    <p>Instructores en Colombia, Ecuador, Perú, México y otros países de la región. Capacidad de despliegue para programas in-situ.</p>
+                </div>
+                <div class="why-card">
+                    <h3>Consistencia metodológica</h3>
+                    <p>Varios instructores trabajan exclusivamente con Elite Training, lo que garantiza calidad y disponibilidad para programas cerrados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contacto">
         <div class="container">
             <div class="cta-box">
                 <div>
-                    <h2>¿Necesita formar a su equipo?</h2>
-                    <p>30 minutos para entender sus necesidades. Sin compromiso.</p>
+                    <h2>Contacto</h2>
+                    <p>Para información sobre programas cerrados, propuestas o el portafolio completo.</p>
                 </div>
-                <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20llamada" class="btn">
-                    Agendar llamada
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
+                <div class="cta-actions">
+                    <a href="https://wa.me/573164661007?text=Solicito%20información%20sobre%20programas" class="btn">
+                        +57 316 466 1007
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <span class="cta-email">info@hidrocarburos.com.co</span>
+                </div>
             </div>
         </div>
     </section>
