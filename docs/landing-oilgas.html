@@ -3,1658 +3,392 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Training | Formación Técnica Oil & Gas</title>
-    <meta name="description" content="29 años formando equipos técnicos para Ecopetrol, Repsol, Frontera y +200 empresas. Proveedor ASME. Programas cerrados a medida.">
+    <title>Oil and Gas | Elite Training</title>
+    <meta name="description" content="Formación en producción, facilidades, levantamiento artificial, perforación y yacimientos. Cursos especializados para la industria petrolera.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --dark: #4A4A49;
-            --dark-soft: #3a3a39;
-            --accent: #BFBFBF;
-            --accent-light: #d9d9d9;
+            --black: #0a0a0a;
             --white: #ffffff;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-900: #111827;
-            --font: 'Roboto', -apple-system, sans-serif;
-            --section-padding: clamp(2.5rem, 6vw, 4rem);
-            --container: 1100px;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-800: #262626;
+            --accent: #E19A24;
+            --font: 'Inter', -apple-system, system-ui, sans-serif;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: var(--font);
-            font-size: 15px;
-            line-height: 1.6;
-            color: var(--gray-800);
-            background: var(--white);
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .container { padding: 0 1.5rem; }
-        }
-        
-        /* ==================== HEADER - BRUTALIST ==================== */
-        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 2px solid var(--gray-900); }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 48px; } @media (min-width: 768px) { .header-inner { height: 56px; } }
-        .logo svg { height: 24px; width: auto; } @media (min-width: 768px) { .logo svg { height: 32px; } }
-        .header-nav { display: none; align-items: center; gap: 1.5rem; } @media (min-width: 900px) { .header-nav { display: flex; } }
-        .header-nav > a, .header-nav .nav-trigger { color: var(--gray-700); text-decoration: none; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.02em; cursor: pointer; display: flex; align-items: center; gap: 0.25rem; padding: 0.5rem 0; } .header-nav > a:hover, .nav-trigger:hover, .nav-trigger.active { color: var(--gray-900); }
-        .nav-trigger svg { width: 12px; height: 12px; transition: transform 0.2s; } .nav-trigger.active svg { transform: rotate(180deg); }
-        .header-cta { padding: 0.5rem 1rem; background: var(--gray-900); color: var(--white); font-weight: 700; font-size: 0.75rem; text-decoration: none; border-radius: 0; text-transform: uppercase; letter-spacing: 0.02em; } @media (min-width: 768px) { .header-cta { padding: 0.5rem 1.25rem; font-size: 0.8125rem; } }
-        .menu-toggle { display: flex; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; padding: 8px; margin-left: 0.5rem; } .menu-toggle span { width: 20px; height: 2px; background: var(--gray-900); } @media (min-width: 900px) { .menu-toggle { display: none; } }
-        .mobile-menu { display: none; position: fixed; top: 48px; left: 0; right: 0; bottom: 0; background: var(--white); padding: 0.75rem; flex-direction: column; gap: 0; z-index: 999; overflow-y: auto; border-bottom: 2px solid var(--gray-900); } .mobile-menu.active { display: flex; } .mobile-menu > a, .mobile-accordion-header { padding: 0.875rem 0; color: var(--gray-700); text-decoration: none; font-size: 0.9375rem; font-weight: 500; border-bottom: 1px solid var(--gray-100); display: flex; justify-content: space-between; align-items: center; cursor: pointer; } .mobile-accordion-header svg { width: 16px; height: 16px; transition: transform 0.2s; } .mobile-accordion.active .mobile-accordion-header svg { transform: rotate(180deg); } .mobile-accordion-content { display: none; padding: 0.5rem 0; background: var(--gray-50); margin: 0 -0.75rem; padding: 0.5rem 0.75rem; } .mobile-accordion.active .mobile-accordion-content { display: block; } .mobile-sector-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem; text-decoration: none; color: var(--gray-700); font-size: 0.875rem; font-weight: 500; border-radius: 4px; } .mobile-sector-link:hover { background: var(--gray-100); } .mobile-sector-icon { width: 32px; height: 32px; border-radius: 4px; display: flex; align-items: center; justify-content: center; } .mobile-sector-icon svg { width: 18px; height: 18px; } @media (min-width: 900px) { .mobile-menu { display: none !important; } }
-        
-        /* ==================== MEGA MENU ==================== */
-        .mega-menu { position: fixed; top: 48px; left: 0; right: 0; background: var(--white); box-shadow: 0 10px 40px rgba(0,0,0,0.15); display: none; z-index: 999; border-bottom: 2px solid var(--gray-900); } @media (min-width: 768px) { .mega-menu { top: 56px; } } .mega-menu.active { display: block; }
-        .mega-menu-inner { display: grid; grid-template-columns: 45% 55%; min-height: 420px; }
-        .mega-menu-visual { position: relative; overflow: hidden; }
-        .mega-menu-visual-bg { position: absolute; inset: 0; display: none; background-size: cover; background-position: center; } .mega-menu-visual-bg.active { display: block; } .mega-menu-visual-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%); }
-        .mega-menu-visual-content { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; color: var(--white); z-index: 1; }
-        .mega-menu-visual-title { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; line-height: 1.2; }
-        .mega-menu-visual-desc { font-size: 0.9375rem; opacity: 0.9; margin-bottom: 1.25rem; line-height: 1.5; }
-        .mega-menu-visual-cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: var(--white); color: var(--dark); text-decoration: none; font-size: 0.875rem; font-weight: 600; border-radius: 4px; transition: transform 0.2s; } .mega-menu-visual-cta:hover { transform: translateX(4px); } .mega-menu-visual-cta svg { width: 16px; height: 16px; }
-        .mega-menu-visual-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px; opacity: 0.15; z-index: 0; } .mega-menu-visual-icon svg { width: 100%; height: 100%; }
-        .mega-menu-right { display: flex; background: var(--white); }
-        .mega-menu-sectors { width: 240px; background: var(--gray-50); border-right: 1px solid var(--gray-200); padding: 1.5rem 0; flex-shrink: 0; }
-        .mega-menu-sector-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.875rem 1.25rem; cursor: pointer; text-decoration: none; color: var(--gray-600); transition: all 0.15s; border-left: 3px solid transparent; font-size: 0.875rem; } .mega-menu-sector-item:hover { color: var(--gray-900); background: rgba(255,255,255,0.5); } .mega-menu-sector-item.active { background: var(--white); border-left-color: var(--accent); color: var(--gray-900); font-weight: 600; }
-        .mega-menu-icon { width: 32px; height: 32px; border-radius: 4px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; } .mega-menu-icon svg { width: 18px; height: 18px; }
-        .mega-menu-sector-name { font-size: 0.8125rem; }
-        .mega-menu-content { flex: 1; padding: 1.5rem 2rem; display: none; } .mega-menu-content.active { display: block; }
-        .mega-menu-content-header { margin-bottom: 1.25rem; padding-bottom: 1rem; border-bottom: 1px solid var(--gray-100); }
-        .mega-menu-content-eyebrow { font-size: 0.6875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 0.25rem; }
-        .mega-menu-content-title { font-size: 1.125rem; font-weight: 700; color: var(--gray-900); margin-bottom: 0.25rem; }
-        .mega-menu-content-desc { font-size: 0.8125rem; color: var(--gray-500); }
-        .mega-menu-links-grid { display: grid; grid-template-columns: 1fr; gap: 0; margin-bottom: 1.25rem; }
-        .mega-menu-link { display: flex; align-items: center; justify-content: space-between; padding: 0.625rem 0; color: var(--gray-700); text-decoration: none; font-size: 0.8125rem; border-bottom: 1px solid var(--gray-100); transition: color 0.15s, padding-left 0.15s; } .mega-menu-link:hover { color: var(--dark); padding-left: 0.5rem; } .mega-menu-link::after { content: '→'; opacity: 0; transition: opacity 0.15s; } .mega-menu-link:hover::after { opacity: 1; }
-        .mega-menu-footer-cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1rem; background: var(--dark); color: var(--white); text-decoration: none; font-size: 0.8125rem; font-weight: 600; border-radius: 4px; } .mega-menu-footer-cta:hover { opacity: 0.9; } .mega-menu-footer-cta svg { width: 14px; height: 14px; }
-        .mega-oilgas .mega-menu-icon { background: #4A4A49; } .mega-oilgas .mega-menu-icon svg { fill: #BFBFBF; }
-        .mega-gas .mega-menu-icon { background: #233468; } .mega-gas .mega-menu-icon svg { fill: #4DB1BC; }
-        .mega-integridad .mega-menu-icon { background: #233468; } .mega-integridad .mega-menu-icon svg { fill: #EB9716; }
-        .mega-activos .mega-menu-icon { background: #233468; } .mega-activos .mega-menu-icon svg { fill: #4DB1BC; }
-        .mega-seguridad .mega-menu-icon { background: #EB9716; } .mega-seguridad .mega-menu-icon svg { fill: #BFBFBF; }
-        .mega-directivas .mega-menu-icon { background: #EB9716; } .mega-directivas .mega-menu-icon svg { fill: #ffffff; }
-        
-        /* ==================== HERO - BRUTALIST ==================== */
-        .hero { padding-top: 48px; background: var(--dark); min-height: auto; display: flex; align-items: center; } @media (min-width: 768px) { .hero { padding-top: 56px; min-height: 70vh; } }
-        .hero-grid { display: flex; flex-direction: column; gap: 1.5rem; padding: 2rem 0; } @media (min-width: 900px) { .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center; padding: 2.5rem 0; } }
-        .hero-eyebrow { color: var(--accent); font-size: 0.75rem; font-weight: 800; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.1em; } @media (min-width: 768px) { .hero-eyebrow { font-size: 0.875rem; } }
-        .hero h1 { font-size: 2rem; font-weight: 900; line-height: 1.05; color: var(--white); margin-bottom: 0.75rem; letter-spacing: -0.03em; text-transform: uppercase; } @media (min-width: 480px) { .hero h1 { font-size: 2.25rem; } } @media (min-width: 768px) { .hero h1 { font-size: 2.75rem; } } @media (min-width: 1024px) { .hero h1 { font-size: 3.25rem; } }
-        .hero-description { font-size: 1rem; color: var(--white); line-height: 1.5; margin-bottom: 1.25rem; opacity: 0.9; } @media (min-width: 768px) { .hero-description { font-size: 1.0625rem; margin-bottom: 1.5rem; max-width: 500px; } }
-        .hero-ctas { display: flex; flex-direction: column; gap: 0.5rem; } @media (min-width: 400px) { .hero-ctas { flex-direction: row; flex-wrap: wrap; } }
-        .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: var(--accent); color: var(--gray-900); font-weight: 700; font-size: 0.875rem; text-decoration: none; border-radius: 0; text-align: center; text-transform: uppercase; letter-spacing: 0.02em; } .btn-primary:hover { background: var(--accent-light); } .btn-primary svg { width: 16px; height: 16px; }
-        .btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 0.75rem 1.25rem; background: transparent; color: var(--white); font-weight: 700; font-size: 0.875rem; text-decoration: none; border-radius: 0; border: 2px solid rgba(255,255,255,0.4); text-align: center; text-transform: uppercase; letter-spacing: 0.02em; } .btn-secondary:hover { border-color: var(--white); }
-        .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; margin-top: 1.5rem; padding-top: 1rem; border-top: 2px solid rgba(255,255,255,0.15); } @media (min-width: 768px) { .hero-stats { display: flex; gap: 2rem; margin-top: 2rem; } }
-        .hero-stat-number { font-size: 1.75rem; font-weight: 900; color: var(--white); line-height: 1; } @media (min-width: 768px) { .hero-stat-number { font-size: 2rem; } }
-        .hero-stat-label { font-size: 0.6875rem; color: var(--white); opacity: 0.7; margin-top: 0.15rem; text-transform: uppercase; letter-spacing: 0.02em; } @media (min-width: 768px) { .hero-stat-label { font-size: 0.75rem; } }
-        .hero-visual { display: grid; grid-template-columns: 1fr; gap: 0.375rem; } @media (min-width: 480px) { .hero-visual { grid-template-columns: repeat(2, 1fr); } } @media (min-width: 900px) { .hero-visual { grid-template-columns: 1fr; gap: 0.5rem; } }
-        .hero-point { padding: 0.75rem; background: rgba(255,255,255,0.05); border-left: 3px solid var(--accent); } @media (min-width: 768px) { .hero-point { padding: 0.875rem 1rem; } }
-        .hero-point h4 { color: var(--white); font-size: 0.875rem; font-weight: 700; margin-bottom: 0.1rem; } @media (min-width: 768px) { .hero-point h4 { font-size: 0.9375rem; } }
-        .hero-point p { color: var(--white); font-size: 0.75rem; opacity: 0.7; } @media (min-width: 768px) { .hero-point p { font-size: 0.8125rem; } }
-        
-        /* ==================== CLIENTS ==================== */
-        .clients {
-            background: var(--white);
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--gray-200);
-            overflow: hidden;
-        }
-        
-        @media (min-width: 768px) {
-            .clients { padding: 2.5rem 0; }
-        }
-        
-        .clients-label {
-            text-align: center;
-            font-size: 0.625rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--gray-500);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        @media (min-width: 768px) {
-            .clients-label {
-                font-size: 0.6875rem;
-                margin-bottom: 1.25rem;
-            }
-        }
-        
-        .clients-grid {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            gap: 1.5rem;
-            overflow-x: auto;
-            padding-bottom: 0.5rem;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
-        
-        .clients-grid::-webkit-scrollbar { display: none; }
-        
-        @media (min-width: 768px) {
-            .clients-grid {
-                display: grid;
-                grid-template-columns: repeat(5, 1fr);
-                gap: 2rem 2.5rem;
-                overflow-x: visible;
-                padding-bottom: 0;
-                max-width: 900px;
-                margin: 0 auto;
-            }
-        }
-        
-        .client-logo {
-            height: 28px;
-            max-width: 100px;
-            width: auto;
-            flex-shrink: 0;
-            object-fit: contain;
-        }
-        
-        @media (min-width: 768px) {
-            .client-logo { 
-                height: 44px; 
-                max-width: 140px;
-                justify-self: center;
-            }
-        }
-        
-        /* ==================== CREDENTIALS ==================== */
-        .credentials {
-            background: var(--white);
-            padding: 0.875rem 0;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        
-        @media (min-width: 768px) {
-            .credentials { padding: 1rem 0; }
-        }
-        
-        .credentials-inner {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.75rem 1.25rem;
-        }
-        
-        @media (min-width: 768px) {
-            .credentials-inner { gap: 1rem 2rem; }
-        }
-        
-        .credential-item {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            color: var(--gray-600);
-            font-size: 0.6875rem;
-        }
-        
-        @media (min-width: 768px) {
-            .credential-item {
-                gap: 0.4rem;
-                font-size: 0.75rem;
-            }
-        }
-        
-        .credential-item svg {
-            width: 12px;
-            height: 12px;
-            color: var(--accent);
-            flex-shrink: 0;
-        }
-        
-        @media (min-width: 768px) {
-            .credential-item svg { width: 14px; height: 14px; }
-        }
-        
-        .credential-item strong {
-            color: var(--gray-900);
-            font-weight: 700;
-        }
-        
-        /* ==================== CATEGORY NAV ==================== */
-        .categories {
-            padding: 0.875rem 0;
-            background: var(--white);
-            border-bottom: 1px solid var(--gray-200);
-            position: sticky;
-            top: 56px;
-            z-index: 100;
-        }
-        
-        @media (min-width: 768px) {
-            .categories {
-                padding: 1.25rem 0;
-                top: 64px;
-            }
-        }
-        
-        .categories-inner {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-            padding-bottom: 0.25rem;
-        }
-        
-        .categories-inner::-webkit-scrollbar { display: none; }
-        
-        @media (min-width: 768px) {
-            .categories-inner {
-                gap: 0.5rem;
-                flex-wrap: wrap;
-                overflow-x: visible;
-                padding-bottom: 0;
-            }
-        }
-        
-        .categories-label {
-            font-size: 0.6875rem;
-            color: var(--gray-500);
-            font-weight: 600;
-            flex-shrink: 0;
-            display: none;
-        }
-        
-        @media (min-width: 480px) {
-            .categories-label {
-                display: block;
-                font-size: 0.75rem;
-            }
-        }
-        
-        .category-pill {
-            padding: 0.375rem 0.75rem;
-            border: 1px solid var(--gray-300);
-            border-radius: 3px;
-            font-size: 0.6875rem;
-            color: var(--gray-700);
-            text-decoration: none;
-            font-weight: 500;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-        
-        @media (min-width: 768px) {
-            .category-pill {
-                padding: 0.4rem 0.85rem;
-                font-size: 0.75rem;
-            }
-        }
-        
-        .category-pill:hover {
-            border-color: var(--gray-900);
-            color: var(--gray-900);
-        }
-        
-        .category-pill.active {
-            background: var(--dark);
-            border-color: var(--dark);
-            color: var(--white);
-        }
-        
-        /* ==================== SECTIONS ==================== */
-        .section {
-            padding: var(--section-padding) 0;
-            scroll-margin-top: 100px;
-        }
-        
-        @media (min-width: 768px) {
-            .section { scroll-margin-top: 120px; }
-        }
-        
-        .section--gray { background: var(--gray-50); }
-        .section--dark { background: var(--dark); }
-        
-        .section-header { margin-bottom: 1.5rem; }
-        
-        @media (min-width: 768px) {
-            .section-header { margin-bottom: 2rem; }
-        }
-        
-        .section-header.centered {
-            text-align: center;
-            max-width: 560px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .section-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 0.35rem;
-        }
-        
-        @media (min-width: 768px) {
-            .section-title {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-            }
-        }
-        
-        .section--dark .section-title { color: var(--white); }
-        
-        .section-subtitle {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-        }
-        
-        @media (min-width: 768px) {
-            .section-subtitle { font-size: 0.9375rem; }
-        }
-        
-        .section--dark .section-subtitle {
-            color: var(--white);
-            opacity: 0.75;
-        }
-        
-        /* ==================== PROGRAM CARDS ==================== */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-        }
-        
-        @media (min-width: 600px) {
-            .programs-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-        }
-        
-        @media (min-width: 900px) {
-            .programs-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .program-card {
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            overflow: hidden;
-        }
-        
-        .program-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-        }
-        
-        .program-card-header {
-            background: var(--dark);
-            padding: 0.75rem 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            .program-card-header { padding: 0.875rem 1.25rem; }
-        }
-        
-        .program-card-tag {
-            font-size: 0.5625rem;
-            font-weight: 600;
-            color: var(--white);
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            opacity: 0.8;
-        }
-        
-        @media (min-width: 768px) {
-            .program-card-tag { font-size: 0.625rem; }
-        }
-        
-        .program-card-body {
-            padding: 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            .program-card-body { padding: 1.25rem; }
-        }
-        
-        .program-card h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 0.25rem;
-            transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .program-card:hover h3 { color: var(--white); }
-        
-        .program-card p {
-            font-size: 1rem;
-            color: var(--gray-900);
-            margin-bottom: 0;
-            transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .program-card:hover p { color: rgba(255,255,255,0.8); }
-        
-        .program-card-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.3rem;
-            color: var(--dark);
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-decoration: none;
-        }
-        
-        @media (min-width: 768px) {
-            .program-card-link { font-size: 0.8125rem; }
-        }
-        
-        .program-card-link svg { width: 14px; height: 14px; }
-        
-        /* ==================== CAPABILITY CATALOG - BRUTALIST DESIGNBOOM ==================== */
-        .capability-section { padding: clamp(2.5rem, 5vw, 4rem) 0; }
-        .capability-section.alt { background: var(--gray-50); }
-        .capability-theme { margin-bottom: 3rem; } 
-        .capability-theme:last-child { margin-bottom: 0; }
-        .capability-theme-header { margin-bottom: 1.5rem; padding-bottom: 0; }
-        .capability-theme-title { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 800; color: var(--gray-900); line-height: 1.1; letter-spacing: -0.02em; text-transform: uppercase; }
-        .capability-theme-subtitle { font-size: 1rem; color: var(--gray-700); font-weight: 400; margin-top: 0.5rem; }
-        
-        /* Card Grid - Brutalist */
-        .program-cards { display: grid; grid-template-columns: 1fr; gap: 0; border-top: 1px solid var(--gray-200); }
-        @media (min-width: 600px) { .program-cards { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 900px) { .program-cards { grid-template-columns: repeat(3, 1fr); } }
-        
-        /* Individual Card - Content-First, Slide Hover */
-        .program-card { 
-            background: var(--white); 
-            border-bottom: 1px solid var(--gray-200);
-            border-right: 1px solid var(--gray-200);
-            padding: 1rem 1.25rem;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-        .program-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gray-900);
-            transform: translateY(100%);
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 0;
-        }
-        .program-card:hover::before { transform: translateY(0); }
-        .program-card-body { position: relative; z-index: 1; }
-        @media (min-width: 600px) { .program-card:nth-child(2n) { border-right: none; } }
-        @media (min-width: 900px) { .program-card:nth-child(2n) { border-right: 1px solid var(--gray-200); } .program-card:nth-child(3n) { border-right: none; } }
-        
-        /* Hide image header */
-        .program-card-header { display: none; }
-        
-        /* Card Body - ALL 16px */
-        .program-card-body { padding: 0; position: relative; z-index: 1; }
-        .program-card-tag { 
-            font-size: 1rem; 
-            font-weight: 700; 
-            color: var(--dark); 
-            text-transform: uppercase; 
-            letter-spacing: 0.05em;
-            margin-bottom: 0.5rem;
-            display: block;
-            transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .program-card:hover .program-card-tag { color: var(--accent); }
-        .program-card-title { 
-            font-size: 1rem; 
-            font-weight: 700; 
-            color: var(--gray-900); 
-            line-height: 1.3;
-            margin-bottom: 0.25rem;
-            transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .program-card:hover .program-card-title { color: var(--white); }
-        .program-card-desc { 
-            font-size: 1rem; 
-            color: var(--gray-900); 
-            line-height: 1.4;
-            transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .program-card:hover .program-card-desc { color: rgba(255,255,255,0.8); }
-        
-        .categories { display: none; }
-        
-        /* CAPABILITY LIST SECTIONS (Gas, Integridad, Activos) */
-        .capability-columns { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
-        @media (min-width: 600px) { .capability-columns { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 900px) { .capability-columns { grid-template-columns: repeat(4, 1fr); } }
-        .capability-group { }
-        .capability-group-tag { 
-            font-size: 1rem; font-weight: 700; color: var(--dark); 
-            text-transform: uppercase; letter-spacing: 0.03em;
-            margin-bottom: 0.75rem; display: block;
-        }
-        .capability-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
-        .capability-list li { 
-            padding: 0.75rem 1rem; 
-            border-bottom: 1px solid var(--gray-200); 
-            position: relative; 
-            overflow: hidden; 
-            cursor: pointer;
-            margin: 0 -1rem;
-        }
-        .capability-list li::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--gray-900);
-            transform: translateY(100%);
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 0;
-        }
-        .capability-list li:hover::before { transform: translateY(0); }
-        .capability-list li > div { position: relative; z-index: 1; }
-        .capability-list li:last-child { border-bottom: none; }
-        .cap-name { font-weight: 700; color: var(--gray-900); font-size: 1rem; display: block; transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
-        .capability-list li:hover .cap-name { color: var(--white); }
-        .cap-topics { font-size: 1rem; color: var(--gray-700); font-weight: 400; margin-top: 0.25rem; display: block; transition: color 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
-        .capability-list li:hover .cap-topics { color: var(--accent); }
-        
-        /* Catalog CTA - BRUTALIST */
-        .catalog-footer { margin-top: 3rem; padding: 2rem; background: var(--gray-900); border-radius: 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
-        .catalog-footer-text { color: var(--white); }
-        .catalog-footer-text strong { font-size: 1.25rem; font-weight: 800; display: block; margin-bottom: 0.25rem; text-transform: uppercase; letter-spacing: -0.02em; }
-        .catalog-footer-text span { font-size: 0.9375rem; opacity: 0.7; }
-        .catalog-footer-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.5rem;
-            background: var(--white);
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9375rem;
-            border-radius: 4px;
-            transition: opacity 0.2s;
-        }
-        
-        .catalog-footer-btn:hover {
-            opacity: 0.9;
-        }
-        
-        .catalog-footer-btn svg {
-            width: 16px;
-            height: 16px;
-        }
-        
-        /* ==================== TESTIMONIALS ==================== */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-        }
-        
-        @media (min-width: 600px) {
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-        }
-        
-        @media (min-width: 900px) {
-            .testimonials-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
-        .testimonial-card {
-            padding: 1rem;
-            background: var(--dark-soft);
-            border-left: 2px solid var(--accent);
-        }
-        
-        @media (min-width: 768px) {
-            .testimonial-card { padding: 1.25rem; }
-        }
-        
-        .testimonial-quote {
-            font-size: 0.8125rem;
-            color: var(--white);
-            line-height: 1.55;
-            font-style: italic;
-            margin-bottom: 0.75rem;
-        }
-        
-        @media (min-width: 768px) {
-            .testimonial-quote {
-                font-size: 0.875rem;
-                line-height: 1.6;
-                margin-bottom: 1rem;
-            }
-        }
-        
-        .testimonial-author {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--white);
-        }
-        
-        @media (min-width: 768px) {
-            .testimonial-author { font-size: 0.8125rem; }
-        }
-        
-        .testimonial-role {
-            font-size: 0.625rem;
-            color: var(--white);
-            opacity: 0.6;
-        }
-        
-        @media (min-width: 768px) {
-            .testimonial-role { font-size: 0.6875rem; }
-        }
-        
-        .testimonial-company {
-            font-size: 0.625rem;
-            color: var(--accent);
-            font-weight: 600;
-        }
-        
-        @media (min-width: 768px) {
-            .testimonial-company { font-size: 0.6875rem; }
-        }
-        
-        /* ==================== METHODOLOGY ==================== */
-        .method-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0;
-        }
-        
-        @media (min-width: 768px) {
-            .method-grid { grid-template-columns: repeat(4, 1fr); }
-        }
-        
-        .method-step {
-            padding: 1.25rem 0.75rem;
-            text-align: center;
-            background: var(--white);
-            border: 1px solid var(--gray-200);
-            margin: -0.5px;
-        }
-        
-        @media (min-width: 768px) {
-            .method-step { padding: 1.5rem 1rem; }
-        }
-        
-        .method-step:hover { border-color: var(--accent); }
-        
-        .method-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 28px;
-            height: 28px;
-            background: var(--dark);
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 700;
-            border-radius: 50%;
-            margin-bottom: 0.625rem;
-        }
-        
-        @media (min-width: 768px) {
-            .method-number {
-                width: 32px;
-                height: 32px;
-                font-size: 0.875rem;
-                margin-bottom: 0.75rem;
-            }
-        }
-        
-        .method-step h4 {
-            font-size: 0.8125rem;
-            font-weight: 600;
-            color: var(--gray-900);
-            margin-bottom: 0.2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .method-step h4 {
-                font-size: 0.875rem;
-                margin-bottom: 0.25rem;
-            }
-        }
-        
-        .method-step p {
-            font-size: 0.6875rem;
-            color: var(--gray-600);
-        }
-        
-        @media (min-width: 768px) {
-            .method-step p { font-size: 0.75rem; }
-        }
-        
-        /* ==================== WHY US ==================== */
-        .why-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-        }
-        
-        @media (min-width: 768px) {
-            .why-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1rem;
-            }
-        }
-        
-        .why-card {
-            padding: 1.25rem;
-            border-left: 2px solid var(--accent);
-            background: var(--dark-soft);
-        }
-        
-        @media (min-width: 768px) {
-            .why-card { padding: 1.5rem; }
-        }
-        
-        .why-card h3 {
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--white);
-            margin-bottom: 0.35rem;
-        }
-        
-        @media (min-width: 768px) {
-            .why-card h3 {
-                font-size: 0.9375rem;
-                margin-bottom: 0.5rem;
-            }
-        }
-        
-        .why-card p {
-            font-size: 0.8125rem;
-            color: var(--white);
-            opacity: 0.8;
-        }
-        
-        @media (min-width: 768px) {
-            .why-card p { font-size: 0.875rem; }
-        }
-        
-        /* ==================== CTA ==================== */
-        .cta-section {
-            padding: var(--section-padding) 0;
-            background: var(--gray-50);
-        }
-        
-        .cta-box {
-            background: var(--dark);
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-            text-align: center;
-        }
-        
-        @media (min-width: 768px) {
-            .cta-box {
-                padding: 2.5rem;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                text-align: left;
-            }
-        }
-        
-        .cta-box h2 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 0.25rem;
-        }
-        
-        @media (min-width: 768px) {
-            .cta-box h2 {
-                font-size: 1.25rem;
-                margin-bottom: 0.35rem;
-            }
-        }
-        
-        .cta-box p {
-            font-size: 0.875rem;
-            color: var(--white);
-            opacity: 0.75;
-        }
-        
-        @media (min-width: 768px) {
-            .cta-box p { font-size: 0.9375rem; }
-        }
-        
-        .cta-box .btn-primary {
-            width: 100%;
-        }
-        
-        @media (min-width: 768px) {
-            .cta-box .btn-primary {
-                width: auto;
-                flex-shrink: 0;
-            }
-        }
-        
-        /* ==================== FOOTER ==================== */
-        .footer {
-            background: var(--dark);
-            padding: 1.25rem 0;
-        }
-        
-        @media (min-width: 768px) {
-            .footer { padding: 1.5rem 0; }
-        }
-        
-        .footer-inner {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-inner {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                align-items: center;
-                text-align: left;
-            }
-        }
-        
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-brand {
-                justify-content: flex-start;
-                gap: 0.75rem;
-            }
-        }
-        
-        .footer-brand svg { height: 20px; }
-        
-        @media (min-width: 768px) {
-            .footer-brand svg { height: 24px; }
-        }
-        
-        .footer-text {
-            font-size: 0.6875rem;
-            color: var(--white);
-            opacity: 0.5;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-text { font-size: 0.75rem; }
-        }
-        
-        .footer-contact {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.75rem 1.25rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-contact {
-                justify-content: flex-end;
-                gap: 1.5rem;
-            }
-        }
-        
-        .footer-contact a {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            color: var(--white);
-            opacity: 0.6;
-            text-decoration: none;
-            font-size: 0.6875rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-contact a {
-                gap: 0.3rem;
-                font-size: 0.75rem;
-            }
-        }
-        
-        .footer-contact a:hover { opacity: 1; }
-        
-        .footer-contact svg {
-            width: 12px;
-            height: 12px;
-            color: var(--accent);
-        }
-        
-        @media (min-width: 768px) {
-            .footer-contact svg { width: 14px; height: 14px; }
-        }
-        
-        /* SECTOR ICON */
-        .sector-icon {
-            display: none;
-        }
-        
-        @media (min-width: 900px) {
-            .sector-icon {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 280px;
-                height: 280px;
-                opacity: 0.08;
-            }
-            
-            .sector-icon svg {
-                width: 100%;
-                height: 100%;
-            }
-            
-            .hero-grid {
-                position: relative;
-            }
-        }
+        body { font-family: var(--font); font-size: 16px; line-height: 1.5; color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        @media (min-width: 768px) { .container { padding: 0 48px; } }
+        
+        /* HEADER */
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--gray-200); }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+        .logo { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; }
+        .header-nav { display: none; align-items: center; gap: 32px; }
+        @media (min-width: 768px) { .header-nav { display: flex; } }
+        .header-nav a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+        .header-nav a:hover { color: var(--black); }
+        .header-cta { padding: 10px 20px; background: var(--black); color: var(--white); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
+        .header-cta:hover { opacity: 0.8; }
+        .menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .menu-toggle span { width: 24px; height: 1px; background: var(--black); }
+        @media (min-width: 768px) { .menu-toggle { display: none; } }
+        
+        .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--white); padding: 24px; z-index: 999; }
+        .mobile-menu.active { display: flex; flex-direction: column; gap: 0; }
+        .mobile-menu a { padding: 16px 0; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); text-decoration: none; border-bottom: 1px solid var(--gray-200); }
+        
+        /* HERO */
+        .hero { padding-top: 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid var(--gray-200); }
+        .hero-inner { padding: 80px 0; }
+        @media (min-width: 768px) { .hero-inner { padding: 120px 0; } }
+        .hero-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 24px; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; color: var(--black); max-width: 900px; margin-bottom: 32px; }
+        .hero-description { font-size: 1.125rem; line-height: 1.6; color: var(--gray-600); max-width: 560px; margin-bottom: 48px; }
+        .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 64px; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--black); color: var(--white); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
+        .btn-primary:hover { opacity: 0.8; }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: transparent; color: var(--black); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gray-200); transition: border-color 0.2s; }
+        .btn-secondary:hover { border-color: var(--black); }
+        .hero-stats { display: flex; flex-wrap: wrap; gap: 48px; }
+        .hero-stat { display: flex; flex-direction: column; }
+        .hero-stat-value { font-size: 0.875rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); }
+        .hero-stat-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-top: 4px; }
+        
+        /* NAV PILLS */
+        .nav-section { padding: 20px 0; border-bottom: 1px solid var(--gray-200); position: sticky; top: 60px; background: var(--white); z-index: 100; }
+        .nav-pills { display: flex; gap: 8px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .nav-pills::-webkit-scrollbar { display: none; }
+        .nav-pill { padding: 10px 20px; font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-600); text-decoration: none; border: 1px solid var(--gray-200); white-space: nowrap; transition: all 0.2s; }
+        .nav-pill:hover { border-color: var(--black); color: var(--black); }
+        .nav-pill.active { background: var(--black); border-color: var(--black); color: var(--white); }
+        
+        /* SECTIONS */
+        .section { padding: 80px 0; border-bottom: 1px solid var(--gray-200); }
+        @media (min-width: 768px) { .section { padding: 120px 0; } }
+        .section-header { margin-bottom: 48px; }
+        @media (min-width: 768px) { .section-header { margin-bottom: 64px; } }
+        .section-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 16px; }
+        .section-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); max-width: 600px; }
+        
+        /* COURSE LIST */
+        .course-list { list-style: none; }
+        .course-item { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; padding: 24px 0; border-bottom: 1px solid var(--gray-200); cursor: pointer; transition: padding-left 0.3s; }
+        .course-item:hover { padding-left: 16px; }
+        .course-item:last-child { border-bottom: none; }
+        .course-name { font-size: 1.125rem; font-weight: 600; color: var(--black); letter-spacing: -0.01em; }
+        @media (min-width: 768px) { .course-name { font-size: 1.25rem; } }
+        .course-arrow { font-size: 1.25rem; color: var(--gray-400); transition: color 0.2s, transform 0.2s; }
+        .course-item:hover .course-arrow { color: var(--black); transform: translateX(4px); }
+        
+        /* PROGRAMS */
+        .programs-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200); }
+        @media (min-width: 768px) { .programs-grid { grid-template-columns: repeat(2, 1fr); } }
+        .program-card { background: var(--white); padding: 32px; display: flex; flex-direction: column; }
+        @media (min-width: 768px) { .program-card { padding: 48px 32px; min-height: 280px; } }
+        .program-tag { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+        .program-name { font-size: 1.25rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; color: var(--black); margin-bottom: 16px; }
+        .program-desc { font-size: 0.875rem; line-height: 1.6; color: var(--gray-600); margin-bottom: 24px; flex-grow: 1; }
+        .program-link { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: gap 0.2s; }
+        .program-link:hover { gap: 12px; }
+        
+        /* CTA SECTION */
+        .cta-section { padding: 120px 0; background: var(--black); color: var(--white); }
+        .cta-inner { display: flex; flex-direction: column; gap: 32px; }
+        @media (min-width: 768px) { .cta-inner { flex-direction: row; justify-content: space-between; align-items: center; } }
+        .cta-text h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 8px; }
+        .cta-text p { font-size: 0.9375rem; color: var(--gray-400); }
+        .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--white); color: var(--black); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
+        .cta-btn:hover { opacity: 0.9; }
+        
+        /* FOOTER */
+        .footer { padding: 48px 0; border-top: 1px solid var(--gray-200); }
+        .footer-inner { display: flex; flex-direction: column; gap: 24px; }
+        @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; } }
+        .footer-brand { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 0.75rem; color: var(--gray-500); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--black); }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="header-inner">
-                <a href="capacidades.html" class="logo">
-                    <svg viewBox="0 0 448 321" fill="none">
-                        <path d="M447.909 0.00622804C443.646 116.854 351.192 212.564 240.68 217.568C265.251 269.286 316.17 303.894 375.053 302.206C401.401 301.466 426.18 293.502 447.702 280.21L447.968 0.00622804Z" fill="#E19A24"/>
-                        <path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#0f1419"/>
-                    </svg>
-                </a>
+                <a href="capacidades.html" class="logo">Elite Training</a>
                 <nav class="header-nav">
-                    <span class="nav-trigger" id="sectorsTrigger">Sectores <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
-                    <a href="#nosotros">Nosotros</a>
-                    <a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a>
+                    <a href="landing-gas.html">Gas Natural</a>
+                    <a href="landing-integridad.html">Integridad</a>
+                    <a href="landing-activos.html">Activos</a>
+                    <a href="landing-seguridad.html">Seguridad</a>
+                    <a href="landing-directivas.html">Directivas</a>
                 </nav>
-                <div style="display: flex; align-items: center;">
-                    <a href="https://wa.me/573164661007" class="header-cta">Contactar</a>
-                    <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')" aria-label="Menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
+                <a href="https://wa.me/573164661007" class="header-cta">Contactar</a>
+                <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </header>
-    
-    <!-- MEGA MENU -->
-    <div class="mega-menu" id="megaMenu">
-        <div class="mega-menu-inner">
-            <div class="mega-menu-visual">
-                <div class="mega-menu-visual-bg active" id="visual-oilgas" style="background: linear-gradient(135deg, #4A4A49 0%, #2d2d2d 100%);">
-                    <div class="mega-menu-visual-icon"><svg viewBox="0 0 600 600" fill="#BFBFBF"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M394.546 394.616L333.484 160.177L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583L237.779 297.607L235.761 305.704L213.613 394.616H140.645V412.257H291.366V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/></svg></div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Oil & Gas</h3>
-                        <p class="mega-menu-visual-desc">29 años formando profesionales en operaciones upstream, downstream y mantenimiento industrial.</p>
-                        <a href="landing-oilgas.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
+
+    <nav class="mobile-menu" id="mobileMenu">
+        <a href="capacidades.html">Todos los Sectores</a>
+        <a href="landing-oilgas.html">Oil & Gas</a>
+        <a href="landing-gas.html">Gas Natural</a>
+        <a href="landing-integridad.html">Integridad</a>
+        <a href="landing-activos.html">Gestión de Activos</a>
+        <a href="landing-seguridad.html">Seguridad</a>
+        <a href="landing-directivas.html">Directivas</a>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-inner">
+                <p class="hero-label">Sector</p>
+                <h1>Oil and Gas</h1>
+                <p class="hero-description">Formación especializada en producción, facilidades de superficie, levantamiento artificial, perforación, completamiento y evaluación de yacimientos.</p>
+                
+                <div class="hero-ctas">
+                    <a href="https://wa.me/573164661007?text=Quiero%20información%20sobre%20cursos%20Oil%20and%20Gas" class="btn-primary">Agendar Llamada &rarr;</a>
+                    <a href="#programas" class="btn-secondary">Ver Programas</a>
                 </div>
-                <div class="mega-menu-visual-bg" id="visual-gas" style="background: linear-gradient(135deg, #233468 0%, #4DB1BC 100%);">
-                    <div class="mega-menu-visual-icon"><svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M261.374 317.452V337.495L261.158 337.85V362.221C259.625 380.939 244.725 394.834 225.878 394.886L149.353 394.903V400.34H135.934V350.585H158.954C154.496 341.399 157.361 329.227 170.581 321.573C180.339 315.929 190.866 316.249 199.879 323.565C210.043 331.815 212.623 342.707 208.086 355.875H221.506L221.661 338.092V317.868V219.889L215.627 200.055L227.168 167.77C234.354 156.948 244.544 151.399 257.478 151.2L294.663 144.672H314.09L320.341 151.156L352.106 151.165C372.737 151.364 387.81 166.411 388.174 187.06V227.647L396.009 229.854C455.288 247.533 482.274 316.638 450.786 369.874V415.578C448.639 425.456 442.076 432.235 432.7 432.227V405.301L384.832 418.695V438.425C384.659 448.512 377.992 455.36 368.382 455.325V416.314L320.488 415.309C320.324 425.43 313.692 432.287 304.151 432.244V376.861C288.178 374.437 287.451 371.762 286.239 369.666C254.855 315.47 282.222 245.3 344.583 228.876V219.941L342.574 200.245L341.587 190.35L314.212 196.973H294.048L268.759 190.35C261.452 190.35 260.742 191.181 261.53 199.475V219.136L261.357 219.751V317.452Z"/></svg></div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Gas Natural</h3>
-                        <p class="mega-menu-visual-desc">Especialización en medición, compresión, tratamiento y distribución de gas natural y GLP.</p>
-                        <a href="landing-gas.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">Upstream</span>
+                        <span class="hero-stat-label">Producción</span>
                     </div>
-                </div>
-                <div class="mega-menu-visual-bg" id="visual-integridad" style="background: linear-gradient(135deg, #233468 0%, #EB9716 100%);">
-                    <div class="mega-menu-visual-icon"><svg viewBox="0 0 600 600" fill="#EB9716"><path d="M481.792 436.47H118.195V401.869H126.848V235.731H127.529C133.736 212.459 181.671 195.105 240.715 195.105L241.127 195.105C299.979 195.182 347.713 212.507 353.901 235.731H354.62L353.325 401.859H481.802V436.47Z"/></svg></div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Integridad Mecánica</h3>
-                        <p class="mega-menu-visual-desc">Normas ASME, API, RBI y Fitness-for-Service para equipos y sistemas críticos.</p>
-                        <a href="landing-integridad.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">ESP</span>
+                        <span class="hero-stat-label">Levantamiento</span>
                     </div>
-                </div>
-                <div class="mega-menu-visual-bg" id="visual-activos" style="background: linear-gradient(135deg, #233468 0%, #4DB1BC 100%);">
-                    <div class="mega-menu-visual-icon"><svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M456.177 421.501C456.177 419.816 455.556 418.131 455.201 416.446C453.804 410.008 450.46 404.156 445.623 399.684L399.862 359.776L358.801 325.721L356.85 317.474C359.319 309.913 360.176 301.919 359.366 294.006C358.557 286.094 356.098 278.439 352.15 271.535C346.727 261.326 338.373 252.973 328.163 247.552C317.953 242.131 306.354 239.889 294.86 241.116L273.93 246.969L270.591 254.75L298.584 276.59C301.185 278.432 303.164 281.023 304.257 284.017L304.704 293.351C304.146 296.229 302.757 298.881 300.707 300.977L283.816 305.048L256.37 272.954L246.881 274.018C244.379 279.694 242.563 285.649 241.471 291.755C240.099 301.308 241.088 311.052 244.353 320.134L285.313 357.38L318.006 356.406L325.988 358.978L399.862 445.534L420.526 455.91L442.224 450.576L456.177 426.378V421.501Z"/></svg></div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Gestión de Activos</h3>
-                        <p class="mega-menu-visual-desc">Metodologías ISO 55001, IAM y estrategias de confiabilidad operacional.</p>
-                        <a href="landing-activos.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">Well</span>
+                        <span class="hero-stat-label">Integrity</span>
                     </div>
-                </div>
-                <div class="mega-menu-visual-bg" id="visual-seguridad" style="background: linear-gradient(135deg, #EB9716 0%, #c47f12 100%);">
-                    <div class="mega-menu-visual-icon"><svg viewBox="0 0 600 600" fill="#fff"><path d="M363.624 272.716C360.011 267.584 350.02 269.604 349.389 275.789L337.161 321.384L336.367 321.289L338.012 257.884L329.636 250.876L313.804 319.987L306.299 251.488L288.88 251.661L288.048 320.006L273.363 258.488L255.542 259.665L266.413 347.093L242.798 335.067L221.726 337.863L260.915 395.101L343.26 395.101L355.689 368.004V337.623L364.208 279.83L363.624 272.716Z"/><path d="M443.71 455.197H156.3C142.361 455.197 130.066 448.131 123.402 436.306L123.947 400.821L267.652 162.744C274.431 151.503 286.525 144.801 299.996 144.801L332.339 162.744L476.044 400.821C482.698 411.842 482.899 425.113 476.599 436.306C469.954 448.131 457.65 455.197 443.71 455.197Z"/></svg></div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Seguridad de Procesos</h3>
-                        <p class="mega-menu-visual-desc">NFPA, PSM, Arc Flash y análisis de riesgos para operaciones seguras.</p>
-                        <a href="landing-seguridad.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="mega-menu-visual-bg" id="visual-directivas" style="background: linear-gradient(135deg, #EB9716 0%, #d48a14 100%);">
-                    <div class="mega-menu-visual-icon"><svg viewBox="0 0 600 600" fill="#fff"><path d="M254.118 241.109L251.549 245.473L255.999 263.013L274.515 291.391C289.213 307.969 311.519 307.668 326.066 290.938L344.984 261.743L348.522 245.265L343.362 233.803L344.152 223.849C345.486 204.845 336.745 190.685 319.521 184.362L281.72 183.931C268.077 188.768 258.432 197.761 256.494 212.66L256.616 234.83L254.118 241.109Z"/><path d="M415.445 383.379L375.657 331.936L335.187 332.769L303.422 402.441L264.882 343.706L219.145 333.178C190.466 353.23 181.682 371.559 180.892 393.786L264.682 418.739L410.794 406.352L416.22 399.319L415.445 383.379Z"/></svg></div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Habilidades Directivas</h3>
-                        <p class="mega-menu-visual-desc">Liderazgo, comunicación y gestión para equipos técnicos de alto rendimiento.</p>
-                        <a href="landing-directivas.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    <div class="hero-stat">
+                        <span class="hero-stat-value">29</span>
+                        <span class="hero-stat-label">Años</span>
                     </div>
                 </div>
             </div>
-            <div class="mega-menu-right">
-                <div class="mega-menu-sectors">
-                    <a href="landing-oilgas.html" class="mega-menu-sector-item active mega-oilgas" data-sector="oilgas"><div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M394.546 394.616L333.484 160.177L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583L237.779 297.607L235.761 305.704L213.613 394.616H140.645V412.257H291.366V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/></svg></div><span class="mega-menu-sector-name">Oil and Gas</span></a>
-                    <a href="landing-gas.html" class="mega-menu-sector-item mega-gas" data-sector="gas"><div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M261.374 317.452V337.495L261.158 337.85V362.221C259.625 380.939 244.725 394.834 225.878 394.886L149.353 394.903V400.34H135.934V350.585H158.954C154.496 341.399 157.361 329.227 170.581 321.573C180.339 315.929 190.866 316.249 199.879 323.565C210.043 331.815 212.623 342.707 208.086 355.875H221.506L221.661 338.092V317.868V219.889L215.627 200.055L227.168 167.77C234.354 156.948 244.544 151.399 257.478 151.2L294.663 144.672H314.09L320.341 151.156L352.106 151.165C372.737 151.364 387.81 166.411 388.174 187.06V227.647L396.009 229.854C455.288 247.533 482.274 316.638 450.786 369.874V415.578C448.639 425.456 442.076 432.235 432.7 432.227V405.301L384.832 418.695V438.425C384.659 448.512 377.992 455.36 368.382 455.325V416.314L320.488 415.309C320.324 425.43 313.692 432.287 304.151 432.244V376.861C288.178 374.437 287.451 371.762 286.239 369.666C254.855 315.47 282.222 245.3 344.583 228.876V219.941L342.574 200.245L341.587 190.35L314.212 196.973H294.048L268.759 190.35C261.452 190.35 260.742 191.181 261.53 199.475V219.136L261.357 219.751V317.452Z"/></svg></div><span class="mega-menu-sector-name">Gas Natural, GLP y Energía</span></a>
-                    <a href="landing-integridad.html" class="mega-menu-sector-item mega-integridad" data-sector="integridad"><div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M481.792 436.47H118.195V401.869H126.848V235.731H127.529C133.736 212.459 181.671 195.105 240.715 195.105L241.127 195.105C299.979 195.182 347.713 212.507 353.901 235.731H354.62L353.325 401.859H481.802V436.47Z"/></svg></div><span class="mega-menu-sector-name">Integridad y Equipos</span></a>
-                    <a href="landing-activos.html" class="mega-menu-sector-item mega-activos" data-sector="activos"><div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M456.177 421.501C456.177 419.816 455.556 418.131 455.201 416.446C453.804 410.008 450.46 404.156 445.623 399.684L399.862 359.776L358.801 325.721L356.85 317.474C359.319 309.913 360.176 301.919 359.366 294.006C358.557 286.094 356.098 278.439 352.15 271.535C346.727 261.326 338.373 252.973 328.163 247.552C317.953 242.131 306.354 239.889 294.86 241.116L273.93 246.969L270.591 254.75L298.584 276.59C301.185 278.432 303.164 281.023 304.257 284.017L304.704 293.351C304.146 296.229 302.757 298.881 300.707 300.977L283.816 305.048L256.37 272.954L246.881 274.018C244.379 279.694 242.563 285.649 241.471 291.755C240.099 301.308 241.088 311.052 244.353 320.134L285.313 357.38L318.006 356.406L325.988 358.978L399.862 445.534L420.526 455.91L442.224 450.576L456.177 426.378V421.501Z"/></svg></div><span class="mega-menu-sector-name">Gestión de Activos</span></a>
-                    <a href="landing-seguridad.html" class="mega-menu-sector-item mega-seguridad" data-sector="seguridad"><div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M363.624 272.716C360.011 267.584 350.02 269.604 349.389 275.789L337.161 321.384L336.367 321.289L338.012 257.884L329.636 250.876L313.804 319.987L306.299 251.488L288.88 251.661L288.048 320.006L273.363 258.488L255.542 259.665L266.413 347.093L242.798 335.067L221.726 337.863L260.915 395.101L343.26 395.101L355.689 368.004V337.623L364.208 279.83L363.624 272.716Z"/><path d="M443.71 455.197H156.3C142.361 455.197 130.066 448.131 123.402 436.306L123.947 400.821L267.652 162.744C274.431 151.503 286.525 144.801 299.996 144.801L332.339 162.744L476.044 400.821C482.698 411.842 482.899 425.113 476.599 436.306C469.954 448.131 457.65 455.197 443.71 455.197Z"/></svg></div><span class="mega-menu-sector-name">Seguridad-Riesgos</span></a>
-                    <a href="landing-directivas.html" class="mega-menu-sector-item mega-directivas" data-sector="directivas"><div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M254.118 241.109L251.549 245.473L255.999 263.013L274.515 291.391C289.213 307.969 311.519 307.668 326.066 290.938L344.984 261.743L348.522 245.265L343.362 233.803L344.152 223.849C345.486 204.845 336.745 190.685 319.521 184.362L281.72 183.931C268.077 188.768 258.432 197.761 256.494 212.66L256.616 234.83L254.118 241.109Z"/><path d="M415.445 383.379L375.657 331.936L335.187 332.769L303.422 402.441L264.882 343.706L219.145 333.178C190.466 353.23 181.682 371.559 180.892 393.786L264.682 418.739L410.794 406.352L416.22 399.319L415.445 383.379Z"/></svg></div><span class="mega-menu-sector-name">Habilidades Directivas</span></a>
-                </div>
-                <div class="mega-menu-content active" id="content-oilgas">
-                    <div class="mega-menu-content-header"><span class="mega-menu-content-eyebrow">Sector Especializado</span><h3 class="mega-menu-content-title">Oil and Gas</h3><p class="mega-menu-content-desc">Producción, perforación, facilidades y mantenimiento</p></div>
-                    <div class="mega-menu-links-grid"><a href="landing-oilgas.html#upstream" class="mega-menu-link">Operaciones Upstream</a><a href="landing-oilgas.html#downstream" class="mega-menu-link">Procesos Downstream</a><a href="landing-oilgas.html#perforacion" class="mega-menu-link">Perforación y Completamiento</a><a href="landing-oilgas.html#facilidades" class="mega-menu-link">Facilidades de Superficie</a></div>
-                    <a href="landing-oilgas.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                </div>
-                <div class="mega-menu-content" id="content-gas">
-                    <div class="mega-menu-content-header"><span class="mega-menu-content-eyebrow">Sector Especializado</span><h3 class="mega-menu-content-title">Gas Natural, GLP y Energía</h3><p class="mega-menu-content-desc">Medición, compresión, tratamiento y distribución</p></div>
-                    <div class="mega-menu-links-grid"><a href="landing-gas.html#medicion" class="mega-menu-link">Medición de Gas</a><a href="landing-gas.html#compresion" class="mega-menu-link">Compresión</a><a href="landing-gas.html#tratamiento" class="mega-menu-link">Tratamiento y Deshidratación</a><a href="landing-gas.html#glp" class="mega-menu-link">GLP y Fraccionamiento</a></div>
-                    <a href="landing-gas.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                </div>
-                <div class="mega-menu-content" id="content-integridad">
-                    <div class="mega-menu-content-header"><span class="mega-menu-content-eyebrow">Sector Especializado</span><h3 class="mega-menu-content-title">Integridad y Equipos</h3><p class="mega-menu-content-desc">ASME, API, RBI, Fitness-for-Service</p></div>
-                    <div class="mega-menu-links-grid"><a href="landing-integridad.html#asme" class="mega-menu-link">Códigos ASME</a><a href="landing-integridad.html#api" class="mega-menu-link">Inspección API</a><a href="landing-integridad.html#rbi" class="mega-menu-link">Inspección Basada en Riesgo</a><a href="landing-integridad.html#ffs" class="mega-menu-link">Fitness-for-Service</a></div>
-                    <a href="landing-integridad.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                </div>
-                <div class="mega-menu-content" id="content-activos">
-                    <div class="mega-menu-content-header"><span class="mega-menu-content-eyebrow">Sector Especializado</span><h3 class="mega-menu-content-title">Gestión de Activos</h3><p class="mega-menu-content-desc">ISO 55001, IAM, RCM, Confiabilidad</p></div>
-                    <div class="mega-menu-links-grid"><a href="landing-activos.html#iso" class="mega-menu-link">ISO 55001</a><a href="landing-activos.html#iam" class="mega-menu-link">Certificación IAM</a><a href="landing-activos.html#rcm" class="mega-menu-link">RCM</a><a href="landing-activos.html#apm" class="mega-menu-link">APM</a></div>
-                    <a href="landing-activos.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                </div>
-                <div class="mega-menu-content" id="content-seguridad">
-                    <div class="mega-menu-content-header"><span class="mega-menu-content-eyebrow">Sector Especializado</span><h3 class="mega-menu-content-title">Seguridad-Riesgos</h3><p class="mega-menu-content-desc">NFPA, PSM, Arc Flash</p></div>
-                    <div class="mega-menu-links-grid"><a href="landing-seguridad.html#nfpa70e" class="mega-menu-link">NFPA 70E</a><a href="landing-seguridad.html#arcflash" class="mega-menu-link">Arc Flash</a><a href="landing-seguridad.html#psm" class="mega-menu-link">PSM</a><a href="landing-seguridad.html#hazop" class="mega-menu-link">HAZOP</a></div>
-                    <a href="landing-seguridad.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                </div>
-                <div class="mega-menu-content" id="content-directivas">
-                    <div class="mega-menu-content-header"><span class="mega-menu-content-eyebrow">Sector Especializado</span><h3 class="mega-menu-content-title">Habilidades Directivas</h3><p class="mega-menu-content-desc">Liderazgo, comunicación, gestión</p></div>
-                    <div class="mega-menu-links-grid"><a href="landing-directivas.html#liderazgo" class="mega-menu-link">Liderazgo</a><a href="landing-directivas.html#comunicacion" class="mega-menu-link">Comunicación Efectiva</a><a href="landing-directivas.html#gestion" class="mega-menu-link">Gestión de Equipos</a><a href="landing-directivas.html#negociacion" class="mega-menu-link">Negociación</a></div>
-                    <a href="landing-directivas.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-                </div>
+        </div>
+    </section>
+
+    <!-- NAV PILLS -->
+    <div class="nav-section">
+        <div class="container">
+            <div class="nav-pills">
+                <a href="#facilidades" class="nav-pill active">Producción y Facilidades</a>
+                <a href="#levantamiento" class="nav-pill">Levantamiento Artificial</a>
+                <a href="#perforacion" class="nav-pill">Perforación y Pozos</a>
+                <a href="#yacimientos" class="nav-pill">Yacimientos</a>
+                <a href="#programas" class="nav-pill">Programas</a>
             </div>
         </div>
     </div>
-    
-    <nav class="mobile-menu" id="mobileMenu">
-        <div class="mobile-accordion" onclick="this.classList.toggle('active')">
-            <div class="mobile-accordion-header">Sectores <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-            <div class="mobile-accordion-content">
-                <a href="landing-oilgas.html" class="mobile-sector-link"><div class="mobile-sector-icon" style="background:#4A4A49;"><svg viewBox="0 0 600 600" fill="#BFBFBF"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M394.546 394.616L333.484 160.177L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583L237.779 297.607L235.761 305.704L213.613 394.616H140.645V412.257H291.366V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/></svg></div>Oil & Gas</a>
-                <a href="landing-gas.html" class="mobile-sector-link"><div class="mobile-sector-icon" style="background:#233468;"><svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M261.374 317.452V337.495L261.158 337.85V362.221C259.625 380.939 244.725 394.834 225.878 394.886L149.353 394.903V400.34H135.934V350.585H158.954C154.496 341.399 157.361 329.227 170.581 321.573C180.339 315.929 190.866 316.249 199.879 323.565C210.043 331.815 212.623 342.707 208.086 355.875H221.506L221.661 338.092V317.868V219.889L215.627 200.055L227.168 167.77C234.354 156.948 244.544 151.399 257.478 151.2L294.663 144.672H314.09L320.341 151.156L352.106 151.165C372.737 151.364 387.81 166.411 388.174 187.06V227.647L396.009 229.854C455.288 247.533 482.274 316.638 450.786 369.874V415.578C448.639 425.456 442.076 432.235 432.7 432.227V405.301L384.832 418.695V438.425C384.659 448.512 377.992 455.36 368.382 455.325V416.314L320.488 415.309C320.324 425.43 313.692 432.287 304.151 432.244V376.861C288.178 374.437 287.451 371.762 286.239 369.666C254.855 315.47 282.222 245.3 344.583 228.876V219.941L342.574 200.245L341.587 190.35L314.212 196.973H294.048L268.759 190.35C261.452 190.35 260.742 191.181 261.53 199.475V219.136L261.357 219.751V317.452Z"/></svg></div>Gas Natural</a>
-                <a href="landing-integridad.html" class="mobile-sector-link"><div class="mobile-sector-icon" style="background:#233468;"><svg viewBox="0 0 600 600" fill="#EB9716"><path d="M481.792 436.47H118.195V401.869H126.848V235.731H127.529C133.736 212.459 181.671 195.105 240.715 195.105L241.127 195.105C299.979 195.182 347.713 212.507 353.901 235.731H354.62L353.325 401.859H481.802V436.47Z"/></svg></div>Integridad Mecánica</a>
-                <a href="landing-activos.html" class="mobile-sector-link"><div class="mobile-sector-icon" style="background:#233468;"><svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M456.177 421.501C456.177 419.816 455.556 418.131 455.201 416.446C453.804 410.008 450.46 404.156 445.623 399.684L399.862 359.776L358.801 325.721L356.85 317.474C359.319 309.913 360.176 301.919 359.366 294.006C358.557 286.094 356.098 278.439 352.15 271.535C346.727 261.326 338.373 252.973 328.163 247.552C317.953 242.131 306.354 239.889 294.86 241.116L273.93 246.969L270.591 254.75L298.584 276.59C301.185 278.432 303.164 281.023 304.257 284.017L304.704 293.351C304.146 296.229 302.757 298.881 300.707 300.977L283.816 305.048L256.37 272.954L246.881 274.018C244.379 279.694 242.563 285.649 241.471 291.755C240.099 301.308 241.088 311.052 244.353 320.134L285.313 357.38L318.006 356.406L325.988 358.978L399.862 445.534L420.526 455.91L442.224 450.576L456.177 426.378V421.501Z"/></svg></div>Gestión de Activos</a>
-                <a href="landing-seguridad.html" class="mobile-sector-link"><div class="mobile-sector-icon" style="background:#EB9716;"><svg viewBox="0 0 600 600" fill="#BFBFBF"><path d="M363.624 272.716C360.011 267.584 350.02 269.604 349.389 275.789L337.161 321.384L336.367 321.289L338.012 257.884L329.636 250.876L313.804 319.987L306.299 251.488L288.88 251.661L288.048 320.006L273.363 258.488L255.542 259.665L266.413 347.093L242.798 335.067L221.726 337.863L260.915 395.101L343.26 395.101L355.689 368.004V337.623L364.208 279.83L363.624 272.716Z"/><path d="M443.71 455.197H156.3C142.361 455.197 130.066 448.131 123.402 436.306L123.947 400.821L267.652 162.744C274.431 151.503 286.525 144.801 299.996 144.801L332.339 162.744L476.044 400.821C482.698 411.842 482.899 425.113 476.599 436.306C469.954 448.131 457.65 455.197 443.71 455.197Z"/></svg></div>Seguridad de Procesos</a>
-                <a href="landing-directivas.html" class="mobile-sector-link"><div class="mobile-sector-icon" style="background:#EB9716;"><svg viewBox="0 0 600 600" fill="#ffffff"><path d="M254.118 241.109L251.549 245.473L255.999 263.013L274.515 291.391C289.213 307.969 311.519 307.668 326.066 290.938L344.984 261.743L348.522 245.265L343.362 233.803L344.152 223.849C345.486 204.845 336.745 190.685 319.521 184.362L281.72 183.931C268.077 188.768 258.432 197.761 256.494 212.66L256.616 234.83L254.118 241.109Z"/><path d="M415.445 383.379L375.657 331.936L335.187 332.769L303.422 402.441L264.882 343.706L219.145 333.178C190.466 353.23 181.682 371.559 180.892 393.786L264.682 418.739L410.794 406.352L416.22 399.319L415.445 383.379Z"/></svg></div>Habilidades Directivas</a>
-            </div>
-        </div>
-        <a href="#nosotros">Nosotros</a>
-        <a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a>
-        <a href="https://wa.me/573164661007">Contactar</a>
-    </nav>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                <div>
-                    <p class="hero-eyebrow">Formación técnica Oil & Gas</p>
-                    <h1>Competencias técnicas para equipos que no pueden fallar</h1>
-                    <p class="hero-description">Programas cerrados para operaciones de producción, perforación, facilidades y mantenimiento. 29 años formando a Ecopetrol, Repsol, Frontera y +200 empresas.</p>
-                    
-                    <div class="hero-ctas">
-                        <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20llamada" class="btn-primary">
-                            Agendar llamada
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </a>
-                        <a href="https://hidrocarburos.com.co" class="btn-secondary">Ver cursos</a>
-                    </div>
-                    
-                    <div class="hero-stats">
-                        <div>
-                            <div class="hero-stat-number">29</div>
-                            <div class="hero-stat-label">Años</div>
-                        </div>
-                        <div>
-                            <div class="hero-stat-number">200+</div>
-                            <div class="hero-stat-label">Empresas</div>
-                        </div>
-                        <div>
-                            <div class="hero-stat-number">11</div>
-                            <div class="hero-stat-label">Países</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="sector-icon">
-                        <svg viewBox="0 0 600 600" fill="currentColor"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M142.863 417.773V468.502H218.962C218.962 468.502 214.547 446.446 238.259 440.93C261.972 435.414 282.926 434.313 282.926 434.313V417.773H142.863V417.773Z"/><path d="M455.979 417.773V468.502H379.882C379.882 468.502 384.296 446.446 360.584 440.93C336.872 435.414 315.918 434.313 315.918 434.313V417.773H455.979V417.773Z"/><path d="M394.546 394.616L333.484 160.177C333.08 158.638 331.878 157.436 330.348 157.024C328.792 156.612 327.169 157.074 326.059 158.21L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583C253.52 233.365 253.242 234.231 253.335 235.156L237.779 297.607C235.441 297.716 233.575 299.608 233.575 301.979C233.575 303.585 234.474 304.93 235.761 305.704L213.613 394.616H140.645V412.257H291.366V410.878H292.837V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546V394.546ZM231.321 360.032L244.682 306.393H286.212V333.149L231.321 360.032ZM286.212 342.971V362.63H246.061L286.212 342.971ZM311.521 297.564H295.024V263.796L311.521 274.323V297.564ZM320.35 279.957L347.93 297.564H320.35V279.957ZM295.032 253.327V238.015H311.529V263.863L295.032 253.327ZM286.212 247.702L271.043 238.015H286.212V247.702ZM269.26 229.195L286.212 211.789V229.195H269.26ZM260.742 241.908L286.203 258.162V297.564H246.877L260.742 241.908ZM295.032 306.393H311.529V320.755L295.032 328.836V306.393ZM320.35 306.393H340.858L320.35 316.433V306.393ZM361.61 306.049C361.888 306.15 362.157 306.318 362.443 306.351L377.098 362.63H320.341V326.254L361.61 306.049ZM320.35 269.497V238.015H344.65L359.331 294.378L320.35 269.497ZM326.917 169.965L342.346 229.186H320.35V176.717L326.917 169.965ZM311.521 185.781V229.195H295.024V202.724L311.521 185.781ZM278.972 168.745L286.212 174.077V199.142L266.309 219.584L278.972 168.745ZM288.415 387.998V394.616H222.703L228.471 371.459H286.203V387.998H288.415ZM295.032 362.63V338.649L311.529 330.568V362.63H295.032ZM320.35 371.459H379.402L385.431 394.616H320.35V371.459Z"/><path d="M307.14 397.363H298.32V431.551H307.14V397.363Z"/></svg>
-                    </div>
-                    <div class="hero-visual">
-                    <div class="hero-point">
-                        <h4>Programas a medida</h4>
-                        <p>Contenido adaptado a su operación.</p>
-                    </div>
-                    <div class="hero-point">
-                        <h4>Proveedor ASME desde 2004</h4>
-                        <p>Certificaciones con respaldo internacional.</p>
-                    </div>
-                    <div class="hero-point">
-                        <h4>Instructores con campo</h4>
-                        <p>Experiencia en plantas y facilidades.</p>
-                    </div>
-                    <div class="hero-point">
-                        <h4>Partner TWPL</h4>
-                        <p>Gestión de activos con certificación IAM.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="clients">
-        <div class="container">
-            <p class="clients-label">Confían en nosotros</p>
-            <div class="clients-grid">
-                <img src="assets/logos/ecopetrol.png" alt="Ecopetrol" class="client-logo">
-                <img src="assets/logos/frontera.jpg" alt="Frontera Energy" class="client-logo">
-                <img src="assets/logos/parex.png" alt="Parex Resources" class="client-logo">
-                <img src="assets/logos/promigas.jpg" alt="Promigas" class="client-logo">
-                <img src="assets/logos/geopark.png" alt="GeoPark" class="client-logo">
-                <img src="assets/logos/repsol.svg" alt="Repsol" class="client-logo">
-                <img src="assets/logos/oxy.svg" alt="Occidental" class="client-logo">
-                <img src="assets/logos/eni.svg" alt="ENI" class="client-logo">
-                <img src="assets/logos/perenco.svg" alt="Perenco" class="client-logo">
-            </div>
-        </div>
-    </section>
-
-    <section class="credentials">
-        <div class="container">
-            <div class="credentials-inner">
-                <div class="credential-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    Proveedor <strong>ASME</strong>
-                </div>
-                <div class="credential-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                    Partner <strong>TWPL</strong>
-                </div>
-                <div class="credential-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                    Credenciales <strong>IADC</strong>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="categories" id="programas">
-        <div class="container">
-            <div class="categories-inner">
-                <span class="categories-label">Ir a:</span>
-                <a href="#produccion" class="category-pill active">Producción</a>
-                <a href="#perforacion" class="category-pill">Perforación</a>
-                <a href="#gas" class="category-pill">Gas</a>
-                <a href="#integridad" class="category-pill">Integridad</a>
-                <a href="#activos" class="category-pill">Activos</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CAPABILITY CATALOG -->
-    <section class="capability-section" id="produccion">
-        <div class="container">
-            <div class="capability-theme">
-                <div class="capability-theme-header">
-                    <h2 class="capability-theme-title">Producción y Facilidades</h2>
-                    <p class="capability-theme-subtitle">Formación integral para operaciones de producción de hidrocarburos.</p>
-                </div>
-                <div class="program-cards">
-                    <div class="program-card">
-                        <div class="program-card-header">
-                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Levantamiento Artificial</span>
-                            <h3 class="program-card-title">Bombeo Electrosumergible (ESP)</h3>
-                            <p class="program-card-desc">Selección, diseño, operación y troubleshooting de sistemas ESP.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header">
-                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Levantamiento Artificial</span>
-                            <h3 class="program-card-title">Bombeo Mecánico</h3>
-                            <p class="program-card-desc">Análisis dinagráfico y optimización de producción.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header">
-                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                        </div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Levantamiento Artificial</span>
-                            <h3 class="program-card-title">Gas Lift</h3>
-                            <p class="program-card-desc">Diseño y optimización de sistemas de gas lift.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header">
-                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
-                        </div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Facilidades</span>
-                            <h3 class="program-card-title">Tratamiento de Crudo</h3>
-                            <p class="program-card-desc">Deshidratación, desalado y estabilización de crudo.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header">
-                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
-                        </div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Facilidades</span>
-                            <h3 class="program-card-title">Separación y Manejo de Fluidos</h3>
-                            <p class="program-card-desc">Separadores, tanques y sistemas de bombeo.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header">
-                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg>
-                        </div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Facilidades</span>
-                            <h3 class="program-card-title">Sistemas de Compresión</h3>
-                            <p class="program-card-desc">Gas de proceso, gas lift y exportación.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                        </div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Medición</span>
-                            <h3 class="program-card-title">Medición de Hidrocarburos</h3>
-                            <p class="program-card-desc">Turbinas, Coriolis, ultrasonido y cromatografía.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header">
-                            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-                        </div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Medición</span>
-                            <h3 class="program-card-title">Fiscalización y Custodia</h3>
-                            <p class="program-card-desc">Normativa, auditoría y balance de transferencia.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header">
-                            <svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                        </div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Operaciones</span>
-                            <h3 class="program-card-title">Optimización de Producción</h3>
-                            <p class="program-card-desc">Análisis nodal, curvas IPR y diagnóstico de pozos.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="capability-section alt" id="perforacion">
-        <div class="container">
-            <div class="capability-theme">
-                <div class="capability-theme-header">
-                    <h2 class="capability-theme-title">Perforación y Workover</h2>
-                    <p class="capability-theme-subtitle">Competencias técnicas para operaciones de perforación e intervención.</p>
-                </div>
-                <div class="program-cards">
-                    <div class="program-card">
-                        <div class="program-card-header"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Perforación</span>
-                            <h3 class="program-card-title">Ingeniería de Perforación</h3>
-                            <p class="program-card-desc">Diseño de pozos, hidráulica y perforación direccional.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Perforación</span>
-                            <h3 class="program-card-title">Control de Pozos (IWCF)</h3>
-                            <p class="program-card-desc">Certificación IWCF y procedimientos de control.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Perforación</span>
-                            <h3 class="program-card-title">Rig Inspection (IADC)</h3>
-                            <p class="program-card-desc">Inspección de taladros según estándares IADC.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v10"/></svg></div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Completamiento</span>
-                            <h3 class="program-card-title">Diseño de Completamiento</h3>
-                            <p class="program-card-desc">Sartas, empaque y completamiento de zonas múltiples.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v6m0 6v10"/></svg></div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Completamiento</span>
-                            <h3 class="program-card-title">Fracturamiento Hidráulico</h3>
-                            <p class="program-card-desc">Diseño, ejecución y análisis de fracturamiento.</p>
-                        </div>
-                    </div>
-                    <div class="program-card">
-                        <div class="program-card-header"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-                        <div class="program-card-body">
-                            <span class="program-card-tag">Integridad</span>
-                            <h3 class="program-card-title">Well Integrity Management</h3>
-                            <p class="program-card-desc">Ciclo de vida, barreras y gestión de riesgo.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="capability-section" id="gas">
-        <div class="container">
-            <div class="capability-theme">
-                <div class="capability-theme-header">
-                    <h2 class="capability-theme-title">Gas Natural y Energía</h2>
-                    <p class="capability-theme-subtitle">Cadena completa del gas: desde la producción hasta la distribución y comercialización.</p>
-                </div>
-                <div class="program-cards">
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Producción</span><h3 class="program-card-title">Procesamiento de Gas</h3><p class="program-card-desc">Endulzamiento, deshidratación, fraccionamiento.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Producción</span><h3 class="program-card-title">Plantas de Gas</h3><p class="program-card-desc">Diseño, operación, troubleshooting.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Producción</span><h3 class="program-card-title">GLP y Líquidos del Gas</h3><p class="program-card-desc">Recuperación, almacenamiento, comercialización.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Transporte</span><h3 class="program-card-title">Gasoductos</h3><p class="program-card-desc">Diseño, operación, integridad.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Transporte</span><h3 class="program-card-title">Estaciones de Compresión</h3><p class="program-card-desc">Reciprocantes, centrífugos, control.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Transporte</span><h3 class="program-card-title">City Gates y Regulación</h3><p class="program-card-desc">Estaciones de entrega, odorización.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Distribución</span><h3 class="program-card-title">Redes de Distribución</h3><p class="program-card-desc">Diseño, materiales, construcción.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Distribución</span><h3 class="program-card-title">Instalaciones Internas</h3><p class="program-card-desc">Residencial, comercial, industrial.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Distribución</span><h3 class="program-card-title">GNV</h3><p class="program-card-desc">Estaciones de servicio, conversión.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Medición</span><h3 class="program-card-title">Medición de Gas</h3><p class="program-card-desc">Ultrasónico, turbina, orificio.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Medición</span><h3 class="program-card-title">Cromatografía</h3><p class="program-card-desc">Análisis, poder calorífico.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Comercialización</span><h3 class="program-card-title">Mercado del Gas</h3><p class="program-card-desc">Regulación, contratos, tarifas.</p></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="capability-section alt" id="integridad">
-        <div class="container">
-            <div class="capability-theme">
-                <div class="capability-theme-header">
-                    <h2 class="capability-theme-title">Integridad Mecánica</h2>
-                    <p class="capability-theme-subtitle">Gestión de integridad de equipos estáticos, códigos internacionales y técnicas de inspección.</p>
-                </div>
-                <div class="program-cards">
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">ASME</span><h3 class="program-card-title">ASME Sección VIII Div 1 y 2</h3><p class="program-card-desc">Diseño de recipientes a presión.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">ASME</span><h3 class="program-card-title">ASME B31.3 / B31.8</h3><p class="program-card-desc">Tuberías de proceso y gas.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">ASME</span><h3 class="program-card-title">ASME PCC-2</h3><p class="program-card-desc">Reparación de equipos presurizados.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">API</span><h3 class="program-card-title">API 510</h3><p class="program-card-desc">Inspección de recipientes a presión.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">API</span><h3 class="program-card-title">API 570</h3><p class="program-card-desc">Inspección de tuberías.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">API</span><h3 class="program-card-title">API 653</h3><p class="program-card-desc">Inspección de tanques de almacenamiento.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">API</span><h3 class="program-card-title">API 579 (FFS)</h3><p class="program-card-desc">Fitness-for-Service.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">RBI</span><h3 class="program-card-title">API 580/581</h3><p class="program-card-desc">Fundamentos y metodología RBI.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">RBI</span><h3 class="program-card-title">Análisis de Consecuencias</h3><p class="program-card-desc">Escenarios, impacto, mitigación.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">RBI</span><h3 class="program-card-title">Planes de Inspección</h3><p class="program-card-desc">Priorización, frecuencia, alcance.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Daño</span><h3 class="program-card-title">Corrosión</h3><p class="program-card-desc">Tipos, predicción, monitoreo.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Daño</span><h3 class="program-card-title">Fatiga y Creep</h3><p class="program-card-desc">Análisis, vida remanente.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Daño</span><h3 class="program-card-title">API 571</h3><p class="program-card-desc">Mecanismos de daño en refinería.</p></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="capability-section" id="activos">
-        <div class="container">
-            <div class="capability-theme">
-                <div class="capability-theme-header">
-                    <h2 class="capability-theme-title">Gestión de Activos</h2>
-                    <p class="capability-theme-subtitle">Metodologías internacionales para optimizar el ciclo de vida de activos industriales.</p>
-                </div>
-                <div class="program-cards">
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Frameworks</span><h3 class="program-card-title">ISO 55001</h3><p class="program-card-desc">Sistema de gestión de activos.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Frameworks</span><h3 class="program-card-title">PAS 55</h3><p class="program-card-desc">Especificación británica, 28 requerimientos.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Frameworks</span><h3 class="program-card-title">Certificación IAM</h3><p class="program-card-desc">Con The Woodhouse Partnership.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Confiabilidad</span><h3 class="program-card-title">RCM</h3><p class="program-card-desc">Mantenimiento centrado en confiabilidad.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Confiabilidad</span><h3 class="program-card-title">FMEA / FMECA</h3><p class="program-card-desc">Análisis de modos de falla.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Confiabilidad</span><h3 class="program-card-title">Análisis de Causa Raíz</h3><p class="program-card-desc">Metodologías, herramientas, prevención.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Mantenimiento</span><h3 class="program-card-title">Estrategias de Mantenimiento</h3><p class="program-card-desc">Preventivo, predictivo, correctivo.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Mantenimiento</span><h3 class="program-card-title">Planificación y Programación</h3><p class="program-card-desc">Paradas de planta, backlog.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Mantenimiento</span><h3 class="program-card-title">KPIs de Mantenimiento</h3><p class="program-card-desc">OEE, MTBF, MTTR, disponibilidad.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Ciclo de Vida</span><h3 class="program-card-title">Costos de Ciclo de Vida (LCC)</h3><p class="program-card-desc">Análisis, optimización, decisiones.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Ciclo de Vida</span><h3 class="program-card-title">Gestión de Riesgo</h3><p class="program-card-desc">Identificación, evaluación, tratamiento.</p></div></div>
-                    <div class="program-card"><div class="program-card-body"><span class="program-card-tag">Ciclo de Vida</span><h3 class="program-card-title">Extensión de Vida</h3><p class="program-card-desc">Evaluación, refurbishment, reemplazo.</p></div></div>
-                </div>
-            </div>
-            
-            <!-- Catalog CTA -->
-            <div class="catalog-footer">
-                <div class="catalog-footer-text">
-                    <strong>¿Busca un programa específico?</strong>
-                    <span>Explore nuestro catálogo completo de cursos en el Campus Virtual</span>
-                </div>
-                <a href="https://hidrocarburos.com.co" class="catalog-footer-btn" target="_blank">
-                    Ir al Campus Virtual
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--dark">
-        <div class="container">
-            <div class="section-header centered">
-                <h2 class="section-title">Lo que dicen los participantes</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Abarca toda la cadena de gas, temas regulatorios, historia y lo que viene para el mercado."</p>
-                    <p class="testimonial-author">Camilo Ovalle</p>
-                    <p class="testimonial-role">Subgerente Financiero</p>
-                    <p class="testimonial-company">Gases del Caribe</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"La experiencia fue exitosa. Aclaración de dudas y herramientas para mejorar."</p>
-                    <p class="testimonial-author">Andrés Fernando Lorza</p>
-                    <p class="testimonial-role">Jefe de Mantenimiento</p>
-                    <p class="testimonial-company">Cementos Argos</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Actualizado en planeación y programación. Nos estandariza internacionalmente."</p>
-                    <p class="testimonial-author">Mauricio Daza</p>
-                    <p class="testimonial-role">Supervisor de Mantenimiento</p>
-                    <p class="testimonial-company">Cerro Matoso</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Me ha servido de guía para el plan de comisionamiento en mis proyectos."</p>
-                    <p class="testimonial-author">Faustino Calderón</p>
-                    <p class="testimonial-role">Supervisor de Construcción</p>
-                    <p class="testimonial-company">Antamina</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Nos ayuda a crecer laboral y personalmente para ser técnicos más competitivos."</p>
-                    <p class="testimonial-author">José Francisco Barón</p>
-                    <p class="testimonial-role">Auxiliar Electromecánico</p>
-                    <p class="testimonial-company">Canacol Energy</p>
-                </div>
-                <div class="testimonial-card">
-                    <p class="testimonial-quote">"Destrezas para investigación de accidentes y perfiles de investigador."</p>
-                    <p class="testimonial-author">Nancy Tibamoza</p>
-                    <p class="testimonial-role">Coordinadora HSE</p>
-                    <p class="testimonial-company">Norgas</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--gray" id="metodologia">
-        <div class="container">
-            <div class="section-header centered">
-                <h2 class="section-title">Cómo trabajamos</h2>
-                <p class="section-subtitle">Programas a medida. No cursos de catálogo.</p>
-            </div>
-            <div class="method-grid">
-                <div class="method-step">
-                    <div class="method-number">1</div>
-                    <h4>Diagnóstico</h4>
-                    <p>Gaps y prioridades.</p>
-                </div>
-                <div class="method-step">
-                    <div class="method-number">2</div>
-                    <h4>Diseño</h4>
-                    <p>Contenido a medida.</p>
-                </div>
-                <div class="method-step">
-                    <div class="method-number">3</div>
-                    <h4>Ejecución</h4>
-                    <p>Instructores con campo.</p>
-                </div>
-                <div class="method-step">
-                    <div class="method-number">4</div>
-                    <h4>Evaluación</h4>
-                    <p>Resultados medibles.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section--dark" id="nosotros">
+    <!-- PRODUCCIÓN Y FACILIDADES -->
+    <section class="section" id="facilidades">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Por qué Elite Training</h2>
+                <p class="section-label">Tema 01</p>
+                <h2 class="section-title">Producción y Facilidades</h2>
             </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <h3>Autoridad técnica</h3>
-                    <p>Proveedor ASME desde 2004. Partner TWPL. No somos generalistas.</p>
+            
+            <ul class="course-list">
+                <li class="course-item">
+                    <span class="course-name">Facilidades de Producción</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Tratamiento de Crudo</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Manejo de Aguas Coproducidas</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Sistemas de Medición de Hidrocarburos</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- LEVANTAMIENTO ARTIFICIAL -->
+    <section class="section" id="levantamiento">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Tema 02</p>
+                <h2 class="section-title">Levantamiento Artificial</h2>
+            </div>
+            
+            <ul class="course-list">
+                <li class="course-item">
+                    <span class="course-name">Bombeo Mecánico</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">PCP</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">ESP</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Análisis Nodal</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Sistemas de Levantamiento Artificial Nivel 1 y 2</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- PERFORACIÓN Y POZOS -->
+    <section class="section" id="perforacion">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Tema 03</p>
+                <h2 class="section-title">Perforación y Pozos</h2>
+            </div>
+            
+            <ul class="course-list">
+                <li class="course-item">
+                    <span class="course-name">Ingeniería de Perforación</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Cementación</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Completamiento</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Well Integrity</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Well Planning & Rig Selection</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Rig Inspection</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- YACIMIENTOS Y PETROFÍSICA -->
+    <section class="section" id="yacimientos">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Tema 04</p>
+                <h2 class="section-title">Yacimientos y Petrofísica</h2>
+            </div>
+            
+            <ul class="course-list">
+                <li class="course-item">
+                    <span class="course-name">Open Hole Well Logging & Formation Evaluation</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Well Testing</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+                <li class="course-item">
+                    <span class="course-name">Recuperación Mejorada</span>
+                    <span class="course-arrow">&rarr;</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- PROGRAMAS -->
+    <section class="section" id="programas">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-label">Programas Especializados</p>
+                <h2 class="section-title">Formación integral para operaciones upstream</h2>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <span class="program-tag">Programa Profesional</span>
+                    <h3 class="program-name">Programa Profesional en Facilidades de Producción</h3>
+                    <p class="program-desc">Formación completa en diseño y operación de facilidades de superficie, tratamiento de crudo, manejo de agua y sistemas de medición.</p>
+                    <a href="https://wa.me/573164661007?text=Información%20Programa%20Facilidades%20Producción" class="program-link">Más información &rarr;</a>
                 </div>
-                <div class="why-card">
-                    <h3>Instructores con campo</h3>
-                    <p>Han trabajado en plantas, campos y facilidades reales.</p>
-                </div>
-                <div class="why-card">
-                    <h3>29 años en la industria</h3>
-                    <p>+200 empresas en 11 países. Seguimos porque entregamos.</p>
+                
+                <div class="program-card">
+                    <span class="program-tag">Programa Especializado</span>
+                    <h3 class="program-name">Open Hole Well Logging & Formation Evaluation</h3>
+                    <p class="program-desc">Interpretación de registros de pozo abierto, evaluación de formaciones, cálculo de reservas y caracterización de yacimientos.</p>
+                    <a href="https://wa.me/573164661007?text=Información%20Programa%20Well%20Logging" class="program-link">Más información &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CTA -->
     <section class="cta-section">
         <div class="container">
-            <div class="cta-box">
-                <div>
-                    <h2>¿Necesita formar a su equipo?</h2>
-                    <p>30 minutos para entender sus necesidades.</p>
+            <div class="cta-inner">
+                <div class="cta-text">
+                    <h2>¿Necesita capacitar a su equipo de operaciones?</h2>
+                    <p>Programas in-house adaptados a su operación.</p>
                 </div>
-                <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20llamada" class="btn-primary">
-                    Agendar llamada
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                </a>
+                <a href="https://wa.me/573164661007?text=Quiero%20cotizar%20un%20programa%20In-House%20Oil%20and%20Gas" class="cta-btn">Cotizar In-House &rarr;</a>
             </div>
         </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
-                <div class="footer-brand">
-                    <svg viewBox="0 0 448 321" fill="none">
-                        <path d="M447.909 0.00622804C443.646 116.854 351.192 212.564 240.68 217.568C265.251 269.286 316.17 303.894 375.053 302.206C401.401 301.466 426.18 293.502 447.702 280.21L447.968 0.00622804Z" fill="#E19A24"/>
-                        <path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#fff"/>
-                    </svg>
-                    <span class="footer-text">© 2026 Elite Training</span>
-                </div>
-                <div class="footer-contact">
-                    <a href="tel:+573164661007"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>+57 316 466 1007</a>
-                    <a href="https://hidrocarburos.com.co"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>hidrocarburos.com.co</a>
-                    <a href="https://linkedin.com/company/elite-training-colombia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+                <span class="footer-brand">Elite Training &copy; 2026</span>
+                <div class="footer-links">
+                    <a href="tel:+573164661007">+57 316 466 1007</a>
+                    <a href="https://hidrocarburos.com.co">hidrocarburos.com.co</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mega Menu Logic
-        const trigger = document.getElementById('sectorsTrigger');
-        const megaMenu = document.getElementById('megaMenu');
-        const sectorItems = document.querySelectorAll('.mega-menu-sector-item');
-        const contentPanels = document.querySelectorAll('.mega-menu-content');
-        const visualPanels = document.querySelectorAll('.mega-menu-visual-bg');
-        let menuTimeout;
-
-        if (trigger && megaMenu) {
-            trigger.addEventListener('mouseenter', () => { clearTimeout(menuTimeout); megaMenu.classList.add('active'); trigger.classList.add('active'); });
-            trigger.addEventListener('click', () => { megaMenu.classList.toggle('active'); trigger.classList.toggle('active'); });
-            megaMenu.addEventListener('mouseenter', () => { clearTimeout(menuTimeout); });
-            trigger.addEventListener('mouseleave', () => { menuTimeout = setTimeout(() => { if (!megaMenu.matches(':hover')) { megaMenu.classList.remove('active'); trigger.classList.remove('active'); } }, 100); });
-            megaMenu.addEventListener('mouseleave', () => { menuTimeout = setTimeout(() => { megaMenu.classList.remove('active'); trigger.classList.remove('active'); }, 100); });
-
-            sectorItems.forEach(item => {
-                item.addEventListener('mouseenter', () => {
-                    const sector = item.dataset.sector;
-                    sectorItems.forEach(s => s.classList.remove('active'));
-                    item.classList.add('active');
-                    contentPanels.forEach(p => p.classList.remove('active'));
-                    document.getElementById('content-' + sector)?.classList.add('active');
-                    visualPanels.forEach(v => v.classList.remove('active'));
-                    document.getElementById('visual-' + sector)?.classList.add('active');
-                });
+        const sections = document.querySelectorAll('.section[id]');
+        const navPills = document.querySelectorAll('.nav-pill');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) { current = section.getAttribute('id'); }
             });
-
-            document.addEventListener('click', (e) => { if (!trigger.contains(e.target) && !megaMenu.contains(e.target)) { megaMenu.classList.remove('active'); trigger.classList.remove('active'); } });
-        }
-
-        // Close mobile menu on scroll
+            navPills.forEach(pill => {
+                pill.classList.remove('active');
+                if (pill.getAttribute('href') === '#' + current) { pill.classList.add('active'); }
+            });
+        });
         window.addEventListener('scroll', () => { document.getElementById('mobileMenu')?.classList.remove('active'); });
     </script>
 </body>

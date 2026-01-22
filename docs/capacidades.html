@@ -4,2188 +4,486 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Training | Formación Técnica para Industrias de Alto Riesgo</title>
-    <meta name="description" content="29 años formando equipos técnicos en Oil & Gas, Integridad Mecánica, Gestión de Activos, Seguridad de Procesos. Proveedor ASME. Partner TWPL.">
+    <meta name="description" content="29 años formando equipos técnicos en Oil & Gas, Integridad Mecánica, Gestión de Activos, Seguridad de Procesos. Partner TWPL. Proveedor ASME.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --dark: #0f1419;
-            --dark-soft: #181d24;
-            --accent: #E19A24;
-            --accent-light: #f0b44a;
+            --black: #0a0a0a;
             --white: #ffffff;
-            --gray-50: #f9fafb;
-            --gray-100: #f3f4f6;
-            --gray-200: #e5e7eb;
-            --gray-300: #d1d5db;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --gray-700: #374151;
-            --gray-900: #111827;
-            --font: 'Roboto', -apple-system, sans-serif;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-800: #262626;
+            --accent: #E19A24;
+            --font: 'Inter', -apple-system, system-ui, sans-serif;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: var(--font);
-            font-size: 15px;
-            line-height: 1.6;
-            color: var(--gray-700);
-            background: var(--white);
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .container { padding: 0 1.5rem; }
-        }
-        
-        /* HEADER - BRUTALIST */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: var(--white);
-            border-bottom: 2px solid var(--gray-900);
-        }
-        
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 48px;
-        }
-        
-        @media (min-width: 768px) {
-            .header-inner { height: 56px; }
-        }
-        
-        .logo svg { height: 24px; width: auto; }
-        
-        @media (min-width: 768px) {
-            .logo svg { height: 32px; }
-        }
-        
-        .header-nav {
-            display: none;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        
-        @media (min-width: 900px) {
-            .header-nav { display: flex; }
-        }
-        
-        .header-nav > a,
-        .header-nav .nav-trigger {
-            color: var(--gray-700);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            padding: 0.5rem 0;
-        }
-        
-        .header-nav > a:hover,
-        .nav-trigger:hover,
-        .nav-trigger.active { color: var(--gray-900); }
-        
-        .nav-trigger svg {
-            width: 12px;
-            height: 12px;
-            transition: transform 0.2s;
-        }
-        
-        .nav-trigger.active svg {
-            transform: rotate(180deg);
-        }
-        
-        /* MEGA MENU - Full Width ROSEN Style */
-        .mega-menu {
-            position: fixed;
-            top: 48px;
-            left: 0;
-            right: 0;
-            background: var(--white);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            display: none;
-            z-index: 999;
-            border-bottom: 2px solid var(--gray-900);
-        }
-        
-        @media (min-width: 768px) {
-            .mega-menu { top: 56px; }
-        }
-        
-        .mega-menu.active {
-            display: block;
-        }
-        
-        .mega-menu-inner {
-            display: grid;
-            grid-template-columns: 45% 55%;
-            min-height: 420px;
-        }
-        
-        /* Left Visual Panel */
-        .mega-menu-visual {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .mega-menu-visual-bg {
-            position: absolute;
-            inset: 0;
-            display: none;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .mega-menu-visual-bg.active {
-            display: block;
-        }
-        
-        .mega-menu-visual-bg::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
-        }
-        
-        .mega-menu-visual-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 2rem;
-            color: var(--white);
-            z-index: 1;
-        }
-        
-        .mega-menu-visual-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-        }
-        
-        .mega-menu-visual-desc {
-            font-size: 0.9375rem;
-            opacity: 0.9;
-            margin-bottom: 1.25rem;
-            line-height: 1.5;
-        }
-        
-        .mega-menu-visual-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--white);
-            color: var(--dark);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: transform 0.2s;
-        }
-        
-        .mega-menu-visual-cta:hover {
-            transform: translateX(4px);
-        }
-        
-        .mega-menu-visual-cta svg {
-            width: 16px;
-            height: 16px;
-        }
-        
-        /* Icon overlay for visual panels */
-        .mega-menu-visual-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200px;
-            height: 200px;
-            opacity: 0.15;
-            z-index: 0;
-        }
-        
-        .mega-menu-visual-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-        
-        /* Right Panel */
-        .mega-menu-right {
-            display: flex;
-            background: var(--white);
-        }
-        
-        .mega-menu-sectors {
-            width: 240px;
-            background: var(--gray-50);
-            border-right: 1px solid var(--gray-200);
-            padding: 1.5rem 0;
-            flex-shrink: 0;
-        }
-        
-        .mega-menu-sector-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.875rem 1.25rem;
-            cursor: pointer;
-            text-decoration: none;
-            color: var(--gray-600);
-            transition: all 0.15s;
-            border-left: 3px solid transparent;
-            font-size: 0.875rem;
-        }
-        
-        .mega-menu-sector-item:hover {
-            color: var(--gray-900);
-            background: rgba(255,255,255,0.5);
-        }
-        
-        .mega-menu-sector-item.active {
-            background: var(--white);
-            border-left-color: var(--accent);
-            color: var(--gray-900);
-            font-weight: 600;
-        }
-        
-        .mega-menu-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        
-        .mega-menu-icon svg {
-            width: 18px;
-            height: 18px;
-        }
-        
-        .mega-menu-sector-name {
-            font-size: 0.8125rem;
-        }
-        
-        /* Content Panel */
-        .mega-menu-content {
-            flex: 1;
-            padding: 1.5rem 2rem;
-            display: none;
-        }
-        
-        .mega-menu-content.active {
-            display: block;
-        }
-        
-        .mega-menu-content-header {
-            margin-bottom: 1.25rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--gray-100);
-        }
-        
-        .mega-menu-content-eyebrow {
-            font-size: 0.6875rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--accent);
-            margin-bottom: 0.25rem;
-        }
-        
-        .mega-menu-content-title {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 0.25rem;
-        }
-        
-        .mega-menu-content-desc {
-            font-size: 0.8125rem;
-            color: var(--gray-500);
-        }
-        
-        .mega-menu-links-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0;
-            margin-bottom: 1.25rem;
-        }
-        
-        .mega-menu-link {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.625rem 0;
-            color: var(--gray-700);
-            text-decoration: none;
-            font-size: 0.8125rem;
-            border-bottom: 1px solid var(--gray-100);
-            transition: color 0.15s, padding-left 0.15s;
-        }
-        
-        .mega-menu-link:hover {
-            color: var(--dark);
-            padding-left: 0.5rem;
-        }
-        
-        .mega-menu-link::after {
-            content: '→';
-            opacity: 0;
-            transition: opacity 0.15s;
-        }
-        
-        .mega-menu-link:hover::after {
-            opacity: 1;
-        }
-        
-        .mega-menu-footer-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.625rem 1rem;
-            background: var(--dark);
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.8125rem;
-            font-weight: 600;
-            border-radius: 4px;
-        }
-        
-        .mega-menu-footer-cta:hover {
-            opacity: 0.9;
-        }
-        
-        .mega-menu-footer-cta svg {
-            width: 14px;
-            height: 14px;
-        }
-        
-        /* Sector-specific colors */
-        .mega-oilgas .mega-menu-icon { background: #4A4A49; }
-        .mega-oilgas .mega-menu-icon svg { fill: #BFBFBF; }
-        .mega-gas .mega-menu-icon { background: #233468; }
-        .mega-gas .mega-menu-icon svg { fill: #4DB1BC; }
-        .mega-integridad .mega-menu-icon { background: #233468; }
-        .mega-integridad .mega-menu-icon svg { fill: #EB9716; }
-        .mega-activos .mega-menu-icon { background: #233468; }
-        .mega-activos .mega-menu-icon svg { fill: #4DB1BC; }
-        .mega-seguridad .mega-menu-icon { background: #EB9716; }
-        .mega-seguridad .mega-menu-icon svg { fill: #BFBFBF; }
-        .mega-directivas .mega-menu-icon { background: #EB9716; }
-        .mega-directivas .mega-menu-icon svg { fill: #ffffff; }
-        
-        .header-cta {
-            padding: 0.5rem 1rem;
-            background: var(--gray-900);
-            color: var(--white);
-            font-weight: 700;
-            font-size: 0.75rem;
-            text-decoration: none;
-            border-radius: 0;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-        
-        @media (min-width: 768px) {
-            .header-cta {
-                padding: 0.5rem 1.25rem;
-                font-size: 0.8125rem;
-            }
-        }
-        
-        .menu-toggle {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 8px;
-            margin-left: 0.5rem;
-        }
-        
-        .menu-toggle span {
-            width: 20px;
-            height: 2px;
-            background: var(--gray-900);
-        }
-        
-        @media (min-width: 900px) {
-            .menu-toggle { display: none; }
-        }
-        
-        .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 48px;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--white);
-            padding: 0.75rem;
-            flex-direction: column;
-            gap: 0;
-            z-index: 999;
-            overflow-y: auto;
-            border-bottom: 2px solid var(--gray-900);
-        }
-        
-        .mobile-menu.active { display: flex; }
-        
-        .mobile-menu > a,
-        .mobile-accordion-header {
-            padding: 0.875rem 0;
-            color: var(--gray-700);
-            text-decoration: none;
-            font-size: 0.9375rem;
-            font-weight: 500;
-            border-bottom: 1px solid var(--gray-100);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
-        
-        .mobile-accordion-header svg {
-            width: 16px;
-            height: 16px;
-            transition: transform 0.2s;
-        }
-        
-        .mobile-accordion.active .mobile-accordion-header svg {
-            transform: rotate(180deg);
-        }
-        
-        .mobile-accordion-content {
-            display: none;
-            padding: 0.5rem 0;
-            background: var(--gray-50);
-            margin: 0 -1rem;
-            padding: 0.5rem 1rem;
-        }
-        
-        .mobile-accordion.active .mobile-accordion-content {
-            display: block;
-        }
-        
-        .mobile-sector-link {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            text-decoration: none;
-            color: var(--gray-700);
-            font-size: 0.875rem;
-            font-weight: 500;
-            border-radius: 4px;
-        }
-        
-        .mobile-sector-link:hover {
-            background: var(--gray-100);
-        }
-        
-        .mobile-sector-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .mobile-sector-icon svg {
-            width: 18px;
-            height: 18px;
-        }
-        
-        @media (min-width: 900px) {
-            .mobile-menu { display: none !important; }
-        }
-        
-        /* HERO - BRUTALIST WITH IMAGE */
-        .hero {
-            padding-top: 48px;
-            background: var(--dark);
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        /* Hero background image with overlay */
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url('assets/img/hero-bg.jpg'); /* PLACEHOLDER - replace with actual image */
-            background-size: cover;
-            background-position: center;
-            opacity: 0.15;
-            z-index: 0;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, var(--dark) 0%, transparent 50%, var(--dark) 100%);
-            z-index: 1;
-        }
-        
-        .hero > .container {
-            position: relative;
-            z-index: 2;
-        }
-        
-        @media (min-width: 768px) {
-            .hero { padding-top: 56px; min-height: 85vh; }
-        }
-        
-        .hero-inner {
-            padding: 3rem 0;
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
-        
-        @media (min-width: 900px) {
-            .hero-inner { 
-                padding: 4rem 0; 
-                gap: 3rem;
-            }
-        }
-        
-        .hero-content { text-align: left; }
-        
-        .hero-eyebrow {
-            color: var(--accent);
-            font-size: 0.75rem;
-            font-weight: 800;
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-eyebrow { font-size: 0.875rem; }
-        }
-        
-        .hero h1 {
-            font-size: 2rem;
-            font-weight: 900;
-            line-height: 1.05;
-            color: var(--white);
-            margin-bottom: 1rem;
-            letter-spacing: -0.03em;
-            text-transform: uppercase;
-        }
-        
-        @media (min-width: 768px) {
-            .hero h1 { font-size: 2.75rem; }
-        }
-        
-        @media (min-width: 1024px) {
-            .hero h1 { font-size: 3.25rem; }
-        }
-        
-        .hero-description {
-            font-size: 1rem;
-            color: var(--white);
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-            max-width: 480px;
-            line-height: 1.5;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-description { font-size: 1.0625rem; margin-bottom: 2rem; }
-        }
-        
-        .hero-ctas {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        
-        @media (min-width: 400px) {
-            .hero-ctas { flex-direction: row; flex-wrap: wrap; }
-        }
-        
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            background: var(--accent);
-            color: var(--gray-900);
-            font-weight: 700;
-            font-size: 0.875rem;
-            text-decoration: none;
-            border-radius: 0;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-        
-        .hero-cta:hover { background: var(--accent-light); }
-        .hero-cta svg { width: 16px; height: 16px; }
-        
-        .hero-cta-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            background: transparent;
-            color: var(--white);
-            font-weight: 700;
-            font-size: 0.875rem;
-            text-decoration: none;
-            border-radius: 0;
-            border: 2px solid rgba(255,255,255,0.4);
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-        
-        .hero-cta-secondary:hover { border-color: var(--white); }
-        
-        /* HERO STATS - BIG HORIZONTAL */
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        @media (min-width: 600px) {
-            .hero-stats { grid-template-columns: repeat(4, 1fr); }
-        }
-        
-        @media (min-width: 900px) {
-            .hero-stats { gap: 3rem; }
-        }
-        
-        .hero-stat {
-            text-align: left;
-        }
-        
-        .hero-stat-number {
-            display: block;
-            font-size: 3rem;
-            font-weight: 900;
-            color: var(--accent);
-            line-height: 1;
-            letter-spacing: -0.03em;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-stat-number { font-size: 4rem; }
-        }
-        
-        @media (min-width: 1024px) {
-            .hero-stat-number { font-size: 5rem; }
-        }
-        
-        .hero-stat-label {
-            display: block;
-            color: var(--white);
-            font-size: 0.8125rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            margin-top: 0.5rem;
-            opacity: 0.8;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-stat-label { font-size: 0.875rem; }
-        }
-        
-        .hero-cta svg { width: 18px; height: 18px; }
-        
-        /* CREDENTIALS - BRUTALIST */
-        .credentials {
-            background: var(--gray-50);
-            padding: 0.625rem 0;
-            border-bottom: 2px solid var(--gray-200);
-        }
-        
-        .credentials-inner {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.5rem 1.5rem;
-        }
-        
-        @media (min-width: 768px) {
-            .credentials-inner { gap: 0.75rem 2.5rem; }
-        }
-        
-        .credential-item {
-            display: flex;
-            align-items: center;
-            gap: 0.35rem;
-            color: var(--gray-700);
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-        
-        @media (min-width: 768px) {
-            .credential-item { font-size: 0.8125rem; }
-        }
-        
-        .credential-item svg {
-            width: 14px;
-            height: 14px;
-            color: var(--accent);
-        }
-        
-        .credential-item strong {
-            color: var(--gray-900);
-            font-weight: 700;
-        }
-        
-        /* CLIENTS */
-        .clients {
-            background: var(--white);
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--gray-200);
-        }
-        
-        .clients-label {
-            text-align: center;
-            font-size: 0.625rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--gray-500);
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .clients-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 2rem 3rem;
-        }
-        
-        @media (min-width: 768px) {
-            .clients-grid { gap: 2.5rem 4rem; }
-        }
-        
-        .client-logo {
-            height: 40px;
-            max-width: 140px;
-            width: auto;
-            object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-        
-        .client-logo:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-        
-        @media (min-width: 768px) {
-            .client-logo { 
-                height: 50px; 
-                max-width: 160px;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .client-logo { 
-                height: 56px; 
-                max-width: 180px;
-            }
-        }
-        
-        /* SECTORS */
-        .sectors {
-            padding: 3rem 0;
-            background: var(--white);
-        }
-        
-        @media (min-width: 768px) {
-            .sectors { padding: 4rem 0; }
-        }
-        
-        .sectors-header {
-            margin-bottom: 1.5rem;
-        }
-        
-        .sectors-subtitle {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--gray-500);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
-        }
-        
-        .sectors-title {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            font-weight: 800;
-            color: var(--gray-900);
-            letter-spacing: -0.02em;
-        }
-        
-        .sectors-subtitle {
-            font-size: 0.9375rem;
-            color: var(--gray-600);
-        }
-        
-        /* ROSEN-STYLE BENTO GRID */
-        .sectors-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
-        }
-        
-        @media (min-width: 600px) {
-            .sectors-grid {
-                grid-template-columns: repeat(2, 1fr);
-                grid-auto-rows: 220px;
-            }
-            /* Oil & Gas - full width */
-            .sectors-grid .sector-card:nth-child(1) {
-                grid-column: span 2;
-            }
-            /* Gestión de Activos - full width (second most important) */
-            .sectors-grid .sector-card:nth-child(4) {
-                grid-column: span 2;
-            }
-        }
-        
-        .sector-card {
-            display: block;
-            position: relative;
-            text-decoration: none;
-            overflow: hidden;
-            min-height: 220px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        @media (min-width: 900px) {
-            .sector-card { min-height: auto; height: 100%; }
-        }
-        
-        /* Gradient overlay */
-        .sector-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.7) 100%);
-            transition: background 0.3s;
-            z-index: 1;
-        }
-        
-        .sector-card:hover::before {
-            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 100%);
-        }
-        
-        /* Icon watermark */
-        .sector-card-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 120px;
-            height: 120px;
-            opacity: 0.15;
-            z-index: 0;
-            transition: opacity 0.3s, transform 0.3s;
-        }
-        
-        @media (min-width: 768px) {
-            .sector-card-icon { width: 160px; height: 160px; }
-        }
-        
-        .sector-card:hover .sector-card-icon {
-            opacity: 0.08;
-            transform: translate(-50%, -50%) scale(1.1);
-        }
-        
-        /* Content overlay */
-        .sector-card-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.25rem;
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-        }
-        
-        @media (min-width: 768px) {
-            .sector-card-content { padding: 1.5rem; }
-        }
-        
-        .sector-card h3 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 0.25rem;
-            text-transform: uppercase;
-            letter-spacing: -0.01em;
-            line-height: 1.1;
-        }
-        
-        @media (min-width: 768px) {
-            .sector-card h3 { font-size: 1.75rem; }
-        }
-        
-        @media (min-width: 900px) {
-            .sectors-grid .sector-card:nth-child(1) h3,
-            .sectors-grid .sector-card:nth-child(4) h3 {
-                font-size: 2.25rem;
-            }
-        }
-        
-        .sector-card-tag {
-            display: inline-block;
-            font-size: 0.6875rem;
-            font-weight: 600;
-            color: rgba(255,255,255,0.7);
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Hover content */
-        .sector-card-hover {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, opacity 0.3s;
-            opacity: 0;
-        }
-        
-        .sector-card:hover .sector-card-hover {
-            max-height: 200px;
-            opacity: 1;
-        }
-        
-        .sector-card p {
-            font-size: 0.875rem;
-            color: rgba(255,255,255,0.85);
-            margin: 0.75rem 0 1rem;
-            line-height: 1.5;
-        }
-        
-        .sector-card-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            font-size: 0.8125rem;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-        }
-        
-        .sector-card-link svg {
-            width: 16px;
-            height: 16px;
-            transition: transform 0.2s;
-        }
-        
-        .sector-card:hover .sector-card-link svg {
-            transform: translateX(4px);
-        }
-        
-        /* Sector-specific backgrounds */
-        .sector-oilgas {
-            background: linear-gradient(135deg, #4A4A49 0%, #2a2a29 100%);
-        }
-        .sector-oilgas .sector-card-icon { fill: #BFBFBF; }
-        
-        .sector-gas {
-            background: linear-gradient(135deg, #233468 0%, #1a2850 100%);
-        }
-        .sector-gas .sector-card-icon { fill: #4DB1BC; }
-        
-        .sector-integridad {
-            background: linear-gradient(135deg, #233468 0%, #151d3a 100%);
-        }
-        .sector-integridad .sector-card-icon { fill: #EB9716; }
-        
-        .sector-activos {
-            background: linear-gradient(135deg, #1a2850 0%, #233468 100%);
-        }
-        .sector-activos .sector-card-icon { fill: #4DB1BC; }
-        
-        .sector-seguridad {
-            background: linear-gradient(135deg, #EB9716 0%, #c47f12 100%);
-        }
-        .sector-seguridad .sector-card-icon { fill: rgba(255,255,255,0.9); }
-        
-        .sector-directivas {
-            background: linear-gradient(135deg, #d48a14 0%, #EB9716 100%);
-        }
-        .sector-directivas .sector-card-icon { fill: #fff; }
-        
-        /* ALIANZAS - WITH LOGOS */
-        .alianzas {
-            padding: 4rem 0;
-            background: var(--dark);
-        }
-        
-        @media (min-width: 768px) {
-            .alianzas { padding: 5rem 0; }
-        }
-        
-        .alianzas-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .alianzas-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-        }
-        
-        @media (min-width: 768px) {
-            .alianzas-title { font-size: 2rem; }
-        }
-        
-        .alianzas-subtitle {
-            font-size: 1rem;
-            color: rgba(255,255,255,0.7);
-        }
-        
-        .alianzas-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-        
-        @media (min-width: 768px) {
-            .alianzas-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        }
-        
-        .alianza-card {
-            padding: 2rem;
-            background: rgba(255,255,255,0.05);
-            border: 2px solid rgba(255,255,255,0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .alianza-card:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: var(--accent);
-        }
-        
-        .alianza-logo {
-            height: 60px;
-            width: auto;
-            max-width: 140px;
-            margin: 0 auto 1.5rem;
-            display: block;
-            object-fit: contain;
-            filter: brightness(0) invert(1);
-            opacity: 0.9;
-        }
-        
-        @media (min-width: 768px) {
-            .alianza-logo { height: 70px; max-width: 160px; }
-        }
-        
-        /* Placeholder for logos - replace with actual logos */
-        .alianza-logo-placeholder {
-            height: 60px;
-            width: 140px;
-            margin: 0 auto 1.5rem;
-            background: rgba(255,255,255,0.1);
-            border: 2px dashed rgba(255,255,255,0.3);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.5);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        @media (min-width: 768px) {
-            .alianza-logo-placeholder { height: 70px; width: 160px; }
-        }
-        
-        .alianza-card h3 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 0.75rem;
-        }
-        
-        .alianza-card p {
-            font-size: 0.9375rem;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.6;
-        }
-        
-        /* MODELO DE TRABAJO - VISUAL 3-STEP PROCESS */
-        .modelo {
-            padding: 4rem 0;
-            background: var(--white);
-        }
-        
-        @media (min-width: 768px) {
-            .modelo { padding: 5rem 0; }
-        }
-        
-        .modelo-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .modelo-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--gray-900);
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: -0.02em;
-        }
-        
-        @media (min-width: 768px) {
-            .modelo-title { font-size: 2rem; }
-        }
-        
-        .modelo-subtitle {
-            font-size: 1rem;
-            color: var(--gray-600);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        /* Steps Grid */
-        .modelo-steps {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        @media (min-width: 768px) {
-            .modelo-steps { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        }
-        
-        .modelo-step {
-            position: relative;
-            padding: 2rem;
-            background: var(--gray-50);
-            border: 2px solid var(--gray-200);
-        }
-        
-        .modelo-step:hover {
-            border-color: var(--accent);
-        }
-        
-        .modelo-step-number {
-            position: absolute;
-            top: -1px;
-            left: -1px;
-            width: 48px;
-            height: 48px;
-            background: var(--dark);
-            color: var(--accent);
-            font-size: 1.25rem;
-            font-weight: 900;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .modelo-step-icon {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 1.25rem;
-            margin-top: 1.5rem;
-            color: var(--accent);
-        }
-        
-        .modelo-step h3 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--gray-900);
-            margin-bottom: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: -0.01em;
-        }
-        
-        .modelo-step p {
-            font-size: 0.9375rem;
-            color: var(--gray-600);
-            line-height: 1.6;
-        }
-        
-        /* Connector line between steps (desktop) */
-        @media (min-width: 768px) {
-            .modelo-step:not(:last-child)::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                right: -1rem;
-                width: 2rem;
-                height: 2px;
-                background: var(--gray-300);
-                transform: translateY(-50%);
-            }
-        }
-        
-        /* Bottom CTA section */
-        .modelo-footer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--gray-200);
-        }
-        
-        @media (min-width: 600px) {
-            .modelo-footer { 
-                flex-direction: row; 
-                justify-content: space-between;
-            }
-        }
-        
-        .modelo-footer-text {
-            font-size: 1rem;
-            color: var(--gray-700);
-            text-align: center;
-        }
-        
-        @media (min-width: 600px) {
-            .modelo-footer-text { text-align: left; }
-        }
-        
-        .modelo-ctas {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-        
-        @media (min-width: 400px) {
-            .modelo-ctas { flex-direction: row; gap: 1rem; }
-        }
-        
-        .modelo-cta-primary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.5rem;
-            background: var(--accent);
-            color: var(--gray-900);
-            font-size: 0.875rem;
-            font-weight: 700;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            transition: background 0.2s;
-        }
-        
-        .modelo-cta-primary:hover {
-            background: var(--accent-light);
-        }
-        
-        .modelo-cta-primary svg {
-            width: 16px;
-            height: 16px;
-        }
-        
-        .modelo-cta-secondary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0.875rem 1.5rem;
-            background: transparent;
-            color: var(--gray-700);
-            font-size: 0.875rem;
-            font-weight: 600;
-            text-decoration: none;
-            border: 2px solid var(--gray-300);
-            text-transform: uppercase;
-            letter-spacing: 0.02em;
-            transition: all 0.2s;
-        }
-        
-        .modelo-cta-secondary:hover {
-            border-color: var(--gray-900);
-            color: var(--gray-900);
-        }
-        
-        /* WHY / INSTRUCTORES */
-        .why {
-            padding: 3rem 0;
-            background: var(--dark);
-        }
-        
-        @media (min-width: 768px) {
-            .why { padding: 4rem 0; }
-        }
-        
-        .why-header {
-            margin-bottom: 2rem;
-        }
-        
-        .why-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--white);
-        }
-        
-        @media (min-width: 768px) {
-            .why-title { font-size: 1.5rem; }
-        }
-        
-        .why-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-        
-        @media (min-width: 768px) {
-            .why-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-        
-        .why-card {
-            padding: 1.25rem;
-            background: var(--dark-soft);
-            border-left: 2px solid var(--accent);
-        }
-        
-        .why-card h3 {
-            font-size: 0.9375rem;
-            font-weight: 600;
-            color: var(--white);
-            margin-bottom: 0.5rem;
-        }
-        
-        .why-card p {
-            font-size: 0.8125rem;
-            color: var(--white);
-            opacity: 0.8;
-        }
-        
-        /* CTA */
-        .cta-section {
-            padding: 3rem 0;
-            background: var(--gray-50);
-        }
-        
-        @media (min-width: 768px) {
-            .cta-section { padding: 4rem 0; }
-        }
-        
-        .cta-box {
-            background: var(--dark);
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            text-align: center;
-        }
-        
-        @media (min-width: 768px) {
-            .cta-box {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                text-align: left;
-                padding: 2.5rem;
-            }
-        }
-        
-        .cta-box h2 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 0.25rem;
-        }
-        
-        .cta-box p {
-            font-size: 0.9375rem;
-            color: var(--white);
-            opacity: 0.75;
-        }
-        
-        .cta-box .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            padding: 0.875rem 1.5rem;
-            background: var(--accent);
-            color: var(--white);
-            font-weight: 600;
-            font-size: 0.875rem;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        
-        .cta-box .btn:hover { background: var(--accent-light); }
-        
-        .cta-box .btn svg { width: 16px; height: 16px; }
-        
-        .cta-actions {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        @media (min-width: 768px) {
-            .cta-actions { 
-                flex-direction: row;
-                align-items: center;
-                gap: 1.5rem;
-            }
-        }
-        
-        .cta-email {
-            font-size: 0.875rem;
-            color: var(--white);
-            opacity: 0.7;
-        }
+        body { font-family: var(--font); font-size: 16px; line-height: 1.5; color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; }
+        
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        @media (min-width: 768px) { .container { padding: 0 48px; } }
+        
+        /* HEADER */
+        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--gray-200); }
+        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+        .logo { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; }
+        .header-nav { display: none; align-items: center; gap: 32px; }
+        @media (min-width: 900px) { .header-nav { display: flex; } }
+        .nav-trigger { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-600); cursor: pointer; display: flex; align-items: center; gap: 6px; transition: color 0.2s; background: none; border: none; font-family: inherit; }
+        .nav-trigger:hover { color: var(--black); }
+        .nav-trigger svg { width: 10px; height: 10px; transition: transform 0.2s; }
+        .nav-trigger.active svg { transform: rotate(180deg); }
+        .header-nav a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+        .header-nav a:hover { color: var(--black); }
+        .header-cta { padding: 10px 20px; background: var(--black); color: var(--white); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
+        .header-cta:hover { opacity: 0.8; }
+        .menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .menu-toggle span { width: 24px; height: 1px; background: var(--black); }
+        @media (min-width: 900px) { .menu-toggle { display: none; } }
+        
+        /* MEGA MENU */
+        .mega-menu { position: fixed; top: 60px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--gray-200); display: none; z-index: 999; }
+        .mega-menu.active { display: block; }
+        .mega-menu-inner { padding: 48px 0; }
+        .mega-menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+        @media (max-width: 899px) { .mega-menu { display: none !important; } }
+        
+        .mega-sector { display: flex; flex-direction: column; }
+        .mega-sector-title { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-200); }
+        .mega-sector-link { font-size: 1rem; font-weight: 600; color: var(--black); text-decoration: none; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; transition: gap 0.2s; }
+        .mega-sector-link:hover { gap: 12px; }
+        .mega-themes { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+        .mega-theme { font-size: 0.8125rem; color: var(--gray-600); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
+        .mega-theme:hover { color: var(--black); }
+        
+        /* MOBILE MENU */
+        .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--white); padding: 24px; z-index: 999; overflow-y: auto; }
+        .mobile-menu.active { display: flex; flex-direction: column; gap: 0; }
+        .mobile-sector { border-bottom: 1px solid var(--gray-200); }
+        .mobile-sector-header { padding: 16px 0; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+        .mobile-sector-header svg { width: 12px; height: 12px; transition: transform 0.2s; }
+        .mobile-sector.active .mobile-sector-header svg { transform: rotate(180deg); }
+        .mobile-sector-content { display: none; padding-bottom: 16px; }
+        .mobile-sector.active .mobile-sector-content { display: block; }
+        .mobile-sector-link { display: block; padding: 8px 0; font-size: 0.875rem; color: var(--black); text-decoration: none; font-weight: 600; }
+        .mobile-theme { display: block; padding: 6px 0 6px 16px; font-size: 0.8125rem; color: var(--gray-600); text-decoration: none; }
+        .mobile-theme:hover { color: var(--black); }
+        
+        /* HERO */
+        .hero { padding-top: 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid var(--gray-200); }
+        .hero-inner { padding: 80px 0; }
+        @media (min-width: 768px) { .hero-inner { padding: 120px 0; } }
+        .hero-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 24px; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; color: var(--black); max-width: 1000px; margin-bottom: 32px; }
+        .hero-description { font-size: 1.125rem; line-height: 1.6; color: var(--gray-600); max-width: 560px; margin-bottom: 48px; }
+        .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 64px; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--black); color: var(--white); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
+        .btn-primary:hover { opacity: 0.8; }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: transparent; color: var(--black); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gray-200); transition: border-color 0.2s; }
+        .btn-secondary:hover { border-color: var(--black); }
+        .hero-stats { display: flex; flex-wrap: wrap; gap: 48px; }
+        .hero-stat { display: flex; flex-direction: column; }
+        .hero-stat-value { font-size: 0.875rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); }
+        .hero-stat-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-top: 4px; }
+        
+        /* SECTORS SECTION */
+        .sectors { padding: 120px 0; border-bottom: 1px solid var(--gray-200); }
+        .sectors-header { margin-bottom: 64px; }
+        .sectors-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 16px; }
+        .sectors-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); max-width: 500px; }
+        
+        .sectors-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200); }
+        @media (min-width: 600px) { .sectors-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 900px) { .sectors-grid { grid-template-columns: repeat(3, 1fr); } }
+        
+        .sector-card { background: var(--white); padding: 32px; display: flex; flex-direction: column; min-height: 280px; transition: background 0.2s; }
+        .sector-card:hover { background: var(--gray-100); }
+        @media (min-width: 768px) { .sector-card { padding: 40px; min-height: 320px; } }
+        .sector-number { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 16px; }
+        .sector-name { font-size: 1.25rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; color: var(--black); margin-bottom: 16px; text-decoration: none; display: block; }
+        .sector-name:hover { text-decoration: underline; }
+        .sector-themes { display: flex; flex-direction: column; gap: 6px; flex-grow: 1; }
+        .sector-theme { font-size: 0.8125rem; color: var(--gray-600); }
+        .sector-link { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; display: flex; align-items: center; gap: 8px; margin-top: 16px; transition: gap 0.2s; }
+        .sector-link:hover { gap: 12px; }
+        
+        /* CTA SECTION */
+        .cta-section { padding: 120px 0; background: var(--black); color: var(--white); }
+        .cta-inner { display: flex; flex-direction: column; gap: 32px; }
+        @media (min-width: 768px) { .cta-inner { flex-direction: row; justify-content: space-between; align-items: center; } }
+        .cta-text h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 8px; }
+        .cta-text p { font-size: 0.9375rem; color: var(--gray-400); }
+        .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--white); color: var(--black); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
+        .cta-btn:hover { opacity: 0.9; }
         
         /* FOOTER */
-        .footer {
-            background: var(--dark);
-            padding: 1.5rem 0;
-        }
-        
-        .footer-inner {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            text-align: center;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-inner {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                text-align: left;
-            }
-        }
-        
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-brand { justify-content: flex-start; }
-        }
-        
-        .footer-brand svg { height: 20px; }
-        
-        .footer-text {
-            font-size: 0.6875rem;
-            color: var(--white);
-            opacity: 0.5;
-        }
-        
-        .footer-contact {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem 1.5rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-contact { justify-content: flex-end; }
-        }
-        
-        .footer-contact a {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-            color: var(--white);
-            opacity: 0.6;
-            text-decoration: none;
-            font-size: 0.6875rem;
-        }
-        
-        .footer-contact a:hover { opacity: 1; }
-        
-        .footer-contact svg {
-            width: 12px;
-            height: 12px;
-            color: var(--accent);
-        }
+        .footer { padding: 48px 0; border-top: 1px solid var(--gray-200); }
+        .footer-inner { display: flex; flex-direction: column; gap: 24px; }
+        @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; } }
+        .footer-brand { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 0.75rem; color: var(--gray-500); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--black); }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="container">
             <div class="header-inner">
-                <a href="capacidades.html" class="logo">
-                    <svg viewBox="0 0 448 321" fill="none">
-                        <path d="M447.909 0.00622804C443.646 116.854 351.192 212.564 240.68 217.568C265.251 269.286 316.17 303.894 375.053 302.206C401.401 301.466 426.18 293.502 447.702 280.21L447.968 0.00622804Z" fill="#E19A24"/>
-                        <path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#0f1419"/>
-                    </svg>
-                </a>
+                <a href="capacidades.html" class="logo">Elite Training</a>
                 <nav class="header-nav">
-                    <span class="nav-trigger" id="sectorsTrigger">Sectores <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></span>
-                    <a href="#nosotros">Nosotros</a>
+                    <button class="nav-trigger" id="sectorsTrigger">
+                        Sectores 
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
                     <a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a>
                 </nav>
-                <div style="display: flex; align-items: center;">
-                    <a href="https://wa.me/573164661007" class="header-cta">Contactar</a>
-                    <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')" aria-label="Menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
+                <a href="https://wa.me/573164661007" class="header-cta">Contactar</a>
+                <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </header>
-    
-    <!-- MEGA MENU - ROSEN Style -->
+
+    <!-- MEGA MENU -->
     <div class="mega-menu" id="megaMenu">
-        <div class="mega-menu-inner">
-            <!-- LEFT VISUAL PANEL -->
-            <div class="mega-menu-visual">
-                <!-- Visual backgrounds for each sector -->
-                <div class="mega-menu-visual-bg active" id="visual-oilgas" style="background: linear-gradient(135deg, #4A4A49 0%, #2d2d2d 100%);">
-                    <div class="mega-menu-visual-icon">
-                        <svg viewBox="0 0 600 600" fill="#BFBFBF"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M394.546 394.616L333.484 160.177L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583L237.779 297.607L235.761 305.704L213.613 394.616H140.645V412.257H291.366V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/></svg>
+        <div class="container">
+            <div class="mega-menu-inner">
+                <div class="mega-menu-grid">
+                    <!-- Row 1 -->
+                    <div class="mega-sector">
+                        <span class="mega-sector-title">01</span>
+                        <a href="landing-gas.html" class="mega-sector-link">Gas Natural, GLP y Energía &rarr;</a>
+                        <div class="mega-themes">
+                            <a href="landing-gas.html#tecnologias" class="mega-theme">Tecnologías del Gas</a>
+                            <a href="landing-gas.html#operacion" class="mega-theme">Operación y Procesos</a>
+                            <a href="landing-gas.html#medicion" class="mega-theme">Medición y Regulación</a>
+                        </div>
                     </div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Oil & Gas</h3>
-                        <p class="mega-menu-visual-desc">29 años formando profesionales en operaciones upstream, downstream y mantenimiento industrial.</p>
-                        <a href="landing-oilgas.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    
+                    <div class="mega-sector">
+                        <span class="mega-sector-title">02</span>
+                        <a href="landing-activos.html" class="mega-sector-link">Gestión de Activos &rarr;</a>
+                        <div class="mega-themes">
+                            <a href="landing-activos.html#mantenimiento" class="mega-theme">Gestión del Mantenimiento</a>
+                            <a href="landing-activos.html#confiabilidad" class="mega-theme">Confiabilidad</a>
+                            <a href="landing-activos.html#activos" class="mega-theme">Gestión de Activos</a>
+                        </div>
                     </div>
-                </div>
-                <div class="mega-menu-visual-bg" id="visual-gas" style="background: linear-gradient(135deg, #233468 0%, #4DB1BC 100%);">
-                    <div class="mega-menu-visual-icon">
-                        <svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M261.374 317.452C263.625 317.565 265.677 317.669 268.127 317.79V337.495L261.158 337.85V362.221C259.625 380.939 244.725 394.834 225.878 394.886L149.353 394.903V400.34H135.934V350.585H158.954C154.496 341.399 157.361 329.227 170.581 321.573C180.339 315.929 190.866 316.249 199.879 323.565C210.043 331.815 212.623 342.707 208.086 355.875H221.506L221.661 338.092V317.868L221.644 317.158V219.889L215.627 200.055L227.168 167.77C234.354 156.948 244.544 151.399 257.478 151.2L294.663 144.672H314.09L320.341 151.156L352.106 151.165C372.737 151.364 387.81 166.411 388.174 187.06V227.647L396.009 229.854C455.288 247.533 482.274 316.638 450.786 369.874V415.578C448.639 425.456 442.076 432.235 432.7 432.227V405.301L384.832 418.695V438.425C384.659 448.512 377.992 455.36 368.382 455.325V416.314L320.488 415.309C320.324 425.43 313.692 432.287 304.151 432.244V376.861C288.178 374.437 287.451 371.762 286.239 369.666C254.855 315.47 282.222 245.3 344.583 228.876V219.941L342.574 200.245L341.587 190.35L314.212 196.973H294.048L268.759 190.35C261.452 190.35 260.742 191.181 261.53 199.475V219.136L261.357 219.751V317.452Z"/></svg>
+                    
+                    <div class="mega-sector">
+                        <span class="mega-sector-title">03</span>
+                        <a href="landing-directivas.html" class="mega-sector-link">Habilidades Directivas &rarr;</a>
+                        <div class="mega-themes">
+                            <a href="landing-directivas.html#gestion" class="mega-theme">Gestión y Estrategia</a>
+                            <a href="landing-directivas.html#liderazgo" class="mega-theme">Liderazgo y Organización</a>
+                        </div>
                     </div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Gas Natural</h3>
-                        <p class="mega-menu-visual-desc">Especialización en medición, compresión, tratamiento y distribución de gas natural y GLP.</p>
-                        <a href="landing-gas.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    
+                    <!-- Row 2 -->
+                    <div class="mega-sector">
+                        <span class="mega-sector-title">04</span>
+                        <a href="landing-integridad.html" class="mega-sector-link">Integridad y Equipos &rarr;</a>
+                        <div class="mega-themes">
+                            <a href="landing-integridad.html#integridad" class="mega-theme">Integridad Mecánica</a>
+                            <a href="landing-integridad.html#codigos" class="mega-theme">Inspección y Códigos</a>
+                            <a href="landing-integridad.html#rotativos" class="mega-theme">Equipos Rotativos</a>
+                            <a href="landing-integridad.html#catodica" class="mega-theme">Protección Catódica</a>
+                        </div>
                     </div>
-                </div>
-                <div class="mega-menu-visual-bg" id="visual-integridad" style="background: linear-gradient(135deg, #233468 0%, #EB9716 100%);">
-                    <div class="mega-menu-visual-icon">
-                        <svg viewBox="0 0 600 600" fill="#EB9716"><path d="M481.792 436.47H118.195V401.869H126.848V235.731H127.529C133.736 212.459 181.671 195.105 240.715 195.105L241.127 195.105C299.979 195.182 347.713 212.507 353.901 235.731H354.62L353.325 401.859H481.802V436.47Z"/></svg>
+                    
+                    <div class="mega-sector">
+                        <span class="mega-sector-title">05</span>
+                        <a href="landing-oilgas.html" class="mega-sector-link">Oil and Gas &rarr;</a>
+                        <div class="mega-themes">
+                            <a href="landing-oilgas.html#facilidades" class="mega-theme">Producción y Facilidades</a>
+                            <a href="landing-oilgas.html#levantamiento" class="mega-theme">Levantamiento Artificial</a>
+                            <a href="landing-oilgas.html#perforacion" class="mega-theme">Perforación y Pozos</a>
+                            <a href="landing-oilgas.html#yacimientos" class="mega-theme">Yacimientos</a>
+                        </div>
                     </div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Integridad Mecánica</h3>
-                        <p class="mega-menu-visual-desc">Normas ASME, API, RBI y Fitness-for-Service para equipos y sistemas críticos.</p>
-                        <a href="landing-integridad.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="mega-menu-visual-bg" id="visual-activos" style="background: linear-gradient(135deg, #233468 0%, #4DB1BC 100%);">
-                    <div class="mega-menu-visual-icon">
-                        <svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M456.177 421.501C456.177 419.816 455.556 418.131 455.201 416.446C453.804 410.008 450.46 404.156 445.623 399.684L399.862 359.776L358.801 325.721L356.85 317.474C359.319 309.913 360.176 301.919 359.366 294.006C358.557 286.094 356.098 278.439 352.15 271.535C346.727 261.326 338.373 252.973 328.163 247.552C317.953 242.131 306.354 239.889 294.86 241.116L273.93 246.969L270.591 254.75L298.584 276.59C301.185 278.432 303.164 281.023 304.257 284.017L304.704 293.351C304.146 296.229 302.757 298.881 300.707 300.977L283.816 305.048L256.37 272.954L246.881 274.018C244.379 279.694 242.563 285.649 241.471 291.755C240.099 301.308 241.088 311.052 244.353 320.134L285.313 357.38L318.006 356.406L325.988 358.978L399.862 445.534L420.526 455.91L442.224 450.576L456.177 426.378V421.501Z"/></svg>
-                    </div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Gestión de Activos</h3>
-                        <p class="mega-menu-visual-desc">Metodologías ISO 55001, IAM y estrategias de confiabilidad operacional.</p>
-                        <a href="landing-activos.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="mega-menu-visual-bg" id="visual-seguridad" style="background: linear-gradient(135deg, #EB9716 0%, #c47f12 100%);">
-                    <div class="mega-menu-visual-icon">
-                        <svg viewBox="0 0 600 600" fill="#fff"><path d="M363.624 272.716C360.011 267.584 350.02 269.604 349.389 275.789L337.161 321.384L336.367 321.289L338.012 257.884L329.636 250.876L313.804 319.987L306.299 251.488L288.88 251.661L288.048 320.006L273.363 258.488L255.542 259.665L266.413 347.093L242.798 335.067L221.726 337.863L260.915 395.101L343.26 395.101L355.689 368.004V337.623L364.208 279.83L363.624 272.716Z"/><path d="M443.71 455.197H156.3C142.361 455.197 130.066 448.131 123.402 436.306L123.947 400.821L267.652 162.744C274.431 151.503 286.525 144.801 299.996 144.801L332.339 162.744L476.044 400.821C482.698 411.842 482.899 425.113 476.599 436.306C469.954 448.131 457.65 455.197 443.71 455.197Z"/></svg>
-                    </div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Seguridad de Procesos</h3>
-                        <p class="mega-menu-visual-desc">NFPA, PSM, Arc Flash y análisis de riesgos para operaciones seguras.</p>
-                        <a href="landing-seguridad.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-                    </div>
-                </div>
-                <div class="mega-menu-visual-bg" id="visual-directivas" style="background: linear-gradient(135deg, #EB9716 0%, #d48a14 100%);">
-                    <div class="mega-menu-visual-icon">
-                        <svg viewBox="0 0 600 600" fill="#fff"><path d="M254.118 241.109L251.549 245.473L255.999 263.013L274.515 291.391C289.213 307.969 311.519 307.668 326.066 290.938L344.984 261.743L348.522 245.265L343.362 233.803L344.152 223.849C345.486 204.845 336.745 190.685 319.521 184.362L281.72 183.931C268.077 188.768 258.432 197.761 256.494 212.66L256.616 234.83L254.118 241.109Z"/><path d="M415.445 383.379L375.657 331.936L335.187 332.769L303.422 402.441L264.882 343.706L219.145 333.178C190.466 353.23 181.682 371.559 180.892 393.786L264.682 418.739L410.794 406.352L416.22 399.319L415.445 383.379Z"/></svg>
-                    </div>
-                    <div class="mega-menu-visual-content">
-                        <h3 class="mega-menu-visual-title">Habilidades Directivas</h3>
-                        <p class="mega-menu-visual-desc">Liderazgo, comunicación y gestión para equipos técnicos de alto rendimiento.</p>
-                        <a href="landing-directivas.html" class="mega-menu-visual-cta">Explorar programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+                    
+                    <div class="mega-sector">
+                        <span class="mega-sector-title">06</span>
+                        <a href="landing-seguridad.html" class="mega-sector-link">Seguridad y Riesgos &rarr;</a>
+                        <div class="mega-themes">
+                            <a href="landing-seguridad.html#procesos" class="mega-theme">Seguridad de Procesos</a>
+                            <a href="landing-seguridad.html#riesgos" class="mega-theme">Análisis de Riesgos</a>
+                            <a href="landing-seguridad.html#electrica" class="mega-theme">Seguridad Eléctrica</a>
+                            <a href="landing-seguridad.html#investigacion" class="mega-theme">Investigación</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- RIGHT PANEL -->
-            <div class="mega-menu-right">
-                <div class="mega-menu-sectors">
-                    <a href="landing-oilgas.html" class="mega-menu-sector-item active mega-oilgas" data-sector="oilgas">
-                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M394.546 394.616L333.484 160.177L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583L237.779 297.607L235.761 305.704L213.613 394.616H140.645V412.257H291.366V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/></svg></div>
-                        <span class="mega-menu-sector-name">Oil and Gas</span>
-                    </a>
-                    <a href="landing-gas.html" class="mega-menu-sector-item mega-gas" data-sector="gas">
-                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M261.374 317.452C263.625 317.565 265.677 317.669 268.127 317.79V337.495L261.158 337.85V362.221C259.625 380.939 244.725 394.834 225.878 394.886L149.353 394.903V400.34H135.934V350.585H158.954C154.496 341.399 157.361 329.227 170.581 321.573C180.339 315.929 190.866 316.249 199.879 323.565C210.043 331.815 212.623 342.707 208.086 355.875H221.506L221.661 338.092V317.868L221.644 317.158V219.889L215.627 200.055L227.168 167.77C234.354 156.948 244.544 151.399 257.478 151.2L294.663 144.672H314.09L320.341 151.156L352.106 151.165C372.737 151.364 387.81 166.411 388.174 187.06V227.647L396.009 229.854C455.288 247.533 482.274 316.638 450.786 369.874V415.578C448.639 425.456 442.076 432.235 432.7 432.227V405.301L384.832 418.695V438.425C384.659 448.512 377.992 455.36 368.382 455.325V416.314L320.488 415.309C320.324 425.43 313.692 432.287 304.151 432.244V376.861C288.178 374.437 287.451 371.762 286.239 369.666C254.855 315.47 282.222 245.3 344.583 228.876V219.941L342.574 200.245L341.587 190.35L314.212 196.973H294.048L268.759 190.35C261.452 190.35 260.742 191.181 261.53 199.475V219.136L261.357 219.751V317.452Z"/></svg></div>
-                        <span class="mega-menu-sector-name">Gas Natural, GLP y Energía</span>
-                    </a>
-                    <a href="landing-integridad.html" class="mega-menu-sector-item mega-integridad" data-sector="integridad">
-                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M481.792 436.47H118.195V401.869H126.848V235.731H127.529C133.736 212.459 181.671 195.105 240.715 195.105L241.127 195.105C299.979 195.182 347.713 212.507 353.901 235.731H354.62L353.325 401.859H481.802V436.47Z"/></svg></div>
-                        <span class="mega-menu-sector-name">Integridad y Equipos</span>
-                    </a>
-                    <a href="landing-activos.html" class="mega-menu-sector-item mega-activos" data-sector="activos">
-                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M456.177 421.501C456.177 419.816 455.556 418.131 455.201 416.446C453.804 410.008 450.46 404.156 445.623 399.684L399.862 359.776L358.801 325.721L356.85 317.474C359.319 309.913 360.176 301.919 359.366 294.006C358.557 286.094 356.098 278.439 352.15 271.535C346.727 261.326 338.373 252.973 328.163 247.552C317.953 242.131 306.354 239.889 294.86 241.116L273.93 246.969L270.591 254.75L298.584 276.59C301.185 278.432 303.164 281.023 304.257 284.017L304.704 293.351C304.146 296.229 302.757 298.881 300.707 300.977L283.816 305.048L256.37 272.954L246.881 274.018C244.379 279.694 242.563 285.649 241.471 291.755C240.099 301.308 241.088 311.052 244.353 320.134L285.313 357.38L318.006 356.406L325.988 358.978L399.862 445.534L420.526 455.91L442.224 450.576L456.177 426.378V421.501Z"/></svg></div>
-                        <span class="mega-menu-sector-name">Gestión de Activos, Mantenimiento y Confiabilidad</span>
-                    </a>
-                    <a href="landing-seguridad.html" class="mega-menu-sector-item mega-seguridad" data-sector="seguridad">
-                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M363.624 272.716C360.011 267.584 350.02 269.604 349.389 275.789L337.161 321.384L336.367 321.289L338.012 257.884L329.636 250.876L313.804 319.987L306.299 251.488L288.88 251.661L288.048 320.006L273.363 258.488L255.542 259.665L266.413 347.093L242.798 335.067L221.726 337.863L260.915 395.101L343.26 395.101L355.689 368.004V337.623L364.208 279.83L363.624 272.716Z"/><path d="M443.71 455.197H156.3C142.361 455.197 130.066 448.131 123.402 436.306L123.947 400.821L267.652 162.744C274.431 151.503 286.525 144.801 299.996 144.801L332.339 162.744L476.044 400.821C482.698 411.842 482.899 425.113 476.599 436.306C469.954 448.131 457.65 455.197 443.71 455.197Z"/></svg></div>
-                        <span class="mega-menu-sector-name">Seguridad-Riesgos</span>
-                    </a>
-                    <a href="landing-directivas.html" class="mega-menu-sector-item mega-directivas" data-sector="directivas">
-                        <div class="mega-menu-icon"><svg viewBox="0 0 600 600"><path d="M254.118 241.109L251.549 245.473L255.999 263.013L274.515 291.391C289.213 307.969 311.519 307.668 326.066 290.938L344.984 261.743L348.522 245.265L343.362 233.803L344.152 223.849C345.486 204.845 336.745 190.685 319.521 184.362L281.72 183.931C268.077 188.768 258.432 197.761 256.494 212.66L256.616 234.83L254.118 241.109Z"/><path d="M415.445 383.379L375.657 331.936L335.187 332.769L303.422 402.441L264.882 343.706L219.145 333.178C190.466 353.23 181.682 371.559 180.892 393.786L264.682 418.739L410.794 406.352L416.22 399.319L415.445 383.379Z"/></svg></div>
-                        <span class="mega-menu-sector-name">Habilidades Directivas</span>
-                    </a>
-            </div>
-            <div class="mega-menu-content active" id="content-oilgas">
-                <div class="mega-menu-content-header">
-                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
-                    <h3 class="mega-menu-content-title">Oil and Gas</h3>
-                    <p class="mega-menu-content-desc">Producción, perforación, facilidades y mantenimiento</p>
-                </div>
-                <div class="mega-menu-links-grid">
-                    <a href="landing-oilgas.html#upstream" class="mega-menu-link">Operaciones Upstream</a>
-                    <a href="landing-oilgas.html#downstream" class="mega-menu-link">Procesos Downstream</a>
-                    <a href="landing-oilgas.html#perforacion" class="mega-menu-link">Perforación y Completamiento</a>
-                    <a href="landing-oilgas.html#facilidades" class="mega-menu-link">Facilidades de Superficie</a>
-                    <a href="landing-oilgas.html#produccion" class="mega-menu-link">Optimización de Producción</a>
-                    <a href="landing-oilgas.html#tratamiento" class="mega-menu-link">Tratamiento de Crudo</a>
-                </div>
-                <a href="landing-oilgas.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-            </div>
-            <div class="mega-menu-content" id="content-gas">
-                <div class="mega-menu-content-header">
-                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
-                    <h3 class="mega-menu-content-title">Gas Natural, GLP y Energía</h3>
-                    <p class="mega-menu-content-desc">Medición, compresión, tratamiento y distribución</p>
-                </div>
-                <div class="mega-menu-links-grid">
-                    <a href="landing-gas.html#medicion" class="mega-menu-link">Medición de Gas</a>
-                    <a href="landing-gas.html#compresion" class="mega-menu-link">Compresión</a>
-                    <a href="landing-gas.html#tratamiento" class="mega-menu-link">Tratamiento y Deshidratación</a>
-                    <a href="landing-gas.html#glp" class="mega-menu-link">GLP y Fraccionamiento</a>
-                    <a href="landing-gas.html#transporte" class="mega-menu-link">Transporte por Ductos</a>
-                    <a href="landing-gas.html#distribucion" class="mega-menu-link">Distribución y Comercialización</a>
-                </div>
-                <a href="landing-gas.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-            </div>
-            <div class="mega-menu-content" id="content-integridad">
-                <div class="mega-menu-content-header">
-                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
-                    <h3 class="mega-menu-content-title">Integridad y Equipos</h3>
-                    <p class="mega-menu-content-desc">ASME, API, RBI, Fitness-for-Service</p>
-                </div>
-                <div class="mega-menu-links-grid">
-                    <a href="landing-integridad.html#asme" class="mega-menu-link">Códigos ASME (Sección VIII)</a>
-                    <a href="landing-integridad.html#api" class="mega-menu-link">Inspección API 510/570/653</a>
-                    <a href="landing-integridad.html#rbi" class="mega-menu-link">Inspección Basada en Riesgo (RBI)</a>
-                    <a href="landing-integridad.html#ffs" class="mega-menu-link">Fitness-for-Service (API 579)</a>
-                    <a href="landing-integridad.html#recipientes" class="mega-menu-link">Recipientes a Presión</a>
-                    <a href="landing-integridad.html#tuberias" class="mega-menu-link">Sistemas de Tuberías</a>
-                </div>
-                <a href="landing-integridad.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-            </div>
-            <div class="mega-menu-content" id="content-activos">
-                <div class="mega-menu-content-header">
-                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
-                    <h3 class="mega-menu-content-title">Gestión de Activos, Mantenimiento y Confiabilidad</h3>
-                    <p class="mega-menu-content-desc">ISO 55001, IAM, RCM, Confiabilidad</p>
-                </div>
-                <div class="mega-menu-links-grid">
-                    <a href="landing-activos.html#iso" class="mega-menu-link">ISO 55001 / PAS 55</a>
-                    <a href="landing-activos.html#iam" class="mega-menu-link">Certificación IAM (TWPL)</a>
-                    <a href="landing-activos.html#rcm" class="mega-menu-link">RCM - Mantenimiento Centrado en Confiabilidad</a>
-                    <a href="landing-activos.html#apm" class="mega-menu-link">APM - Asset Performance Management</a>
-                    <a href="landing-activos.html#costos" class="mega-menu-link">Costos de Ciclo de Vida</a>
-                    <a href="landing-activos.html#estrategia" class="mega-menu-link">Estrategia de Mantenimiento</a>
-                </div>
-                <a href="landing-activos.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-            </div>
-            <div class="mega-menu-content" id="content-seguridad">
-                <div class="mega-menu-content-header">
-                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
-                    <h3 class="mega-menu-content-title">Seguridad-Riesgos</h3>
-                    <p class="mega-menu-content-desc">NFPA, PSM, Arc Flash, Investigación de Accidentes</p>
-                </div>
-                <div class="mega-menu-links-grid">
-                    <a href="landing-seguridad.html#nfpa70e" class="mega-menu-link">NFPA 70E - Seguridad Eléctrica</a>
-                    <a href="landing-seguridad.html#arcflash" class="mega-menu-link">Arc Flash - Análisis y Prevención</a>
-                    <a href="landing-seguridad.html#psm" class="mega-menu-link">PSM - Process Safety Management</a>
-                    <a href="landing-seguridad.html#nfpa652" class="mega-menu-link">NFPA 652 - Polvos Combustibles</a>
-                    <a href="landing-seguridad.html#investigacion" class="mega-menu-link">Investigación de Accidentes</a>
-                    <a href="landing-seguridad.html#hazop" class="mega-menu-link">HAZOP y Análisis de Riesgos</a>
-                </div>
-                <a href="landing-seguridad.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-            </div>
-            <div class="mega-menu-content" id="content-directivas">
-                <div class="mega-menu-content-header">
-                    <span class="mega-menu-content-eyebrow">Sector Especializado</span>
-                    <h3 class="mega-menu-content-title">Habilidades Directivas</h3>
-                    <p class="mega-menu-content-desc">Liderazgo, comunicación y gestión para equipos técnicos</p>
-                </div>
-                <div class="mega-menu-links-grid">
-                    <a href="landing-directivas.html#liderazgo" class="mega-menu-link">Liderazgo para Ingenieros</a>
-                    <a href="landing-directivas.html#comunicacion" class="mega-menu-link">Comunicación Efectiva</a>
-                    <a href="landing-directivas.html#gestion" class="mega-menu-link">Gestión de Equipos Técnicos</a>
-                    <a href="landing-directivas.html#negociacion" class="mega-menu-link">Negociación y Resolución de Conflictos</a>
-                    <a href="landing-directivas.html#presentaciones" class="mega-menu-link">Presentaciones de Alto Impacto</a>
-                    <a href="landing-directivas.html#tiempo" class="mega-menu-link">Gestión del Tiempo y Prioridades</a>
-                </div>
-                <a href="landing-directivas.html" class="mega-menu-footer-cta">Ver todos los programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-            </div>
-            </div><!-- end mega-menu-right -->
         </div>
     </div>
-    
+
+    <!-- MOBILE MENU -->
     <nav class="mobile-menu" id="mobileMenu">
-        <div class="mobile-accordion" onclick="this.classList.toggle('active')">
-            <div class="mobile-accordion-header">
-                Sectores
+        <div class="mobile-sector" onclick="this.classList.toggle('active')">
+            <div class="mobile-sector-header">
+                Gas Natural, GLP y Energía
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
-            <div class="mobile-accordion-content">
-                <a href="landing-oilgas.html" class="mobile-sector-link">
-                    <div class="mobile-sector-icon mega-oilgas" style="background:#4A4A49;"><svg viewBox="0 0 600 600" fill="#BFBFBF"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M394.546 394.616L333.484 160.177L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583L237.779 297.607L235.761 305.704L213.613 394.616H140.645V412.257H291.366V410.878H292.837V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/></svg></div>
-                    Oil & Gas
-                </a>
-                <a href="landing-gas.html" class="mobile-sector-link">
-                    <div class="mobile-sector-icon" style="background:#233468;"><svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M261.374 317.452C263.625 317.565 265.677 317.669 268.127 317.79V337.495L261.158 337.85V347.789C261.106 352.602 261.235 357.425 260.906 362.221C259.625 380.939 244.725 394.834 225.878 394.886L149.353 394.903V400.34H135.934V350.585H142.747L143.526 355.771H158.954C154.496 341.399 157.361 329.227 170.581 321.573C180.339 315.929 190.866 316.249 199.879 323.565C210.043 331.815 212.623 342.707 208.086 355.875H218.198L221.506 351.347V338.092L215.662 337.322V317.868L221.644 317.158V219.889L215.627 219.128V200.055L221.748 192.237C221.393 183.631 222.224 175.207 227.168 167.77C234.354 156.948 244.544 151.399 257.478 151.2L293.883 151.156L294.663 144.672H314.09L314.844 151.156H320.341L352.106 151.165C372.737 151.364 387.81 166.411 388.174 187.06V199.241L394.511 200.15V219.205L388.65 219.69V227.647L396.009 229.854C455.288 247.533 482.274 316.638 450.786 369.874L448.829 377.554V415.578C448.639 425.456 442.076 432.235 432.7 432.227C423.332 432.218 416.761 425.482 416.562 415.613V405.301L386.676 415.041L384.832 418.695V438.425C384.659 448.512 377.992 455.36 368.382 455.325C359.11 455.29 352.435 448.39 352.331 438.59V416.314L320.497 404.877V415.309C320.324 425.43 313.692 432.287 304.151 432.244C294.983 432.209 288.377 425.274 288.308 415.361V376.861C288.178 374.437 287.451 371.762 286.239 369.666C254.855 315.47 282.222 245.3 344.583 228.876L348.885 227.551V219.941L342.574 219.076V200.245L348.669 199.302C349.742 191.484 348.799 190.341 341.587 190.35L316.082 190.419L314.766 190.834L314.212 196.973H294.541L294.048 190.35H268.759C261.452 190.35 260.742 191.181 261.53 199.475L268.508 199.994V219.136L261.357 219.751V317.452H261.374Z"/></svg></div>
-                    Gas Natural
-                </a>
-                <a href="landing-integridad.html" class="mobile-sector-link">
-                    <div class="mobile-sector-icon" style="background:#233468;"><svg viewBox="0 0 600 600" fill="#EB9716"><path d="M481.792 436.47H118.195V401.869H126.848V235.731H127.529C133.736 212.459 181.671 195.105 240.715 195.105L241.127 195.105C299.979 195.182 347.713 212.507 353.901 235.731H354.62L353.325 401.859H481.802V436.47Z"/></svg></div>
-                    Integridad Mecánica
-                </a>
-                <a href="landing-activos.html" class="mobile-sector-link">
-                    <div class="mobile-sector-icon" style="background:#233468;"><svg viewBox="0 0 600 600" fill="#4DB1BC"><path d="M456.177 421.501C456.177 419.816 455.556 418.131 455.201 416.446C453.804 410.008 450.46 404.156 445.623 399.684L399.862 359.776L358.801 325.721L356.391 321.937L356.85 317.474C359.319 309.913 360.176 301.919 359.366 294.006C358.557 286.094 356.098 278.439 352.15 271.535C346.727 261.326 338.373 252.973 328.163 247.552C317.953 242.131 306.354 239.889 294.86 241.116L273.93 246.969L269.976 251.617L270.591 254.75L272.866 256.991L298.584 276.59C301.185 278.432 303.164 281.023 304.257 284.017L304.704 293.351C304.146 296.229 302.757 298.881 300.707 300.977L293.175 305.146L283.816 305.048L276.236 299.559L256.37 272.954L254.201 270.932L251.281 270.414L248.549 271.566L246.881 274.018C244.379 279.694 242.563 285.649 241.471 291.755C240.099 301.308 241.088 311.052 244.353 320.134L260.199 343.854L285.313 357.38L313.838 357.559L318.006 356.406L322.446 356.3L325.988 358.978L370.33 412.189L399.862 445.534L409.14 452.822L420.526 455.91L427 455.91L442.224 450.576L452.541 438.173L456.177 426.378V421.501Z"/></svg></div>
-                    Gestión de Activos
-                </a>
-                <a href="landing-seguridad.html" class="mobile-sector-link">
-                    <div class="mobile-sector-icon" style="background:#EB9716;"><svg viewBox="0 0 600 600" fill="#BFBFBF"><path d="M363.624 272.716C360.011 267.584 350.02 269.604 349.389 275.789L337.161 321.384L336.367 321.289L338.012 257.884L329.636 250.876L320.592 258.057L313.804 319.987L312.992 319.987L306.299 251.488L297.924 244.48L288.88 251.661L288.048 320.006L287.255 320.101L273.363 258.488L264.3 251.795L255.542 259.665L266.413 347.093L264.672 348.902L242.798 335.067L240.159 331.582L221.726 337.863L260.915 395.101L343.26 395.101L351.31 382.663L355.689 368.004V337.623L355.708 337.116L364.208 279.83L363.624 272.716Z"/><path d="M443.71 455.197H156.3C142.361 455.197 130.066 448.131 123.402 436.306L123.947 400.821L267.652 162.744C274.431 151.503 286.525 144.801 299.996 144.801L332.339 162.744L476.044 400.821C482.698 411.842 482.899 425.113 476.599 436.306C469.954 448.131 457.65 455.197 443.71 455.197Z"/></svg></div>
-                    Seguridad de Procesos
-                </a>
-                <a href="landing-directivas.html" class="mobile-sector-link">
-                    <div class="mobile-sector-icon" style="background:#EB9716;"><svg viewBox="0 0 600 600" fill="#ffffff"><path d="M254.118 241.109L251.549 245.473L255.999 263.013L260.75 270.692L274.515 291.391C289.213 307.969 311.519 307.668 326.066 290.938L337.728 273.707L344.984 261.743L348.522 245.265L346.477 241.526L343.362 233.803L344.152 223.849C345.486 204.845 336.745 190.685 319.521 184.362L281.72 183.931C268.077 188.768 258.432 197.761 256.494 212.66L256.616 234.83L254.118 241.109Z"/><path d="M415.445 383.379L375.657 331.936L344.696 318.767L335.187 332.769L303.422 402.441L293.87 402.427L264.882 343.706L258.287 316.248L219.145 333.178L208.186 339.536C190.466 353.23 181.682 371.559 180.892 393.786L191.521 408.484L264.682 418.739L342.715 417.806L410.794 406.352L416.22 399.319L415.445 383.379Z"/></svg></div>
-                    Habilidades Directivas
-                </a>
+            <div class="mobile-sector-content">
+                <a href="landing-gas.html" class="mobile-sector-link">Ver sector &rarr;</a>
+                <a href="landing-gas.html#tecnologias" class="mobile-theme">Tecnologías del Gas</a>
+                <a href="landing-gas.html#operacion" class="mobile-theme">Operación y Procesos</a>
+                <a href="landing-gas.html#medicion" class="mobile-theme">Medición y Regulación</a>
             </div>
         </div>
-        <a href="#nosotros">Nosotros</a>
-        <a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a>
-        <a href="https://wa.me/573164661007">Contactar</a>
+        
+        <div class="mobile-sector" onclick="this.classList.toggle('active')">
+            <div class="mobile-sector-header">
+                Gestión de Activos
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="mobile-sector-content">
+                <a href="landing-activos.html" class="mobile-sector-link">Ver sector &rarr;</a>
+                <a href="landing-activos.html#mantenimiento" class="mobile-theme">Gestión del Mantenimiento</a>
+                <a href="landing-activos.html#confiabilidad" class="mobile-theme">Confiabilidad</a>
+                <a href="landing-activos.html#activos" class="mobile-theme">Gestión de Activos</a>
+            </div>
+        </div>
+        
+        <div class="mobile-sector" onclick="this.classList.toggle('active')">
+            <div class="mobile-sector-header">
+                Habilidades Directivas
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="mobile-sector-content">
+                <a href="landing-directivas.html" class="mobile-sector-link">Ver sector &rarr;</a>
+                <a href="landing-directivas.html#gestion" class="mobile-theme">Gestión y Estrategia</a>
+                <a href="landing-directivas.html#liderazgo" class="mobile-theme">Liderazgo y Organización</a>
+            </div>
+        </div>
+        
+        <div class="mobile-sector" onclick="this.classList.toggle('active')">
+            <div class="mobile-sector-header">
+                Integridad y Equipos
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="mobile-sector-content">
+                <a href="landing-integridad.html" class="mobile-sector-link">Ver sector &rarr;</a>
+                <a href="landing-integridad.html#integridad" class="mobile-theme">Integridad Mecánica</a>
+                <a href="landing-integridad.html#codigos" class="mobile-theme">Inspección y Códigos</a>
+                <a href="landing-integridad.html#rotativos" class="mobile-theme">Equipos Rotativos</a>
+                <a href="landing-integridad.html#catodica" class="mobile-theme">Protección Catódica</a>
+            </div>
+        </div>
+        
+        <div class="mobile-sector" onclick="this.classList.toggle('active')">
+            <div class="mobile-sector-header">
+                Oil and Gas
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="mobile-sector-content">
+                <a href="landing-oilgas.html" class="mobile-sector-link">Ver sector &rarr;</a>
+                <a href="landing-oilgas.html#facilidades" class="mobile-theme">Producción y Facilidades</a>
+                <a href="landing-oilgas.html#levantamiento" class="mobile-theme">Levantamiento Artificial</a>
+                <a href="landing-oilgas.html#perforacion" class="mobile-theme">Perforación y Pozos</a>
+                <a href="landing-oilgas.html#yacimientos" class="mobile-theme">Yacimientos</a>
+            </div>
+        </div>
+        
+        <div class="mobile-sector" onclick="this.classList.toggle('active')">
+            <div class="mobile-sector-header">
+                Seguridad y Riesgos
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </div>
+            <div class="mobile-sector-content">
+                <a href="landing-seguridad.html" class="mobile-sector-link">Ver sector &rarr;</a>
+                <a href="landing-seguridad.html#procesos" class="mobile-theme">Seguridad de Procesos</a>
+                <a href="landing-seguridad.html#riesgos" class="mobile-theme">Análisis de Riesgos</a>
+                <a href="landing-seguridad.html#electrica" class="mobile-theme">Seguridad Eléctrica</a>
+                <a href="landing-seguridad.html#investigacion" class="mobile-theme">Investigación</a>
+            </div>
+        </div>
     </nav>
 
+    <!-- HERO -->
     <section class="hero">
         <div class="container">
             <div class="hero-inner">
-                <div class="hero-content">
-                    <h1>Desarrollo de competencias técnicas para industrias de alto riesgo</h1>
-                    <p class="hero-description">Formamos equipos de operaciones, mantenimiento e integridad de las principales empresas de Oil & Gas, energía e industria en Latinoamérica. Proveedor autorizado ASME. Partner exclusivo de The Woodhouse Partnership.</p>
-                    <div class="hero-ctas">
-                        <a href="#especializacion" class="hero-cta">
-                            Ver áreas de especialización
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                        </a>
-                        <a href="https://wa.me/573164661007?text=Solicito%20el%20portafolio%20completo" class="hero-cta-secondary">Solicitar portafolio</a>
-                    </div>
+                <p class="hero-label">29 años formando la industria</p>
+                <h1>Formación técnica para industrias de alto riesgo</h1>
+                <p class="hero-description">Oil & Gas, Integridad Mecánica, Gestión de Activos, Seguridad de Procesos. Partner exclusivo The Woodhouse Partnership. Proveedor ASME.</p>
+                
+                <div class="hero-ctas">
+                    <a href="https://wa.me/573164661007?text=Quiero%20información%20sobre%20capacitación" class="btn-primary">Agendar Llamada &rarr;</a>
+                    <a href="#sectores" class="btn-secondary">Ver Sectores</a>
                 </div>
+                
                 <div class="hero-stats">
                     <div class="hero-stat">
-                        <span class="hero-stat-number">29</span>
-                        <span class="hero-stat-label">Años de operación</span>
+                        <span class="hero-stat-value">29</span>
+                        <span class="hero-stat-label">Años</span>
                     </div>
                     <div class="hero-stat">
-                        <span class="hero-stat-number">11</span>
-                        <span class="hero-stat-label">Países</span>
+                        <span class="hero-stat-value">TWPL</span>
+                        <span class="hero-stat-label">Partner</span>
                     </div>
                     <div class="hero-stat">
-                        <span class="hero-stat-number">6</span>
-                        <span class="hero-stat-label">Áreas de especialización</span>
+                        <span class="hero-stat-value">ASME</span>
+                        <span class="hero-stat-label">Proveedor</span>
                     </div>
                     <div class="hero-stat">
-                        <span class="hero-stat-number">+50</span>
-                        <span class="hero-stat-label">Instructores especializados</span>
+                        <span class="hero-stat-value">6</span>
+                        <span class="hero-stat-label">Sectores</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="credentials">
-        <div class="container">
-            <div class="credentials-inner">
-                <div class="credential-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    Proveedor <strong>ASME</strong>
-                </div>
-                <div class="credential-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                    Partner <strong>TWPL</strong>
-                </div>
-                <div class="credential-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-                    Credenciales <strong>IADC</strong>
-                </div>
-                <div class="credential-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-                    Badges <strong>Credly</strong>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="clients">
-        <div class="container">
-            <p class="clients-label">Clientes</p>
-            <div class="clients-grid">
-                <img src="assets/logos/ecopetrol.png" alt="Ecopetrol" class="client-logo">
-                <img src="assets/logos/frontera.jpg" alt="Frontera" class="client-logo">
-                <img src="assets/logos/parex.png" alt="Parex" class="client-logo">
-                <img src="assets/logos/promigas.jpg" alt="Promigas" class="client-logo">
-                <img src="assets/logos/repsol.svg" alt="Repsol" class="client-logo">
-                <img src="assets/logos/oxy.svg" alt="OXY" class="client-logo">
-            </div>
-        </div>
-    </section>
-
-    <section class="sectors" id="especializacion">
+    <!-- SECTORS -->
+    <section class="sectors" id="sectores">
         <div class="container">
             <div class="sectors-header">
-                <h2 class="sectors-title">Áreas de Especialización</h2>
-                <p class="sectors-subtitle">Seis líneas de desarrollo técnico con programas cerrados, rutas de certificación y formación a la medida.</p>
+                <p class="sectors-label">Nuestros Sectores</p>
+                <h2 class="sectors-title">Formación especializada por área de la industria</h2>
             </div>
+            
             <div class="sectors-grid">
-                <a href="landing-oilgas.html" class="sector-card sector-oilgas">
-                    <svg class="sector-card-icon" viewBox="0 0 600 600"><path d="M315.983 146.392C315.983 154.615 309.311 161.283 301.081 161.283C292.852 161.283 286.18 154.615 286.18 146.392C286.18 138.168 292.852 131.5 301.081 131.5C309.311 131.5 315.983 138.168 315.983 146.392Z"/><path d="M142.863 417.773V468.502H218.962C218.962 468.502 214.547 446.446 238.259 440.93C261.972 435.414 282.926 434.313 282.926 434.313V417.773H142.863Z"/><path d="M455.979 417.773V468.502H379.882C379.882 468.502 384.296 446.446 360.584 440.93C336.872 435.414 315.918 434.313 315.918 434.313V417.773H455.979Z"/><path d="M394.546 394.616L333.484 160.177C333.08 158.638 331.878 157.436 330.348 157.024C328.792 156.612 327.169 157.074 326.059 158.21L315.288 169.275H311.529V173.135L295.032 190.078V169.62L273.599 153.82L253.974 232.583C253.52 233.365 253.242 234.231 253.335 235.156L237.779 297.607C235.441 297.716 233.575 299.608 233.575 301.979C233.575 303.585 234.474 304.93 235.761 305.704L213.613 394.616H140.645V412.257H291.366V410.878H292.837V387.998H295.04V371.459H311.538V394.616H314.077V412.257H459.358V394.616H394.546Z"/><path d="M307.14 397.363H298.32V431.551H307.14V397.363Z"/></svg>
-                    <div class="sector-card-content">
-                        <span class="sector-card-tag">Producción · Perforación · Facilidades</span>
-                        <h3>Oil & Gas</h3>
-                        <div class="sector-card-hover">
-                            <p>Producción, perforación, facilidades y optimización de operaciones upstream y downstream.</p>
-                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-                        </div>
+                <div class="sector-card">
+                    <span class="sector-number">01</span>
+                    <a href="landing-gas.html" class="sector-name">Gas Natural, GLP y Energía</a>
+                    <div class="sector-themes">
+                        <span class="sector-theme">Tecnologías del Gas</span>
+                        <span class="sector-theme">Operación y Procesos</span>
+                        <span class="sector-theme">Medición y Regulación</span>
                     </div>
-                </a>
+                    <a href="landing-gas.html" class="sector-link">Ver sector &rarr;</a>
+                </div>
                 
-                <a href="landing-gas.html" class="sector-card sector-gas">
-                    <svg class="sector-card-icon" viewBox="0 0 600 600"><path d="M261.374 317.452C263.625 317.565 265.677 317.669 268.127 317.79C268.127 324.214 268.127 330.664 268.127 337.495C266.049 337.599 264.023 337.702 261.158 337.85C261.158 341.226 261.184 344.507 261.149 347.789C261.106 352.602 261.235 357.425 260.906 362.221C259.625 380.939 244.725 394.834 225.878 394.886C200.372 394.955 174.858 394.903 149.353 394.903C147.457 394.903 145.561 394.903 143.544 394.903C143.267 396.938 143.059 398.47 142.808 400.34C140.583 400.34 138.418 400.34 135.934 400.34C135.934 383.83 135.934 367.381 135.934 350.585C138.133 350.585 140.288 350.585 142.747 350.585C142.99 352.169 143.241 353.84 143.526 355.771C148.565 355.771 153.474 355.771 158.954 355.771C154.496 341.399 157.361 329.227 170.581 321.573C180.339 315.929 190.866 316.249 199.879 323.565C210.043 331.815 212.623 342.707 208.086 355.875C211.748 355.875 215.09 356.325 218.198 355.667C219.592 355.373 221.332 352.957 221.506 351.347C221.964 347.079 221.661 342.733 221.661 338.092C219.584 337.824 217.765 337.59 215.662 337.322C215.662 330.889 215.662 324.552 215.662 317.868C217.523 317.651 219.359 317.426 221.644 317.158C221.644 284.848 221.644 252.546 221.644 219.889C219.549 219.621 217.722 219.387 215.627 219.128C215.627 212.894 215.627 206.687 215.627 200.055C222.354 201.232 221.938 196.799 221.748 192.237C221.393 183.631 222.224 175.207 227.168 167.77C234.354 156.948 244.544 151.399 257.478 151.2C269.486 151.009 281.503 151.156 293.883 151.156C294.152 148.879 294.394 146.897 294.663 144.672C301.138 144.672 307.467 144.672 314.09 144.672C314.324 146.698 314.54 148.559 314.844 151.156C316.618 151.156 318.48 151.156 320.341 151.156C330.929 151.156 341.518 151.061 352.106 151.165C372.737 151.364 387.81 166.411 388.174 187.06C388.243 191.051 388.182 195.042 388.182 199.241C390.52 199.579 392.381 199.847 394.511 200.15C394.511 206.444 394.511 212.756 394.511 219.205C392.494 219.37 390.771 219.517 388.65 219.69C388.65 222.227 388.65 224.694 388.65 227.647C390.892 228.322 393.446 229.084 396.009 229.854C455.288 247.533 482.274 316.638 450.786 369.874C449.487 372.073 448.872 374.974 448.829 377.554C448.621 390.228 448.751 402.903 448.691 415.578C448.639 425.456 442.076 432.235 432.7 432.227C423.332 432.218 416.761 425.482 416.562 415.613C416.493 411.994 416.553 408.375 416.553 405.301C406.285 408.6 396.433 411.682 386.676 415.041C385.724 415.37 384.866 417.422 384.832 418.695C384.65 425.266 384.797 431.846 384.745 438.425C384.659 448.512 377.992 455.36 368.382 455.325C359.11 455.29 352.435 448.39 352.331 438.59C352.253 430.919 352.314 423.249 352.314 416.314C341.466 412.418 331.293 408.756 320.497 404.877C320.497 408.158 320.549 411.734 320.488 415.309C320.324 425.43 313.692 432.287 304.151 432.244C294.983 432.209 288.377 425.274 288.308 415.361C288.221 402.531 288.403 389.692 288.213 376.861C288.178 374.437 287.451 371.762 286.239 369.666C254.855 315.47 282.222 245.3 344.583 228.876C345.959 228.512 347.301 228.045 348.885 227.551C348.885 225.11 348.885 222.746 348.885 219.941C346.929 219.673 344.937 219.405 342.574 219.076C342.574 212.946 342.574 206.764 342.574 200.245C344.505 199.951 346.626 199.622 348.669 199.302C349.742 191.484 348.799 190.341 341.587 190.35C333.085 190.367 324.583 190.384 316.082 190.419C315.787 190.419 315.484 190.601 314.766 190.834C314.601 192.652 314.419 194.635 314.212 196.973C307.684 196.973 301.225 196.973 294.541 196.973C294.386 194.912 294.247 193.033 294.048 190.35C288.49 190.35 282.957 190.35 277.425 190.35C274.534 190.35 271.651 190.35 268.759 190.35C261.452 190.35 260.742 191.181 261.53 199.475C263.599 199.631 265.781 199.786 268.508 199.994C268.508 203.111 268.508 206.271 268.508 209.44C268.508 212.608 268.508 215.777 268.508 219.136C265.971 219.353 263.937 219.526 261.357 219.751C261.374 252.295 261.374 284.735 261.374 317.452Z"/></svg>
-                    <div class="sector-card-content">
-                        <span class="sector-card-tag">Medición · Compresión · Distribución</span>
-                        <h3>Gas Natural y Energía</h3>
-                        <div class="sector-card-hover">
-                            <p>Medición, compresión, tratamiento, transporte y distribución de gas natural y GLP.</p>
-                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-                        </div>
+                <div class="sector-card">
+                    <span class="sector-number">02</span>
+                    <a href="landing-activos.html" class="sector-name">Gestión de Activos, Mantenimiento y Confiabilidad</a>
+                    <div class="sector-themes">
+                        <span class="sector-theme">Gestión del Mantenimiento</span>
+                        <span class="sector-theme">Confiabilidad</span>
+                        <span class="sector-theme">Gestión de Activos</span>
                     </div>
-                </a>
+                    <a href="landing-activos.html" class="sector-link">Ver sector &rarr;</a>
+                </div>
                 
-                <a href="landing-integridad.html" class="sector-card sector-integridad">
-                    <svg class="sector-card-icon" viewBox="0 0 600 600"><path d="M481.792 436.47H118.195V401.869H126.848V235.731H127.529C133.736 212.459 181.671 195.105 240.715 195.105C240.82 195.105 240.926 195.105 241.032 195.105L241.08 194.875L241.127 195.105C299.979 195.182 347.713 212.507 353.901 235.731H354.62L353.325 401.859H481.802V436.47H481.792ZM122.272 432.384H477.706V405.946H349.2L350.457 244.614L348.251 244.796C347.704 244.834 347.109 244.882 346.438 244.93C345.047 245.036 343.33 245.17 341.334 245.285L339.655 245.391C337.037 245.554 334.015 245.755 330.638 245.928C326.427 246.158 321.755 246.379 316.757 246.6C311.491 246.82 305.965 247.022 300.334 247.204C293.6 247.405 287.605 247.559 282.003 247.664C279.489 247.722 276.938 247.76 274.357 247.799L262.942 247.943L243.718 267.167L263.133 286.582H279.326V299.024H264.563L244.821 318.766L263.862 337.808L279.326 337.847V350.288H263.623L244.351 369.56L263.68 388.89H279.336V401.332H261.253L248.149 414.426H254.078V426.868H228.081V414.426H230.556L251.075 393.907L232.954 375.786H217.126V363.344H232.974L252.37 343.948L232.705 324.282H217.126V311.84H234.038L235.947 309.931L236.005 309.989L252.457 293.537L232.657 273.738H217.117V261.296H232.043L246.336 248.067L242.163 248.077L239.554 248.067Z"/></svg>
-                    <div class="sector-card-content">
-                        <span class="sector-card-tag">ASME · API · RBI</span>
-                        <h3>Integridad Mecánica</h3>
-                        <div class="sector-card-hover">
-                            <p>Códigos ASME y API, inspección basada en riesgo, fitness-for-service y gestión de equipos estáticos.</p>
-                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-                        </div>
+                <div class="sector-card">
+                    <span class="sector-number">03</span>
+                    <a href="landing-directivas.html" class="sector-name">Habilidades Directivas</a>
+                    <div class="sector-themes">
+                        <span class="sector-theme">Gestión y Estrategia</span>
+                        <span class="sector-theme">Liderazgo y Organización</span>
                     </div>
-                </a>
+                    <a href="landing-directivas.html" class="sector-link">Ver sector &rarr;</a>
+                </div>
                 
-                <a href="landing-activos.html" class="sector-card sector-activos">
-                    <svg class="sector-card-icon" viewBox="0 0 600 600"><path d="M456.177 421.501C456.177 419.816 455.556 418.131 455.201 416.446C453.804 410.008 450.46 404.156 445.623 399.684C430.37 386.381 415.204 373.079 399.862 359.776C386.293 348.247 372.547 336.984 358.801 325.721C357.594 324.767 356.745 323.434 356.391 321.937C356.037 320.44 356.199 318.867 356.85 317.474C359.319 309.913 360.176 301.919 359.366 294.006C358.557 286.094 356.098 278.439 352.15 271.535C346.727 261.326 338.373 252.973 328.163 247.552C317.953 242.131 306.354 239.889 294.86 241.116C287.555 241.607 280.43 243.599 273.93 246.969C272.88 247.256 271.941 247.853 271.235 248.682C270.53 249.511 270.091 250.534 269.976 251.617C269.861 252.699 270.075 253.791 270.591 254.75C271.106 255.709 271.899 256.49 272.866 256.991L298.584 276.59C301.185 278.432 303.164 281.023 304.257 284.017C305.35 287.011 305.506 290.267 304.704 293.351C304.146 296.229 302.757 298.881 300.707 300.977C298.658 303.074 296.039 304.523 293.175 305.146C290.12 306.083 286.85 306.049 283.816 305.048C280.782 304.047 278.133 302.129 276.236 299.559C269.496 290.691 262.933 281.822 256.37 272.954C255.857 272.085 255.104 271.383 254.201 270.932C253.298 270.481 252.284 270.301 251.281 270.414C250.278 270.526 249.329 270.926 248.549 271.566C247.768 272.205 247.189 273.057 246.881 274.018C244.379 279.694 242.563 285.649 241.471 291.755C240.099 301.308 241.088 311.052 244.353 320.134C247.618 329.217 253.058 337.361 260.199 343.854C267.34 350.347 275.962 354.991 285.313 357.38C294.664 359.769 304.458 359.831 313.838 357.559C315.252 357.269 316.644 356.884 318.006 356.406C319.432 355.87 320.996 355.833 322.446 356.3C323.895 356.767 325.144 357.711 325.988 358.978C340.709 376.715 355.431 394.452 370.33 412.189C379.997 423.452 389.929 434.537 399.862 445.534C402.435 448.561 405.59 451.039 409.14 452.822C412.689 454.604 416.561 455.655 420.526 455.91C421.215 456.047 421.897 456.225 422.565 456.442H424.96C425.629 456.225 426.31 456.047 427 455.91C432.464 455.544 437.726 453.7 442.224 450.576C446.723 447.452 450.288 443.165 452.541 438.173C454.032 434.333 455.247 430.391 456.177 426.378V421.501Z"/><path d="M408.548 330.687C408.845 329.234 409.583 327.909 410.663 326.893C411.743 325.876 413.111 325.219 414.579 325.011L439.056 318.892C444.022 317.65 445.175 316.231 445.175 310.999V288.118C445.175 283.684 443.845 282.088 439.588 281.024L420.077 276.589C417.18 275.976 414.491 274.625 412.269 272.667C410.048 270.709 408.369 268.212 407.395 265.415C405.089 259.739 402.872 254.063 400.389 248.565C399.097 245.84 398.547 242.822 398.796 239.816C399.046 236.81 400.085 233.924 401.808 231.449L412.095 214.51C412.689 213.894 413.138 213.155 413.41 212.344C413.682 211.533 413.77 210.672 413.668 209.823C413.566 208.974 413.277 208.159 412.821 207.436C412.365 206.712 411.753 206.1 411.031 205.642L394.359 188.969C393.89 188.26 393.273 187.661 392.55 187.214C391.827 186.767 391.015 186.483 390.171 186.382C389.327 186.281 388.471 186.364 387.663 186.627C386.854 186.89 386.113 187.326 385.49 187.905C379.903 191.186 374.405 194.379 368.995 197.837C366.277 199.762 363.072 200.882 359.747 201.071C356.422 201.259 353.111 200.507 350.194 198.902C345.255 196.559 340.192 194.487 335.029 192.694C331.987 191.708 329.269 189.918 327.162 187.514C325.054 185.11 323.636 182.18 323.056 179.036C321.637 172.917 320.13 166.798 318.622 160.679C317.558 156.067 315.873 154.914 311.084 154.825H287.937C283.325 154.825 281.907 155.978 280.842 160.324C279.246 166.709 277.65 173.183 276.142 179.568C275.607 182.429 274.348 185.105 272.485 187.341C270.622 189.576 268.217 191.297 265.5 192.339C259.647 194.645 253.794 197.039 247.763 199.611C245.023 200.843 242.015 201.36 239.022 201.112C236.028 200.863 233.146 199.859 230.647 198.192L215.038 187.905C210.693 185.333 208.83 185.51 205.372 188.969L189.32 204.932C185.861 208.391 185.684 210.165 188.167 214.333C191.448 219.92 194.73 225.596 198.1 231.094C199.738 233.609 200.711 236.499 200.928 239.492C201.145 242.486 200.599 245.485 199.341 248.21C196.769 253.975 194.375 259.828 192.069 265.947C191.142 268.592 189.556 270.957 187.461 272.819C185.367 274.681 182.832 275.979 180.097 276.589L160.231 281.467C155.62 282.62 154.378 284.039 154.289 288.828C154.289 296.809 154.289 304.702 154.289 312.684C154.289 316.852 155.442 318.182 159.611 319.247L179.121 324.036C181.863 324.611 184.418 325.862 186.555 327.673C188.692 329.485 190.343 331.801 191.36 334.412C193.843 340.531 196.415 346.561 198.986 352.681C200.087 355.295 200.51 358.146 200.215 360.967C199.92 363.789 198.918 366.49 197.301 368.821L187.103 385.494C186.52 386.111 186.078 386.847 185.808 387.652C185.538 388.456 185.446 389.31 185.539 390.154C185.632 390.998 185.907 391.811 186.345 392.538C186.784 393.264 187.375 393.887 188.078 394.362C193.665 399.95 199.252 405.625 204.928 411.124C205.381 411.786 205.97 412.345 206.655 412.763C207.34 413.181 208.105 413.45 208.902 413.55C209.698 413.651 210.506 413.581 211.274 413.347C212.041 413.112 212.75 412.717 213.353 412.188C219.029 408.818 224.794 405.448 230.381 401.989C232.936 400.288 235.89 399.279 238.952 399.062C242.015 398.844 245.081 399.425 247.852 400.748C253.527 403.32 259.292 405.625 265.056 407.842C267.795 408.835 270.248 410.487 272.197 412.653C274.146 414.818 275.531 417.43 276.231 420.258C277.738 426.821 279.335 433.295 280.931 439.858C281.995 444.114 283.592 445.356 288.026 445.356H311.527C315.695 445.356 317.203 444.203 318.267 440.212C320.307 432.319 322.435 424.515 324.12 416.622C324.298 414.639 325.138 412.773 326.506 411.325C327.873 409.877 329.688 408.931 331.659 408.641C333.47 408.206 335.248 407.642 336.98 406.956C333.255 402.433 329.885 398.087 326.249 394.185C325.717 393.564 323.943 394.185 322.879 394.185C308.614 397.804 293.697 398.017 279.335 394.806C255.244 389.767 234.043 375.591 220.182 355.253C207.516 337.313 201.524 315.509 203.243 293.617C204.69 271.391 213.768 250.347 228.941 234.042C244.115 217.737 264.453 207.173 286.518 204.134C308.21 201.178 330.263 205.653 349.087 216.828C367.912 228.004 382.399 245.223 390.19 265.681C397.27 283.794 398.541 303.661 393.826 322.528C393.39 323.634 393.365 324.86 393.755 325.982C394.146 327.105 394.926 328.051 395.955 328.647C399.502 331.308 402.872 334.323 406.508 337.516C407.306 334.944 408.016 332.815 408.548 330.687Z"/></svg>
-                    <div class="sector-card-content">
-                        <span class="sector-card-tag">ISO 55001 · IAM · RCM</span>
-                        <h3>Gestión de Activos</h3>
-                        <div class="sector-card-hover">
-                            <p>Metodologías ISO 55001, IAM y estrategias de confiabilidad. En alianza con The Woodhouse Partnership.</p>
-                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-                        </div>
+                <div class="sector-card">
+                    <span class="sector-number">04</span>
+                    <a href="landing-integridad.html" class="sector-name">Integridad y Equipos</a>
+                    <div class="sector-themes">
+                        <span class="sector-theme">Integridad Mecánica</span>
+                        <span class="sector-theme">Inspección y Códigos</span>
+                        <span class="sector-theme">Equipos Rotativos</span>
+                        <span class="sector-theme">Protección Catódica</span>
                     </div>
-                </a>
+                    <a href="landing-integridad.html" class="sector-link">Ver sector &rarr;</a>
+                </div>
                 
-                <a href="landing-seguridad.html" class="sector-card sector-seguridad">
-                    <svg class="sector-card-icon" viewBox="0 0 600 600"><path d="M363.624 272.716C360.011 267.584 350.02 269.604 349.389 275.789L337.161 321.384C337.036 321.815 336.348 321.739 336.367 321.289C336.73 307.53 338.012 257.923 338.012 257.884C337.773 253.336 333.738 250.962 329.636 250.876C325.076 250.761 320.898 253.633 320.592 258.057L313.804 319.987C313.747 320.437 313.03 320.437 312.992 319.987C311.596 304.418 306.337 251.843 306.299 251.488C306.06 246.94 302.026 244.566 297.924 244.48C293.526 244.365 289.167 247.467 288.88 251.661L288.048 320.006C288.048 320.437 287.36 320.513 287.255 320.101C284.233 308.861 273.382 258.526 273.363 258.488C272.063 253.193 268.516 251.642 264.3 251.795C259.615 251.948 255.523 255.136 255.542 259.665L266.413 347.093C266.413 348.002 265.686 348.768 264.692 348.902L264.672 348.902C261.489 348.807 250.198 344.891 242.798 335.067C241.842 333.803 240.972 332.644 240.159 331.582C233.247 322.466 219.843 327.493 221.726 337.863C223.447 347.37 260.915 395.043 260.915 395.043L260.915 395.101L343.26 395.101L351.31 382.663C354.169 378.22 355.689 373.175 355.689 368.004C355.689 368.004 355.689 340.534 355.67 337.623C355.67 337.451 355.689 337.288 355.708 337.116C356.253 333.382 362.726 289.318 364.208 279.83C364.542 277.733 365.03 274.688 363.624 272.716ZM305.152 392.592C288.689 392.592 275.342 379.226 275.342 362.738C275.342 346.25 288.689 332.884 305.152 332.884C321.615 332.884 334.962 346.25 334.962 362.738C334.962 379.226 321.615 392.592 305.152 392.592ZM339.666 419.564C341.893 419.564 343.719 417.736 343.719 415.505L343.719 394.938L260.973 394.938L260.973 415.505C260.973 417.736 262.799 419.564 265.026 419.564L339.666 419.564Z"/><path d="M305.583 344.059L318.881 344.059L307.678 360.729L317.207 360.729L296.371 385.987L303.077 367.22L291.453 367.22L305.583 344.059Z"/><path d="M443.71 455.197L156.3 455.197C142.361 455.197 130.066 448.131 123.402 436.306C117.092 425.113 117.303 411.842 123.947 400.821L267.652 162.744C274.431 151.503 286.525 144.801 299.996 144.801C313.467 144.801 325.561 151.513 332.339 162.744L476.044 400.821C482.698 411.842 482.899 425.113 476.599 436.306C469.954 448.131 457.65 455.197 443.71 455.197ZM300.015 160.379C292.041 160.379 284.928 164.276 280.989 170.806L137.275 408.883C133.517 415.117 133.403 422.326 136.959 428.646C140.822 435.511 148.059 439.609 156.3 439.609L443.71 439.609C451.952 439.609 459.189 435.511 463.051 428.646C466.617 422.317 466.503 415.117 462.736 408.883L319.031 170.806C315.101 164.276 307.988 160.379 300.015 160.379Z"/></svg>
-                    <div class="sector-card-content">
-                        <span class="sector-card-tag">NFPA · PSM · Arc Flash</span>
-                        <h3>Seguridad de Procesos</h3>
-                        <div class="sector-card-hover">
-                            <p>Seguridad eléctrica NFPA 70E, polvos combustibles NFPA 652, PSM y análisis de riesgos.</p>
-                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-                        </div>
+                <div class="sector-card">
+                    <span class="sector-number">05</span>
+                    <a href="landing-oilgas.html" class="sector-name">Oil and Gas</a>
+                    <div class="sector-themes">
+                        <span class="sector-theme">Producción y Facilidades</span>
+                        <span class="sector-theme">Levantamiento Artificial</span>
+                        <span class="sector-theme">Perforación y Pozos</span>
+                        <span class="sector-theme">Yacimientos</span>
                     </div>
-                </a>
+                    <a href="landing-oilgas.html" class="sector-link">Ver sector &rarr;</a>
+                </div>
                 
-                <a href="landing-directivas.html" class="sector-card sector-directivas">
-                    <svg class="sector-card-icon" viewBox="0 0 600 600"><path d="M254.118 241.109C252.848 241.626 251.786 243.872 251.549 245.473C250.595 251.867 252.044 257.745 255.999 263.013C257.8 265.41 259.113 268.166 260.75 270.692C265.257 277.654 269.068 285.254 274.515 291.391C289.213 307.969 311.519 307.668 326.066 290.938C330.587 285.742 333.96 279.534 337.728 273.707C340.262 269.788 342.422 265.633 344.984 261.743C348.336 256.669 349.29 251.128 348.522 245.265C348.343 243.908 347.503 241.899 346.477 241.526C342.307 240.011 342.939 237.033 343.362 233.803C343.793 230.509 343.9 227.172 344.152 223.849C345.486 204.845 336.745 190.685 319.521 184.362C307.011 179.769 294.287 179.481 281.72 183.931C268.077 188.768 258.432 197.761 256.494 212.66C255.547 219.923 256.372 227.437 256.616 234.830C256.709 237.406 257.506 239.724 254.118 241.109ZM259.171 242.896C260.922 243.643 262.673 244.396 264.632 245.236C264.187 241.138 263.728 236.487 263.176 231.851C262.056 222.414 268.393 212.337 277.543 209.919C279.453 209.416 282.553 210.234 283.974 211.612C295.974 223.189 310.736 227.588 326.812 228.916C330.114 229.189 333.393 229.677 337.441 230.15C336.68 235.562 335.941 240.815 335.259 245.631C337.125 244.82 339.013 244.009 340.9 243.191C341.69 245.494 343.183 247.827 343.075 250.088C342.946 252.829 341.826 255.7 340.498 258.169C336.716 265.188 332.468 271.948 328.657 278.953C323.934 287.623 318.021 294.642 307.779 297.01C294.854 299.996 283.027 295.998 275.39 285.204C272.347 280.905 270.029 276.104 267.381 271.532C264.97 267.362 262.321 263.307 260.219 258.994C258.661 255.8 257.319 252.341 256.824 248.868C256.558 247.016 258.324 244.892 259.171 242.896Z"/><path d="M415.445 383.379C410.608 359.825 398.457 341.697 375.657 331.936C365.351 327.522 355.016 323.173 344.696 318.767C342.787 317.949 340.914 317.037 338.861 316.09C337.591 321.853 336.385 327.314 335.187 332.769C329.567 358.261 319.706 381.808 303.422 402.441C299.109 407.91 298.169 407.917 293.87 402.427C280.112 384.872 270.552 365.236 264.882 343.706C262.5 334.663 260.505 325.52 258.287 316.248C245.103 321.925 232.07 327.415 219.145 333.178C215.305 334.893 211.501 336.974 208.186 339.536C190.466 353.23 181.682 371.559 180.892 393.786C180.562 403.115 182.629 405.749 191.521 408.484C192.483 408.778 193.473 409.029 194.464 409.216C217.724 413.472 241.106 416.751 264.682 418.739C290.741 420.943 316.771 420.67 342.715 417.806C361.073 415.775 379.346 412.912 397.618 410.142C402.103 409.46 406.524 407.96 410.794 406.352C413.816 405.218 416.213 402.814 416.22 399.319C416.234 394.001 416.5 388.532 415.445 383.379Z"/><path d="M309.072 321.467C308.986 321.416 308.9 321.373 308.814 321.33C301.941 317.965 295.061 317.979 288.275 321.467C285.302 322.995 284.943 324.208 287.09 326.526C289.158 328.765 291.6 330.753 293.956 332.791C294.588 333.337 294.911 333.789 294.76 334.586C294.315 336.897 293.97 339.215 293.539 341.848C296.598 339.43 299.385 337.227 302.164 335.009C302.358 334.851 302.43 334.571 302.552 334.349C302.853 333.811 303.033 333.179 303.485 332.756C305.704 330.667 308.16 328.758 310.207 326.555C312.354 324.23 311.967 323.132 309.072 321.467Z"/></svg>
-                    <div class="sector-card-content">
-                        <span class="sector-card-tag">Liderazgo · Comunicación · Gestión</span>
-                        <h3>Habilidades Directivas</h3>
-                        <div class="sector-card-hover">
-                            <p>Liderazgo, comunicación y gestión para profesionales técnicos.</p>
-                            <span class="sector-card-link">Ver programas <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg></span>
-                        </div>
+                <div class="sector-card">
+                    <span class="sector-number">06</span>
+                    <a href="landing-seguridad.html" class="sector-name">Seguridad y Riesgos</a>
+                    <div class="sector-themes">
+                        <span class="sector-theme">Seguridad de Procesos</span>
+                        <span class="sector-theme">Análisis de Riesgos</span>
+                        <span class="sector-theme">Seguridad Eléctrica</span>
+                        <span class="sector-theme">Investigación</span>
                     </div>
-                </a>
+                    <a href="landing-seguridad.html" class="sector-link">Ver sector &rarr;</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ALIANZAS -->
-    <section class="alianzas" id="alianzas">
+    <!-- CTA -->
+    <section class="cta-section">
         <div class="container">
-            <div class="alianzas-header">
-                <h2 class="alianzas-title">Alianzas Internacionales</h2>
-                <p class="alianzas-subtitle">Respaldo de las organizaciones técnicas más reconocidas del mundo</p>
-            </div>
-            <div class="alianzas-grid">
-                <div class="alianza-card">
-                    <div class="alianza-logo-placeholder">Logo ASME</div>
-                    <!-- Replace with: <img src="assets/logos/asme.png" alt="ASME" class="alianza-logo"> -->
-                    <h3>ASME</h3>
-                    <p>Proveedor autorizado para certificación en códigos ASME (Sección VIII, B31.3, PCC-2). Centro autorizado en Colombia.</p>
+            <div class="cta-inner">
+                <div class="cta-text">
+                    <h2>¿Listo para capacitar a su equipo?</h2>
+                    <p>Programas in-house adaptados a su operación y objetivos.</p>
                 </div>
-                <div class="alianza-card">
-                    <div class="alianza-logo-placeholder">Logo TWPL</div>
-                    <!-- Replace with: <img src="assets/logos/twpl.png" alt="The Woodhouse Partnership" class="alianza-logo"> -->
-                    <h3>The Woodhouse Partnership</h3>
-                    <p>Partner exclusivo en Latinoamérica para gestión de activos. Certificación IAM (Institute of Asset Management).</p>
-                </div>
-                <div class="alianza-card">
-                    <div class="alianza-logo-placeholder">Logo IADC</div>
-                    <!-- Replace with: <img src="assets/logos/iadc.png" alt="IADC" class="alianza-logo"> -->
-                    <h3>IADC</h3>
-                    <p>Centro de evaluación Well Control. Formación y credenciales para personal de perforación.</p>
-                </div>
+                <a href="https://wa.me/573164661007?text=Quiero%20cotizar%20un%20programa%20de%20capacitación" class="cta-btn">Cotizar Programa &rarr;</a>
             </div>
         </div>
     </section>
 
-    <!-- MODELO DE TRABAJO -->
-    <section class="modelo" id="modelo">
-        <div class="container">
-            <div class="modelo-header">
-                <h2 class="modelo-title">Modelo de Trabajo</h2>
-                <p class="modelo-subtitle">Programas cerrados diseñados para las necesidades específicas de cada organización</p>
-            </div>
-            <div class="modelo-steps">
-                <div class="modelo-step">
-                    <span class="modelo-step-number">1</span>
-                    <svg class="modelo-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                    </svg>
-                    <h3>Diagnóstico</h3>
-                    <p>Identificamos las competencias críticas de su equipo, brechas de conocimiento y requisitos normativos específicos de su operación.</p>
-                </div>
-                <div class="modelo-step">
-                    <span class="modelo-step-number">2</span>
-                    <svg class="modelo-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                        <polyline points="14 2 14 8 20 8"/>
-                        <line x1="16" y1="13" x2="8" y2="13"/>
-                        <line x1="16" y1="17" x2="8" y2="17"/>
-                    </svg>
-                    <h3>Diseño del Programa</h3>
-                    <p>Estructuramos contenido, duración, sede y cronograma. Incluimos rutas de certificación internacional si aplica (API, ASME, IAM).</p>
-                </div>
-                <div class="modelo-step">
-                    <span class="modelo-step-number">3</span>
-                    <svg class="modelo-step-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                        <polyline points="22 4 12 14.01 9 11.01"/>
-                    </svg>
-                    <h3>Ejecución y Seguimiento</h3>
-                    <p>Implementamos el programa con instructores especializados. Entregamos credenciales verificables y reportes de competencias.</p>
-                </div>
-            </div>
-            <div class="modelo-footer">
-                <p class="modelo-footer-text">También ofrecemos cursos abiertos para profesionales independientes</p>
-                <div class="modelo-ctas">
-                    <a href="https://wa.me/573164661007?text=Solicito%20información%20sobre%20programas%20cerrados" class="modelo-cta-primary">
-                        Agendar diagnóstico
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
-                    <a href="https://hidrocarburos.com.co" target="_blank" class="modelo-cta-secondary">Ver cursos abiertos</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INSTRUCTORES -->
-    <section class="why" id="nosotros">
-        <div class="container">
-            <div class="why-header">
-                <h2 class="why-title">Equipo de Instructores</h2>
-            </div>
-            <div class="why-grid">
-                <div class="why-card">
-                    <h3>Experiencia en campo</h3>
-                    <p>Profesionales con experiencia directa en operaciones industriales. Ingenieros que han trabajado en plantas, campos y proyectos de alta complejidad.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Presencia regional</h3>
-                    <p>Instructores en Colombia, Ecuador, Perú, México y otros países de la región. Capacidad de despliegue para programas in-situ.</p>
-                </div>
-                <div class="why-card">
-                    <h3>Consistencia metodológica</h3>
-                    <p>Varios instructores trabajan exclusivamente con Elite Training, lo que garantiza calidad y disponibilidad para programas cerrados.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section" id="contacto">
-        <div class="container">
-            <div class="cta-box">
-                <div>
-                    <h2>Contacto</h2>
-                    <p>Para información sobre programas cerrados, propuestas o el portafolio completo.</p>
-                </div>
-                <div class="cta-actions">
-                    <a href="https://wa.me/573164661007?text=Solicito%20información%20sobre%20programas" class="btn">
-                        +57 316 466 1007
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
-                    <span class="cta-email">info@hidrocarburos.com.co</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
-                <div class="footer-brand">
-                    <svg viewBox="0 0 448 321" fill="none" style="height: 20px;">
-                        <path d="M447.909 0.00622804C443.646 116.854 351.192 212.564 240.68 217.568C265.251 269.286 316.17 303.894 375.053 302.206C401.401 301.466 426.18 293.502 447.702 280.21L447.968 0.00622804Z" fill="#E19A24"/>
-                        <path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#fff"/>
-                    </svg>
-                    <span class="footer-text">© 2026 Elite Training</span>
-                </div>
-                <div class="footer-contact">
-                    <a href="tel:+573164661007"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3"/></svg>+57 316 466 1007</a>
-                    <a href="https://hidrocarburos.com.co"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>hidrocarburos.com.co</a>
+                <span class="footer-brand">Elite Training &copy; 2026</span>
+                <div class="footer-links">
+                    <a href="tel:+573164661007">+57 316 466 1007</a>
+                    <a href="https://hidrocarburos.com.co">hidrocarburos.com.co</a>
                 </div>
             </div>
         </div>
     </footer>
-    
+
     <script>
-    // Mega Menu Logic
-    const trigger = document.getElementById('sectorsTrigger');
-    const megaMenu = document.getElementById('megaMenu');
-    const sectorItems = document.querySelectorAll('.mega-menu-sector-item');
-    const contentPanels = document.querySelectorAll('.mega-menu-content');
-    
-    let menuTimeout;
-    
-    // Show mega menu on trigger hover/click
-    trigger.addEventListener('mouseenter', () => {
-        clearTimeout(menuTimeout);
-        megaMenu.classList.add('active');
-        trigger.classList.add('active');
-    });
-    
-    trigger.addEventListener('click', () => {
-        megaMenu.classList.toggle('active');
-        trigger.classList.toggle('active');
-    });
-    
-    // Keep menu open when hovering over it
-    megaMenu.addEventListener('mouseenter', () => {
-        clearTimeout(menuTimeout);
-    });
-    
-    // Close menu when leaving trigger or menu
-    trigger.addEventListener('mouseleave', () => {
-        menuTimeout = setTimeout(() => {
-            if (!megaMenu.matches(':hover')) {
+        const trigger = document.getElementById('sectorsTrigger');
+        const megaMenu = document.getElementById('megaMenu');
+        
+        if (trigger && megaMenu) {
+            trigger.addEventListener('click', () => {
+                megaMenu.classList.toggle('active');
+                trigger.classList.toggle('active');
+            });
+            
+            trigger.addEventListener('mouseenter', () => {
+                megaMenu.classList.add('active');
+                trigger.classList.add('active');
+            });
+            
+            megaMenu.addEventListener('mouseleave', () => {
                 megaMenu.classList.remove('active');
                 trigger.classList.remove('active');
-            }
-        }, 100);
-    });
-    
-    megaMenu.addEventListener('mouseleave', () => {
-        menuTimeout = setTimeout(() => {
-            megaMenu.classList.remove('active');
-            trigger.classList.remove('active');
-        }, 100);
-    });
-    
-    // Visual panels
-    const visualPanels = document.querySelectorAll('.mega-menu-visual-bg');
-    
-    // Switch content on sector hover
-    sectorItems.forEach(item => {
-        item.addEventListener('mouseenter', () => {
-            const sector = item.dataset.sector;
+            });
             
-            // Update active states
-            sectorItems.forEach(s => s.classList.remove('active'));
-            item.classList.add('active');
-            
-            contentPanels.forEach(p => p.classList.remove('active'));
-            document.getElementById('content-' + sector).classList.add('active');
-            
-            // Switch visual panel
-            visualPanels.forEach(v => v.classList.remove('active'));
-            document.getElementById('visual-' + sector).classList.add('active');
-        });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!trigger.contains(e.target) && !megaMenu.contains(e.target)) {
-            megaMenu.classList.remove('active');
-            trigger.classList.remove('active');
+            document.addEventListener('click', (e) => {
+                if (!trigger.contains(e.target) && !megaMenu.contains(e.target)) {
+                    megaMenu.classList.remove('active');
+                    trigger.classList.remove('active');
+                }
+            });
         }
-    });
+        
+        window.addEventListener('scroll', () => {
+            document.getElementById('mobileMenu')?.classList.remove('active');
+            megaMenu?.classList.remove('active');
+            trigger?.classList.remove('active');
+        });
     </script>
 </body>
 </html>
