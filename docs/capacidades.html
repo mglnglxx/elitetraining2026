@@ -8,7 +8,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -16,104 +16,101 @@
             --white: #ffffff;
             --gray-100: #f5f5f5;
             --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
             --gray-400: #a3a3a3;
             --gray-500: #737373;
             --gray-600: #525252;
             --gray-800: #262626;
             --accent: #E19A24;
-            --font: 'Inter', -apple-system, system-ui, sans-serif;
+            --font: 'Roboto', -apple-system, system-ui, sans-serif;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body { font-family: var(--font); font-size: 16px; line-height: 1.5; color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; }
         
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
         @media (min-width: 768px) { .container { padding: 0 48px; } }
         
-        /* HEADER */
+        /* HEADER - Minimal */
         .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 1px solid var(--gray-200); }
         .header-inner { display: flex; justify-content: space-between; align-items: center; height: 60px; }
         .logo { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; }
-        .header-nav { display: none; align-items: center; gap: 32px; }
-        @media (min-width: 900px) { .header-nav { display: flex; } }
-        .nav-trigger { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-600); cursor: pointer; display: flex; align-items: center; gap: 6px; transition: color 0.2s; background: none; border: none; font-family: inherit; }
-        .nav-trigger:hover { color: var(--black); }
-        .nav-trigger svg { width: 10px; height: 10px; transition: transform 0.2s; }
-        .nav-trigger.active svg { transform: rotate(180deg); }
-        .header-nav a { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
-        .header-nav a:hover { color: var(--black); }
-        .header-cta { padding: 10px 20px; background: var(--black); color: var(--white); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
-        .header-cta:hover { opacity: 0.8; }
-        .menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
-        .menu-toggle span { width: 24px; height: 1px; background: var(--black); }
-        @media (min-width: 900px) { .menu-toggle { display: none; } }
         
-        /* MEGA MENU */
-        .mega-menu { position: fixed; top: 60px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--gray-200); display: none; z-index: 999; }
-        .mega-menu.active { display: block; }
-        .mega-menu-inner { padding: 48px 0; }
-        .mega-menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
-        @media (max-width: 899px) { .mega-menu { display: none !important; } }
+        .menu-toggle { display: flex; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .menu-toggle span { width: 28px; height: 1px; background: var(--black); transition: all 0.3s; }
+        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
         
-        .mega-sector { display: flex; flex-direction: column; }
-        .mega-sector-title { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--gray-200); }
-        .mega-sector-link { font-size: 1rem; font-weight: 600; color: var(--black); text-decoration: none; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; transition: gap 0.2s; }
-        .mega-sector-link:hover { gap: 12px; }
-        .mega-themes { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
-        .mega-theme { font-size: 0.8125rem; color: var(--gray-600); text-decoration: none; padding: 4px 0; transition: color 0.2s; }
-        .mega-theme:hover { color: var(--black); }
+        /* FULLSCREEN MENU */
+        .fullscreen-menu { position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 999; display: none; overflow-y: auto; }
+        .fullscreen-menu.active { display: block; }
         
-        /* MOBILE MENU */
-        .mobile-menu { display: none; position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--white); padding: 24px; z-index: 999; overflow-y: auto; }
-        .mobile-menu.active { display: flex; flex-direction: column; gap: 0; }
-        .mobile-sector { border-bottom: 1px solid var(--gray-200); }
-        .mobile-sector-header { padding: 16px 0; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .mobile-sector-header svg { width: 12px; height: 12px; transition: transform 0.2s; }
-        .mobile-sector.active .mobile-sector-header svg { transform: rotate(180deg); }
-        .mobile-sector-content { display: none; padding-bottom: 16px; }
-        .mobile-sector.active .mobile-sector-content { display: block; }
-        .mobile-sector-link { display: block; padding: 8px 0; font-size: 0.875rem; color: var(--black); text-decoration: none; font-weight: 600; }
-        .mobile-theme { display: block; padding: 6px 0 6px 16px; font-size: 0.8125rem; color: var(--gray-600); text-decoration: none; }
-        .mobile-theme:hover { color: var(--black); }
+        .menu-inner { padding: 48px 0; }
+        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 0; }
+        @media (min-width: 768px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
+        
+        .menu-sector { padding: 32px; border-bottom: 1px solid var(--gray-200); }
+        @media (min-width: 768px) { .menu-sector { border-right: 1px solid var(--gray-200); } }
+        @media (min-width: 768px) { .menu-sector:nth-child(2n) { border-right: none; } }
+        @media (min-width: 1024px) { .menu-sector:nth-child(2n) { border-right: 1px solid var(--gray-200); } .menu-sector:nth-child(3n) { border-right: none; } }
+        
+        .menu-sector-number { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 12px; }
+        .menu-sector-link { display: block; font-size: 1.25rem; font-weight: 700; color: var(--black); text-decoration: none; margin-bottom: 16px; transition: color 0.2s; }
+        .menu-sector-link:hover { color: var(--accent); }
+        .menu-themes { display: flex; flex-direction: column; gap: 8px; }
+        .menu-theme { font-size: 0.9375rem; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+        .menu-theme:hover { color: var(--black); }
+        
+        .menu-footer { margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--gray-200); display: flex; flex-wrap: wrap; gap: 32px; }
+        .menu-footer a { font-size: 0.875rem; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+        .menu-footer a:hover { color: var(--black); }
         
         /* HERO */
-        .hero { padding-top: 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; border-bottom: 1px solid var(--gray-200); }
+        .hero { padding-top: 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=1600&q=80'); background-size: cover; background-position: center; }
+        .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%); }
+        .hero-content { position: relative; z-index: 1; }
         .hero-inner { padding: 80px 0; }
         @media (min-width: 768px) { .hero-inner { padding: 120px 0; } }
-        .hero-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 24px; }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 800; line-height: 0.95; letter-spacing: -0.03em; color: var(--black); max-width: 1000px; margin-bottom: 32px; }
+        .hero-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 24px; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 900; line-height: 0.95; letter-spacing: -0.03em; color: var(--black); max-width: 1000px; margin-bottom: 32px; }
         .hero-description { font-size: 1.125rem; line-height: 1.6; color: var(--gray-600); max-width: 560px; margin-bottom: 48px; }
         .hero-ctas { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 64px; }
-        .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--black); color: var(--white); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
+        .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--black); color: var(--white); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
         .btn-primary:hover { opacity: 0.8; }
-        .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: transparent; color: var(--black); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gray-200); transition: border-color 0.2s; }
+        .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: transparent; color: var(--black); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: 1px solid var(--gray-300); transition: border-color 0.2s; }
         .btn-secondary:hover { border-color: var(--black); }
         .hero-stats { display: flex; flex-wrap: wrap; gap: 48px; }
         .hero-stat { display: flex; flex-direction: column; }
         .hero-stat-value { font-size: 0.875rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); }
         .hero-stat-label { font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-top: 4px; }
         
-        /* SECTORS SECTION */
-        .sectors { padding: 120px 0; border-bottom: 1px solid var(--gray-200); }
-        .sectors-header { margin-bottom: 64px; }
-        .sectors-label { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 16px; }
+        /* SECTORS GRID */
+        .sectors { border-bottom: 1px solid var(--gray-200); }
+        .sectors-header { padding: 80px 0 48px; border-bottom: 1px solid var(--gray-200); }
+        .sectors-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 16px; }
         .sectors-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); max-width: 500px; }
         
-        .sectors-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--gray-200); border: 1px solid var(--gray-200); }
+        .sectors-grid { display: grid; grid-template-columns: 1fr; }
         @media (min-width: 600px) { .sectors-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 900px) { .sectors-grid { grid-template-columns: repeat(3, 1fr); } }
         
-        .sector-card { background: var(--white); padding: 32px; display: flex; flex-direction: column; min-height: 280px; transition: background 0.2s; }
+        .sector-card { display: block; padding: 40px 32px; border-bottom: 1px solid var(--gray-200); text-decoration: none; color: inherit; transition: background 0.2s; position: relative; }
+        @media (min-width: 600px) { .sector-card { border-right: 1px solid var(--gray-200); } }
+        @media (min-width: 600px) { .sector-card:nth-child(2n) { border-right: none; } }
+        @media (min-width: 900px) { .sector-card:nth-child(2n) { border-right: 1px solid var(--gray-200); } .sector-card:nth-child(3n) { border-right: none; } }
         .sector-card:hover { background: var(--gray-100); }
-        @media (min-width: 768px) { .sector-card { padding: 40px; min-height: 320px; } }
-        .sector-number { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 16px; }
-        .sector-name { font-size: 1.25rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; color: var(--black); margin-bottom: 16px; text-decoration: none; display: block; }
-        .sector-name:hover { text-decoration: underline; }
-        .sector-themes { display: flex; flex-direction: column; gap: 6px; flex-grow: 1; }
-        .sector-theme { font-size: 0.8125rem; color: var(--gray-600); }
-        .sector-link { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; display: flex; align-items: center; gap: 8px; margin-top: 16px; transition: gap 0.2s; }
-        .sector-link:hover { gap: 12px; }
+        @media (min-width: 768px) { .sector-card { padding: 48px 40px; min-height: 320px; } }
+        
+        .sector-number { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 16px; display: block; }
+        .sector-name { font-size: 1.25rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; color: var(--black); margin-bottom: 20px; display: block; }
+        .sector-themes { display: flex; flex-direction: column; gap: 8px; }
+        .sector-theme { font-size: 0.9375rem; color: var(--gray-600); }
+        .sector-arrow { position: absolute; bottom: 32px; right: 32px; font-size: 1.25rem; color: var(--gray-400); transition: color 0.2s, transform 0.2s; }
+        .sector-card:hover .sector-arrow { color: var(--black); transform: translateX(4px); }
         
         /* CTA SECTION */
         .cta-section { padding: 120px 0; background: var(--black); color: var(--white); }
@@ -121,14 +118,14 @@
         @media (min-width: 768px) { .cta-inner { flex-direction: row; justify-content: space-between; align-items: center; } }
         .cta-text h2 { font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 8px; }
         .cta-text p { font-size: 0.9375rem; color: var(--gray-400); }
-        .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--white); color: var(--black); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
+        .cta-btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 32px; background: var(--white); color: var(--black); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: opacity 0.2s; }
         .cta-btn:hover { opacity: 0.9; }
         
         /* FOOTER */
         .footer { padding: 48px 0; border-top: 1px solid var(--gray-200); }
         .footer-inner { display: flex; flex-direction: column; gap: 24px; }
         @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; } }
-        .footer-brand { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); }
+        .footer-brand { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); }
         .footer-links { display: flex; gap: 24px; }
         .footer-links a { font-size: 0.75rem; color: var(--gray-500); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--black); }
@@ -139,180 +136,96 @@
         <div class="container">
             <div class="header-inner">
                 <a href="capacidades.html" class="logo">Elite Training</a>
-                <nav class="header-nav">
-                    <button class="nav-trigger" id="sectorsTrigger">
-                        Sectores 
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-                    </button>
-                    <a href="https://hidrocarburos.com.co" target="_blank">Campus Virtual</a>
-                </nav>
-                <a href="https://wa.me/573164661007" class="header-cta">Contactar</a>
-                <button class="menu-toggle" onclick="document.getElementById('mobileMenu').classList.toggle('active')" aria-label="Menu">
-                    <span></span><span></span><span></span>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- MEGA MENU -->
-    <div class="mega-menu" id="megaMenu">
+    <!-- FULLSCREEN MENU -->
+    <div class="fullscreen-menu" id="fullscreenMenu">
         <div class="container">
-            <div class="mega-menu-inner">
-                <div class="mega-menu-grid">
-                    <!-- Row 1 -->
-                    <div class="mega-sector">
-                        <span class="mega-sector-title">01</span>
-                        <a href="landing-gas.html" class="mega-sector-link">Gas Natural, GLP y Energía &rarr;</a>
-                        <div class="mega-themes">
-                            <a href="landing-gas.html#tecnologias" class="mega-theme">Tecnologías del Gas</a>
-                            <a href="landing-gas.html#operacion" class="mega-theme">Operación y Procesos</a>
-                            <a href="landing-gas.html#medicion" class="mega-theme">Medición y Regulación</a>
+            <div class="menu-inner">
+                <div class="menu-grid">
+                    <div class="menu-sector">
+                        <span class="menu-sector-number">01</span>
+                        <a href="landing-gas.html" class="menu-sector-link">Gas Natural, GLP y Energía</a>
+                        <div class="menu-themes">
+                            <a href="landing-gas.html#tecnologias" class="menu-theme">Tecnologías del Gas</a>
+                            <a href="landing-gas.html#operacion" class="menu-theme">Operación y Procesos</a>
+                            <a href="landing-gas.html#medicion" class="menu-theme">Medición y Regulación</a>
                         </div>
                     </div>
                     
-                    <div class="mega-sector">
-                        <span class="mega-sector-title">02</span>
-                        <a href="landing-activos.html" class="mega-sector-link">Gestión de Activos &rarr;</a>
-                        <div class="mega-themes">
-                            <a href="landing-activos.html#mantenimiento" class="mega-theme">Gestión del Mantenimiento</a>
-                            <a href="landing-activos.html#confiabilidad" class="mega-theme">Confiabilidad</a>
-                            <a href="landing-activos.html#activos" class="mega-theme">Gestión de Activos</a>
+                    <div class="menu-sector">
+                        <span class="menu-sector-number">02</span>
+                        <a href="landing-activos.html" class="menu-sector-link">Gestión de Activos, Mantenimiento y Confiabilidad</a>
+                        <div class="menu-themes">
+                            <a href="landing-activos.html#mantenimiento" class="menu-theme">Gestión del Mantenimiento</a>
+                            <a href="landing-activos.html#confiabilidad" class="menu-theme">Confiabilidad</a>
+                            <a href="landing-activos.html#activos" class="menu-theme">Gestión de Activos</a>
                         </div>
                     </div>
                     
-                    <div class="mega-sector">
-                        <span class="mega-sector-title">03</span>
-                        <a href="landing-directivas.html" class="mega-sector-link">Habilidades Directivas &rarr;</a>
-                        <div class="mega-themes">
-                            <a href="landing-directivas.html#gestion" class="mega-theme">Gestión y Estrategia</a>
-                            <a href="landing-directivas.html#liderazgo" class="mega-theme">Liderazgo y Organización</a>
+                    <div class="menu-sector">
+                        <span class="menu-sector-number">03</span>
+                        <a href="landing-directivas.html" class="menu-sector-link">Habilidades Directivas</a>
+                        <div class="menu-themes">
+                            <a href="landing-directivas.html#gestion" class="menu-theme">Gestión y Estrategia</a>
+                            <a href="landing-directivas.html#liderazgo" class="menu-theme">Liderazgo y Organización</a>
                         </div>
                     </div>
                     
-                    <!-- Row 2 -->
-                    <div class="mega-sector">
-                        <span class="mega-sector-title">04</span>
-                        <a href="landing-integridad.html" class="mega-sector-link">Integridad y Equipos &rarr;</a>
-                        <div class="mega-themes">
-                            <a href="landing-integridad.html#integridad" class="mega-theme">Integridad Mecánica</a>
-                            <a href="landing-integridad.html#codigos" class="mega-theme">Inspección y Códigos</a>
-                            <a href="landing-integridad.html#rotativos" class="mega-theme">Equipos Rotativos</a>
-                            <a href="landing-integridad.html#catodica" class="mega-theme">Protección Catódica</a>
+                    <div class="menu-sector">
+                        <span class="menu-sector-number">04</span>
+                        <a href="landing-integridad.html" class="menu-sector-link">Integridad y Equipos</a>
+                        <div class="menu-themes">
+                            <a href="landing-integridad.html#integridad" class="menu-theme">Integridad Mecánica</a>
+                            <a href="landing-integridad.html#codigos" class="menu-theme">Inspección y Códigos</a>
+                            <a href="landing-integridad.html#rotativos" class="menu-theme">Equipos Rotativos</a>
+                            <a href="landing-integridad.html#catodica" class="menu-theme">Protección Catódica</a>
                         </div>
                     </div>
                     
-                    <div class="mega-sector">
-                        <span class="mega-sector-title">05</span>
-                        <a href="landing-oilgas.html" class="mega-sector-link">Oil and Gas &rarr;</a>
-                        <div class="mega-themes">
-                            <a href="landing-oilgas.html#facilidades" class="mega-theme">Producción y Facilidades</a>
-                            <a href="landing-oilgas.html#levantamiento" class="mega-theme">Levantamiento Artificial</a>
-                            <a href="landing-oilgas.html#perforacion" class="mega-theme">Perforación y Pozos</a>
-                            <a href="landing-oilgas.html#yacimientos" class="mega-theme">Yacimientos</a>
+                    <div class="menu-sector">
+                        <span class="menu-sector-number">05</span>
+                        <a href="landing-oilgas.html" class="menu-sector-link">Oil and Gas</a>
+                        <div class="menu-themes">
+                            <a href="landing-oilgas.html#facilidades" class="menu-theme">Producción y Facilidades</a>
+                            <a href="landing-oilgas.html#levantamiento" class="menu-theme">Levantamiento Artificial</a>
+                            <a href="landing-oilgas.html#perforacion" class="menu-theme">Perforación y Pozos</a>
+                            <a href="landing-oilgas.html#yacimientos" class="menu-theme">Yacimientos</a>
                         </div>
                     </div>
                     
-                    <div class="mega-sector">
-                        <span class="mega-sector-title">06</span>
-                        <a href="landing-seguridad.html" class="mega-sector-link">Seguridad y Riesgos &rarr;</a>
-                        <div class="mega-themes">
-                            <a href="landing-seguridad.html#procesos" class="mega-theme">Seguridad de Procesos</a>
-                            <a href="landing-seguridad.html#riesgos" class="mega-theme">Análisis de Riesgos</a>
-                            <a href="landing-seguridad.html#electrica" class="mega-theme">Seguridad Eléctrica</a>
-                            <a href="landing-seguridad.html#investigacion" class="mega-theme">Investigación</a>
+                    <div class="menu-sector">
+                        <span class="menu-sector-number">06</span>
+                        <a href="landing-seguridad.html" class="menu-sector-link">Seguridad y Riesgos</a>
+                        <div class="menu-themes">
+                            <a href="landing-seguridad.html#procesos" class="menu-theme">Seguridad de Procesos</a>
+                            <a href="landing-seguridad.html#riesgos" class="menu-theme">Análisis de Riesgos</a>
+                            <a href="landing-seguridad.html#electrica" class="menu-theme">Seguridad Eléctrica</a>
+                            <a href="landing-seguridad.html#investigacion" class="menu-theme">Investigación</a>
                         </div>
                     </div>
+                </div>
+                
+                <div class="menu-footer">
+                    <a href="https://hidrocarburos.com.co" target="_blank">Cursos Programados</a>
+                    <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Campus Virtual</a>
+                    <a href="https://wa.me/573164661007">Contactar</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- MOBILE MENU -->
-    <nav class="mobile-menu" id="mobileMenu">
-        <div class="mobile-sector" onclick="this.classList.toggle('active')">
-            <div class="mobile-sector-header">
-                Gas Natural, GLP y Energía
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </div>
-            <div class="mobile-sector-content">
-                <a href="landing-gas.html" class="mobile-sector-link">Ver sector &rarr;</a>
-                <a href="landing-gas.html#tecnologias" class="mobile-theme">Tecnologías del Gas</a>
-                <a href="landing-gas.html#operacion" class="mobile-theme">Operación y Procesos</a>
-                <a href="landing-gas.html#medicion" class="mobile-theme">Medición y Regulación</a>
-            </div>
-        </div>
-        
-        <div class="mobile-sector" onclick="this.classList.toggle('active')">
-            <div class="mobile-sector-header">
-                Gestión de Activos
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </div>
-            <div class="mobile-sector-content">
-                <a href="landing-activos.html" class="mobile-sector-link">Ver sector &rarr;</a>
-                <a href="landing-activos.html#mantenimiento" class="mobile-theme">Gestión del Mantenimiento</a>
-                <a href="landing-activos.html#confiabilidad" class="mobile-theme">Confiabilidad</a>
-                <a href="landing-activos.html#activos" class="mobile-theme">Gestión de Activos</a>
-            </div>
-        </div>
-        
-        <div class="mobile-sector" onclick="this.classList.toggle('active')">
-            <div class="mobile-sector-header">
-                Habilidades Directivas
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </div>
-            <div class="mobile-sector-content">
-                <a href="landing-directivas.html" class="mobile-sector-link">Ver sector &rarr;</a>
-                <a href="landing-directivas.html#gestion" class="mobile-theme">Gestión y Estrategia</a>
-                <a href="landing-directivas.html#liderazgo" class="mobile-theme">Liderazgo y Organización</a>
-            </div>
-        </div>
-        
-        <div class="mobile-sector" onclick="this.classList.toggle('active')">
-            <div class="mobile-sector-header">
-                Integridad y Equipos
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </div>
-            <div class="mobile-sector-content">
-                <a href="landing-integridad.html" class="mobile-sector-link">Ver sector &rarr;</a>
-                <a href="landing-integridad.html#integridad" class="mobile-theme">Integridad Mecánica</a>
-                <a href="landing-integridad.html#codigos" class="mobile-theme">Inspección y Códigos</a>
-                <a href="landing-integridad.html#rotativos" class="mobile-theme">Equipos Rotativos</a>
-                <a href="landing-integridad.html#catodica" class="mobile-theme">Protección Catódica</a>
-            </div>
-        </div>
-        
-        <div class="mobile-sector" onclick="this.classList.toggle('active')">
-            <div class="mobile-sector-header">
-                Oil and Gas
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </div>
-            <div class="mobile-sector-content">
-                <a href="landing-oilgas.html" class="mobile-sector-link">Ver sector &rarr;</a>
-                <a href="landing-oilgas.html#facilidades" class="mobile-theme">Producción y Facilidades</a>
-                <a href="landing-oilgas.html#levantamiento" class="mobile-theme">Levantamiento Artificial</a>
-                <a href="landing-oilgas.html#perforacion" class="mobile-theme">Perforación y Pozos</a>
-                <a href="landing-oilgas.html#yacimientos" class="mobile-theme">Yacimientos</a>
-            </div>
-        </div>
-        
-        <div class="mobile-sector" onclick="this.classList.toggle('active')">
-            <div class="mobile-sector-header">
-                Seguridad y Riesgos
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </div>
-            <div class="mobile-sector-content">
-                <a href="landing-seguridad.html" class="mobile-sector-link">Ver sector &rarr;</a>
-                <a href="landing-seguridad.html#procesos" class="mobile-theme">Seguridad de Procesos</a>
-                <a href="landing-seguridad.html#riesgos" class="mobile-theme">Análisis de Riesgos</a>
-                <a href="landing-seguridad.html#electrica" class="mobile-theme">Seguridad Eléctrica</a>
-                <a href="landing-seguridad.html#investigacion" class="mobile-theme">Investigación</a>
-            </div>
-        </div>
-    </nav>
-
     <!-- HERO -->
     <section class="hero">
-        <div class="container">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
             <div class="hero-inner">
                 <p class="hero-label">29 años formando la industria</p>
                 <h1>Formación técnica para industrias de alto riesgo</h1>
@@ -352,76 +265,76 @@
                 <p class="sectors-label">Nuestros Sectores</p>
                 <h2 class="sectors-title">Formación especializada por área de la industria</h2>
             </div>
+        </div>
+        
+        <div class="sectors-grid">
+            <a href="landing-gas.html" class="sector-card">
+                <span class="sector-number">01</span>
+                <span class="sector-name">Gas Natural, GLP y Energía</span>
+                <div class="sector-themes">
+                    <span class="sector-theme">Tecnologías del Gas</span>
+                    <span class="sector-theme">Operación y Procesos</span>
+                    <span class="sector-theme">Medición y Regulación</span>
+                </div>
+                <span class="sector-arrow">&rarr;</span>
+            </a>
             
-            <div class="sectors-grid">
-                <div class="sector-card">
-                    <span class="sector-number">01</span>
-                    <a href="landing-gas.html" class="sector-name">Gas Natural, GLP y Energía</a>
-                    <div class="sector-themes">
-                        <span class="sector-theme">Tecnologías del Gas</span>
-                        <span class="sector-theme">Operación y Procesos</span>
-                        <span class="sector-theme">Medición y Regulación</span>
-                    </div>
-                    <a href="landing-gas.html" class="sector-link">Ver sector &rarr;</a>
+            <a href="landing-activos.html" class="sector-card">
+                <span class="sector-number">02</span>
+                <span class="sector-name">Gestión de Activos, Mantenimiento y Confiabilidad</span>
+                <div class="sector-themes">
+                    <span class="sector-theme">Gestión del Mantenimiento</span>
+                    <span class="sector-theme">Confiabilidad</span>
+                    <span class="sector-theme">Gestión de Activos</span>
                 </div>
-                
-                <div class="sector-card">
-                    <span class="sector-number">02</span>
-                    <a href="landing-activos.html" class="sector-name">Gestión de Activos, Mantenimiento y Confiabilidad</a>
-                    <div class="sector-themes">
-                        <span class="sector-theme">Gestión del Mantenimiento</span>
-                        <span class="sector-theme">Confiabilidad</span>
-                        <span class="sector-theme">Gestión de Activos</span>
-                    </div>
-                    <a href="landing-activos.html" class="sector-link">Ver sector &rarr;</a>
+                <span class="sector-arrow">&rarr;</span>
+            </a>
+            
+            <a href="landing-directivas.html" class="sector-card">
+                <span class="sector-number">03</span>
+                <span class="sector-name">Habilidades Directivas</span>
+                <div class="sector-themes">
+                    <span class="sector-theme">Gestión y Estrategia</span>
+                    <span class="sector-theme">Liderazgo y Organización</span>
                 </div>
-                
-                <div class="sector-card">
-                    <span class="sector-number">03</span>
-                    <a href="landing-directivas.html" class="sector-name">Habilidades Directivas</a>
-                    <div class="sector-themes">
-                        <span class="sector-theme">Gestión y Estrategia</span>
-                        <span class="sector-theme">Liderazgo y Organización</span>
-                    </div>
-                    <a href="landing-directivas.html" class="sector-link">Ver sector &rarr;</a>
+                <span class="sector-arrow">&rarr;</span>
+            </a>
+            
+            <a href="landing-integridad.html" class="sector-card">
+                <span class="sector-number">04</span>
+                <span class="sector-name">Integridad y Equipos</span>
+                <div class="sector-themes">
+                    <span class="sector-theme">Integridad Mecánica</span>
+                    <span class="sector-theme">Inspección y Códigos</span>
+                    <span class="sector-theme">Equipos Rotativos</span>
+                    <span class="sector-theme">Protección Catódica</span>
                 </div>
-                
-                <div class="sector-card">
-                    <span class="sector-number">04</span>
-                    <a href="landing-integridad.html" class="sector-name">Integridad y Equipos</a>
-                    <div class="sector-themes">
-                        <span class="sector-theme">Integridad Mecánica</span>
-                        <span class="sector-theme">Inspección y Códigos</span>
-                        <span class="sector-theme">Equipos Rotativos</span>
-                        <span class="sector-theme">Protección Catódica</span>
-                    </div>
-                    <a href="landing-integridad.html" class="sector-link">Ver sector &rarr;</a>
+                <span class="sector-arrow">&rarr;</span>
+            </a>
+            
+            <a href="landing-oilgas.html" class="sector-card">
+                <span class="sector-number">05</span>
+                <span class="sector-name">Oil and Gas</span>
+                <div class="sector-themes">
+                    <span class="sector-theme">Producción y Facilidades</span>
+                    <span class="sector-theme">Levantamiento Artificial</span>
+                    <span class="sector-theme">Perforación y Pozos</span>
+                    <span class="sector-theme">Yacimientos</span>
                 </div>
-                
-                <div class="sector-card">
-                    <span class="sector-number">05</span>
-                    <a href="landing-oilgas.html" class="sector-name">Oil and Gas</a>
-                    <div class="sector-themes">
-                        <span class="sector-theme">Producción y Facilidades</span>
-                        <span class="sector-theme">Levantamiento Artificial</span>
-                        <span class="sector-theme">Perforación y Pozos</span>
-                        <span class="sector-theme">Yacimientos</span>
-                    </div>
-                    <a href="landing-oilgas.html" class="sector-link">Ver sector &rarr;</a>
+                <span class="sector-arrow">&rarr;</span>
+            </a>
+            
+            <a href="landing-seguridad.html" class="sector-card">
+                <span class="sector-number">06</span>
+                <span class="sector-name">Seguridad y Riesgos</span>
+                <div class="sector-themes">
+                    <span class="sector-theme">Seguridad de Procesos</span>
+                    <span class="sector-theme">Análisis de Riesgos</span>
+                    <span class="sector-theme">Seguridad Eléctrica</span>
+                    <span class="sector-theme">Investigación</span>
                 </div>
-                
-                <div class="sector-card">
-                    <span class="sector-number">06</span>
-                    <a href="landing-seguridad.html" class="sector-name">Seguridad y Riesgos</a>
-                    <div class="sector-themes">
-                        <span class="sector-theme">Seguridad de Procesos</span>
-                        <span class="sector-theme">Análisis de Riesgos</span>
-                        <span class="sector-theme">Seguridad Eléctrica</span>
-                        <span class="sector-theme">Investigación</span>
-                    </div>
-                    <a href="landing-seguridad.html" class="sector-link">Ver sector &rarr;</a>
-                </div>
-            </div>
+                <span class="sector-arrow">&rarr;</span>
+            </a>
         </div>
     </section>
 
@@ -445,44 +358,29 @@
                 <span class="footer-brand">Elite Training &copy; 2026</span>
                 <div class="footer-links">
                     <a href="tel:+573164661007">+57 316 466 1007</a>
-                    <a href="https://hidrocarburos.com.co">hidrocarburos.com.co</a>
+                    <a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        const trigger = document.getElementById('sectorsTrigger');
-        const megaMenu = document.getElementById('megaMenu');
+        const menuToggle = document.getElementById('menuToggle');
+        const fullscreenMenu = document.getElementById('fullscreenMenu');
         
-        if (trigger && megaMenu) {
-            trigger.addEventListener('click', () => {
-                megaMenu.classList.toggle('active');
-                trigger.classList.toggle('active');
-            });
-            
-            trigger.addEventListener('mouseenter', () => {
-                megaMenu.classList.add('active');
-                trigger.classList.add('active');
-            });
-            
-            megaMenu.addEventListener('mouseleave', () => {
-                megaMenu.classList.remove('active');
-                trigger.classList.remove('active');
-            });
-            
-            document.addEventListener('click', (e) => {
-                if (!trigger.contains(e.target) && !megaMenu.contains(e.target)) {
-                    megaMenu.classList.remove('active');
-                    trigger.classList.remove('active');
-                }
-            });
-        }
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            fullscreenMenu.classList.toggle('active');
+            document.body.style.overflow = fullscreenMenu.classList.contains('active') ? 'hidden' : '';
+        });
         
-        window.addEventListener('scroll', () => {
-            document.getElementById('mobileMenu')?.classList.remove('active');
-            megaMenu?.classList.remove('active');
-            trigger?.classList.remove('active');
+        // Close menu when clicking a link
+        fullscreenMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                fullscreenMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
     </script>
 </body>
