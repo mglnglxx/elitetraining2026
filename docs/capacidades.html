@@ -27,7 +27,7 @@
             
             --border: 1px solid var(--gray-300);
             --border-strong: 1px solid var(--black);
-            --radius: 10px;
+            --radius: 12px;
             --maxw: 1200px;
             
             --space-1: 8px;
@@ -110,10 +110,13 @@
         .hero-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.35) 35%, rgba(255,255,255,0.65) 100%); }
         @media (min-width: 900px) { .hero-image { display: block; } }
         
-        .hero h1 { font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 500; line-height: 1.12; letter-spacing: -0.025em; color: var(--black); margin-bottom: var(--space-4); }
+        .hero h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.03em; color: var(--black); margin-bottom: var(--space-4); }
         
-        .hero-description { font-size: 1.0625rem; line-height: 1.5; color: var(--gray-600); max-width: 48ch; margin-bottom: var(--space-5); }
+        .hero-description { font-size: 1.0625rem; line-height: 1.5; color: var(--gray-600); max-width: 52ch; margin-bottom: var(--space-5); }
         @media (min-width: 768px) { .hero-description { font-size: 1.125rem; } }
+        
+        .lead { font-size: 1.0625rem; line-height: 1.55; max-width: 70ch; }
+        @media (min-width: 768px) { .lead { font-size: 1.125rem; } }
         
         .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
         
@@ -172,8 +175,10 @@
         .sector-card:hover { border-color: var(--gray-400); background: var(--gray-100); }
         
         .sector-number { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 10px; display: block; }
-        .sector-name { font-size: 1.0625rem; font-weight: 500; line-height: 1.25; color: var(--black); margin-bottom: 10px; display: block; }
-        .sector-desc { font-size: 0.9375rem; line-height: 1.45; color: var(--gray-600); font-weight: 400; }
+        .sector-name { font-size: 1.0625rem; font-weight: 500; line-height: 1.25; color: var(--black); margin-bottom: 8px; display: block; }
+        .sector-desc { font-size: 0.9375rem; line-height: 1.45; color: var(--gray-600); font-weight: 400; margin-bottom: 12px; }
+        .sector-cue { font-size: 0.8125rem; color: var(--gray-500); font-weight: 400; }
+        .sector-card:hover .sector-cue { color: var(--black); }
         
         /* MODEL */
         .model-grid { display: grid; grid-template-columns: 1fr; gap: 14px; padding: 0 20px var(--space-6); max-width: var(--maxw); margin: 0 auto; }
@@ -360,11 +365,11 @@
         <div class="container">
             <div class="proof-inner">
                 <p class="proof-kicker">Confianza construida en operación real</p>
-                <div class="proof-logos" aria-label="Clientes y aliados">
-                    <span class="logo-chip">Ecopetrol</span>
-                    <span class="logo-chip">Ocensa</span>
-                    <span class="logo-chip">Repsol</span>
-                    <span class="logo-chip">ISA</span>
+                <div class="proof-logos" aria-label="Escala y alianzas">
+                    <span class="logo-chip">30 años</span>
+                    <span class="logo-chip">400+ empresas/año</span>
+                    <span class="logo-chip">11+ países</span>
+                    <span class="logo-chip">60–80k profesionales</span>
                     <span class="logo-chip">ASME</span>
                     <span class="logo-chip">The Woodhouse Partnership</span>
                 </div>
@@ -379,7 +384,7 @@
                 <span class="section-label">Contexto</span>
             </div>
             <div class="section-content">
-                <p>Las organizaciones que operan infraestructura crítica enfrentan hoy una combinación estructural de retos:</p>
+                <p class="lead">Las organizaciones que operan infraestructura crítica enfrentan hoy una combinación estructural de retos:</p>
                 <ul class="section-list">
                     <li>Activos envejecidos y mayor exigencia regulatoria</li>
                     <li>Rotación de personal y pérdida de conocimiento experto</li>
@@ -387,7 +392,7 @@
                     <li>Mayor exposición a eventos de alto impacto</li>
                     <li>Presión por demostrar cumplimiento y criterio técnico</li>
                 </ul>
-                <p>La diferencia entre una operación robusta y una vulnerable ya no está en el acceso a tecnología, sino en la <strong>capacidad técnica de las personas que la diseñan, operan, mantienen y gobiernan</strong>.</p>
+                <p>La diferencia está en la <strong>capacidad técnica de las personas que diseñan, operan, mantienen y gobiernan</strong> esa infraestructura.</p>
             </div>
         </div>
     </section>
@@ -399,14 +404,14 @@
                 <span class="section-label">Qué es Elite Training</span>
             </div>
             <div class="section-content">
-                <p>Elite Training es una plataforma de <strong>formación y gestión de competencias técnicas</strong> para empresas que operan en entornos de alto riesgo.</p>
-                <p>Durante 30 años ha acompañado a organizaciones de energía, oil & gas, infraestructura y procesos industriales en el desarrollo de:</p>
+                <p class="lead">Elite Training es una plataforma de <strong>formación y gestión de competencias técnicas</strong> para empresas que operan en entornos de alto riesgo.</p>
+                <p>Durante 30 años ha acompañado a organizaciones de energía, oil & gas, infraestructura y procesos industriales en:</p>
                 <ul class="section-list">
                     <li>Criterio técnico homogéneo</li>
                     <li>Alineación a estándares internacionales</li>
                     <li>Capacidad por rol y nivel de responsabilidad</li>
                     <li>Evidencia para auditoría y gobierno técnico</li>
-                    <li>Transferencia efectiva del conocimiento a la operación</li>
+                    <li>Transferencia del conocimiento a la operación</li>
                 </ul>
             </div>
         </div>
@@ -426,32 +431,38 @@
             <a href="landing-gas.html" class="sector-card">
                 <span class="sector-number">01</span>
                 <span class="sector-name">Gas Natural, GLP y Energía</span>
-                <p class="sector-desc">Tecnologías, procesos, medición, regulación y operación de sistemas de gas y generación.</p>
+                <p class="sector-desc">Tecnologías, procesos, medición, regulación y operación de sistemas de gas.</p>
+                <span class="sector-cue">Temas y programas →</span>
             </a>
             <a href="landing-activos.html" class="sector-card">
                 <span class="sector-number">02</span>
-                <span class="sector-name">Gestión de Activos, Mantenimiento y Confiabilidad</span>
-                <p class="sector-desc">Estrategia, ciclo de vida, RCM, riesgo, desempeño y gobierno de activos físicos.</p>
+                <span class="sector-name">Gestión de Activos y Confiabilidad</span>
+                <p class="sector-desc">Estrategia, ciclo de vida, RCM, riesgo y gobierno de activos físicos.</p>
+                <span class="sector-cue">Temas y programas →</span>
             </a>
             <a href="landing-directivas.html" class="sector-card">
                 <span class="sector-number">03</span>
                 <span class="sector-name">Habilidades Directivas</span>
-                <p class="sector-desc">Toma de decisiones, gestión de proyectos, liderazgo técnico, continuidad y crisis.</p>
+                <p class="sector-desc">Toma de decisiones, gestión de proyectos, liderazgo técnico y crisis.</p>
+                <span class="sector-cue">Temas y programas →</span>
             </a>
             <a href="landing-integridad.html" class="sector-card">
                 <span class="sector-number">04</span>
                 <span class="sector-name">Integridad y Equipos</span>
-                <p class="sector-desc">Integridad mecánica, inspección, códigos, equipos rotativos y protección contra corrosión.</p>
+                <p class="sector-desc">Integridad mecánica, inspección, códigos y protección catódica.</p>
+                <span class="sector-cue">Temas y programas →</span>
             </a>
             <a href="landing-oilgas.html" class="sector-card">
                 <span class="sector-number">05</span>
                 <span class="sector-name">Oil and Gas</span>
-                <p class="sector-desc">Producción, facilidades, levantamiento artificial, perforación, pozos, yacimientos.</p>
+                <p class="sector-desc">Producción, facilidades, levantamiento artificial, perforación y pozos.</p>
+                <span class="sector-cue">Temas y programas →</span>
             </a>
             <a href="landing-seguridad.html" class="sector-card">
                 <span class="sector-number">06</span>
                 <span class="sector-name">Seguridad y Riesgos</span>
-                <p class="sector-desc">Seguridad de procesos, análisis de riesgos, seguridad eléctrica, investigación de incidentes.</p>
+                <p class="sector-desc">Seguridad de procesos, análisis de riesgos y seguridad eléctrica.</p>
+                <span class="sector-cue">Temas y programas →</span>
             </a>
         </div>
     </section>
