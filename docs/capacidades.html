@@ -8,245 +8,419 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            --black: #0a0a0a;
-            --white: #ffffff;
-            --gray-100: #f5f5f5;
-            --gray-200: #e5e5e5;
-            --gray-300: #d4d4d4;
-            --gray-400: #a3a3a3;
-            --gray-500: #737373;
-            --gray-600: #525252;
-            --gray-700: #404040;
-            --gray-800: #262626;
-            --accent: #E19A24;
-            --navy: #2D366F;
-            --font: 'Roboto', -apple-system, system-ui, sans-serif;
-            --border: 2px solid var(--gray-300);
-            --border-strong: 2px solid var(--black);
-            --header-h: 70px;
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; border-radius: 0 !important; }
-        html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 20px); }
-        body { font-family: var(--font); font-size: 21px; line-height: 31px; color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; }
-        a { color: inherit; }
-        
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        @media (min-width: 768px) { .container { padding: 0 32px; } }
-        @media (min-width: 1200px) { .container { padding: 0 48px; } }
-        
-        /* TYPOGRAPHY */
-        h1 { font-size: clamp(40px, 5vw, 64px); line-height: 1.05; letter-spacing: -0.03em; font-weight: 700; }
-        h2 { font-size: 40px; line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; }
-        h3 { font-size: 24px; line-height: 1.2; font-weight: 700; }
-        .eyebrow { font-size: 15px; line-height: 22px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-600); margin-bottom: 12px; display: block; }
-        .lead { margin-top: 10px; max-width: 70ch; color: var(--gray-700); }
-        
-        /* HEADER */
-        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: var(--border-strong); }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; height: var(--header-h); }
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-svg { height: 36px; width: auto; }
-        
-        .menu-toggle { display: flex; flex-direction: column; gap: 6px; background: none; border: none; cursor: pointer; padding: 10px; }
-        .menu-toggle span { width: 28px; height: 2px; background: var(--black); transition: all 0.2s; }
-        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-        .menu-toggle.active span:nth-child(2) { opacity: 0; }
-        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
-        
-        /* SUBNAV */
-        .subnav { display: none; position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 999; background: var(--white); border-bottom: var(--border-strong); }
-        @media (min-width: 900px) { .subnav { display: block; } }
-        .subnav .container { display: flex; gap: 28px; height: 44px; align-items: center; }
-        .subnav a { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; color: var(--gray-700); text-decoration: none; }
-        .subnav a:hover { color: var(--black); }
-        
-        /* FULLSCREEN MENU */
-        .fullscreen-menu { position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0; background: var(--white); z-index: 998; display: none; overflow-y: auto; border-top: var(--border-strong); }
-        .fullscreen-menu.active { display: block; }
-        .menu-inner { padding: 24px 0; }
-        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: var(--border-strong); }
-        @media (min-width: 768px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
-        
-        .menu-sector { padding: 22px 18px; border-bottom: var(--border-strong); }
-        @media (min-width: 768px) { .menu-sector { padding: 26px 22px; border-right: var(--border-strong); } .menu-sector:nth-child(2n) { border-right: none; } }
-        @media (min-width: 1024px) { .menu-sector:nth-child(2n) { border-right: var(--border-strong); } .menu-sector:nth-child(3n) { border-right: none; } }
-        .menu-sector:last-child { border-bottom: none; }
-        .menu-sector-number { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-600); display: block; margin-bottom: 10px; }
-        .menu-sector-link { display: block; font-size: 18px; font-weight: 700; text-decoration: none; margin-bottom: 12px; }
-        .menu-sector-link:hover { color: var(--accent); }
-        .menu-details { margin-top: 12px; }
-        .menu-summary { cursor: pointer; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-600); list-style: none; }
-        .menu-summary::-webkit-details-marker { display: none; }
-        .menu-summary::before { content: '+ '; }
-        .menu-details[open] .menu-summary::before { content: '− '; }
-        .menu-themes { display: flex; flex-direction: column; gap: 8px; padding-top: 10px; border-top: var(--border); margin-top: 10px; }
-        .menu-theme { font-size: 15px; line-height: 22px; color: var(--gray-700); text-decoration: none; }
-        .menu-theme:hover { color: var(--black); }
-        .menu-footer { margin-top: 18px; padding-top: 18px; border-top: var(--border-strong); display: flex; flex-wrap: wrap; gap: 18px; }
-        .menu-footer a { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; font-weight: 500; }
-        
-        /* HERO */
-        .hero { padding-top: var(--header-h); border-bottom: var(--border-strong); background: var(--white); }
-        @media (min-width: 900px) { .hero { padding-top: calc(var(--header-h) + 44px); } }
-        .hero-inner { min-height: calc(85vh - var(--header-h)); display: grid; grid-template-columns: 1fr; gap: 24px; align-items: center; padding: 40px 0; }
-        @media (min-width: 900px) { .hero-inner { grid-template-columns: 1.1fr 0.9fr; gap: 28px; padding: 56px 0; } }
-        .hero-copy h1 { margin-bottom: 16px; }
-        .hero-sub { color: var(--gray-700); max-width: 54ch; }
-        .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
-        .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-        .hero-media { border: var(--border-strong); min-height: 360px; display: none; background: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=80') center/cover no-repeat; }
-        @media (min-width: 900px) { .hero-media { display: block; min-height: 400px; } }
-        
-        /* BUTTONS */
-        .btn-primary, .btn-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 14px 20px; font-size: 13px; line-height: 18px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: var(--border-strong); font-weight: 500; }
-        .btn-primary { background: var(--black); color: var(--white); }
-        .btn-primary:hover { background: var(--gray-800); }
-        .btn-secondary { background: transparent; color: var(--black); }
-        .btn-secondary:hover { background: var(--gray-100); }
-        .btn-white { display: inline-flex; align-items: center; justify-content: center; padding: 14px 20px; font-size: 13px; line-height: 18px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: var(--border-strong); font-weight: 500; background: var(--white); color: var(--black); }
-        .btn-white:hover { background: var(--gray-100); }
-        .btn-outline { display: inline-flex; align-items: center; justify-content: center; padding: 14px 20px; font-size: 13px; line-height: 18px; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--white); font-weight: 500; background: transparent; color: var(--white); }
-        .btn-outline:hover { background: rgba(255,255,255,0.1); }
-        
-        .pill { display: inline-flex; align-items: center; justify-content: center; padding: 10px 14px; font-size: 13px; line-height: 18px; border: var(--border); text-decoration: none; color: var(--gray-800); background: var(--white); }
-        .pill:hover { border-color: var(--black); background: var(--gray-100); }
-        
-        /* BANDS */
-        .band { border-top: var(--border-strong); border-bottom: var(--border-strong); }
-        .band-navy { background: var(--navy); color: var(--white); }
-        .band-black { background: var(--black); color: var(--white); }
-        .band-accent { background: var(--accent); color: var(--black); }
-        .band .lead, .band p, .band li, .band h2, .band h3 { color: inherit; }
-        .band.band-navy .eyebrow, .band.band-black .eyebrow { color: rgba(255,255,255,0.7); }
-        .band.band-accent .eyebrow { color: rgba(10,10,10,0.7); }
-        .band.band-navy .section-intro, .band.band-black .section-intro { color: rgba(255,255,255,0.85); }
-        
-        /* SECTIONS */
-        section { padding: 40px 0; border-bottom: var(--border); }
-        @media (min-width: 900px) { section { padding: 56px 0; } }
-        .section-header { margin-bottom: 20px; max-width: 720px; }
-        .section-label { font-size: 15px; line-height: 22px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-600); margin-bottom: 12px; display: block; }
-        .section-title { margin-bottom: 10px; }
-        .section-intro { color: var(--gray-700); max-width: 65ch; }
-        
-        /* PROOF STRIP */
-        .proof-strip { padding: 28px 0; }
-        .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
-        .chip { font-size: 15px; line-height: 22px; color: var(--white); border: 2px solid rgba(255,255,255,0.4); padding: 8px 14px; background: transparent; }
-        .chip-accent { border-color: var(--accent); background: var(--accent); color: var(--black); }
-        .logos { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding-top: 16px; border-top: 2px solid rgba(255,255,255,0.2); }
-        .logo-item { font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.7); border: 2px dashed rgba(255,255,255,0.3); padding: 10px 14px; }
-        
-        /* CAPABILITIES GRID */
-        .cap-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
-        @media (min-width: 600px) { .cap-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 900px) { .cap-grid { grid-template-columns: repeat(3, 1fr); } }
-        .cap-card { border: var(--border-strong); padding: 20px; background: var(--white); }
-        .cap-card:hover { border-color: var(--accent); }
-        .cap-card h3 { font-size: 20px; line-height: 26px; margin-bottom: 10px; }
-        .cap-card p { font-size: 17px; line-height: 26px; color: var(--gray-700); margin-bottom: 14px; }
-        .cap-card .cap-result { font-size: 15px; line-height: 22px; color: var(--gray-600); padding-top: 12px; border-top: var(--border); }
-        
-        /* QUOTES */
-        .quotes { padding: 40px 0; background: var(--white); }
-        @media (min-width: 900px) { .quotes { padding: 56px 0; } }
-        .quote-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
-        @media (min-width: 900px) { .quote-grid { grid-template-columns: repeat(3, 1fr); } }
-        .quote-card { border: var(--border-strong); padding: 20px; background: var(--white); }
-        .quote-card blockquote { font-size: 17px; line-height: 26px; color: var(--gray-800); font-style: normal; }
-        .quote-card figcaption { margin-top: 14px; font-size: 15px; line-height: 22px; color: var(--gray-600); }
-        
-        /* COMPARISON TABLE */
-        .compare-wrap { margin-top: 20px; border: var(--border-strong); overflow-x: auto; }
-        .compare-table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 15px; line-height: 22px; }
-        .compare-table th, .compare-table td { padding: 14px 16px; text-align: left; border-bottom: 2px solid rgba(255,255,255,0.2); }
-        .compare-table th { text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.7); }
-        .compare-table th:last-child { color: var(--accent); }
-        .compare-table td { color: rgba(255,255,255,0.85); }
-        .compare-table td:first-child { font-weight: 700; color: var(--white); }
-        .compare-table td:last-child { border-left: 4px solid var(--accent); color: var(--white); font-weight: 500; }
-        .compare-table tbody tr:last-child td { border-bottom: none; }
-        .check { color: var(--accent); }
-        .x { color: rgba(255,255,255,0.4); }
-        
-        /* TIMELINE */
-        .timeline { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
-        @media (min-width: 768px) { .timeline { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1000px) { .timeline { grid-template-columns: repeat(4, 1fr); } }
-        .timeline-item { border: 2px solid rgba(255,255,255,0.3); padding: 20px; background: transparent; }
-        .timeline-item:hover { border-color: var(--accent); }
-        .timeline-num { font-size: 48px; font-weight: 700; color: rgba(255,255,255,0.25); line-height: 1; margin-bottom: 10px; }
-        .timeline-title { font-size: 20px; line-height: 26px; font-weight: 700; margin-bottom: 10px; }
-        .timeline-bullets { list-style: none; margin-bottom: 14px; }
-        .timeline-bullets li { font-size: 15px; line-height: 22px; padding-left: 16px; position: relative; margin-bottom: 4px; color: rgba(255,255,255,0.85); }
-        .timeline-bullets li::before { content: '–'; position: absolute; left: 0; color: rgba(255,255,255,0.5); }
-        .timeline-deliverables { font-size: 15px; line-height: 22px; color: rgba(255,255,255,0.7); padding-top: 12px; border-top: 2px solid rgba(255,255,255,0.2); }
-        .timeline-deliverables strong { font-weight: 700; color: rgba(255,255,255,0.9); }
-        
-        /* SECTORS GRID */
-        .sectors-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
-        @media (min-width: 600px) { .sectors-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1000px) { .sectors-grid { grid-template-columns: repeat(3, 1fr); } }
-        .sector-card { display: block; border: var(--border-strong); padding: 20px; background: var(--white); text-decoration: none; color: inherit; }
-        .sector-card:hover { border-color: var(--accent); }
-        .sector-number { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-600); margin-bottom: 8px; display: block; }
-        .sector-name { font-size: 20px; line-height: 26px; font-weight: 700; color: var(--black); margin-bottom: 8px; display: block; }
-        .sector-desc { font-size: 17px; line-height: 26px; color: var(--gray-700); margin-bottom: 12px; }
-        .sector-themes { font-size: 15px; line-height: 22px; color: var(--gray-600); }
-        
-        /* WEBINARS */
-        .webinars { padding: 40px 0; background: var(--white); }
-        @media (min-width: 900px) { .webinars { padding: 56px 0; } }
-        .webinar-list { display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 20px; }
-        @media (min-width: 900px) { .webinar-list { grid-template-columns: repeat(3, 1fr); } }
-        .webinar-card { display: block; text-decoration: none; color: inherit; border: var(--border-strong); padding: 20px; background: var(--white); }
-        .webinar-card:hover { border-color: var(--accent); }
-        .webinar-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 12px; }
-        .tag { font-size: 13px; padding: 6px 10px; border: var(--border); color: var(--gray-700); background: var(--gray-100); text-transform: lowercase; }
-        .tag-accent { border-color: var(--accent); background: var(--accent); color: var(--black); }
-        .date { font-size: 13px; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.1em; }
-        .webinar-title { font-size: 17px; line-height: 26px; font-weight: 700; color: var(--black); }
-        .webinar-sub { margin-top: 8px; font-size: 15px; line-height: 22px; color: var(--gray-600); }
-        
-        /* PROOF SECTION */
-        .proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; }
-        @media (min-width: 600px) { .proof-grid { grid-template-columns: repeat(3, 1fr); } }
-        @media (min-width: 900px) { .proof-grid { grid-template-columns: repeat(6, 1fr); } }
-        .proof-item { border: var(--border-strong); padding: 20px 16px; text-align: center; }
-        .proof-item.primary { background: var(--gray-100); }
-        .proof-value { font-size: 40px; line-height: 44px; font-weight: 700; color: var(--black); margin-bottom: 4px; }
-        .proof-label { font-size: 15px; line-height: 22px; color: var(--gray-600); }
-        .proof-note { margin-top: 20px; color: var(--gray-700); max-width: 60ch; }
-        
-        /* CONTACT */
-        .contact-section { padding: 40px 0; }
-        @media (min-width: 900px) { .contact-section { padding: 56px 0; } }
-        .contact-grid { display: grid; grid-template-columns: 1fr; gap: 28px; }
-        @media (min-width: 768px) { .contact-grid { grid-template-columns: 1fr 1fr; align-items: center; } }
-        .contact-text h2 { margin-bottom: 12px; }
-        .contact-text p { color: rgba(10,10,10,0.8); max-width: 50ch; }
-        .contact-actions { display: flex; flex-direction: column; gap: 12px; }
-        .contact-links { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 16px; padding-top: 16px; border-top: 2px solid rgba(10,10,10,0.2); }
-        .contact-links a { font-size: 15px; color: rgba(10,10,10,0.7); text-decoration: none; }
-        .contact-links a:hover { color: var(--black); }
-        .band-accent .btn-primary { background: var(--black); color: var(--white); border-color: var(--black); }
-        .band-accent .btn-outline { border-color: var(--black); color: var(--black); }
-        .band-accent .btn-outline:hover { background: rgba(0,0,0,0.1); }
-        
-        /* FOOTER */
-        footer { padding: 28px 0; border-top: var(--border-strong); }
-        .footer-inner { display: flex; flex-direction: column; gap: 14px; }
-        @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; } }
-        .footer-brand { font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-600); }
-        .footer-links { display: flex; gap: 18px; }
-        .footer-links a { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; color: var(--black); }
-        .footer-links a:hover { color: var(--accent); }
+:root{
+  --black:#0a0a0a;
+  --white:#ffffff;
+  --gray-100:#f5f5f5;
+  --gray-200:#e5e5e5;
+  --gray-300:#d4d4d4;
+  --gray-400:#a3a3a3;
+  --gray-500:#737373;
+  --gray-600:#525252;
+  --gray-700:#404040;
+  --gray-800:#262626;
+  --accent:#E19A24;
+  --navy:#2D366F;
+  --font:'Roboto', -apple-system, system-ui, sans-serif;
+  --border:2px solid #d4d4d4;
+  --border-strong:2px solid #0a0a0a;
+  --header-h:70px;
+  --maxw:1200px;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; border-radius:0 !important; }
+html{ scroll-behavior:smooth; scroll-padding-top: calc(var(--header-h) + 20px); }
+body{
+  font-family:var(--font);
+  font-size:21px;
+  line-height:31px;
+  color:var(--black);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{ max-width:var(--maxw); margin:0 auto; padding:0 20px; }
+@media (min-width:768px){ .container{ padding:0 32px; } }
+@media (min-width:1200px){ .container{ padding:0 48px; } }
+
+a{ color:inherit; }
+img, svg{ display:block; }
+
+.eyebrow{
+  font-size:13px;
+  line-height:18px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--gray-600);
+  margin-bottom:8px;
+}
+
+h1{
+  font-size:clamp(36px,4.5vw,56px);
+  line-height:1.08;
+  letter-spacing:-0.03em;
+  font-weight:700;
+}
+h2{
+  font-size:40px;
+  line-height:1.12;
+  letter-spacing:-0.02em;
+  font-weight:700;
+}
+h3{
+  font-size:20px;
+  line-height:1.25;
+  font-weight:700;
+}
+
+.lead{ margin-top:8px; max-width:64ch; color:var(--gray-700); }
+.micro{ font-size:15px; line-height:22px; }
+
+section{ padding:32px 0; border-bottom:var(--border); }
+@media (min-width:900px){ section{ padding:48px 0; } }
+
+.section-head{ margin-bottom:16px; }
+
+.band{ border-top:var(--border-strong); border-bottom:var(--border-strong); }
+.band-navy{ background:var(--navy); color:var(--white); }
+.band-black{ background:var(--black); color:var(--white); }
+.band-white{ background:var(--white); color:var(--black); }
+.band-accent{ background:var(--accent); color:var(--black); }
+.band-navy .eyebrow, .band-black .eyebrow{ color:rgba(255,255,255,.65); }
+.band-navy .lead, .band-black .lead{ color:rgba(255,255,255,.85); }
+.band-accent .eyebrow{ color:rgba(10,10,10,.6); }
+
+/* HEADER */
+.header{
+  position:fixed; top:0; left:0; right:0;
+  z-index:1000;
+  background:var(--white);
+  border-bottom:var(--border-strong);
+}
+.header-inner{ display:flex; justify-content:space-between; align-items:center; height:var(--header-h); }
+.logo-link{ display:flex; align-items:center; text-decoration:none; }
+.logo-svg{ height:32px; width:auto; }
+
+.menu-toggle{ display:flex; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:10px; }
+.menu-toggle span{ width:26px; height:2px; background:var(--black); transition:all .2s; }
+.menu-toggle.active span:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
+.menu-toggle.active span:nth-child(2){ opacity:0; }
+.menu-toggle.active span:nth-child(3){ transform:rotate(-45deg) translate(5px,-5px); }
+
+/* SUBNAV */
+.subnav{ display:none; position:fixed; top:var(--header-h); left:0; right:0; z-index:999; background:var(--white); border-bottom:var(--border-strong); }
+@media (min-width:900px){ .subnav{ display:block; } }
+.subnav .container{ display:flex; gap:24px; height:40px; align-items:center; }
+.subnav a{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:500; color:var(--gray-600); text-decoration:none; }
+.subnav a:hover{ color:var(--black); }
+
+/* FULLSCREEN MENU */
+.fullscreen-menu{
+  position:fixed; top:var(--header-h); left:0; right:0; bottom:0;
+  background:var(--white);
+  z-index:998; display:none; overflow-y:auto;
+  border-top:var(--border-strong);
+}
+.fullscreen-menu.active{ display:block; }
+.menu-inner{ padding:20px 0; }
+.menu-grid{ display:grid; grid-template-columns:1fr; border:var(--border-strong); }
+@media (min-width:768px){ .menu-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1024px){ .menu-grid{ grid-template-columns:repeat(3,1fr); } }
+.menu-sector{ padding:18px 16px; border-bottom:var(--border-strong); }
+@media (min-width:768px){ .menu-sector{ padding:20px 18px; border-right:var(--border-strong); } .menu-sector:nth-child(2n){ border-right:none; } }
+@media (min-width:1024px){ .menu-sector:nth-child(2n){ border-right:var(--border-strong); } .menu-sector:nth-child(3n){ border-right:none; } }
+.menu-sector:last-child{ border-bottom:none; }
+.menu-sector-number{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-500); margin-bottom:8px; }
+.menu-sector-link{ font-size:17px; font-weight:700; text-decoration:none; margin-bottom:10px; display:block; }
+.menu-sector-link:hover{ color:var(--accent); }
+.menu-details{ margin-top:10px; }
+.menu-summary{ cursor:pointer; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-500); list-style:none; }
+.menu-summary::-webkit-details-marker{ display:none; }
+.menu-summary::before{ content:'+ '; }
+.menu-details[open] .menu-summary::before{ content:'− '; }
+.menu-themes{ display:flex; flex-direction:column; gap:6px; padding-top:8px; border-top:var(--border); margin-top:8px; }
+.menu-theme{ font-size:14px; line-height:20px; color:var(--gray-600); text-decoration:none; }
+.menu-theme:hover{ color:var(--black); }
+.menu-footer{ margin-top:16px; padding-top:16px; border-top:var(--border-strong); display:flex; flex-wrap:wrap; gap:16px; }
+.menu-footer a{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; font-weight:500; }
+
+/* BUTTONS */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:12px 16px;
+  font-size:12px; line-height:16px;
+  letter-spacing:.14em; text-transform:uppercase;
+  text-decoration:none;
+  border:var(--border-strong);
+  white-space:nowrap;
+  font-weight:500;
+}
+.btn-primary{ background:var(--black); color:var(--white); }
+.btn-primary:hover{ background:var(--gray-800); }
+.btn-secondary{ background:transparent; color:var(--black); }
+.btn-secondary:hover{ background:var(--gray-100); }
+.band-black .btn-primary, .band-navy .btn-primary{ background:transparent; color:var(--white); border-color:var(--white); }
+.band-black .btn-primary:hover, .band-navy .btn-primary:hover{ background:rgba(255,255,255,.1); }
+.band-black .btn-secondary, .band-navy .btn-secondary{ background:var(--white); color:var(--black); border-color:var(--white); }
+.band-accent .btn-primary{ background:var(--black); color:var(--white); border-color:var(--black); }
+.band-accent .btn-secondary{ background:transparent; color:var(--black); border-color:var(--black); }
+
+/* PILLS */
+.pills{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.pill{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:8px 12px;
+  font-size:12px; line-height:16px;
+  border:var(--border);
+  text-decoration:none;
+  color:var(--gray-700);
+  background:var(--white);
+}
+.pill:hover{ border-color:var(--black); background:var(--gray-100); }
+
+/* HERO */
+.hero{
+  padding-top:var(--header-h);
+  border-bottom:var(--border-strong);
+  background:var(--white);
+}
+@media (min-width:900px){ .hero{ padding-top:calc(var(--header-h) + 40px); } }
+.hero-inner{
+  min-height:calc(80vh - var(--header-h));
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+  align-items:center;
+  padding:32px 0;
+}
+@media (min-width:900px){
+  .hero-inner{ grid-template-columns:1.15fr .85fr; gap:24px; padding:40px 0; }
+}
+.hero-copy h1{ margin-bottom:12px; }
+.hero-sub{ color:var(--gray-700); max-width:52ch; }
+.hero-ctas{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+.hero-media{
+  border:var(--border-strong);
+  min-height:320px;
+  display:none;
+  background:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=80') center/cover no-repeat;
+}
+@media (min-width:900px){ .hero-media{ display:block; min-height:360px; } }
+
+/* PROOF CHIPS (in hero) */
+.proof-chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
+.chip{
+  border:var(--border);
+  padding:8px 10px;
+  font-size:12px; line-height:16px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--gray-700);
+  background:var(--white);
+}
+.chip strong{ font-weight:700; letter-spacing:0; text-transform:none; }
+
+/* LOGO STRIP */
+.logo-strip{
+  display:flex; flex-wrap:wrap;
+  gap:14px;
+  align-items:center;
+  padding:14px 0;
+}
+.logo-strip .logo-item{
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.7);
+  border:2px solid rgba(255,255,255,.3);
+  padding:8px 12px;
+}
+
+/* GRID SYSTEM */
+.grid-3{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-top:16px;
+}
+@media (min-width:600px){ .grid-3{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:900px){ .grid-3{ grid-template-columns:repeat(3,1fr); } }
+
+.grid-2{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-top:16px;
+}
+@media (min-width:768px){ .grid-2{ grid-template-columns:repeat(2,1fr); } }
+
+/* CARDS */
+.card{
+  border:var(--border-strong);
+  background:var(--white);
+  padding:16px;
+}
+.card h3{ margin-bottom:8px; }
+.card p{ font-size:17px; line-height:26px; color:var(--gray-700); }
+.card .rule{ height:2px; background:var(--gray-200); margin:10px 0; }
+.card .meta{ font-size:13px; line-height:18px; color:var(--gray-500); margin-top:10px; padding-top:10px; border-top:var(--border); }
+.card:hover{ border-color:var(--accent); }
+.band-navy .card, .band-black .card{ background:transparent; border-color:rgba(255,255,255,.3); }
+.band-navy .card p, .band-black .card p{ color:rgba(255,255,255,.85); }
+.band-navy .card .rule, .band-black .card .rule{ background:rgba(255,255,255,.2); }
+.band-navy .card .meta, .band-black .card .meta{ color:rgba(255,255,255,.6); border-color:rgba(255,255,255,.2); }
+
+/* QUOTE CARDS */
+.quote{
+  border:var(--border-strong);
+  padding:16px;
+  background:var(--white);
+}
+.quote blockquote{ font-size:17px; line-height:26px; font-style:normal; }
+.quote .who{ margin-top:10px; font-weight:700; font-size:15px; }
+.quote .role{ font-size:13px; line-height:18px; color:var(--gray-500); }
+.band-navy .quote{ background:transparent; border-color:rgba(255,255,255,.3); }
+.band-navy .quote blockquote{ color:var(--white); }
+.band-navy .quote .who{ color:var(--white); }
+.band-navy .quote .role{ color:rgba(255,255,255,.6); }
+
+/* TABLE */
+.table-wrap{
+  margin-top:16px;
+  border:var(--border-strong);
+  overflow-x:auto;
+}
+table{ width:100%; min-width:600px; border-collapse:collapse; font-size:15px; line-height:22px; }
+th, td{ padding:12px 14px; text-align:left; vertical-align:top; }
+th{
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-size:12px;
+  font-weight:500;
+  border-bottom:var(--border-strong);
+}
+td{ border-bottom:var(--border); }
+tbody tr:last-child td{ border-bottom:none; }
+.band-black th{ border-bottom:2px solid rgba(255,255,255,.2); color:rgba(255,255,255,.6); }
+.band-black td{ border-bottom:2px solid rgba(255,255,255,.12); color:rgba(255,255,255,.85); }
+.band-black td:first-child{ font-weight:700; color:var(--white); }
+.elite-col{ border-left:4px solid var(--accent) !important; font-weight:700 !important; color:var(--white) !important; }
+.check{ color:var(--accent); }
+.x{ color:rgba(255,255,255,.35); }
+
+/* STEPS/TIMELINE */
+.steps{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-top:16px;
+}
+@media (min-width:768px){ .steps{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1000px){ .steps{ grid-template-columns:repeat(4,1fr); } }
+.step{
+  border:var(--border-strong);
+  padding:16px;
+  background:var(--white);
+}
+.step .num{
+  font-size:40px;
+  line-height:1;
+  font-weight:800;
+  color:var(--gray-200);
+  margin-bottom:8px;
+}
+.step h3{ margin-bottom:8px; }
+.step ul{ list-style:none; margin-bottom:10px; }
+.step li{ font-size:15px; line-height:22px; padding-left:14px; position:relative; margin-bottom:3px; color:var(--gray-700); }
+.step li::before{ content:'–'; position:absolute; left:0; color:var(--gray-400); }
+.step .deliverables{ font-size:13px; line-height:18px; color:var(--gray-500); padding-top:10px; border-top:var(--border); }
+.step .deliverables strong{ font-weight:700; color:var(--gray-700); }
+.band-navy .step{ background:transparent; border-color:rgba(255,255,255,.3); }
+.band-navy .step .num{ color:rgba(255,255,255,.2); }
+.band-navy .step h3{ color:var(--white); }
+.band-navy .step li{ color:rgba(255,255,255,.85); }
+.band-navy .step li::before{ color:rgba(255,255,255,.4); }
+.band-navy .step .deliverables{ color:rgba(255,255,255,.6); border-color:rgba(255,255,255,.2); }
+.band-navy .step .deliverables strong{ color:rgba(255,255,255,.9); }
+
+/* SECTOR GRID */
+.sector-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+  margin-top:16px;
+}
+@media (min-width:600px){ .sector-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:1000px){ .sector-grid{ grid-template-columns:repeat(3,1fr); } }
+.sector-card{
+  display:block;
+  border:var(--border-strong);
+  padding:16px;
+  text-decoration:none;
+  background:var(--white);
+}
+.sector-card .meta{ font-size:12px; line-height:16px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-500); margin-bottom:6px; }
+.sector-card .title{ font-size:18px; line-height:24px; font-weight:700; color:var(--black); margin-bottom:6px; }
+.sector-card .desc{ font-size:15px; line-height:22px; color:var(--gray-600); margin-bottom:10px; }
+.sector-card .themes{ font-size:13px; line-height:18px; color:var(--gray-500); }
+.sector-card:hover{ border-color:var(--accent); }
+
+/* RESOURCE CARDS */
+.resource-card{
+  border:var(--border-strong);
+  padding:16px;
+  background:var(--white);
+}
+.resource-card .meta{ font-size:12px; line-height:16px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-500); margin-bottom:8px; }
+.resource-card h3{ font-size:17px; line-height:24px; margin-bottom:6px; }
+.resource-card p{ font-size:15px; line-height:22px; color:var(--gray-600); margin-bottom:10px; }
+.resource-card a{ font-size:13px; text-decoration:none; border-bottom:2px solid var(--accent); color:var(--black); }
+.resource-card:hover{ border-color:var(--accent); }
+
+/* PROOF GRID */
+.proof-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-top:16px;
+}
+@media (min-width:600px){ .proof-grid{ grid-template-columns:repeat(3,1fr); } }
+@media (min-width:900px){ .proof-grid{ grid-template-columns:repeat(6,1fr); } }
+.proof-item{
+  border:var(--border-strong);
+  padding:14px 12px;
+  text-align:center;
+}
+.proof-item.primary{ background:var(--gray-100); }
+.proof-value{ font-size:32px; line-height:36px; font-weight:800; color:var(--black); margin-bottom:2px; }
+.proof-label{ font-size:13px; line-height:18px; color:var(--gray-500); }
+.proof-note{ margin-top:16px; font-size:17px; line-height:26px; color:var(--gray-600); max-width:56ch; }
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+@media (min-width:768px){ .contact-grid{ grid-template-columns:1fr 1fr; align-items:center; } }
+.contact-text h2{ margin-bottom:10px; }
+.contact-text p{ color:rgba(10,10,10,.75); max-width:48ch; }
+.contact-actions{ display:flex; flex-direction:column; gap:10px; }
+.contact-links{ display:flex; flex-wrap:wrap; gap:14px; margin-top:12px; padding-top:12px; border-top:2px solid rgba(10,10,10,.15); }
+.contact-links a{ font-size:14px; color:rgba(10,10,10,.65); text-decoration:none; }
+.contact-links a:hover{ color:var(--black); }
+
+/* FOOTER */
+footer{ padding:24px 0; border-top:var(--border-strong); }
+.footer-inner{ display:flex; flex-direction:column; gap:12px; }
+@media (min-width:768px){ .footer-inner{ flex-direction:row; justify-content:space-between; align-items:center; } }
+.footer-brand{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-500); }
+.footer-links{ display:flex; gap:14px; }
+.footer-links a{ font-size:12px; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; color:var(--gray-700); }
+.footer-links a:hover{ color:var(--accent); }
     </style>
 </head>
 <body>
@@ -286,11 +460,11 @@
     <nav class="subnav" id="subnav">
         <div class="container">
             <a href="#capabilities">Capacidades</a>
-            <a href="#quotes">Testimonios</a>
-            <a href="#why-now">Por qué ahora</a>
+            <a href="#why-now">Comparación</a>
             <a href="#mission-profile">Modelo</a>
             <a href="#sectors">Sectores</a>
-            <a href="#webinars">Webinars</a>
+            <a href="#webinars">Recursos</a>
+            <a href="#quotes">Testimonios</a>
             <a href="#contact">Contacto</a>
         </div>
     </nav>
@@ -392,10 +566,10 @@
                     <h1>Formación técnica para industrias de alto riesgo.</h1>
                     <p class="hero-sub">Integridad, seguridad de procesos y confiabilidad para equipos que operan activos críticos.</p>
                     <div class="hero-ctas">
-                        <a href="#capabilities" class="btn-primary">Ver capacidades</a>
-                        <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20conversación%20técnica" class="btn-secondary">Agendar conversación</a>
+                        <a href="#capabilities" class="btn btn-primary">Ver capacidades</a>
+                        <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20conversación%20técnica" class="btn btn-secondary">Agendar conversación</a>
                     </div>
-                    <div class="hero-pills">
+                    <div class="pills">
                         <a class="pill" href="landing-gas.html">Gas</a>
                         <a class="pill" href="landing-activos.html">Activos</a>
                         <a class="pill" href="landing-directivas.html">Directivas</a>
@@ -403,120 +577,95 @@
                         <a class="pill" href="landing-oilgas.html">Oil & Gas</a>
                         <a class="pill" href="landing-seguridad.html">Seguridad</a>
                     </div>
+                    <div class="proof-chips">
+                        <span class="chip"><strong>30 años</strong></span>
+                        <span class="chip"><strong>400+</strong> empresas/año</span>
+                        <span class="chip"><strong>11+</strong> países</span>
+                        <span class="chip"><strong>60–80k</strong> profesionales</span>
+                        <span class="chip"><strong>ASME</strong> alianza</span>
+                        <span class="chip"><strong>TWPL</strong> partner</span>
+                    </div>
                 </div>
                 <div class="hero-media" aria-hidden="true"></div>
             </div>
         </div>
     </section>
 
-    <!-- PROOF STRIP -->
-    <section class="proof-strip band band-navy" id="proof-strip">
+    <!-- LOGO STRIP -->
+    <section class="band band-navy" id="proof-strip">
         <div class="container">
-            <p class="eyebrow">Confianza construida en operación real</p>
-            <div class="chips">
-                <span class="chip">30 años</span>
-                <span class="chip">400+ empresas/año</span>
-                <span class="chip">11+ países</span>
-                <span class="chip">60–80k profesionales</span>
-                <span class="chip chip-accent">ASME</span>
-                <span class="chip chip-accent">The Woodhouse Partnership</span>
-            </div>
-            <div class="logos">
+            <div class="logo-strip" aria-label="Clientes y aliados">
                 <span class="logo-item">Ecopetrol</span>
                 <span class="logo-item">Ocensa</span>
                 <span class="logo-item">Frontera</span>
                 <span class="logo-item">ISA</span>
                 <span class="logo-item">Repsol</span>
-                <span class="logo-item">+ otras</span>
+                <span class="logo-item">Promigas</span>
+                <span class="logo-item">+ otros</span>
             </div>
         </div>
     </section>
 
     <!-- CAPABILITIES -->
-    <section class="section" id="capabilities">
+    <section class="band band-white" id="capabilities">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">Capacidades</span>
-                <h2 class="section-title">Qué desarrollamos en los equipos técnicos</h2>
-                <p class="section-intro">Competencias alineadas a estándares internacionales, diseñadas para cerrar brechas en operación, mantenimiento y gobierno de activos.</p>
+            <div class="section-head">
+                <div class="eyebrow">Capacidades</div>
+                <h2>Qué desarrollamos en los equipos técnicos</h2>
+                <p class="lead">Competencias alineadas a estándares internacionales para cerrar brechas en operación, mantenimiento y gobierno de activos.</p>
             </div>
-            <div class="cap-grid">
-                <div class="cap-card">
+            <div class="grid-3">
+                <div class="card">
                     <h3>Criterio técnico consistente</h3>
                     <p>Mismos estándares de decisión entre turnos, sedes y contratistas.</p>
-                    <div class="cap-result">Resultado: menos variabilidad en respuesta a incidentes.</div>
+                    <div class="meta">Resultado: menos variabilidad en respuesta a incidentes.</div>
                 </div>
-                <div class="cap-card">
+                <div class="card">
                     <h3>Rutas por rol</h3>
                     <p>Programas diferenciados para operadores, ingenieros, inspectores y líderes.</p>
-                    <div class="cap-result">Resultado: desarrollo progresivo según nivel de responsabilidad.</div>
+                    <div class="meta">Resultado: desarrollo progresivo según nivel de responsabilidad.</div>
                 </div>
-                <div class="cap-card">
+                <div class="card">
                     <h3>Alineación a estándares</h3>
                     <p>Contenido basado en ASME, API, NFPA, ISO 55000, IAM, PSM.</p>
-                    <div class="cap-result">Resultado: cumplimiento demostrable ante auditorías.</div>
+                    <div class="meta">Resultado: cumplimiento demostrable ante auditorías.</div>
                 </div>
-                <div class="cap-card">
+                <div class="card">
                     <h3>Evaluación y trazabilidad</h3>
                     <p>Matrices de competencia, evaluaciones y reportes por área.</p>
-                    <div class="cap-result">Resultado: evidencia documentada para gobierno técnico.</div>
+                    <div class="meta">Resultado: evidencia documentada para gobierno técnico.</div>
                 </div>
-                <div class="cap-card">
+                <div class="card">
                     <h3>Aplicación a operación real</h3>
                     <p>Casos, análisis de eventos y simulaciones con contexto de campo.</p>
-                    <div class="cap-result">Resultado: transferencia inmediata a la práctica diaria.</div>
+                    <div class="meta">Resultado: transferencia inmediata a la práctica diaria.</div>
                 </div>
-                <div class="cap-card">
+                <div class="card">
                     <h3>Ecosistema de contratistas</h3>
                     <p>Formación extendida a personal externo con los mismos criterios.</p>
-                    <div class="cap-result">Resultado: consistencia en toda la cadena operativa.</div>
+                    <div class="meta">Resultado: consistencia en toda la cadena operativa.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- QUOTES -->
-    <section class="quotes" id="quotes">
+    <!-- WHY NOW (COMPARISON) -->
+    <section class="band band-black" id="why-now">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">En terreno</span>
-                <h2 class="section-title">Lo que más valoran los equipos técnicos</h2>
-                <p class="section-intro">Menos variabilidad operativa, más criterio compartido, evidencia lista para auditoría.</p>
+            <div class="section-head">
+                <div class="eyebrow">Por qué ahora</div>
+                <h2>Cómo se compara Elite Training</h2>
+                <p class="lead">Activos envejecidos y alta rotación requieren formación que genere evidencia, consistencia y velocidad.</p>
             </div>
-            <div class="quote-grid">
-                <figure class="quote-card">
-                    <blockquote>"La ruta por rol nos ayudó a nivelar criterios entre sedes y contratistas. El cambio se vio en decisiones de campo."</blockquote>
-                    <figcaption>Jefe de Operación, midstream</figcaption>
-                </figure>
-                <figure class="quote-card">
-                    <blockquote>"La matriz de competencias y la evaluación nos dejó trazabilidad para auditoría sin trabajo adicional."</blockquote>
-                    <figcaption>Líder HSE / Seguridad de Procesos</figcaption>
-                </figure>
-                <figure class="quote-card">
-                    <blockquote>"Contenido técnico aplicable. Se nota cuando el instructor viene de operación."</blockquote>
-                    <figcaption>Integridad mecánica / inspección</figcaption>
-                </figure>
-            </div>
-        </div>
-    </section>
-
-    <!-- WHY NOW -->
-    <section class="section band band-black" id="why-now">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Por qué ahora</span>
-                <h2 class="section-title">Cómo se compara Elite Training con otras opciones</h2>
-                <p class="section-intro">Las organizaciones con activos envejecidos y alta rotación necesitan formación que genere evidencia, consistencia y velocidad.</p>
-            </div>
-            <div class="compare-wrap">
-                <table class="compare-table">
+            <div class="table-wrap">
+                <table>
                     <thead>
                         <tr>
                             <th>Dimensión</th>
                             <th>Solo teoría</th>
                             <th>Solo aula</th>
                             <th>Cursos aislados</th>
-                            <th>Elite Training</th>
+                            <th class="elite-col">Elite Training</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -525,28 +674,28 @@
                             <td class="x">Genérico</td>
                             <td class="x">Limitado</td>
                             <td class="x">Variable</td>
-                            <td class="check">Casos reales de campo</td>
+                            <td class="elite-col check">Casos reales de campo</td>
                         </tr>
                         <tr>
                             <td>Evidencia para auditoría</td>
                             <td class="x">Ninguna</td>
                             <td class="x">Asistencia</td>
                             <td class="x">Certificados sueltos</td>
-                            <td class="check">Matrices + reportes</td>
+                            <td class="elite-col check">Matrices + reportes</td>
                         </tr>
                         <tr>
                             <td>Consistencia entre sedes</td>
                             <td class="x">No aplica</td>
                             <td class="x">Depende del instructor</td>
                             <td class="x">Sin control</td>
-                            <td class="check">Estándar único</td>
+                            <td class="elite-col check">Estándar único</td>
                         </tr>
                         <tr>
                             <td>Velocidad para cerrar brechas</td>
                             <td class="x">Lenta</td>
                             <td class="x">Media</td>
                             <td class="x">Reactiva</td>
-                            <td class="check">Rutas priorizadas</td>
+                            <td class="elite-col check">Rutas priorizadas</td>
                         </tr>
                     </tbody>
                 </table>
@@ -554,147 +703,169 @@
         </div>
     </section>
 
-    <!-- MISSION PROFILE -->
-    <section class="section band band-navy" id="mission-profile">
+    <!-- MISSION PROFILE (MODEL) -->
+    <section class="band band-navy" id="mission-profile">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">Modelo</span>
-                <h2 class="section-title">Cómo trabajamos con cada organización</h2>
-                <p class="section-intro">Un proceso estructurado de diagnóstico, diseño, ejecución y mejora continua.</p>
+            <div class="section-head">
+                <div class="eyebrow">Modelo</div>
+                <h2>Cómo trabajamos con cada organización</h2>
+                <p class="lead">Proceso estructurado de diagnóstico, diseño, ejecución y mejora continua.</p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-num">1</div>
-                    <div class="timeline-title">Diagnóstico</div>
-                    <ul class="timeline-bullets">
-                        <li>Mapeo de roles críticos y brechas por sistema</li>
-                        <li>Alineación a objetivos de seguridad y cumplimiento</li>
+            <div class="steps">
+                <div class="step">
+                    <div class="num">1</div>
+                    <h3>Diagnóstico</h3>
+                    <ul>
+                        <li>Mapeo de roles críticos y brechas</li>
+                        <li>Alineación a objetivos de cumplimiento</li>
                     </ul>
-                    <div class="timeline-deliverables"><strong>Entregables:</strong> Matriz de brechas, mapa de roles, prioridades</div>
+                    <div class="deliverables"><strong>Entregables:</strong> Matriz de brechas, mapa de roles</div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-num">2</div>
-                    <div class="timeline-title">Diseño de rutas</div>
-                    <ul class="timeline-bullets">
-                        <li>Programas por función y nivel de responsabilidad</li>
+                <div class="step">
+                    <div class="num">2</div>
+                    <h3>Diseño de rutas</h3>
+                    <ul>
+                        <li>Programas por función y nivel</li>
                         <li>Selección de estándares aplicables</li>
                     </ul>
-                    <div class="timeline-deliverables"><strong>Entregables:</strong> Plan de formación, calendario, indicadores</div>
+                    <div class="deliverables"><strong>Entregables:</strong> Plan de formación, calendario</div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-num">3</div>
-                    <div class="timeline-title">Ejecución + evaluación</div>
-                    <ul class="timeline-bullets">
+                <div class="step">
+                    <div class="num">3</div>
+                    <h3>Ejecución</h3>
+                    <ul>
                         <li>Formación presencial, virtual o híbrida</li>
-                        <li>Evaluación de competencias adquiridas</li>
+                        <li>Evaluación de competencias</li>
                     </ul>
-                    <div class="timeline-deliverables"><strong>Entregables:</strong> Reportes de evaluación, certificaciones</div>
+                    <div class="deliverables"><strong>Entregables:</strong> Reportes, certificaciones</div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-num">4</div>
-                    <div class="timeline-title">Evidencia + mejora</div>
-                    <ul class="timeline-bullets">
-                        <li>Consolidación de matrices de competencia</li>
-                        <li>Ajuste de rutas según resultados</li>
+                <div class="step">
+                    <div class="num">4</div>
+                    <h3>Evidencia</h3>
+                    <ul>
+                        <li>Consolidación de matrices</li>
+                        <li>Ajuste según resultados</li>
                     </ul>
-                    <div class="timeline-deliverables"><strong>Entregables:</strong> Dashboard, informe anual, recomendaciones</div>
+                    <div class="deliverables"><strong>Entregables:</strong> Dashboard, informe anual</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SECTORS -->
-    <section class="section" id="sectors">
+    <section class="band band-white" id="sectors">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">Sectores</span>
-                <h2 class="section-title">Seis entornos industriales, cada uno con su propio portafolio</h2>
-                <p class="section-intro">Cada sector agrupa temas, cursos y programas alineados a los riesgos y normas específicas del entorno.</p>
+            <div class="section-head">
+                <div class="eyebrow">Sectores</div>
+                <h2>Seis entornos industriales</h2>
+                <p class="lead">Cada sector agrupa temas, cursos y programas alineados a los riesgos y normas del entorno.</p>
             </div>
-            <div class="sectors-grid">
+            <div class="sector-grid">
                 <a href="landing-gas.html" class="sector-card">
-                    <span class="sector-number">01</span>
-                    <span class="sector-name">Gas Natural, GLP y Energía</span>
-                    <p class="sector-desc">Tecnologías, procesos, medición y regulación de sistemas de gas.</p>
-                    <span class="sector-themes">LNG · GNC · Compresión · Turbinas · Medición</span>
+                    <span class="meta">01</span>
+                    <span class="title">Gas Natural, GLP y Energía</span>
+                    <p class="desc">Tecnologías, procesos, medición y regulación de sistemas de gas.</p>
+                    <span class="themes">LNG · GNC · Compresión · Turbinas · Medición</span>
                 </a>
                 <a href="landing-activos.html" class="sector-card">
-                    <span class="sector-number">02</span>
-                    <span class="sector-name">Gestión de Activos y Confiabilidad</span>
-                    <p class="sector-desc">Ciclo de vida, RCM, riesgo y gobierno de activos físicos.</p>
-                    <span class="sector-themes">ISO 55000 · RCM · FMECA · RAM · IAM</span>
+                    <span class="meta">02</span>
+                    <span class="title">Gestión de Activos y Confiabilidad</span>
+                    <p class="desc">Ciclo de vida, RCM, riesgo y gobierno de activos físicos.</p>
+                    <span class="themes">ISO 55000 · RCM · FMECA · RAM · IAM</span>
                 </a>
                 <a href="landing-directivas.html" class="sector-card">
-                    <span class="sector-number">03</span>
-                    <span class="sector-name">Habilidades Directivas</span>
-                    <p class="sector-desc">Toma de decisiones, gestión de proyectos y liderazgo técnico.</p>
-                    <span class="sector-themes">Proyectos · Costos · Crisis · MOC</span>
+                    <span class="meta">03</span>
+                    <span class="title">Habilidades Directivas</span>
+                    <p class="desc">Toma de decisiones, gestión de proyectos y liderazgo técnico.</p>
+                    <span class="themes">Proyectos · Costos · Crisis · MOC</span>
                 </a>
                 <a href="landing-integridad.html" class="sector-card">
-                    <span class="sector-number">04</span>
-                    <span class="sector-name">Integridad y Equipos</span>
-                    <p class="sector-desc">Integridad mecánica, inspección, códigos y protección catódica.</p>
-                    <span class="sector-themes">API 579 · API 580 · ASME VIII · B31.3 · Corrosión</span>
+                    <span class="meta">04</span>
+                    <span class="title">Integridad y Equipos</span>
+                    <p class="desc">Integridad mecánica, inspección, códigos y protección catódica.</p>
+                    <span class="themes">API 579 · API 580 · ASME VIII · B31.3 · Corrosión</span>
                 </a>
                 <a href="landing-oilgas.html" class="sector-card">
-                    <span class="sector-number">05</span>
-                    <span class="sector-name">Oil and Gas</span>
-                    <p class="sector-desc">Producción, facilidades, levantamiento artificial y pozos.</p>
-                    <span class="sector-themes">ESP · PCP · Well Integrity · Perforación · Petrofísica</span>
+                    <span class="meta">05</span>
+                    <span class="title">Oil and Gas</span>
+                    <p class="desc">Producción, facilidades, levantamiento artificial y pozos.</p>
+                    <span class="themes">ESP · PCP · Well Integrity · Perforación · Petrofísica</span>
                 </a>
                 <a href="landing-seguridad.html" class="sector-card">
-                    <span class="sector-number">06</span>
-                    <span class="sector-name">Seguridad y Riesgos</span>
-                    <p class="sector-desc">Seguridad de procesos, análisis de riesgos y seguridad eléctrica.</p>
-                    <span class="sector-themes">PSM · HAZOP · LOPA · BowTie · NFPA 70E</span>
+                    <span class="meta">06</span>
+                    <span class="title">Seguridad y Riesgos</span>
+                    <p class="desc">Seguridad de procesos, análisis de riesgos y seguridad eléctrica.</p>
+                    <span class="themes">PSM · HAZOP · LOPA · BowTie · NFPA 70E</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- WEBINARS -->
-    <section class="webinars" id="webinars">
+    <!-- WEBINARS / RESOURCES -->
+    <section class="band band-white" id="webinars">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">Webinars</span>
-                <h2 class="section-title">Conversaciones técnicas, sin relleno</h2>
-                <p class="section-intro">Sesiones cortas para alinear criterio y tomar mejores decisiones en integridad, confiabilidad y seguridad de procesos.</p>
+            <div class="section-head">
+                <div class="eyebrow">Recursos</div>
+                <h2>Webinars y guías técnicas</h2>
+                <p class="lead">Sesiones y materiales para equipos técnicos y líderes de activos.</p>
             </div>
-            <div class="webinar-list">
-                <a class="webinar-card" href="https://campusvirtual.hidrocarburos.com.co" target="_blank">
-                    <div class="webinar-meta">
-                        <span class="tag tag-accent">seguridad de procesos</span>
-                        <span class="date">on-demand</span>
-                    </div>
-                    <div class="webinar-title">RBPS/PSM en operación: qué evidencia realmente miran en auditoría</div>
-                    <div class="webinar-sub">45 min · casos típicos · checklist de evidencias</div>
-                </a>
-                <a class="webinar-card" href="https://campusvirtual.hidrocarburos.com.co" target="_blank">
-                    <div class="webinar-meta">
-                        <span class="tag">integridad</span>
-                        <span class="date">on-demand</span>
-                    </div>
-                    <div class="webinar-title">RBI (API 580/581): cómo priorizar inspección sin perder cobertura</div>
-                    <div class="webinar-sub">45 min · criterios · ejemplos de plan</div>
-                </a>
-                <a class="webinar-card" href="https://campusvirtual.hidrocarburos.com.co" target="_blank">
-                    <div class="webinar-meta">
-                        <span class="tag">confiabilidad</span>
-                        <span class="date">próximo</span>
-                    </div>
-                    <div class="webinar-title">RCM + RCA: cerrar causas raíz con disciplina de ejecución</div>
-                    <div class="webinar-sub">45 min · cuándo funciona · errores comunes</div>
-                </a>
+            <div class="grid-3">
+                <div class="resource-card">
+                    <div class="meta">Webinar</div>
+                    <h3>Seguridad de procesos: hallazgos típicos en auditoría</h3>
+                    <p>Qué suele aparecer en plantas y cómo cerrar brechas con evidencia.</p>
+                    <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Ver grabación</a>
+                </div>
+                <div class="resource-card">
+                    <div class="meta">Guía</div>
+                    <h3>Matriz de competencias por rol para activos críticos</h3>
+                    <p>Un esquema práctico para operación, mantenimiento e integridad.</p>
+                    <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Descargar</a>
+                </div>
+                <div class="resource-card">
+                    <div class="meta">Webinar</div>
+                    <h3>Integridad mecánica: decisiones consistentes con API/ASME</h3>
+                    <p>Cómo reducir variabilidad técnica entre sedes y contratistas.</p>
+                    <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Ver grabación</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- PROOF -->
-    <section class="section" id="proof">
+    <!-- QUOTES / TESTIMONIALS -->
+    <section class="band band-navy" id="quotes">
         <div class="container">
-            <div class="section-header">
-                <span class="section-label">Escala</span>
-                <h2 class="section-title">Trayectoria en América Latina</h2>
+            <div class="section-head">
+                <div class="eyebrow">Testimonios</div>
+                <h2>Lo que valoran los equipos técnicos</h2>
+                <p class="lead">Consistencia, evidencia y aplicación directa a la operación.</p>
+            </div>
+            <div class="grid-3">
+                <div class="quote">
+                    <blockquote>"Logramos alinear criterios entre sedes y dejar evidencia usable para auditoría."</blockquote>
+                    <div class="who">Líder de Integridad</div>
+                    <div class="role">Operador de midstream</div>
+                </div>
+                <div class="quote">
+                    <blockquote>"La ruta por rol nos permitió acelerar el cierre de brechas sin depender de un instructor."</blockquote>
+                    <div class="who">Jefe de Mantenimiento</div>
+                    <div class="role">Energía</div>
+                </div>
+                <div class="quote">
+                    <blockquote>"El contenido se siente hecho para planta: casos, decisiones y estándares aplicados."</blockquote>
+                    <div class="who">HSE / PSM</div>
+                    <div class="role">Procesos industriales</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROOF / SCALE -->
+    <section class="band band-white" id="proof">
+        <div class="container">
+            <div class="section-head">
+                <div class="eyebrow">Escala</div>
+                <h2>Trayectoria en América Latina</h2>
             </div>
             <div class="proof-grid">
                 <div class="proof-item primary">
@@ -726,8 +897,8 @@
         </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact-section band band-accent" id="contact">
+    <!-- CONTACT CTA -->
+    <section class="band band-accent" id="contact">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-text">
@@ -735,8 +906,8 @@
                     <p>Conversemos sobre las competencias que necesita su operación para sostener seguridad, confiabilidad y cumplimiento.</p>
                 </div>
                 <div class="contact-actions">
-                    <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20conversación%20técnica" class="btn-primary">Agendar por WhatsApp</a>
-                    <a href="tel:+573164661007" class="btn-outline">+57 316 466 1007</a>
+                    <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20conversación%20técnica" class="btn btn-primary">Agendar por WhatsApp</a>
+                    <a href="tel:+573164661007" class="btn btn-secondary">+57 316 466 1007</a>
                     <div class="contact-links">
                         <a href="https://hidrocarburos.com.co" target="_blank">Cursos Programados</a>
                         <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Campus Virtual</a>
@@ -747,7 +918,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer>
         <div class="container">
             <div class="footer-inner">
                 <span class="footer-brand">Elite Training © 2026</span>
@@ -786,8 +957,8 @@
                 if (target) {
                     e.preventDefault();
                     const headerH = 70;
-                    const subnavH = window.innerWidth >= 900 ? 44 : 0;
-                    const offset = headerH + subnavH + 20;
+                    const subnavH = window.innerWidth >= 900 ? 40 : 0;
+                    const offset = headerH + subnavH + 16;
                     
                     window.scrollTo({
                         top: target.offsetTop - offset,
