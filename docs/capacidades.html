@@ -23,6 +23,8 @@
             --gray-700: #404040;
             --gray-800: #262626;
             --accent: #E19A24;
+            --accent-light: rgba(225,154,36,.12);
+            --accent-border: rgba(225,154,36,.5);
             --font: 'Roboto', -apple-system, system-ui, sans-serif;
             
             --border: 1px solid var(--gray-300);
@@ -46,13 +48,16 @@
         html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 20px); }
         body { font-family: var(--font); font-size: 1rem; line-height: 1.55; color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; }
         
+        /* CONTAINER - single source of truth for horizontal alignment */
         .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
         @media (min-width: 768px) { .container { padding: 0 32px; } }
+        @media (min-width: 1200px) { .container { padding: 0 48px; } }
         
         /* HEADER */
         .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); border-bottom: var(--border-strong); }
         .header-inner { display: flex; justify-content: space-between; align-items: center; height: var(--header-h); max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
         @media (min-width: 768px) { .header-inner { padding: 0 32px; } }
+        @media (min-width: 1200px) { .header-inner { padding: 0 48px; } }
         .logo-link { display: flex; align-items: center; text-decoration: none; }
         .logo-svg { height: 28px; width: auto; }
         @media (min-width: 768px) { .logo-svg { height: 36px; } }
@@ -67,15 +72,15 @@
         /* SUBNAV */
         .subnav { display: none; position: fixed; top: var(--header-h); left: 0; right: 0; z-index: 999; background: var(--white); border-bottom: var(--border); }
         @media (min-width: 900px) { .subnav { display: block; } }
-        .subnav-inner { display: flex; gap: var(--space-5); max-width: var(--maxw); margin: 0 auto; padding: 0 32px; height: 44px; align-items: center; }
+        .subnav .container { display: flex; gap: var(--space-5); height: 44px; align-items: center; }
         .subnav a { font-size: 0.8125rem; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
         .subnav a:hover { color: var(--black); }
         
-        /* FULLSCREEN MENU */
+        /* FULLSCREEN MENU (overlay only) */
         .fullscreen-menu { position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0; background: var(--white); z-index: 998; display: none; overflow-y: auto; }
         .fullscreen-menu.active { display: block; }
         
-        .menu-inner { padding: var(--space-5) 0; max-width: var(--maxw); margin: 0 auto; }
+        .menu-inner { padding: var(--space-5) 0; }
         .menu-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: var(--border); border-radius: var(--radius); overflow: hidden; }
         @media (min-width: 768px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
@@ -102,19 +107,15 @@
         .menu-footer a { font-size: 0.8125rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); text-decoration: none; transition: opacity 0.2s; }
         .menu-footer a:hover { opacity: 0.6; }
         
-        /* HERO */
-        .hero { padding-top: var(--header-h); min-height: 100vh; display: grid; grid-template-columns: 1fr; }
-        @media (min-width: 900px) { .hero { grid-template-columns: 1fr 1fr; padding-top: calc(var(--header-h) + 44px); } }
+        /* HERO - aligned with container */
+        .hero { padding-top: var(--header-h); border-bottom: var(--border-strong); background: linear-gradient(180deg, var(--accent-light) 0%, transparent 60%); }
+        @media (min-width: 900px) { .hero { padding-top: calc(var(--header-h) + 44px); } }
         
-        .hero-content { display: flex; flex-direction: column; justify-content: center; padding: var(--space-6) 20px; max-width: 560px; }
-        @media (min-width: 768px) { .hero-content { padding: var(--space-7) 32px; } }
-        @media (min-width: 900px) { .hero-content { padding: var(--space-8) var(--space-6); } }
+        .hero-inner { min-height: calc(100vh - var(--header-h)); display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; padding: 56px 0; }
+        @media (min-width: 900px) { .hero-inner { grid-template-columns: 1.15fr 0.85fr; min-height: calc(100vh - var(--header-h) - 44px); padding: 72px 0; } }
         
-        .hero-image { display: none; position: relative; background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80'); background-size: cover; background-position: center; }
-        .hero-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.1) 100%); }
-        @media (min-width: 900px) { .hero-image { display: block; } }
-        
-        .hero h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.025em; color: var(--black); margin-bottom: var(--space-4); }
+        .hero-copy h1 { font-size: clamp(2rem, 5vw, 2.75rem); font-weight: 500; line-height: 1.1; letter-spacing: -0.025em; color: var(--black); margin-bottom: var(--space-3); }
+        .hero-copy h1::after { content: ""; display: block; width: 56px; height: 3px; background: var(--accent); margin-top: 16px; border-radius: 2px; }
         .hero-sub { font-size: 1.0625rem; line-height: 1.5; color: var(--gray-600); max-width: 48ch; margin-bottom: var(--space-5); }
         
         .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -123,22 +124,32 @@
         .btn-secondary { display: inline-flex; align-items: center; gap: 8px; padding: 14px 24px; background: transparent; color: var(--black); font-size: 0.875rem; font-weight: 500; letter-spacing: 0.02em; text-decoration: none; border: var(--border); border-radius: 6px; transition: all 0.2s; }
         .btn-secondary:hover { background: var(--gray-100); border-color: var(--gray-400); }
         
-        .hero-paths { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-5); }
+        .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--space-5); }
         .pill { display: inline-flex; align-items: center; padding: 8px 14px; border: var(--border); border-radius: 999px; text-decoration: none; color: var(--gray-600); font-size: 0.8125rem; font-weight: 400; transition: all 0.2s; }
         .pill:hover { background: var(--gray-100); border-color: var(--gray-400); color: var(--black); }
         
-        /* PROOF STRIP */
-        .proof-strip { border-bottom: var(--border); background: var(--gray-100); }
-        .proof-strip .container { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); padding-top: var(--space-4); padding-bottom: var(--space-4); }
-        .proof-strip .proof-kicker { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); margin-right: var(--space-3); }
-        .proof-strip .logo-chip { padding: 6px 12px; border-radius: 999px; font-size: 0.8125rem; color: var(--gray-600); background: var(--white); border: var(--border); }
+        .hero-media { border-radius: 16px; overflow: hidden; border: var(--border); min-height: 320px; display: none; background: 
+            radial-gradient(circle at 30% 30%, rgba(225,154,36,.2), transparent 50%),
+            url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=80') center/cover no-repeat;
+            filter: saturate(1.05) contrast(1.02); }
+        @media (min-width: 900px) { .hero-media { display: block; min-height: 400px; } }
+        
+        /* PROOF STRIP + LOGOS */
+        .proof-strip { padding: 28px 0 32px; border-bottom: var(--border); }
+        .eyebrow { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 14px; }
+        .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
+        .chip { font-size: 0.8125rem; color: var(--gray-700); border: var(--border); padding: 8px 12px; border-radius: 999px; background: var(--white); }
+        .chip-accent { border-color: var(--accent-border); background: var(--accent-light); }
+        
+        .logos { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; padding-top: 16px; border-top: var(--border); }
+        .logo-item { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-500); border: 1px dashed var(--gray-300); padding: 10px 14px; border-radius: 8px; background: var(--gray-100); }
         
         /* SECTION BASE */
         .section { padding: var(--space-7) 0; border-bottom: var(--border); }
         @media (min-width: 768px) { .section { padding: var(--space-8) 0; } }
-        .section-header { margin-bottom: var(--space-5); }
+        .section-header { margin-bottom: var(--space-5); max-width: 720px; }
         .section-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); margin-bottom: var(--space-2); display: block; }
-        .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.02em; color: var(--black); max-width: 700px; }
+        .section-title { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 500; line-height: 1.15; letter-spacing: -0.02em; color: var(--black); }
         .section-intro { font-size: 1rem; line-height: 1.55; color: var(--gray-600); max-width: 65ch; margin-top: var(--space-3); }
         
         /* CAPABILITIES GRID */
@@ -146,23 +157,32 @@
         @media (min-width: 600px) { .cap-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 900px) { .cap-grid { grid-template-columns: repeat(3, 1fr); } }
         
-        .cap-card { border: var(--border); border-radius: var(--radius); padding: var(--space-4); background: var(--white); transition: border-color 0.2s; }
-        .cap-card:hover { border-color: var(--gray-400); }
+        .cap-card { border: var(--border); border-radius: var(--radius); padding: var(--space-4); background: var(--white); transition: border-color 0.2s, box-shadow 0.2s; }
+        .cap-card:hover { border-color: var(--accent-border); box-shadow: 0 8px 24px rgba(0,0,0,.04); }
         .cap-card h3 { font-size: 1rem; font-weight: 500; color: var(--black); margin-bottom: var(--space-2); line-height: 1.3; }
         .cap-card p { font-size: 0.9375rem; line-height: 1.5; color: var(--gray-600); margin-bottom: var(--space-3); }
         .cap-card .cap-result { font-size: 0.8125rem; color: var(--gray-500); padding-top: var(--space-2); border-top: var(--border); }
+        
+        /* QUOTES */
+        .quotes { padding: var(--space-7) 0; border-bottom: var(--border); background: linear-gradient(180deg, var(--accent-light) 0%, transparent 70%); }
+        @media (min-width: 768px) { .quotes { padding: var(--space-8) 0; } }
+        .quote-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: var(--space-5); }
+        @media (min-width: 900px) { .quote-grid { grid-template-columns: repeat(3, 1fr); } }
+        .quote-card { border: var(--border); border-radius: var(--radius); padding: var(--space-4); background: var(--white); }
+        .quote-card blockquote { font-size: 1rem; color: var(--gray-700); line-height: 1.6; font-style: normal; }
+        .quote-card figcaption { margin-top: 14px; font-size: 0.8125rem; color: var(--gray-500); }
         
         /* COMPARISON TABLE */
         .compare-wrap { overflow-x: auto; margin-top: var(--space-5); -webkit-overflow-scrolling: touch; }
         .compare-table { width: 100%; min-width: 600px; border-collapse: collapse; font-size: 0.9375rem; }
         .compare-table th, .compare-table td { padding: var(--space-3) var(--space-4); text-align: left; border-bottom: var(--border); }
         .compare-table th { font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-500); background: var(--gray-100); position: sticky; top: 0; }
-        .compare-table th:last-child { color: var(--black); background: var(--gray-200); }
+        .compare-table th:last-child { color: var(--black); background: var(--accent-light); }
         .compare-table td { color: var(--gray-600); vertical-align: top; }
         .compare-table td:first-child { font-weight: 500; color: var(--black); }
-        .compare-table td:last-child { color: var(--black); background: var(--gray-100); }
+        .compare-table td:last-child { color: var(--black); background: rgba(225,154,36,.06); }
         .compare-table tbody tr:nth-child(even) td { background: var(--gray-100); }
-        .compare-table tbody tr:nth-child(even) td:last-child { background: var(--gray-200); }
+        .compare-table tbody tr:nth-child(even) td:last-child { background: var(--accent-light); }
         .check { color: var(--accent); font-weight: 500; }
         .x { color: var(--gray-400); }
         
@@ -171,7 +191,8 @@
         @media (min-width: 768px) { .timeline { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1000px) { .timeline { grid-template-columns: repeat(4, 1fr); } }
         
-        .timeline-item { border: var(--border); border-radius: var(--radius); padding: var(--space-4); background: var(--white); position: relative; }
+        .timeline-item { border: var(--border); border-radius: var(--radius); padding: var(--space-4); background: var(--white); transition: border-color 0.2s; }
+        .timeline-item:hover { border-color: var(--accent-border); }
         .timeline-num { font-size: 2rem; font-weight: 500; color: var(--gray-200); line-height: 1; margin-bottom: var(--space-2); }
         .timeline-title { font-size: 1rem; font-weight: 500; color: var(--black); margin-bottom: var(--space-2); }
         .timeline-bullets { list-style: none; margin-bottom: var(--space-3); }
@@ -186,11 +207,25 @@
         @media (min-width: 1000px) { .sectors-grid { grid-template-columns: repeat(3, 1fr); } }
         
         .sector-card { display: block; border: var(--border); border-radius: var(--radius); padding: var(--space-4); background: var(--white); text-decoration: none; color: inherit; transition: all 0.2s; }
-        .sector-card:hover { border-color: var(--gray-400); background: var(--gray-100); }
+        .sector-card:hover { border-color: var(--accent-border); background: var(--gray-100); }
         .sector-number { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 8px; display: block; }
         .sector-name { font-size: 1.0625rem; font-weight: 500; line-height: 1.25; color: var(--black); margin-bottom: 6px; display: block; }
         .sector-desc { font-size: 0.9375rem; line-height: 1.4; color: var(--gray-600); margin-bottom: var(--space-2); }
         .sector-themes { font-size: 0.8125rem; color: var(--gray-500); }
+        
+        /* WEBINARS */
+        .webinars { padding: var(--space-7) 0; border-bottom: var(--border); }
+        @media (min-width: 768px) { .webinars { padding: var(--space-8) 0; } }
+        .webinar-list { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: var(--space-5); }
+        @media (min-width: 900px) { .webinar-list { grid-template-columns: repeat(3, 1fr); } }
+        .webinar-card { display: block; text-decoration: none; color: inherit; border: var(--border); border-radius: var(--radius); padding: var(--space-4); background: var(--white); transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s; }
+        .webinar-card:hover { transform: translateY(-2px); border-color: var(--accent-border); box-shadow: 0 10px 30px rgba(0,0,0,.06); }
+        .webinar-meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 10px; }
+        .tag { font-size: 0.75rem; padding: 6px 10px; border-radius: 999px; border: var(--border); color: var(--gray-600); background: var(--gray-100); text-transform: lowercase; }
+        .tag-accent { border-color: var(--accent-border); background: var(--accent-light); color: var(--gray-800); }
+        .date { font-size: 0.75rem; color: var(--gray-500); }
+        .webinar-title { font-size: 0.9375rem; font-weight: 500; color: var(--black); line-height: 1.35; }
+        .webinar-sub { margin-top: 8px; font-size: 0.8125rem; color: var(--gray-500); }
         
         /* PROOF SECTION */
         .proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: var(--space-5); }
@@ -198,7 +233,7 @@
         @media (min-width: 900px) { .proof-grid { grid-template-columns: repeat(6, 1fr); } }
         
         .proof-item { border: var(--border); border-radius: var(--radius); padding: var(--space-4) var(--space-3); text-align: center; }
-        .proof-item.primary { background: var(--gray-100); }
+        .proof-item.primary { background: var(--accent-light); border-color: var(--accent-border); }
         .proof-value { font-size: 1.5rem; font-weight: 500; color: var(--black); line-height: 1; margin-bottom: 4px; }
         .proof-item.primary .proof-value { font-size: 2rem; }
         .proof-label { font-size: 0.8125rem; color: var(--gray-500); }
@@ -225,8 +260,8 @@
         
         /* FOOTER */
         .footer { padding: var(--space-5) 0; border-top: var(--border); }
-        .footer-inner { display: flex; flex-direction: column; gap: var(--space-3); max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
-        @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; padding: 0 32px; } }
+        .footer .container { display: flex; flex-direction: column; gap: var(--space-3); }
+        @media (min-width: 768px) { .footer .container { flex-direction: row; justify-content: space-between; align-items: center; } }
         .footer-brand { font-size: 0.8125rem; color: var(--gray-500); }
         .footer-links { display: flex; flex-wrap: wrap; gap: var(--space-4); }
         .footer-links a { font-size: 0.8125rem; font-weight: 500; color: var(--black); text-decoration: none; transition: opacity 0.2s; }
@@ -266,17 +301,18 @@
 
     <!-- SUBNAV (desktop only) -->
     <nav class="subnav" id="subnav">
-        <div class="subnav-inner">
+        <div class="container">
             <a href="#capabilities">Capacidades</a>
+            <a href="#quotes">Testimonios</a>
             <a href="#why-now">Por qué ahora</a>
             <a href="#mission-profile">Modelo</a>
             <a href="#sectors">Sectores</a>
-            <a href="#proof">Escala</a>
+            <a href="#webinars">Webinars</a>
             <a href="#contact">Contacto</a>
         </div>
     </nav>
 
-    <!-- FULLSCREEN MENU -->
+    <!-- FULLSCREEN MENU (overlay only) -->
     <div class="fullscreen-menu" id="fullscreenMenu">
         <div class="container">
             <div class="menu-inner">
@@ -365,37 +401,51 @@
         </div>
     </div>
 
-    <!-- HERO -->
+    <!-- HERO (aligned with container) -->
     <section class="hero" id="hero">
-        <div class="hero-content">
-            <h1>Formación técnica para industrias de alto riesgo.</h1>
-            <p class="hero-sub">Integridad, seguridad de procesos y confiabilidad para equipos que operan activos críticos.</p>
-            <div class="hero-ctas">
-                <a href="#capabilities" class="btn-primary">Ver capacidades</a>
-                <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20conversación%20técnica" class="btn-secondary">Agendar conversación</a>
-            </div>
-            <div class="hero-paths">
-                <a class="pill" href="landing-gas.html">Gas</a>
-                <a class="pill" href="landing-activos.html">Activos</a>
-                <a class="pill" href="landing-directivas.html">Directivas</a>
-                <a class="pill" href="landing-integridad.html">Integridad</a>
-                <a class="pill" href="landing-oilgas.html">Oil & Gas</a>
-                <a class="pill" href="landing-seguridad.html">Seguridad</a>
+        <div class="container">
+            <div class="hero-inner">
+                <div class="hero-copy">
+                    <h1>Formación técnica para industrias de alto riesgo.</h1>
+                    <p class="hero-sub">Integridad, seguridad de procesos y confiabilidad para equipos que operan activos críticos.</p>
+                    <div class="hero-ctas">
+                        <a href="#capabilities" class="btn-primary">Ver capacidades</a>
+                        <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20conversación%20técnica" class="btn-secondary">Agendar conversación</a>
+                    </div>
+                    <div class="hero-pills">
+                        <a class="pill" href="landing-gas.html">Gas</a>
+                        <a class="pill" href="landing-activos.html">Activos</a>
+                        <a class="pill" href="landing-directivas.html">Directivas</a>
+                        <a class="pill" href="landing-integridad.html">Integridad</a>
+                        <a class="pill" href="landing-oilgas.html">Oil & Gas</a>
+                        <a class="pill" href="landing-seguridad.html">Seguridad</a>
+                    </div>
+                </div>
+                <div class="hero-media" aria-hidden="true"></div>
             </div>
         </div>
-        <div class="hero-image"></div>
     </section>
 
-    <!-- PROOF STRIP -->
-    <section class="proof-strip">
+    <!-- PROOF STRIP + LOGOS -->
+    <section class="proof-strip" id="proof-strip">
         <div class="container">
-            <span class="proof-kicker">Trayectoria</span>
-            <span class="logo-chip">30 años</span>
-            <span class="logo-chip">400+ empresas/año</span>
-            <span class="logo-chip">11+ países</span>
-            <span class="logo-chip">60–80k profesionales</span>
-            <span class="logo-chip">ASME</span>
-            <span class="logo-chip">The Woodhouse Partnership</span>
+            <p class="eyebrow">Confianza construida en operación real</p>
+            <div class="chips">
+                <span class="chip">30 años</span>
+                <span class="chip">400+ empresas/año</span>
+                <span class="chip">11+ países</span>
+                <span class="chip">60–80k profesionales</span>
+                <span class="chip chip-accent">ASME</span>
+                <span class="chip chip-accent">The Woodhouse Partnership</span>
+            </div>
+            <div class="logos">
+                <span class="logo-item">Ecopetrol</span>
+                <span class="logo-item">Ocensa</span>
+                <span class="logo-item">Frontera</span>
+                <span class="logo-item">ISA</span>
+                <span class="logo-item">Repsol</span>
+                <span class="logo-item">+ otras</span>
+            </div>
         </div>
     </section>
 
@@ -438,6 +488,31 @@
                     <p>Formación extendida a personal externo con los mismos criterios.</p>
                     <div class="cap-result">Resultado: consistencia en toda la cadena operativa.</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUOTES -->
+    <section class="quotes" id="quotes">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">En terreno</span>
+                <h2 class="section-title">Lo que más valoran los equipos técnicos</h2>
+                <p class="section-intro">Menos variabilidad operativa, más criterio compartido, evidencia lista para auditoría.</p>
+            </div>
+            <div class="quote-grid">
+                <figure class="quote-card">
+                    <blockquote>"La ruta por rol nos ayudó a nivelar criterios entre sedes y contratistas. El cambio se vio en decisiones de campo."</blockquote>
+                    <figcaption>Jefe de Operación, midstream</figcaption>
+                </figure>
+                <figure class="quote-card">
+                    <blockquote>"La matriz de competencias y la evaluación nos dejó trazabilidad para auditoría sin trabajo adicional."</blockquote>
+                    <figcaption>Líder HSE / Seguridad de Procesos</figcaption>
+                </figure>
+                <figure class="quote-card">
+                    <blockquote>"Contenido técnico aplicable. Se nota cuando el instructor viene de operación."</blockquote>
+                    <figcaption>Integridad mecánica / inspección</figcaption>
+                </figure>
             </div>
         </div>
     </section>
@@ -594,6 +669,43 @@
         </div>
     </section>
 
+    <!-- WEBINARS -->
+    <section class="webinars" id="webinars">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Webinars</span>
+                <h2 class="section-title">Conversaciones técnicas, sin relleno</h2>
+                <p class="section-intro">Sesiones cortas para alinear criterio y tomar mejores decisiones en integridad, confiabilidad y seguridad de procesos.</p>
+            </div>
+            <div class="webinar-list">
+                <a class="webinar-card" href="https://campusvirtual.hidrocarburos.com.co" target="_blank">
+                    <div class="webinar-meta">
+                        <span class="tag tag-accent">seguridad de procesos</span>
+                        <span class="date">on-demand</span>
+                    </div>
+                    <div class="webinar-title">RBPS/PSM en operación: qué evidencia realmente miran en auditoría</div>
+                    <div class="webinar-sub">45 min · casos típicos · checklist de evidencias</div>
+                </a>
+                <a class="webinar-card" href="https://campusvirtual.hidrocarburos.com.co" target="_blank">
+                    <div class="webinar-meta">
+                        <span class="tag">integridad</span>
+                        <span class="date">on-demand</span>
+                    </div>
+                    <div class="webinar-title">RBI (API 580/581): cómo priorizar inspección sin perder cobertura</div>
+                    <div class="webinar-sub">45 min · criterios · ejemplos de plan</div>
+                </a>
+                <a class="webinar-card" href="https://campusvirtual.hidrocarburos.com.co" target="_blank">
+                    <div class="webinar-meta">
+                        <span class="tag">confiabilidad</span>
+                        <span class="date">próximo</span>
+                    </div>
+                    <div class="webinar-title">RCM + RCA: cerrar causas raíz con disciplina de ejecución</div>
+                    <div class="webinar-sub">45 min · cuándo funciona · errores comunes</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- PROOF -->
     <section class="section" id="proof">
         <div class="container">
@@ -653,7 +765,7 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-inner">
+        <div class="container">
             <span class="footer-brand">Elite Training © 2026</span>
             <div class="footer-links">
                 <a href="https://hidrocarburos.com.co" target="_blank">hidrocarburos.com.co</a>
