@@ -20,6 +20,7 @@
             --gray-400: #a3a3a3;
             --gray-500: #737373;
             --gray-600: #525252;
+            --gray-700: #404040;
             --gray-800: #262626;
             --accent: #E19A24;
             --font: 'Roboto', -apple-system, system-ui, sans-serif;
@@ -33,14 +34,13 @@
         @media (min-width: 768px) { .container { padding: 0 32px; } }
         @media (min-width: 1200px) { .container { padding: 0 48px; } }
         
-        /* HEADER - Minimal with Logo */
+        /* HEADER */
         .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 2px solid var(--black); }
         .header-inner { display: flex; justify-content: space-between; align-items: center; height: 60px; }
         @media (min-width: 768px) { .header-inner { height: 70px; } }
         .logo-link { display: flex; align-items: center; text-decoration: none; }
         .logo-svg { height: 32px; width: auto; }
         @media (min-width: 768px) { .logo-svg { height: 40px; } }
-        .logo-text { display: none; }
         
         .menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
         .menu-toggle span { width: 24px; height: 2px; background: var(--black); transition: all 0.3s; }
@@ -60,70 +60,83 @@
         @media (min-width: 768px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
         
-        .menu-sector { padding: 24px 20px; border-bottom: 2px solid var(--black); position: relative; }
+        .menu-sector { padding: 24px 20px; border-bottom: 2px solid var(--black); }
         @media (min-width: 768px) { .menu-sector { padding: 32px; border-right: 2px solid var(--black); } }
         @media (min-width: 768px) { .menu-sector:nth-child(2n) { border-right: none; } }
         @media (min-width: 1024px) { .menu-sector:nth-child(2n) { border-right: 2px solid var(--black); } .menu-sector:nth-child(3n) { border-right: none; } }
         .menu-sector:last-child { border-bottom: none; }
         
         .menu-sector-number { font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); margin-bottom: 12px; display: block; }
-        @media (min-width: 768px) { .menu-sector-number { font-size: 0.75rem; margin-bottom: 16px; } }
         .menu-sector-link { display: block; font-size: 1.125rem; font-weight: 900; line-height: 1.2; color: var(--black); text-decoration: none; margin-bottom: 16px; transition: color 0.2s; }
-        @media (min-width: 768px) { .menu-sector-link { font-size: 1.375rem; margin-bottom: 20px; } }
         .menu-sector-link:hover { color: var(--accent); }
         .menu-themes { display: flex; flex-direction: column; gap: 10px; padding-top: 12px; border-top: 1px solid var(--gray-300); }
-        @media (min-width: 768px) { .menu-themes { gap: 12px; padding-top: 16px; } }
-        .menu-theme { font-size: 0.9375rem; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; display: block; }
+        .menu-theme { font-size: 0.9375rem; font-weight: 500; color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
         .menu-theme:hover { color: var(--black); }
         
         .menu-footer { margin-top: 24px; padding-top: 24px; border-top: 2px solid var(--black); display: flex; flex-wrap: wrap; gap: 24px; }
         @media (min-width: 768px) { .menu-footer { margin-top: 40px; padding-top: 32px; gap: 40px; } }
         .menu-footer a { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; transition: opacity 0.2s; }
-        @media (min-width: 768px) { .menu-footer a { font-size: 0.8125rem; } }
         .menu-footer a:hover { opacity: 0.6; }
         
-        /* HERO - Left Aligned */
-        .hero { padding-top: 60px; min-height: calc(100vh - 60px); display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; border-bottom: 2px solid var(--black); }
-        @media (min-width: 768px) { .hero { padding-top: 70px; min-height: calc(100vh - 70px); } }
-        .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80'); background-size: cover; background-position: center; }
-        .hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.92); }
-        @media (min-width: 768px) { .hero-bg::after { background: linear-gradient(to right, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,0.7) 100%); } }
+        /* HERO */
+        .hero { padding-top: 60px; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; border-bottom: 2px solid var(--black); }
+        @media (min-width: 768px) { .hero { padding-top: 70px; } }
+        .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80'); background-size: cover; background-position: center; }
+        .hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.93); }
+        @media (min-width: 768px) { .hero-bg::after { background: linear-gradient(to right, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.88) 50%, rgba(255,255,255,0.75) 100%); } }
         .hero-content { position: relative; z-index: 1; width: 100%; }
-        .hero-inner { padding: 60px 0; max-width: 700px; margin-right: auto; }
-        @media (min-width: 768px) { .hero-inner { padding: 100px 0; } }
-        @media (min-width: 1024px) { .hero-inner { padding: 120px 0; } }
+        .hero-inner { padding: 80px 0; max-width: 800px; }
+        @media (min-width: 768px) { .hero-inner { padding: 120px 0; } }
         
-        .hero-label { font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); margin-bottom: 24px; display: inline-block; padding: 8px 14px; background: var(--gray-200); border: 2px solid var(--black); }
-        @media (min-width: 768px) { .hero-label { font-size: 0.75rem; padding: 10px 18px; margin-bottom: 40px; } }
-        .hero h1 { font-size: clamp(2.5rem, 8vw, 6.5rem); font-weight: 900; line-height: 0.92; letter-spacing: -0.04em; color: var(--black); margin-bottom: 28px; }
-        @media (min-width: 768px) { .hero h1 { margin-bottom: 40px; } }
-        .hero-description { font-size: 1.0625rem; line-height: 1.65; color: var(--gray-700); max-width: 520px; margin-bottom: 40px; }
-        @media (min-width: 768px) { .hero-description { font-size: 1.1875rem; margin-bottom: 56px; } }
-        .hero-ctas { display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 7rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.04em; color: var(--black); margin-bottom: 32px; }
+        @media (min-width: 768px) { .hero h1 { margin-bottom: 48px; } }
+        .hero h1 span { display: block; }
+        .hero h1 .accent { color: var(--accent); }
+        
+        .hero-tagline { font-size: 1.125rem; line-height: 1.6; color: var(--gray-700); max-width: 560px; margin-bottom: 48px; border-left: 3px solid var(--black); padding-left: 20px; }
+        @media (min-width: 768px) { .hero-tagline { font-size: 1.25rem; margin-bottom: 64px; } }
+        
+        .hero-ctas { display: flex; flex-direction: column; gap: 12px; }
         @media (min-width: 480px) { .hero-ctas { flex-direction: row; gap: 16px; } }
-        @media (min-width: 768px) { .hero-ctas { margin-bottom: 64px; } }
+        
         .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 18px 32px; background: var(--black); color: var(--white); font-size: 0.75rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 2px solid var(--black); }
         @media (min-width: 768px) { .btn-primary { padding: 20px 40px; font-size: 0.8125rem; } }
         .btn-primary:hover { background: var(--white); color: var(--black); }
         .btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 18px 32px; background: transparent; color: var(--black); font-size: 0.75rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--black); transition: all 0.2s; }
         @media (min-width: 768px) { .btn-secondary { padding: 20px 40px; font-size: 0.8125rem; } }
         .btn-secondary:hover { background: var(--black); color: var(--white); }
-        .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--black); border: 2px solid var(--black); width: 100%; max-width: 480px; }
-        @media (min-width: 768px) { .hero-stats { max-width: 520px; } }
-        .hero-stat { background: var(--white); padding: 20px; display: flex; flex-direction: column; }
-        @media (min-width: 768px) { .hero-stat { padding: 24px; } }
-        .hero-stat-value { font-size: 1.125rem; font-weight: 900; letter-spacing: 0.03em; text-transform: uppercase; color: var(--black); }
-        @media (min-width: 768px) { .hero-stat-value { font-size: 1.25rem; } }
-        .hero-stat-label { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-top: 8px; }
-        @media (min-width: 768px) { .hero-stat-label { font-size: 0.6875rem; margin-top: 10px; } }
         
-        /* SECTORS GRID */
+        /* CLIENTS SECTION */
+        .clients { border-bottom: 2px solid var(--black); padding: 60px 0; }
+        @media (min-width: 768px) { .clients { padding: 80px 0; } }
+        .clients-label { font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray-500); margin-bottom: 32px; }
+        @media (min-width: 768px) { .clients-label { margin-bottom: 48px; } }
+        .clients-grid { display: flex; flex-wrap: wrap; align-items: center; gap: 32px; }
+        @media (min-width: 768px) { .clients-grid { gap: 48px; } }
+        .client-logo { height: 28px; width: auto; filter: grayscale(100%); opacity: 0.7; transition: all 0.3s; }
+        @media (min-width: 768px) { .client-logo { height: 36px; } }
+        .client-logo:hover { filter: grayscale(0%); opacity: 1; }
+        
+        /* STATS BAR */
+        .stats-bar { border-bottom: 2px solid var(--black); }
+        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); }
+        @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+        .stat-item { padding: 32px 20px; border-right: 2px solid var(--black); border-bottom: 2px solid var(--black); }
+        @media (min-width: 768px) { .stat-item { padding: 48px 32px; border-bottom: none; } }
+        .stat-item:nth-child(2n) { border-right: none; }
+        @media (min-width: 768px) { .stat-item:nth-child(2n) { border-right: 2px solid var(--black); } .stat-item:last-child { border-right: none; } }
+        @media (min-width: 768px) { .stat-item:nth-child(n+3) { border-bottom: none; } }
+        .stat-value { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; letter-spacing: -0.02em; color: var(--black); line-height: 1; }
+        .stat-label { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); margin-top: 12px; }
+        @media (min-width: 768px) { .stat-label { margin-top: 16px; } }
+        
+        /* SECTORS */
         .sectors { border-bottom: 2px solid var(--black); }
         .sectors-header { padding: 100px 0 60px; display: flex; flex-direction: column; align-items: flex-start; }
         @media (min-width: 768px) { .sectors-header { padding: 120px 0 80px; } }
-        .sectors-label { font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); margin-bottom: 20px; padding: 8px 14px; background: var(--gray-200); border: 2px solid var(--black); }
-        @media (min-width: 768px) { .sectors-label { font-size: 0.75rem; padding: 10px 18px; margin-bottom: 32px; } }
-        .sectors-title { font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; line-height: 1.02; letter-spacing: -0.04em; color: var(--black); max-width: 800px; }
+        .section-label { font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); margin-bottom: 20px; padding: 8px 14px; background: var(--gray-200); border: 2px solid var(--black); }
+        @media (min-width: 768px) { .section-label { font-size: 0.75rem; padding: 10px 18px; margin-bottom: 32px; } }
+        .section-title { font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; line-height: 1.02; letter-spacing: -0.04em; color: var(--black); max-width: 800px; }
         
         .sectors-grid { display: grid; grid-template-columns: 1fr; border-top: 2px solid var(--black); }
         @media (min-width: 600px) { .sectors-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -136,40 +149,91 @@
         .sector-card:hover { background: var(--gray-100); }
         @media (min-width: 768px) { .sector-card { min-height: 320px; } }
         .sector-card:last-child { border-bottom: none; }
+        @media (min-width: 600px) { .sector-card:nth-last-child(-n+2) { border-bottom: none; } }
+        @media (min-width: 900px) { .sector-card:nth-last-child(-n+3) { border-bottom: none; } }
         
         .sector-number { font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.2em; text-transform: uppercase; color: var(--black); margin-bottom: 16px; display: block; }
-        @media (min-width: 768px) { .sector-number { font-size: 0.75rem; margin-bottom: 20px; } }
         .sector-name { font-size: 1.25rem; font-weight: 900; line-height: 1.15; letter-spacing: -0.02em; color: var(--black); margin-bottom: 20px; display: block; }
         @media (min-width: 768px) { .sector-name { font-size: 1.5rem; margin-bottom: 24px; } }
         .sector-themes { display: flex; flex-direction: column; gap: 10px; padding-top: 20px; border-top: 1px solid var(--gray-300); }
-        @media (min-width: 768px) { .sector-themes { gap: 12px; padding-top: 24px; } }
         .sector-theme { font-size: 0.9375rem; font-weight: 500; color: var(--gray-600); }
         @media (min-width: 768px) { .sector-theme { font-size: 1rem; } }
         .sector-arrow { position: absolute; bottom: 28px; right: 24px; font-size: 1.5rem; color: var(--black); transition: transform 0.2s; }
         @media (min-width: 768px) { .sector-arrow { bottom: 40px; right: 36px; font-size: 1.75rem; } }
         .sector-card:hover .sector-arrow { transform: translate(4px, -4px); }
         
-        /* CTA SECTION */
-        .cta-section { padding: 80px 0; background: var(--black); color: var(--white); border-bottom: 2px solid var(--black); }
-        @media (min-width: 768px) { .cta-section { padding: 100px 0; } }
-        .cta-inner { display: flex; flex-direction: column; gap: 32px; }
-        @media (min-width: 768px) { .cta-inner { flex-direction: row; justify-content: space-between; align-items: center; gap: 48px; } }
-        .cta-text h2 { font-size: clamp(1.5rem, 4vw, 2.25rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 12px; }
-        .cta-text p { font-size: 1rem; color: var(--gray-400); }
-        .cta-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 28px; background: var(--white); color: var(--black); font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 2px solid var(--white); }
-        @media (min-width: 768px) { .cta-btn { padding: 18px 36px; font-size: 0.75rem; } }
-        .cta-btn:hover { background: transparent; color: var(--white); }
+        /* TESTIMONIALS */
+        .testimonials { border-bottom: 2px solid var(--black); }
+        .testimonials-header { padding: 100px 0 60px; }
+        @media (min-width: 768px) { .testimonials-header { padding: 120px 0 80px; } }
+        .testimonials-grid { display: grid; grid-template-columns: 1fr; border-top: 2px solid var(--black); }
+        @media (min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+        
+        .testimonial-card { padding: 40px 24px; border-bottom: 2px solid var(--black); }
+        @media (min-width: 768px) { .testimonial-card { padding: 48px 36px; border-right: 2px solid var(--black); border-bottom: none; } }
+        .testimonial-card:last-child { border-right: none; border-bottom: none; }
+        .testimonial-quote { font-size: 1.0625rem; line-height: 1.7; color: var(--gray-700); margin-bottom: 32px; font-style: italic; }
+        @media (min-width: 768px) { .testimonial-quote { font-size: 1.125rem; } }
+        .testimonial-author { font-size: 0.8125rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); }
+        .testimonial-company { font-size: 0.75rem; font-weight: 500; color: var(--gray-500); margin-top: 4px; }
+        
+        /* WEBINARS */
+        .webinars { border-bottom: 2px solid var(--black); }
+        .webinars-header { padding: 100px 0 60px; display: flex; flex-direction: column; align-items: flex-start; }
+        @media (min-width: 768px) { .webinars-header { padding: 120px 0 80px; flex-direction: row; justify-content: space-between; align-items: flex-end; } }
+        .webinars-grid { display: grid; grid-template-columns: 1fr; gap: 2px; background: var(--black); border-top: 2px solid var(--black); }
+        @media (min-width: 768px) { .webinars-grid { grid-template-columns: repeat(3, 1fr); } }
+        
+        .webinar-card { background: var(--white); padding: 0; }
+        .webinar-video { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: var(--gray-200); }
+        .webinar-video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .webinar-info { padding: 24px; }
+        @media (min-width: 768px) { .webinar-info { padding: 32px; } }
+        .webinar-title { font-size: 1rem; font-weight: 700; line-height: 1.4; color: var(--black); margin-bottom: 8px; }
+        @media (min-width: 768px) { .webinar-title { font-size: 1.0625rem; } }
+        .webinar-meta { font-size: 0.75rem; font-weight: 500; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.1em; }
+        
+        /* PARTNERS */
+        .partners { border-bottom: 2px solid var(--black); }
+        .partners-inner { display: grid; grid-template-columns: 1fr; }
+        @media (min-width: 768px) { .partners-inner { grid-template-columns: 1fr 2fr; } }
+        .partners-text { padding: 60px 24px; border-bottom: 2px solid var(--black); }
+        @media (min-width: 768px) { .partners-text { padding: 80px 48px; border-bottom: none; border-right: 2px solid var(--black); } }
+        .partners-text h3 { font-size: 1.5rem; font-weight: 900; line-height: 1.2; letter-spacing: -0.02em; color: var(--black); margin-bottom: 16px; }
+        @media (min-width: 768px) { .partners-text h3 { font-size: 1.75rem; } }
+        .partners-text p { font-size: 1rem; line-height: 1.6; color: var(--gray-600); }
+        .partners-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 48px; padding: 60px 24px; }
+        @media (min-width: 768px) { .partners-logos { padding: 80px 48px; gap: 64px; } }
+        .partner-logo { height: 48px; width: auto; }
+        @media (min-width: 768px) { .partner-logo { height: 56px; } }
+        
+        /* COMMUNITY CTA */
+        .community { background: var(--black); color: var(--white); border-bottom: 2px solid var(--black); }
+        .community-inner { display: grid; grid-template-columns: 1fr; }
+        @media (min-width: 768px) { .community-inner { grid-template-columns: 2fr 1fr; } }
+        .community-text { padding: 80px 24px; }
+        @media (min-width: 768px) { .community-text { padding: 100px 48px; border-right: 2px solid var(--gray-800); } }
+        .community-text h3 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; }
+        .community-text p { font-size: 1.0625rem; line-height: 1.6; color: var(--gray-400); margin-bottom: 40px; max-width: 500px; }
+        .community-cta { padding: 80px 24px; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 24px; }
+        @media (min-width: 768px) { .community-cta { padding: 100px 48px; } }
+        .community-stat { font-size: 3rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1; }
+        @media (min-width: 768px) { .community-stat { font-size: 4rem; } }
+        .community-stat-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-400); margin-top: 8px; }
+        
+        .btn-white { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 18px 32px; background: var(--white); color: var(--black); font-size: 0.75rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 2px solid var(--white); }
+        @media (min-width: 768px) { .btn-white { padding: 20px 40px; font-size: 0.8125rem; } }
+        .btn-white:hover { background: transparent; color: var(--white); }
         
         /* FOOTER */
-        .footer { padding: 40px 0; border-top: 2px solid var(--black); }
-        @media (min-width: 768px) { .footer { padding: 48px 0; } }
-        .footer-inner { display: flex; flex-direction: column; gap: 16px; }
-        @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; } }
-        .footer-brand { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); }
-        .footer-links { display: flex; gap: 20px; }
-        @media (min-width: 768px) { .footer-links { gap: 32px; } }
-        .footer-links a { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); text-decoration: none; transition: opacity 0.2s; }
-        @media (min-width: 768px) { .footer-links a { font-size: 0.75rem; } }
+        .footer { padding: 48px 0; }
+        @media (min-width: 768px) { .footer { padding: 64px 0; } }
+        .footer-inner { display: flex; flex-direction: column; gap: 32px; }
+        @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; align-items: flex-start; } }
+        .footer-brand { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray-500); }
+        .footer-links { display: flex; flex-direction: column; gap: 16px; }
+        @media (min-width: 768px) { .footer-links { flex-direction: row; gap: 40px; } }
+        .footer-links a { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; transition: opacity 0.2s; }
         .footer-links a:hover { opacity: 0.6; }
     </style>
 </head>
@@ -195,7 +259,6 @@
                         <path d="M1560.95 262.86V190.596C1560.95 174.314 1550.62 168.808 1541.24 168.808C1531.82 168.808 1521.28 174.314 1521.28 190.596V262.86H1491.47V143.348H1520.6V154.361C1528.39 146.101 1539.4 141.986 1550.41 141.986C1562.34 141.986 1571.96 145.894 1578.63 152.526C1588.28 162.147 1590.79 173.396 1590.79 186.481V262.86H1560.95V262.86Z" fill="#E19A24"/>
                         <path d="M1652.69 308.036C1634.34 308.036 1621.72 304.365 1609.35 292.435L1627.94 273.636C1634.6 280.06 1641.23 282.814 1651.33 282.814C1669.24 282.814 1675.43 270.202 1675.43 258.035V245.868C1667.64 254.601 1658.7 257.798 1646.98 257.798C1635.28 257.798 1625.19 253.89 1618.53 247.259C1607.28 236.009 1606.36 220.645 1606.36 199.774C1606.36 178.903 1607.28 163.775 1618.53 152.526C1625.19 145.865 1635.49 141.986 1647.18 141.986C1659.8 141.986 1668.06 145.42 1676.32 154.598V143.348H1705.21V258.509C1705.21 287.165 1684.81 308.036 1652.69 308.036ZM1655.68 168.808C1638.01 168.808 1636.17 183.936 1636.17 199.774C1636.17 215.612 1638.01 230.977 1655.68 230.977C1673.35 230.977 1675.4 215.612 1675.4 199.774C1675.4 183.936 1673.33 168.808 1655.68 168.808Z" fill="#E19A24"/>
                     </svg>
-                    <span class="logo-text">Elite Training</span>
                 </a>
                 <button class="menu-toggle" id="menuToggle" aria-label="Menu">
                     <span></span>
@@ -220,7 +283,6 @@
                             <a href="landing-gas.html#medicion" class="menu-theme">Medición y Regulación</a>
                         </div>
                     </div>
-                    
                     <div class="menu-sector">
                         <span class="menu-sector-number">02</span>
                         <a href="landing-activos.html" class="menu-sector-link">Gestión de Activos, Mantenimiento y Confiabilidad</a>
@@ -230,7 +292,6 @@
                             <a href="landing-activos.html#activos" class="menu-theme">Gestión de Activos</a>
                         </div>
                     </div>
-                    
                     <div class="menu-sector">
                         <span class="menu-sector-number">03</span>
                         <a href="landing-directivas.html" class="menu-sector-link">Habilidades Directivas</a>
@@ -239,7 +300,6 @@
                             <a href="landing-directivas.html#liderazgo" class="menu-theme">Liderazgo y Organización</a>
                         </div>
                     </div>
-                    
                     <div class="menu-sector">
                         <span class="menu-sector-number">04</span>
                         <a href="landing-integridad.html" class="menu-sector-link">Integridad y Equipos</a>
@@ -250,7 +310,6 @@
                             <a href="landing-integridad.html#catodica" class="menu-theme">Protección Catódica</a>
                         </div>
                     </div>
-                    
                     <div class="menu-sector">
                         <span class="menu-sector-number">05</span>
                         <a href="landing-oilgas.html" class="menu-sector-link">Oil and Gas</a>
@@ -261,7 +320,6 @@
                             <a href="landing-oilgas.html#yacimientos" class="menu-theme">Yacimientos</a>
                         </div>
                     </div>
-                    
                     <div class="menu-sector">
                         <span class="menu-sector-number">06</span>
                         <a href="landing-seguridad.html" class="menu-sector-link">Seguridad y Riesgos</a>
@@ -273,7 +331,6 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="menu-footer">
                     <a href="https://hidrocarburos.com.co" target="_blank">Cursos Programados</a>
                     <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Campus Virtual</a>
@@ -288,33 +345,58 @@
         <div class="hero-bg"></div>
         <div class="container hero-content">
             <div class="hero-inner">
-                <p class="hero-label">29 años formando la industria</p>
-                <h1>Formación técnica para industrias de alto riesgo</h1>
-                <p class="hero-description">Oil & Gas, Integridad Mecánica, Gestión de Activos, Seguridad de Procesos. Partner exclusivo The Woodhouse Partnership. Proveedor ASME.</p>
+                <h1>
+                    <span>No vendemos</span>
+                    <span>cursos.</span>
+                    <span class="accent">Construimos</span>
+                    <span class="accent">competencias.</span>
+                </h1>
+                
+                <p class="hero-tagline">29 años formando equipos técnicos de Ecopetrol, Repsol, Oxy, ISA y más de 200 empresas en 11 países. Aliados oficiales de ASME y The Woodhouse Partnership.</p>
                 
                 <div class="hero-ctas">
                     <a href="https://wa.me/573164661007?text=Quiero%20información%20sobre%20capacitación" class="btn-primary">Agendar Llamada &rarr;</a>
                     <a href="#sectores" class="btn-secondary">Ver Sectores</a>
                 </div>
-                
-                <div class="hero-stats">
-                    <div class="hero-stat">
-                        <span class="hero-stat-value">29</span>
-                        <span class="hero-stat-label">Años</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-value">TWPL</span>
-                        <span class="hero-stat-label">Partner</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-value">ASME</span>
-                        <span class="hero-stat-label">Proveedor</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-value">6</span>
-                        <span class="hero-stat-label">Sectores</span>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section class="clients">
+        <div class="container">
+            <p class="clients-label">Confían en nosotros</p>
+            <div class="clients-grid">
+                <img src="assets/logos/ecopetrol.png" alt="Ecopetrol" class="client-logo">
+                <img src="assets/logos/repsol.svg" alt="Repsol" class="client-logo">
+                <img src="assets/logos/oxy.svg" alt="Oxy" class="client-logo">
+                <img src="assets/logos/eni.svg" alt="Eni" class="client-logo">
+                <img src="assets/logos/frontera.jpg" alt="Frontera Energy" class="client-logo">
+                <img src="assets/logos/parex.png" alt="Parex" class="client-logo">
+                <img src="assets/logos/promigas.jpg" alt="Promigas" class="client-logo">
+                <img src="assets/logos/geopark.png" alt="Geopark" class="client-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-bar">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value">29</div>
+                <div class="stat-label">Años de experiencia</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">200+</div>
+                <div class="stat-label">Empresas formadas</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">11</div>
+                <div class="stat-label">Países</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">6</div>
+                <div class="stat-label">Sectores especializados</div>
             </div>
         </div>
     </section>
@@ -323,11 +405,10 @@
     <section class="sectors" id="sectores">
         <div class="container">
             <div class="sectors-header">
-                <p class="sectors-label">Nuestros Sectores</p>
-                <h2 class="sectors-title">Formación especializada por área de la industria</h2>
+                <p class="section-label">Nuestros Sectores</p>
+                <h2 class="section-title">Formación especializada por área de la industria</h2>
             </div>
         </div>
-        
         <div class="sectors-grid">
             <a href="landing-gas.html" class="sector-card">
                 <span class="sector-number">01</span>
@@ -339,7 +420,6 @@
                 </div>
                 <span class="sector-arrow">&rarr;</span>
             </a>
-            
             <a href="landing-activos.html" class="sector-card">
                 <span class="sector-number">02</span>
                 <span class="sector-name">Gestión de Activos, Mantenimiento y Confiabilidad</span>
@@ -350,7 +430,6 @@
                 </div>
                 <span class="sector-arrow">&rarr;</span>
             </a>
-            
             <a href="landing-directivas.html" class="sector-card">
                 <span class="sector-number">03</span>
                 <span class="sector-name">Habilidades Directivas</span>
@@ -360,7 +439,6 @@
                 </div>
                 <span class="sector-arrow">&rarr;</span>
             </a>
-            
             <a href="landing-integridad.html" class="sector-card">
                 <span class="sector-number">04</span>
                 <span class="sector-name">Integridad y Equipos</span>
@@ -372,7 +450,6 @@
                 </div>
                 <span class="sector-arrow">&rarr;</span>
             </a>
-            
             <a href="landing-oilgas.html" class="sector-card">
                 <span class="sector-number">05</span>
                 <span class="sector-name">Oil and Gas</span>
@@ -384,7 +461,6 @@
                 </div>
                 <span class="sector-arrow">&rarr;</span>
             </a>
-            
             <a href="landing-seguridad.html" class="sector-card">
                 <span class="sector-number">06</span>
                 <span class="sector-name">Seguridad y Riesgos</span>
@@ -399,15 +475,108 @@
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
         <div class="container">
-            <div class="cta-inner">
-                <div class="cta-text">
-                    <h2>¿Listo para capacitar a su equipo?</h2>
-                    <p>Programas in-house adaptados a su operación y objetivos.</p>
+            <div class="testimonials-header">
+                <p class="section-label">Lo que dicen nuestros clientes</p>
+                <h2 class="section-title">Resultados que hablan</h2>
+            </div>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"Un muy buen curso, abarca toda la cadena de gas. El instructor tiene un conocimiento profundo del tema y lo transmite de manera clara."</p>
+                <p class="testimonial-author">Participante</p>
+                <p class="testimonial-company">Gases del Caribe</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"Nos estandariza internacionalmente, nos da herramientas para hablar el mismo idioma que nuestros socios globales en gestión de activos."</p>
+                <p class="testimonial-author">Participante</p>
+                <p class="testimonial-company">Cerro Matoso</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="testimonial-quote">"Me enseñó a involucrarme de manera directa en aspectos técnicos que antes delegaba completamente. Ahora puedo tomar mejores decisiones."</p>
+                <p class="testimonial-author">Participante</p>
+                <p class="testimonial-company">Repsol</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WEBINARS -->
+    <section class="webinars">
+        <div class="container">
+            <div class="webinars-header">
+                <div>
+                    <p class="section-label">Webinars Recientes</p>
+                    <h2 class="section-title">Contenido técnico gratuito</h2>
                 </div>
-                <a href="https://wa.me/573164661007?text=Quiero%20cotizar%20un%20programa%20de%20capacitación" class="cta-btn">Cotizar Programa &rarr;</a>
+            </div>
+        </div>
+        <div class="webinars-grid">
+            <div class="webinar-card">
+                <div class="webinar-video">
+                    <!-- Replace VIDEO_ID_1 with actual YouTube video ID -->
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Webinar 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="webinar-info">
+                    <h3 class="webinar-title">Actualización NFPA 652: Lo que tu planta necesita saber</h3>
+                    <p class="webinar-meta">Seguridad de Procesos</p>
+                </div>
+            </div>
+            <div class="webinar-card">
+                <div class="webinar-video">
+                    <!-- Replace VIDEO_ID_2 with actual YouTube video ID -->
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Webinar 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="webinar-info">
+                    <h3 class="webinar-title">ISO 55000: Principios de Gestión de Activos</h3>
+                    <p class="webinar-meta">Gestión de Activos</p>
+                </div>
+            </div>
+            <div class="webinar-card">
+                <div class="webinar-video">
+                    <!-- Replace VIDEO_ID_3 with actual YouTube video ID -->
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Webinar 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="webinar-info">
+                    <h3 class="webinar-title">HAZOP: Errores comunes en análisis de riesgos</h3>
+                    <p class="webinar-meta">Análisis de Riesgos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="partners">
+        <div class="partners-inner">
+            <div class="partners-text">
+                <h3>Alianzas que respaldan nuestra calidad</h3>
+                <p>Somos representantes oficiales de las organizaciones más reconocidas a nivel mundial en formación técnica industrial.</p>
+            </div>
+            <div class="partners-logos">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/ASME_logo.svg/320px-ASME_logo.svg.png" alt="ASME" class="partner-logo">
+                <img src="https://twpl.com/wp-content/uploads/2021/06/TWPL-logo-RGB.png" alt="The Woodhouse Partnership" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMUNITY CTA -->
+    <section class="community">
+        <div class="community-inner">
+            <div class="community-text">
+                <h3>Únete a nuestra comunidad técnica</h3>
+                <p>Más de 12,000 profesionales reciben contenido exclusivo, actualizaciones de normas y acceso anticipado a webinars a través de nuestras comunidades de WhatsApp.</p>
+                <a href="https://wa.me/573164661007?text=Quiero%20unirme%20a%20la%20comunidad%20de%20WhatsApp" class="btn-white">Unirme a la Comunidad &rarr;</a>
+            </div>
+            <div class="community-cta">
+                <div>
+                    <div class="community-stat">12K+</div>
+                    <div class="community-stat-label">Profesionales en la comunidad</div>
+                </div>
+                <div>
+                    <div class="community-stat">44K+</div>
+                    <div class="community-stat-label">Seguidores en LinkedIn</div>
+                </div>
             </div>
         </div>
     </section>
@@ -416,10 +585,11 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-inner">
-                <span class="footer-brand">Elite Training &copy; 2026</span>
+                <span class="footer-brand">Elite Training &copy; 2026 — 29 años formando la industria</span>
                 <div class="footer-links">
                     <a href="tel:+573164661007">+57 316 466 1007</a>
-                    <a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual</a>
+                    <a href="https://hidrocarburos.com.co" target="_blank">Cursos Programados</a>
+                    <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Campus Virtual</a>
                 </div>
             </div>
         </div>
@@ -435,7 +605,6 @@
             document.body.style.overflow = fullscreenMenu.classList.contains('active') ? 'hidden' : '';
         });
         
-        // Close menu when clicking a link
         fullscreenMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 menuToggle.classList.remove('active');
