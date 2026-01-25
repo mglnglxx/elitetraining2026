@@ -6,11 +6,98 @@
     <title>Elite Training | Formación Técnica para Industrias de Alto Riesgo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
     <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;background:#fff;padding:16px;}
+body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;background:#fff;}
+
+/* Hero Varda-style */
+.hero{
+    position:relative;
+    min-height:100vh;
+    background:url('assets/img/hero-bg.avif') center center/cover no-repeat;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    padding:48px;
+    color:#fff;
+}
+.hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(10,25,47,0.65);
+    z-index:1;
+}
+.hero-left,.hero-right{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.hero-headline{
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(48px,8vw,96px);
+    line-height:1.05;
+    color:#e07a3a;
+    margin:0;
+}
+.hero-right{
+    padding-left:48px;
+}
+.hero-description{
+    font-size:18px;
+    line-height:1.6;
+    max-width:480px;
+    margin-bottom:48px;
+    color:rgba(255,255,255,0.9);
+}
+.hero-sectors{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    margin-top:auto;
+    padding-bottom:24px;
+}
+.hero-sectors a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:16px 24px 16px 0;
+    color:#fff;
+    text-decoration:none;
+    font-size:16px;
+    border-top:1px solid rgba(255,255,255,0.2);
+    flex:1 1 calc(33.333% - 0px);
+    min-width:180px;
+}
+.hero-sectors a:hover{
+    color:#e07a3a;
+}
+.hero-sectors a::after{
+    content:'↗';
+    font-size:14px;
+    opacity:0.7;
+}
+
+/* Grid overlay like Varda */
+.hero::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    z-index:1;
+    pointer-events:none;
+    background-image:
+        linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size:calc(100%/6) calc(100%/6);
+}
+
+/* Rest of page */
+.content{padding:16px;}
 h1{font-size:48px;line-height:52px;font-weight:700;margin:48px 0 24px;}
 h2{font-size:32px;line-height:38px;font-weight:700;margin:48px 0 16px;}
 h3{font-size:24px;line-height:30px;font-weight:700;margin:32px 0 12px;}
@@ -22,90 +109,50 @@ a{color:#000;text-decoration:underline;}
 a:hover{text-decoration:none;}
 hr{border:none;border-top:1px solid #000;margin:48px 0;}
 strong{font-weight:700;}
-table{width:100%;border-collapse:collapse;margin:16px 0 24px;}
-th,td{text-align:left;padding:8px 12px;border-bottom:1px solid #ccc;}
-th{font-weight:700;}
-.nav{margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid #000;}
-.nav a{margin-right:16px;font-size:16px;}
+
+/* Responsive hero */
+@media(max-width:768px){
+    .hero{
+        grid-template-columns:1fr;
+        padding:32px 24px;
+        min-height:auto;
+        padding-bottom:48px;
+    }
+    .hero-right{
+        padding-left:0;
+        padding-top:32px;
+    }
+    .hero-headline{
+        font-size:clamp(36px,10vw,64px);
+    }
+    .hero-sectors a{
+        flex:1 1 100%;
+    }
+}
     </style>
 </head>
 <body>
 
-<nav class="nav">
-    <a href="capacidades.html">Inicio</a>
-    <a href="landing-gas.html">Gas</a>
-    <a href="landing-activos.html">Activos</a>
-    <a href="landing-directivas.html">Directivas</a>
-    <a href="landing-integridad.html">Integridad</a>
-    <a href="landing-oilgas.html">Oil & Gas</a>
-    <a href="landing-seguridad.html">Seguridad</a>
-</nav>
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-left">
+        <h1 class="hero-headline">Competencias<br>que cumplen<br>norma</h1>
+    </div>
+    <div class="hero-right">
+        <p class="hero-description">No vendemos cursos. Construimos competencias técnicas verificables para equipos que operan activos críticos. 30 años formando a Ecopetrol, Repsol, ISA, Oxy y 400+ empresas en 11 países.</p>
+        <nav class="hero-sectors">
+            <a href="landing-gas.html">Gas y Energía</a>
+            <a href="landing-activos.html">Gestión de Activos</a>
+            <a href="landing-directivas.html">Habilidades Directivas</a>
+            <a href="landing-integridad.html">Integridad</a>
+            <a href="landing-oilgas.html">Oil & Gas</a>
+            <a href="landing-seguridad.html">Seguridad</a>
+        </nav>
+    </div>
+</section>
 
-<h1>Elite Training</h1>
-
-<p>Formación técnica para industrias de alto riesgo. Integridad, seguridad de procesos y confiabilidad para equipos que operan activos críticos.</p>
-
-<p>30 años · 400+ empresas/año · 11+ países · 60–80k profesionales · ASME · The Woodhouse Partnership</p>
-
-<hr>
-
-<h2>Capacidades</h2>
-
-<p>Competencias alineadas a estándares internacionales para cerrar brechas en operación, mantenimiento y gobierno de activos.</p>
-
-<h3>Criterio técnico consistente</h3>
-<p>Mismos estándares de decisión entre turnos, sedes y contratistas. Resultado: menos variabilidad en respuesta a incidentes.</p>
-
-<h3>Rutas por rol</h3>
-<p>Programas diferenciados para operadores, ingenieros, inspectores y líderes. Resultado: desarrollo progresivo según nivel de responsabilidad.</p>
-
-<h3>Alineación a estándares</h3>
-<p>Contenido basado en ASME, API, NFPA, ISO 55000, IAM, PSM. Resultado: cumplimiento demostrable ante auditorías.</p>
-
-<h3>Evaluación y trazabilidad</h3>
-<p>Matrices de competencia, evaluaciones y reportes por área. Resultado: evidencia documentada para gobierno técnico.</p>
-
-<h3>Aplicación a operación real</h3>
-<p>Casos, análisis de eventos y simulaciones con contexto de campo. Resultado: transferencia inmediata a la práctica diaria.</p>
-
-<h3>Ecosistema de contratistas</h3>
-<p>Formación extendida a personal externo con los mismos criterios. Resultado: consistencia en toda la cadena operativa.</p>
-
-<hr>
-
-<h2>Modelo</h2>
-
-<p>Proceso estructurado de diagnóstico, diseño, ejecución y mejora continua.</p>
-
-<h3>1. Diagnóstico</h3>
-<ul>
-    <li>Mapeo de roles críticos y brechas</li>
-    <li>Alineación a objetivos de cumplimiento</li>
-</ul>
-<p>Entregables: Matriz de brechas, mapa de roles</p>
-
-<h3>2. Diseño de rutas</h3>
-<ul>
-    <li>Programas por función y nivel</li>
-    <li>Selección de estándares aplicables</li>
-</ul>
-<p>Entregables: Plan de formación, calendario</p>
-
-<h3>3. Ejecución</h3>
-<ul>
-    <li>Formación presencial, virtual o híbrida</li>
-    <li>Evaluación de competencias</li>
-</ul>
-<p>Entregables: Reportes, certificaciones</p>
-
-<h3>4. Evidencia</h3>
-<ul>
-    <li>Consolidación de matrices</li>
-    <li>Ajuste según resultados</li>
-</ul>
-<p>Entregables: Dashboard, informe anual</p>
-
-<hr>
+<!-- Page Content -->
+<div class="content">
 
 <h2>Sectores</h2>
 
@@ -137,16 +184,15 @@ th{font-weight:700;}
 
 <hr>
 
-<h2>Recursos</h2>
+<h2>Por qué Elite Training</h2>
 
-<h3>Webinar: Seguridad de procesos</h3>
-<p>Hallazgos típicos en auditoría. Qué suele aparecer en plantas y cómo cerrar brechas con evidencia.</p>
+<p><strong>Criterio consistente.</strong> Mismos estándares de decisión entre turnos, sedes y contratistas.</p>
 
-<h3>Guía: Matriz de competencias por rol</h3>
-<p>Un esquema práctico para operación, mantenimiento e integridad.</p>
+<p><strong>Rutas por rol.</strong> Programas diferenciados para operadores, ingenieros, inspectores y líderes.</p>
 
-<h3>Webinar: Integridad mecánica</h3>
-<p>Decisiones consistentes con API/ASME. Cómo reducir variabilidad técnica entre sedes y contratistas.</p>
+<p><strong>Evidencia para auditoría.</strong> Matrices de competencia, evaluaciones y reportes documentados.</p>
+
+<p><strong>Alineación a norma.</strong> Contenido basado en ASME, API, NFPA, ISO 55000, IAM, PSM.</p>
 
 <hr>
 
@@ -163,25 +209,19 @@ HSE / PSM, Procesos industriales</p>
 
 <hr>
 
-<h2>Escala</h2>
-
-<p>30 años · 400+ empresas/año · 60–80K profesionales · 11+ países · ASME alianza · TWPL partner</p>
-
-<p>Diseñado para turnos, múltiples sedes, alta rotación y ecosistemas de contratistas.</p>
-
-<hr>
-
 <h2>Contacto</h2>
 
-<p>Conversemos sobre las competencias que necesita su operación para sostener seguridad, confiabilidad y cumplimiento.</p>
+<p>¿Tiene sentido una conversación sobre las competencias que necesita su operación?</p>
 
-<p><a href="https://wa.me/573164661007">WhatsApp: +57 316 466 1007</a></p>
+<p><strong><a href="https://wa.me/573164661007">WhatsApp: +57 316 466 1007</a></strong></p>
 
-<p><a href="https://hidrocarburos.com.co">Cursos Programados</a> · <a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual</a></p>
+<p><a href="https://hidrocarburos.com.co">Ver cursos programados</a> · <a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual</a></p>
 
 <hr>
 
 <p>Elite Training © 2026</p>
+
+</div><!-- /content -->
 
 </body>
 </html>
