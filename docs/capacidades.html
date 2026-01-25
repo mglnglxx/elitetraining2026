@@ -20,8 +20,6 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     display:grid;
     grid-template-columns:1fr 1fr;
     grid-template-rows:1fr auto;
-    padding:48px;
-    padding-bottom:0;
     color:#fff;
 }
 .hero__bg{
@@ -33,22 +31,27 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     object-position:center;
     z-index:0;
 }
+/* Left column with blue overlay */
 .hero-left{
     position:relative;
     z-index:2;
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
-    padding-top:24px;
+    padding:48px;
+    padding-bottom:0;
 }
+.hero-left::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(10,25,47,0.85);
+    z-index:-1;
+}
+/* Right column - no overlay, just video */
 .hero-right{
     position:relative;
     z-index:2;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    padding-left:48px;
-    padding-top:110px;
 }
 /* Reduced motion: show poster instead of video */
 @media(prefers-reduced-motion:reduce){
@@ -65,11 +68,11 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 .hero-headline{
     font-family:'Roboto',sans-serif;
     font-weight:600;
-    font-size:clamp(52px,7vw,88px);
+    font-size:clamp(48px,6vw,72px);
     line-height:1.0;
     letter-spacing:-0.02em;
     color:#fff;
-    margin:0;
+    margin:0 0 32px 0;
 }
 .hero-description{
     font-size:21px;
@@ -92,6 +95,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     grid-template-columns:repeat(6,1fr);
     gap:0;
     align-self:end;
+    padding-bottom:24px;
 }
 .hero-sectors a{
     display:flex;
@@ -101,18 +105,18 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     padding:48px 16px;
     color:#fff;
     text-decoration:none;
-    font-size:16px;
+    font-size:21px;
     line-height:1.3;
     border:1px solid rgba(255,255,255,0.2);
     border-right:none;
-    background:transparent;
+    background:rgba(10,25,47,0.85);
     transition:background 0.2s, color 0.2s;
 }
 .hero-sectors a:last-child{
     border-right:1px solid rgba(255,255,255,0.2);
 }
 .hero-sectors a:hover{
-    background:rgba(255,255,255,0.15);
+    background:rgb(10,25,47);
     color:#fff;
 }
 
@@ -136,32 +140,35 @@ strong{font-weight:700;}
     .hero-sectors{
         grid-template-columns:repeat(3,1fr);
     }
+    .hero-sectors a{
+        font-size:16px;
+        padding:32px 12px;
+    }
 }
 @media(max-width:768px){
     .hero{
         grid-template-columns:1fr;
-        padding:32px 24px;
         min-height:auto;
-        padding-bottom:0;
+    }
+    .hero-left{
+        padding:32px 24px;
+    }
+    .hero-right{
+        display:none;
     }
     .hero-logo{
         width:200px;
     }
-    .hero-right{
-        padding-left:0;
-        padding-top:32px;
-    }
     .hero-headline{
-        font-size:clamp(36px,10vw,56px);
+        font-size:clamp(32px,8vw,48px);
     }
     .hero-sectors{
         grid-template-columns:repeat(2,1fr);
-        margin-top:32px;
+        padding-bottom:16px;
     }
     .hero-sectors a{
-        border-right:1px solid rgba(255,255,255,0.2);
-    }
-    .hero-sectors a:nth-child(2n){
+        font-size:14px;
+        padding:24px 12px;
         border-right:1px solid rgba(255,255,255,0.2);
     }
 }
@@ -191,11 +198,10 @@ strong{font-weight:700;}
     <div class="hero-left">
         <img src="assets/logos/elite-training.svg" alt="Elite Training" class="hero-logo">
         <h1 class="hero-headline">Formación técnica para industrias de alto riesgo</h1>
-    </div>
-    <div class="hero-right">
         <p class="hero-description">Elite Training es una empresa de formación técnica que desarrolla competencias verificables para equipos que operan activos críticos en industrias de alto riesgo.</p>
         <p class="hero-proof">30 años · 400+ empresas/año · 11+ países · 60–80k profesionales · ASME · The Woodhouse Partnership</p>
     </div>
+    <div class="hero-right"></div>
     <nav class="hero-sectors">
         <a href="landing-gas.html">Gas y Energía</a>
         <a href="landing-activos.html">Gestión de Activos</a>
