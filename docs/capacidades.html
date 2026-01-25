@@ -12,6 +12,160 @@
 html{scroll-behavior:smooth;}
 body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;background:#fff;}
 
+/* Navbar */
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:100;
+    display:flex;
+    justify-content:flex-end;
+    padding:24px 48px;
+    background:transparent;
+}
+.navbar-burger{
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#EAECEE;
+    border:1px solid rgba(45,54,112,0.15);
+    cursor:pointer;
+    transition:background 0.2s;
+}
+.navbar-burger:hover{
+    background:#2D3670;
+}
+.navbar-burger:hover svg{
+    stroke:#fff;
+}
+.navbar-burger svg{
+    width:24px;
+    height:24px;
+    stroke:#2D3670;
+    stroke-width:2;
+    fill:none;
+}
+
+/* Fullscreen Menu */
+.menu-overlay{
+    position:fixed;
+    inset:0;
+    z-index:200;
+    background:#EAECEE;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 0.3s, visibility 0.3s;
+}
+.menu-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+.menu-close{
+    position:absolute;
+    top:24px;
+    right:48px;
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:transparent;
+    border:1px solid rgba(45,54,112,0.15);
+    cursor:pointer;
+    transition:background 0.2s;
+}
+.menu-close:hover{
+    background:#2D3670;
+}
+.menu-close:hover svg{
+    stroke:#fff;
+}
+.menu-close svg{
+    width:24px;
+    height:24px;
+    stroke:#2D3670;
+    stroke-width:2;
+    fill:none;
+}
+.menu-links{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:32px;
+}
+.menu-links a, .menu-links button{
+    font-family:'Roboto',sans-serif;
+    font-size:48px;
+    font-weight:600;
+    color:#2D3670;
+    text-decoration:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    transition:color 0.2s;
+}
+.menu-links a:hover, .menu-links button:hover{
+    color:rgba(45,54,112,0.6);
+}
+
+/* Sectors Submenu */
+.submenu{
+    position:fixed;
+    inset:0;
+    z-index:250;
+    background:#EAECEE;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    visibility:hidden;
+    transition:opacity 0.3s, visibility 0.3s;
+}
+.submenu.active{
+    opacity:1;
+    visibility:visible;
+}
+.submenu-back{
+    position:absolute;
+    top:24px;
+    left:48px;
+    font-size:21px;
+    color:#2D3670;
+    background:none;
+    border:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+}
+.submenu-back:hover{
+    color:rgba(45,54,112,0.6);
+}
+.submenu-links{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:24px;
+}
+.submenu-links a{
+    font-size:32px;
+    font-weight:600;
+    color:#2D3670;
+    text-decoration:none;
+    transition:color 0.2s;
+}
+.submenu-links a:hover{
+    color:rgba(45,54,112,0.6);
+}
+
 /* Hero layout */
 .hero{
     position:relative;
@@ -27,9 +181,9 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     z-index:2;
     display:flex;
     flex-direction:column;
-    justify-content:flex-start;
+    justify-content:flex-end;
     padding:48px;
-    padding-bottom:0;
+    padding-bottom:48px;
     background:#EAECEE;
     color:#2D3670;
     width:80%;
@@ -60,15 +214,15 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 .hero-headline{
     font-family:'Roboto',sans-serif;
     font-weight:600;
-    font-size:clamp(48px,6vw,72px);
-    line-height:1.0;
+    font-size:clamp(72px,10vw,120px);
+    line-height:0.95;
     letter-spacing:-0.02em;
     color:#2D3670;
-    margin:0 0 32px 0;
+    margin:0 0 24px 0;
 }
 .hero-description{
-    font-size:21px;
-    line-height:1.5;
+    font-size:32px;
+    line-height:1.3;
     margin-bottom:0;
     color:#2D3670;
 }
@@ -119,7 +273,7 @@ a:hover{text-decoration:none;}
 hr{border:none;border-top:1px solid #000;margin:48px 0;}
 strong{font-weight:700;}
 
-/* Responsive hero */
+/* Responsive */
 @media(max-width:1024px){
     .hero-sectors{
         grid-template-columns:repeat(3,1fr);
@@ -128,8 +282,20 @@ strong{font-weight:700;}
         font-size:16px;
         padding:32px 12px;
     }
+    .hero-headline{
+        font-size:clamp(56px,8vw,80px);
+    }
+    .hero-description{
+        font-size:24px;
+    }
+    .menu-links a, .menu-links button{
+        font-size:36px;
+    }
 }
 @media(max-width:768px){
+    .navbar{
+        padding:16px 24px;
+    }
     .hero{
         grid-template-columns:1fr;
         grid-template-rows:auto 40vh auto;
@@ -138,7 +304,10 @@ strong{font-weight:700;}
     }
     .hero-left{
         padding:32px 24px;
+        padding-top:80px;
         order:1;
+        width:100%;
+        justify-content:flex-start;
     }
     .hero-right{
         order:2;
@@ -151,7 +320,10 @@ strong{font-weight:700;}
         width:200px;
     }
     .hero-headline{
-        font-size:clamp(32px,8vw,48px);
+        font-size:clamp(40px,10vw,56px);
+    }
+    .hero-description{
+        font-size:21px;
     }
     .hero-sectors{
         grid-template-columns:repeat(2,1fr);
@@ -161,10 +333,54 @@ strong{font-weight:700;}
         padding:24px 12px;
         border-right:1px solid rgba(45,54,112,0.15);
     }
+    .menu-close{
+        right:24px;
+    }
+    .submenu-back{
+        left:24px;
+    }
+    .menu-links a, .menu-links button{
+        font-size:32px;
+    }
+    .submenu-links a{
+        font-size:24px;
+    }
 }
     </style>
 </head>
 <body>
+
+<!-- Navbar -->
+<nav class="navbar">
+    <button class="navbar-burger" id="menuOpen" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+</nav>
+
+<!-- Fullscreen Menu -->
+<div class="menu-overlay" id="menuOverlay">
+    <button class="menu-close" id="menuClose" aria-label="Cerrar menú">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div class="menu-links">
+        <button id="sectoresBtn">Sectores</button>
+        <a href="https://hidrocarburos.com.co">Tienda de cursos</a>
+        <a href="https://campus.hidrocarburos.com.co">Campus virtual</a>
+    </div>
+</div>
+
+<!-- Sectors Submenu -->
+<div class="submenu" id="submenuSectores">
+    <button class="submenu-back" id="submenuBack">← Volver</button>
+    <div class="submenu-links">
+        <a href="landing-gas.html">Gas y Energía</a>
+        <a href="landing-activos.html">Gestión de Activos</a>
+        <a href="landing-directivas.html">Habilidades Directivas</a>
+        <a href="landing-integridad.html">Integridad</a>
+        <a href="landing-oilgas.html">Oil & Gas</a>
+        <a href="landing-seguridad.html">Seguridad</a>
+    </div>
+</div>
 
 <!-- Hero Section -->
 <section class="hero">
@@ -274,5 +490,39 @@ HSE / PSM, Procesos industriales</p>
 
 </div><!-- /content -->
 
+<script>
+// Menu functionality
+const menuOpen = document.getElementById('menuOpen');
+const menuClose = document.getElementById('menuClose');
+const menuOverlay = document.getElementById('menuOverlay');
+const sectoresBtn = document.getElementById('sectoresBtn');
+const submenuSectores = document.getElementById('submenuSectores');
+const submenuBack = document.getElementById('submenuBack');
+
+menuOpen.addEventListener('click', () => {
+    menuOverlay.classList.add('active');
+});
+
+menuClose.addEventListener('click', () => {
+    menuOverlay.classList.remove('active');
+    submenuSectores.classList.remove('active');
+});
+
+sectoresBtn.addEventListener('click', () => {
+    submenuSectores.classList.add('active');
+});
+
+submenuBack.addEventListener('click', () => {
+    submenuSectores.classList.remove('active');
+});
+
+// Close menu on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        menuOverlay.classList.remove('active');
+        submenuSectores.classList.remove('active');
+    }
+});
+</script>
 </body>
 </html>
