@@ -275,19 +275,153 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 }
 
 
-/* Rest of page */
-.content{padding:16px;}
-h1{font-size:48px;line-height:52px;font-weight:700;margin:48px 0 24px;}
-h2{font-size:32px;line-height:38px;font-weight:700;margin:48px 0 16px;}
-h3{font-size:24px;line-height:30px;font-weight:700;margin:32px 0 12px;}
-h4{font-size:21px;line-height:28px;font-weight:700;margin:24px 0 8px;}
-p{margin:0 0 16px;}
-ul,ol{margin:0 0 16px;padding-left:24px;}
-li{margin-bottom:8px;}
-a{color:#000;text-decoration:underline;}
-a:hover{text-decoration:none;}
-hr{border:none;border-top:1px solid #000;margin:48px 0;}
-strong{font-weight:700;}
+/* Page Sections */
+.section{
+    padding:80px 48px;
+    background:#EAECEE;
+    color:#2D3670;
+}
+.section--white{
+    background:#fff;
+}
+.section--blue{
+    background:#2D3670;
+    color:#EAECEE;
+}
+.section--blue a{
+    color:#EAECEE;
+}
+.section--blue .section-title{
+    color:#fff;
+}
+.section-title{
+    font-size:clamp(48px,6vw,72px);
+    font-weight:600;
+    line-height:1;
+    letter-spacing:-0.02em;
+    color:#2D3670;
+    margin:0 0 48px 0;
+}
+.section-subtitle{
+    font-size:24px;
+    line-height:1.4;
+    margin-bottom:48px;
+    max-width:600px;
+}
+.sector-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0;
+    border:1px solid rgba(45,54,112,0.15);
+}
+.sector-card{
+    padding:32px;
+    border-bottom:1px solid rgba(45,54,112,0.15);
+    border-right:1px solid rgba(45,54,112,0.15);
+}
+.sector-card:nth-child(2n){
+    border-right:none;
+}
+.sector-card:nth-last-child(-n+2){
+    border-bottom:none;
+}
+.sector-card h3{
+    font-size:28px;
+    font-weight:600;
+    margin:0 0 12px 0;
+    color:#2D3670;
+}
+.sector-card h3 a{
+    color:#2D3670;
+    text-decoration:none;
+}
+.sector-card h3 a:hover{
+    text-decoration:underline;
+}
+.sector-card p{
+    font-size:18px;
+    line-height:1.5;
+    margin:0 0 8px 0;
+    color:#2D3670;
+}
+.sector-card .tags{
+    font-size:14px;
+    color:rgba(45,54,112,0.6);
+}
+.benefits-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:48px;
+}
+.benefit{
+    padding:32px 0;
+    border-top:1px solid rgba(234,236,238,0.3);
+}
+.benefit h3{
+    font-size:24px;
+    font-weight:600;
+    margin:0 0 12px 0;
+    color:#fff;
+}
+.benefit p{
+    font-size:18px;
+    line-height:1.5;
+    margin:0;
+    color:rgba(234,236,238,0.8);
+}
+.testimonials-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:32px;
+}
+.testimonial{
+    padding:32px;
+    background:#fff;
+    border:1px solid rgba(45,54,112,0.1);
+}
+.testimonial blockquote{
+    font-size:18px;
+    line-height:1.5;
+    margin:0 0 16px 0;
+    color:#2D3670;
+    font-style:italic;
+}
+.testimonial cite{
+    font-size:14px;
+    color:rgba(45,54,112,0.6);
+    font-style:normal;
+}
+.contact-box{
+    max-width:600px;
+}
+.contact-box p{
+    font-size:21px;
+    line-height:1.5;
+    margin:0 0 24px 0;
+}
+.contact-box a{
+    color:#2D3670;
+    text-decoration:none;
+    font-weight:600;
+}
+.contact-box a:hover{
+    text-decoration:underline;
+}
+.contact-links{
+    display:flex;
+    gap:24px;
+    margin-top:32px;
+}
+.contact-links a{
+    font-size:18px;
+}
+.footer{
+    padding:32px 48px;
+    background:#EAECEE;
+    color:rgba(45,54,112,0.6);
+    font-size:14px;
+    border-top:1px solid rgba(45,54,112,0.15);
+}
 
 /* Responsive */
 @media(max-width:1024px){
@@ -369,6 +503,39 @@ strong{font-weight:700;}
     .submenu-links{
         gap:32px;
     }
+    .section{
+        padding:48px 24px;
+    }
+    .section-title{
+        font-size:clamp(36px,8vw,48px);
+        margin-bottom:32px;
+    }
+    .sector-grid{
+        grid-template-columns:1fr;
+    }
+    .sector-card{
+        border-right:none;
+    }
+    .sector-card:nth-last-child(-n+2){
+        border-bottom:1px solid rgba(45,54,112,0.15);
+    }
+    .sector-card:last-child{
+        border-bottom:none;
+    }
+    .benefits-grid{
+        grid-template-columns:1fr;
+        gap:24px;
+    }
+    .testimonials-grid{
+        grid-template-columns:1fr;
+    }
+    .contact-links{
+        flex-direction:column;
+        gap:16px;
+    }
+    .footer{
+        padding:24px;
+    }
 }
     </style>
 </head>
@@ -444,77 +611,103 @@ strong{font-weight:700;}
     </nav>
 </section>
 
-<!-- Page Content -->
-<div class="content">
+<!-- Sectores Section -->
+<section class="section section--white">
+    <h2 class="section-title">Áreas de formación</h2>
+    <p class="section-subtitle">Cada área agrupa cursos y programas alineados a los riesgos y normas del entorno.</p>
+    <div class="sector-grid">
+        <div class="sector-card">
+            <h3><a href="landing-gas.html">Gas Natural, GLP y Energía</a></h3>
+            <p>Tecnologías, procesos, medición y regulación de sistemas de gas.</p>
+            <span class="tags">LNG · GNC · Compresión · Turbinas · Medición</span>
+        </div>
+        <div class="sector-card">
+            <h3><a href="landing-activos.html">Gestión de Activos y Confiabilidad</a></h3>
+            <p>Ciclo de vida, RCM, riesgo y gobierno de activos físicos.</p>
+            <span class="tags">ISO 55000 · RCM · FMECA · RAM · IAM</span>
+        </div>
+        <div class="sector-card">
+            <h3><a href="landing-directivas.html">Habilidades Directivas</a></h3>
+            <p>Toma de decisiones, gestión de proyectos y liderazgo técnico.</p>
+            <span class="tags">Proyectos · Costos · Crisis · MOC</span>
+        </div>
+        <div class="sector-card">
+            <h3><a href="landing-integridad.html">Integridad y Equipos</a></h3>
+            <p>Integridad mecánica, inspección, códigos y protección catódica.</p>
+            <span class="tags">API 579 · API 580 · ASME VIII · B31.3 · Corrosión</span>
+        </div>
+        <div class="sector-card">
+            <h3><a href="landing-oilgas.html">Oil and Gas</a></h3>
+            <p>Producción, facilidades, levantamiento artificial y pozos.</p>
+            <span class="tags">ESP · PCP · Well Integrity · Perforación · Petrofísica</span>
+        </div>
+        <div class="sector-card">
+            <h3><a href="landing-seguridad.html">Seguridad y Riesgos</a></h3>
+            <p>Seguridad de procesos, análisis de riesgos y seguridad eléctrica.</p>
+            <span class="tags">PSM · HAZOP · LOPA · BowTie · NFPA 70E</span>
+        </div>
+    </div>
+</section>
 
-<h2>Sectores</h2>
+<!-- Por qué Elite Section -->
+<section class="section section--blue">
+    <h2 class="section-title">Por qué Elite Training</h2>
+    <div class="benefits-grid">
+        <div class="benefit">
+            <h3>Criterio consistente</h3>
+            <p>Mismos estándares de decisión entre turnos, sedes y contratistas.</p>
+        </div>
+        <div class="benefit">
+            <h3>Rutas por rol</h3>
+            <p>Programas diferenciados para operadores, ingenieros, inspectores y líderes.</p>
+        </div>
+        <div class="benefit">
+            <h3>Evidencia para auditoría</h3>
+            <p>Matrices de competencia, evaluaciones y reportes documentados.</p>
+        </div>
+        <div class="benefit">
+            <h3>Alineación a norma</h3>
+            <p>Contenido basado en ASME, API, NFPA, ISO 55000, IAM, PSM.</p>
+        </div>
+    </div>
+</section>
 
-<p>Cada sector agrupa temas, cursos y programas alineados a los riesgos y normas del entorno.</p>
+<!-- Testimonios Section -->
+<section class="section section--white">
+    <h2 class="section-title">Testimonios</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <blockquote>"Logramos alinear criterios entre sedes y dejar evidencia usable para auditoría."</blockquote>
+            <cite>Líder de Integridad, Operador de midstream</cite>
+        </div>
+        <div class="testimonial">
+            <blockquote>"La ruta por rol nos permitió acelerar el cierre de brechas sin depender de un instructor."</blockquote>
+            <cite>Jefe de Mantenimiento, Energía</cite>
+        </div>
+        <div class="testimonial">
+            <blockquote>"El contenido se siente hecho para planta: casos, decisiones y estándares aplicados."</blockquote>
+            <cite>HSE / PSM, Procesos industriales</cite>
+        </div>
+    </div>
+</section>
 
-<h3><a href="landing-gas.html">01. Gas Natural, GLP y Energía</a></h3>
-<p>Tecnologías, procesos, medición y regulación de sistemas de gas.</p>
-<p>LNG · GNC · Compresión · Turbinas · Medición</p>
+<!-- Contacto Section -->
+<section class="section">
+    <h2 class="section-title">Contacto</h2>
+    <div class="contact-box">
+        <p>¿Tiene sentido una conversación sobre las competencias que necesita su operación?</p>
+        <a href="https://wa.me/573164661007">WhatsApp: +57 316 466 1007</a>
+        <div class="contact-links">
+            <a href="https://hidrocarburos.com.co">Ver cursos programados →</a>
+            <a href="https://campus.hidrocarburos.com.co">Campus Virtual →</a>
+        </div>
+    </div>
+</section>
 
-<h3><a href="landing-activos.html">02. Gestión de Activos y Confiabilidad</a></h3>
-<p>Ciclo de vida, RCM, riesgo y gobierno de activos físicos.</p>
-<p>ISO 55000 · RCM · FMECA · RAM · IAM</p>
-
-<h3><a href="landing-directivas.html">03. Habilidades Directivas</a></h3>
-<p>Toma de decisiones, gestión de proyectos y liderazgo técnico.</p>
-<p>Proyectos · Costos · Crisis · MOC</p>
-
-<h3><a href="landing-integridad.html">04. Integridad y Equipos</a></h3>
-<p>Integridad mecánica, inspección, códigos y protección catódica.</p>
-<p>API 579 · API 580 · ASME VIII · B31.3 · Corrosión</p>
-
-<h3><a href="landing-oilgas.html">05. Oil and Gas</a></h3>
-<p>Producción, facilidades, levantamiento artificial y pozos.</p>
-<p>ESP · PCP · Well Integrity · Perforación · Petrofísica</p>
-
-<h3><a href="landing-seguridad.html">06. Seguridad y Riesgos</a></h3>
-<p>Seguridad de procesos, análisis de riesgos y seguridad eléctrica.</p>
-<p>PSM · HAZOP · LOPA · BowTie · NFPA 70E</p>
-
-<hr>
-
-<h2>Por qué Elite Training</h2>
-
-<p><strong>Criterio consistente.</strong> Mismos estándares de decisión entre turnos, sedes y contratistas.</p>
-
-<p><strong>Rutas por rol.</strong> Programas diferenciados para operadores, ingenieros, inspectores y líderes.</p>
-
-<p><strong>Evidencia para auditoría.</strong> Matrices de competencia, evaluaciones y reportes documentados.</p>
-
-<p><strong>Alineación a norma.</strong> Contenido basado en ASME, API, NFPA, ISO 55000, IAM, PSM.</p>
-
-<hr>
-
-<h2>Testimonios</h2>
-
-<p><strong>"Logramos alinear criterios entre sedes y dejar evidencia usable para auditoría."</strong><br>
-Líder de Integridad, Operador de midstream</p>
-
-<p><strong>"La ruta por rol nos permitió acelerar el cierre de brechas sin depender de un instructor."</strong><br>
-Jefe de Mantenimiento, Energía</p>
-
-<p><strong>"El contenido se siente hecho para planta: casos, decisiones y estándares aplicados."</strong><br>
-HSE / PSM, Procesos industriales</p>
-
-<hr>
-
-<h2>Contacto</h2>
-
-<p>¿Tiene sentido una conversación sobre las competencias que necesita su operación?</p>
-
-<p><strong><a href="https://wa.me/573164661007">WhatsApp: +57 316 466 1007</a></strong></p>
-
-<p><a href="https://hidrocarburos.com.co">Ver cursos programados</a> · <a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual</a></p>
-
-<hr>
-
-<p>Elite Training © 2026</p>
-
-</div><!-- /content -->
+<!-- Footer -->
+<footer class="footer">
+    Elite Training © 2026
+</footer>
 
 <script>
 // Menu functionality
