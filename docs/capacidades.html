@@ -19,15 +19,26 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     background:url('assets/img/hero-bg.avif') center center/cover no-repeat;
     display:grid;
     grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr auto;
     padding:48px;
     color:#fff;
 }
-.hero-left,.hero-right{
+.hero-left{
     position:relative;
     z-index:2;
     display:flex;
     flex-direction:column;
-    justify-content:center;
+    justify-content:flex-start;
+    padding-top:24px;
+}
+.hero-right{
+    position:relative;
+    z-index:2;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    padding-left:48px;
+    padding-top:24px;
 }
 .hero-logo{
     width:280px;
@@ -40,18 +51,16 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 .hero-headline{
     font-family:'Roboto',sans-serif;
     font-weight:600;
-    font-size:clamp(42px,6vw,72px);
-    line-height:1.15;
+    font-size:clamp(52px,7vw,88px);
+    line-height:1.0;
+    letter-spacing:-0.02em;
     color:#fff;
     margin:0;
 }
-.hero-right{
-    padding-left:48px;
-}
 .hero-description{
-    font-size:18px;
-    line-height:1.6;
-    max-width:480px;
+    font-size:21px;
+    line-height:1.5;
+    max-width:520px;
     margin-bottom:16px;
     color:rgba(255,255,255,0.9);
 }
@@ -59,34 +68,35 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     font-size:14px;
     line-height:1.5;
     color:rgba(255,255,255,0.7);
-    margin-bottom:48px;
+    margin-bottom:0;
 }
 .hero-sectors{
-    display:flex;
-    flex-wrap:wrap;
+    grid-column:1 / -1;
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
     gap:0;
-    margin-top:auto;
-    padding-bottom:24px;
+    align-self:end;
 }
 .hero-sectors a{
     display:flex;
     align-items:center;
-    gap:8px;
-    padding:16px 24px 16px 0;
+    justify-content:center;
+    text-align:center;
+    padding:24px 16px;
     color:#fff;
     text-decoration:none;
-    font-size:16px;
-    border-top:1px solid rgba(255,255,255,0.2);
-    flex:1 1 calc(33.333% - 0px);
-    min-width:180px;
+    font-size:15px;
+    border:1px solid rgba(255,255,255,0.2);
+    border-right:none;
+    background:transparent;
+    transition:background 0.2s, color 0.2s;
+}
+.hero-sectors a:last-child{
+    border-right:1px solid rgba(255,255,255,0.2);
 }
 .hero-sectors a:hover{
-    color:#e07a3a;
-}
-.hero-sectors a::after{
-    content:'↗';
-    font-size:14px;
-    opacity:0.7;
+    background:rgba(255,255,255,0.15);
+    color:#fff;
 }
 
 
@@ -105,12 +115,17 @@ hr{border:none;border-top:1px solid #000;margin:48px 0;}
 strong{font-weight:700;}
 
 /* Responsive hero */
+@media(max-width:1024px){
+    .hero-sectors{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
 @media(max-width:768px){
     .hero{
         grid-template-columns:1fr;
         padding:32px 24px;
         min-height:auto;
-        padding-bottom:48px;
+        padding-bottom:0;
     }
     .hero-logo{
         width:200px;
@@ -120,10 +135,17 @@ strong{font-weight:700;}
         padding-top:32px;
     }
     .hero-headline{
-        font-size:clamp(28px,8vw,48px);
+        font-size:clamp(36px,10vw,56px);
+    }
+    .hero-sectors{
+        grid-template-columns:repeat(2,1fr);
+        margin-top:32px;
     }
     .hero-sectors a{
-        flex:1 1 100%;
+        border-right:1px solid rgba(255,255,255,0.2);
+    }
+    .hero-sectors a:nth-child(2n){
+        border-right:1px solid rgba(255,255,255,0.2);
     }
 }
     </style>
@@ -137,17 +159,17 @@ strong{font-weight:700;}
         <h1 class="hero-headline">Formación técnica para industrias de alto riesgo</h1>
     </div>
     <div class="hero-right">
-        <p class="hero-description">Integridad, seguridad de procesos y confiabilidad para equipos que operan activos críticos.</p>
+        <p class="hero-description">Elite Training es una empresa de formación técnica que desarrolla competencias verificables para equipos que operan activos críticos en industrias de alto riesgo.</p>
         <p class="hero-proof">30 años · 400+ empresas/año · 11+ países · 60–80k profesionales · ASME · The Woodhouse Partnership</p>
-        <nav class="hero-sectors">
-            <a href="landing-gas.html">Gas y Energía</a>
-            <a href="landing-activos.html">Gestión de Activos</a>
-            <a href="landing-directivas.html">Habilidades Directivas</a>
-            <a href="landing-integridad.html">Integridad</a>
-            <a href="landing-oilgas.html">Oil & Gas</a>
-            <a href="landing-seguridad.html">Seguridad</a>
-        </nav>
     </div>
+    <nav class="hero-sectors">
+        <a href="landing-gas.html">Gas y Energía</a>
+        <a href="landing-activos.html">Gestión de Activos</a>
+        <a href="landing-directivas.html">Habilidades Directivas</a>
+        <a href="landing-integridad.html">Integridad</a>
+        <a href="landing-oilgas.html">Oil & Gas</a>
+        <a href="landing-seguridad.html">Seguridad</a>
+    </nav>
 </section>
 
 <!-- Page Content -->
