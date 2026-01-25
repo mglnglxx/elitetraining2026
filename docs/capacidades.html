@@ -98,11 +98,11 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:32px;
+    gap:48px;
 }
 .menu-links a, .menu-links button{
     font-family:'Roboto',sans-serif;
-    font-size:48px;
+    font-size:60px;
     font-weight:600;
     color:#2D3670;
     text-decoration:none;
@@ -137,26 +137,38 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     position:absolute;
     top:24px;
     left:48px;
-    font-size:21px;
+    width:48px;
+    height:48px;
     color:#2D3670;
     background:none;
-    border:none;
+    border:1px solid rgba(45,54,112,0.15);
     cursor:pointer;
     display:flex;
     align-items:center;
-    gap:8px;
+    justify-content:center;
+    transition:background 0.2s;
 }
 .submenu-back:hover{
-    color:rgba(45,54,112,0.6);
+    background:#2D3670;
+}
+.submenu-back:hover svg{
+    stroke:#fff;
+}
+.submenu-back svg{
+    width:28px;
+    height:28px;
+    stroke:#2D3670;
+    stroke-width:2;
+    fill:none;
 }
 .submenu-links{
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:24px;
+    gap:48px;
 }
 .submenu-links a{
-    font-size:32px;
+    font-size:60px;
     font-weight:600;
     color:#2D3670;
     text-decoration:none;
@@ -214,7 +226,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 .hero-headline{
     font-family:'Roboto',sans-serif;
     font-weight:600;
-    font-size:clamp(72px,10vw,120px);
+    font-size:clamp(56px,8vw,100px);
     line-height:0.95;
     letter-spacing:-0.02em;
     color:#2D3670;
@@ -283,13 +295,16 @@ strong{font-weight:700;}
         padding:32px 12px;
     }
     .hero-headline{
-        font-size:clamp(56px,8vw,80px);
+        font-size:clamp(48px,7vw,72px);
     }
     .hero-description{
         font-size:24px;
     }
     .menu-links a, .menu-links button{
-        font-size:36px;
+        font-size:48px;
+    }
+    .submenu-links a{
+        font-size:48px;
     }
 }
 @media(max-width:768px){
@@ -320,7 +335,7 @@ strong{font-weight:700;}
         width:200px;
     }
     .hero-headline{
-        font-size:clamp(40px,10vw,56px);
+        font-size:clamp(36px,9vw,48px);
     }
     .hero-description{
         font-size:21px;
@@ -340,10 +355,16 @@ strong{font-weight:700;}
         left:24px;
     }
     .menu-links a, .menu-links button{
-        font-size:32px;
+        font-size:28px;
+    }
+    .menu-links{
+        gap:32px;
     }
     .submenu-links a{
-        font-size:24px;
+        font-size:28px;
+    }
+    .submenu-links{
+        gap:32px;
     }
 }
     </style>
@@ -363,15 +384,17 @@ strong{font-weight:700;}
         <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
     <div class="menu-links">
-        <button id="sectoresBtn">Sectores</button>
-        <a href="https://hidrocarburos.com.co">Tienda de cursos</a>
-        <a href="https://campus.hidrocarburos.com.co">Campus virtual</a>
+        <button id="sectoresBtn">Nuestros sectores</button>
+        <a href="https://hidrocarburos.com.co">Nuestros cursos programados</a>
+        <a href="https://campus.hidrocarburos.com.co">Cursos virtuales a tu ritmo</a>
     </div>
 </div>
 
 <!-- Sectors Submenu -->
 <div class="submenu" id="submenuSectores">
-    <button class="submenu-back" id="submenuBack">← Volver</button>
+    <button class="submenu-back" id="submenuBack" aria-label="Volver">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
     <div class="submenu-links">
         <a href="landing-gas.html">Gas y Energía</a>
         <a href="landing-activos.html">Gestión de Activos</a>
@@ -386,7 +409,7 @@ strong{font-weight:700;}
 <section class="hero">
     <div class="hero-left">
         <img src="assets/logos/elite-training.svg" alt="Elite Training" class="hero-logo">
-        <h1 class="hero-headline">30 años formando a la industria</h1>
+        <h1 class="hero-headline">30 años formando la industria</h1>
         <p class="hero-description">Capacitación técnica en operación, integridad, gestión de activos y seguridad para petróleo, gas y energía.</p>
     </div>
     <div class="hero-right">
