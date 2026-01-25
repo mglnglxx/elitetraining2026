@@ -4,979 +4,232 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Training | Formación Técnica para Industrias de Alto Riesgo</title>
-    <meta name="description" content="Desarrollo de competencias en integridad, seguridad de procesos, confiabilidad y operación de activos críticos. 30 años formando profesionales en América Latina.">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-:root{
-  --black:#0a0a0a;
-  --white:#ffffff;
-  --gray-100:#f5f5f5;
-  --gray-200:#e5e5e5;
-  --gray-300:#d4d4d4;
-  --gray-400:#a3a3a3;
-  --gray-500:#737373;
-  --gray-600:#525252;
-  --gray-700:#404040;
-  --gray-800:#262626;
-  --accent:#E19A24;
-  --navy:#2D366F;
-  --font:'Roboto', -apple-system, system-ui, sans-serif;
-  --border:2px solid #d4d4d4;
-  --border-strong:2px solid #0a0a0a;
-  --header-h:70px;
-  --maxw:1200px;
-}
-
-*{ margin:0; padding:0; box-sizing:border-box; border-radius:0 !important; }
-html{ scroll-behavior:smooth; scroll-padding-top: calc(var(--header-h) + 20px); }
-body{
-  font-family:var(--font);
-  font-size:21px;
-  line-height:31px;
-  color:var(--black);
-  background:var(--white);
-  -webkit-font-smoothing:antialiased;
-}
-
-.container{ max-width:var(--maxw); margin:0 auto; padding:0 20px; }
-@media (min-width:768px){ .container{ padding:0 32px; } }
-@media (min-width:1200px){ .container{ padding:0 48px; } }
-
-a{ color:inherit; }
-img, svg{ display:block; }
-
-.eyebrow{
-  font-size:13px;
-  line-height:18px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--gray-600);
-  margin-bottom:8px;
-}
-
-h1{
-  font-size:clamp(36px,4.5vw,56px);
-  line-height:1.08;
-  letter-spacing:-0.03em;
-  font-weight:700;
-}
-h2{
-  font-size:40px;
-  line-height:1.12;
-  letter-spacing:-0.02em;
-  font-weight:700;
-}
-h3{
-  font-size:20px;
-  line-height:1.25;
-  font-weight:700;
-}
-
-.lead{ margin-top:8px; max-width:64ch; color:var(--gray-700); }
-.micro{ font-size:15px; line-height:22px; }
-
-section{ padding:32px 0; border-bottom:var(--border); }
-@media (min-width:900px){ section{ padding:48px 0; } }
-
-.section-head{ margin-bottom:16px; }
-
-.band{ border-top:var(--border-strong); border-bottom:var(--border-strong); }
-.band-navy{ background:var(--navy); color:var(--white); }
-.band-black{ background:var(--black); color:var(--white); }
-.band-white{ background:var(--white); color:var(--black); }
-.band-accent{ background:var(--accent); color:var(--black); }
-.band-navy .eyebrow, .band-black .eyebrow{ color:rgba(255,255,255,.65); }
-.band-navy .lead, .band-black .lead{ color:rgba(255,255,255,.85); }
-.band-accent .eyebrow{ color:rgba(10,10,10,.6); }
-
-/* HEADER */
-.header{
-  position:fixed; top:0; left:0; right:0;
-  z-index:1000;
-  background:var(--white);
-  border-bottom:var(--border-strong);
-}
-.header-inner{ display:flex; justify-content:space-between; align-items:center; height:var(--header-h); }
-.logo-link{ display:flex; align-items:center; text-decoration:none; }
-.logo-svg{ height:32px; width:auto; }
-
-.menu-toggle{ display:flex; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:10px; }
-.menu-toggle span{ width:26px; height:2px; background:var(--black); transition:all .2s; }
-.menu-toggle.active span:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
-.menu-toggle.active span:nth-child(2){ opacity:0; }
-.menu-toggle.active span:nth-child(3){ transform:rotate(-45deg) translate(5px,-5px); }
-
-/* SUBNAV */
-.subnav{ display:none; position:fixed; top:var(--header-h); left:0; right:0; z-index:999; background:var(--white); border-bottom:var(--border-strong); }
-@media (min-width:900px){ .subnav{ display:block; } }
-.subnav .container{ display:flex; gap:24px; height:40px; align-items:center; }
-.subnav a{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; font-weight:500; color:var(--gray-600); text-decoration:none; }
-.subnav a:hover{ color:var(--black); }
-
-/* FULLSCREEN MENU */
-.fullscreen-menu{
-  position:fixed; top:var(--header-h); left:0; right:0; bottom:0;
-  background:var(--white);
-  z-index:998; display:none; overflow-y:auto;
-  border-top:var(--border-strong);
-}
-.fullscreen-menu.active{ display:block; }
-.menu-inner{ padding:20px 0; }
-.menu-grid{ display:grid; grid-template-columns:1fr; border:var(--border-strong); }
-@media (min-width:768px){ .menu-grid{ grid-template-columns:repeat(2,1fr); } }
-@media (min-width:1024px){ .menu-grid{ grid-template-columns:repeat(3,1fr); } }
-.menu-sector{ padding:18px 16px; border-bottom:var(--border-strong); }
-@media (min-width:768px){ .menu-sector{ padding:20px 18px; border-right:var(--border-strong); } .menu-sector:nth-child(2n){ border-right:none; } }
-@media (min-width:1024px){ .menu-sector:nth-child(2n){ border-right:var(--border-strong); } .menu-sector:nth-child(3n){ border-right:none; } }
-.menu-sector:last-child{ border-bottom:none; }
-.menu-sector-number{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-500); margin-bottom:8px; }
-.menu-sector-link{ font-size:17px; font-weight:700; text-decoration:none; margin-bottom:10px; display:block; }
-.menu-sector-link:hover{ color:var(--accent); }
-.menu-details{ margin-top:10px; }
-.menu-summary{ cursor:pointer; font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--gray-500); list-style:none; }
-.menu-summary::-webkit-details-marker{ display:none; }
-.menu-summary::before{ content:'+ '; }
-.menu-details[open] .menu-summary::before{ content:'− '; }
-.menu-themes{ display:flex; flex-direction:column; gap:6px; padding-top:8px; border-top:var(--border); margin-top:8px; }
-.menu-theme{ font-size:14px; line-height:20px; color:var(--gray-600); text-decoration:none; }
-.menu-theme:hover{ color:var(--black); }
-.menu-footer{ margin-top:16px; padding-top:16px; border-top:var(--border-strong); display:flex; flex-wrap:wrap; gap:16px; }
-.menu-footer a{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; font-weight:500; }
-
-/* BUTTONS */
-.btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:12px 16px;
-  font-size:12px; line-height:16px;
-  letter-spacing:.14em; text-transform:uppercase;
-  text-decoration:none;
-  border:var(--border-strong);
-  white-space:nowrap;
-  font-weight:500;
-}
-.btn-primary{ background:var(--black); color:var(--white); }
-.btn-primary:hover{ background:var(--gray-800); }
-.btn-secondary{ background:transparent; color:var(--black); }
-.btn-secondary:hover{ background:var(--gray-100); }
-.band-black .btn-primary, .band-navy .btn-primary{ background:transparent; color:var(--white); border-color:var(--white); }
-.band-black .btn-primary:hover, .band-navy .btn-primary:hover{ background:rgba(255,255,255,.1); }
-.band-black .btn-secondary, .band-navy .btn-secondary{ background:var(--white); color:var(--black); border-color:var(--white); }
-.band-accent .btn-primary{ background:var(--black); color:var(--white); border-color:var(--black); }
-.band-accent .btn-secondary{ background:transparent; color:var(--black); border-color:var(--black); }
-
-/* PILLS */
-.pills{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
-.pill{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:8px 12px;
-  font-size:12px; line-height:16px;
-  border:var(--border);
-  text-decoration:none;
-  color:var(--gray-700);
-  background:var(--white);
-}
-.pill:hover{ border-color:var(--black); background:var(--gray-100); }
-
-/* HERO */
-.hero{
-  padding-top:var(--header-h);
-  border-bottom:var(--border-strong);
-  background:var(--white);
-}
-@media (min-width:900px){ .hero{ padding-top:calc(var(--header-h) + 40px); } }
-.hero-inner{
-  min-height:calc(80vh - var(--header-h));
-  display:grid;
-  grid-template-columns:1fr;
-  gap:20px;
-  align-items:center;
-  padding:32px 0;
-}
-@media (min-width:900px){
-  .hero-inner{ grid-template-columns:1.15fr .85fr; gap:24px; padding:40px 0; }
-}
-.hero-copy h1{ margin-bottom:12px; }
-.hero-sub{ color:var(--gray-700); max-width:52ch; }
-.hero-ctas{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
-.hero-media{
-  border:var(--border-strong);
-  min-height:320px;
-  display:none;
-  background:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1400&q=80') center/cover no-repeat;
-}
-@media (min-width:900px){ .hero-media{ display:block; min-height:360px; } }
-
-/* PROOF CHIPS (in hero) */
-.proof-chips{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
-.chip{
-  border:var(--border);
-  padding:8px 10px;
-  font-size:12px; line-height:16px;
-  letter-spacing:.06em;
-  text-transform:uppercase;
-  color:var(--gray-700);
-  background:var(--white);
-}
-.chip strong{ font-weight:700; letter-spacing:0; text-transform:none; }
-
-/* LOGO STRIP */
-.logo-strip{
-  display:flex; flex-wrap:wrap;
-  gap:14px;
-  align-items:center;
-  padding:14px 0;
-}
-.logo-strip .logo-item{
-  font-size:12px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.7);
-  border:2px solid rgba(255,255,255,.3);
-  padding:8px 12px;
-}
-
-/* GRID SYSTEM */
-.grid-3{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
-  margin-top:16px;
-}
-@media (min-width:600px){ .grid-3{ grid-template-columns:repeat(2,1fr); } }
-@media (min-width:900px){ .grid-3{ grid-template-columns:repeat(3,1fr); } }
-
-.grid-2{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
-  margin-top:16px;
-}
-@media (min-width:768px){ .grid-2{ grid-template-columns:repeat(2,1fr); } }
-
-/* CARDS */
-.card{
-  border:var(--border-strong);
-  background:var(--white);
-  padding:16px;
-}
-.card h3{ margin-bottom:8px; }
-.card p{ font-size:17px; line-height:26px; color:var(--gray-700); }
-.card .rule{ height:2px; background:var(--gray-200); margin:10px 0; }
-.card .meta{ font-size:13px; line-height:18px; color:var(--gray-500); margin-top:10px; padding-top:10px; border-top:var(--border); }
-.card:hover{ border-color:var(--accent); }
-.band-navy .card, .band-black .card{ background:transparent; border-color:rgba(255,255,255,.3); }
-.band-navy .card p, .band-black .card p{ color:rgba(255,255,255,.85); }
-.band-navy .card .rule, .band-black .card .rule{ background:rgba(255,255,255,.2); }
-.band-navy .card .meta, .band-black .card .meta{ color:rgba(255,255,255,.6); border-color:rgba(255,255,255,.2); }
-
-/* QUOTE CARDS */
-.quote{
-  border:var(--border-strong);
-  padding:16px;
-  background:var(--white);
-}
-.quote blockquote{ font-size:17px; line-height:26px; font-style:normal; }
-.quote .who{ margin-top:10px; font-weight:700; font-size:15px; }
-.quote .role{ font-size:13px; line-height:18px; color:var(--gray-500); }
-.band-navy .quote{ background:transparent; border-color:rgba(255,255,255,.3); }
-.band-navy .quote blockquote{ color:var(--white); }
-.band-navy .quote .who{ color:var(--white); }
-.band-navy .quote .role{ color:rgba(255,255,255,.6); }
-
-/* TABLE */
-.table-wrap{
-  margin-top:16px;
-  border:var(--border-strong);
-  overflow-x:auto;
-}
-table{ width:100%; min-width:600px; border-collapse:collapse; font-size:15px; line-height:22px; }
-th, td{ padding:12px 14px; text-align:left; vertical-align:top; }
-th{
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  font-size:12px;
-  font-weight:500;
-  border-bottom:var(--border-strong);
-}
-td{ border-bottom:var(--border); }
-tbody tr:last-child td{ border-bottom:none; }
-.band-black th{ border-bottom:2px solid rgba(255,255,255,.2); color:rgba(255,255,255,.6); }
-.band-black td{ border-bottom:2px solid rgba(255,255,255,.12); color:rgba(255,255,255,.85); }
-.band-black td:first-child{ font-weight:700; color:var(--white); }
-.elite-col{ border-left:4px solid var(--accent) !important; font-weight:700 !important; color:var(--white) !important; }
-.check{ color:var(--accent); }
-.x{ color:rgba(255,255,255,.35); }
-
-/* STEPS/TIMELINE */
-.steps{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
-  margin-top:16px;
-}
-@media (min-width:768px){ .steps{ grid-template-columns:repeat(2,1fr); } }
-@media (min-width:1000px){ .steps{ grid-template-columns:repeat(4,1fr); } }
-.step{
-  border:var(--border-strong);
-  padding:16px;
-  background:var(--white);
-}
-.step .num{
-  font-size:40px;
-  line-height:1;
-  font-weight:800;
-  color:var(--gray-200);
-  margin-bottom:8px;
-}
-.step h3{ margin-bottom:8px; }
-.step ul{ list-style:none; margin-bottom:10px; }
-.step li{ font-size:15px; line-height:22px; padding-left:14px; position:relative; margin-bottom:3px; color:var(--gray-700); }
-.step li::before{ content:'–'; position:absolute; left:0; color:var(--gray-400); }
-.step .deliverables{ font-size:13px; line-height:18px; color:var(--gray-500); padding-top:10px; border-top:var(--border); }
-.step .deliverables strong{ font-weight:700; color:var(--gray-700); }
-.band-navy .step{ background:transparent; border-color:rgba(255,255,255,.3); }
-.band-navy .step .num{ color:rgba(255,255,255,.2); }
-.band-navy .step h3{ color:var(--white); }
-.band-navy .step li{ color:rgba(255,255,255,.85); }
-.band-navy .step li::before{ color:rgba(255,255,255,.4); }
-.band-navy .step .deliverables{ color:rgba(255,255,255,.6); border-color:rgba(255,255,255,.2); }
-.band-navy .step .deliverables strong{ color:rgba(255,255,255,.9); }
-
-/* SECTOR GRID */
-.sector-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:12px;
-  margin-top:16px;
-}
-@media (min-width:600px){ .sector-grid{ grid-template-columns:repeat(2,1fr); } }
-@media (min-width:1000px){ .sector-grid{ grid-template-columns:repeat(3,1fr); } }
-.sector-card{
-  display:block;
-  border:var(--border-strong);
-  padding:16px;
-  text-decoration:none;
-  background:var(--white);
-}
-.sector-card .meta{ font-size:12px; line-height:16px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-500); margin-bottom:6px; }
-.sector-card .title{ font-size:18px; line-height:24px; font-weight:700; color:var(--black); margin-bottom:6px; }
-.sector-card .desc{ font-size:15px; line-height:22px; color:var(--gray-600); margin-bottom:10px; }
-.sector-card .themes{ font-size:13px; line-height:18px; color:var(--gray-500); }
-.sector-card:hover{ border-color:var(--accent); }
-
-/* RESOURCE CARDS */
-.resource-card{
-  border:var(--border-strong);
-  padding:16px;
-  background:var(--white);
-}
-.resource-card .meta{ font-size:12px; line-height:16px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-500); margin-bottom:8px; }
-.resource-card h3{ font-size:17px; line-height:24px; margin-bottom:6px; }
-.resource-card p{ font-size:15px; line-height:22px; color:var(--gray-600); margin-bottom:10px; }
-.resource-card a{ font-size:13px; text-decoration:none; border-bottom:2px solid var(--accent); color:var(--black); }
-.resource-card:hover{ border-color:var(--accent); }
-
-/* PROOF GRID */
-.proof-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:16px;
-}
-@media (min-width:600px){ .proof-grid{ grid-template-columns:repeat(3,1fr); } }
-@media (min-width:900px){ .proof-grid{ grid-template-columns:repeat(6,1fr); } }
-.proof-item{
-  border:var(--border-strong);
-  padding:14px 12px;
-  text-align:center;
-}
-.proof-item.primary{ background:var(--gray-100); }
-.proof-value{ font-size:32px; line-height:36px; font-weight:800; color:var(--black); margin-bottom:2px; }
-.proof-label{ font-size:13px; line-height:18px; color:var(--gray-500); }
-.proof-note{ margin-top:16px; font-size:17px; line-height:26px; color:var(--gray-600); max-width:56ch; }
-
-/* CONTACT */
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:20px;
-}
-@media (min-width:768px){ .contact-grid{ grid-template-columns:1fr 1fr; align-items:center; } }
-.contact-text h2{ margin-bottom:10px; }
-.contact-text p{ color:rgba(10,10,10,.75); max-width:48ch; }
-.contact-actions{ display:flex; flex-direction:column; gap:10px; }
-.contact-links{ display:flex; flex-wrap:wrap; gap:14px; margin-top:12px; padding-top:12px; border-top:2px solid rgba(10,10,10,.15); }
-.contact-links a{ font-size:14px; color:rgba(10,10,10,.65); text-decoration:none; }
-.contact-links a:hover{ color:var(--black); }
-
-/* FOOTER */
-footer{ padding:24px 0; border-top:var(--border-strong); }
-.footer-inner{ display:flex; flex-direction:column; gap:12px; }
-@media (min-width:768px){ .footer-inner{ flex-direction:row; justify-content:space-between; align-items:center; } }
-.footer-brand{ font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--gray-500); }
-.footer-links{ display:flex; gap:14px; }
-.footer-links a{ font-size:12px; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; color:var(--gray-700); }
-.footer-links a:hover{ color:var(--accent); }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;background:#fff;padding:16px;}
+h1{font-size:48px;line-height:52px;font-weight:700;margin:48px 0 24px;}
+h2{font-size:32px;line-height:38px;font-weight:700;margin:48px 0 16px;}
+h3{font-size:24px;line-height:30px;font-weight:700;margin:32px 0 12px;}
+h4{font-size:21px;line-height:28px;font-weight:700;margin:24px 0 8px;}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 16px;padding-left:24px;}
+li{margin-bottom:8px;}
+a{color:#000;text-decoration:underline;}
+a:hover{text-decoration:none;}
+hr{border:none;border-top:1px solid #000;margin:48px 0;}
+strong{font-weight:700;}
+table{width:100%;border-collapse:collapse;margin:16px 0 24px;}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid #ccc;}
+th{font-weight:700;}
+.nav{margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid #000;}
+.nav a{margin-right:16px;font-size:16px;}
     </style>
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="capacidades.html" class="logo-link">
-                    <svg class="logo-svg" viewBox="0 0 1706 321" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M447.909 0.00622804C443.646 116.854 351.192 212.564 240.68 217.568C265.251 269.286 316.17 303.894 375.053 302.206C401.401 301.466 426.18 293.502 447.702 280.21L447.968 0.00622804C447.968 0.0654365 448.028 -0.0233762 447.909 0.00622804Z" fill="#E19A24"/>
-                        <path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#2D366F"/>
-                        <path d="M565.333 261.951V98.625H672.885V127.075H597.217V165.383H661.665V193.832H597.217V233.502H672.885V261.951H565.333Z" fill="#2D366F"/>
-                        <path d="M724.026 261.939C699.484 261.939 689.152 244.739 689.152 227.776V98.6426H718.964V225.941C718.964 233.046 721.954 236.717 729.503 236.717H740.989V261.939H724.026V261.939Z" fill="#2D366F"/>
-                        <path d="M752.926 97.709H783.418V122.014H752.926V97.709ZM753.399 142.441H783.211V261.953H753.399V142.441Z" fill="#2D366F"/>
-                        <path d="M842.361 261.941C818.055 261.941 807.724 244.741 807.724 227.777V168.598H795.112V145.892H807.724V110.574H837.535V145.892H858.643V168.598H837.535V225.942C837.535 232.84 840.762 236.718 847.867 236.718H858.643V261.941H842.361V261.941Z" fill="#2D366F"/>
-                        <path d="M896.967 211.471C896.967 226.836 906.381 238.086 923.108 238.086C936.193 238.086 942.587 234.415 950.166 226.836L968.284 244.51C956.116 256.647 944.422 263.308 922.871 263.308C894.658 263.308 867.6 250.46 867.6 202.057C867.6 163.068 888.707 141.043 919.673 141.043C952.948 141.043 971.747 165.348 971.747 198.149V211.442H896.967V211.471ZM939.627 178.226C936.429 171.121 929.768 165.851 919.673 165.851C909.578 165.851 902.917 171.121 899.72 178.226C897.885 182.578 897.204 185.805 896.967 191.074H942.38C942.143 185.775 941.462 182.578 939.627 178.226Z" fill="#2D366F"/>
-                        <path d="M1035.82 127.993V262.869H1003.94V127.993H968.263V99.543H1078.48V127.993H1035.82Z" fill="#E19A24"/>
-                        <path d="M1140.53 175.924C1135.94 171.336 1132.03 168.819 1124.72 168.819C1115.55 168.819 1105.45 175.688 1105.45 190.845V262.872H1075.64V143.36H1104.77V154.817C1110.51 147.948 1121.97 141.968 1134.82 141.968C1138.96 141.968 1142.93 141.584 1146.07 143.182C1147.16 143.774 1140.53 175.924 1140.53 175.924Z" fill="#E19A24"/>
-                        <path d="M1218.49 262.863V252.531C1210.47 260.553 1202.89 263.988 1189.12 263.988C1175.6 263.988 1165.74 260.553 1158.63 253.448C1152.21 246.788 1148.77 237.166 1148.77 226.597C1148.77 207.562 1161.86 191.96 1189.6 191.96H1217.81V186.01C1217.81 172.925 1211.39 167.211 1195.58 167.211C1184.12 167.211 1178.82 169.965 1172.63 177.07L1153.6 158.478C1165.29 145.63 1176.78 141.959 1196.7 141.959C1230.19 141.959 1247.62 156.169 1247.62 184.175V262.863H1218.49ZM1217.81 212.387H1194.19C1183.41 212.387 1177.43 217.42 1177.43 225.916C1177.43 234.176 1182.94 239.682 1194.63 239.682C1202.89 239.682 1208.16 239.002 1213.43 233.939C1216.63 230.949 1217.78 226.153 1217.78 218.811V212.387H1217.81Z" fill="#E19A24"/>
-                        <path d="M1267.82 98.625H1298.34V122.93H1267.82V98.625ZM1268.26 143.357H1298.07V262.869H1268.26V143.357Z" fill="#E19A24"/>
-                        <path d="M1389.37 262.86V190.596C1389.37 174.314 1379.04 168.808 1369.66 168.808C1360.24 168.808 1349.7 174.314 1349.7 190.596V262.86H1319.89V143.348H1349.02V154.361C1356.81 146.101 1367.82 141.986 1378.83 141.986C1390.76 141.986 1400.38 145.894 1407.05 152.526C1416.67 162.147 1419.18 173.396 1419.18 186.481V262.86H1389.37V262.86Z" fill="#E19A24"/>
-                        <path d="M1439.4 98.625H1469.92V122.93H1439.4V98.625ZM1439.84 143.357H1469.66V262.869H1439.84V143.357Z" fill="#E19A24"/>
-                        <path d="M1560.95 262.86V190.596C1560.95 174.314 1550.62 168.808 1541.24 168.808C1531.82 168.808 1521.28 174.314 1521.28 190.596V262.86H1491.47V143.348H1520.6V154.361C1528.39 146.101 1539.4 141.986 1550.41 141.986C1562.34 141.986 1571.96 145.894 1578.63 152.526C1588.28 162.147 1590.79 173.396 1590.79 186.481V262.86H1560.95V262.86Z" fill="#E19A24"/>
-                        <path d="M1652.69 308.036C1634.34 308.036 1621.72 304.365 1609.35 292.435L1627.94 273.636C1634.6 280.06 1641.23 282.814 1651.33 282.814C1669.24 282.814 1675.43 270.202 1675.43 258.035V245.868C1667.64 254.601 1658.7 257.798 1646.98 257.798C1635.28 257.798 1625.19 253.89 1618.53 247.259C1607.28 236.009 1606.36 220.645 1606.36 199.774C1606.36 178.903 1607.28 163.775 1618.53 152.526C1625.19 145.865 1635.49 141.986 1647.18 141.986C1659.8 141.986 1668.06 145.42 1676.32 154.598V143.348H1705.21V258.509C1705.21 287.165 1684.81 308.036 1652.69 308.036ZM1655.68 168.808C1638.01 168.808 1636.17 183.936 1636.17 199.774C1636.17 215.612 1638.01 230.977 1655.68 230.977C1673.35 230.977 1675.4 215.612 1675.4 199.774C1675.4 183.936 1673.33 168.808 1655.68 168.808Z" fill="#E19A24"/>
-                    </svg>
-                </a>
-                <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </header>
 
-    <!-- SUBNAV -->
-    <nav class="subnav" id="subnav">
-        <div class="container">
-            <a href="#capabilities">Capacidades</a>
-            <a href="#why-now">Comparación</a>
-            <a href="#mission-profile">Modelo</a>
-            <a href="#sectors">Sectores</a>
-            <a href="#webinars">Recursos</a>
-            <a href="#quotes">Testimonios</a>
-            <a href="#contact">Contacto</a>
-        </div>
-    </nav>
+<nav class="nav">
+    <a href="capacidades.html">Inicio</a>
+    <a href="landing-gas.html">Gas</a>
+    <a href="landing-activos.html">Activos</a>
+    <a href="landing-directivas.html">Directivas</a>
+    <a href="landing-integridad.html">Integridad</a>
+    <a href="landing-oilgas.html">Oil & Gas</a>
+    <a href="landing-seguridad.html">Seguridad</a>
+</nav>
 
-    <!-- FULLSCREEN MENU -->
-    <div class="fullscreen-menu" id="fullscreenMenu">
-        <div class="container">
-            <div class="menu-inner">
-                <div class="menu-grid">
-                    <div class="menu-sector">
-                        <span class="menu-sector-number">01</span>
-                        <a href="landing-gas.html" class="menu-sector-link">Gas Natural, GLP y Energía</a>
-                        <details class="menu-details">
-                            <summary class="menu-summary">Ver temas</summary>
-                            <div class="menu-themes">
-                                <a href="landing-gas.html#tecnologias" class="menu-theme">Tecnologías del Gas</a>
-                                <a href="landing-gas.html#operacion" class="menu-theme">Operación y Procesos</a>
-                                <a href="landing-gas.html#medicion" class="menu-theme">Medición y Regulación</a>
-                            </div>
-                        </details>
-                    </div>
-                    <div class="menu-sector">
-                        <span class="menu-sector-number">02</span>
-                        <a href="landing-activos.html" class="menu-sector-link">Gestión de Activos</a>
-                        <details class="menu-details">
-                            <summary class="menu-summary">Ver temas</summary>
-                            <div class="menu-themes">
-                                <a href="landing-activos.html#mantenimiento" class="menu-theme">Gestión del Mantenimiento</a>
-                                <a href="landing-activos.html#confiabilidad" class="menu-theme">Confiabilidad</a>
-                                <a href="landing-activos.html#activos" class="menu-theme">Gestión de Activos</a>
-                            </div>
-                        </details>
-                    </div>
-                    <div class="menu-sector">
-                        <span class="menu-sector-number">03</span>
-                        <a href="landing-directivas.html" class="menu-sector-link">Habilidades Directivas</a>
-                        <details class="menu-details">
-                            <summary class="menu-summary">Ver temas</summary>
-                            <div class="menu-themes">
-                                <a href="landing-directivas.html#gestion" class="menu-theme">Gestión y Estrategia</a>
-                                <a href="landing-directivas.html#liderazgo" class="menu-theme">Liderazgo y Organización</a>
-                            </div>
-                        </details>
-                    </div>
-                    <div class="menu-sector">
-                        <span class="menu-sector-number">04</span>
-                        <a href="landing-integridad.html" class="menu-sector-link">Integridad y Equipos</a>
-                        <details class="menu-details">
-                            <summary class="menu-summary">Ver temas</summary>
-                            <div class="menu-themes">
-                                <a href="landing-integridad.html#integridad" class="menu-theme">Integridad Mecánica</a>
-                                <a href="landing-integridad.html#codigos" class="menu-theme">Inspección y Códigos</a>
-                                <a href="landing-integridad.html#rotativos" class="menu-theme">Equipos Rotativos</a>
-                                <a href="landing-integridad.html#catodica" class="menu-theme">Protección Catódica</a>
-                            </div>
-                        </details>
-                    </div>
-                    <div class="menu-sector">
-                        <span class="menu-sector-number">05</span>
-                        <a href="landing-oilgas.html" class="menu-sector-link">Oil and Gas</a>
-                        <details class="menu-details">
-                            <summary class="menu-summary">Ver temas</summary>
-                            <div class="menu-themes">
-                                <a href="landing-oilgas.html#facilidades" class="menu-theme">Producción y Facilidades</a>
-                                <a href="landing-oilgas.html#levantamiento" class="menu-theme">Levantamiento Artificial</a>
-                                <a href="landing-oilgas.html#perforacion" class="menu-theme">Perforación y Pozos</a>
-                                <a href="landing-oilgas.html#yacimientos" class="menu-theme">Yacimientos</a>
-                            </div>
-                        </details>
-                    </div>
-                    <div class="menu-sector">
-                        <span class="menu-sector-number">06</span>
-                        <a href="landing-seguridad.html" class="menu-sector-link">Seguridad y Riesgos</a>
-                        <details class="menu-details">
-                            <summary class="menu-summary">Ver temas</summary>
-                            <div class="menu-themes">
-                                <a href="landing-seguridad.html#procesos" class="menu-theme">Seguridad de Procesos</a>
-                                <a href="landing-seguridad.html#riesgos" class="menu-theme">Análisis de Riesgos</a>
-                                <a href="landing-seguridad.html#electrica" class="menu-theme">Seguridad Eléctrica</a>
-                                <a href="landing-seguridad.html#investigacion" class="menu-theme">Investigación</a>
-                            </div>
-                        </details>
-                    </div>
-                </div>
-                <div class="menu-footer">
-                    <a href="https://hidrocarburos.com.co" target="_blank">Cursos Programados</a>
-                    <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Campus Virtual</a>
-                    <a href="https://wa.me/573164661007">Contactar</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<h1>Elite Training</h1>
 
-    <!-- HERO -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-inner">
-                <div class="hero-copy">
-                    <h1>Formación técnica para industrias de alto riesgo.</h1>
-                    <p class="hero-sub">Integridad, seguridad de procesos y confiabilidad para equipos que operan activos críticos.</p>
-                    <div class="hero-ctas">
-                        <a href="#capabilities" class="btn btn-primary">Ver capacidades</a>
-                        <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20conversación%20técnica" class="btn btn-secondary">Agendar conversación</a>
-                    </div>
-                    <div class="pills">
-                        <a class="pill" href="landing-gas.html">Gas</a>
-                        <a class="pill" href="landing-activos.html">Activos</a>
-                        <a class="pill" href="landing-directivas.html">Directivas</a>
-                        <a class="pill" href="landing-integridad.html">Integridad</a>
-                        <a class="pill" href="landing-oilgas.html">Oil & Gas</a>
-                        <a class="pill" href="landing-seguridad.html">Seguridad</a>
-                    </div>
-                    <div class="proof-chips">
-                        <span class="chip"><strong>30 años</strong></span>
-                        <span class="chip"><strong>400+</strong> empresas/año</span>
-                        <span class="chip"><strong>11+</strong> países</span>
-                        <span class="chip"><strong>60–80k</strong> profesionales</span>
-                        <span class="chip"><strong>ASME</strong> alianza</span>
-                        <span class="chip"><strong>TWPL</strong> partner</span>
-                    </div>
-                </div>
-                <div class="hero-media" aria-hidden="true"></div>
-            </div>
-        </div>
-    </section>
+<p>Formación técnica para industrias de alto riesgo. Integridad, seguridad de procesos y confiabilidad para equipos que operan activos críticos.</p>
 
-    <!-- LOGO STRIP -->
-    <section class="band band-navy" id="proof-strip">
-        <div class="container">
-            <div class="logo-strip" aria-label="Clientes y aliados">
-                <span class="logo-item">Ecopetrol</span>
-                <span class="logo-item">Ocensa</span>
-                <span class="logo-item">Frontera</span>
-                <span class="logo-item">ISA</span>
-                <span class="logo-item">Repsol</span>
-                <span class="logo-item">Promigas</span>
-                <span class="logo-item">+ otros</span>
-            </div>
-        </div>
-    </section>
+<p>30 años · 400+ empresas/año · 11+ países · 60–80k profesionales · ASME · The Woodhouse Partnership</p>
 
-    <!-- CAPABILITIES -->
-    <section class="band band-white" id="capabilities">
-        <div class="container">
-            <div class="section-head">
-                <div class="eyebrow">Capacidades</div>
-                <h2>Qué desarrollamos en los equipos técnicos</h2>
-                <p class="lead">Competencias alineadas a estándares internacionales para cerrar brechas en operación, mantenimiento y gobierno de activos.</p>
-            </div>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Criterio técnico consistente</h3>
-                    <p>Mismos estándares de decisión entre turnos, sedes y contratistas.</p>
-                    <div class="meta">Resultado: menos variabilidad en respuesta a incidentes.</div>
-                </div>
-                <div class="card">
-                    <h3>Rutas por rol</h3>
-                    <p>Programas diferenciados para operadores, ingenieros, inspectores y líderes.</p>
-                    <div class="meta">Resultado: desarrollo progresivo según nivel de responsabilidad.</div>
-                </div>
-                <div class="card">
-                    <h3>Alineación a estándares</h3>
-                    <p>Contenido basado en ASME, API, NFPA, ISO 55000, IAM, PSM.</p>
-                    <div class="meta">Resultado: cumplimiento demostrable ante auditorías.</div>
-                </div>
-                <div class="card">
-                    <h3>Evaluación y trazabilidad</h3>
-                    <p>Matrices de competencia, evaluaciones y reportes por área.</p>
-                    <div class="meta">Resultado: evidencia documentada para gobierno técnico.</div>
-                </div>
-                <div class="card">
-                    <h3>Aplicación a operación real</h3>
-                    <p>Casos, análisis de eventos y simulaciones con contexto de campo.</p>
-                    <div class="meta">Resultado: transferencia inmediata a la práctica diaria.</div>
-                </div>
-                <div class="card">
-                    <h3>Ecosistema de contratistas</h3>
-                    <p>Formación extendida a personal externo con los mismos criterios.</p>
-                    <div class="meta">Resultado: consistencia en toda la cadena operativa.</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<hr>
 
-    <!-- WHY NOW (COMPARISON) -->
-    <section class="band band-black" id="why-now">
-        <div class="container">
-            <div class="section-head">
-                <div class="eyebrow">Por qué ahora</div>
-                <h2>Cómo se compara Elite Training</h2>
-                <p class="lead">Activos envejecidos y alta rotación requieren formación que genere evidencia, consistencia y velocidad.</p>
-            </div>
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Dimensión</th>
-                            <th>Solo teoría</th>
-                            <th>Solo aula</th>
-                            <th>Cursos aislados</th>
-                            <th class="elite-col">Elite Training</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Contexto operativo</td>
-                            <td class="x">Genérico</td>
-                            <td class="x">Limitado</td>
-                            <td class="x">Variable</td>
-                            <td class="elite-col check">Casos reales de campo</td>
-                        </tr>
-                        <tr>
-                            <td>Evidencia para auditoría</td>
-                            <td class="x">Ninguna</td>
-                            <td class="x">Asistencia</td>
-                            <td class="x">Certificados sueltos</td>
-                            <td class="elite-col check">Matrices + reportes</td>
-                        </tr>
-                        <tr>
-                            <td>Consistencia entre sedes</td>
-                            <td class="x">No aplica</td>
-                            <td class="x">Depende del instructor</td>
-                            <td class="x">Sin control</td>
-                            <td class="elite-col check">Estándar único</td>
-                        </tr>
-                        <tr>
-                            <td>Velocidad para cerrar brechas</td>
-                            <td class="x">Lenta</td>
-                            <td class="x">Media</td>
-                            <td class="x">Reactiva</td>
-                            <td class="elite-col check">Rutas priorizadas</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
+<h2>Capacidades</h2>
 
-    <!-- MISSION PROFILE (MODEL) -->
-    <section class="band band-navy" id="mission-profile">
-        <div class="container">
-            <div class="section-head">
-                <div class="eyebrow">Modelo</div>
-                <h2>Cómo trabajamos con cada organización</h2>
-                <p class="lead">Proceso estructurado de diagnóstico, diseño, ejecución y mejora continua.</p>
-            </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="num">1</div>
-                    <h3>Diagnóstico</h3>
-                    <ul>
-                        <li>Mapeo de roles críticos y brechas</li>
-                        <li>Alineación a objetivos de cumplimiento</li>
-                    </ul>
-                    <div class="deliverables"><strong>Entregables:</strong> Matriz de brechas, mapa de roles</div>
-                </div>
-                <div class="step">
-                    <div class="num">2</div>
-                    <h3>Diseño de rutas</h3>
-                    <ul>
-                        <li>Programas por función y nivel</li>
-                        <li>Selección de estándares aplicables</li>
-                    </ul>
-                    <div class="deliverables"><strong>Entregables:</strong> Plan de formación, calendario</div>
-                </div>
-                <div class="step">
-                    <div class="num">3</div>
-                    <h3>Ejecución</h3>
-                    <ul>
-                        <li>Formación presencial, virtual o híbrida</li>
-                        <li>Evaluación de competencias</li>
-                    </ul>
-                    <div class="deliverables"><strong>Entregables:</strong> Reportes, certificaciones</div>
-                </div>
-                <div class="step">
-                    <div class="num">4</div>
-                    <h3>Evidencia</h3>
-                    <ul>
-                        <li>Consolidación de matrices</li>
-                        <li>Ajuste según resultados</li>
-                    </ul>
-                    <div class="deliverables"><strong>Entregables:</strong> Dashboard, informe anual</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<p>Competencias alineadas a estándares internacionales para cerrar brechas en operación, mantenimiento y gobierno de activos.</p>
 
-    <!-- SECTORS -->
-    <section class="band band-white" id="sectors">
-        <div class="container">
-            <div class="section-head">
-                <div class="eyebrow">Sectores</div>
-                <h2>Seis entornos industriales</h2>
-                <p class="lead">Cada sector agrupa temas, cursos y programas alineados a los riesgos y normas del entorno.</p>
-            </div>
-            <div class="sector-grid">
-                <a href="landing-gas.html" class="sector-card">
-                    <span class="meta">01</span>
-                    <span class="title">Gas Natural, GLP y Energía</span>
-                    <p class="desc">Tecnologías, procesos, medición y regulación de sistemas de gas.</p>
-                    <span class="themes">LNG · GNC · Compresión · Turbinas · Medición</span>
-                </a>
-                <a href="landing-activos.html" class="sector-card">
-                    <span class="meta">02</span>
-                    <span class="title">Gestión de Activos y Confiabilidad</span>
-                    <p class="desc">Ciclo de vida, RCM, riesgo y gobierno de activos físicos.</p>
-                    <span class="themes">ISO 55000 · RCM · FMECA · RAM · IAM</span>
-                </a>
-                <a href="landing-directivas.html" class="sector-card">
-                    <span class="meta">03</span>
-                    <span class="title">Habilidades Directivas</span>
-                    <p class="desc">Toma de decisiones, gestión de proyectos y liderazgo técnico.</p>
-                    <span class="themes">Proyectos · Costos · Crisis · MOC</span>
-                </a>
-                <a href="landing-integridad.html" class="sector-card">
-                    <span class="meta">04</span>
-                    <span class="title">Integridad y Equipos</span>
-                    <p class="desc">Integridad mecánica, inspección, códigos y protección catódica.</p>
-                    <span class="themes">API 579 · API 580 · ASME VIII · B31.3 · Corrosión</span>
-                </a>
-                <a href="landing-oilgas.html" class="sector-card">
-                    <span class="meta">05</span>
-                    <span class="title">Oil and Gas</span>
-                    <p class="desc">Producción, facilidades, levantamiento artificial y pozos.</p>
-                    <span class="themes">ESP · PCP · Well Integrity · Perforación · Petrofísica</span>
-                </a>
-                <a href="landing-seguridad.html" class="sector-card">
-                    <span class="meta">06</span>
-                    <span class="title">Seguridad y Riesgos</span>
-                    <p class="desc">Seguridad de procesos, análisis de riesgos y seguridad eléctrica.</p>
-                    <span class="themes">PSM · HAZOP · LOPA · BowTie · NFPA 70E</span>
-                </a>
-            </div>
-        </div>
-    </section>
+<h3>Criterio técnico consistente</h3>
+<p>Mismos estándares de decisión entre turnos, sedes y contratistas. Resultado: menos variabilidad en respuesta a incidentes.</p>
 
-    <!-- WEBINARS / RESOURCES -->
-    <section class="band band-white" id="webinars">
-        <div class="container">
-            <div class="section-head">
-                <div class="eyebrow">Recursos</div>
-                <h2>Webinars y guías técnicas</h2>
-                <p class="lead">Sesiones y materiales para equipos técnicos y líderes de activos.</p>
-            </div>
-            <div class="grid-3">
-                <div class="resource-card">
-                    <div class="meta">Webinar</div>
-                    <h3>Seguridad de procesos: hallazgos típicos en auditoría</h3>
-                    <p>Qué suele aparecer en plantas y cómo cerrar brechas con evidencia.</p>
-                    <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Ver grabación</a>
-                </div>
-                <div class="resource-card">
-                    <div class="meta">Guía</div>
-                    <h3>Matriz de competencias por rol para activos críticos</h3>
-                    <p>Un esquema práctico para operación, mantenimiento e integridad.</p>
-                    <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Descargar</a>
-                </div>
-                <div class="resource-card">
-                    <div class="meta">Webinar</div>
-                    <h3>Integridad mecánica: decisiones consistentes con API/ASME</h3>
-                    <p>Cómo reducir variabilidad técnica entre sedes y contratistas.</p>
-                    <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Ver grabación</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<h3>Rutas por rol</h3>
+<p>Programas diferenciados para operadores, ingenieros, inspectores y líderes. Resultado: desarrollo progresivo según nivel de responsabilidad.</p>
 
-    <!-- QUOTES / TESTIMONIALS -->
-    <section class="band band-navy" id="quotes">
-        <div class="container">
-            <div class="section-head">
-                <div class="eyebrow">Testimonios</div>
-                <h2>Lo que valoran los equipos técnicos</h2>
-                <p class="lead">Consistencia, evidencia y aplicación directa a la operación.</p>
-            </div>
-            <div class="grid-3">
-                <div class="quote">
-                    <blockquote>"Logramos alinear criterios entre sedes y dejar evidencia usable para auditoría."</blockquote>
-                    <div class="who">Líder de Integridad</div>
-                    <div class="role">Operador de midstream</div>
-                </div>
-                <div class="quote">
-                    <blockquote>"La ruta por rol nos permitió acelerar el cierre de brechas sin depender de un instructor."</blockquote>
-                    <div class="who">Jefe de Mantenimiento</div>
-                    <div class="role">Energía</div>
-                </div>
-                <div class="quote">
-                    <blockquote>"El contenido se siente hecho para planta: casos, decisiones y estándares aplicados."</blockquote>
-                    <div class="who">HSE / PSM</div>
-                    <div class="role">Procesos industriales</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<h3>Alineación a estándares</h3>
+<p>Contenido basado en ASME, API, NFPA, ISO 55000, IAM, PSM. Resultado: cumplimiento demostrable ante auditorías.</p>
 
-    <!-- PROOF / SCALE -->
-    <section class="band band-white" id="proof">
-        <div class="container">
-            <div class="section-head">
-                <div class="eyebrow">Escala</div>
-                <h2>Trayectoria en América Latina</h2>
-            </div>
-            <div class="proof-grid">
-                <div class="proof-item primary">
-                    <div class="proof-value">30</div>
-                    <div class="proof-label">Años</div>
-                </div>
-                <div class="proof-item primary">
-                    <div class="proof-value">400+</div>
-                    <div class="proof-label">Empresas / año</div>
-                </div>
-                <div class="proof-item primary">
-                    <div class="proof-value">60–80K</div>
-                    <div class="proof-label">Profesionales</div>
-                </div>
-                <div class="proof-item">
-                    <div class="proof-value">11+</div>
-                    <div class="proof-label">Países</div>
-                </div>
-                <div class="proof-item">
-                    <div class="proof-value">ASME</div>
-                    <div class="proof-label">Alianza</div>
-                </div>
-                <div class="proof-item">
-                    <div class="proof-value">TWPL</div>
-                    <div class="proof-label">Partner</div>
-                </div>
-            </div>
-            <p class="proof-note">Diseñado para turnos, múltiples sedes, alta rotación y ecosistemas de contratistas.</p>
-        </div>
-    </section>
+<h3>Evaluación y trazabilidad</h3>
+<p>Matrices de competencia, evaluaciones y reportes por área. Resultado: evidencia documentada para gobierno técnico.</p>
 
-    <!-- CONTACT CTA -->
-    <section class="band band-accent" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-text">
-                    <h2>Conecte con nuestro equipo</h2>
-                    <p>Conversemos sobre las competencias que necesita su operación para sostener seguridad, confiabilidad y cumplimiento.</p>
-                </div>
-                <div class="contact-actions">
-                    <a href="https://wa.me/573164661007?text=Quiero%20agendar%20una%20conversación%20técnica" class="btn btn-primary">Agendar por WhatsApp</a>
-                    <a href="tel:+573164661007" class="btn btn-secondary">+57 316 466 1007</a>
-                    <div class="contact-links">
-                        <a href="https://hidrocarburos.com.co" target="_blank">Cursos Programados</a>
-                        <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Campus Virtual</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<h3>Aplicación a operación real</h3>
+<p>Casos, análisis de eventos y simulaciones con contexto de campo. Resultado: transferencia inmediata a la práctica diaria.</p>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-inner">
-                <span class="footer-brand">Elite Training © 2026</span>
-                <div class="footer-links">
-                    <a href="https://hidrocarburos.com.co" target="_blank">hidrocarburos.com.co</a>
-                    <a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Campus Virtual</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+<h3>Ecosistema de contratistas</h3>
+<p>Formación extendida a personal externo con los mismos criterios. Resultado: consistencia en toda la cadena operativa.</p>
 
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const fullscreenMenu = document.getElementById('fullscreenMenu');
-        
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            fullscreenMenu.classList.toggle('active');
-            document.body.style.overflow = fullscreenMenu.classList.contains('active') ? 'hidden' : '';
-        });
-        
-        fullscreenMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                fullscreenMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-        });
+<hr>
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const target = document.querySelector(targetId);
-                if (target) {
-                    e.preventDefault();
-                    const headerH = 70;
-                    const subnavH = window.innerWidth >= 900 ? 40 : 0;
-                    const offset = headerH + subnavH + 16;
-                    
-                    window.scrollTo({
-                        top: target.offsetTop - offset,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+<h2>Por qué ahora</h2>
 
-        const subnav = document.getElementById('subnav');
-        const observer = new MutationObserver(() => {
-            if (fullscreenMenu.classList.contains('active')) {
-                subnav.style.display = 'none';
-            } else if (window.innerWidth >= 900) {
-                subnav.style.display = 'block';
-            }
-        });
-        observer.observe(fullscreenMenu, { attributes: true, attributeFilter: ['class'] });
-    </script>
+<p>Activos envejecidos y alta rotación requieren formación que genere evidencia, consistencia y velocidad.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Dimensión</th>
+            <th>Solo teoría</th>
+            <th>Solo aula</th>
+            <th>Cursos aislados</th>
+            <th>Elite Training</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Contexto operativo</td>
+            <td>Genérico</td>
+            <td>Limitado</td>
+            <td>Variable</td>
+            <td><strong>Casos reales de campo</strong></td>
+        </tr>
+        <tr>
+            <td>Evidencia para auditoría</td>
+            <td>Ninguna</td>
+            <td>Asistencia</td>
+            <td>Certificados sueltos</td>
+            <td><strong>Matrices + reportes</strong></td>
+        </tr>
+        <tr>
+            <td>Consistencia entre sedes</td>
+            <td>No aplica</td>
+            <td>Depende del instructor</td>
+            <td>Sin control</td>
+            <td><strong>Estándar único</strong></td>
+        </tr>
+        <tr>
+            <td>Velocidad para cerrar brechas</td>
+            <td>Lenta</td>
+            <td>Media</td>
+            <td>Reactiva</td>
+            <td><strong>Rutas priorizadas</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>
+
+<h2>Modelo</h2>
+
+<p>Proceso estructurado de diagnóstico, diseño, ejecución y mejora continua.</p>
+
+<h3>1. Diagnóstico</h3>
+<ul>
+    <li>Mapeo de roles críticos y brechas</li>
+    <li>Alineación a objetivos de cumplimiento</li>
+</ul>
+<p>Entregables: Matriz de brechas, mapa de roles</p>
+
+<h3>2. Diseño de rutas</h3>
+<ul>
+    <li>Programas por función y nivel</li>
+    <li>Selección de estándares aplicables</li>
+</ul>
+<p>Entregables: Plan de formación, calendario</p>
+
+<h3>3. Ejecución</h3>
+<ul>
+    <li>Formación presencial, virtual o híbrida</li>
+    <li>Evaluación de competencias</li>
+</ul>
+<p>Entregables: Reportes, certificaciones</p>
+
+<h3>4. Evidencia</h3>
+<ul>
+    <li>Consolidación de matrices</li>
+    <li>Ajuste según resultados</li>
+</ul>
+<p>Entregables: Dashboard, informe anual</p>
+
+<hr>
+
+<h2>Sectores</h2>
+
+<p>Cada sector agrupa temas, cursos y programas alineados a los riesgos y normas del entorno.</p>
+
+<h3><a href="landing-gas.html">01. Gas Natural, GLP y Energía</a></h3>
+<p>Tecnologías, procesos, medición y regulación de sistemas de gas.</p>
+<p>LNG · GNC · Compresión · Turbinas · Medición</p>
+
+<h3><a href="landing-activos.html">02. Gestión de Activos y Confiabilidad</a></h3>
+<p>Ciclo de vida, RCM, riesgo y gobierno de activos físicos.</p>
+<p>ISO 55000 · RCM · FMECA · RAM · IAM</p>
+
+<h3><a href="landing-directivas.html">03. Habilidades Directivas</a></h3>
+<p>Toma de decisiones, gestión de proyectos y liderazgo técnico.</p>
+<p>Proyectos · Costos · Crisis · MOC</p>
+
+<h3><a href="landing-integridad.html">04. Integridad y Equipos</a></h3>
+<p>Integridad mecánica, inspección, códigos y protección catódica.</p>
+<p>API 579 · API 580 · ASME VIII · B31.3 · Corrosión</p>
+
+<h3><a href="landing-oilgas.html">05. Oil and Gas</a></h3>
+<p>Producción, facilidades, levantamiento artificial y pozos.</p>
+<p>ESP · PCP · Well Integrity · Perforación · Petrofísica</p>
+
+<h3><a href="landing-seguridad.html">06. Seguridad y Riesgos</a></h3>
+<p>Seguridad de procesos, análisis de riesgos y seguridad eléctrica.</p>
+<p>PSM · HAZOP · LOPA · BowTie · NFPA 70E</p>
+
+<hr>
+
+<h2>Recursos</h2>
+
+<h3>Webinar: Seguridad de procesos</h3>
+<p>Hallazgos típicos en auditoría. Qué suele aparecer en plantas y cómo cerrar brechas con evidencia.</p>
+
+<h3>Guía: Matriz de competencias por rol</h3>
+<p>Un esquema práctico para operación, mantenimiento e integridad.</p>
+
+<h3>Webinar: Integridad mecánica</h3>
+<p>Decisiones consistentes con API/ASME. Cómo reducir variabilidad técnica entre sedes y contratistas.</p>
+
+<hr>
+
+<h2>Testimonios</h2>
+
+<p><strong>"Logramos alinear criterios entre sedes y dejar evidencia usable para auditoría."</strong><br>
+Líder de Integridad, Operador de midstream</p>
+
+<p><strong>"La ruta por rol nos permitió acelerar el cierre de brechas sin depender de un instructor."</strong><br>
+Jefe de Mantenimiento, Energía</p>
+
+<p><strong>"El contenido se siente hecho para planta: casos, decisiones y estándares aplicados."</strong><br>
+HSE / PSM, Procesos industriales</p>
+
+<hr>
+
+<h2>Escala</h2>
+
+<p>30 años · 400+ empresas/año · 60–80K profesionales · 11+ países · ASME alianza · TWPL partner</p>
+
+<p>Diseñado para turnos, múltiples sedes, alta rotación y ecosistemas de contratistas.</p>
+
+<hr>
+
+<h2>Contacto</h2>
+
+<p>Conversemos sobre las competencias que necesita su operación para sostener seguridad, confiabilidad y cumplimiento.</p>
+
+<p><a href="https://wa.me/573164661007">WhatsApp: +57 316 466 1007</a></p>
+
+<p><a href="https://hidrocarburos.com.co">Cursos Programados</a> · <a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual</a></p>
+
+<hr>
+
+<p>Elite Training © 2026</p>
+
 </body>
 </html>

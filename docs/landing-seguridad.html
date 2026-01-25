@@ -4,319 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seguridad y Riesgos | Elite Training</title>
-    <meta name="description" content="Formación en seguridad de procesos PSM, HAZOP, LOPA, BowTie, seguridad eléctrica NFPA 70E.">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --black: #0a0a0a; --white: #ffffff; --gray-100: #f5f5f5; --gray-200: #e5e5e5; --gray-300: #d4d4d4; --gray-400: #a3a3a3; --gray-500: #737373; --gray-600: #525252; --gray-800: #262626; --accent: #E19A24; --font: 'Roboto', -apple-system, sans-serif; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: var(--font); font-size: 16px; line-height: 1.5; color: var(--black); background: var(--white); -webkit-font-smoothing: antialiased; }
-        .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
-        @media (min-width: 768px) { .container { padding: 0 40px; } }
-        @media (min-width: 1200px) { .container { padding: 0 60px; } }
-        .header { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: var(--white); border-bottom: 2px solid var(--black); }
-        .header-inner { display: flex; justify-content: space-between; align-items: center; height: 60px; }
-        @media (min-width: 768px) { .header-inner { height: 70px; } }
-        .logo-link { display: flex; align-items: center; text-decoration: none; }
-        .logo-svg { height: 32px; width: auto; }
-        @media (min-width: 768px) { .logo-svg { height: 40px; } }
-        .menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
-        .menu-toggle span { width: 24px; height: 2px; background: var(--black); transition: all 0.3s; }
-        @media (min-width: 768px) { .menu-toggle span { width: 28px; } .menu-toggle { gap: 6px; } }
-        .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .menu-toggle.active span:nth-child(2) { opacity: 0; }
-        .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-        .fullscreen-menu { position: fixed; top: 60px; left: 0; right: 0; bottom: 0; background: var(--white); z-index: 999; display: none; overflow-y: auto; border-top: 2px solid var(--black); }
-        @media (min-width: 768px) { .fullscreen-menu { top: 70px; } }
-        .fullscreen-menu.active { display: block; }
-        .menu-inner { padding: 24px 0; }
-        @media (min-width: 768px) { .menu-inner { padding: 40px 0; } }
-        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 0; border: 2px solid var(--black); }
-        @media (min-width: 768px) { .menu-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .menu-grid { grid-template-columns: repeat(3, 1fr); } }
-        .menu-sector { padding: 24px 20px; border-bottom: 2px solid var(--black); }
-        @media (min-width: 768px) { .menu-sector { padding: 32px; border-right: 2px solid var(--black); } .menu-sector:nth-child(2n) { border-right: none; } }
-        @media (min-width: 1024px) { .menu-sector:nth-child(2n) { border-right: 2px solid var(--black); } .menu-sector:nth-child(3n) { border-right: none; } }
-        .menu-sector-number { font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); margin-bottom: 12px; }
-        @media (min-width: 768px) { .menu-sector-number { font-size: 0.75rem; margin-bottom: 16px; } }
-        .menu-sector-link { display: block; font-size: 1.125rem; font-weight: 900; line-height: 1.2; color: var(--black); text-decoration: none; margin-bottom: 16px; }
-        @media (min-width: 768px) { .menu-sector-link { font-size: 1.375rem; margin-bottom: 20px; } }
-        .menu-sector-link:hover { color: var(--accent); }
-        .menu-themes { display: flex; flex-direction: column; gap: 10px; padding-top: 12px; border-top: 1px solid var(--gray-300); }
-        @media (min-width: 768px) { .menu-themes { gap: 12px; padding-top: 16px; } }
-        .menu-theme { font-size: 0.9375rem; font-weight: 500; color: var(--gray-600); text-decoration: none; }
-        .menu-theme:hover { color: var(--black); }
-        .menu-footer { margin-top: 24px; padding-top: 24px; border-top: 2px solid var(--black); display: flex; flex-wrap: wrap; gap: 24px; }
-        @media (min-width: 768px) { .menu-footer { margin-top: 40px; padding-top: 32px; gap: 40px; } }
-        .menu-footer a { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--black); text-decoration: none; }
-        .hero { padding-top: 60px; min-height: calc(100vh - 60px); display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; border-bottom: 2px solid var(--black); }
-        @media (min-width: 768px) { .hero { padding-top: 70px; min-height: calc(100vh - 70px); } }
-        .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80'); background-size: cover; background-position: center; }
-        .hero-bg::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.92); }
-        @media (min-width: 768px) { .hero-bg::after { background: linear-gradient(to right, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.85) 60%, rgba(255,255,255,0.7) 100%); } }
-        .hero-content { position: relative; z-index: 1; }
-        .hero-inner { padding: 60px 0; max-width: 800px; }
-        @media (min-width: 768px) { .hero-inner { padding: 100px 0; } }
-        .hero-label { font-size: 0.625rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); margin-bottom: 20px; display: inline-block; padding: 6px 12px; background: var(--gray-200); border: 2px solid var(--black); }
-        @media (min-width: 768px) { .hero-label { font-size: 0.75rem; padding: 8px 16px; margin-bottom: 32px; } }
-        .hero h1 { font-size: clamp(2rem, 6vw, 4rem); font-weight: 900; line-height: 0.95; letter-spacing: -0.03em; color: var(--black); margin-bottom: 24px; }
-        @media (min-width: 768px) { .hero h1 { margin-bottom: 32px; } }
-        .hero-description { font-size: 1rem; line-height: 1.6; color: var(--gray-800); max-width: 540px; margin-bottom: 32px; }
-        @media (min-width: 768px) { .hero-description { font-size: 1.0625rem; margin-bottom: 48px; } }
-        .hero-ctas { display: flex; flex-direction: column; gap: 12px; margin-bottom: 48px; }
-        @media (min-width: 480px) { .hero-ctas { flex-direction: row; gap: 16px; } }
-        @media (min-width: 768px) { .hero-ctas { margin-bottom: 64px; } }
-        .btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 28px; background: var(--black); color: var(--white); font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 2px solid var(--black); }
-        @media (min-width: 768px) { .btn-primary { padding: 18px 36px; font-size: 0.75rem; } }
-        .btn-primary:hover { background: var(--white); color: var(--black); }
-        .btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 28px; background: transparent; color: var(--black); font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--black); transition: all 0.2s; }
-        @media (min-width: 768px) { .btn-secondary { padding: 18px 36px; font-size: 0.75rem; } }
-        .btn-secondary:hover { background: var(--black); color: var(--white); }
-        .hero-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--black); border: 2px solid var(--black); max-width: 100%; }
-        @media (min-width: 768px) { .hero-stats { max-width: 500px; } }
-        .hero-stat { background: var(--white); padding: 16px; display: flex; flex-direction: column; }
-        @media (min-width: 768px) { .hero-stat { padding: 20px; } }
-        .hero-stat-value { font-size: 0.9375rem; font-weight: 900; letter-spacing: 0.05em; text-transform: uppercase; color: var(--black); }
-        @media (min-width: 768px) { .hero-stat-value { font-size: 1.0625rem; } }
-        .hero-stat-label { font-size: 0.5625rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray-500); margin-top: 6px; }
-        @media (min-width: 768px) { .hero-stat-label { font-size: 0.625rem; margin-top: 8px; } }
-        .themes-section { border-bottom: 2px solid var(--black); }
-        .theme-block { border-bottom: 2px solid var(--black); }
-        .theme-header { padding: 24px 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; transition: background 0.2s; }
-        @media (min-width: 768px) { .theme-header { padding: 32px 0; gap: 24px; } }
-        .theme-header:hover { background: var(--gray-100); }
-        .theme-info { display: flex; align-items: center; gap: 16px; flex: 1; min-width: 0; }
-        @media (min-width: 768px) { .theme-info { gap: 24px; align-items: baseline; } }
-        .theme-number { font-size: 0.5625rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); padding: 6px 10px; background: var(--gray-200); border: 2px solid var(--black); flex-shrink: 0; }
-        @media (min-width: 768px) { .theme-number { font-size: 0.6875rem; padding: 8px 14px; } }
-        .theme-name { font-size: clamp(1.125rem, 3vw, 1.75rem); font-weight: 900; color: var(--black); letter-spacing: -0.01em; }
-        .theme-toggle { width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 300; color: var(--black); transition: transform 0.3s; border: 2px solid var(--black); background: var(--white); flex-shrink: 0; }
-        @media (min-width: 768px) { .theme-toggle { width: 44px; height: 44px; font-size: 1.75rem; } }
-        .theme-block.active .theme-toggle { transform: rotate(45deg); }
-        .theme-content { display: none; padding: 0 0 40px; }
-        @media (min-width: 768px) { .theme-content { padding: 0 0 60px; } }
-        .theme-block.active .theme-content { display: block; }
-        .courses-grid { display: grid; grid-template-columns: 1fr; gap: 2px; background: var(--black); border: 2px solid var(--black); margin-top: 24px; }
-        @media (min-width: 768px) { .courses-grid { grid-template-columns: repeat(2, 1fr); margin-top: 32px; } }
-        .course-item { background: var(--white); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: all 0.2s; gap: 12px; }
-        @media (min-width: 768px) { .course-item { padding: 20px 24px; } }
-        .course-item:hover { background: var(--gray-100); }
-        .course-name { font-size: 0.9375rem; font-weight: 500; color: var(--black); }
-        @media (min-width: 768px) { .course-name { font-size: 1rem; } }
-        .course-arrow { font-size: 1.125rem; color: var(--black); transition: transform 0.2s; flex-shrink: 0; }
-        @media (min-width: 768px) { .course-arrow { font-size: 1.25rem; } }
-        .course-item:hover .course-arrow { transform: translate(4px, -4px); }
-        .programs-section { padding: 60px 0; border-bottom: 2px solid var(--black); }
-        @media (min-width: 768px) { .programs-section { padding: 80px 0; } }
-        .programs-header { margin-bottom: 32px; }
-        @media (min-width: 768px) { .programs-header { margin-bottom: 48px; } }
-        .programs-label { font-size: 0.625rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: var(--black); margin-bottom: 16px; display: inline-block; padding: 6px 12px; background: var(--gray-200); border: 2px solid var(--black); }
-        @media (min-width: 768px) { .programs-label { font-size: 0.75rem; padding: 8px 16px; margin-bottom: 24px; } }
-        .programs-title { font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; color: var(--black); }
-        .programs-grid { display: grid; grid-template-columns: 1fr; gap: 2px; background: var(--black); border: 2px solid var(--black); }
-        .program-card { background: var(--white); padding: 28px 20px; display: flex; flex-direction: column; }
-        @media (min-width: 768px) { .program-card { padding: 32px; min-height: 280px; } }
-        .program-tag { font-size: 0.5625rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
-        @media (min-width: 768px) { .program-tag { font-size: 0.625rem; margin-bottom: 16px; } }
-        .program-name { font-size: 1.0625rem; font-weight: 900; line-height: 1.25; color: var(--black); margin-bottom: 12px; }
-        @media (min-width: 768px) { .program-name { font-size: 1.125rem; margin-bottom: 16px; } }
-        .program-desc { font-size: 0.875rem; line-height: 1.6; color: var(--gray-600); margin-bottom: 20px; flex-grow: 1; }
-        @media (min-width: 768px) { .program-desc { font-size: 0.9375rem; margin-bottom: 24px; } }
-        .program-link { font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); text-decoration: none; display: flex; align-items: center; gap: 8px; transition: gap 0.2s; }
-        @media (min-width: 768px) { .program-link { font-size: 0.75rem; } }
-        .program-link:hover { gap: 12px; }
-        .cta-section { padding: 60px 0; background: var(--black); color: var(--white); border-bottom: 2px solid var(--black); }
-        @media (min-width: 768px) { .cta-section { padding: 80px 0; } }
-        .cta-inner { display: flex; flex-direction: column; gap: 24px; }
-        @media (min-width: 768px) { .cta-inner { flex-direction: row; justify-content: space-between; align-items: center; gap: 48px; } }
-        .cta-text h2 { font-size: clamp(1.375rem, 4vw, 2rem); font-weight: 900; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 8px; }
-        @media (min-width: 768px) { .cta-text h2 { margin-bottom: 12px; } }
-        .cta-text p { font-size: 0.9375rem; color: var(--gray-400); }
-        .cta-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 16px 28px; background: var(--white); color: var(--black); font-size: 0.6875rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.2s; border: 2px solid var(--white); }
-        @media (min-width: 768px) { .cta-btn { padding: 18px 36px; font-size: 0.75rem; } }
-        .cta-btn:hover { background: transparent; color: var(--white); }
-        .footer { padding: 32px 0; border-top: 2px solid var(--black); }
-        @media (min-width: 768px) { .footer { padding: 40px 0; } }
-        .footer-inner { display: flex; flex-direction: column; gap: 16px; }
-        @media (min-width: 768px) { .footer-inner { flex-direction: row; justify-content: space-between; align-items: center; } }
-        .footer-brand { font-size: 0.625rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-500); }
-        .footer-links { display: flex; gap: 20px; }
-        @media (min-width: 768px) { .footer-links { gap: 32px; } }
-        .footer-links a { font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--black); text-decoration: none; }
-        .footer-links a:hover { opacity: 0.6; }
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;background:#fff;padding:16px;}
+h1{font-size:48px;line-height:52px;font-weight:700;margin:48px 0 24px;}
+h2{font-size:32px;line-height:38px;font-weight:700;margin:48px 0 16px;}
+h3{font-size:24px;line-height:30px;font-weight:700;margin:32px 0 12px;}
+p{margin:0 0 16px;}
+ul{margin:0 0 16px;padding-left:24px;}
+li{margin-bottom:8px;}
+a{color:#000;}
+hr{border:none;border-top:1px solid #000;margin:48px 0;}
+.nav{margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid #000;}
+.nav a{margin-right:16px;font-size:16px;}
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="header-inner">
-                <a href="capacidades.html" class="logo-link">
-                    <svg class="logo-svg" viewBox="0 0 1706 321" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M447.909 0.00622804C443.646 116.854 351.192 212.564 240.68 217.568C265.251 269.286 316.17 303.894 375.053 302.206C401.401 301.466 426.18 293.502 447.702 280.21L447.968 0.00622804C447.968 0.0654365 448.028 -0.0233762 447.909 0.00622804Z" fill="#E19A24"/>
-                        <path d="M232.186 203.927C210.19 87.1379 109.654 10.5222 0.177618 21.3869V320.538L0 320.212C7.43066 255.408 56.3368 199.19 119.69 184.032C160.662 174.204 201.013 183.588 232.571 206.532C232.423 205.644 232.334 204.785 232.186 203.927Z" fill="#2D366F"/>
-                        <path d="M565.333 261.951V98.625H672.885V127.075H597.217V165.383H661.665V193.832H597.217V233.502H672.885V261.951H565.333Z" fill="#2D366F"/>
-                        <path d="M724.026 261.939C699.484 261.939 689.152 244.739 689.152 227.776V98.6426H718.964V225.941C718.964 233.046 721.954 236.717 729.503 236.717H740.989V261.939H724.026V261.939Z" fill="#2D366F"/>
-                        <path d="M752.926 97.709H783.418V122.014H752.926V97.709ZM753.399 142.441H783.211V261.953H753.399V142.441Z" fill="#2D366F"/>
-                        <path d="M842.361 261.941C818.055 261.941 807.724 244.741 807.724 227.777V168.598H795.112V145.892H807.724V110.574H837.535V145.892H858.643V168.598H837.535V225.942C837.535 232.84 840.762 236.718 847.867 236.718H858.643V261.941H842.361V261.941Z" fill="#2D366F"/>
-                        <path d="M896.967 211.471C896.967 226.836 906.381 238.086 923.108 238.086C936.193 238.086 942.587 234.415 950.166 226.836L968.284 244.51C956.116 256.647 944.422 263.308 922.871 263.308C894.658 263.308 867.6 250.46 867.6 202.057C867.6 163.068 888.707 141.043 919.673 141.043C952.948 141.043 971.747 165.348 971.747 198.149V211.442H896.967V211.471ZM939.627 178.226C936.429 171.121 929.768 165.851 919.673 165.851C909.578 165.851 902.917 171.121 899.72 178.226C897.885 182.578 897.204 185.805 896.967 191.074H942.38C942.143 185.775 941.462 182.578 939.627 178.226Z" fill="#2D366F"/>
-                        <path d="M1035.82 127.993V262.869H1003.94V127.993H968.263V99.543H1078.48V127.993H1035.82Z" fill="#E19A24"/>
-                        <path d="M1140.53 175.924C1135.94 171.336 1132.03 168.819 1124.72 168.819C1115.55 168.819 1105.45 175.688 1105.45 190.845V262.872H1075.64V143.36H1104.77V154.817C1110.51 147.948 1121.97 141.968 1134.82 141.968C1138.96 141.968 1142.93 141.584 1146.07 143.182C1147.16 143.774 1140.53 175.924 1140.53 175.924Z" fill="#E19A24"/>
-                        <path d="M1218.49 262.863V252.531C1210.47 260.553 1202.89 263.988 1189.12 263.988C1175.6 263.988 1165.74 260.553 1158.63 253.448C1152.21 246.788 1148.77 237.166 1148.77 226.597C1148.77 207.562 1161.86 191.96 1189.6 191.96H1217.81V186.01C1217.81 172.925 1211.39 167.211 1195.58 167.211C1184.12 167.211 1178.82 169.965 1172.63 177.07L1153.6 158.478C1165.29 145.63 1176.78 141.959 1196.7 141.959C1230.19 141.959 1247.62 156.169 1247.62 184.175V262.863H1218.49ZM1217.81 212.387H1194.19C1183.41 212.387 1177.43 217.42 1177.43 225.916C1177.43 234.176 1182.94 239.682 1194.63 239.682C1202.89 239.682 1208.16 239.002 1213.43 233.939C1216.63 230.949 1217.78 226.153 1217.78 218.811V212.387H1217.81Z" fill="#E19A24"/>
-                        <path d="M1267.82 98.625H1298.34V122.93H1267.82V98.625ZM1268.26 143.357H1298.07V262.869H1268.26V143.357Z" fill="#E19A24"/>
-                        <path d="M1389.37 262.86V190.596C1389.37 174.314 1379.04 168.808 1369.66 168.808C1360.24 168.808 1349.7 174.314 1349.7 190.596V262.86H1319.89V143.348H1349.02V154.361C1356.81 146.101 1367.82 141.986 1378.83 141.986C1390.76 141.986 1400.38 145.894 1407.05 152.526C1416.67 162.147 1419.18 173.396 1419.18 186.481V262.86H1389.37V262.86Z" fill="#E19A24"/>
-                        <path d="M1439.4 98.625H1469.92V122.93H1439.4V98.625ZM1439.84 143.357H1469.66V262.869H1439.84V143.357Z" fill="#E19A24"/>
-                        <path d="M1560.95 262.86V190.596C1560.95 174.314 1550.62 168.808 1541.24 168.808C1531.82 168.808 1521.28 174.314 1521.28 190.596V262.86H1491.47V143.348H1520.6V154.361C1528.39 146.101 1539.4 141.986 1550.41 141.986C1562.34 141.986 1571.96 145.894 1578.63 152.526C1588.28 162.147 1590.79 173.396 1590.79 186.481V262.86H1560.95V262.86Z" fill="#E19A24"/>
-                        <path d="M1652.69 308.036C1634.34 308.036 1621.72 304.365 1609.35 292.435L1627.94 273.636C1634.6 280.06 1641.23 282.814 1651.33 282.814C1669.24 282.814 1675.43 270.202 1675.43 258.035V245.868C1667.64 254.601 1658.7 257.798 1646.98 257.798C1635.28 257.798 1625.19 253.89 1618.53 247.259C1607.28 236.009 1606.36 220.645 1606.36 199.774C1606.36 178.903 1607.28 163.775 1618.53 152.526C1625.19 145.865 1635.49 141.986 1647.18 141.986C1659.8 141.986 1668.06 145.42 1676.32 154.598V143.348H1705.21V258.509C1705.21 287.165 1684.81 308.036 1652.69 308.036ZM1655.68 168.808C1638.01 168.808 1636.17 183.936 1636.17 199.774C1636.17 215.612 1638.01 230.977 1655.68 230.977C1673.35 230.977 1675.4 215.612 1675.4 199.774C1675.4 183.936 1673.33 168.808 1655.68 168.808Z" fill="#E19A24"/>
-                    </svg>
-                </a>
-                <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
-            </div>
-        </div>
-    </header>
 
-    <div class="fullscreen-menu" id="fullscreenMenu">
-        <div class="container">
-            <div class="menu-inner">
-                <div class="menu-grid">
-                    <div class="menu-sector"><span class="menu-sector-number">01</span><a href="landing-gas.html" class="menu-sector-link">Gas Natural</a><div class="menu-themes"><a href="landing-gas.html#tecnologias" class="menu-theme">Tecnologías</a></div></div>
-                    <div class="menu-sector"><span class="menu-sector-number">02</span><a href="landing-activos.html" class="menu-sector-link">Gestión de Activos</a><div class="menu-themes"><a href="landing-activos.html#mantenimiento" class="menu-theme">Mantenimiento</a></div></div>
-                    <div class="menu-sector"><span class="menu-sector-number">03</span><a href="landing-directivas.html" class="menu-sector-link">Habilidades Directivas</a><div class="menu-themes"><a href="landing-directivas.html#gestion" class="menu-theme">Gestión</a></div></div>
-                    <div class="menu-sector"><span class="menu-sector-number">04</span><a href="landing-integridad.html" class="menu-sector-link">Integridad</a><div class="menu-themes"><a href="landing-integridad.html#integridad" class="menu-theme">Integridad Mecánica</a></div></div>
-                    <div class="menu-sector"><span class="menu-sector-number">05</span><a href="landing-oilgas.html" class="menu-sector-link">Oil and Gas</a><div class="menu-themes"><a href="landing-oilgas.html#facilidades" class="menu-theme">Facilidades</a></div></div>
-                    <div class="menu-sector"><span class="menu-sector-number">06</span><a href="landing-seguridad.html" class="menu-sector-link">Seguridad y Riesgos</a><div class="menu-themes"><a href="landing-seguridad.html#procesos" class="menu-theme">Seguridad de Procesos</a></div></div>
-                </div>
-                <div class="menu-footer"><a href="https://hidrocarburos.com.co" target="_blank">Cursos Programados</a><a href="https://campusvirtual.hidrocarburos.com.co" target="_blank">Campus Virtual</a><a href="https://wa.me/573164661007">Contactar</a></div>
-            </div>
-        </div>
-    </div>
+<nav class="nav">
+    <a href="capacidades.html">Inicio</a>
+    <a href="landing-gas.html">Gas</a>
+    <a href="landing-activos.html">Activos</a>
+    <a href="landing-directivas.html">Directivas</a>
+    <a href="landing-integridad.html">Integridad</a>
+    <a href="landing-oilgas.html">Oil & Gas</a>
+    <a href="landing-seguridad.html">Seguridad</a>
+</nav>
 
-    <section class="hero">
-        <div class="hero-bg"></div>
-        <div class="container hero-content">
-            <div class="hero-inner">
-                <p class="hero-label">Sector 06</p>
-                <h1>Seguridad y Riesgos</h1>
-                <p class="hero-description">Formación en seguridad de procesos, análisis de riesgos, seguridad eléctrica e investigación de incidentes para industrias de alto riesgo.</p>
-                <div class="hero-ctas">
-                    <a href="https://wa.me/573164661007?text=Quiero%20información%20sobre%20Seguridad" class="btn-primary">Agendar Llamada &rarr;</a>
-                    <a href="#programas" class="btn-secondary">Ver Programa</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="hero-stat"><span class="hero-stat-value">PSM</span><span class="hero-stat-label">Process Safety</span></div>
-                    <div class="hero-stat"><span class="hero-stat-value">HAZOP</span><span class="hero-stat-label">Análisis</span></div>
-                    <div class="hero-stat"><span class="hero-stat-value">NFPA 70E</span><span class="hero-stat-label">Eléctrica</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
+<h1>Seguridad y Riesgos</h1>
 
-    <section class="themes-section">
-        <div class="container">
-            <div class="theme-block" id="procesos">
-                <div class="theme-header" onclick="this.parentElement.classList.toggle('active')">
-                    <div class="theme-info"><span class="theme-number">01</span><span class="theme-name">Seguridad de Procesos</span></div>
-                    <span class="theme-toggle">+</span>
-                </div>
-                <div class="theme-content">
-                    <div class="courses-grid">
-                        <div class="course-item"><span class="course-name">Seguridad de Procesos (RBPS / PSM)</span><span class="course-arrow">&rarr;</span></div>
-                        <div class="course-item"><span class="course-name">Auditoría a Sistemas de Seguridad de Procesos</span><span class="course-arrow">&rarr;</span></div>
-                        <div class="course-item"><span class="course-name">Gestión de Seguridad Basada en Riesgos</span><span class="course-arrow">&rarr;</span></div>
-                    </div>
-                </div>
-            </div>
+<p>Formación en seguridad de procesos, análisis de riesgos, seguridad eléctrica, investigación de incidentes y factor humano.</p>
 
-            <div class="theme-block" id="riesgos">
-                <div class="theme-header" onclick="this.parentElement.classList.toggle('active')">
-                    <div class="theme-info"><span class="theme-number">02</span><span class="theme-name">Análisis de Riesgos</span></div>
-                    <span class="theme-toggle">+</span>
-                </div>
-                <div class="theme-content">
-                    <div class="courses-grid">
-                        <div class="course-item"><span class="course-name">HAZOP</span><span class="course-arrow">&rarr;</span></div>
-                        <div class="course-item"><span class="course-name">LOPA</span><span class="course-arrow">&rarr;</span></div>
-                        <div class="course-item"><span class="course-name">BowTie</span><span class="course-arrow">&rarr;</span></div>
-                        <div class="course-item"><span class="course-name">Programa Líder PHA</span><span class="course-arrow">&rarr;</span></div>
-                    </div>
-                </div>
-            </div>
+<hr>
 
-            <div class="theme-block" id="electrica">
-                <div class="theme-header" onclick="this.parentElement.classList.toggle('active')">
-                    <div class="theme-info"><span class="theme-number">03</span><span class="theme-name">Seguridad Eléctrica y Funcional</span></div>
-                    <span class="theme-toggle">+</span>
-                </div>
-                <div class="theme-content">
-                    <div class="courses-grid">
-                        <div class="course-item"><span class="course-name">Seguridad Eléctrica — NFPA 70E</span><span class="course-arrow">&rarr;</span></div>
-                        <div class="course-item"><span class="course-name">LOTO</span><span class="course-arrow">&rarr;</span></div>
-                        <div class="course-item"><span class="course-name">Seguridad Funcional</span><span class="course-arrow">&rarr;</span></div>
-                        <div class="course-item"><span class="course-name">Clasificación de Áreas Peligrosas</span><span class="course-arrow">&rarr;</span></div>
-                    </div>
-                </div>
-            </div>
+<h2>Seguridad de Procesos</h2>
 
-            <div class="theme-block" id="investigacion">
-                <div class="theme-header" onclick="this.parentElement.classList.toggle('active')">
-                    <div class="theme-info"><span class="theme-number">04</span><span class="theme-name">Investigación y Factor Humano</span></div>
-                    <span class="theme-toggle">+</span>
-                </div>
-                <div class="theme-content">
-                    <div class="courses-grid">
-                        <div class="course-item"><span class="course-name">Investigación de Accidentes</span><span class="course-arrow">&rarr;</span></div>
-                        <div class="course-item"><span class="course-name">Análisis de Causa Raíz</span><span class="course-arrow">&rarr;</span></div>
-                        <div class="course-item"><span class="course-name">Gestión del Error Humano</span><span class="course-arrow">&rarr;</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<ul>
+    <li>Seguridad de Procesos (RBPS / PSM)</li>
+    <li>Auditoría a Sistemas de Seguridad de Procesos</li>
+    <li>Gestión de Seguridad Basada en Riesgos</li>
+</ul>
 
-    <section class="programs-section" id="programas">
-        <div class="container">
-            <div class="programs-header">
-                <p class="programs-label">Programa Especializado</p>
-                <h2 class="programs-title">Formación integral en seguridad de procesos</h2>
-            </div>
-            <div class="programs-grid">
-                <div class="program-card">
-                    <span class="program-tag">Programa Profesional</span>
-                    <h3 class="program-name">Programa Profesional en Seguridad de Procesos y Gestión del Riesgo</h3>
-                    <p class="program-desc">Formación completa en seguridad de procesos PSM/RBPS, metodologías de análisis de riesgos (HAZOP, LOPA, BowTie), seguridad funcional e investigación de incidentes.</p>
-                    <a href="https://wa.me/573164661007?text=Información%20Programa%20Seguridad" class="program-link">Más información &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<h2>Análisis de Riesgos</h2>
 
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-inner">
-                <div class="cta-text"><h2>¿Necesita fortalecer la cultura de seguridad?</h2><p>Programas in-house adaptados a sus riesgos específicos.</p></div>
-                <a href="https://wa.me/573164661007?text=Cotizar%20programa%20Seguridad" class="cta-btn">Cotizar In-House &rarr;</a>
-            </div>
-        </div>
-    </section>
+<ul>
+    <li>HAZOP</li>
+    <li>LOPA</li>
+    <li>BowTie</li>
+    <li>Programa Líder PHA</li>
+</ul>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <span class="footer-brand">Elite Training &copy; 2026</span>
-                <div class="footer-links"><a href="tel:+573164661007">+57 316 466 1007</a><a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual</a></div>
-            </div>
-        </div>
-    </footer>
+<h2>Seguridad Eléctrica y Funcional</h2>
 
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const fullscreenMenu = document.getElementById('fullscreenMenu');
-        menuToggle.addEventListener('click', () => { menuToggle.classList.toggle('active'); fullscreenMenu.classList.toggle('active'); document.body.style.overflow = fullscreenMenu.classList.contains('active') ? 'hidden' : ''; });
-        fullscreenMenu.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { menuToggle.classList.remove('active'); fullscreenMenu.classList.remove('active'); document.body.style.overflow = ''; }); });
-        if (window.location.hash) { const target = document.querySelector(window.location.hash); if (target && target.classList.contains('theme-block')) { target.classList.add('active'); } }
-    </script>
+<ul>
+    <li>Seguridad Eléctrica — NFPA 70E</li>
+    <li>LOTO</li>
+    <li>Seguridad Funcional</li>
+    <li>Clasificación de Áreas Peligrosas</li>
+</ul>
+
+<h2>Investigación y Factor Humano</h2>
+
+<ul>
+    <li>Investigación de Accidentes</li>
+    <li>Análisis de Causa Raíz</li>
+    <li>Gestión del Error Humano</li>
+</ul>
+
+<hr>
+
+<h2>Programas</h2>
+
+<h3>Programa Profesional en Seguridad de Procesos y Gestión del Riesgo</h3>
+<p>Formación integral en PSM, análisis de riesgos (HAZOP, LOPA, BowTie) y gestión de cambios. Preparación para auditorías y cumplimiento normativo.</p>
+
+<hr>
+
+<h2>Contacto</h2>
+
+<p><a href="https://wa.me/573164661007">WhatsApp: +57 316 466 1007</a></p>
+<p><a href="https://hidrocarburos.com.co">Cursos Programados</a> · <a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual</a></p>
+
+<hr>
+
+<p>Elite Training © 2026</p>
+
 </body>
 </html>
