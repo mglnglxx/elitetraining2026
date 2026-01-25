@@ -98,7 +98,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:48px;
+    gap:0;
 }
 .menu-links a, .menu-links button{
     font-family:'Roboto',sans-serif;
@@ -110,6 +110,10 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     border:none;
     cursor:pointer;
     transition:color 0.2s;
+    padding:24px 0;
+    margin:0;
+    line-height:1;
+    display:block;
 }
 .menu-links a:hover, .menu-links button:hover{
     color:rgba(45,54,112,0.6);
@@ -302,6 +306,7 @@ strong{font-weight:700;}
     }
     .menu-links a, .menu-links button{
         font-size:48px;
+        padding:20px 0;
     }
     .submenu-links a{
         font-size:48px;
@@ -356,9 +361,7 @@ strong{font-weight:700;}
     }
     .menu-links a, .menu-links button{
         font-size:28px;
-    }
-    .menu-links{
-        gap:32px;
+        padding:16px 0;
     }
     .submenu-links a{
         font-size:28px;
