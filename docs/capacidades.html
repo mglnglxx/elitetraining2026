@@ -6,7 +6,7 @@
     <title>Elite Training | Formación Técnica para Industrias de Alto Riesgo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
@@ -26,7 +26,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     content:'';
     position:absolute;
     inset:0;
-    background:rgba(10,25,47,0.65);
+    background:rgba(10,25,47,0.7);
     z-index:1;
 }
 .hero-left,.hero-right{
@@ -36,13 +36,20 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     flex-direction:column;
     justify-content:center;
 }
+.hero-logo{
+    width:280px;
+    height:auto;
+    margin-bottom:32px;
+}
+.hero-logo path{
+    fill:#fff;
+}
 .hero-headline{
-    font-family:'Playfair Display',serif;
-    font-style:italic;
-    font-weight:400;
-    font-size:clamp(48px,8vw,96px);
-    line-height:1.05;
-    color:#e07a3a;
+    font-family:'Roboto',sans-serif;
+    font-weight:600;
+    font-size:clamp(42px,6vw,72px);
+    line-height:1.15;
+    color:#fff;
     margin:0;
 }
 .hero-right{
@@ -52,8 +59,14 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     font-size:18px;
     line-height:1.6;
     max-width:480px;
-    margin-bottom:48px;
+    margin-bottom:16px;
     color:rgba(255,255,255,0.9);
+}
+.hero-proof{
+    font-size:14px;
+    line-height:1.5;
+    color:rgba(255,255,255,0.7);
+    margin-bottom:48px;
 }
 .hero-sectors{
     display:flex;
@@ -118,12 +131,15 @@ strong{font-weight:700;}
         min-height:auto;
         padding-bottom:48px;
     }
+    .hero-logo{
+        width:200px;
+    }
     .hero-right{
         padding-left:0;
         padding-top:32px;
     }
     .hero-headline{
-        font-size:clamp(36px,10vw,64px);
+        font-size:clamp(28px,8vw,48px);
     }
     .hero-sectors a{
         flex:1 1 100%;
@@ -136,10 +152,12 @@ strong{font-weight:700;}
 <!-- Hero Section -->
 <section class="hero">
     <div class="hero-left">
-        <h1 class="hero-headline">Competencias<br>que cumplen<br>norma</h1>
+        <img src="assets/logos/elite-training.svg" alt="Elite Training" class="hero-logo">
+        <h1 class="hero-headline">Formación técnica para industrias de alto riesgo</h1>
     </div>
     <div class="hero-right">
-        <p class="hero-description">No vendemos cursos. Construimos competencias técnicas verificables para equipos que operan activos críticos. 30 años formando a Ecopetrol, Repsol, ISA, Oxy y 400+ empresas en 11 países.</p>
+        <p class="hero-description">Integridad, seguridad de procesos y confiabilidad para equipos que operan activos críticos.</p>
+        <p class="hero-proof">30 años · 400+ empresas/año · 11+ países · 60–80k profesionales · ASME · The Woodhouse Partnership</p>
         <nav class="hero-sectors">
             <a href="landing-gas.html">Gas y Energía</a>
             <a href="landing-activos.html">Gestión de Activos</a>
