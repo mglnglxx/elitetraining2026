@@ -81,7 +81,18 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 .program-card p{font-size:18px;line-height:1.5;margin:0;color:rgba(45,54,112,0.8);transition:color 0.1s;}
 .section--blue .program-card p{color:rgba(234,236,238,0.8);}
 
-.footer{padding:32px 48px;background:#EAECEE;color:rgba(45,54,112,0.6);font-size:14px;border-top:1px solid rgba(45,54,112,0.15);}
+.footer{padding:64px 48px 32px;background:#2D3670;color:#fff;font-size:14px;}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-logo{height:40px;filter:brightness(0) invert(1);}
+.footer-col h4{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 16px 0;color:rgba(255,255,255,0.5);}
+.footer-col a{display:block;color:#fff;text-decoration:none;margin-bottom:8px;font-size:18px;transition:opacity 0.1s;}
+.footer-col a:hover{opacity:0.7;}
+.footer-col p{margin:0 0 16px 0;line-height:1.4;font-size:18px;}
+.footer-btn{display:inline-block;padding:12px 24px;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);font-size:16px;margin-top:8px;}
+.footer-btn:hover{background:rgba(255,255,255,0.25);opacity:1;}
+.footer-bottom{display:flex;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.5);}
+.footer-bottom a{color:rgba(255,255,255,0.5);text-decoration:none;transition:color 0.1s;}
+.footer-bottom a:hover{color:#fff;}
 
 @media(max-width:768px){
     .navbar{padding:16px 24px;}
@@ -103,7 +114,9 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
     .course-item:nth-last-child(-n+2){border-bottom:1px solid rgba(45,54,112,0.15);}
     .course-item:last-child{border-bottom:none;}
     .programs-grid{grid-template-columns:1fr;}
-    .footer{padding:24px;}
+    .footer{padding:48px 24px 24px;}
+    .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+    .footer-bottom{flex-direction:column;gap:8px;text-align:center;}
 }
     </style>
 </head>
@@ -216,7 +229,34 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
     </div>
 </section>
 
-<footer class="footer">Elite Training © 2026</footer>
+<footer class="footer">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <a href="capacidades.html"><img src="assets/logos/elite-training.svg" alt="Elite Training" class="footer-logo"></a>
+        </div>
+        <div class="footer-col">
+            <h4>Formación</h4>
+            <a href="https://hidrocarburos.com.co">Próximos cursos</a>
+            <a href="https://campusvirtual.hidrocarburos.com.co">Cursos virtuales</a>
+            <a href="https://hidrocarburos.com.co/cursos-online/">Cursos online</a>
+            <a href="https://hidrocarburos.com.co/programas-especializados/">Programas</a>
+            <a href="https://hidrocarburos.com.co/libros/">Libros y normas técnicas</a>
+        </div>
+        <div class="footer-col">
+            <h4>Alianzas</h4>
+            <a href="https://hidrocarburos.com.co/empresas-aliadas/">Empresas aliadas</a>
+        </div>
+        <div class="footer-col">
+            <h4>Newsletter</h4>
+            <p>Suscríbete para recibir información de nuestros cursos</p>
+            <a href="http://hidrocarburos.us7.list-manage.com/subscribe?u=ea08178cbb7f9d2dbc42e4596&id=8b059c3bd3" target="_blank" class="footer-btn">Suscríbete</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <span>© Elite Training 2026</span>
+        <a href="https://hidrocarburos.com.co/politicas-para-el-tratamiento-de-datos-personales/">Política de privacidad</a>
+    </div>
+</footer>
 
 <script>
 const menuOpen=document.getElementById('menuOpen'),menuClose=document.getElementById('menuClose'),menuOverlay=document.getElementById('menuOverlay'),sectoresBtn=document.getElementById('sectoresBtn'),submenuSectores=document.getElementById('submenuSectores'),submenuBack=document.getElementById('submenuBack');
