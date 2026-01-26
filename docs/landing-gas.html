@@ -14,10 +14,11 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 
 .navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;background:#EAECEE;border-bottom:1px solid rgba(45,54,112,0.1);}
 .navbar-logo{height:40px;width:auto;}
-.navbar-burger{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(45,54,112,0.15);cursor:pointer;transition:background 0.2s;}
-.navbar-burger:hover{background:#2D3670;}
-.navbar-burger:hover svg{stroke:#fff;}
-.navbar-burger svg{width:24px;height:24px;stroke:#2D3670;stroke-width:2;fill:none;}
+.navbar-icons{display:flex;gap:12px;}
+.navbar-btn{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(45,54,112,0.15);cursor:pointer;transition:background 0.2s;}
+.navbar-btn:hover{background:#2D3670;}
+.navbar-btn:hover svg{stroke:#fff;}
+.navbar-btn svg{width:24px;height:24px;stroke:#2D3670;stroke-width:2;fill:none;}
 
 .menu-overlay{position:fixed;inset:0;z-index:200;background:#EAECEE;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s;}
 .menu-overlay.active{opacity:1;visibility:visible;}
@@ -38,6 +39,23 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 .submenu-links{display:flex;flex-direction:column;align-items:center;gap:48px;}
 .submenu-links a{font-size:60px;font-weight:600;color:#2D3670;text-decoration:none;transition:color 0.2s;}
 .submenu-links a:hover{color:rgba(45,54,112,0.6);}
+
+.contact-overlay{position:fixed;inset:0;z-index:200;background:#EAECEE;display:grid;grid-template-columns:1fr 1fr;opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s;}
+.contact-overlay.active{opacity:1;visibility:visible;}
+.contact-overlay-close{position:absolute;top:24px;right:48px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(45,54,112,0.15);cursor:pointer;transition:background 0.2s;z-index:10;}
+.contact-overlay-close:hover{background:#2D3670;}
+.contact-overlay-close:hover svg{stroke:#fff;}
+.contact-overlay-close svg{width:24px;height:24px;stroke:#2D3670;stroke-width:2;fill:none;}
+.contact-left{display:flex;flex-direction:column;justify-content:center;padding:48px 80px;background:#EAECEE;}
+.contact-left h2{font-size:clamp(48px,6vw,72px);font-weight:600;line-height:1;letter-spacing:-0.02em;color:#2D3670;margin:0 0 24px 0;}
+.contact-left p{font-size:21px;line-height:1.5;color:#2D3670;max-width:400px;}
+.contact-right{display:flex;flex-direction:column;justify-content:center;padding:48px 80px;background:#fff;border-left:1px solid rgba(45,54,112,0.1);}
+.contact-social{display:flex;flex-direction:column;gap:0;}
+.contact-social a{font-size:32px;font-weight:600;color:#2D3670;text-decoration:none;padding:20px 0;border-bottom:1px solid rgba(45,54,112,0.1);transition:color 0.2s;display:flex;align-items:center;gap:16px;}
+.contact-social a:first-child{border-top:1px solid rgba(45,54,112,0.1);}
+.contact-social a:hover{color:rgba(45,54,112,0.6);}
+.contact-social svg{width:28px;height:28px;fill:#2D3670;flex-shrink:0;transition:fill 0.2s;}
+.contact-social a:hover svg{fill:rgba(45,54,112,0.6);}
 
 .hero{padding:140px 48px 80px;background:#EAECEE;}
 .hero-title{font-size:clamp(48px,8vw,100px);font-weight:600;line-height:0.95;letter-spacing:-0.02em;color:#2D3670;margin:0 0 24px 0;max-width:800px;}
@@ -62,22 +80,21 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 .program-card p{font-size:18px;line-height:1.5;margin:0;color:rgba(45,54,112,0.8);}
 .section--blue .program-card p{color:rgba(234,236,238,0.8);}
 
-.contact-box{max-width:600px;}
-.contact-box p{font-size:21px;line-height:1.5;margin:0 0 24px 0;}
-.contact-box a{color:#2D3670;text-decoration:none;font-weight:600;}
-.contact-box a:hover{text-decoration:underline;}
-.contact-links{display:flex;gap:24px;margin-top:32px;}
-.contact-links a{font-size:18px;}
-
 .footer{padding:32px 48px;background:#EAECEE;color:rgba(45,54,112,0.6);font-size:14px;border-top:1px solid rgba(45,54,112,0.15);}
 
 @media(max-width:768px){
     .navbar{padding:16px 24px;}
-    .menu-close{right:24px;}
+    .menu-close,.contact-overlay-close{right:24px;}
     .submenu-back{left:24px;}
     .menu-links a,.menu-links button{font-size:28px;padding:16px 0;}
     .submenu-links a{font-size:28px;}
     .submenu-links{gap:32px;}
+    .contact-overlay{grid-template-columns:1fr;grid-template-rows:auto 1fr;overflow-y:auto;}
+    .contact-left{padding:100px 24px 32px;}
+    .contact-left h2{font-size:36px;}
+    .contact-right{padding:32px 24px 48px;border-left:none;border-top:1px solid rgba(45,54,112,0.1);}
+    .contact-social a{font-size:21px;padding:16px 0;}
+    .contact-social svg{width:24px;height:24px;}
     .hero{padding:120px 24px 48px;}
     .section{padding:48px 24px;}
     .course-grid{grid-template-columns:1fr;}
@@ -85,7 +102,6 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
     .course-item:nth-last-child(-n+2){border-bottom:1px solid rgba(45,54,112,0.15);}
     .course-item:last-child{border-bottom:none;}
     .programs-grid{grid-template-columns:1fr;}
-    .contact-links{flex-direction:column;gap:16px;}
     .footer{padding:24px;}
 }
     </style>
@@ -94,7 +110,10 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 
 <nav class="navbar">
     <a href="capacidades.html"><img src="assets/logos/elite-training.svg" alt="Elite Training" class="navbar-logo"></a>
-    <button class="navbar-burger" id="menuOpen" aria-label="Abrir menú"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    <div class="navbar-icons">
+        <button class="navbar-btn" id="contactOpen" aria-label="Contacto"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></button>
+        <button class="navbar-btn" id="menuOpen" aria-label="Abrir menú"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
 </nav>
 
 <div class="menu-overlay" id="menuOverlay">
@@ -115,6 +134,23 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
         <a href="landing-integridad.html">Integridad</a>
         <a href="landing-oilgas.html">Oil & Gas</a>
         <a href="landing-seguridad.html">Seguridad</a>
+    </div>
+</div>
+
+<div class="contact-overlay" id="contactOverlay">
+    <button class="contact-overlay-close" id="contactClose" aria-label="Cerrar contacto"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="contact-left">
+        <h2>Hablemos</h2>
+        <p>¿Tiene sentido una conversación sobre las competencias que necesita su operación?</p>
+    </div>
+    <div class="contact-right">
+        <div class="contact-social">
+            <a href="https://hidrocarburos.com.co/contacto/" target="_blank"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6" stroke="#2D3670" stroke-width="2" fill="none"/></svg>Formulario de contacto</a>
+            <a href="https://www.linkedin.com/company/elite-training-colombia" target="_blank"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+            <a href="https://www.youtube.com/@EliteTrainingHidrocarburos?sub_confirmation=1" target="_blank"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#EAECEE"/></svg>YouTube</a>
+            <a href="https://www.instagram.com/elitetraininghidrocarburos/" target="_blank"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#EAECEE"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#EAECEE" stroke-width="2"/></svg>Instagram</a>
+            <a href="https://www.facebook.com/Elite.Training.Hidrocarburos/" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>Facebook</a>
+        </div>
     </div>
 </div>
 
@@ -169,27 +205,18 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
     </div>
 </section>
 
-<section class="section">
-    <h2 class="section-title">Contacto</h2>
-    <div class="contact-box">
-        <p>¿Interesado en formación en gas y energía para su equipo?</p>
-        <a href="https://wa.me/573164661007">WhatsApp: +57 316 466 1007</a>
-        <div class="contact-links">
-            <a href="https://hidrocarburos.com.co">Ver cursos programados →</a>
-            <a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual →</a>
-        </div>
-    </div>
-</section>
-
 <footer class="footer">Elite Training © 2026</footer>
 
 <script>
 const menuOpen=document.getElementById('menuOpen'),menuClose=document.getElementById('menuClose'),menuOverlay=document.getElementById('menuOverlay'),sectoresBtn=document.getElementById('sectoresBtn'),submenuSectores=document.getElementById('submenuSectores'),submenuBack=document.getElementById('submenuBack');
+const contactOpen=document.getElementById('contactOpen'),contactClose=document.getElementById('contactClose'),contactOverlay=document.getElementById('contactOverlay');
 menuOpen.addEventListener('click',()=>menuOverlay.classList.add('active'));
 menuClose.addEventListener('click',()=>{menuOverlay.classList.remove('active');submenuSectores.classList.remove('active');});
 sectoresBtn.addEventListener('click',()=>submenuSectores.classList.add('active'));
 submenuBack.addEventListener('click',()=>submenuSectores.classList.remove('active'));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){menuOverlay.classList.remove('active');submenuSectores.classList.remove('active');}});
+contactOpen.addEventListener('click',()=>contactOverlay.classList.add('active'));
+contactClose.addEventListener('click',()=>contactOverlay.classList.remove('active'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){menuOverlay.classList.remove('active');submenuSectores.classList.remove('active');contactOverlay.classList.remove('active');}});
 </script>
 </body>
 </html>
