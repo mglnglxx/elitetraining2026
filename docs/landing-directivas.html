@@ -6,66 +6,101 @@
     <title>Habilidades Directivas | Elite Training</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;background:#fff;padding:16px;}
-h1{font-size:48px;line-height:52px;font-weight:700;margin:48px 0 24px;}
-h2{font-size:32px;line-height:38px;font-weight:700;margin:48px 0 16px;}
-h3{font-size:24px;line-height:30px;font-weight:700;margin:32px 0 12px;}
-p{margin:0 0 16px;}
-ul{margin:0 0 16px;padding-left:24px;}
-li{margin-bottom:8px;}
-a{color:#000;}
-hr{border:none;border-top:1px solid #000;margin:48px 0;}
-.nav{margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid #000;}
-.nav a{margin-right:16px;font-size:16px;}
+html{scroll-behavior:smooth;}
+body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D3670;background:#EAECEE;}
+
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;background:#EAECEE;border-bottom:1px solid rgba(45,54,112,0.1);}
+.navbar-logo{height:40px;width:auto;}
+.navbar-burger{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(45,54,112,0.15);cursor:pointer;transition:background 0.2s;}
+.navbar-burger:hover{background:#2D3670;}
+.navbar-burger:hover svg{stroke:#fff;}
+.navbar-burger svg{width:24px;height:24px;stroke:#2D3670;stroke-width:2;fill:none;}
+
+.hero{padding:140px 48px 80px;background:#EAECEE;}
+.hero-title{font-size:clamp(48px,8vw,100px);font-weight:600;line-height:0.95;letter-spacing:-0.02em;color:#2D3670;margin:0 0 24px 0;max-width:800px;}
+.hero-description{font-size:24px;line-height:1.4;color:#2D3670;max-width:700px;}
+
+.section{padding:80px 48px;background:#EAECEE;}
+.section--white{background:#fff;}
+.section--blue{background:#2D3670;color:#EAECEE;}
+.section-title{font-size:clamp(36px,5vw,56px);font-weight:600;line-height:1;letter-spacing:-0.02em;color:#2D3670;margin:0 0 48px 0;}
+.section--blue .section-title{color:#fff;}
+
+.course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid rgba(45,54,112,0.15);}
+.course-item{padding:24px 32px;border-bottom:1px solid rgba(45,54,112,0.15);border-right:1px solid rgba(45,54,112,0.15);font-size:18px;color:#2D3670;}
+.course-item:nth-child(2n){border-right:none;}
+.course-item:nth-last-child(-n+2){border-bottom:none;}
+
+.contact-box{max-width:600px;}
+.contact-box p{font-size:21px;line-height:1.5;margin:0 0 24px 0;}
+.contact-box a{color:#2D3670;text-decoration:none;font-weight:600;}
+.contact-box a:hover{text-decoration:underline;}
+.contact-links{display:flex;gap:24px;margin-top:32px;}
+.contact-links a{font-size:18px;}
+
+.footer{padding:32px 48px;background:#EAECEE;color:rgba(45,54,112,0.6);font-size:14px;border-top:1px solid rgba(45,54,112,0.15);}
+
+@media(max-width:768px){
+    .navbar{padding:16px 24px;}
+    .hero{padding:120px 24px 48px;}
+    .section{padding:48px 24px;}
+    .course-grid{grid-template-columns:1fr;}
+    .course-item{border-right:none;}
+    .course-item:nth-last-child(-n+2){border-bottom:1px solid rgba(45,54,112,0.15);}
+    .course-item:last-child{border-bottom:none;}
+    .contact-links{flex-direction:column;gap:16px;}
+    .footer{padding:24px;}
+}
     </style>
 </head>
 <body>
 
-<nav class="nav">
-    <a href="capacidades.html">Inicio</a>
-    <a href="landing-gas.html">Gas</a>
-    <a href="landing-activos.html">Activos</a>
-    <a href="landing-directivas.html">Directivas</a>
-    <a href="landing-integridad.html">Integridad</a>
-    <a href="landing-oilgas.html">Oil & Gas</a>
-    <a href="landing-seguridad.html">Seguridad</a>
+<nav class="navbar">
+    <a href="capacidades.html"><img src="assets/logos/elite-training.svg" alt="Elite Training" class="navbar-logo"></a>
+    <a href="capacidades.html" class="navbar-burger" aria-label="Menú"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></a>
 </nav>
 
-<h1>Habilidades Directivas</h1>
+<section class="hero">
+    <h1 class="hero-title">Habilidades Directivas</h1>
+    <p class="hero-description">Formación en gestión de proyectos, análisis de costos, toma de decisiones basadas en riesgo, gestión del cambio y comunicación técnica para líderes de ingeniería.</p>
+</section>
 
-<p>Formación en gestión de proyectos, análisis de costos, toma de decisiones basadas en riesgo, gestión del cambio y comunicación técnica para líderes de ingeniería.</p>
+<section class="section section--white">
+    <h2 class="section-title">Gestión y Estrategia</h2>
+    <div class="course-grid">
+        <div class="course-item">Gestión de Proyectos para Ingenieros</div>
+        <div class="course-item">Análisis y Gestión de Costos en Proyectos</div>
+        <div class="course-item">Toma de Decisiones Basadas en Riesgo</div>
+        <div class="course-item">Evaluación Económica de Proyectos</div>
+    </div>
+</section>
 
-<hr>
+<section class="section">
+    <h2 class="section-title">Liderazgo y Organización</h2>
+    <div class="course-grid">
+        <div class="course-item">Gestión del Cambio (MOC)</div>
+        <div class="course-item">Preparación de Planes de Crisis y Continuidad del Negocio</div>
+        <div class="course-item">Redacción de Informes Técnicos para Ingenieros</div>
+        <div class="course-item">Comunicación Efectiva para Líderes Técnicos</div>
+    </div>
+</section>
 
-<h2>Gestión y Estrategia</h2>
+<section class="section section--blue">
+    <h2 class="section-title">Contacto</h2>
+    <div class="contact-box">
+        <p style="color:#EAECEE;">¿Interesado en formación en habilidades directivas para su equipo?</p>
+        <a href="https://wa.me/573164661007" style="color:#fff;">WhatsApp: +57 316 466 1007</a>
+        <div class="contact-links">
+            <a href="https://hidrocarburos.com.co" style="color:rgba(234,236,238,0.8);">Ver cursos programados →</a>
+            <a href="https://campus.hidrocarburos.com.co" style="color:rgba(234,236,238,0.8);">Campus Virtual →</a>
+        </div>
+    </div>
+</section>
 
-<ul>
-    <li>Gestión de Proyectos para Ingenieros</li>
-    <li>Análisis y Gestión de Costos en Proyectos</li>
-    <li>Toma de Decisiones Basadas en Riesgo</li>
-</ul>
-
-<h2>Liderazgo y Organización</h2>
-
-<ul>
-    <li>Gestión del Cambio (MOC)</li>
-    <li>Preparación de Planes de Crisis y Continuidad del Negocio</li>
-    <li>Redacción de Informes Técnicos para Ingenieros</li>
-</ul>
-
-<hr>
-
-<h2>Contacto</h2>
-
-<p><a href="https://wa.me/573164661007">WhatsApp: +57 316 466 1007</a></p>
-<p><a href="https://hidrocarburos.com.co">Cursos Programados</a> · <a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual</a></p>
-
-<hr>
-
-<p>Elite Training © 2026</p>
+<footer class="footer">Elite Training © 2026</footer>
 
 </body>
 </html>

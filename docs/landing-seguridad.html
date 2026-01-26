@@ -6,91 +6,146 @@
     <title>Seguridad y Riesgos | Elite Training</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;background:#fff;padding:16px;}
-h1{font-size:48px;line-height:52px;font-weight:700;margin:48px 0 24px;}
-h2{font-size:32px;line-height:38px;font-weight:700;margin:48px 0 16px;}
-h3{font-size:24px;line-height:30px;font-weight:700;margin:32px 0 12px;}
-p{margin:0 0 16px;}
-ul{margin:0 0 16px;padding-left:24px;}
-li{margin-bottom:8px;}
-a{color:#000;}
-hr{border:none;border-top:1px solid #000;margin:48px 0;}
-.nav{margin-bottom:32px;padding-bottom:16px;border-bottom:1px solid #000;}
-.nav a{margin-right:16px;font-size:16px;}
+html{scroll-behavior:smooth;}
+body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D3670;background:#EAECEE;}
+
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:24px 48px;background:#EAECEE;border-bottom:1px solid rgba(45,54,112,0.1);}
+.navbar-logo{height:40px;width:auto;}
+.navbar-burger{width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(45,54,112,0.15);cursor:pointer;transition:background 0.2s;}
+.navbar-burger:hover{background:#2D3670;}
+.navbar-burger:hover svg{stroke:#fff;}
+.navbar-burger svg{width:24px;height:24px;stroke:#2D3670;stroke-width:2;fill:none;}
+
+.hero{padding:140px 48px 80px;background:#EAECEE;}
+.hero-title{font-size:clamp(48px,8vw,100px);font-weight:600;line-height:0.95;letter-spacing:-0.02em;color:#2D3670;margin:0 0 24px 0;max-width:800px;}
+.hero-description{font-size:24px;line-height:1.4;color:#2D3670;max-width:700px;}
+
+.section{padding:80px 48px;background:#EAECEE;}
+.section--white{background:#fff;}
+.section--blue{background:#2D3670;color:#EAECEE;}
+.section-title{font-size:clamp(36px,5vw,56px);font-weight:600;line-height:1;letter-spacing:-0.02em;color:#2D3670;margin:0 0 48px 0;}
+.section--blue .section-title{color:#fff;}
+
+.course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid rgba(45,54,112,0.15);}
+.course-item{padding:24px 32px;border-bottom:1px solid rgba(45,54,112,0.15);border-right:1px solid rgba(45,54,112,0.15);font-size:18px;color:#2D3670;}
+.course-item:nth-child(2n){border-right:none;}
+.course-item:nth-last-child(-n+2){border-bottom:none;}
+
+.programs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
+.program-card{padding:32px;background:#fff;border:1px solid rgba(45,54,112,0.1);}
+.section--blue .program-card{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);}
+.program-card h3{font-size:24px;font-weight:600;margin:0 0 12px 0;color:#2D3670;}
+.section--blue .program-card h3{color:#fff;}
+.program-card p{font-size:18px;line-height:1.5;margin:0;color:rgba(45,54,112,0.8);}
+.section--blue .program-card p{color:rgba(234,236,238,0.8);}
+
+.contact-box{max-width:600px;}
+.contact-box p{font-size:21px;line-height:1.5;margin:0 0 24px 0;}
+.contact-box a{color:#2D3670;text-decoration:none;font-weight:600;}
+.contact-box a:hover{text-decoration:underline;}
+.contact-links{display:flex;gap:24px;margin-top:32px;}
+.contact-links a{font-size:18px;}
+
+.footer{padding:32px 48px;background:#EAECEE;color:rgba(45,54,112,0.6);font-size:14px;border-top:1px solid rgba(45,54,112,0.15);}
+
+@media(max-width:768px){
+    .navbar{padding:16px 24px;}
+    .hero{padding:120px 24px 48px;}
+    .section{padding:48px 24px;}
+    .course-grid{grid-template-columns:1fr;}
+    .course-item{border-right:none;}
+    .course-item:nth-last-child(-n+2){border-bottom:1px solid rgba(45,54,112,0.15);}
+    .course-item:last-child{border-bottom:none;}
+    .programs-grid{grid-template-columns:1fr;}
+    .contact-links{flex-direction:column;gap:16px;}
+    .footer{padding:24px;}
+}
     </style>
 </head>
 <body>
 
-<nav class="nav">
-    <a href="capacidades.html">Inicio</a>
-    <a href="landing-gas.html">Gas</a>
-    <a href="landing-activos.html">Activos</a>
-    <a href="landing-directivas.html">Directivas</a>
-    <a href="landing-integridad.html">Integridad</a>
-    <a href="landing-oilgas.html">Oil & Gas</a>
-    <a href="landing-seguridad.html">Seguridad</a>
+<nav class="navbar">
+    <a href="capacidades.html"><img src="assets/logos/elite-training.svg" alt="Elite Training" class="navbar-logo"></a>
+    <a href="capacidades.html" class="navbar-burger" aria-label="Menú"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></a>
 </nav>
 
-<h1>Seguridad y Riesgos</h1>
+<section class="hero">
+    <h1 class="hero-title">Seguridad y Riesgos</h1>
+    <p class="hero-description">Formación en seguridad de procesos, análisis de riesgos, seguridad eléctrica, investigación de incidentes y factor humano.</p>
+</section>
 
-<p>Formación en seguridad de procesos, análisis de riesgos, seguridad eléctrica, investigación de incidentes y factor humano.</p>
+<section class="section section--white">
+    <h2 class="section-title">Seguridad de Procesos</h2>
+    <div class="course-grid">
+        <div class="course-item">Seguridad de Procesos (RBPS / PSM)</div>
+        <div class="course-item">Auditoría a Sistemas de Seguridad de Procesos</div>
+        <div class="course-item">Gestión de Seguridad Basada en Riesgos</div>
+        <div class="course-item">Cultura de Seguridad de Procesos</div>
+    </div>
+</section>
 
-<hr>
+<section class="section">
+    <h2 class="section-title">Análisis de Riesgos</h2>
+    <div class="course-grid">
+        <div class="course-item">HAZOP</div>
+        <div class="course-item">LOPA</div>
+        <div class="course-item">BowTie</div>
+        <div class="course-item">Programa Líder PHA</div>
+        <div class="course-item">What-If / Checklist</div>
+        <div class="course-item">Análisis de Consecuencias</div>
+    </div>
+</section>
 
-<h2>Seguridad de Procesos</h2>
+<section class="section section--white">
+    <h2 class="section-title">Seguridad Eléctrica y Funcional</h2>
+    <div class="course-grid">
+        <div class="course-item">Seguridad Eléctrica — NFPA 70E</div>
+        <div class="course-item">LOTO</div>
+        <div class="course-item">Seguridad Funcional</div>
+        <div class="course-item">Clasificación de Áreas Peligrosas</div>
+    </div>
+</section>
 
-<ul>
-    <li>Seguridad de Procesos (RBPS / PSM)</li>
-    <li>Auditoría a Sistemas de Seguridad de Procesos</li>
-    <li>Gestión de Seguridad Basada en Riesgos</li>
-</ul>
+<section class="section">
+    <h2 class="section-title">Investigación y Factor Humano</h2>
+    <div class="course-grid">
+        <div class="course-item">Investigación de Accidentes</div>
+        <div class="course-item">Análisis de Causa Raíz</div>
+        <div class="course-item">Gestión del Error Humano</div>
+        <div class="course-item">Factores Humanos en Operaciones</div>
+    </div>
+</section>
 
-<h2>Análisis de Riesgos</h2>
+<section class="section section--blue">
+    <h2 class="section-title">Programas</h2>
+    <div class="programs-grid">
+        <div class="program-card">
+            <h3>Programa Profesional en Seguridad de Procesos y Gestión del Riesgo</h3>
+            <p>Formación integral en PSM, análisis de riesgos (HAZOP, LOPA, BowTie) y gestión de cambios. Preparación para auditorías y cumplimiento normativo.</p>
+        </div>
+        <div class="program-card">
+            <h3>Programa Líder PHA</h3>
+            <p>Formación para liderar estudios de análisis de peligros: HAZOP, LOPA, What-If y otras metodologías PHA.</p>
+        </div>
+    </div>
+</section>
 
-<ul>
-    <li>HAZOP</li>
-    <li>LOPA</li>
-    <li>BowTie</li>
-    <li>Programa Líder PHA</li>
-</ul>
+<section class="section">
+    <h2 class="section-title">Contacto</h2>
+    <div class="contact-box">
+        <p>¿Interesado en formación en seguridad para su equipo?</p>
+        <a href="https://wa.me/573164661007">WhatsApp: +57 316 466 1007</a>
+        <div class="contact-links">
+            <a href="https://hidrocarburos.com.co">Ver cursos programados →</a>
+            <a href="https://campus.hidrocarburos.com.co">Campus Virtual →</a>
+        </div>
+    </div>
+</section>
 
-<h2>Seguridad Eléctrica y Funcional</h2>
-
-<ul>
-    <li>Seguridad Eléctrica — NFPA 70E</li>
-    <li>LOTO</li>
-    <li>Seguridad Funcional</li>
-    <li>Clasificación de Áreas Peligrosas</li>
-</ul>
-
-<h2>Investigación y Factor Humano</h2>
-
-<ul>
-    <li>Investigación de Accidentes</li>
-    <li>Análisis de Causa Raíz</li>
-    <li>Gestión del Error Humano</li>
-</ul>
-
-<hr>
-
-<h2>Programas</h2>
-
-<h3>Programa Profesional en Seguridad de Procesos y Gestión del Riesgo</h3>
-<p>Formación integral en PSM, análisis de riesgos (HAZOP, LOPA, BowTie) y gestión de cambios. Preparación para auditorías y cumplimiento normativo.</p>
-
-<hr>
-
-<h2>Contacto</h2>
-
-<p><a href="https://wa.me/573164661007">WhatsApp: +57 316 466 1007</a></p>
-<p><a href="https://hidrocarburos.com.co">Cursos Programados</a> · <a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual</a></p>
-
-<hr>
-
-<p>Elite Training © 2026</p>
+<footer class="footer">Elite Training © 2026</footer>
 
 </body>
 </html>
