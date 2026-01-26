@@ -520,22 +520,6 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     font-size:18px;
     line-height:1.5;
     margin:0;
-}
-.benefit--credly{
-    display:block;
-    text-decoration:none;
-    background:rgba(255,255,255,0.1);
-    padding:32px;
-    border:1px solid rgba(234,236,238,0.2);
-    border-top:1px solid rgba(234,236,238,0.2);
-    transition:background 0.1s;
-}
-.benefit--credly:hover{
-    background:rgba(255,255,255,0.2);
-}
-.credly-logo{
-    height:40px;
-    margin-bottom:16px;
     color:rgba(234,236,238,0.8);
 }
 .testimonials-grid{
@@ -560,6 +544,59 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     color:rgba(45,54,112,0.6);
     font-style:normal;
 }
+
+/* Credly Section */
+.credly-section{
+    border-top:1px solid rgba(45,54,112,0.15);
+}
+.credly-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:center;
+}
+.credly-left{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+.credly-logo-large{
+    height:80px;
+    width:auto;
+    margin-bottom:8px;
+}
+.credly-description{
+    font-size:18px;
+    line-height:1.5;
+    color:rgba(45,54,112,0.7);
+    margin:0;
+}
+.credly-stat{
+    font-size:28px;
+    font-weight:600;
+    color:#2D3670;
+    margin:16px 0 0 0;
+}
+.credly-link{
+    font-size:18px;
+    color:#2D3670;
+    text-decoration:none;
+    font-weight:500;
+    transition:opacity 0.1s;
+}
+.credly-link:hover{
+    opacity:0.7;
+}
+.credly-badges{
+    display:flex;
+    gap:32px;
+    justify-content:flex-end;
+}
+.credly-badge{
+    width:180px;
+    height:auto;
+}
+
 .contact-box{
     max-width:600px;
 }
@@ -704,6 +741,23 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     }
     .testimonials-grid{
         grid-template-columns:1fr;
+    }
+    .credly-content{
+        grid-template-columns:1fr;
+        gap:32px;
+        text-align:center;
+    }
+    .credly-left{
+        align-items:center;
+    }
+    .credly-badges{
+        justify-content:center;
+    }
+    .credly-badge{
+        width:140px;
+    }
+    .credly-stat{
+        font-size:24px;
     }
     .contact-links{
         flex-direction:column;
@@ -883,11 +937,6 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
             <h3>Alineación a norma</h3>
             <p>Contenido basado en ASME, API, NFPA, ISO 55000, IAM, PSM.</p>
         </div>
-        <a href="https://www.credly.com/organizations/elite-training/badges" target="_blank" class="benefit benefit--credly">
-            <img src="assets/logos/credly.png" alt="Credly" class="credly-logo">
-            <h3>127 insignias digitales</h3>
-            <p>Certificaciones verificables en Credly, reconocidas internacionalmente.</p>
-        </a>
     </div>
 </section>
 
@@ -906,6 +955,24 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         <div class="testimonial">
             <blockquote>"Me enseñó a involucrarme de manera directa en aspectos técnicos que antes delegaba. Ahora puedo tomar decisiones con más criterio."</blockquote>
             <cite>Gerente de Operaciones — Repsol</cite>
+        </div>
+    </div>
+</section>
+
+<!-- Credly Section -->
+<section class="section section--white credly-section">
+    <div class="credly-content">
+        <div class="credly-left">
+            <a href="https://www.credly.com/organizations/elite-training/badges" target="_blank">
+                <img src="assets/logos/credly.png" alt="Credly by Pearson" class="credly-logo-large">
+            </a>
+            <p class="credly-description">Credly es la plataforma líder mundial de credenciales digitales verificables, respaldada por Pearson.</p>
+            <p class="credly-stat">127 insignias digitales emitidas por Elite Training</p>
+            <a href="https://www.credly.com/organizations/elite-training/badges" target="_blank" class="credly-link">Ver todas las insignias →</a>
+        </div>
+        <div class="credly-badges">
+            <img src="assets/img/badge-1.png" alt="Insignia Elite Training" class="credly-badge">
+            <img src="assets/img/badge-2.png" alt="Insignia Oil & Gas" class="credly-badge">
         </div>
     </div>
 </section>
