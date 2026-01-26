@@ -73,11 +73,12 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 .course-item:nth-last-child(-n+2){border-bottom:none;}
 
 .programs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
-.program-card{padding:32px;background:#fff;border:1px solid rgba(45,54,112,0.1);}
+.program-card{display:block;padding:32px;background:#fff;border:1px solid rgba(45,54,112,0.1);text-decoration:none;transition:background 0.1s;}
 .section--blue .program-card{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.2);}
-.program-card h3{font-size:24px;font-weight:600;margin:0 0 12px 0;color:#2D3670;}
+.section--blue .program-card:hover{background:rgba(255,255,255,0.25);}
+.program-card h3{font-size:24px;font-weight:600;margin:0 0 12px 0;color:#2D3670;transition:color 0.1s;}
 .section--blue .program-card h3{color:#fff;}
-.program-card p{font-size:18px;line-height:1.5;margin:0;color:rgba(45,54,112,0.8);}
+.program-card p{font-size:18px;line-height:1.5;margin:0;color:rgba(45,54,112,0.8);transition:color 0.1s;}
 .section--blue .program-card p{color:rgba(234,236,238,0.8);}
 
 .footer{padding:32px 48px;background:#EAECEE;color:rgba(45,54,112,0.6);font-size:14px;border-top:1px solid rgba(45,54,112,0.15);}
@@ -194,14 +195,10 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 <section class="section section--blue">
     <h2 class="section-title">Programas</h2>
     <div class="programs-grid">
-        <div class="program-card">
+        <a href="https://hidrocarburos.com.co/producto/programa-profesional-en-procesos-y-tecnologias-del-gas-natural/" target="_blank" class="program-card">
             <h3>Programa Profesional en Procesos y Tecnologías del Gas Natural</h3>
             <p>Formación completa en tecnologías del gas, LNG, tratamiento, medición y compresión. Incluye 5 módulos especializados.</p>
-        </div>
-        <div class="program-card">
-            <h3>Diplomado en Tecnologías de Gas Natural</h3>
-            <p>Programa intensivo que cubre toda la cadena del gas natural, desde producción hasta comercialización y regulación.</p>
-        </div>
+        </a>
     </div>
 </section>
 
