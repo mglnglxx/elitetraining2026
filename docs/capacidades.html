@@ -461,9 +461,12 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     border:1px solid rgba(45,54,112,0.15);
 }
 .sector-card{
+    display:block;
     padding:32px;
     border-bottom:1px solid rgba(45,54,112,0.15);
     border-right:1px solid rgba(45,54,112,0.15);
+    text-decoration:none;
+    transition:background 0.1s, color 0.1s;
 }
 .sector-card:nth-child(2n){
     border-right:none;
@@ -471,28 +474,32 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 .sector-card:nth-last-child(-n+2){
     border-bottom:none;
 }
+.sector-card:hover{
+    background:#2D3670;
+}
+.sector-card:hover h3,
+.sector-card:hover p,
+.sector-card:hover .tags{
+    color:#fff;
+}
 .sector-card h3{
     font-size:28px;
     font-weight:600;
     margin:0 0 12px 0;
     color:#2D3670;
-}
-.sector-card h3 a{
-    color:#2D3670;
-    text-decoration:none;
-}
-.sector-card h3 a:hover{
-    text-decoration:underline;
+    transition:color 0.1s;
 }
 .sector-card p{
     font-size:18px;
     line-height:1.5;
     margin:0 0 8px 0;
     color:#2D3670;
+    transition:color 0.1s;
 }
 .sector-card .tags{
     font-size:14px;
     color:rgba(45,54,112,0.6);
+    transition:color 0.1s;
 }
 .benefits-grid{
     display:grid;
@@ -800,36 +807,36 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     <h2 class="section-title">Áreas de formación</h2>
     <p class="section-subtitle">Cada área agrupa cursos y programas alineados a los riesgos y normas del entorno.</p>
     <div class="sector-grid">
-        <div class="sector-card">
-            <h3><a href="landing-gas.html">Gas Natural, GLP y Energía</a></h3>
+        <a href="landing-gas.html" class="sector-card">
+            <h3>Gas Natural, GLP y Energía</h3>
             <p>Tecnologías, procesos, medición y regulación de sistemas de gas.</p>
             <span class="tags">LNG · GNC · Compresión · Turbinas · Medición</span>
-        </div>
-        <div class="sector-card">
-            <h3><a href="landing-activos.html">Gestión de Activos y Confiabilidad</a></h3>
+        </a>
+        <a href="landing-activos.html" class="sector-card">
+            <h3>Gestión de Activos y Confiabilidad</h3>
             <p>Ciclo de vida, RCM, riesgo y gobierno de activos físicos.</p>
             <span class="tags">ISO 55000 · RCM · FMECA · RAM · IAM</span>
-        </div>
-        <div class="sector-card">
-            <h3><a href="landing-directivas.html">Habilidades Directivas</a></h3>
+        </a>
+        <a href="landing-directivas.html" class="sector-card">
+            <h3>Habilidades Directivas</h3>
             <p>Toma de decisiones, gestión de proyectos y liderazgo técnico.</p>
             <span class="tags">Proyectos · Costos · Crisis · MOC</span>
-        </div>
-        <div class="sector-card">
-            <h3><a href="landing-integridad.html">Integridad y Equipos</a></h3>
+        </a>
+        <a href="landing-integridad.html" class="sector-card">
+            <h3>Integridad y Equipos</h3>
             <p>Integridad mecánica, inspección, códigos y protección catódica.</p>
             <span class="tags">API 579 · API 580 · ASME VIII · B31.3 · Corrosión</span>
-        </div>
-        <div class="sector-card">
-            <h3><a href="landing-oilgas.html">Oil and Gas</a></h3>
+        </a>
+        <a href="landing-oilgas.html" class="sector-card">
+            <h3>Oil and Gas</h3>
             <p>Producción, facilidades, levantamiento artificial y pozos.</p>
             <span class="tags">ESP · PCP · Well Integrity · Perforación · Petrofísica</span>
-        </div>
-        <div class="sector-card">
-            <h3><a href="landing-seguridad.html">Seguridad y Riesgos</a></h3>
+        </a>
+        <a href="landing-seguridad.html" class="sector-card">
+            <h3>Seguridad y Riesgos</h3>
             <p>Seguridad de procesos, análisis de riesgos y seguridad eléctrica.</p>
             <span class="tags">PSM · HAZOP · LOPA · BowTie · NFPA 70E</span>
-        </div>
+        </a>
     </div>
 </section>
 
