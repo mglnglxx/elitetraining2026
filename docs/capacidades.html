@@ -244,6 +244,21 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 }
 .contact-left p{
     font-size:21px;
+}
+.contact-phones{
+    margin-top:32px;
+}
+.contact-phones p{
+    margin:0 0 16px 0;
+    font-size:18px;
+    line-height:1.4;
+}
+.contact-phones p strong{
+    font-size:21px;
+}
+.contact-phones p span{
+    color:rgba(45,54,112,0.6);
+    font-size:14px;
     line-height:1.5;
     color:#2D3670;
     max-width:400px;
@@ -709,18 +724,32 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     color:#fff;
     text-decoration:none;
     margin-bottom:8px;
+    font-size:18px;
     transition:opacity 0.1s;
 }
 .footer-col a:hover{
     opacity:0.7;
 }
 .footer-col p{
-    margin:0 0 12px 0;
+    margin:0 0 16px 0;
     line-height:1.4;
+    font-size:18px;
 }
 .footer-col p span{
     color:rgba(255,255,255,0.5);
-    font-size:12px;
+    font-size:14px;
+}
+.footer-btn{
+    display:inline-block;
+    padding:12px 24px;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.3);
+    font-size:16px;
+    margin-top:8px;
+}
+.footer-btn:hover{
+    background:rgba(255,255,255,0.25);
+    opacity:1;
 }
 .footer-bottom{
     display:flex;
@@ -805,8 +834,8 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         grid-template-columns:repeat(2,1fr);
     }
     .hero-sectors a{
-        font-size:14px;
-        padding:24px 12px;
+        font-size:21px;
+        padding:24px 16px;
         border-right:1px solid rgba(45,54,112,0.15);
     }
     .menu-close{
@@ -962,6 +991,11 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     <div class="contact-left">
         <h2>Hablemos</h2>
         <p>¿Tiene sentido una conversación sobre las competencias que necesita su operación?</p>
+        <div class="contact-phones">
+            <p><strong>+57 317 436 3697</strong><br><span>Cursos abiertos</span></p>
+            <p><strong>+57 316 466 1007</strong><br><span>Cursos cerrados / incompany</span></p>
+            <p><span>Lunes a Viernes 8am - 5:30pm<br>Sábados 9am - 12m</span></p>
+        </div>
     </div>
     <div class="contact-right">
         <div class="contact-social">
@@ -1154,16 +1188,16 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
             <a href="https://campusvirtual.hidrocarburos.com.co">Cursos virtuales</a>
             <a href="https://hidrocarburos.com.co/cursos-online/">Cursos online</a>
             <a href="https://hidrocarburos.com.co/programas-especializados/">Programas</a>
+            <a href="https://hidrocarburos.com.co/libros/">Libros y normas técnicas</a>
         </div>
         <div class="footer-col">
             <h4>Alianzas</h4>
             <a href="https://hidrocarburos.com.co/empresas-aliadas/">Empresas aliadas</a>
         </div>
         <div class="footer-col">
-            <h4>Contacto</h4>
-            <p>+57 317 436 3697<br><span>Cursos abiertos</span></p>
-            <p>+57 316 466 1007<br><span>Cursos cerrados</span></p>
-            <p>L-V 8am - 5:30pm<br>Sáb 9am - 12m</p>
+            <h4>Newsletter</h4>
+            <p>Suscríbete para recibir información de nuestros cursos</p>
+            <a href="https://hidrocarburos.com.co/#calendario" class="footer-btn">Suscríbete</a>
         </div>
     </div>
     <div class="footer-bottom">
