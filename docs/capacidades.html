@@ -613,6 +613,47 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     height:auto;
 }
 
+/* YouTube Section */
+.youtube-section{
+    border-top:1px solid rgba(45,54,112,0.15);
+}
+.youtube-description{
+    font-size:18px;
+    line-height:1.5;
+    color:rgba(45,54,112,0.7);
+    margin:0 0 32px 0;
+}
+.youtube-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-bottom:32px;
+}
+.youtube-video{
+    position:relative;
+    padding-bottom:56.25%;
+    height:0;
+    overflow:hidden;
+    border:1px solid rgba(45,54,112,0.1);
+}
+.youtube-video iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+.youtube-link{
+    font-size:18px;
+    color:#2D3670;
+    text-decoration:none;
+    font-weight:500;
+    transition:opacity 0.1s;
+}
+.youtube-link:hover{
+    opacity:0.7;
+}
+
 .contact-box{
     max-width:600px;
 }
@@ -774,6 +815,9 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     }
     .credly-stat{
         font-size:24px;
+    }
+    .youtube-grid{
+        grid-template-columns:1fr;
     }
     .contact-links{
         flex-direction:column;
@@ -965,7 +1009,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
             </a>
             <h2 class="credly-title">Insignias digitales en Credly</h2>
             <p class="credly-description">Cada curso completado genera una credencial digital con el registro de competencias desarrolladas, respaldada por la plataforma de Pearson.</p>
-            <a href="https://www.credly.com/organizations/elite-training/badges" target="_blank" class="credly-link">127 emitidas → Ver en Credly</a>
+            <a href="https://www.credly.com/organizations/elite-training/badges" target="_blank" class="credly-link">Más de 2,600 emitidas → Ver en Credly</a>
         </div>
         <div class="credly-badges">
             <img src="assets/img/badge-3.png" alt="Insignia Integridad y Equipos" class="credly-badge">
@@ -992,6 +1036,24 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
             <cite>Gerente de Operaciones — Repsol</cite>
         </div>
     </div>
+</section>
+
+<!-- YouTube Section -->
+<section class="section section--white youtube-section">
+    <h2 class="section-title">Contenido gratuito en YouTube</h2>
+    <p class="youtube-description">Master classes, webinars y charlas técnicas disponibles en nuestro canal.</p>
+    <div class="youtube-grid">
+        <div class="youtube-video">
+            <iframe src="https://www.youtube.com/embed/MW5P2SuSoXQ" title="Video Elite Training" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="youtube-video">
+            <iframe src="https://www.youtube.com/embed/vkIdesdamk0" title="Video Elite Training" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="youtube-video">
+            <iframe src="https://www.youtube.com/embed/fIRu16o3gus" title="Video Elite Training" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    <a href="https://www.youtube.com/@EliteTrainingHidrocarburos" target="_blank" class="youtube-link">Ver más en YouTube →</a>
 </section>
 
 <!-- Footer -->
