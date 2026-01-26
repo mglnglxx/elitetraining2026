@@ -19,6 +19,26 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 .navbar-burger:hover svg{stroke:#fff;}
 .navbar-burger svg{width:24px;height:24px;stroke:#2D3670;stroke-width:2;fill:none;}
 
+.menu-overlay{position:fixed;inset:0;z-index:200;background:#EAECEE;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s;}
+.menu-overlay.active{opacity:1;visibility:visible;}
+.menu-close{position:absolute;top:24px;right:48px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:transparent;border:1px solid rgba(45,54,112,0.15);cursor:pointer;transition:background 0.2s;}
+.menu-close:hover{background:#2D3670;}
+.menu-close:hover svg{stroke:#fff;}
+.menu-close svg{width:24px;height:24px;stroke:#2D3670;stroke-width:2;fill:none;}
+.menu-links{display:flex;flex-direction:column;align-items:center;gap:0;}
+.menu-links a,.menu-links button{font-family:'Roboto',sans-serif;font-size:60px;font-weight:600;color:#2D3670;text-decoration:none;background:none;border:none;cursor:pointer;transition:color 0.2s;padding:24px 0;margin:0;line-height:1;display:block;}
+.menu-links a:hover,.menu-links button:hover{color:rgba(45,54,112,0.6);}
+
+.submenu{position:fixed;inset:0;z-index:250;background:#EAECEE;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity 0.3s,visibility 0.3s;}
+.submenu.active{opacity:1;visibility:visible;}
+.submenu-back{position:absolute;top:24px;left:48px;width:48px;height:48px;color:#2D3670;background:none;border:1px solid rgba(45,54,112,0.15);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s;}
+.submenu-back:hover{background:#2D3670;}
+.submenu-back:hover svg{stroke:#fff;}
+.submenu-back svg{width:28px;height:28px;stroke:#2D3670;stroke-width:2;fill:none;}
+.submenu-links{display:flex;flex-direction:column;align-items:center;gap:48px;}
+.submenu-links a{font-size:60px;font-weight:600;color:#2D3670;text-decoration:none;transition:color 0.2s;}
+.submenu-links a:hover{color:rgba(45,54,112,0.6);}
+
 .hero{padding:140px 48px 80px;background:#EAECEE;}
 .hero-title{font-size:clamp(48px,8vw,100px);font-weight:600;line-height:0.95;letter-spacing:-0.02em;color:#2D3670;margin:0 0 24px 0;max-width:800px;}
 .hero-description{font-size:24px;line-height:1.4;color:#2D3670;max-width:700px;}
@@ -53,6 +73,11 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 
 @media(max-width:768px){
     .navbar{padding:16px 24px;}
+    .menu-close{right:24px;}
+    .submenu-back{left:24px;}
+    .menu-links a,.menu-links button{font-size:28px;padding:16px 0;}
+    .submenu-links a{font-size:28px;}
+    .submenu-links{gap:32px;}
     .hero{padding:120px 24px 48px;}
     .section{padding:48px 24px;}
     .course-grid{grid-template-columns:1fr;}
@@ -69,8 +94,29 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 
 <nav class="navbar">
     <a href="capacidades.html"><img src="assets/logos/elite-training.svg" alt="Elite Training" class="navbar-logo"></a>
-    <a href="capacidades.html" class="navbar-burger" aria-label="Menú"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></a>
+    <button class="navbar-burger" id="menuOpen" aria-label="Abrir menú"><svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </nav>
+
+<div class="menu-overlay" id="menuOverlay">
+    <button class="menu-close" id="menuClose" aria-label="Cerrar menú"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    <div class="menu-links">
+        <button id="sectoresBtn">Áreas de formación</button>
+        <a href="https://hidrocarburos.com.co">Cursos en vivo</a>
+        <a href="https://campusvirtual.hidrocarburos.com.co">Campus virtual</a>
+    </div>
+</div>
+
+<div class="submenu" id="submenuSectores">
+    <button class="submenu-back" id="submenuBack" aria-label="Volver"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+    <div class="submenu-links">
+        <a href="landing-gas.html">Gas y Energía</a>
+        <a href="landing-activos.html">Gestión de Activos</a>
+        <a href="landing-directivas.html">Habilidades Directivas</a>
+        <a href="landing-integridad.html">Integridad</a>
+        <a href="landing-oilgas.html">Oil & Gas</a>
+        <a href="landing-seguridad.html">Seguridad</a>
+    </div>
+</div>
 
 <section class="hero">
     <h1 class="hero-title">Seguridad y Riesgos</h1>
@@ -140,12 +186,20 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
         <a href="https://wa.me/573164661007">WhatsApp: +57 316 466 1007</a>
         <div class="contact-links">
             <a href="https://hidrocarburos.com.co">Ver cursos programados →</a>
-            <a href="https://campus.hidrocarburos.com.co">Campus Virtual →</a>
+            <a href="https://campusvirtual.hidrocarburos.com.co">Campus Virtual →</a>
         </div>
     </div>
 </section>
 
 <footer class="footer">Elite Training © 2026</footer>
 
+<script>
+const menuOpen=document.getElementById('menuOpen'),menuClose=document.getElementById('menuClose'),menuOverlay=document.getElementById('menuOverlay'),sectoresBtn=document.getElementById('sectoresBtn'),submenuSectores=document.getElementById('submenuSectores'),submenuBack=document.getElementById('submenuBack');
+menuOpen.addEventListener('click',()=>menuOverlay.classList.add('active'));
+menuClose.addEventListener('click',()=>{menuOverlay.classList.remove('active');submenuSectores.classList.remove('active');});
+sectoresBtn.addEventListener('click',()=>submenuSectores.classList.add('active'));
+submenuBack.addEventListener('click',()=>submenuSectores.classList.remove('active'));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){menuOverlay.classList.remove('active');submenuSectores.classList.remove('active');}});
+</script>
 </body>
 </html>
