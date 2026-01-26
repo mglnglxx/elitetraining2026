@@ -629,19 +629,20 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     gap:24px;
     margin-bottom:32px;
 }
-.youtube-video{
+.youtube-thumb{
+    display:block;
     position:relative;
-    padding-bottom:56.25%;
-    height:0;
     overflow:hidden;
     border:1px solid rgba(45,54,112,0.1);
+    transition:opacity 0.1s;
 }
-.youtube-video iframe{
-    position:absolute;
-    top:0;
-    left:0;
+.youtube-thumb:hover{
+    opacity:0.85;
+}
+.youtube-thumb img{
     width:100%;
-    height:100%;
+    height:auto;
+    display:block;
 }
 .youtube-link{
     font-size:18px;
@@ -977,6 +978,43 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     </div>
 </section>
 
+<!-- Testimonios Section -->
+<section class="section section--blue">
+    <h2 class="section-title">Testimonios</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial">
+            <blockquote>"Un muy buen curso, abarca toda la cadena de gas natural. El instructor domina el tema y lo hace entendible para diferentes niveles técnicos."</blockquote>
+            <cite>Ingeniero de Procesos — Gases del Caribe</cite>
+        </div>
+        <div class="testimonial">
+            <blockquote>"Nos estandariza internacionalmente, nos da herramientas que podemos aplicar inmediatamente en nuestras operaciones de mantenimiento."</blockquote>
+            <cite>Jefe de Mantenimiento — Cerro Matoso</cite>
+        </div>
+        <div class="testimonial">
+            <blockquote>"Me enseñó a involucrarme de manera directa en aspectos técnicos que antes delegaba. Ahora puedo tomar decisiones con más criterio."</blockquote>
+            <cite>Gerente de Operaciones — Repsol</cite>
+        </div>
+    </div>
+</section>
+
+<!-- YouTube Section -->
+<section class="section section--white youtube-section">
+    <h2 class="section-title">Webinars y master classes</h2>
+    <p class="youtube-description">Contenido abierto de nuestros instructores en temas de operación, integridad y seguridad industrial.</p>
+    <div class="youtube-grid">
+        <a href="https://www.youtube.com/watch?v=MW5P2SuSoXQ" target="_blank" class="youtube-thumb">
+            <img src="https://img.youtube.com/vi/MW5P2SuSoXQ/maxresdefault.jpg" alt="Video Elite Training">
+        </a>
+        <a href="https://www.youtube.com/watch?v=vkIdesdamk0" target="_blank" class="youtube-thumb">
+            <img src="https://img.youtube.com/vi/vkIdesdamk0/maxresdefault.jpg" alt="Video Elite Training">
+        </a>
+        <a href="https://www.youtube.com/watch?v=fIRu16o3gus" target="_blank" class="youtube-thumb">
+            <img src="https://img.youtube.com/vi/fIRu16o3gus/maxresdefault.jpg" alt="Video Elite Training">
+        </a>
+    </div>
+    <a href="https://www.youtube.com/@EliteTrainingHidrocarburos" target="_blank" class="youtube-link">Ver más en YouTube →</a>
+</section>
+
 <!-- Por qué Elite Section -->
 <section class="section section--blue">
     <h2 class="section-title">Por qué Elite Training</h2>
@@ -1017,43 +1055,6 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
             <img src="assets/img/badge-2.png" alt="Insignia Oil & Gas" class="credly-badge">
         </div>
     </div>
-</section>
-
-<!-- Testimonios Section -->
-<section class="section section--blue">
-    <h2 class="section-title">Testimonios</h2>
-    <div class="testimonials-grid">
-        <div class="testimonial">
-            <blockquote>"Un muy buen curso, abarca toda la cadena de gas natural. El instructor domina el tema y lo hace entendible para diferentes niveles técnicos."</blockquote>
-            <cite>Ingeniero de Procesos — Gases del Caribe</cite>
-        </div>
-        <div class="testimonial">
-            <blockquote>"Nos estandariza internacionalmente, nos da herramientas que podemos aplicar inmediatamente en nuestras operaciones de mantenimiento."</blockquote>
-            <cite>Jefe de Mantenimiento — Cerro Matoso</cite>
-        </div>
-        <div class="testimonial">
-            <blockquote>"Me enseñó a involucrarme de manera directa en aspectos técnicos que antes delegaba. Ahora puedo tomar decisiones con más criterio."</blockquote>
-            <cite>Gerente de Operaciones — Repsol</cite>
-        </div>
-    </div>
-</section>
-
-<!-- YouTube Section -->
-<section class="section section--white youtube-section">
-    <h2 class="section-title">Contenido gratuito en YouTube</h2>
-    <p class="youtube-description">Master classes, webinars y charlas técnicas disponibles en nuestro canal.</p>
-    <div class="youtube-grid">
-        <div class="youtube-video">
-            <iframe src="https://www.youtube.com/embed/MW5P2SuSoXQ" title="Video Elite Training" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="youtube-video">
-            <iframe src="https://www.youtube.com/embed/vkIdesdamk0" title="Video Elite Training" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="youtube-video">
-            <iframe src="https://www.youtube.com/embed/fIRu16o3gus" title="Video Elite Training" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-    </div>
-    <a href="https://www.youtube.com/@EliteTrainingHidrocarburos" target="_blank" class="youtube-link">Ver más en YouTube →</a>
 </section>
 
 <!-- Footer -->
