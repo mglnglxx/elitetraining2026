@@ -58,9 +58,11 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
 .contact-social svg{width:28px;height:28px;fill:#2D3670;flex-shrink:0;transition:fill 0.2s;}
 .contact-social a:hover svg{fill:rgba(45,54,112,0.6);}
 
-.hero{padding:140px 48px 80px;background:var(--sector-main);}
-.hero-title{font-size:clamp(48px,8vw,100px);font-weight:600;line-height:0.95;letter-spacing:-0.02em;color:#fff;margin:0 0 24px 0;max-width:900px;}
-.hero-description{font-size:24px;line-height:1.4;color:rgba(255,255,255,0.9);max-width:700px;}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:600px;background:var(--sector-main);}
+.hero-content{display:flex;flex-direction:column;justify-content:flex-end;padding:200px 48px 80px;}
+.hero-image{background:#d0d0d0;background-size:cover;background-position:center;}
+.hero-title{font-size:clamp(48px,8vw,100px);font-weight:600;line-height:0.95;letter-spacing:-0.02em;color:#fff;margin:0 0 24px 0;}
+.hero-description{font-size:24px;line-height:1.4;color:rgba(255,255,255,0.9);}
 
 .section{padding:80px 48px;background:#EAECEE;}
 .section--white{background:#fff;}
@@ -113,7 +115,9 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
     .contact-right{padding:32px 24px 48px;border-left:none;border-top:1px solid rgba(45,54,112,0.1);}
     .contact-social a{font-size:21px;padding:16px 0;}
     .contact-social svg{width:24px;height:24px;}
-    .hero{padding:120px 24px 48px;}
+    .hero{grid-template-columns:1fr;min-height:auto;}
+    .hero-content{padding:120px 24px 48px;}
+    .hero-image{height:300px;}
     .section{padding:48px 24px;}
     .course-grid{grid-template-columns:1fr;}
     .course-item{border-right:none;}
@@ -175,8 +179,11 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
 </div>
 
 <section class="hero">
-    <h1 class="hero-title">Gestión de Activos, Mantenimiento y Confiabilidad</h1>
-    <p class="hero-description">Del mantenimiento reactivo a la gestión estratégica. Formación en ISO 55000, RCM, análisis de fallas y confiabilidad. Partner exclusivo de The Woodhouse Partnership.</p>
+    <div class="hero-content">
+        <h1 class="hero-title">Gestión de Activos, Mantenimiento y Confiabilidad</h1>
+        <p class="hero-description">Del mantenimiento reactivo a la gestión estratégica. Formación en ISO 55000, RCM, análisis de fallas y confiabilidad. Partner exclusivo de The Woodhouse Partnership.</p>
+    </div>
+    <div class="hero-image"></div>
 </section>
 
 <section class="section section--white">
