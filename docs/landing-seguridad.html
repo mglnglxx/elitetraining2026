@@ -60,7 +60,8 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#4F4F
 
 .hero{display:grid;grid-template-columns:1fr 1fr;min-height:600px;background:var(--sector-main);}
 .hero-content{display:flex;flex-direction:column;justify-content:flex-end;padding:200px 48px 80px;}
-.hero-image{background:#d0d0d0;background-size:cover;background-position:center;}
+.hero-badges{display:flex;align-items:center;justify-content:center;gap:24px;padding:48px;}
+.hero-badge{width:180px;height:auto;filter:drop-shadow(0 4px 12px rgba(0,0,0,0.15));}
 .hero-title{font-size:clamp(48px,8vw,100px);font-weight:600;line-height:0.95;letter-spacing:-0.02em;color:#2D3670;margin:0 0 24px 0;}
 .hero-description{font-size:24px;line-height:1.4;color:#2D3670;}
 
@@ -119,7 +120,8 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#4F4F
     .contact-social svg{width:24px;height:24px;}
     .hero{grid-template-columns:1fr;min-height:auto;}
     .hero-content{padding:120px 24px 48px;}
-    .hero-image{height:300px;}
+    .hero-badges{padding:24px;gap:16px;}
+    .hero-badge{width:120px;}
     .section{padding:48px 24px;}
     .course-grid{grid-template-columns:1fr;}
     .course-item{border-right:none;}
