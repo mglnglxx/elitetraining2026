@@ -361,25 +361,26 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 .clients-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    align-items:center;
-    justify-items:center;
 }
-.clients-grid img{
-    height:64px;
-    width:auto;
-    max-width:200px;
-    object-fit:contain;
-    padding:64px 0;
+.client-cell{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:64px 32px;
     border-bottom:1px dashed rgba(45,54,112,0.15);
     border-right:1px dashed rgba(45,54,112,0.15);
-    width:100%;
-    box-sizing:border-box;
 }
-.clients-grid img:nth-child(4n){
+.client-cell:nth-child(4n){
     border-right:none;
 }
-.clients-grid img:nth-child(n+5){
+.client-cell:nth-child(n+5){
     border-bottom:none;
+}
+.client-cell img{
+    height:64px;
+    width:auto;
+    max-width:180px;
+    object-fit:contain;
 }
 /* Right column - video */
 .hero-right{
@@ -885,27 +886,26 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         padding:24px 16px;
         border-right:1px solid rgba(45,54,112,0.15);
     }
-    .clients-section{
-        padding:0;
-    }
     .clients-grid{
         grid-template-columns:repeat(2,1fr);
     }
-    .clients-grid img{
-        height:36px;
-        padding:40px 0;
+    .client-cell{
+        padding:40px 24px;
     }
-    .clients-grid img:nth-child(4n){
+    .client-cell:nth-child(4n){
         border-right:1px dashed rgba(45,54,112,0.15);
     }
-    .clients-grid img:nth-child(2n){
+    .client-cell:nth-child(2n){
         border-right:none;
     }
-    .clients-grid img:nth-child(n+5){
+    .client-cell:nth-child(n+5){
         border-bottom:1px dashed rgba(45,54,112,0.15);
     }
-    .clients-grid img:nth-child(n+7){
+    .client-cell:nth-child(n+7){
         border-bottom:none;
+    }
+    .client-cell img{
+        height:40px;
     }
     .menu-close{
         right:24px;
@@ -1131,14 +1131,14 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 <!-- Clients Section -->
 <section class="clients-section">
     <div class="clients-grid">
-        <img src="assets/logos/ecopetrol.png" alt="Ecopetrol">
-        <img src="assets/logos/oxy.png" alt="Oxy">
-        <img src="assets/logos/repsol.png" alt="Repsol">
-        <img src="assets/logos/frontera.png" alt="Frontera Energy">
-        <img src="assets/logos/parex.png" alt="Parex Resources">
-        <img src="assets/logos/promigas.png" alt="Promigas">
-        <img src="assets/logos/eni.png" alt="Eni">
-        <img src="assets/logos/perenco.png" alt="Perenco">
+        <div class="client-cell"><img src="assets/logos/ecopetrol.png" alt="Ecopetrol"></div>
+        <div class="client-cell"><img src="assets/logos/oxy.png" alt="Oxy"></div>
+        <div class="client-cell"><img src="assets/logos/repsol.png" alt="Repsol"></div>
+        <div class="client-cell"><img src="assets/logos/frontera.png" alt="Frontera Energy"></div>
+        <div class="client-cell"><img src="assets/logos/parex.png" alt="Parex Resources"></div>
+        <div class="client-cell"><img src="assets/logos/promigas.png" alt="Promigas"></div>
+        <div class="client-cell"><img src="assets/logos/eni.png" alt="Eni"></div>
+        <div class="client-cell"><img src="assets/logos/perenco.png" alt="Perenco"></div>
     </div>
 </section>
 
