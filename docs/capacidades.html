@@ -411,7 +411,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     height:100%;
     object-fit:cover;
     object-position:center;
-    filter:url(#dither) contrast(1.1);
+    filter:url(#dither) contrast(1.4) saturate(0.8);
 }
 /* Reduced motion: show poster instead of video */
 @media(prefers-reduced-motion:reduce){
@@ -1037,13 +1037,13 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 <svg style="position:absolute;width:0;height:0;">
     <defs>
         <filter id="dither" x="0" y="0" width="100%" height="100%">
-            <feComponentTransfer>
-                <feFuncR type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"/>
-                <feFuncG type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"/>
-                <feFuncB type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"/>
+            <feComponentTransfer result="posterize">
+                <feFuncR type="discrete" tableValues="0 0.33 0.66 1"/>
+                <feFuncG type="discrete" tableValues="0 0.33 0.66 1"/>
+                <feFuncB type="discrete" tableValues="0 0.33 0.66 1"/>
             </feComponentTransfer>
-            <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="1" result="noise"/>
-            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+            <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" result="noise"/>
+            <feDisplacementMap in="posterize" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
         </filter>
     </defs>
 </svg>
