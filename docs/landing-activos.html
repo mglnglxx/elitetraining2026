@@ -71,6 +71,9 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 .course-item{padding:24px 32px;border-bottom:1px solid rgba(45,54,112,0.15);border-right:1px solid rgba(45,54,112,0.15);font-size:18px;color:#2D3670;}
 .course-item:nth-child(2n){border-right:none;}
 .course-item:nth-last-child(-n+2){border-bottom:none;}
+.section-link{display:inline-flex;align-items:center;gap:6px;margin-top:24px;font-size:16px;font-weight:600;color:#2D3670;text-decoration:none;}
+.section-link span{transition:transform 0.2s ease;display:inline-block;}
+.section-link:hover span{transform:translateX(4px);}
 
 .programs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:32px;}
 .program-card{display:block;padding:32px;background:#fff;border:1px solid rgba(45,54,112,0.1);text-decoration:none;transition:background 0.1s;}
@@ -144,12 +147,12 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
 <div class="submenu" id="submenuSectores">
     <button class="submenu-back" id="submenuBack" aria-label="Volver"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
     <div class="submenu-links">
+        <a href="landing-oilgas.html">Oil&Gas</a>
+        <a href="landing-seguridad.html">Seguridad y Riesgos</a>
+        <a href="landing-integridad.html">Integridad y Equipos</a>
+        <a href="landing-activos.html">Gestión de Activos y Mantenimiento</a>
         <a href="landing-gas.html">Gas y Energía</a>
-        <a href="landing-activos.html">Gestión de Activos</a>
         <a href="landing-directivas.html">Habilidades Directivas</a>
-        <a href="landing-integridad.html">Integridad</a>
-        <a href="landing-oilgas.html">Oil & Gas</a>
-        <a href="landing-seguridad.html">Seguridad</a>
     </div>
 </div>
 
@@ -181,44 +184,56 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
         <div class="course-item">Planificación y Programación del Mantenimiento</div>
         <div class="course-item">Gestión de Costos y Presupuestos del Mantenimiento</div>
         <div class="course-item">Gerencia del Mantenimiento</div>
-        <div class="course-item">KPI de Mantenimiento</div>
+        <div class="course-item">Gestión de Inventarios de Mantenimiento</div>
     </div>
+    <a href="https://hidrocarburos.com.co/producto-categoria/sectores/mantenimiento-y-confiabilidad/" target="_blank" class="section-link">Ver todos los cursos <span>→</span></a>
 </section>
 
 <section class="section">
     <h2 class="section-title">Confiabilidad</h2>
     <div class="course-grid">
+        <div class="course-item">Fundamentos de Ingeniería de Confiabilidad</div>
+        <div class="course-item">Eliminación de Causa Raíz (ECR)</div>
         <div class="course-item">Mantenimiento Centrado en Confiabilidad (RCM)</div>
-        <div class="course-item">FMECA</div>
-        <div class="course-item">RAM</div>
-        <div class="course-item">Eliminación de Causas Raíz (ECR)</div>
+        <div class="course-item">Análisis de Modos de Falla - FMECA</div>
     </div>
+    <a href="https://hidrocarburos.com.co/producto-categoria/sectores/mantenimiento-y-confiabilidad/" target="_blank" class="section-link">Ver todos los cursos <span>→</span></a>
 </section>
 
 <section class="section section--white">
     <h2 class="section-title">Gestión de Activos</h2>
     <div class="course-grid">
         <div class="course-item">Principios de Gestión de Activos (ISO 55000)</div>
-        <div class="course-item">Ciclo de Vida de Activos</div>
-        <div class="course-item">Riesgo en Activos</div>
-        <div class="course-item">Auditoría en Gestión de Activos</div>
+        <div class="course-item">Gestión del Ciclo de Vida de Activos</div>
+        <div class="course-item">Toma de Decisiones Basadas en Riesgo</div>
+        <div class="course-item">Actualización de las Normas ISO 55001</div>
     </div>
+    <a href="https://hidrocarburos.com.co/producto-categoria/sectores/mantenimiento-y-confiabilidad/" target="_blank" class="section-link">Ver todos los cursos <span>→</span></a>
 </section>
 
 <section class="section section--blue">
     <h2 class="section-title">Programas</h2>
+    <p class="section-subtitle" style="color:rgba(255,255,255,0.85);margin-bottom:32px;">Somos Partner exclusivo de The Woodhouse Partnership para Latinoamérica.</p>
     <div class="programs-grid">
-        <a href="https://hidrocarburos.com.co/producto/programa-especialista-en-confiabilidad-y-gestion-de-activos-industriales/" target="_blank" class="program-card">
-            <h3>Programa Especialista en Confiabilidad y Gestión de Activos</h3>
-            <p>Formación completa en metodologías de confiabilidad, gestión del mantenimiento y gestión estratégica de activos industriales.</p>
-        </a>
-        <a href="https://hidrocarburos.com.co/producto/programa-profesional-en-gestion-estrategica-del-mantenimiento/" target="_blank" class="program-card">
+        <a href="https://campusvirtual.hidrocarburos.com.co/stm-course-bundles/programa-profesional-en-gestion-estrategica-del-mantenimiento" target="_blank" class="program-card">
             <h3>Programa Profesional en Gestión Estratégica del Mantenimiento</h3>
-            <p>Partner The Woodhouse Partnership. Preparación para certificación IAM Certificate. 120 horas de formación intensiva.</p>
+            <p>96 horas · E-learning. Planificación, costos, inventarios y evaluación del desempeño del mantenimiento.</p>
+        </a>
+        <a href="https://campusvirtual.hidrocarburos.com.co/stm-course-bundles/programa-especialista-en-gestion-estrategica-del-mantenimiento/" target="_blank" class="program-card">
+            <h3>Programa Especialista en Gestión Estratégica del Mantenimiento</h3>
+            <p>112 horas · E-learning. Gerencia, planificación, costos, inventarios e indicadores de gestión.</p>
+        </a>
+        <a href="https://hidrocarburos.com.co/producto/programa-especialista-en-gestion-de-activos/" target="_blank" class="program-card">
+            <h3>Programa Especialista en Gestión de Activos</h3>
+            <p>60 horas · Online en vivo. Partner TWPL. Preparación para el examen IAM Certificate.</p>
         </a>
         <a href="https://hidrocarburos.com.co/producto/programa-experto-en-gestion-de-activos/" target="_blank" class="program-card">
             <h3>Programa Experto en Gestión de Activos</h3>
-            <p>Nivel avanzado para profesionales que buscan certificación IAM Diploma. Incluye proyecto aplicado.</p>
+            <p>60 horas · Online en vivo. Nivel avanzado para certificación IAM Diploma.</p>
+        </a>
+        <a href="https://hidrocarburos.com.co/producto/programa-especialista-en-confiabilidad-y-gestion-de-activos-industriales/" target="_blank" class="program-card">
+            <h3>Programa Especialista en Confiabilidad y Gestión de Activos Industriales</h3>
+            <p>104 horas · Online en vivo. Formación completa en confiabilidad y preparación para certificación CMRP.</p>
         </a>
     </div>
 </section>
@@ -238,12 +253,12 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#2D36
         </div>
         <div class="footer-col">
             <h4>Sectores</h4>
-            <a href="landing-gas.html">Gas y Energía</a>
+            <a href="landing-oilgas.html">Oil&Gas</a>
+            <a href="landing-seguridad.html">Seguridad y Riesgos</a>
+            <a href="landing-integridad.html">Integridad y Equipos</a>
             <a href="landing-activos.html">Gestión de Activos</a>
+            <a href="landing-gas.html">Gas y Energía</a>
             <a href="landing-directivas.html">Habilidades Directivas</a>
-            <a href="landing-integridad.html">Integridad</a>
-            <a href="landing-oilgas.html">Oil & Gas</a>
-            <a href="landing-seguridad.html">Seguridad</a>
         </div>
         <div class="footer-col">
             <h4>Alianzas</h4>
