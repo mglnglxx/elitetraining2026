@@ -10,7 +10,7 @@
     <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;background:#fff;}
+body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;background:#EAECEE;}
 
 /* Navbar */
 .navbar{
@@ -338,7 +338,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     display:grid;
     grid-template-columns:1fr 1fr;
     grid-template-rows:1fr auto;
-    background:#fff;
+    background:#EAECEE;
 }
 /* Left column - solid background */
 .hero-left{
@@ -346,25 +346,33 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     z-index:2;
     display:flex;
     flex-direction:column;
-    justify-content:flex-start;
+    justify-content:flex-end;
     padding:48px;
     padding-bottom:48px;
-    background:#fff;
+    background:#EAECEE;
     color:#2D3670;
     width:80%;
 }
-.client-logos{
-    display:grid;
-    grid-template-columns:repeat(3,auto);
-    align-items:center;
-    justify-content:start;
-    gap:32px 48px;
-    margin-top:auto;
-    padding-top:48px;
+/* Client logos section */
+.clients-section{
+    background:#fff;
+    padding:80px 48px;
+    text-align:center;
 }
-.client-logos img{
+.clients-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    align-items:center;
+    justify-items:center;
+    gap:48px 64px;
+    max-width:1000px;
+    margin:0 auto;
+}
+.clients-grid img{
     height:40px;
     width:auto;
+    max-width:160px;
+    object-fit:contain;
 }
 /* Right column - video */
 .hero-right{
@@ -870,12 +878,14 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         padding:24px 16px;
         border-right:1px solid rgba(45,54,112,0.15);
     }
-    .client-logos{
-        grid-template-columns:repeat(3,auto);
-        gap:24px 32px;
-        padding-top:32px;
+    .clients-section{
+        padding:48px 24px;
     }
-    .client-logos img{
+    .clients-grid{
+        grid-template-columns:repeat(3,1fr);
+        gap:32px 24px;
+    }
+    .clients-grid img{
         height:28px;
     }
     .menu-close{
@@ -1069,14 +1079,6 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         <img src="assets/logos/elite-training.svg" alt="Elite Training" class="hero-logo">
         <h1 class="hero-headline">30 años formando la industria latinoamericana</h1>
         <p class="hero-description">Capacitación técnica en operación, integridad, gestión de activos y seguridad para petróleo, gas y energía.</p>
-        <div class="client-logos">
-            <img src="assets/logos/ecopetrol.png" alt="Ecopetrol">
-            <img src="assets/logos/oxy.svg" alt="Oxy">
-            <img src="assets/logos/repsol.svg" alt="Repsol">
-            <img src="assets/logos/frontera.jpg" alt="Frontera Energy">
-            <img src="assets/logos/parex.png" alt="Parex Resources">
-            <img src="assets/logos/promigas.jpg" alt="Promigas">
-        </div>
     </div>
     <div class="hero-right">
         <video
@@ -1105,6 +1107,18 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         <a href="landing-oilgas.html">Oil & Gas</a>
         <a href="landing-seguridad.html">Seguridad</a>
     </nav>
+</section>
+
+<!-- Clients Section -->
+<section class="clients-section">
+    <div class="clients-grid">
+        <img src="assets/logos/ecopetrol.png" alt="Ecopetrol">
+        <img src="assets/logos/oxy.svg" alt="Oxy">
+        <img src="assets/logos/repsol.svg" alt="Repsol">
+        <img src="assets/logos/frontera.jpg" alt="Frontera Energy">
+        <img src="assets/logos/parex.png" alt="Parex Resources">
+        <img src="assets/logos/promigas.jpg" alt="Promigas">
+    </div>
 </section>
 
 <!-- Sectores Section -->
