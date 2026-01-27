@@ -411,6 +411,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     height:100%;
     object-fit:cover;
     object-position:center;
+    filter:url(#dither) contrast(1.1);
 }
 /* Reduced motion: show poster instead of video */
 @media(prefers-reduced-motion:reduce){
@@ -1031,6 +1032,21 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     </style>
 </head>
 <body>
+
+<!-- SVG Dither Filter -->
+<svg style="position:absolute;width:0;height:0;">
+    <defs>
+        <filter id="dither" x="0" y="0" width="100%" height="100%">
+            <feComponentTransfer>
+                <feFuncR type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"/>
+                <feFuncG type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"/>
+                <feFuncB type="discrete" tableValues="0 0.2 0.4 0.6 0.8 1"/>
+            </feComponentTransfer>
+            <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="1" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+    </defs>
+</svg>
 
 <!-- Navbar -->
 <nav class="navbar">
