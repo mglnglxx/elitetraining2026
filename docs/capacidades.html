@@ -182,6 +182,12 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 .submenu-links a:hover{
     color:rgba(45,54,112,0.6);
 }
+.submenu-links--small{
+    gap:24px;
+}
+.submenu-links--small a{
+    font-size:32px;
+}
 
 /* Contact Overlay */
 .contact-overlay{
@@ -419,7 +425,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 .hero-headline{
     font-family:'Roboto',sans-serif;
     font-weight:600;
-    font-size:clamp(48px,6vw,80px);
+    font-size:clamp(36px,5vw,64px);
     line-height:0.95;
     letter-spacing:-0.02em;
     color:#2D3670;
@@ -839,6 +845,9 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     .submenu-links a{
         font-size:48px;
     }
+    .submenu-links--small a{
+        font-size:28px;
+    }
 }
 @media(max-width:768px){
     .navbar{
@@ -922,8 +931,14 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     .submenu-links a{
         font-size:28px;
     }
+    .submenu-links--small a{
+        font-size:18px;
+    }
     .submenu-links{
         gap:32px;
+    }
+    .submenu-links--small{
+        gap:16px;
     }
     .section{
         padding:48px 24px;
@@ -1037,7 +1052,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         <a href="https://hidrocarburos.com.co">Cursos en vivo</a>
         <a href="https://campusvirtual.hidrocarburos.com.co">Campus virtual</a>
         <a href="https://hidrocarburos.com.co/programas-especializados/">Programas Especializados</a>
-        <a href="https://hidrocarburos.com.co/nuestra-historia/">Sobre nosotros</a>
+        <button id="sobreNosotrosBtn">Sobre nosotros</button>
         <a href="https://hidrocarburos.com.co/contacto/">Contacto</a>
     </div>
             </div>
@@ -1054,8 +1069,27 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         <a href="landing-activos.html">Gestión de Activos y Mantenimiento</a>
         <a href="landing-gas.html">Gas y Energía</a>
         <a href="landing-directivas.html">Habilidades Directivas</a>
-                    </div>
-                    </div>
+    </div>
+</div>
+
+<!-- Sobre Nosotros Submenu -->
+<div class="submenu" id="submenuSobreNosotros">
+    <button class="submenu-back" id="submenuSobreBack" aria-label="Volver">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="submenu-links submenu-links--small">
+        <a href="https://hidrocarburos.com.co/libros/">Libros Técnicos</a>
+        <a href="https://www.credly.com/organizations/elite-training/badges">Insignias Digitales</a>
+        <a href="https://hidrocarburos.com.co/nuestra-historia/">Nuestra Historia</a>
+        <a href="https://hidrocarburos.com.co/mision-y-vision/">Misión y Visión</a>
+        <a href="https://hidrocarburos.com.co/procedimiento-de-pagos/">Procedimiento de pagos</a>
+        <a href="https://hidrocarburos.com.co/hoteles-sugeridos/">Hoteles Sugeridos</a>
+        <a href="https://hidrocarburos.com.co/politica-hseq/">Política HSEQ</a>
+        <a href="https://hidrocarburos.com.co/politicas-para-el-tratamiento-de-datos-personales/">Políticas de datos personales</a>
+        <a href="https://hidrocarburos.com.co/aviso-de-privacidad/">Aviso de Privacidad</a>
+        <a href="https://hidrocarburos.com.co/responsabilidad-social/">Responsabilidad Social</a>
+    </div>
+</div>
 
 <!-- Contact Overlay -->
 <div class="contact-overlay" id="contactOverlay">
@@ -1310,6 +1344,9 @@ const menuOverlay = document.getElementById('menuOverlay');
 const sectoresBtn = document.getElementById('sectoresBtn');
 const submenuSectores = document.getElementById('submenuSectores');
 const submenuBack = document.getElementById('submenuBack');
+const sobreNosotrosBtn = document.getElementById('sobreNosotrosBtn');
+const submenuSobreNosotros = document.getElementById('submenuSobreNosotros');
+const submenuSobreBack = document.getElementById('submenuSobreBack');
 
 // Contact overlay
 const contactOpen = document.getElementById('contactOpen');
@@ -1323,6 +1360,7 @@ menuOpen.addEventListener('click', () => {
 menuClose.addEventListener('click', () => {
     menuOverlay.classList.remove('active');
     submenuSectores.classList.remove('active');
+    submenuSobreNosotros.classList.remove('active');
 });
 
 sectoresBtn.addEventListener('click', () => {
@@ -1331,6 +1369,14 @@ sectoresBtn.addEventListener('click', () => {
 
 submenuBack.addEventListener('click', () => {
     submenuSectores.classList.remove('active');
+});
+
+sobreNosotrosBtn.addEventListener('click', () => {
+    submenuSobreNosotros.classList.add('active');
+});
+
+submenuSobreBack.addEventListener('click', () => {
+    submenuSobreNosotros.classList.remove('active');
 });
 
 contactOpen.addEventListener('click', () => {
@@ -1346,9 +1392,10 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         menuOverlay.classList.remove('active');
         submenuSectores.classList.remove('active');
+        submenuSobreNosotros.classList.remove('active');
         contactOverlay.classList.remove('active');
-        }
-    });
+    }
+});
     </script>
 </body>
 </html>
