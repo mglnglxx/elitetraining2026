@@ -607,14 +607,20 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     margin:16px 0 0 0;
 }
 .credly-link{
-    font-size:18px;
+    font-size:16px;
     color:#2D3670;
     text-decoration:none;
-    font-weight:500;
-    transition:opacity 0.1s;
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
 }
-.credly-link:hover{
-    opacity:0.7;
+.credly-link span{
+    transition:transform 0.2s ease;
+    display:inline-block;
+}
+.credly-link:hover span{
+    transform:translateX(4px);
 }
 .credly-badges{
     display:flex;
@@ -658,14 +664,20 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     display:block;
 }
 .youtube-link{
-    font-size:18px;
+    font-size:16px;
     color:#2D3670;
     text-decoration:none;
-    font-weight:500;
-    transition:opacity 0.1s;
+    font-weight:600;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
 }
-.youtube-link:hover{
-    opacity:0.7;
+.youtube-link span{
+    transition:transform 0.2s ease;
+    display:inline-block;
+}
+.youtube-link:hover span{
+    transform:translateX(4px);
 }
 
 .contact-box{
@@ -737,16 +749,26 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     font-size:14px;
 }
 .footer-btn{
-    display:inline-block;
-    padding:12px 24px;
-    background:rgba(255,255,255,0.15);
-    border:1px solid rgba(255,255,255,0.3);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:0;
+    background:none;
+    border:none;
     font-size:16px;
+    font-weight:600;
     margin-top:8px;
+    color:#fff;
+}
+.footer-btn span{
+    transition:transform 0.2s ease;
+    display:inline-block;
 }
 .footer-btn:hover{
-    background:rgba(255,255,255,0.25);
     opacity:1;
+}
+.footer-btn:hover span{
+    transform:translateX(4px);
 }
 .footer-bottom{
     display:flex;
@@ -1127,7 +1149,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
             <img src="https://img.youtube.com/vi/fIRu16o3gus/maxresdefault.jpg" alt="Video Elite Training">
         </a>
     </div>
-    <a href="https://www.youtube.com/@EliteTrainingHidrocarburos" target="_blank" class="youtube-link">Ver más en YouTube →</a>
+    <a href="https://www.youtube.com/@EliteTrainingHidrocarburos" target="_blank" class="youtube-link">Ver más en YouTube <span>→</span></a>
 </section>
 
 <!-- Por qué Elite Section -->
@@ -1162,7 +1184,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
             </a>
             <h2 class="credly-title">Insignias digitales en Credly</h2>
             <p class="credly-description">Cada curso completado genera una credencial digital con el registro de competencias desarrolladas, respaldada por la plataforma de Pearson.</p>
-            <a href="https://www.credly.com/organizations/elite-training/badges" target="_blank" class="credly-link">Más de 2.600 emitidas → Ver en Credly</a>
+            <a href="https://www.credly.com/organizations/elite-training/badges" target="_blank" class="credly-link">Más de 2.600 emitidas · Ver en Credly <span>→</span></a>
         </div>
         <div class="credly-badges">
             <img src="assets/img/badge-3.png" alt="Insignia Integridad y Equipos" class="credly-badge">
@@ -1202,7 +1224,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         <div class="footer-col">
             <h4>Newsletter</h4>
             <p>Suscríbete para recibir información de nuestros cursos</p>
-            <a href="http://hidrocarburos.us7.list-manage.com/subscribe?u=ea08178cbb7f9d2dbc42e4596&id=8b059c3bd3" target="_blank" class="footer-btn">Suscríbete</a>
+            <a href="http://hidrocarburos.us7.list-manage.com/subscribe?u=ea08178cbb7f9d2dbc42e4596&id=8b059c3bd3" target="_blank" class="footer-btn">Suscríbete <span>→</span></a>
         </div>
     </div>
     <div class="footer-bottom">
