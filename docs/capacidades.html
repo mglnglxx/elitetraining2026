@@ -1027,7 +1027,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 </head>
 <body>
 
-<!-- SVG Duotone Filter: #000527 (shadows) to #2D3670 (highlights) -->
+<!-- SVG Duotone + Dots Filter -->
 <svg style="position:absolute;width:0;height:0;">
     <defs>
         <filter id="duotone" x="0" y="0" width="100%" height="100%">
@@ -1042,6 +1042,14 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
                 <!-- B: 39/255=0.153 to 112/255=0.439 -->
                 <feFuncB type="table" tableValues="0.153 0.439"/>
             </feComponentTransfer>
+            <!-- Create dot pattern -->
+            <feTurbulence type="turbulence" baseFrequency="0.8" numOctaves="1" result="noise" seed="5"/>
+            <feColorMatrix type="matrix" in="noise" result="dots"
+                values="1 0 0 0 0
+                        0 1 0 0 0
+                        0 0 1 0 0
+                        0 0 0 25 -12"/>
+            <feComposite in="duotone" in2="dots" operator="in"/>
         </filter>
     </defs>
 </svg>
