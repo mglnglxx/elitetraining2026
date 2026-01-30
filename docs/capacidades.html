@@ -395,6 +395,17 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     position:relative;
     overflow:hidden;
 }
+/* Duotone color overlay */
+.hero-right::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:#2D3670;
+    mix-blend-mode:color;
+    pointer-events:none;
+    z-index:1;
+}
+/* Dots overlay */
 .hero-right::after{
     content:'';
     position:absolute;
@@ -403,7 +414,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     background-size:4px 4px;
     opacity:0.4;
     pointer-events:none;
-    z-index:1;
+    z-index:2;
 }
 .hero__bg{
     position:absolute;
@@ -412,7 +423,12 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     height:100%;
     object-fit:cover;
     object-position:center;
-    filter:url(#duotone);
+    /* CSS filter instead of SVG - more GPU optimized */
+    filter:grayscale(1) contrast(1.1) brightness(0.7);
+    /* GPU acceleration */
+    will-change:transform;
+    transform:translateZ(0);
+    backface-visibility:hidden;
 }
 /* Reduced motion: show poster instead of video */
 @media(prefers-reduced-motion:reduce){
@@ -1034,27 +1050,6 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 </head>
 <body>
 
-<!-- SVG Duotone + Dots Filter -->
-<svg style="position:absolute;width:0;height:0;">
-    <defs>
-        <pattern id="dots-pattern" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
-            <circle cx="2" cy="2" r="1" fill="#000527"/>
-        </pattern>
-        <filter id="duotone" x="0" y="0" width="100%" height="100%">
-            <!-- Convert to grayscale -->
-            <feColorMatrix type="saturate" values="0" result="gray"/>
-            <!-- Map grayscale to duotone: shadows=#000527, highlights=#2D3670 -->
-            <feComponentTransfer in="gray" result="duotone">
-                <!-- R: 0/255=0 to 45/255=0.176 -->
-                <feFuncR type="table" tableValues="0 0.176"/>
-                <!-- G: 5/255=0.020 to 54/255=0.212 -->
-                <feFuncG type="table" tableValues="0.020 0.212"/>
-                <!-- B: 39/255=0.153 to 112/255=0.439 -->
-                <feFuncB type="table" tableValues="0.153 0.439"/>
-            </feComponentTransfer>
-        </filter>
-    </defs>
-</svg>
 
 <!-- Navbar -->
 <nav class="navbar">
