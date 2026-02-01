@@ -378,7 +378,6 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     padding:48px 28px;
     border-bottom:1px dashed rgba(45,54,112,0.08);
     border-right:1px dashed rgba(45,54,112,0.08);
-    position:relative;
 }
 .client-cell:nth-child(6n){
     border-right:none;
@@ -386,24 +385,13 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 .client-cell:nth-child(n+13){
     border-bottom:none;
 }
-/* Dots overlay on logos */
-.client-cell::after{
-    content:'';
-    position:absolute;
-    inset:0;
-    background-image:radial-gradient(circle, #000527 1px, transparent 1px);
-    background-size:4px 4px;
-    opacity:0.25;
-    pointer-events:none;
-    z-index:1;
-}
 .client-cell img{
     height:102px;
     width:auto;
     max-width:220px;
     object-fit:contain;
-    /* Duotone effect - blue tint */
-    filter:grayscale(1) sepia(1) hue-rotate(180deg) saturate(0.6) contrast(1.1) brightness(0.9);
+    /* Duotone effect - dark blue like video */
+    filter:grayscale(1) sepia(1) hue-rotate(180deg) saturate(0.8) contrast(1.4) brightness(0.5);
 }
 /* Right column - video */
 .hero-right{
