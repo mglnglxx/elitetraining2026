@@ -75,6 +75,10 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
 .course-item{padding:24px 32px;border-bottom:1px solid rgba(var(--sector-main-rgb),0.2);border-right:1px solid rgba(var(--sector-main-rgb),0.2);font-size:18px;color:var(--sector-secondary);}
 .course-item:nth-child(2n){border-right:none;}
 .course-item:nth-last-child(-n+2){border-bottom:none;}
+a.course-item{text-decoration:none;display:flex;align-items:center;justify-content:space-between;transition:background 0.15s;}
+a.course-item::after{content:'→';color:var(--sector-main);opacity:0;transform:translateX(-8px);transition:opacity 0.15s,transform 0.15s;}
+a.course-item:hover{background:rgba(var(--sector-main-rgb),0.08);}
+a.course-item:hover::after{opacity:1;transform:translateX(0);}
 .section-link{display:inline-flex;align-items:center;gap:6px;margin-top:24px;font-size:16px;font-weight:600;color:var(--sector-main);text-decoration:none;}
 .section-link span{transition:transform 0.2s ease;display:inline-block;}
 .section-link:hover span{transform:translateX(4px);}
@@ -195,7 +199,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
 <section class="section section--white">
     <h2 class="section-title">Tecnologías del Gas</h2>
     <div class="course-grid">
-        <div class="course-item">Tecnologías del Gas Natural</div>
+        <a href="https://campusvirtual.hidrocarburos.com.co/cursos/tecnologias-del-gas-natural/" target="_blank" class="course-item">Tecnologías del Gas Natural</a>
         <div class="course-item">Introducción a las Tecnologías del LNG</div>
         <div class="course-item">Tecnologías y Mercados del LNG</div>
         <div class="course-item">Tecnologías y Mercados del GNC</div>
