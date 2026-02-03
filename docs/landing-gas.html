@@ -75,6 +75,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
 .course-item{padding:24px 32px;border-bottom:1px solid rgba(var(--sector-main-rgb),0.2);border-right:1px solid rgba(var(--sector-main-rgb),0.2);font-size:18px;color:var(--sector-secondary);}
 .course-item:nth-child(2n){border-right:none;}
 .course-item:nth-last-child(-n+2){border-bottom:none;}
+.course-item:last-child:nth-child(odd){grid-column:span 2;border-right:none;}
 a.course-item{text-decoration:none;display:flex;align-items:center;justify-content:space-between;transition:background 0.15s;}
 a.course-item::after{content:'→';color:var(--sector-main);opacity:0;transform:translateX(-8px);transition:opacity 0.15s,transform 0.15s;}
 a.course-item:hover{background:rgba(var(--sector-main-rgb),0.08);}
