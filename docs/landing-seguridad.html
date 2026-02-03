@@ -73,10 +73,12 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#4F4F
 .section--blue .section-title{color:#fff;}
 .section--blue .section-title{color:#fff;}
 
-.course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid rgba(var(--sector-main-rgb),0.4);}
-.course-item{padding:24px 32px;border-bottom:1px solid rgba(var(--sector-main-rgb),0.4);border-right:1px solid rgba(var(--sector-main-rgb),0.4);font-size:18px;color:#4F4F4F;}
-.course-item:nth-child(2n){border-right:none;}
-.course-item:nth-last-child(-n+2){border-bottom:none;}
+.course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.course-item{padding:24px 32px;border:1px solid rgba(var(--sector-main-rgb),0.4);font-size:18px;color:#4F4F4F;}
+a.course-item{text-decoration:none;display:flex;align-items:center;justify-content:space-between;transition:background 0.15s;}
+a.course-item::after{content:'→';color:var(--sector-secondary);opacity:0;transform:translateX(-8px);transition:opacity 0.15s,transform 0.15s;}
+a.course-item:hover{background:rgba(var(--sector-main-rgb),0.08);}
+a.course-item:hover::after{opacity:1;transform:translateX(0);}
 .section-link{display:inline-flex;align-items:center;gap:6px;margin-top:24px;font-size:16px;font-weight:600;color:var(--sector-secondary);text-decoration:none;}
 .section-link span{transition:transform 0.2s ease;display:inline-block;}
 .section-link:hover span{transform:translateX(4px);}
@@ -124,9 +126,6 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#4F4F
     .hero-badge{width:180px;}
     .section{padding:48px 24px;}
     .course-grid{grid-template-columns:1fr;}
-    .course-item{border-right:none;}
-    .course-item:nth-last-child(-n+2){border-bottom:1px solid rgba(45,54,112,0.15);}
-    .course-item:last-child{border-bottom:none;}
     .programs-grid{grid-template-columns:1fr;}
     .footer{padding:48px 24px 24px;}
     .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
