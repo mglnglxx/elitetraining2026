@@ -67,14 +67,16 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
 
 .section{padding:80px 48px;background:#EAECEE;}
 .section--white{background:#fff;}
-.section--blue{background:var(--sector-secondary);color:#fff;}
+.section--blue{background:var(--sector-main);color:#fff;}
 .section-title{font-size:clamp(36px,5vw,56px);font-weight:600;line-height:1;letter-spacing:-0.02em;color:var(--sector-main);margin:0 0 48px 0;}
 .section--blue .section-title{color:#fff;}
 
-.course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid rgba(var(--sector-main-rgb),0.2);}
-.course-item{padding:24px 32px;border-bottom:1px solid rgba(var(--sector-main-rgb),0.2);border-right:1px solid rgba(var(--sector-main-rgb),0.2);font-size:18px;color:var(--sector-main);}
-.course-item:nth-child(2n){border-right:none;}
-.course-item:nth-last-child(-n+2){border-bottom:none;}
+.course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.course-item{padding:24px 32px;border:1px solid rgba(var(--sector-main-rgb),0.2);font-size:18px;color:var(--sector-main);}
+a.course-item{text-decoration:none;display:flex;align-items:center;justify-content:space-between;transition:background 0.15s;}
+a.course-item::after{content:'→';color:var(--sector-secondary);opacity:0;transform:translateX(-8px);transition:opacity 0.15s,transform 0.15s;}
+a.course-item:hover{background:rgba(var(--sector-main-rgb),0.08);}
+a.course-item:hover::after{opacity:1;transform:translateX(0);}
 .section-link{display:inline-flex;align-items:center;gap:6px;margin-top:24px;font-size:16px;font-weight:600;color:var(--sector-secondary);text-decoration:none;}
 .section-link span{transition:transform 0.2s ease;display:inline-block;}
 .section-link:hover span{transform:translateX(4px);}
@@ -122,9 +124,6 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
     .hero-badge{width:180px;}
     .section{padding:48px 24px;}
     .course-grid{grid-template-columns:1fr;}
-    .course-item{border-right:none;}
-    .course-item:nth-last-child(-n+2){border-bottom:1px solid rgba(45,54,112,0.15);}
-    .course-item:last-child{border-bottom:none;}
     .programs-grid{grid-template-columns:1fr;}
     .footer{padding:48px 24px 24px;}
     .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
@@ -183,7 +182,7 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
 <section class="hero">
     <div class="hero-content">
         <h1 class="hero-title">Gestión de Activos, Mantenimiento y Confiabilidad</h1>
-        <p class="hero-description">Del mantenimiento reactivo a la gestión estratégica. Formación en ISO 55000, RCM, análisis de fallas y confiabilidad. Partner exclusivo de The Woodhouse Partnership.</p>
+        <p class="hero-description">Del mantenimiento reactivo a la gestión estratégica. Formación especializada en gestión del mantenimiento, ingeniería de confiabilidad y gestión de activos. Partner exclusivo de The Woodhouse Partnership.</p>
     </div>
     <div class="hero-badges">
         <img src="assets/insignias/mantenimiento1.png" alt="Insignia Mantenimiento 1" class="hero-badge">
@@ -195,10 +194,10 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
 <section class="section section--white">
     <h2 class="section-title">Gestión del Mantenimiento</h2>
     <div class="course-grid">
-        <div class="course-item">Planificación y Programación del Mantenimiento</div>
-        <div class="course-item">Gestión de Costos y Presupuestos del Mantenimiento</div>
-        <div class="course-item">Gerencia del Mantenimiento</div>
-        <div class="course-item">Gestión de Inventarios de Mantenimiento</div>
+        <a href="https://campusvirtual.hidrocarburos.com.co/cursos/planificacion-programacion-y-control-de-costos-del-mantenimiento/" target="_blank" class="course-item">Planificación, Programación y Control de Costos del Mantenimiento</a>
+        <a href="https://hidrocarburos.com.co/producto/gestion-de-costos-y-presupuestos-del-mantenimiento/" target="_blank" class="course-item">Gestión de Costos y Presupuestos del Mantenimiento</a>
+        <a href="https://campusvirtual.hidrocarburos.com.co/cursos/gerencia-del-mantenimiento/" target="_blank" class="course-item">Gerencia del Mantenimiento</a>
+        <a href="https://hidrocarburos.com.co/producto/gestion-y-optimizacion-de-inventarios-en-mantenimiento-online/" target="_blank" class="course-item">Gestión y Optimización de Inventarios de Mantenimiento</a>
     </div>
     <a href="https://hidrocarburos.com.co/producto-categoria/sectores/mantenimiento-y-confiabilidad/" target="_blank" class="section-link">Ver todos los cursos <span>→</span></a>
 </section>
@@ -206,10 +205,10 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
 <section class="section">
     <h2 class="section-title">Confiabilidad</h2>
     <div class="course-grid">
-        <div class="course-item">Fundamentos de Ingeniería de Confiabilidad</div>
-        <div class="course-item">Eliminación de Causa Raíz (ECR)</div>
-        <div class="course-item">Mantenimiento Centrado en Confiabilidad (RCM)</div>
-        <div class="course-item">Análisis de Modos de Falla - FMECA</div>
+        <a href="https://hidrocarburos.com.co/producto/fundamentos-de-ingenieria-de-confiabilidad-y-de-activos-fisicos/" target="_blank" class="course-item">Fundamentos de Ingeniería de Confiabilidad y de Activos Físicos</a>
+        <a href="https://hidrocarburos.com.co/producto/tecnicas-de-analisis-de-causa-raiz-y-eliminacion-de-causas-raices-de-riesgos/" target="_blank" class="course-item">Técnicas de Análisis de Causa Raíz y Eliminación de Causas Raíces de Riesgos</a>
+        <a href="https://hidrocarburos.com.co/producto/mantenimiento-centrado-en-confiabilidad-rcm/" target="_blank" class="course-item">Mantenimiento Centrado en Confiabilidad – RCM</a>
+        <a href="https://hidrocarburos.com.co/producto/analisis-de-modos-de-fallas-y-efectos-fmea-fmeca/" target="_blank" class="course-item">Análisis de Modos de Fallas y Efectos (FMEA – FMECA)</a>
     </div>
     <a href="https://hidrocarburos.com.co/producto-categoria/sectores/mantenimiento-y-confiabilidad/" target="_blank" class="section-link">Ver todos los cursos <span>→</span></a>
 </section>
@@ -217,10 +216,8 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:var(-
 <section class="section section--white">
     <h2 class="section-title">Gestión de Activos</h2>
     <div class="course-grid">
-        <div class="course-item">Principios de Gestión de Activos (ISO 55000)</div>
-        <div class="course-item">Gestión del Ciclo de Vida de Activos</div>
-        <div class="course-item">Toma de Decisiones Basadas en Riesgo</div>
-        <div class="course-item">Actualización de las Normas ISO 55001</div>
+        <a href="https://hidrocarburos.com.co/producto/gestion-del-costo-de-ciclo-de-vida-de-los-activos/" target="_blank" class="course-item">Gestión del Costo de Ciclo de Vida de los Activos</a>
+        <a href="https://hidrocarburos.com.co/producto/actualizacion-de-normas-iso-55000-2024-y-su-impacto-en-la-gestion-de-activos/" target="_blank" class="course-item">Actualización de Normas ISO 55000:2024 y su impacto en la Gestión de Activos</a>
     </div>
     <a href="https://hidrocarburos.com.co/producto-categoria/sectores/mantenimiento-y-confiabilidad/" target="_blank" class="section-link">Ver todos los cursos <span>→</span></a>
 </section>
