@@ -50,6 +50,11 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     fill:none;
 }
 
+/* Body scroll lock when overlay open */
+body.overlay-open{
+    overflow:hidden;
+}
+
 /* Fullscreen Menu */
 .menu-overlay{
     position:fixed;
@@ -312,6 +317,8 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         grid-template-columns:1fr;
         grid-template-rows:auto 1fr;
         overflow-y:auto;
+        min-height:100vh;
+        min-height:100dvh;
     }
     .contact-left{
         padding:100px 24px 32px;
@@ -980,8 +987,8 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         grid-template-columns:repeat(2,1fr);
     }
     .hero-sectors a{
-        font-size:21px;
-        padding:24px 16px;
+        font-size:18px;
+        padding:20px 20px;
         border-right:1px solid rgba(45,54,112,0.15);
     }
     .clients-grid{
@@ -1494,12 +1501,14 @@ const contactOverlay = document.getElementById('contactOverlay');
 
 menuOpen.addEventListener('click', () => {
     menuOverlay.classList.add('active');
+    document.body.classList.add('overlay-open');
 });
 
 menuClose.addEventListener('click', () => {
     menuOverlay.classList.remove('active');
     submenuSectores.classList.remove('active');
     submenuSobreNosotros.classList.remove('active');
+    document.body.classList.remove('overlay-open');
 });
 
 sectoresBtn.addEventListener('click', () => {
@@ -1520,10 +1529,12 @@ submenuSobreBack.addEventListener('click', () => {
 
 contactOpen.addEventListener('click', () => {
     contactOverlay.classList.add('active');
+    document.body.classList.add('overlay-open');
 });
 
 contactClose.addEventListener('click', () => {
     contactOverlay.classList.remove('active');
+    document.body.classList.remove('overlay-open');
 });
 
 // Close overlays on escape key
@@ -1533,6 +1544,7 @@ document.addEventListener('keydown', (e) => {
         submenuSectores.classList.remove('active');
         submenuSobreNosotros.classList.remove('active');
         contactOverlay.classList.remove('active');
+        document.body.classList.remove('overlay-open');
     }
 });
     </script>
