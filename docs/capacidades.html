@@ -736,6 +736,63 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
     transform:translateX(4px);
 }
 
+/* Alianzas Section */
+.alianzas{
+    padding:80px 48px;
+    background:#fff;
+}
+.alianzas-title{
+    font-size:clamp(36px,5vw,56px);
+    font-weight:600;
+    letter-spacing:-0.02em;
+    color:#2D3670;
+    margin:0 0 48px 0;
+}
+.alianzas-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+}
+.alianza-card{
+    padding:40px 32px;
+    border-right:1px solid rgba(45,54,112,0.1);
+    border-bottom:1px solid rgba(45,54,112,0.1);
+}
+.alianza-card:last-child{
+    border-right:none;
+}
+.alianza-logo{
+    height:60px;
+    margin-bottom:24px;
+    display:block;
+}
+.alianza-card h3{
+    font-size:24px;
+    font-weight:600;
+    color:#2D3670;
+    margin:0 0 12px 0;
+}
+.alianza-card p{
+    font-size:16px;
+    line-height:1.5;
+    color:rgba(45,54,112,0.7);
+    margin:0;
+}
+.alianza-placeholder{
+    height:60px;
+    width:180px;
+    background:rgba(45,54,112,0.08);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:14px;
+    font-weight:700;
+    color:rgba(45,54,112,0.4);
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    margin-bottom:24px;
+}
+
 .contact-box{
     max-width:600px;
 }
@@ -981,6 +1038,23 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         font-size:18px;
         margin-bottom:32px;
     }
+    .alianzas{
+        padding:48px 24px;
+    }
+    .alianzas-title{
+        font-size:clamp(28px,7vw,36px);
+        margin-bottom:32px;
+    }
+    .alianzas-grid{
+        grid-template-columns:1fr;
+    }
+    .alianza-card{
+        border-right:none;
+        padding:32px 0;
+    }
+    .alianza-card:last-child{
+        border-bottom:none;
+    }
     .sector-grid{
         grid-template-columns:1fr;
     }
@@ -1219,6 +1293,28 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
         <div class="client-cell"><img src="assets/logos/sura.png" alt="Sura"></div>
         <div class="client-cell"><img src="assets/logos/trelec.png" alt="Trelec"></div>
         <div class="client-cell"><img src="assets/logos/vanti.png" alt="Vanti"></div>
+    </div>
+</section>
+
+<!-- Alianzas Internacionales -->
+<section class="alianzas" id="alianzas">
+    <h2 class="alianzas-title">Alianzas internacionales</h2>
+    <div class="alianzas-grid">
+        <div class="alianza-card">
+            <div class="alianza-placeholder">ASME</div>
+            <h3>ASME</h3>
+            <p>Proveedor autorizado para programas de certificación en códigos ASME (Sección VIII, B31.3, PCC-2). Centro autorizado para formación in-company en Colombia.</p>
+        </div>
+        <div class="alianza-card">
+            <div class="alianza-placeholder">TWPL</div>
+            <h3>The Woodhouse Partnership</h3>
+            <p>Partner exclusivo en Latinoamérica para desarrollo de competencias en gestión de activos. Programas con certificación IAM (Institute of Asset Management).</p>
+        </div>
+        <div class="alianza-card">
+            <div class="alianza-placeholder">IADC</div>
+            <h3>IADC</h3>
+            <p>Centro de evaluación para certificación Well Control. Formación y credenciales para personal de perforación.</p>
+        </div>
     </div>
 </section>
 
