@@ -53,6 +53,8 @@ body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;
 /* Body scroll lock when overlay open */
 body.overlay-open{
     overflow:hidden;
+    position:fixed;
+    width:100%;
 }
 
 /* Fullscreen Menu */
@@ -1031,6 +1033,8 @@ body.overlay-open{
     }
     .submenu-links{
         gap:32px;
+        padding:0 24px;
+        text-align:center;
     }
     .submenu-links--small{
         gap:16px;
@@ -1499,16 +1503,28 @@ const contactOpen = document.getElementById('contactOpen');
 const contactClose = document.getElementById('contactClose');
 const contactOverlay = document.getElementById('contactOverlay');
 
+let scrollPos = 0;
+function lockScroll() {
+    scrollPos = window.scrollY;
+    document.body.style.top = `-${scrollPos}px`;
+    document.body.classList.add('overlay-open');
+}
+function unlockScroll() {
+    document.body.classList.remove('overlay-open');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollPos);
+}
+
 menuOpen.addEventListener('click', () => {
     menuOverlay.classList.add('active');
-    document.body.classList.add('overlay-open');
+    lockScroll();
 });
 
 menuClose.addEventListener('click', () => {
     menuOverlay.classList.remove('active');
     submenuSectores.classList.remove('active');
     submenuSobreNosotros.classList.remove('active');
-    document.body.classList.remove('overlay-open');
+    unlockScroll();
 });
 
 sectoresBtn.addEventListener('click', () => {
@@ -1529,12 +1545,12 @@ submenuSobreBack.addEventListener('click', () => {
 
 contactOpen.addEventListener('click', () => {
     contactOverlay.classList.add('active');
-    document.body.classList.add('overlay-open');
+    lockScroll();
 });
 
 contactClose.addEventListener('click', () => {
     contactOverlay.classList.remove('active');
-    document.body.classList.remove('overlay-open');
+    unlockScroll();
 });
 
 // Close overlays on escape key
@@ -1544,7 +1560,7 @@ document.addEventListener('keydown', (e) => {
         submenuSectores.classList.remove('active');
         submenuSobreNosotros.classList.remove('active');
         contactOverlay.classList.remove('active');
-        document.body.classList.remove('overlay-open');
+        unlockScroll();
     }
 });
     </script>
