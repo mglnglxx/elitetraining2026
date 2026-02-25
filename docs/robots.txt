@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://landing.hidrocarburos.com.co/sitemap.xml
