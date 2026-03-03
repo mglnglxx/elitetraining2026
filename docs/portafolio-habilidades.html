@@ -17,7 +17,9 @@
         .toolbar{display:flex;align-items:center;justify-content:space-between;height:48px;padding:0 16px;background:#2D3670;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;}
         .toolbar a{color:#fff;text-decoration:none;padding:8px 16px;border-radius:6px;background:rgba(255,255,255,0.15);transition:background 0.2s;}
         .toolbar a:hover{background:rgba(255,255,255,0.25);}
-        embed{width:100%;height:calc(100% - 48px);display:block;}
+        iframe{width:100%;height:calc(100% - 48px);display:block;border:none;}
+        .fallback{display:none;color:#fff;text-align:center;padding:60px 20px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;}
+        .fallback a{color:#D4A230;font-size:18px;}
     </style>
 </head>
 <body>
@@ -25,6 +27,17 @@
         <span>Portafolio Habilidades Directivas — Elite Training</span>
         <a href="portafolio-habilidades.pdf" download>Descargar PDF ↓</a>
     </div>
-    <embed src="portafolio-habilidades.pdf" type="application/pdf">
+    <iframe id="pdfViewer" src="portafolio-habilidades.pdf"></iframe>
+    <div class="fallback" id="fallback">
+        <p>Tu navegador no puede mostrar el PDF.</p>
+        <p><a href="portafolio-habilidades.pdf" download>Descargar PDF ↓</a></p>
+    </div>
+    <script>
+    const iframe = document.getElementById('pdfViewer');
+    iframe.onerror = function() {
+        iframe.style.display = 'none';
+        document.getElementById('fallback').style.display = 'block';
+    };
+    </script>
 </body>
 </html>
