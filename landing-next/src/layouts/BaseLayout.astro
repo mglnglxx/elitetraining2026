@@ -1,0 +1,219 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  preloadImage?: string;
+}
+
+const SITE = Astro.site ?? new URL("https://landing.hidrocarburos.com.co");
+const { title, description, canonical, ogImage, preloadImage } = Astro.props;
+const cleanPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const pageUrl = canonical ?? new URL(cleanPath, SITE).toString();
+const ogImageUrl = new URL(ogImage ?? "/assets/img/hero-team.jpg", SITE).toString();
+
+const organizationLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "Elite Training",
+  alternateName: "Elite Training Hidrocarburos",
+  url: SITE.toString(),
+  logo: new URL("/assets/logos/elite-training.svg", SITE).toString(),
+  description: "Formación técnica industrial para equipos de operaciones críticas, mantenimiento, integridad, seguridad de procesos, gas natural y liderazgo técnico. 30 años en Latinoamérica.",
+  sameAs: [
+    "https://www.linkedin.com/company/elite-training-hidrocarburos/",
+    "https://www.youtube.com/@EliteTrainingHidrocarburos",
+    "https://www.instagram.com/elitetraining.hidrocarburos/",
+    "https://www.facebook.com/EliteTrainingHidrocarburos"
+  ],
+  contactPoint: [{
+    "@type": "ContactPoint",
+    telephone: "+57-317-436-3697",
+    contactType: "customer support",
+    areaServed: ["CO", "LATAM"],
+    availableLanguage: ["Spanish"]
+  }]
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:locale" content="es_CO" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://plausible.io" />
+    {preloadImage && (
+      <link
+        rel="preload"
+        as="image"
+        href={preloadImage.replace(/\.(jpe?g|png)$/i, ".webp")}
+        type="image/webp"
+        fetchpriority="high"
+      />
+    )}
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    </noscript>
+    <link rel="icon" type="image/png" href="/assets/logos/Favicon 512 x 512px.png" />
+    <script is:inline>
+      document.documentElement.classList.add("reveal-ready");
+    </script>
+    <script type="application/ld+json" set:html={JSON.stringify(organizationLd)}></script>
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-Yu4yWgZgNlUje_azKT4GZ.js"></script>
+  </head>
+  <body data-page={Astro.url.pathname}>
+    <div class="modality-banner">
+      <div class="container-nav modality-banner-shell">
+        <span class="modality-banner-pulse" aria-hidden="true"></span>
+        <span class="modality-banner-text">
+          Todos nuestros cursos están disponibles en <strong>modalidad online en vivo</strong> — desde cualquier país.
+        </span>
+        <a class="modality-banner-link" href="https://hidrocarburos.com.co/shop" target="_blank" rel="noreferrer">
+          Ver próximas fechas →
+        </a>
+      </div>
+    </div>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <script is:inline>
+      window.eliteTrack = function (eventName, props = {}) {
+        if (window.plausible) {
+          window.plausible(eventName, { props });
+          return;
+        }
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: eventName, ...props });
+      };
+
+      document.addEventListener("click", (event) => {
+        const target = event.target instanceof Element ? event.target.closest("[data-analytics-event]") : null;
+        if (!target) return;
+        const name = target.getAttribute("data-analytics-event");
+        const label = target.getAttribute("data-analytics-label") || "";
+        const location = target.getAttribute("data-analytics-location") || document.body.dataset.page || "/";
+        window.eliteTrack(name || "cta_click", { label, location });
+      });
+
+      document.addEventListener(
+        "focusin",
+        (event) => {
+          const field = event.target instanceof HTMLElement ? event.target.closest("form [name]") : null;
+          if (!field) return;
+          const form = field.form;
+          if (!form || form.dataset.formTracked === "true") return;
+          form.dataset.formTracked = "true";
+          window.eliteTrack("form_focus", {
+            form: form.getAttribute("name") || "solicitud-landing",
+            location: document.body.dataset.page || "/"
+          });
+        },
+        { passive: true }
+      );
+
+      document.addEventListener("submit", (event) => {
+        const form = event.target instanceof HTMLFormElement ? event.target : null;
+        if (!form) return;
+        window.eliteTrack("form_submit", {
+          form: form.getAttribute("name") || "solicitud-landing",
+          location: document.body.dataset.page || "/"
+        });
+      });
+
+      document.querySelectorAll("[data-route-value]").forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+          const value = trigger.getAttribute("data-route-value");
+          const select = document.querySelector('select[name="tipo_solicitud"]');
+          if (select && value) select.value = value;
+          window.eliteTrack("route_select", {
+            route: value || "desconocida",
+            location: document.body.dataset.page || "/"
+          });
+        });
+      });
+
+      (() => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const revealItems = new WeakSet();
+
+        const reveal = (element) => {
+          element.classList.add("is-visible");
+        };
+
+        const observer = reduceMotion
+          ? null
+          : new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (!entry.isIntersecting) return;
+                  reveal(entry.target);
+                  observer.unobserve(entry.target);
+                });
+              },
+              { rootMargin: "0px 0px -12% 0px", threshold: 0.12 }
+            );
+
+        const register = (element) => {
+          if (!(element instanceof HTMLElement) || revealItems.has(element)) return;
+          revealItems.add(element);
+          if (reduceMotion || !observer) {
+            reveal(element);
+            return;
+          }
+          observer.observe(element);
+        };
+
+        document.querySelectorAll(".fade-in").forEach(register);
+
+        const mutationObserver = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            mutation.addedNodes.forEach((node) => {
+              if (!(node instanceof HTMLElement)) return;
+              if (node.matches(".fade-in")) register(node);
+              node.querySelectorAll?.(".fade-in").forEach(register);
+            });
+          });
+        });
+
+        mutationObserver.observe(document.body, { childList: true, subtree: true });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+---
+import { whatsappLink } from "../data/site";
+---
+
+<header class="site-header">
+  <div class="container-nav header-shell">
+    <a class="brand" href="/">
+      <img src="/assets/logos/elite-training.svg" alt="Elite Training" width="180" height="44" />
+    </a>
+
+    <nav class="main-nav" aria-label="Principal">
+      <a href="/#areas">Áreas</a>
+      <a
+        href="https://hidrocarburos.com.co/shop"
+        target="_blank"
+        rel="noreferrer"
+        data-analytics-event="nav_click"
+        data-analytics-label="nav_cursos_en_vivo"
+      >Cursos en vivo <span class="nav-ext" aria-hidden="true">↗</span></a>
+      <a
+        href="https://campusvirtual.hidrocarburos.com.co"
+        target="_blank"
+        rel="noreferrer"
+        data-analytics-event="nav_click"
+        data-analytics-label="nav_campus_virtual"
+      >Campus virtual <span class="nav-ext" aria-hidden="true">↗</span></a>
+      <a
+        href="/#calendario"
+        data-analytics-event="nav_click"
+        data-analytics-label="nav_calendario"
+      >Calendario 2026</a>
+      <a href="/#masterclass">Master Class</a>
+    </nav>
+
+    <div class="header-actions">
+      <a
+        class="header-cta"
+        href={whatsappLink}
+        target="_blank"
+        rel="noreferrer"
+        data-analytics-event="whatsapp_click"
+        data-analytics-label="header_whatsapp"
+      >
+        Hablar con un asesor
+      </a>
+    </div>
+  </div>
+</header>

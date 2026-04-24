@@ -1,0 +1,12 @@
+---
+import Picture from "./Picture.astro";
+import { clientLogos } from "../data/site";
+---
+
+<div class="logo-grid">
+  {clientLogos.map((logo) => (
+    <div class="logo-cell">
+      <Picture src={`/assets/logos/${logo}`} alt="" width={240} height={120} />
+    </div>
+  ))}
+</div>

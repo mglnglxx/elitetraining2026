@@ -1,0 +1,219 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ClientLogoGrid from "../components/ClientLogoGrid.astro";
+import InquiryForm from "../components/InquiryForm.astro";
+import Picture from "../components/Picture.astro";
+import { sectors, sectorImages } from "../data/site";
+
+export function getStaticPaths() {
+  return sectors.map((sector) => ({
+    params: { slug: sector.slug },
+    props: { sector }
+  }));
+}
+
+const { sector } = Astro.props;
+const heroImage = sectorImages[sector.slug];
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://landing.hidrocarburos.com.co"
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: sector.shortLabel,
+      item: `https://landing.hidrocarburos.com.co/${sector.slug}`
+    }
+  ]
+};
+---
+
+<BaseLayout title={sector.metaTitle} description={sector.metaDescription} ogImage={heroImage} preloadImage={heroImage}>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)}></script>
+  <section class="sector-hero-v2" style={`--sector-accent:${sector.accent}; --sector-accent-soft:${sector.accentSoft};`}>
+    <div class="container-nav sector-hero-v2-grid">
+      <div class="sector-hero-v2-copy">
+        <a class="back-link" href="/">← Volver al inicio</a>
+        <p class="eyebrow eyebrow--sector">Área de formación · {sector.shortLabel}</p>
+        <h1>{sector.heroTitle}</h1>
+        <p class="lead">{sector.heroDescription}</p>
+        <div class="hero-actions">
+          <a
+            class="primary-button primary-button--sector"
+            href="#solicitud"
+            data-route-value="equipo"
+            data-analytics-event="cta_click"
+            data-analytics-label={`hero_equipo_${sector.slug}`}
+          >
+            Solicitar propuesta
+          </a>
+          <a
+            class="secondary-button"
+            href={sector.sectorIndexHref}
+            target="_blank"
+            rel="noreferrer"
+            data-analytics-event="cta_click"
+            data-analytics-label={`hero_catalogo_${sector.slug}`}
+          >
+            Ver catálogo ampliado
+          </a>
+        </div>
+      </div>
+
+      <figure class="sector-hero-v2-image">
+        <Picture
+          src={heroImage}
+          alt={sector.shortLabel}
+          width={1280}
+          height={853}
+          widths={[480, 768, 1024]}
+          sizes="(min-width: 1100px) 42vw, 100vw"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="sector-hero-v2-tag">
+          <span class="sector-hero-v2-dot" aria-hidden="true"></span>
+          <span>{sector.shortLabel}</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section-block section-block--white sector-scope" style={`--sector-accent:${sector.accent}; --sector-accent-soft:${sector.accentSoft};`}>
+    <div class="container-content sector-overview-shell">
+      <div class="sector-overview-copy">
+        <p class="eyebrow eyebrow--sector">Alcance del área</p>
+        <p>{sector.overview}</p>
+        <ul class="sector-overview-list">
+          <li>Cursos abiertos y programas especializados</li>
+          <li>Alternativas virtuales, en vivo e in-company</li>
+          <li>Rutas por rol técnico, equipo o necesidad específica</li>
+        </ul>
+      </div>
+      <div class="sector-overview-badges">
+        {sector.badgeImages.map((badge) => (
+          <Picture src={badge} alt="" width={400} height={400} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block sector-scope" style={`--sector-accent:${sector.accent}; --sector-accent-soft:${sector.accentSoft};`}>
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow eyebrow--sector">Oferta visible</p>
+        <h2>Temas y cursos con mayor afinidad dentro de {sector.shortLabel}.</h2>
+      </div>
+      <p class="section-intro">
+        Una muestra útil del portafolio para entender rápidamente si esta área responde a la necesidad
+        técnica de tu equipo o a tu interés profesional.
+      </p>
+    </div>
+
+    <div class="container-content">
+      <div class="course-section-stack">
+        {sector.sections.map((section) => (
+          <section class="course-section">
+            <div class="course-section-head">
+              <h3>{section.title}</h3>
+              <a
+                href={sector.sectorIndexHref}
+                target="_blank"
+                rel="noreferrer"
+                data-analytics-event="cta_click"
+                data-analytics-label={`ver_mas_${sector.slug}_${section.title}`}
+              >
+                Ver más cursos
+              </a>
+            </div>
+            <div class="course-list">
+              {section.courses.map((course) => (
+                <a href={course.href} target="_blank" rel="noreferrer" class="course-card">
+                  <span>Curso</span>
+                  <strong>{course.title}</strong>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {sector.programs.length > 0 && (
+    <section class="section-block section-block--white sector-scope" style={`--sector-accent:${sector.accent}; --sector-accent-soft:${sector.accentSoft};`}>
+      <div class="container-content section-header">
+        <div>
+          <p class="eyebrow eyebrow--sector">Programas especializados</p>
+          <h2>Cuando la necesidad requiere más profundidad, secuencia o una ruta de aprendizaje más estructurada.</h2>
+        </div>
+        <p class="section-intro">
+          Algunas necesidades se resuelven mejor con una ruta completa que con un curso suelto. Aquí es donde los
+          programas especializados toman sentido.
+        </p>
+      </div>
+      <div class="container-content program-grid">
+        {sector.programs.map((program) => (
+          <a href={program.href} target="_blank" rel="noreferrer" class="program-card program-card--sector">
+            <h3>{program.title}</h3>
+            <p>{program.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  <section class="section-block sector-scope" style={`--sector-accent:${sector.accent}; --sector-accent-soft:${sector.accentSoft};`}>
+    <div class="container-content split-band split-band--neutral">
+      <div>
+        <p class="eyebrow eyebrow--sector">Ruta empresa</p>
+        <h2>Esta área también puede trabajarse en formato cerrado, in-company o en una ruta a la medida.</h2>
+      </div>
+      <div class="checklist">
+        <div>
+          <strong>Diagnóstico</strong>
+          <p>{sector.enterprisePitch}</p>
+        </div>
+        <div>
+          <strong>Modalidad</strong>
+          <p>Definimos si conviene un curso puntual, un programa modular o una cohorte cerrada para el equipo.</p>
+        </div>
+        <div>
+          <strong>Siguiente paso</strong>
+          <p>Una conversación inicial permite aterrizar alcance, participantes, urgencia y fechas tentativas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block section-block--white">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Respaldo</p>
+        <h2>La experiencia sectorial y la trayectoria técnica también pesan al momento de decidir.</h2>
+      </div>
+      <p class="section-intro">
+        Estas referencias ayudan a entender el tipo de industria y el nivel de exigencia técnica con el que Elite ha trabajado.
+      </p>
+    </div>
+    <div class="container-content">
+      <ClientLogoGrid />
+    </div>
+  </section>
+
+  <section id="solicitud" class="section-block">
+    <InquiryForm
+      area={sector.slug}
+      title={`Solicita información sobre ${sector.shortLabel}.`}
+      note="Comparte tu necesidad y te orientamos sobre cursos, programas especializados o una alternativa para tu equipo."
+      compact={true}
+    />
+  </section>
+</BaseLayout>

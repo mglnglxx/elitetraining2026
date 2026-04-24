@@ -1,0 +1,694 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ClientLogoGrid from "../components/ClientLogoGrid.astro";
+import InquiryForm from "../components/InquiryForm.astro";
+import Picture from "../components/Picture.astro";
+import { whatsappLink } from "../data/site";
+
+const pageTitle = "Programas de Seguridad de Procesos para Empresas | Elite Training";
+const pageDescription =
+  "Programas, rutas y escuelas técnicas de seguridad de procesos para empresas industriales. Formación en PSM, HAZOP, LOPA, investigación de incidentes y cultura de prevención.";
+
+const relatedCourses = [
+  {
+    title: "Programa Líder PHA Gestión de Riesgos de Proceso HAZOP-LOPA",
+    label: "PHA · HAZOP · LOPA",
+    href: "https://hidrocarburos.com.co/producto/programa-lider-pha-gestion-de-riesgos-de-proceso-hazop-lopa/"
+  },
+  {
+    title: "Programa Profesional en Seguridad de Procesos y Gestión del Riesgo",
+    label: "PSM · Gestión de riesgos",
+    href: "https://hidrocarburos.com.co/producto/programa-profesional-en-seguridad-de-procesos-y-gestion-del-riesgo/"
+  },
+  {
+    title: "Técnicas de Análisis de Causa Raíz y Eliminación de Causas Raíces de Riesgos",
+    label: "Incidentes · RCA",
+    href: "https://hidrocarburos.com.co/producto/tecnicas-de-analisis-de-causa-raiz-y-eliminacion-de-causas-raices-de-riesgos/"
+  }
+];
+
+const capabilityAreas = [
+  "Seguridad de procesos y PSM",
+  "PHA / HAZOP / LOPA",
+  "Investigación de incidentes",
+  "Gestión del cambio",
+  "BowTie y barreras críticas",
+  "Seguridad eléctrica",
+  "Cultura de prevención",
+  "Sensibilización para equipos no especialistas"
+];
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: "https://landing.hidrocarburos.com.co"
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Programas de seguridad de procesos para empresas",
+      item: "https://landing.hidrocarburos.com.co/programa-seguridad-procesos-empresas"
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={pageTitle}
+  description={pageDescription}
+  ogImage="/assets/img/axa-seguridad-funcional.jpg"
+  preloadImage="/assets/img/axa-seguridad-funcional.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)}></script>
+
+  <section class="axa-hero">
+    <div class="container-nav axa-hero-grid">
+      <div class="axa-hero-copy">
+        <a class="back-link" href="/">← Volver al inicio</a>
+        <p class="eyebrow">Seguridad de procesos para empresas industriales</p>
+        <h1>Fortalezca la seguridad de procesos en su organización con rutas técnicas especializadas.</h1>
+        <p class="axa-intro">
+          Elite Training acompaña a empresas industriales en formación aplicada para PSM, análisis de riesgos,
+          HAZOP, LOPA, investigación de incidentes y cultura de prevención.
+        </p>
+        <div class="hero-actions">
+          <a
+            class="primary-button"
+            href="#solicitud"
+            data-route-value="equipo"
+            data-analytics-event="axa_proposal_cta_click"
+            data-analytics-label="hero_solicitar_propuesta"
+          >
+            Solicitar propuesta
+          </a>
+          <a
+            class="secondary-button"
+            href="#cursos"
+            data-analytics-event="axa_courses_cta_click"
+            data-analytics-label="hero_ver_cursos"
+          >
+            Ver cursos relacionados
+          </a>
+        </div>
+      </div>
+
+      <aside class="axa-hero-proof" aria-label="Referencia AXA Colpatria">
+        <div class="axa-proof-image">
+          <Picture
+            src="/assets/img/axa-seguridad-funcional.jpg"
+            alt="Sesión de formación de seguridad de procesos desarrollada por Elite Training"
+            width={1200}
+            height={800}
+            widths={[480, 768, 1024]}
+            sizes="(min-width: 1100px) 44vw, 100vw"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
+        <div class="axa-proof-card">
+          <div class="axa-proof-top">
+            <span>Caso de referencia</span>
+            <img src="/assets/logos/axa.png" alt="AXA Colpatria" width="150" height="70" loading="lazy" />
+          </div>
+          <h2>Una escuela de seguridad de procesos para un ecosistema multiempresa.</h2>
+          <p>
+            Una experiencia sostenida que articula formación técnica, secuencia pedagógica y lenguaje común para
+            empresas con operaciones críticas.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section-block section-block--white axa-problem fade-in">
+    <div class="container-content axa-problem-grid">
+      <div>
+        <p class="eyebrow">El reto real</p>
+        <h2>La seguridad de procesos no se fortalece con capacitaciones aisladas.</h2>
+      </div>
+      <div class="axa-problem-copy">
+        <p>
+          Muchas organizaciones no necesitan solamente un curso. Necesitan criterio técnico compartido, continuidad,
+          rutas por nivel y una conversación clara entre HSE, operaciones, mantenimiento, liderazgo y compras.
+        </p>
+        <div class="axa-check-grid">
+          <span>Lenguaje técnico común</span>
+          <span>Formación por roles</span>
+          <span>Aplicación a riesgos reales</span>
+          <span>Continuidad entre cursos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block axa-paths fade-in">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Tres caminos de solución</p>
+        <h2>Elija el formato que mejor se adapta a su equipo.</h2>
+      </div>
+      <p class="section-intro">
+        Una misma línea técnica puede entrar como curso abierto, capacitación cerrada o programa progresivo,
+        dependiendo de urgencia, participantes y profundidad requerida.
+      </p>
+    </div>
+
+    <div class="container-content axa-path-grid">
+      <a class="axa-path-card" href="#cursos" data-analytics-event="axa_courses_cta_click" data-analytics-label="path_cursos">
+        <span>01</span>
+        <h3>Cursos abiertos para equipos y profesionales</h3>
+        <p>Fechas programadas para profesionales, líderes técnicos o grupos pequeños que necesitan avanzar rápido.</p>
+        <strong>Ver cursos disponibles</strong>
+      </a>
+      <a class="axa-path-card" href="#solicitud" data-route-value="equipo" data-analytics-event="axa_proposal_cta_click" data-analytics-label="path_incompany">
+        <span>02</span>
+        <h3>Capacitación cerrada o in-company</h3>
+        <p>Formación para equipos de una misma organización, adaptada a agenda, roles y contexto operacional.</p>
+        <strong>Solicitar capacitación cerrada</strong>
+      </a>
+      <a class="axa-path-card" href="#solicitud" data-route-value="medida" data-analytics-event="axa_proposal_cta_click" data-analytics-label="path_programa_medida">
+        <span>03</span>
+        <h3>Programas y escuelas técnicas a la medida</h3>
+        <p>Rutas por niveles para sostener aprendizaje, criterio común y capacidad técnica en el tiempo.</p>
+        <strong>Diseñar una ruta técnica</strong>
+      </a>
+    </div>
+  </section>
+
+  <section class="section-block section-block--blue axa-reference fade-in" id="referencia-axa">
+    <div class="container-content axa-reference-grid">
+      <div class="axa-reference-copy">
+        <p class="eyebrow eyebrow--light">Prueba aplicada</p>
+        <h2>Elite desarrolló junto a AXA Colpatria una escuela de seguridad de procesos de largo alcance.</h2>
+        <p>
+          Esta experiencia demuestra capacidad para operar iniciativas técnicas más amplias que un curso puntual:
+          programas con continuidad, audiencias diversas y necesidades reales de empresas industriales.
+        </p>
+        <a
+          class="primary-button primary-button--light"
+          href="#solicitud"
+          data-route-value="medida"
+          data-analytics-event="axa_proposal_cta_click"
+          data-analytics-label="axa_proof_programa_similar"
+        >
+          Quiero estructurar un programa similar
+        </a>
+      </div>
+
+      <div class="axa-stats-grid" aria-label="Cifras de referencia AXA Colpatria">
+        <div>
+          <strong>15</strong>
+          <span>cursos conectados dentro de una misma ruta formativa.</span>
+        </div>
+        <div>
+          <strong>228h</strong>
+          <span>de trabajo técnico distribuidas en una cohorte sostenida.</span>
+        </div>
+        <div>
+          <strong>18</strong>
+          <span>meses con continuidad para pasar de aprender a aplicar.</span>
+        </div>
+        <div>
+          <strong>40+</strong>
+          <span>empresas con criterios, casos y decisiones dentro del mismo proceso.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block section-block--white axa-capabilities fade-in">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Qué podemos estructurar hoy</p>
+        <h2>Rutas técnicas para distintos niveles de madurez en seguridad de procesos.</h2>
+      </div>
+      <p class="section-intro">
+        A partir de la necesidad de su empresa podemos recomendar un curso abierto, una cohorte cerrada o una ruta
+        progresiva para varios perfiles del equipo.
+      </p>
+    </div>
+    <div class="container-content axa-chip-grid">
+      {capabilityAreas.map((item) => <span>{item}</span>)}
+    </div>
+  </section>
+
+  <section class="section-block axa-courses fade-in" id="cursos">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Cursos relacionados</p>
+        <h2>Si necesita avanzar ahora, estos programas conectan directamente con esta línea.</h2>
+      </div>
+      <p class="section-intro">
+        Puede comenzar con un curso abierto y, si hay más personas del equipo, convertirlo en una ruta cerrada
+        o propuesta corporativa.
+      </p>
+    </div>
+    <div class="container-content axa-course-grid">
+      {relatedCourses.map((course) => (
+        <article class="axa-course-card">
+          <span>{course.label}</span>
+          <h3>{course.title}</h3>
+          <div class="axa-course-actions">
+            <a
+              href={course.href}
+              target="_blank"
+              rel="noreferrer"
+              data-analytics-event="axa_store_outbound_click"
+              data-analytics-label={course.title}
+            >
+              Ver curso
+            </a>
+            <a
+              href="#solicitud"
+              data-route-value="equipo"
+              data-analytics-event="axa_proposal_cta_click"
+              data-analytics-label={`equipo_${course.title}`}
+            >
+              Consultar para mi equipo
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-block section-block--white axa-nurture fade-in">
+    <div class="container-content axa-nurture-grid">
+      <div class="axa-nurture-card axa-nurture-card--guide">
+        <p class="eyebrow">Recurso PSM</p>
+        <h2>Evalúe brechas críticas antes de elegir un curso o programa.</h2>
+        <p>
+          Una guía breve para responsables técnicos, HSE, operaciones y mantenimiento que necesitan identificar
+          señales de alerta y prioridades de formación.
+        </p>
+        <a
+          class="secondary-button"
+          href="#solicitud"
+          data-route-value="equipo"
+          data-analytics-event="axa_guide_cta_click"
+          data-analytics-label="recibir_guia_psm"
+        >
+          Solicitar guía PSM
+        </a>
+      </div>
+      <div class="axa-nurture-card">
+        <p class="eyebrow">Master class</p>
+        <h2>También podemos empezar con una sesión técnica abierta.</h2>
+        <p>
+          Si el equipo aún está evaluando prioridades, una master class permite alinear criterio inicial y abrir
+          conversación sobre siguientes pasos.
+        </p>
+        <a
+          class="secondary-button"
+          href="https://us06web.zoom.us/meeting/register/ao9mQ2HVQMa7ty1JUskZzw"
+          target="_blank"
+          rel="noreferrer"
+          data-analytics-event="axa_masterclass_cta_click"
+          data-analytics-label="masterclass_psm"
+        >
+          Registrarme a la master class
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block axa-trust fade-in">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Respaldo industrial</p>
+        <h2>Experiencia en formación técnica para empresas industriales en Latinoamérica.</h2>
+      </div>
+      <p class="section-intro">
+        Referencias de organizaciones que han confiado en Elite para procesos de formación técnica, programas
+        especializados y necesidades de capacitación industrial.
+      </p>
+    </div>
+    <div class="container-content">
+      <ClientLogoGrid />
+    </div>
+  </section>
+
+  <section class="section-block section-block--white axa-final fade-in">
+    <InquiryForm
+      area="programa-seguridad-procesos-empresas"
+      title="Conversemos sobre la ruta adecuada para su empresa."
+      note="Complete estos datos y nuestro equipo le contactará para orientarle sobre cursos disponibles, capacitación cerrada o una propuesta a la medida."
+      compact={true}
+    />
+  </section>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      window.eliteTrack?.("axa_solution_page_view", {
+        location: "/programa-seguridad-procesos-empresas"
+      });
+    });
+  </script>
+</BaseLayout>
+
+<style>
+  .axa-hero {
+    position: relative;
+    padding: 96px 0 82px;
+    overflow: hidden;
+    background:
+      radial-gradient(900px 460px at 86% 10%, rgba(235, 151, 22, 0.18), transparent 60%),
+      radial-gradient(900px 520px at 12% 0%, rgba(45, 54, 112, 0.1), transparent 58%),
+      linear-gradient(180deg, #fff 0%, #f7f9fd 100%);
+  }
+
+  .axa-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(15, 22, 56, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 22, 56, 0.045) 1px, transparent 1px);
+    background-size: 48px 48px;
+    mask-image: radial-gradient(ellipse 74% 66% at 50% 26%, #000 44%, transparent 92%);
+    pointer-events: none;
+  }
+
+  .axa-hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(440px, 0.92fr);
+    gap: 72px;
+    align-items: center;
+  }
+
+  .axa-hero-copy h1 {
+    max-width: 13ch;
+    font-size: clamp(2.8rem, 5vw, 5.7rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+  }
+
+  .axa-hero-copy .axa-intro {
+    margin-top: 28px;
+    max-width: 58ch;
+  }
+
+  .axa-hero-proof {
+    display: grid;
+    gap: 18px;
+  }
+
+  .axa-proof-image {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid rgba(15, 22, 56, 0.1);
+    box-shadow: 0 34px 70px -30px rgba(15, 22, 56, 0.34);
+    aspect-ratio: 4 / 3;
+  }
+
+  .axa-proof-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .axa-proof-card,
+  .axa-path-card,
+  .axa-course-card,
+  .axa-nurture-card {
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.94);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+  }
+
+  .axa-proof-card {
+    padding: 28px;
+    display: grid;
+    gap: 18px;
+  }
+
+  .axa-proof-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .axa-proof-top span,
+  .axa-path-card span,
+  .axa-course-card span {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .axa-proof-top img {
+    max-width: 118px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .axa-proof-card h2 {
+    font-size: clamp(1.45rem, 2vw, 1.9rem);
+    max-width: 17ch;
+  }
+
+  .axa-proof-card p,
+  .axa-path-card p,
+  .axa-reference-copy p,
+  .axa-nurture-card p {
+    margin: 0;
+    color: var(--muted);
+  }
+
+  .axa-problem-grid,
+  .axa-reference-grid,
+  .axa-nurture-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 64px;
+    align-items: center;
+  }
+
+  .axa-problem-copy {
+    display: grid;
+    gap: 24px;
+  }
+
+  .axa-problem-copy p {
+    margin: 0;
+    font-size: 1.12rem;
+    line-height: 1.68;
+    color: var(--text);
+  }
+
+  .axa-check-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .axa-check-grid span,
+  .axa-chip-grid span {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    background: #fff;
+    border-radius: 999px;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: 0.94rem;
+  }
+
+  .axa-path-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .axa-path-card {
+    padding: 30px;
+    display: grid;
+    gap: 16px;
+    min-height: 310px;
+    transition: transform 180ms ease, box-shadow 220ms ease, border-color 180ms ease;
+  }
+
+  .axa-path-card:hover,
+  .axa-course-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(45, 54, 112, 0.28);
+    box-shadow: 0 28px 56px -24px rgba(15, 22, 56, 0.28);
+  }
+
+  .axa-path-card strong {
+    align-self: end;
+    color: var(--ink);
+    font-size: 0.95rem;
+  }
+
+  .axa-reference-copy {
+    display: grid;
+    gap: 24px;
+  }
+
+  .axa-reference-copy h2 {
+    color: #fff;
+    max-width: 14ch;
+  }
+
+  .axa-reference-copy p {
+    color: rgba(255, 255, 255, 0.78);
+    max-width: 56ch;
+  }
+
+  .axa-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .axa-stats-grid div {
+    min-height: 190px;
+    padding: 26px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    display: grid;
+    align-content: space-between;
+  }
+
+  .axa-stats-grid strong {
+    color: #fff;
+    font-size: clamp(2.3rem, 4vw, 4rem);
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+  }
+
+  .axa-stats-grid span {
+    color: rgba(255, 255, 255, 0.74);
+    line-height: 1.55;
+  }
+
+  .axa-chip-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .axa-course-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .axa-course-card {
+    min-height: 260px;
+    padding: 28px;
+    display: grid;
+    gap: 18px;
+    align-content: start;
+    transition: transform 180ms ease, box-shadow 220ms ease, border-color 180ms ease;
+  }
+
+  .axa-course-card h3 {
+    font-size: clamp(1.15rem, 1.6vw, 1.45rem);
+  }
+
+  .axa-course-actions {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .axa-course-actions a {
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 0.92rem;
+  }
+
+  .axa-course-actions a:first-child {
+    color: var(--accent);
+  }
+
+  .axa-nurture-card {
+    padding: 38px;
+    display: grid;
+    gap: 18px;
+    min-height: 360px;
+    align-content: start;
+    background:
+      radial-gradient(440px 240px at 94% 0%, rgba(235, 151, 22, 0.12), transparent 62%),
+      #fff;
+  }
+
+  .axa-nurture-card h2 {
+    max-width: 16ch;
+  }
+
+  .axa-nurture-card .secondary-button {
+    justify-self: start;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 1080px) {
+    .axa-hero-grid,
+    .axa-problem-grid,
+    .axa-reference-grid,
+    .axa-nurture-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .axa-hero-copy h1 {
+      max-width: 15ch;
+    }
+
+    .axa-path-grid,
+    .axa-course-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 780px) {
+    .axa-hero {
+      padding: 58px 0;
+    }
+
+    .axa-hero-grid {
+      gap: 36px;
+    }
+
+    .axa-hero-copy h1 {
+      font-size: clamp(2.45rem, 13vw, 4rem);
+    }
+
+    .axa-proof-card,
+    .axa-path-card,
+    .axa-course-card,
+    .axa-nurture-card {
+      padding: 24px;
+    }
+
+    .axa-path-grid,
+    .axa-course-grid,
+    .axa-stats-grid,
+    .axa-check-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .axa-path-card,
+    .axa-course-card,
+    .axa-nurture-card {
+      min-height: auto;
+    }
+  }
+</style>

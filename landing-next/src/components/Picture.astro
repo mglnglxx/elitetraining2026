@@ -1,0 +1,69 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width: number | string;
+  height: number | string;
+  widths?: number[];
+  sizes?: string;
+  loading?: "eager" | "lazy";
+  fetchpriority?: "high" | "auto" | "low";
+  decoding?: "async" | "auto" | "sync";
+  class?: string;
+}
+
+const {
+  src,
+  alt,
+  width,
+  height,
+  widths,
+  sizes = "100vw",
+  loading = "lazy",
+  fetchpriority,
+  decoding = "async",
+  class: className
+} = Astro.props;
+
+const webp = src.replace(/\.(jpe?g|png)$/i, ".webp");
+const hasWebp = webp !== src;
+const numericWidth = Number(width);
+const responsiveWidths = Array.isArray(widths)
+  ? widths
+      .map(Number)
+      .filter((candidate) => Number.isFinite(candidate) && candidate > 0)
+      .filter((candidate) => !Number.isFinite(numericWidth) || candidate < numericWidth)
+  : [];
+const responsiveSrcset = responsiveWidths.length > 0
+  ? [
+      ...responsiveWidths.map((candidate) => `${src.replace(/\.(jpe?g|png)$/i, `-${candidate}.webp`)} ${candidate}w`),
+      Number.isFinite(numericWidth) ? `${webp} ${numericWidth}w` : webp
+    ].join(", ")
+  : webp;
+---
+{hasWebp ? (
+  <picture>
+    <source type="image/webp" srcset={responsiveSrcset} sizes={responsiveWidths.length > 0 ? sizes : undefined} />
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={loading}
+      fetchpriority={fetchpriority}
+      decoding={decoding}
+      class={className}
+    />
+  </picture>
+) : (
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    loading={loading}
+    fetchpriority={fetchpriority}
+    decoding={decoding}
+    class={className}
+  />
+)}

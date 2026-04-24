@@ -1,0 +1,732 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ClientLogoGrid from "../components/ClientLogoGrid.astro";
+import InquiryForm from "../components/InquiryForm.astro";
+import Picture from "../components/Picture.astro";
+import RouteCards from "../components/islands/RouteCards.svelte";
+import { routeOptions, sectorCards } from "../data/site";
+
+const featuredCourses = [
+  {
+    title: "Código ASME Secc VII – Calderas de Potencia",
+    sector: "Integridad y Equipos",
+    modality: "Online en vivo",
+    nextDate: "5 mayo 2026",
+    accent: "#95C11F",
+    discount: "5%",
+    priceOriginal: "US$775",
+    priceFinal: "US$736",
+    href: "https://hidrocarburos.com.co/producto/codigo-asme-secc-vii-guias-recomendadas-para-el-cuidado-de-calderas-de-potencia/"
+  },
+  {
+    title: "Técnicas de Análisis de Causa Raíz",
+    sector: "Seguridad y Riesgos",
+    modality: "Online en vivo",
+    nextDate: "19 mayo 2026",
+    accent: "#2D3670",
+    discount: "10%",
+    priceOriginal: "US$550",
+    priceFinal: "US$495",
+    href: "https://hidrocarburos.com.co/producto/tecnicas-de-analisis-de-causa-raiz-y-eliminacion-de-causas-raices-de-riesgos/"
+  },
+  {
+    title: "Medición de Gas Natural",
+    sector: "Gas y Energía",
+    modality: "Online en vivo",
+    nextDate: "19 mayo 2026",
+    accent: "#00A19A",
+    discount: "10%",
+    priceOriginal: "US$550",
+    priceFinal: "US$495",
+    href: "https://hidrocarburos.com.co/producto/medicion-de-gas-natural/"
+  },
+  {
+    title: "Interpretación de Registros de Producción con Emeraude",
+    sector: "Oil & Gas",
+    modality: "Presencial · Bogotá",
+    nextDate: "25 mayo 2026",
+    accent: "#4F4F4F",
+    discount: "10%",
+    priceOriginal: "US$4.400",
+    priceFinal: "US$3.960",
+    href: "https://hidrocarburos.com.co/producto/interpretacion-de-registros-de-produccion-con-emeraude/"
+  }
+];
+
+const masterClasses = [
+  {
+    title: "¿Por qué seguimos teniendo los mismos accidentes?",
+    subtitle: "Una mirada técnica a las fallas reales en la gestión de riesgos mayores y PSM en Latinoamérica.",
+    framing: "Semana Mundial de la Seguridad y Salud en el Trabajo",
+    speaker: "Cesar Puma",
+    speakerRole: "Experto en gestión de riesgos mayores y PSM en Latinoamérica",
+    speakerPhoto: "/assets/img/cesar-puma.png",
+    date: "2026-04-30T16:00:00-05:00",
+    dateLabel: "Jueves 30 abril · 4:00 pm Bogotá / Lima · 5:00 pm Argentina",
+    duration: "60 min",
+    register: "https://us06web.zoom.us/meeting/register/ao9mQ2HVQMa7ty1JUskZzw"
+  }
+];
+
+const coursesLd = featuredCourses.map((c) => ({
+  "@context": "https://schema.org",
+  "@type": "Course",
+  name: c.title,
+  description: `Curso ${c.sector} — ${c.modality}. Próxima fecha: ${c.nextDate}.`,
+  url: c.href,
+  provider: {
+    "@type": "EducationalOrganization",
+    name: "Elite Training",
+    url: "https://landing.hidrocarburos.com.co"
+  },
+  hasCourseInstance: {
+    "@type": "CourseInstance",
+    courseMode: c.modality.toLowerCase().includes("presencial") ? "onsite" : "online",
+    startDate: c.nextDate
+  },
+  offers: {
+    "@type": "Offer",
+    price: c.priceFinal.replace(/[^0-9.]/g, ""),
+    priceCurrency: "USD",
+    url: c.href,
+    availability: "https://schema.org/InStock"
+  }
+}));
+
+const responsiveWebp = (src: string, originalWidth: number, widths = [480, 768, 1024]) => [
+  ...widths
+    .filter((width) => width < originalWidth)
+    .map((width) => `${src.replace(/\.(jpe?g|png)$/i, `-${width}.webp`)} ${width}w`),
+  `${src.replace(/\.(jpe?g|png)$/i, ".webp")} ${originalWidth}w`
+].join(", ");
+---
+
+<BaseLayout
+  title="Elite Training | Formación técnica industrial para empresas y profesionales"
+  description="Programas, cursos y rutas de capacitación técnica para operaciones críticas, mantenimiento, integridad, gas natural y seguridad de procesos."
+  preloadImage="/assets/img/hero-team.jpg"
+>
+  {coursesLd.map((ld) => (
+    <script type="application/ld+json" set:html={JSON.stringify(ld)}></script>
+  ))}
+  <section class="hero-home">
+    <div class="container-nav hero-home-grid">
+      <div class="hero-home-copy">
+        <p class="eyebrow">Formación técnica industrial</p>
+        <h1>Formación técnica industrial para equipos y profesionales.</h1>
+        <p class="lead">
+          Cursos abiertos, in-company y virtuales. La ruta correcta según tu necesidad — 30 años formando equipos en Oil &amp; Gas, energía y manufactura en Latinoamérica.
+        </p>
+        <div class="hero-home-actions">
+          <a class="primary-button" href="#solicitud" data-analytics-event="cta_click" data-analytics-label="home_solicitar">
+            Solicitar información
+          </a>
+          <a class="secondary-button" href="#areas" data-analytics-event="cta_click" data-analytics-label="home_areas">
+            Explorar áreas
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-home-panel">
+        <figure class="hero-image" data-hero-carousel>
+          <div class="hero-image-stack">
+            {[
+              { src: "/assets/img/hero-team.jpg", alt: "Equipo técnico industrial en formación", w: 1200, h: 800, label: "Formación técnica industrial", active: true, eager: true },
+              { src: "/assets/img/sector-oil-gas.jpg", alt: "Operaciones Oil & Gas", w: 1280, h: 853, label: "Oil & Gas · producción y pozos" },
+              { src: "/assets/img/sector-seguridad.jpg", alt: "Seguridad de procesos", w: 1280, h: 853, label: "Seguridad de procesos · PSM" },
+              { src: "/assets/img/sector-integridad.jpg", alt: "Integridad y equipos", w: 1280, h: 853, label: "Integridad de equipos · API" },
+              { src: "/assets/img/sector-mantenimiento.jpg", alt: "Mantenimiento y confiabilidad", w: 1280, h: 853, label: "Activos y mantenimiento" },
+              { src: "/assets/img/sector-gas.jpg", alt: "Gas natural y energía", w: 1280, h: 853, label: "Gas natural · GLP · energía" },
+              { src: "/assets/img/sector-habilidades.jpg", alt: "Habilidades directivas técnicas", w: 1280, h: 853, label: "Habilidades directivas técnicas" }
+            ].map((s) => (
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset={responsiveWebp(s.src, s.w)}
+                  sizes="(min-width: 1100px) 42vw, 100vw"
+                />
+                <img
+                  src={s.src}
+                  alt={s.alt}
+                  width={s.w}
+                  height={s.h}
+                  loading={s.eager ? "eager" : "lazy"}
+                  fetchpriority={s.eager ? "high" : undefined}
+                  decoding="async"
+                  data-hero-slide
+                  data-label={s.label}
+                  class={s.active ? "is-active" : undefined}
+                />
+              </picture>
+            ))}
+          </div>
+          <figcaption class="hero-image-tag">
+            <span class="hero-image-dot"></span>
+            <span data-hero-label>Formación técnica industrial</span>
+          </figcaption>
+        </figure>
+      </div>
+      <script>
+        (() => {
+          const carousel = document.querySelector("[data-hero-carousel]");
+          if (!carousel) return;
+          const slides = Array.from(carousel.querySelectorAll("[data-hero-slide]"));
+          const label = carousel.querySelector("[data-hero-label]");
+          if (slides.length < 2) return;
+          let i = 0;
+          let timer = null;
+          const swap = () => {
+            const next = (i + 1) % slides.length;
+            slides[i].classList.remove("is-active");
+            slides[next].classList.add("is-active");
+            if (label) {
+              label.style.opacity = "0";
+              setTimeout(() => {
+                label.textContent = slides[next].dataset.label || "";
+                label.style.opacity = "1";
+              }, 400);
+            }
+            i = next;
+          };
+          const start = () => { if (!timer) timer = setInterval(swap, 5000); };
+          const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+          start();
+          document.addEventListener("visibilitychange", () => {
+            document.hidden ? stop() : start();
+          });
+        })();
+      </script>
+    </div>
+    <div class="container-nav hero-stat-shell">
+      <div class="hero-stat-band">
+        <div class="hero-stat-item">
+          <span>30 años</span>
+          <em>de formación técnica industrial</em>
+        </div>
+        <div class="hero-stat-item">
+          <span>11+ países</span>
+          <em>en Latinoamérica</em>
+        </div>
+        <div class="hero-stat-item">
+          <span>200+ empresas</span>
+          <em>industriales y energéticas</em>
+        </div>
+        <div class="hero-stat-item">
+          <span>2.600+</span>
+          <em>insignias Credly emitidas</em>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rutas" class="section-block section-block--white fade-in">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Rutas de atención</p>
+        <h2>Elige la ruta más cercana a tu necesidad y nuestro equipo te ayuda a aterrizarla.</h2>
+      </div>
+      <p class="section-intro">
+        Cada conversación arranca distinto según quién pregunte y qué necesite resolver. Estas cuatro rutas
+        nos ayudan a ubicarte rápido y orientarte sobre fechas, modalidad, propuesta y siguiente paso.
+      </p>
+    </div>
+    <div class="container-content">
+      <RouteCards routes={routeOptions} client:visible />
+    </div>
+  </section>
+
+  <section id="areas" class="section-block fade-in">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Áreas de formación</p>
+        <h2>Seis áreas para equipos técnicos, líderes industriales y profesionales que necesitan criterio aplicado.</h2>
+      </div>
+      <p class="section-intro">
+        Cada frente agrupa cursos, programas y temas frecuentes para que la conversación comercial comience desde una
+        necesidad técnica real, no desde un catálogo genérico.
+      </p>
+    </div>
+    <div class="container-content">
+      <div class="sector-grid">
+        {sectorCards.map((sector) => (
+          <a
+            class="sector-card"
+            href={`/${sector.slug}`}
+            style={`--sector-accent:${sector.accent}; --sector-soft:${sector.accentSoft};`}
+            data-analytics-event="cta_click"
+            data-analytics-label={`sector_${sector.slug}`}
+          >
+            <div class="sector-card-badge" style={`background-color:${sector.accentSoft};`}>
+              <Picture src={sector.badge} alt={`Insignia ${sector.shortLabel}`} width={400} height={400} />
+            </div>
+            <div class="sector-card-content">
+              <span class="sector-card-tag">{sector.shortLabel}</span>
+              <h3>{sector.menuLabel}</h3>
+              <p>{sector.overview}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block section-block--white fade-in">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Próximos cursos abiertos</p>
+        <h2>Cursos destacados con fechas próximas. Inscripción individual o por equipos.</h2>
+      </div>
+      <p class="section-intro">
+        Una muestra de los cursos más solicitados. El catálogo completo, precios y carrito están en la tienda
+        Hidrocarburos.
+      </p>
+    </div>
+    <div class="container-content">
+      <div class="featured-grid">
+        {featuredCourses.map((course) => (
+          <a
+            class="featured-card"
+            href={course.href}
+            target="_blank"
+            rel="noreferrer"
+            style={`--course-accent:${course.accent};`}
+            data-analytics-event="cta_click"
+            data-analytics-label={`featured_course_${course.title}`}
+          >
+            <div class="featured-card-head">
+              <span class="featured-card-sector">{course.sector}</span>
+              <span class="featured-card-modality">{course.modality}</span>
+            </div>
+            <h3>{course.title}</h3>
+            <div class="featured-card-meta">
+              <div>
+                <span>Próxima fecha</span>
+                <strong>{course.nextDate}</strong>
+              </div>
+              <div class="featured-card-price">
+                <span class="featured-card-discount">{course.discount} OFF</span>
+                <strong>
+                  <s>{course.priceOriginal}</s> {course.priceFinal} <em>+IVA</em>
+                </strong>
+              </div>
+            </div>
+            <span class="featured-card-cta">Ver en tienda →</span>
+          </a>
+        ))}
+      </div>
+      <div class="featured-cta-row">
+        <a
+          class="primary-button"
+          href="https://hidrocarburos.com.co/shop"
+          target="_blank"
+          rel="noreferrer"
+          data-analytics-event="cta_click"
+          data-analytics-label="ver_catalogo_completo"
+        >
+          Ver catálogo completo en tienda
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="campus" class="section-block fade-in">
+    <div class="container-content">
+      <div class="campus-shell">
+        <div class="campus-copy">
+          <p class="eyebrow eyebrow--light">Campus virtual</p>
+          <h2>¿Prefieres avanzar a tu ritmo?</h2>
+          <p>
+            Cursos virtuales pregrabados disponibles 24/7. Inscripción inmediata,
+            acceso permanente y certificación verificable al completar cada módulo.
+          </p>
+          <ul class="campus-features">
+            <li><strong>Sin fechas fijas</strong> — empiezas cuando quieres y avanzas a tu ritmo</li>
+            <li><strong>Acceso permanente</strong> desde cualquier dispositivo</li>
+            <li><strong>Insignia Credly</strong> verificable al completar</li>
+          </ul>
+          <a
+            class="primary-button primary-button--light"
+            href="https://campusvirtual.hidrocarburos.com.co"
+            target="_blank"
+            rel="noreferrer"
+            data-analytics-event="cta_click"
+            data-analytics-label="campus_section_cta"
+          >
+            Entrar al campus →
+          </a>
+        </div>
+        <div class="campus-visual">
+          <div class="campus-course-stack">
+            <a
+              class="campus-course-item"
+              href="https://campusvirtual.hidrocarburos.com.co/cursos/tecnologias-del-gas-natural/"
+              target="_blank"
+              rel="noreferrer"
+              data-analytics-event="cta_click"
+              data-analytics-label="campus_course_gas"
+            >
+              <span class="campus-course-tag">Gas natural</span>
+              <strong>Tecnologías del Gas Natural</strong>
+              <span class="campus-course-cta">Ver curso →</span>
+            </a>
+            <a
+              class="campus-course-item"
+              href="https://campusvirtual.hidrocarburos.com.co/cursos/proteccion-catodica-galvanica-de-activos-enterrados/"
+              target="_blank"
+              rel="noreferrer"
+              data-analytics-event="cta_click"
+              data-analytics-label="campus_course_catodica"
+            >
+              <span class="campus-course-tag">Integridad</span>
+              <strong>Protección Catódica de Activos Enterrados</strong>
+              <span class="campus-course-cta">Ver curso →</span>
+            </a>
+            <a
+              class="campus-course-item campus-course-item--more"
+              href="https://campusvirtual.hidrocarburos.com.co"
+              target="_blank"
+              rel="noreferrer"
+              data-analytics-event="cta_click"
+              data-analytics-label="campus_more"
+            >
+              <span class="campus-course-tag">+ Más cursos</span>
+              <strong>Ver catálogo completo en el campus</strong>
+              <span class="campus-course-cta">Explorar →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="clientes" class="section-block section-block--white fade-in">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Clientes</p>
+        <h2>Equipos técnicos de 200+ empresas en Latinoamérica han pasado por nuestras aulas.</h2>
+      </div>
+      <p class="section-intro">
+        Operadoras de Oil &amp; Gas, distribuidoras de gas natural, generadoras eléctricas, refinerías y plantas
+        industriales que han confiado en Elite Training para formar y certificar a sus equipos técnicos.
+      </p>
+    </div>
+    <div class="container-content">
+      <ClientLogoGrid />
+    </div>
+  </section>
+
+  <section class="section-block fade-in">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Alianzas internacionales</p>
+        <h2>Respaldo de organizaciones que definen los estándares técnicos del sector.</h2>
+      </div>
+      <p class="section-intro">
+        Operamos como proveedor autorizado, partner exclusivo y centro de evaluación para los referentes
+        normativos en integridad, gestión de activos y perforación.
+      </p>
+    </div>
+    <div class="container-content">
+      <div class="alianzas-grid">
+        <article class="alianza-card">
+          <Picture src="/assets/logos/asme.png" alt="ASME" width={600} height={355} />
+          <h3>ASME</h3>
+          <p>Proveedor autorizado para programas en códigos ASME (Sección VIII, B31.3, PCC-2). Centro autorizado para formación in-company en Colombia.</p>
+        </article>
+        <article class="alianza-card">
+          <Picture src="/assets/logos/woodhouse.png" alt="The Woodhouse Partnership" width={2949} height={1064} />
+          <h3>The Woodhouse Partnership</h3>
+          <p>Partner exclusivo en Latinoamérica para desarrollo de competencias en gestión de activos. Certificación IAM (Institute of Asset Management).</p>
+        </article>
+        <article class="alianza-card">
+          <div class="alianza-logo-pair">
+            <Picture src="/assets/logos/iadc.png" alt="IADC" width={173} height={199} />
+            <Picture src="/assets/logos/its.png" alt="ITS SAS" width={600} height={431} />
+          </div>
+          <h3>IADC / ITS</h3>
+          <p>Alianza para certificación Rig Inspection, Well Control y formación de personal de perforación. ITS SAS como centro de evaluación autorizado.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block section-block--white fade-in">
+    <div class="container-content">
+      <div class="credly-shell">
+        <div class="credly-copy">
+          <Picture src="/assets/logos/credly.png" alt="Credly by Pearson" class="credly-logo" width={600} height={369} />
+          <p class="eyebrow">Insignias digitales</p>
+          <h2>Cada curso y programa genera una credencial verificable en Credly.</h2>
+          <p>
+            Cada certificación deja registro de las competencias desarrolladas, respaldada por la plataforma
+            de Pearson. Más de 2.600 insignias emitidas a participantes y equipos técnicos.
+          </p>
+          <a
+            class="route-link"
+            href="https://www.credly.com/organizations/elite-training/badges"
+            target="_blank"
+            rel="noreferrer"
+            data-analytics-event="cta_click"
+            data-analytics-label="credly_link"
+          >
+            Ver insignias en Credly
+          </a>
+        </div>
+        <div class="credly-badges">
+          <Picture src="/assets/img/badge-3.png" alt="Insignia Integridad y Equipos" width={400} height={400} />
+          <Picture src="/assets/img/badge-1.png" alt="Insignia Elite Training" width={400} height={400} />
+          <Picture src="/assets/img/badge-2.png" alt="Insignia Oil & Gas" width={400} height={400} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block fade-in">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Testimonios</p>
+        <h2>Lo que dicen quienes han pasado por nuestros programas.</h2>
+      </div>
+    </div>
+    <div class="container-content">
+      <div class="testimonial-grid">
+        <figure class="testimonial-card">
+          <blockquote>Salí del HAZOP con una metodología clara: palabras guía, análisis de causas de accidentes mayores y valoración del peligro frente a las salvaguardas. Ahora puedo sustentar decisiones técnicas con una estructura que antes hacíamos por intuición.</blockquote>
+          <figcaption>
+            <strong>Anny Pauline Másmela</strong>
+            <span>Coordinadora HSEQ · Descont SAS ESP</span>
+          </figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <blockquote>El conocimiento del instructor marca la diferencia. Es de los pocos cursos donde sientes que quien está al frente domina el tema en campo, no solo en teoría, y eso se nota en cada respuesta a las preguntas del grupo.</blockquote>
+          <figcaption>
+            <strong>María Clemencia Silva</strong>
+            <span>Coordinadora HSEQ · MG Ingeniería</span>
+          </figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <blockquote>Aprendí cómo construir una matriz de riesgo bien hecha y cómo conformar un grupo de trabajo para liderar un HAZOP. Es conocimiento que me posiciona distinto frente a la operación y me da herramientas concretas para aportar.</blockquote>
+          <figcaption>
+            <strong>Aldemar Camilo Acosta</strong>
+            <span>Coordinador TSA · Dobladora RyS SAS</span>
+          </figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <blockquote>Me dio criterio para llevar la conversación de seguridad de procesos a la alta dirección. Salí con argumentos para incorporar lineamientos de diseño intrínsecamente seguro desde la planeación, no como parche al final.</blockquote>
+          <figcaption>
+            <strong>Juan Camilo Pulgarin</strong>
+            <span>Coordinador QHSSE · Tucker Energy Services</span>
+          </figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <blockquote>Lo que más rescato es lo aplicable en piso: planificación, AMEF y confiabilidad operacional explicados con casos reales. Lo pude aterrizar en mi planta el lunes siguiente sin tener que traducir nada.</blockquote>
+          <figcaption>
+            <strong>Santiago Pinilla Ramírez</strong>
+            <span>Jefe de Mantenimiento · Super de Alimentos</span>
+          </figcaption>
+        </figure>
+        <figure class="testimonial-card">
+          <blockquote>Me llevo herramientas para asegurar la transferencia de conocimiento entre los operadores experimentados y los nuevos, y para evaluar riesgos antes de cualquier cambio de equipo o proceso. Es la base para construir cultura justa y aprendizaje organizacional.</blockquote>
+          <figcaption>
+            <strong>Andrea Pedreros Fonseca</strong>
+            <span>Coordinadora Nacional HSE · Termotécnica</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="masterclass" class="section-block section-block--white fade-in">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Master Class gratuita</p>
+        <h2>Sesiones técnicas abiertas con expertos de la industria.</h2>
+      </div>
+      <p class="section-intro">
+        Conferencias en vivo sin costo, dirigidas a profesionales que quieren actualizar criterio técnico
+        en seguridad de procesos, integridad, mantenimiento y operaciones.
+      </p>
+    </div>
+    <div class="container-content">
+      <div class="masterclass-featured">
+        {masterClasses.map((mc) => (
+          <article class="masterclass-card masterclass-card--featured" data-mc-target={mc.date}>
+            <div class="masterclass-card-body">
+              <span class="masterclass-framing">{mc.framing}</span>
+              <h3>{mc.title}</h3>
+              <p class="masterclass-subtitle">{mc.subtitle}</p>
+              <div class="masterclass-meta">
+                <span class="masterclass-tag">{mc.dateLabel}</span>
+                <span class="masterclass-duration">{mc.duration}</span>
+              </div>
+              <div class="masterclass-countdown" aria-label="Cuenta regresiva">
+                <div><span data-mc-days>00</span><em>días</em></div>
+                <div><span data-mc-hours>00</span><em>hrs</em></div>
+                <div><span data-mc-minutes>00</span><em>min</em></div>
+                <div><span data-mc-seconds>00</span><em>seg</em></div>
+              </div>
+              <a
+                class="masterclass-cta-button"
+                href={mc.register}
+                target="_blank"
+                rel="noreferrer"
+                data-analytics-event="cta_click"
+                data-analytics-label="masterclass_register"
+              >
+                Registrarme gratis →
+              </a>
+            </div>
+            <aside class="masterclass-card-speaker">
+              <div class="masterclass-speaker-photo">
+                <Picture src={mc.speakerPhoto} alt={mc.speaker} width={400} height={400} />
+              </div>
+              <div class="masterclass-speaker-info">
+                <span class="masterclass-speaker-label">Conferencista</span>
+                <strong>{mc.speaker}</strong>
+                <span>{mc.speakerRole}</span>
+              </div>
+            </aside>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block fade-in">
+    <div class="container-content section-header">
+      <div>
+        <p class="eyebrow">Conferencias técnicas</p>
+        <h2>130+ horas de formación abierta en nuestro canal de YouTube.</h2>
+      </div>
+      <p class="section-intro">
+        Charlas y master classes con instructores y expertos internacionales en seguridad de procesos,
+        integridad, mantenimiento y operaciones.
+      </p>
+    </div>
+    <div class="container-content">
+      <div class="youtube-grid">
+        {[
+          "MW5P2SuSoXQ",
+          "vkIdesdamk0",
+          "fIRu16o3gus",
+          "B_InoNeDrSo",
+          "j3W3d4m_ZrI",
+          "PhMnqypFW3o"
+        ].map((id, i) => (
+          <a
+            class="youtube-thumb"
+            href={`https://www.youtube.com/watch?v=${id}`}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Ver conferencia técnica ${i + 1} de 6 en YouTube`}
+            data-analytics-event="cta_click"
+            data-analytics-label={`youtube_${id}`}
+          >
+            <img src={`https://img.youtube.com/vi/${id}/hqdefault.jpg`} alt="" width="480" height="360" loading="lazy" decoding="async" />
+          </a>
+        ))}
+      </div>
+      <div class="youtube-cta-row">
+        <a
+          class="youtube-button"
+          href="https://www.youtube.com/@EliteTrainingHidrocarburos"
+          target="_blank"
+          rel="noreferrer"
+          data-analytics-event="cta_click"
+          data-analytics-label="youtube_channel"
+        >
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          <span>Ver más en YouTube</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="calendario" class="section-block section-block--white fade-in">
+    <div class="container-content">
+      <div class="calendar-shell">
+        <div class="calendar-copy">
+          <p class="eyebrow">Calendario 2026</p>
+          <h2>Descarga el calendario completo de cursos y programas 2026.</h2>
+          <p>
+            PDF con fechas, modalidades, duraciones y precios de todos los cursos abiertos
+            del año. Recibe además avisos de nuevas convocatorias y master classes.
+          </p>
+          <form
+            class="calendar-form"
+            name="calendario-2026"
+            method="post"
+            action="https://hidrocarburos.com.co/calendario-2026"
+            data-analytics-event="form_submit"
+            data-analytics-label="calendario_2026"
+          >
+            <label class="sr-only" for="calendar-name">Nombre</label>
+            <input id="calendar-name" name="nombre" type="text" placeholder="Nombre" required />
+            <label class="sr-only" for="calendar-email">Email corporativo</label>
+            <input id="calendar-email" name="email" type="email" placeholder="Email corporativo" required />
+            <button type="submit" class="primary-button">Descargar PDF</button>
+          </form>
+          <p class="calendar-fineprint">
+            Al enviar aceptas recibir el calendario y comunicaciones técnicas de Elite Training.
+          </p>
+        </div>
+        <div class="calendar-visual" aria-hidden="true">
+          <div class="calendar-pdf">
+            <div class="calendar-pdf-head">
+              <span>Calendario 2026</span>
+              <span class="calendar-pdf-tag">PDF</span>
+            </div>
+            <ul>
+              <li><strong>Mar</strong> · Fundamentos PSM</li>
+              <li><strong>Abr</strong> · HAZOP / LOPA</li>
+              <li><strong>May</strong> · API 580 / 581</li>
+              <li><strong>Jun</strong> · ISO 55001 — TWPL</li>
+              <li><strong>Jul</strong> · Tecnologías del Gas</li>
+              <li><strong>Ago</strong> · Confiabilidad — RCM</li>
+              <li><strong>Sep</strong> · Integridad de ductos</li>
+              <li><strong>Oct</strong> · Seguridad eléctrica NFPA 70E</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-block fade-in">
+    <InquiryForm
+      area="home"
+      title="Cuéntanos qué necesitas y te respondemos."
+      note="Un asesor te orientará sobre fechas, modalidad y propuesta."
+    />
+  </section>
+
+  <script is:inline>
+    document.querySelectorAll("[data-mc-target]").forEach((card) => {
+      const target = new Date(card.getAttribute("data-mc-target")).getTime();
+      if (Number.isNaN(target)) return;
+      const d = card.querySelector("[data-mc-days]");
+      const h = card.querySelector("[data-mc-hours]");
+      const m = card.querySelector("[data-mc-minutes]");
+      const s = card.querySelector("[data-mc-seconds]");
+      const tick = () => {
+        const diff = target - Date.now();
+        if (diff <= 0) {
+          d.textContent = h.textContent = m.textContent = s.textContent = "00";
+          return;
+        }
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const mins = Math.floor((diff % 3600000) / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+        d.textContent = String(days).padStart(2, "0");
+        h.textContent = String(hours).padStart(2, "0");
+        m.textContent = String(mins).padStart(2, "0");
+        s.textContent = String(secs).padStart(2, "0");
+      };
+      tick();
+      setInterval(tick, 1000);
+    });
+  </script>
+</BaseLayout>

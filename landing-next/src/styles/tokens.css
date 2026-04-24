@@ -1,0 +1,83 @@
+:root {
+  color-scheme: light;
+
+  /* Core brand tokens */
+  --bg: #f7f9fd;
+  --panel: #ffffff;
+  --ink: #0f1638;
+  --ink-2: #1d2557;
+  --text: #44506f;
+  --muted: rgba(68, 80, 111, 0.82);
+  --line: rgba(15, 22, 56, 0.1);
+  --line-strong: rgba(15, 22, 56, 0.2);
+  --soft: rgba(15, 22, 56, 0.04);
+  --accent: #eb9716;
+  --accent-2: #f5a826;
+  --accent-soft: #fff4e0;
+  --accent-glow: rgba(235, 151, 22, 0.32);
+
+  /* Layout tokens */
+  --shell: min(1200px, calc(100vw - 48px));
+  --nav-shell: min(1240px, calc(100vw - 48px));
+  --narrow-shell: min(880px, calc(100vw - 48px));
+
+  /* Shape and elevation */
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow: 0 28px 72px rgba(15, 22, 56, 0.1);
+  --shadow-soft: 0 14px 38px rgba(15, 22, 56, 0.07);
+  --shadow-card: 0 1px 0 rgba(15, 22, 56, 0.04), 0 12px 32px -16px rgba(15, 22, 56, 0.18);
+
+  /* Semantic aliases for future component work */
+  --background: var(--bg);
+  --foreground: var(--ink);
+  --card: var(--panel);
+  --card-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: #ffffff;
+  --secondary: var(--soft);
+  --secondary-foreground: var(--ink);
+  --muted-surface: #eef2f8;
+  --muted-foreground: var(--muted);
+  --accent-foreground: var(--ink);
+  --destructive: #b42318;
+  --destructive-foreground: #ffffff;
+  --border: var(--line);
+  --input: var(--line-strong);
+  --ring: rgba(235, 151, 22, 0.45);
+  --selection: rgba(235, 151, 22, 0.22);
+  --selection-foreground: var(--ink);
+}
+
+.dark {
+  color-scheme: dark;
+
+  --bg: #080c20;
+  --panel: #101632;
+  --ink: #f8f9ff;
+  --ink-2: #dfe4ff;
+  --text: rgba(238, 241, 255, 0.82);
+  --muted: rgba(238, 241, 255, 0.66);
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.22);
+  --soft: rgba(255, 255, 255, 0.06);
+  --accent-soft: rgba(245, 168, 38, 0.16);
+  --accent-glow: rgba(245, 168, 38, 0.28);
+
+  --background: var(--bg);
+  --foreground: var(--ink);
+  --card: var(--panel);
+  --card-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: #080c20;
+  --secondary: var(--soft);
+  --secondary-foreground: var(--ink);
+  --muted-surface: rgba(255, 255, 255, 0.08);
+  --muted-foreground: var(--muted);
+  --accent-foreground: #ffffff;
+  --border: var(--line);
+  --input: var(--line-strong);
+  --ring: rgba(245, 168, 38, 0.5);
+  --selection: rgba(245, 168, 38, 0.28);
+  --selection-foreground: #ffffff;
+}
