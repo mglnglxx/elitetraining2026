@@ -59,15 +59,28 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet"></noscript>
     <style>
 *{margin:0;padding:0;box-sizing:border-box;}
+:root{--site-max-width:1318px;}
 html{scroll-behavior:smooth;}
 body{font-family:'Roboto',sans-serif;font-size:21px;line-height:31px;color:#000;background:#EAECEE;}
+
+.hero,
+.clients-section,
+.alianzas,
+.section,
+.footer{
+    width:100%;
+    max-width:var(--site-max-width);
+    margin-inline:auto;
+}
 
 /* Navbar */
 .navbar{
     position:fixed;
     top:0;
-    left:0;
-    right:0;
+    left:50%;
+    width:100%;
+    max-width:var(--site-max-width);
+    transform:translateX(-50%);
     z-index:100;
     display:flex;
     justify-content:flex-end;
@@ -426,7 +439,7 @@ body.overlay-open{
 }
 .clients-grid{
     display:grid;
-    grid-template-columns:repeat(6,1fr);
+    grid-template-columns:repeat(6,minmax(0,1fr));
     border-top:1px dashed rgba(45,54,112,0.08);
     border-bottom:1px dashed rgba(45,54,112,0.08);
 }
@@ -447,7 +460,7 @@ body.overlay-open{
 .client-cell img{
     height:102px;
     width:auto;
-    max-width:220px;
+    max-width:100%;
     object-fit:contain;
 }
 /* Right column - video */
@@ -995,14 +1008,14 @@ body.overlay-open{
         font-size:28px;
     }
     .clients-grid{
-        grid-template-columns:repeat(6,1fr);
+        grid-template-columns:repeat(6,minmax(0,1fr));
     }
     .client-cell{
         padding:40px 16px;
     }
     .client-cell img{
         height:80px;
-        max-width:176px;
+        max-width:100%;
     }
 }
 @media(max-width:768px){
@@ -1054,7 +1067,7 @@ body.overlay-open{
         border-right:1px solid rgba(45,54,112,0.15);
     }
     .clients-grid{
-        grid-template-columns:repeat(3,1fr);
+        grid-template-columns:repeat(3,minmax(0,1fr));
     }
     .client-cell{
         padding:24px 12px;
@@ -1073,7 +1086,7 @@ body.overlay-open{
     }
     .client-cell img{
         height:58px;
-        max-width:112px;
+        max-width:100%;
     }
     .menu-close{
         right:24px;
